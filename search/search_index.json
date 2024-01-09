@@ -1,0 +1,1 @@
+{"config":{"lang":["en"],"separator":"[\\s\\-]+","pipeline":["stopWordFilter"]},"docs":[{"location":"","title":"Welcome","text":"<p>Welcome to our website.</p>"},{"location":"contact/","title":"Contact","text":"<p>Please contact me on LinkedIn</p> <p>Thanks! - Dan</p>"},{"location":"lessons/","title":"Beginning Electronics Lessons","text":""}]}
