@@ -50,4 +50,14 @@
          <lastmod>2024-01-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/setup/</loc>
+         <lastmod>2024-01-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/setup/breadboard-kits/</loc>
+         <lastmod>2024-01-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>
