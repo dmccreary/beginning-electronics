@@ -7,6 +7,10 @@ repo_url: 'https://github.com/dmccreary/beginning-electronics'
 
 nav:
   - Home: index.md
+  - Getting Started:
+    - Introduction: setup/index.md
+    - Purchasing Kits: setup/breadboard-kits.md
+    - Generating Lessons: setup/generating-lessons.md
   - Lessons:
     - Introduction: lessons/index.md
     - Components: lessons/components.md
