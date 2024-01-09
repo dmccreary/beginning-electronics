@@ -8,7 +8,13 @@ repo_url: 'https://github.com/dmccreary/beginning-electronics'
 nav:
   - Home: index.md
   - Lessons:
-    Introduction: lessons/index.md
+    - Introduction: lessons/index.md
+    - Components: lessons/components.md
+    - Breadboard: lessons/breadboard.md
+    - LED Circuit: lessons/led-circuit.md
+    - Buttons: lessons/11-buttons.md
+    - Buttons AND: lessons/12-and-buttons.md
+    - Buttons OR: lessons/13-or-buttons.md
   - Contact: contact.md
  
 # CoderDojo Microsite Standards from here down
