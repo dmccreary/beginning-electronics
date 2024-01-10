@@ -10,6 +10,14 @@ guide.  We work with generative AI tools to build custom lesson plans
 based on the age of your students, the parts you have and your
 learning objectives.
 
+!!! Note
+    If you don't have access to these parts, we also have
+    several "Micro Simulators" or MicroSims to guide you on your way.
+
+    These simulators were also partially created by generative AI tools.
+    See the [MicroSims](https://dmccreary.github.io/microsims/) website
+    for examples of these program.
+
 ## How does it work?
 
 We guide to in the process of building lesson plans that are
