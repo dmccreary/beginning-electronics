@@ -9,16 +9,27 @@ nav:
   - Home: index.md
   - Getting Started:
     - Introduction: setup/index.md
+    - Kit Components: lessons/05-kit-components.md
     - Purchasing Kits: setup/breadboard-kits.md
     - Generating Lessons: setup/generating-lessons.md
   - Lessons:
     - Introduction: lessons/index.md
     - Components: lessons/components.md
-    - Breadboard: lessons/breadboard.md
-    - LED Circuit: lessons/led-circuit.md
+    - Breadboard: lessons/08-breadboard.md
+    - Power: lessons/09-power.md
+    - LED Circuit: lessons/10-led-circuit.md
     - Buttons: lessons/11-buttons.md
     - Buttons AND: lessons/12-and-buttons.md
     - Buttons OR: lessons/13-or-buttons.md
+    - RC Circuit: lessons/80-rc-circuit.md
+  - Simulations:
+    - Introduction: sims/index.md
+    - Breadboard: sims/breadboard.md
+    - LEDs: sims/led.md
+    - Push Buttons: sims/push-buttons.md
+    - Resistors: sims/resistors.md
+    - 555 Timer: sims/timer.md
+  - License: license.md
   - Contact: contact.md
  
 # CoderDojo Microsite Standards from here down
