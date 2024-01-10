@@ -9,7 +9,7 @@ nav:
   - Home: index.md
   - Getting Started:
     - Introduction: setup/index.md
-    - Kit Components: lessons/05-kit-components.md
+    - Kit Components: setup/05-kit-components.md
     - Purchasing Kits: setup/breadboard-kits.md
     - Generating Lessons: setup/generating-lessons.md
   - Lessons:
