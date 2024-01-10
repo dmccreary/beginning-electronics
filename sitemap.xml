@@ -2,67 +2,107 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/</loc>
-         <lastmod>2024-01-09</lastmod>
+         <lastmod>2024-01-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/contact/</loc>
-         <lastmod>2024-01-09</lastmod>
+         <lastmod>2024-01-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/license/</loc>
+         <lastmod>2024-01-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/lessons/</loc>
-         <lastmod>2024-01-09</lastmod>
+         <lastmod>2024-01-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/lessons/05-kit-components/</loc>
-         <lastmod>2024-01-09</lastmod>
+         <lastmod>2024-01-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/lessons/08-breadboard/</loc>
-         <lastmod>2024-01-09</lastmod>
+         <lastmod>2024-01-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/lessons/09-power/</loc>
-         <lastmod>2024-01-09</lastmod>
+         <lastmod>2024-01-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/lessons/10-led-circuit/</loc>
-         <lastmod>2024-01-09</lastmod>
+         <lastmod>2024-01-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/lessons/11-buttons/</loc>
-         <lastmod>2024-01-09</lastmod>
+         <lastmod>2024-01-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/lessons/12-and-buttons/</loc>
-         <lastmod>2024-01-09</lastmod>
+         <lastmod>2024-01-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/lessons/13-or-buttons/</loc>
-         <lastmod>2024-01-09</lastmod>
+         <lastmod>2024-01-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/lessons/80-rc-circuit/</loc>
+         <lastmod>2024-01-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/setup/</loc>
-         <lastmod>2024-01-09</lastmod>
+         <lastmod>2024-01-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/setup/breadboard-kits/</loc>
-         <lastmod>2024-01-09</lastmod>
+         <lastmod>2024-01-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/setup/generating-lessons/</loc>
-         <lastmod>2024-01-09</lastmod>
+         <lastmod>2024-01-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/</loc>
+         <lastmod>2024-01-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/breadboard/</loc>
+         <lastmod>2024-01-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/led/</loc>
+         <lastmod>2024-01-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/push-buttons/</loc>
+         <lastmod>2024-01-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/resistors/</loc>
+         <lastmod>2024-01-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/timer/</loc>
+         <lastmod>2024-01-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
