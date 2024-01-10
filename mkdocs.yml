@@ -14,7 +14,6 @@ nav:
     - Generating Lessons: setup/generating-lessons.md
   - Lessons:
     - Introduction: lessons/index.md
-    - Components: lessons/components.md
     - Breadboard: lessons/08-breadboard.md
     - Power: lessons/09-power.md
     - LED Circuit: lessons/10-led-circuit.md
