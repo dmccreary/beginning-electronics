@@ -92,11 +92,11 @@ LEDs have connections from two wires:
 2. A short lead that is connected to the negative side of our circuit.  This
 is called the Cathode.
 
-![](../led-annode-cathode.png)
+![](../img/led-annode-cathode.png)
 
 You can remember this by thinking of a short black cat next to a tall girl who loves the color red.
 
-![](../led-annode-cathode-2.png)
+![](../img/led-annode-cathode-2.png)
 
 Unlike resistors where you can reverse the orientation and still get the same result, LEDs are like one-way streets.  They only allow current to flow in a single direction.
 That means if you get the wires reversed the circuit may not work.
