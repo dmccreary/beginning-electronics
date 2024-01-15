@@ -12,13 +12,13 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/sims/breadboard/">
+        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/kits/buck-converter/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../voltage-regulator/">
       
       
-        <link rel="next" href="../led/">
+        <link rel="next" href="../../license/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Breadboard - Beginning Electronics</title>
+        <title>Buck Converter - Beginning Electronics</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#breadboard-layout" class="md-skip">
+        <a href="#low-cost-buck-converter-kit" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Breadboard
+              Buck Converter
             
           </span>
         </div>
@@ -351,8 +351,6 @@
       
   
   
-    
-  
   
     
     
@@ -369,6 +367,57 @@
       
         
       
+        
+      
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Simulations
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
         
       
     
@@ -379,34 +428,54 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../5v-regulator/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
-    Simulations
+    Kits
   </span>
   
 
             </a>
             
-              <label class="md-nav__link " for="__nav_4">
+              <label class="md-nav__link " for="__nav_5">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Simulations
+            Kits
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voltage-regulator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variable Voltage Regulator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -424,96 +493,122 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Buck Converter
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Breadboard
+    Buck Converter
   </span>
   
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../led/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    LEDs
-  </span>
-  
 
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
-    <li class="md-nav__item">
-      <a href="../push-buttons/" class="md-nav__link">
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#components-needed" class="md-nav__link">
+    Components Needed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-to-build-a-basic-buck-converter" class="md-nav__link">
+    Steps to Build a Basic Buck Converter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-tips" class="md-nav__link">
+    Additional Tips
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-precautions" class="md-nav__link">
+    Safety Precautions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-an-regulator-ic" class="md-nav__link">
+    Finding an Regulator IC
+  </a>
+  
+    <nav class="md-nav" aria-label="Finding an Regulator IC">
+      <ul class="md-nav__list">
         
+          <li class="md-nav__item">
+  <a href="#lm2596-features" class="md-nav__link">
+    LM2596 Features
+  </a>
   
-  <span class="md-ellipsis">
-    Push Buttons
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../resistors/" class="md-nav__link">
+</li>
         
+          <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    Applications
+  </a>
   
-  <span class="md-ellipsis">
-    Resistors
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../timer/" class="md-nav__link">
+</li>
         
+          <li class="md-nav__item">
+  <a href="#design-considerations" class="md-nav__link">
+    Design Considerations
+  </a>
   
-  <span class="md-ellipsis">
-    555 Timer
-  </span>
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternatives" class="md-nav__link">
+    Alternatives
+  </a>
   
-
-      </a>
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#price" class="md-nav__link">
+    Price
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -521,55 +616,6 @@
             
           </ul>
         </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../kits/5v-regulator/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Kits
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
       
     </li>
   
@@ -633,6 +679,90 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#components-needed" class="md-nav__link">
+    Components Needed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-to-build-a-basic-buck-converter" class="md-nav__link">
+    Steps to Build a Basic Buck Converter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-tips" class="md-nav__link">
+    Additional Tips
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-precautions" class="md-nav__link">
+    Safety Precautions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-an-regulator-ic" class="md-nav__link">
+    Finding an Regulator IC
+  </a>
+  
+    <nav class="md-nav" aria-label="Finding an Regulator IC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lm2596-features" class="md-nav__link">
+    LM2596 Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    Applications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-considerations" class="md-nav__link">
+    Design Considerations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternatives" class="md-nav__link">
+    Alternatives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#price" class="md-nav__link">
+    Price
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -649,9 +779,112 @@
   
 
 
-<h1 id="breadboard-layout">Breadboard Layout</h1>
-<p><a href="https://editor.p5js.org/dmccreary/sketches/gZCJQoLdf">1/2 Size Breadboard Layout</a> - note that the power rails, main section and labels are all rendered using vector graphics drawing</p>
-<p><a href="https://editor.p5js.org/dmccreary/sketches/6BlWx729A">Resistors, Buttons and LEDs on Breadboard</a></p>
+<h1 id="low-cost-buck-converter-kit">Low Cost Buck Converter Kit</h1>
+<p>Creating a low-cost buck converter can be achieved with a basic set of components and a straightforward design. Here's a simple approach:</p>
+<h3 id="components-needed">Components Needed</h3>
+<ol>
+<li><strong>Inductor:</strong> Choose an inductor with a suitable current rating and inductance value for your desired output current and voltage.</li>
+<li><strong>Switch (Transistor):</strong> A MOSFET or a similar transistor can be used as the switch.</li>
+<li><strong>Diode:</strong> A Schottky diode is often preferred due to its low forward voltage drop.</li>
+<li><strong>Capacitor:</strong> For smoothing the output voltage. The value depends on your load and desired ripple.</li>
+<li><strong>Resistors:</strong> For setting up the feedback network if you're using a regulator IC.</li>
+</ol>
+<h3 id="steps-to-build-a-basic-buck-converter">Steps to Build a Basic Buck Converter</h3>
+<ol>
+<li><strong>Circuit Design:</strong> Start with a basic buck converter schematic. You can find many simple designs online.</li>
+<li><strong>Choose the Right Components:</strong> Ensure the inductor, capacitor, and transistor can handle the input voltage and desired output current.</li>
+<li><strong>Assembly:</strong> Solder the components onto a breadboard or a PCB. Pay attention to the polarity of the components like the diode and capacitor.</li>
+<li><strong>Testing:</strong> Before connecting to the actual load, test the output voltage with a multimeter. Adjust the duty cycle of the switch (transistor) to get the desired output voltage.</li>
+</ol>
+<h3 id="additional-tips">Additional Tips</h3>
+<ul>
+<li><strong>Use a Regulator IC:</strong> For better stability and ease of use, consider using a buck regulator IC. These ICs often require fewer external components and include built-in protection features.</li>
+<li><strong>Heat Management:</strong> Ensure your transistor and inductor can dissipate heat efficiently, especially in higher current applications.</li>
+<li><strong>PCB Layout:</strong> If designing a PCB, pay attention to the layout for minimizing noise and interference.</li>
+</ul>
+<h3 id="safety-precautions">Safety Precautions</h3>
+<ul>
+<li>Always start with a lower input voltage during initial testing.</li>
+<li>Be cautious about the polarity and ratings of the components to prevent damage.</li>
+</ul>
+<p>This is a very basic guideline. If you're new to electronics, it might be helpful to follow a detailed tutorial or a kit first. Remember, the complexity can vary based on the specifications of your desired output voltage and current.</p>
+<h2 id="finding-an-regulator-ic">Finding an Regulator IC</h2>
+<p>Please suggest an IC that can be used as a regulator for a buck converter.</p>
+<p>ChatGPT</p>
+<p>ChatGPT</p>
+<p>A commonly used and widely available integrated circuit (IC) for a buck converter is the LM2596. This IC is popular for its ease of use, efficiency, and versatility. Here are some key features of the LM2596:</p>
+<h3 id="lm2596-features">LM2596 Features</h3>
+<ol>
+<li><strong>Adjustable Output Voltage:</strong> It typically offers an output voltage range that can be adjusted from 1.23 V to 37 V.</li>
+<li><strong>High Efficiency:</strong> It provides up to 92% efficiency, which is quite good for many applications.</li>
+<li><strong>Current Capability:</strong> It can handle up to 3A of output current, making it suitable for a variety of medium-power applications.</li>
+<li><strong>Thermal Overload Protection:</strong> The IC includes thermal shutdown and current limit protection, enhancing its safety and reliability.</li>
+<li><strong>Input Voltage Range:</strong> It can handle an input voltage range typically from 4.5 V to 40 V.</li>
+<li><strong>Frequency:</strong> The switching frequency is around 150 kHz, which strikes a balance between efficiency and the size of external components.</li>
+</ol>
+<h3 id="applications">Applications</h3>
+<ul>
+<li>The LM2596 is ideal for DIY projects, battery chargers, powering LEDs, and in any application where you need to step down a higher voltage to a lower voltage efficiently.</li>
+</ul>
+<h3 id="design-considerations">Design Considerations</h3>
+<ul>
+<li>When designing a circuit with the LM2596, you need to consider the choice of inductor and capacitors for optimal performance and stability. The datasheet usually provides guidance on how to select these components.</li>
+<li>Also, consider the thermal aspects of your design, especially if you are drawing close to the maximum current rating.</li>
+</ul>
+<h3 id="alternatives">Alternatives</h3>
+<ul>
+<li>If the LM2596 does not meet your specific requirements, there are other options like the LM2576, MP1584EN, or the more advanced and feature-rich chips from manufacturers like Texas Instruments, Analog Devices, and ON Semiconductor.</li>
+</ul>
+<p>Always refer to the datasheet of the IC for detailed information and application notes. This will help you understand the limitations and capabilities of the IC for your specific application.</p>
+<p><a href="https://www.ti.com/lit/ds/symlink/lm2596.pdf">LM2596 Data Sheet</a></p>
+<p>The image above is a buck board with an LM2596 IC on it. Please identify all the components in the image and what they are used for.</p>
+<p><img alt="" src="buck-board.png" /></p>
+<p>The image you've provided appears to be of a commercially produced buck converter module that uses the LM2596 regulator IC. Here's a list of the visible components and their typical uses:</p>
+<ol>
+<li>
+<p><strong>LM2596 IC:</strong> The large black component with five legs on one side is the LM2596 voltage regulator IC. It's the main component that controls the conversion process.</p>
+</li>
+<li>
+<p><strong>Input Capacitor:</strong> The large cylindrical component labeled "100 VTP 470" on the left is an electrolytic capacitor, likely used to filter the input voltage to the buck converter. The "100" may indicate the voltage rating, and "470" likely indicates the capacitance in microfarads (μF).</p>
+</li>
+<li>
+<p><strong>Output Capacitor:</strong> Similar to the input capacitor, the other large cylindrical component on the right near the out is also an electrolytic capacitor used to filter the output voltage of the buck converter.</p>
+</li>
+<li>
+<p><strong>Inductor:</strong> The large, square, metallic component with the "470" on it is the inductor. This is a crucial component in a buck converter that stores and releases energy to smooth out the current flow and stabilize the output voltage.</p>
+</li>
+<li>
+<p><strong>Diode:</strong> The small black component below the regulator labeled SS34 is likely a Schottky diode, which provides a path for current when the switching transistor inside the LM2596 is off, preventing reverse current that could damage the IC or reduce efficiency.</p>
+</li>
+<li>
+<p><strong>Potentiometer:</strong> The blue component labeled "W103" with a screw on top is a potentiometer, which is used to set the output voltage. By turning the screw, the resistance changes, which adjusts the output voltage.</p>
+</li>
+<li>
+<p><strong>Feedback Resistors:</strong> While not clearly labeled, there are typically a couple of small resistors that form a voltage divider network for the feedback loop. This helps the LM2596 regulate the output voltage.</p>
+</li>
+<li>
+<p><strong>Rectification Diode (Not visible):</strong> Usually, there's a diode involved in the buck conversion process, but it might not be visible in this image. It would typically be used for rectification, ensuring current flows in the proper direction.</p>
+</li>
+<li>
+<p><strong>Heat Sink:</strong> The large metal area around the LM2596 IC is a heat sink to dissipate heat generated by the IC during operation.</p>
+</li>
+<li>
+<p><strong>SMD Components:</strong> There are several small, surface-mounted devices (SMDs) that could be additional capacitors, resistors, or diodes to support the circuit's stability and performance.</p>
+</li>
+<li>
+<p><strong>Input/Output Terminals:</strong> The "IN+" and "OUT+" labels indicate the input and output terminals for the voltage supply and the voltage out to the load, respectively.</p>
+</li>
+<li>
+<p><strong>LED Indicator (Not visible):</strong> Some modules also include an LED indicator to signal when the device is powered, though it's not visible in this image.</p>
+</li>
+<li>
+<p><strong>Printed Circuit Board (PCB):</strong> All these components are mounted on a PCB, which provides the electrical connections between them according to the buck converter circuit design.</p>
+</li>
+</ol>
+<p>This module is designed to make it easy for users to incorporate a buck converter into their projects without having to design and build the circuit from scratch. Users can easily adjust the output voltage to their desired level by turning the potentiometer, and connect their input and output through the provided terminals.</p>
+<h2 id="price">Price</h2>
+<p>4 for $13 free shipping</p>
+<p><img alt="" src="qty-4.png" /></p>
 
 
 
@@ -679,7 +912,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction" rel="prev">
+          <a href="../voltage-regulator/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Variable Voltage Regulator" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -689,20 +922,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Introduction
+                Variable Voltage Regulator
               </div>
             </div>
           </a>
         
         
           
-          <a href="../led/" class="md-footer__link md-footer__link--next" aria-label="Next: LEDs" rel="next">
+          <a href="../../license/" class="md-footer__link md-footer__link--next" aria-label="Next: License" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                LEDs
+                License
               </div>
             </div>
             <div class="md-footer__button md-icon">

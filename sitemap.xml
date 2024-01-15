@@ -16,6 +16,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/kits/5v-regulator/</loc>
+         <lastmod>2024-01-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/kits/buck-converter/</loc>
+         <lastmod>2024-01-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/kits/voltage-regulator/</loc>
+         <lastmod>2024-01-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/beginning-electronics/lessons/</loc>
          <lastmod>2024-01-15</lastmod>
          <changefreq>daily</changefreq>
@@ -77,6 +92,11 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/setup/generating-lessons/</loc>
+         <lastmod>2024-01-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/setup/power-supplies/</loc>
          <lastmod>2024-01-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
