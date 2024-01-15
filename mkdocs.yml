@@ -31,7 +31,7 @@ nav:
     - Resistors: sims/resistors.md
     - 555 Timer: sims/timer.md
   - Kits:
-    - 5v Regulator: kits/5v-regulator/index.md
+    - 5-Volt Regulator: kits/5v-regulator/index.md
     - Variable Voltage Regulator: kits/voltage-regulator/index.md
     - Buck Converter: kits/buck-converter/index.md
   - License: license.md

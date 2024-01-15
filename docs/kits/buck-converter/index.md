@@ -1,4 +1,6 @@
-# Low Cost Buck Converter Kit
+# Low-Cost Buck Converter Kit
+
+![](./buck-board.png)
 
 Creating a low-cost buck converter can be achieved with a basic set of components and a straightforward design. Here's a simple approach:
 
