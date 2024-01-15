@@ -10,7 +10,7 @@ packs can then be connected to
 
 ##
 
-![](../img/breadboard-power.png)
+![](../img/breadboard-power.jpeg)
 
 ![](../img/bb-power.png)
 
