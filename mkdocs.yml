@@ -10,6 +10,7 @@ nav:
   - Getting Started:
     - Introduction: setup/index.md
     - Kit Components: setup/05-kit-components.md
+    - Power Supplies: setup/power-supplies.md
     - Purchasing Kits: setup/breadboard-kits.md
     - Generating Lessons: setup/generating-lessons.md
   - Lessons:
@@ -29,6 +30,10 @@ nav:
     - Push Buttons: sims/push-buttons.md
     - Resistors: sims/resistors.md
     - 555 Timer: sims/timer.md
+  - Kits:
+    - 5v Regulator: kits/5v-regulator/index.md
+    - Variable Voltage Regulator: kits/voltage-regulator/index.md
+    - Buck Converter: kits/buck-converter/index.md
   - License: license.md
   - Contact: contact.md
  
