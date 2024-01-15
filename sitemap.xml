@@ -16,6 +16,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/kits/</loc>
+         <lastmod>2024-01-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/beginning-electronics/kits/5v-regulator/</loc>
          <lastmod>2024-01-15</lastmod>
          <changefreq>daily</changefreq>
