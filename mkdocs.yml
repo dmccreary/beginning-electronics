@@ -29,7 +29,7 @@ nav:
     - Breadboard: sims/breadboard.md
     - LEDs: sims/led.md
     - Push Buttons: sims/push-buttons.md
-    - Resistors: sims/resistors.md
+    - Resistors: sims/resistors/index.md
     - 555 Timer: sims/timer.md
   - Kits:
     - Introduction: kits/index.md
