@@ -126,11 +126,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/sims/led/</loc>
-         <lastmod>2024-01-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/push-buttons/</loc>
          <lastmod>2024-01-17</lastmod>
          <changefreq>daily</changefreq>
@@ -141,7 +136,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/sims/resistors/</loc>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/breadboard/</loc>
+         <lastmod>2024-01-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/led/</loc>
+         <lastmod>2024-01-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/led-resistor-calc/</loc>
+         <lastmod>2024-01-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/resistor/</loc>
          <lastmod>2024-01-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
