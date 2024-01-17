@@ -3,8 +3,10 @@
 ![](./draw-resistors.png)
 
 [Draw Resistors MicroSim](./draw-resistors.html){ .md-button .md-button--primary }
+[Edit MicroSim](https://editor.p5js.org/dmccreary/sketches/0-_CXuiVK)
 
-[](./nearest-resistor.html)
+[Nearest Resistor](./nearest-resistor.html){ .md-button .md-button--primary }
+[Edit](https://editor.p5js.org/dmccreary/sketches/xFSiXFkfd)
 
 ## Drawing Resistors
 
