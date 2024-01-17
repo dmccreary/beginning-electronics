@@ -26,11 +26,12 @@ nav:
     - RC Circuit: lessons/80-rc-circuit.md
   - Simulations:
     - Introduction: sims/index.md
-    - Breadboard: sims/breadboard.md
+    - Breadboards: sims/breadboard/index.md
     - LEDs: sims/led.md
     - Push Buttons: sims/push-buttons.md
-    - Resistors: sims/resistors/index.md
+    - Resistors: sims/resistor/index.md
     - 555 Timer: sims/timer.md
+    - LED Resistor Calculator: sims/led-resistor-calc/index.md
   - Kits:
     - Introduction: kits/index.md
     - 5-Volt Regulator: kits/5v-regulator/index.md
