@@ -49,7 +49,6 @@ function drawLED(x, y, diameter, color, state) {
   // Drawing the circle with vertices
   for (let i = 0; i < 18; i++) {
     let angle = map(i, 0, 20, 0, TWO_PI);
-    console.log(angle);
     let x = cos(angle) * diameter / 2;
     let y = sin(angle) * diameter / 2;
     vertex(x, y);
