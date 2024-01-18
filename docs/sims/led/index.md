@@ -51,10 +51,11 @@ function setup() {
   text("off", 5, row_height*2)
 }
 
+// Draw the top view of a round LED with a flat edge for the cathode on the bottom
 function drawLED(x, y, diameter, color, state) {
   push();
   translate(x, y);
-  // calculated by eye
+  // calculated by eye to make the flat edge on the bottom
   rotate(2.045);
   
   // Determine brightness based on the state
@@ -65,7 +66,7 @@ function drawLED(x, y, diameter, color, state) {
   strokeWeight(2);
   fill(fill_color);
   beginShape();
-  // Drawing the circle with vertices
+  // Drawing the circle with 18 vertices
   for (let i = 0; i < 18; i++) {
     let angle = map(i, 0, 20, 0, TWO_PI);
     let x = cos(angle) * diameter / 2;

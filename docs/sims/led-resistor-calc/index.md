@@ -1,4 +1,4 @@
-# MicroSim Template
+# LED Resistor Calculator
 
 <figure markdown>
    ![Image Name](./image.png){ width="400" }
@@ -6,6 +6,28 @@
 </figure>
 
 [Link to Demo](./template.html){ .md-button .md-button--primary }
+
+## About this MicroSim
+
+This MicroSim will allow us to select the right resistor for an LED circuit.
+The user will select:
+
+1. The power supply voltage
+2. The LED type
+3. The brightness desired (very dim to max brightness)
+
+The MicroSim will then suggest the correct resistor to use.
+
+## Background
+
+When we have an LED circuit, we frequently need to select a fixed resistor to
+limit the flow of current through the LED.  Many of our projects use
+a 3-volt battery or a 3.3-volt power supply.  Doing an approximate calculation
+of the current needed to make a standard LED work in these conditions is pretty
+simple.  If we use a standard red LED a 220-ohm resistor will work in most cases.
+
+We can use Ohm's law to calculate the current.  Let's pick a 3.3-volt power supply and
+a red LED.
 
 ## About this MicroSim
 
