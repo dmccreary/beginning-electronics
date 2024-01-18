@@ -1,11 +1,13 @@
 # LED Resistor Calculator
 
 <figure markdown>
-   ![Image Name](./image.png){ width="400" }
-   <figcaption>Figure caption.</figcaption>
+   ![Image Name](./led-resistor-calc.png){ width="400" }
+   <figcaption>LED Resistor Calculator</figcaption>
 </figure>
 
-[Link to Demo](./template.html){ .md-button .md-button--primary }
+[Run the LED Resistor Calculator MicroSim](./led-resistor-calc.html){ .md-button .md-button--primary }
+[Edit this MicroSim](https://editor.p5js.org/dmccreary/sketches/IoMwFBIi2)
+
 
 ## About this MicroSim
 
