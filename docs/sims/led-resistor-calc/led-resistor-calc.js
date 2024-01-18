@@ -1,3 +1,4 @@
+// LED resistor calculator MicroSim
 let voltageSlider, voltageDropSlider, currentSlider;
 let resistorValue, resistorBands;
 let voltage, voltageDrop, current;
@@ -138,6 +139,3 @@ function findClosestStandardResistor(inputOhms) {
 
   return closest;
 }
-    
-    pop();
-  }
