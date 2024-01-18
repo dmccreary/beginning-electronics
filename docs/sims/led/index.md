@@ -1,11 +1,12 @@
 # Draw LEDs
 
 <figure markdown>
-   ![Image Name](./led-top-view-test.png){ width="400" }
+![LED Top View Test](./led-top-view-test.png){ width="400" }
    <figcaption>Draw LED top view test.</figcaption>
 </figure>
 
-[Run LED Top View Test MicroSim](./led.html) { .md-button .md-button--primary }
+[Run LED Top View Test MicroSim](./led.html){ .md-button .md-button--primary }
+
 [Edit the MicroSim](https://editor.p5js.org/dmccreary/sketches/McnocOgc3)
 
 We will simulate the top view of an LED by drawing
