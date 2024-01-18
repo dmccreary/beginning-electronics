@@ -48,7 +48,7 @@ function draw() {
   // Calculate and display resistor value
   textSize(16);
   text("Ideal Resistor Value: " + idealResistorValue.toFixed(0) + " Ω", 20, 140);
-  text("Nearist Resistor: " + resistorValue.toFixed(0) + " Ω", 20, 160);
+  text("Nearest Resistor: " + resistorValue.toFixed(0) + " Ω", 20, 160);
   
   // Resistor Colors
   textSize(12);
@@ -62,7 +62,6 @@ function draw() {
   text("Band 1 Color: " + resistorBands[0], 120, 190);
   text("Band 2 Color: " + resistorBands[1], 120, 210);
   text("Multiplier: " + resistorBands[2], 120, 230);
-
 
   // Display resistor bands
   drawResistor(280, 160, 150, 50, resistorBands);
@@ -118,17 +117,14 @@ function drawResistor(x, y, w, h, bands) {
 
 function findClosestStandardResistor(inputOhms) {
   const e12 = [1.0, 1.2, 1.5, 1.8, 2.2, 2.7, 3.3, 3.9, 4.7, 5.6, 6.8, 8.2];
-
   let standardValues = [];
   for (let factor = 0.1; factor <= 1000000; factor *= 10) {
     e12.forEach(value => {
       standardValues.push(value * factor);
     });
   }
-
   let closest = standardValues[0];
   let minDiff = Math.abs(inputOhms - closest);
-
   for (let i = 1; i < standardValues.length; i++) {
     let diff = Math.abs(inputOhms - standardValues[i]);
     if (diff < minDiff) {
@@ -136,6 +132,5 @@ function findClosestStandardResistor(inputOhms) {
       closest = standardValues[i];
     }
   }
-
   return closest;
 }
