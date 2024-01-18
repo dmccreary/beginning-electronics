@@ -756,7 +756,8 @@ we will simulate the brightness of each LED with a current.</p>
 <span class="normal">56</span>
 <span class="normal">57</span>
 <span class="normal">58</span>
-<span class="normal">59</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// draw the top view of an LED using a circle with the</span>
+<span class="normal">59</span>
+<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// draw the top view of an LED using a circle with the</span>
 <span class="c1">// cathode as a flat edge on the bottom</span>
 
 <span class="c1">// test grid dimensions</span>
@@ -790,10 +791,11 @@ we will simulate the brightness of each LED with a current.</p>
 <span class="w">  </span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="nx">row_height</span><span class="o">*</span><span class="mf">2</span><span class="p">)</span>
 <span class="p">}</span>
 
+<span class="c1">// Draw the top view of a round LED with a flat edge for the cathode on the bottom</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">drawLED</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">diameter</span><span class="p">,</span><span class="w"> </span><span class="nx">color</span><span class="p">,</span><span class="w"> </span><span class="nx">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">push</span><span class="p">();</span>
 <span class="w">  </span><span class="nx">translate</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">);</span>
-<span class="w">  </span><span class="c1">// calculated by eye</span>
+<span class="w">  </span><span class="c1">// calculated by eye to make the flat edge on the bottom</span>
 <span class="w">  </span><span class="nx">rotate</span><span class="p">(</span><span class="mf">2.045</span><span class="p">);</span>
 
 <span class="w">  </span><span class="c1">// Determine brightness based on the state</span>
@@ -804,7 +806,7 @@ we will simulate the brightness of each LED with a current.</p>
 <span class="w">  </span><span class="nx">strokeWeight</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
 <span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="nx">fill_color</span><span class="p">);</span>
 <span class="w">  </span><span class="nx">beginShape</span><span class="p">();</span>
-<span class="w">  </span><span class="c1">// Drawing the circle with vertices</span>
+<span class="w">  </span><span class="c1">// Drawing the circle with 18 vertices</span>
 <span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">18</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">map</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">TWO_PI</span><span class="p">);</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cos</span><span class="p">(</span><span class="nx">angle</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">diameter</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
