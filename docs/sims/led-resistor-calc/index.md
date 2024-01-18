@@ -1,7 +1,7 @@
 # LED Resistor Calculator
 
 <figure markdown>
-![Image Name](./led-resistor-calc.png){ width="400" }
+![LED Resistor Calculator](./led-resistor-calc.png){ width="400" }
    <figcaption>LED Resistor Calculator</figcaption>
 </figure>
 
