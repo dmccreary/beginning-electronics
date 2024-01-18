@@ -13,17 +13,17 @@ function setup() {
   // Typical voltage is between 3 and 12 volts
   voltageSlider = createSlider(3, 12, 3.3, 0.1);
   voltageSlider.size(270);
-  voltageSlider.position(200, 20);
+  voltageSlider.position(200, 30);
   
   // Typical LED voltage drops
   voltageDropSlider = createSlider(1.7, 3.3, 2.2, 0.1);
   voltageDropSlider.size(270);
-  voltageDropSlider.position(200, 60);
+  voltageDropSlider.position(200, 70);
   
   // Desired current in milliamps
   currentSlider = createSlider(2, 20, 5, 1);
   currentSlider.size(270);
-  currentSlider.position(200, 100);
+  currentSlider.position(200, 110);
 }
 
 function draw() {
