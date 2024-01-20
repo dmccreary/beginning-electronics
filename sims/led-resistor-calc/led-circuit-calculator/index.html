@@ -12,12 +12,12 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/sims/led-circuit-calculator/">
+        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/sims/led-resistor-calc/led-circuit-calculator/">
       
       
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
@@ -26,10 +26,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.30068a00.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.30068a00.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
       
       
 
@@ -48,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -89,7 +89,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Beginning Electronics" class="md-header__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+    <a href="../../.." title="Beginning Electronics" class="md-header__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -195,7 +195,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Beginning Electronics" class="md-nav__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+    <a href="../../.." title="Beginning Electronics" class="md-nav__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -224,7 +224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -269,7 +269,7 @@
         
   
   
-    <a href="../../setup/" class="md-nav__link">
+    <a href="../../../setup/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -326,7 +326,7 @@
         
   
   
-    <a href="../../lessons/" class="md-nav__link">
+    <a href="../../../lessons/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -387,7 +387,7 @@
         
   
   
-    <a href="../" class="md-nav__link">
+    <a href="../../" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -440,7 +440,7 @@
         
   
   
-    <a href="../../kits/" class="md-nav__link">
+    <a href="../../../kits/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -465,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../license/" class="md-nav__link">
+      <a href="../../../license/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -484,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../contact/" class="md-nav__link">
+      <a href="../../../contact/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -567,15 +567,54 @@ we need to figure out what value of resistor to use.</p>
 </ol>
 <p>To calculate the resistor needed,  we subtract
 the voltage drop across the LED from the source voltage
-and apply Ohm's law.  So our forumula is:</p>
+and apply Ohm's law.  So our formula is:</p>
 <p>Resistance = (Vsource - VLED) / Current</p>
 <p>Here are the voltage drops for different colors of LEDs:</p>
-<ol>
-<li><strong>Red:</strong> : 1.7V to 2.0V</li>
-<li><strong>Yellow:</strong> 2.0V</li>
-<li><strong>Green:</strong> 2.2V
-4 <strong>Blue and White:</strong> 3V to 3.5V</li>
-</ol>
+<table>
+<thead>
+<tr>
+<th>LED Color</th>
+<th>Voltage Drop</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Red</td>
+<td>1.8 - 2.2</td>
+<td>Used in indicator and alarm applications</td>
+</tr>
+<tr>
+<td>Amber</td>
+<td>2.0 - 2.1</td>
+<td>Used in automotive and signal lighting</td>
+</tr>
+<tr>
+<td>Yellow</td>
+<td>2.1 - 2.2</td>
+<td>Common in display panels and traffic lights</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>2.0 - 3.5</td>
+<td>Bright, used in displays and decorative lighting</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>2.5 - 3.5</td>
+<td>High-brightness, used in various applications</td>
+</tr>
+<tr>
+<td>White</td>
+<td>3.0 - 3.5</td>
+<td>High brightness, used in general illumination</td>
+</tr>
+</tbody>
+</table>
+<p>The electronic component manufacturer <a href="https://www.vishay.com/en/leds/">Vishay</a> has detailed data sheets on individual LEDs.  Here is a web page of their <a href="https://www.vishay.com/en/leds/red/">red LEDs</a>.  Note that in the data sheets for any
+given component, the voltage drops are not specified exactly.  Due to variations
+in the manufacturing process, only a range of voltage drops is specified with a min, average and max value.</p>
+<p><img alt="" src="../forward-voltage-ranges.png" /></p>
 <h2 id="sample-genai-prompt">Sample GenAI Prompt</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -645,10 +684,10 @@ and apply Ohm's law.  So our forumula is:</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LED Resistor Calculator</title>
+    <script>
+        function calculateResistance() {
+            var sourceVoltage = document.getElementById('sourceVoltage').value;
+            var ledVoltageDrop = document.getElementById('ledVoltageDrop').value;
+            var current = document.getElementById('current').value;
+
+            // Perform the calculation
+            var resistance = (sourceVoltage - ledVoltageDrop) / current;
+
+            // Display the result in the page
+            document.getElementById('result').innerHTML = "Required Resistance: " + resistance.toFixed(2) + " Ohms";
+        }
+    </script>
+</head>
+<body>
+    <h1>LED Resistor Calculator</h1>
+    <form>
+        <label for="sourceVoltage">Source Voltage:</label><br>
+        <input type="number" id="sourceVoltage" name="sourceVoltage"><br>
+
+        <label for="ledVoltageDrop">LED Voltage Drop:</label><br>
+        <input type="number" id="ledVoltageDrop" name="ledVoltageDrop"><br>
+
+        <label for="current">Current (in Amperes):</label><br>
+        <input type="number" id="current" name="current" step="0.001"><br>
+
+        <button type="button" onclick="calculateResistance()" style="background-color: green; color: white;">Calculate Resistance</button>
+    </form>
+
+    <p id="result"></p>
+</body>
+</html>
