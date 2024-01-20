@@ -13,16 +13,26 @@ We often know three facts:
 
 To calculate the resistor needed,  we subtract
 the voltage drop across the LED from the source voltage
-and apply Ohm's law.  So our forumula is:
+and apply Ohm's law.  So our formula is:
 
 Resistance = (Vsource - VLED) / Current
 
 Here are the voltage drops for different colors of LEDs:
 
-1. **Red:** : 1.7V to 2.0V
-2. **Yellow:** 2.0V
-3. **Green:** 2.2V
-4 **Blue and White:** 3V to 3.5V
+| LED Color | Voltage Drop| Notes                                           |
+|-----------|-------------|-------------------------------------------------|
+| Red       | 1.8 - 2.2   | Used in indicator and alarm applications        |
+| Amber     | 2.0 - 2.1   | Used in automotive and signal lighting          |
+| Yellow    | 2.1 - 2.2   | Common in display panels and traffic lights     |
+| Green     | 2.0 - 3.5   | Bright, used in displays and decorative lighting|
+| Blue      | 2.5 - 3.5   | High-brightness, used in various applications   |
+| White     | 3.0 - 3.5   | High brightness, used in general illumination   |
+
+The electronic component manufacturer [Vishay](https://www.vishay.com/en/leds/) has detailed data sheets on individual LEDs.  Here is a web page of their [red LEDs](https://www.vishay.com/en/leds/red/).  Note that in the data sheets for any
+given component, the voltage drops are not specified exactly.  Due to variations
+in the manufacturing process, only a range of voltage drops is specified with a min, average and max value.
+
+![](./forward-voltage-ranges.png)
 
 ## Sample GenAI Prompt
 
