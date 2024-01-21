@@ -74,11 +74,33 @@ We can find battery cases on eBay for about $1.10 each in quantity 10.
 [Voltage regular Kit](https://www.ebay.com/itm/224688704456)
 
 A basic LM7805 voltage regulator (very inexpensive), capacitors, and a power source greater than 5V.
-    -   **Method**: The LM7805 takes an input voltage (up to 35V) and regulates it down to 5V. It's a bit more technical but very reliable.
-5.  **Buck Converter Module**:
 
-    -   **Materials**: A buck converter module (available online for a low cost).
-    -   **Method**: These modules can take a range of input voltages and step them down to a stable 5V output. They are efficient and adjustable.
+The LM7805 takes an input voltage (up to 35V) and regulates it down to 5V. It's a bit more technical but very reliable.
+
+## Buck Converters
+
+![](../img/buck-converter.png)
+
+[eBay listing for Adjustable Buck Converted With Voltage and Current Display](https://www.ebay.com/itm/164693457597)
+
+A buck converter module converts a high-voltage DC power supply
+to a lower DC voltage.  They are low-cost (usually a few dollars)
+but can help you reuse old laptop power supplies or transformers
+used for powering and charging devices.
+
+Buck converters come in several types.
+
+1. Fixed voltage output (typically 5 volts)
+2. Adjustable output - where you change a potentiometer to adjust the output voltage
+3. Adjustable output with voltage and current display
+
+Some higher-end buck converters also have a display to show you what
+the current output voltage setting. 
+
+[$1.50 buck converter that converts 9, 12 or 18 volts down to 5 vold](https://www.ebay.com/itm/114531360139)
+
+[Adjustable buck converter](https://www.ebay.com/itm/225810945034)
+
 6.  **DIY Approach with Components**:
 
     -   **Materials**: Basic electronic components like resistors, diodes, capacitors, and a transformer.
