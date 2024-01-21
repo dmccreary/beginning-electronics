@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#low-cost-power-supplies" class="md-skip">
+        <a href="#finding-the-right-power-supplies" class="md-skip">
           Skip to content
         </a>
       
@@ -375,6 +375,47 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#battery-based-power-supply" class="md-nav__link">
+    Battery-Based Power Supply
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#short-circuit-and-thermal-protection" class="md-nav__link">
+    Short Circuit and Thermal Protection
+  </a>
+  
+    <nav class="md-nav" aria-label="Short Circuit and Thermal Protection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-regulators" class="md-nav__link">
+    Linear Regulators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-regulators" class="md-nav__link">
+    Switching Regulators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overload-protection" class="md-nav__link">
+    Overload Protection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usb-breadboard-power-supply" class="md-nav__link">
     USB-Breadboard Power Supply
   </a>
@@ -391,13 +432,6 @@
         <li class="md-nav__item">
   <a href="#usb-based-power-supply-and-wall-adapters" class="md-nav__link">
     USB-Based Power Supply and Wall Adapters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#battery-based-power-supply" class="md-nav__link">
-    Battery-Based Power Supply
   </a>
   
 </li>
@@ -748,6 +782,47 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#battery-based-power-supply" class="md-nav__link">
+    Battery-Based Power Supply
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#short-circuit-and-thermal-protection" class="md-nav__link">
+    Short Circuit and Thermal Protection
+  </a>
+  
+    <nav class="md-nav" aria-label="Short Circuit and Thermal Protection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-regulators" class="md-nav__link">
+    Linear Regulators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-regulators" class="md-nav__link">
+    Switching Regulators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overload-protection" class="md-nav__link">
+    Overload Protection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usb-breadboard-power-supply" class="md-nav__link">
     USB-Breadboard Power Supply
   </a>
@@ -764,13 +839,6 @@
         <li class="md-nav__item">
   <a href="#usb-based-power-supply-and-wall-adapters" class="md-nav__link">
     USB-Based Power Supply and Wall Adapters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#battery-based-power-supply" class="md-nav__link">
-    Battery-Based Power Supply
   </a>
   
 </li>
@@ -827,11 +895,47 @@
   
 
 
-<h1 id="low-cost-power-supplies">Low-Cost Power Supplies</h1>
-<p>Creating a 5V DC power supply in the most cost-effective way usually involves using common and inexpensive components. Here are a few methods to try.
-Since the power supply is often the most expensive part of the kit,
+<h1 id="finding-the-right-power-supplies">Finding the Right Power Supplies</h1>
+<p>Our projects need some type of power. A 5V DC power supply is the most cost-effective way to provide power.  These power supplies usually use common and inexpensive components with built-in safety circuits.  Here are a few methods to try.</p>
+<p>Since the power supply is often the most expensive part of the kit,
 it is important to get this component correct.  We suggest
 purchasing a single set of parts to test before you purchase in bulk.</p>
+<p>For younger students who may be prone to short-circuiting their projects,
+we suggest starting with easily replaceable 2x AA battery packs.
+As students get more experience they can move to other power supply options.</p>
+<h2 id="battery-based-power-supply">Battery-Based Power Supply</h2>
+<p>Standard batteries (like AA or AAA) and a battery holder is another good low-cost option.  We combine 2 or 3 batteries to achieve a total of 3 or 4.5 volts.  We like to purchase our batteries in bulk at stores like CostCo.</p>
+<p>We can find battery cases on eBay for about $1.10 each in quantity 10.</p>
+<p><img alt="" src="../../img/battery-case.png" /></p>
+<p><a href="https://www.ebay.com/itm/115975029782">eBay Listing</a></p>
+<p><a href="https://www.ebay.com/sch/i.html?_nkw=10PCS+3x+AA+Black+Battery+Holder+Case">eBay Search for 10PCS 3X AA Black Battery Holder Case</a></p>
+<p>We avoid 9v batteries for beginning students.  If they short circuit the can
+get hot and cause burns.</p>
+<h2 id="short-circuit-and-thermal-protection">Short Circuit and Thermal Protection</h2>
+<p>When selecting a power supply look for systems that provide short-circuit
+and overload protection.  In breadboard power supplies that provide 5V or 3.3V outputs, several types of voltage regulators are commonly used. Here are a few examples:</p>
+<h3 id="linear-regulators">Linear Regulators</h3>
+<ul>
+<li><strong>LM7805</strong>: For 5V output. It's a popular linear regulator providing a fixed output of 5 volts.</li>
+<li><strong>LM317</strong>: An adjustable linear regulator that can be set to output a range of voltages, including 5V and 3.3V, by using external resistors.</li>
+<li><strong>LM1117</strong>: Particularly used for 3.3V applications, it's a low-dropout linear regulator suitable for lower voltage differences between input and output.</li>
+</ul>
+<h3 id="switching-regulators">Switching Regulators</h3>
+<p>These are less common in simple breadboard power supplies due to their complexity but are used when efficiency is a key concern. Examples include the LM2576 (adjustable output) or specific switch-mode modules.</p>
+<h2 id="overload-protection">Overload Protection</h2>
+<p>Most standard voltage regulators include some form of internal protection:</p>
+<ul>
+<li>
+<p><strong>Overcurrent Protection</strong>: This shuts down the regulator if the current exceeds a certain threshold, protecting both the regulator and the circuit from damage due to short circuits or excessive load.</p>
+</li>
+<li>
+<p><strong>Thermal Shutdown</strong>: This protection mechanism turns off the regulator if it gets too hot, preventing damage from overheating.</p>
+</li>
+<li>
+<p><strong>Overvoltage Protection</strong>: Some regulators also include protection against input voltage spikes.</p>
+</li>
+</ul>
+<p>It's important to note that while these features provide a level of safety, they are not infallible, and additional external protection (like fuses or current limiting resistors) might be advisable in certain applications. Always refer to the specific regulator's datasheet for detailed information on its capabilities and limitations.</p>
 <h2 id="usb-breadboard-power-supply">USB-Breadboard Power Supply</h2>
 <p><img alt="" src="../../img/breadboard-power.png" /></p>
 <p>Many Beginning Electronics kits come with a breadboard-ready power
@@ -860,12 +964,6 @@ from being used over 750 milliamps to extend their life.</p>
 <a href="https://www.ebay.com/itm/221763962886">Sample eBay Listing for USB Cables</a></p>
 <p>Many schools have old USB connectors sitting around and these can be
 used with some soldering and 22-gauge solid wire hookup cable.</p>
-<h2 id="battery-based-power-supply">Battery-Based Power Supply</h2>
-<p>Standard batteries (like AA or AAA) and a battery holder is another good low-cost option.  We combine 2 or 3 batteries to achieve a total of 3 or 4.5 volts.  We like to purchase our batteries in bulk at stores like CostCo.</p>
-<p>We can find battery cases on eBay for about $1.10 each in quantity 10.</p>
-<p><img alt="" src="../../img/battery-case.png" /></p>
-<p><a href="https://www.ebay.com/itm/115975029782">eBay Listing</a></p>
-<p><a href="https://www.ebay.com/sch/i.html?_nkw=10PCS+3x+AA+Black+Battery+Holder+Case">eBay Search for 10PCS 3X AA Black Battery Holder Case</a></p>
 <h2 id="using-a-voltage-regulator">Using a Voltage Regulator</h2>
 <p><img alt="" src="../../img/lm7805-power-supply-kit.png" /></p>
 <p><a href="https://www.ebay.com/itm/224688704456">Voltage regular Kit</a></p>
