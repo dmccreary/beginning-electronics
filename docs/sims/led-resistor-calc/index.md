@@ -1,6 +1,6 @@
 # LED Resistor Calculator
 
-![LED Resistor Calculator](./led-resistor-calc.png){ width="400" }
+![LED Resistor Calculator](./led-resistor-calc.png){ width="400"}
 
 [Run the LED Resistor Calculator MicroSim](./led-resistor-calc.html){ .md-button .md-button--primary }
 [Edit this MicroSim](https://editor.p5js.org/dmccreary/sketches/IoMwFBIi2)
