@@ -42,15 +42,17 @@ and do a calculation.  This works the first time 99% of the time
 with GPT-4.  Here is the prompt that I used.
 
 ```linenums="0"
-Create an HTML form to calculate the LED resistance.  Title the form: "LED Resistor Calculator".
+Create an HTML form to calculate the LED resistance.
+Title the form: "LED Resistor Calculator".
 The HTML form has three input text fields.
 
 1. "Source Voltage"
 2. "LED Voltage Drop"
 3. "Current"
 
-Add a green button with the label "Calculate Resistance".  When the user clicks the button, calculate the correct resistance and display
-the text on the web page.
+Add a green button with the label "Calculate Resistance".
+When the user clicks the button, calculate the correct
+resistance and display the text on the web page.
 ```
 
 This generates the following HTML form:
