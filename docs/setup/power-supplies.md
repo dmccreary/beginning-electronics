@@ -1,25 +1,79 @@
 # Low-Cost Power Supplies
 
-Creating a 5V DC power supply in the most cost-effective way usually involves using common and inexpensive components. Here are a few methods:
+Creating a 5V DC power supply in the most cost-effective way usually involves using common and inexpensive components. Here are a few methods to try.
+Since the power supply is often the most expensive part of the kit,
+it is important to get this component correct.  We suggest
+purchasing a single set of parts to test before you purchase in bulk.
 
-1.  **USB-Based Power Supply and Wall Adapters**:
+## USB-Breadboard Power Supply
+
+![](../img/breadboard-power.png)
+
+Many Beginning Electronics kits come with a breadboard-ready power
+supply that can be plugged into a USB power supply or a barrel connector.
+If you are just getting started, this might be the best solution.
+
+![](../img/bb-power.png)
+
+These boards have pins that are designed to fit directly into the power
+rails of your breadboard.
+
+![](../img/breadboard-power.jpeg)
+
+[eBay Listing for MB-102 Breadboard Power Supply](https://www.ebay.com/itm/355249060296)
+
+## DC Power Supply with Barrel Connector
+
+![](../img/dc-power-supply.png)
+
+To use these, you must have a USB power or a barrel connector that provides at least 6.5 volts of DC power and no more than 12 volts.  These
+usually have a 5.5mm (outer) x 2.5mm (inner) barrel connector.
+
+![](../img/dc-power-supply-barrel-connector.png)
+
+
+## USB-Based Power Supply and Wall Adapters
 
 ![](../img/usb-wall-charger.png)
 
-    -   **Materials**: A 5V wall adapter, commonly used for charging phones or powering small electronics.
-    -   **Method**: These adapters are readily available and can be inexpensive, especially if you have an old one lying around.
+A 5V wall adapter, commonly used for charging phones or powering small electronics is a good way to get started.  These adapters are readily available and can be inexpensive, especially if you have an old one lying around.  We have found you can purchase 10 of these on eBay for about $12.
 
-3.  **Battery-Based Power Supply**:
+![](../img/wall-chargers.png)
 
-    -   **Materials**: Standard batteries (like AA, AAA, or 9V) and a battery holder.
-    -   **Method**: Combine batteries to achieve a total of 5V. For example, five AA batteries (1.5V each) in series will give you 7.5V, which can then be reduced to 5V using a simple voltage regulator.
-4.  **Using a Voltage Regulator**:
+[eBay 10x 1A USB Wall Charger](https://www.ebay.com/itm/122611108256?var=423019868472)
+
+We suggest getting the multi-color package.
+
+Note that these are listed at 1A but my suggestion is to keep them
+from being used over 750 milliamps to extend their life.
+
+You must also remember to get USB cables for these.
+
+![](../img/usb-to-breadboard.png)
+[Sample eBay Listing for USB Cables](https://www.ebay.com/itm/221763962886)
+
+Many schools have old USB connectors sitting around and these can be
+used with some soldering and 22-gauge solid wire hookup cable.
+
+## Battery-Based Power Supply
+
+Standard batteries (like AA or AAA) and a battery holder is another good low-cost option.  We combine 2 or 3 batteries to achieve a total of 3 or 4.5 volts.  We like to purchase our batteries in bulk at stores like CostCo.
+
+We can find battery cases on eBay for about $1.10 each in quantity 10.
+
+![](../img/battery-case.png)
+
+[eBay Listing](https://www.ebay.com/itm/115975029782)
+
+[eBay Search for 10PCS 3X AA Black Battery Holder Case](https://www.ebay.com/sch/i.html?_nkw=10PCS+3x+AA+Black+Battery+Holder+Case)
+
+## Using a Voltage Regulator
 
 ![](../img/lm7805-power-supply-kit.png)
 
 [Voltage regular Kit](https://www.ebay.com/itm/224688704456)
 
-    -   **Materials**: A basic LM7805 voltage regulator (very inexpensive), capacitors, and a power source greater than 5V.
+A basic LM7805 voltage regulator (very inexpensive), capacitors, and a power source greater than 5V.
     -   **Method**: The LM7805 takes an input voltage (up to 35V) and regulates it down to 5V. It's a bit more technical but very reliable.
 5.  **Buck Converter Module**:
 
