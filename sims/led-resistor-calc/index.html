@@ -593,6 +593,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#draw-resistor" class="md-nav__link">
+    Draw Resistor
+  </a>
+  
+    <nav class="md-nav" aria-label="Draw Resistor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-prompt" class="md-nav__link">
+    Sample Prompt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -747,6 +767,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#draw-resistor" class="md-nav__link">
+    Draw Resistor
+  </a>
+  
+    <nav class="md-nav" aria-label="Draw Resistor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-prompt" class="md-nav__link">
+    Sample Prompt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -773,9 +813,10 @@
 
 <p><a class="md-button md-button--primary" href="led-resistor-calc.html">Run the LED Resistor Calculator MicroSim</a>
 <a href="https://editor.p5js.org/dmccreary/sketches/IoMwFBIi2">Edit this MicroSim</a></p>
+<p>This MicroSim was written up <a href="https://dmccreary.medium.com/building-better-ai-assistants-9fcfe6c6f769">here</a>.</p>
 <h2 id="about-this-microsim">About this MicroSim</h2>
-<p>This MicroSim will allow us to select the right resistor for an LED circuit.
-The user will select:</p>
+<p>This MicroSim will allow us to select the right resistor for an LED circuit.</p>
+<p>The user will select:</p>
 <ol>
 <li>The power supply voltage</li>
 <li>The LED type</li>
@@ -795,16 +836,83 @@ a red LED.</p>
 <p>GPT-4 can easily create HTML forms that take a set of inputs
 and do a calculation.  This works the first time 99% of the time
 with GPT-4.  Here is the prompt that I used.</p>
-<div class="highlight"><pre><span></span><code>Create an HTML form to calculate the LED resistance.  Title the form: &quot;LED Resistor Calculator&quot; with three text fields.
+<div class="highlight"><pre><span></span><code>Create an HTML form to calculate the LED resistance.  Title the form: &quot;LED Resistor Calculator&quot;.
+The HTML form has three input text fields.
 
-1.  &quot;Source Voltage&quot;
+1. &quot;Source Voltage&quot;
 2. &quot;LED Voltage Drop&quot;
 3. &quot;Current&quot;
 
-Add a green button with the label &quot;Calculate Resistance&quot;.  When the user clicks the button, calculate the correct resistance and display the text on the web page.
+Add a green button with the label &quot;Calculate Resistance&quot;.  When the user clicks the button, calculate the correct resistance and display
+the text on the web page.
 </code></pre></div>
 <p>This generates the following HTML form:</p>
 <p><a href="basic-form-2.html">Basic HTML Form for Calculating an LED Resistor</a></p>
+<p>Although this form does work, it has several areas
+that could be improved:</p>
+<ol>
+<li>We can replace the text input forms with sliders.</li>
+<li>The sliders can show reasonable ranges for the values of our classroom.</li>
+<li>The sliders can be labeled with values corresponding to the concepts we want to teach.</li>
+<li>We can show the raw result of resistance and the nearest value of common resistors.</li>
+<li>We can also draw the resistor and include an explanation of how the colors of the bands will match the value we need.</li>
+</ol>
+<p>This MicroSim is somewhat complex.  GPT-4
+can't create it in a single pass without some
+help.  To create the MicroSim we need to break
+it down into some smaller components.  We
+call this process decomposition.  It is a
+fundamental skill in computational thinking. Here
+are two suggested subcontinents.</p>
+<h2 id="draw-resistor">Draw Resistor</h2>
+<p>We can create a GPT-4 prompt that will just focus
+on building a function that draws a resistor
+in the horizontal position.</p>
+<h3 id="sample-prompt">Sample Prompt</h3>
+<div class="highlight"><pre><span></span><code>Create a p5.js sketch that draws a resistor with the correct band colors for any given resistor.
+Create the sketch on a 200x300 canvas.
+Use a text size of 16.
+Create a function called drawHorizResistor() that
+takes the following input parameters:
+
+1. Resistance
+2. X position of the upper left corner
+3. Y position of the upper left corner
+4. Width
+5. Height
+
+Draw a black wire under the resistor.
+
+Make the color of the resistor be tan.
+
+The function will draw the three color
+bands.
+
+1. Band for the first digit
+2. Band for the second digit
+3. Multiplier band
+
+Draw a label for the resistance above
+the resistor rectangle.
+</code></pre></div>
+<p>Here is the code it generated with some
+minor tweaks:</p>
+<p><a href="https://editor.p5js.org/dmccreary/sketches/MyIycMQJe">Run the MicroSim</a></p>
+<p>You can see our <a href="https://chat.openai.com/share/00dec04f-f3d8-4149-9ebe-63fe12eb8856">dialog with GPT-4</a>.</p>
+<p>Reading the code, there are a few items we can adjust.
+For example, the colors can be referenced by name
+and the hex values are not really needed.</p>
+<p>Let's do the same to generate a function
+that will find the closest resistor from
+a list of standard values.</p>
+<div class="highlight"><pre><span></span><code>Create a p5.js sketch that takes an input
+resistance and then returns the closet resistor
+value from a list of standard resistor values.
+
+Create a function called findNearestResistor()
+that takes a single input of resistance.  This
+function will return the nearest resistor value.
+</code></pre></div>
 
 
 
