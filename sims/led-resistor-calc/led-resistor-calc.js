@@ -106,7 +106,8 @@ function ensureIndexInRange(index, array) {
 function drawResistor(x, y, w, h, bands) {
   // Draw the resistor body
   fill("tan");
-  rect(x, y, w, h);
+  // 4th parameter is round corners
+  rect(x, y, w, h, 15);
 
   // Draw the bands
   for (let i = 0; i < bands.length; i++) {
