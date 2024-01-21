@@ -1,9 +1,56 @@
-# Low-Cost Power Supplies
+# Finding the Right Power Supplies
 
-Creating a 5V DC power supply in the most cost-effective way usually involves using common and inexpensive components. Here are a few methods to try.
+Our projects need some type of power. A 5V DC power supply is the most cost-effective way to provide power.  These power supplies usually use common and inexpensive components with built-in safety circuits.  Here are a few methods to try.
+
 Since the power supply is often the most expensive part of the kit,
 it is important to get this component correct.  We suggest
 purchasing a single set of parts to test before you purchase in bulk.
+
+For younger students who may be prone to short-circuiting their projects,
+we suggest starting with easily replaceable 2x AA battery packs.
+As students get more experience they can move to other power supply options.
+
+## Battery-Based Power Supply
+
+Standard batteries (like AA or AAA) and a battery holder is another good low-cost option.  We combine 2 or 3 batteries to achieve a total of 3 or 4.5 volts.  We like to purchase our batteries in bulk at stores like CostCo.
+
+We can find battery cases on eBay for about $1.10 each in quantity 10.
+
+![](../img/battery-case.png)
+
+[eBay Listing](https://www.ebay.com/itm/115975029782)
+
+[eBay Search for 10PCS 3X AA Black Battery Holder Case](https://www.ebay.com/sch/i.html?_nkw=10PCS+3x+AA+Black+Battery+Holder+Case)
+
+We avoid 9v batteries for beginning students.  If they short circuit the can
+get hot and cause burns.
+
+## Short Circuit and Thermal Protection
+
+When selecting a power supply look for systems that provide short-circuit
+and overload protection.  In breadboard power supplies that provide 5V or 3.3V outputs, several types of voltage regulators are commonly used. Here are a few examples:
+
+### Linear Regulators
+
+-   **LM7805**: For 5V output. It's a popular linear regulator providing a fixed output of 5 volts.
+-   **LM317**: An adjustable linear regulator that can be set to output a range of voltages, including 5V and 3.3V, by using external resistors.
+-   **LM1117**: Particularly used for 3.3V applications, it's a low-dropout linear regulator suitable for lower voltage differences between input and output.
+
+### Switching Regulators
+
+These are less common in simple breadboard power supplies due to their complexity but are used when efficiency is a key concern. Examples include the LM2576 (adjustable output) or specific switch-mode modules.
+
+## Overload Protection
+
+Most standard voltage regulators include some form of internal protection:
+
+-   **Overcurrent Protection**: This shuts down the regulator if the current exceeds a certain threshold, protecting both the regulator and the circuit from damage due to short circuits or excessive load.
+
+-   **Thermal Shutdown**: This protection mechanism turns off the regulator if it gets too hot, preventing damage from overheating.
+
+-   **Overvoltage Protection**: Some regulators also include protection against input voltage spikes.
+
+It's important to note that while these features provide a level of safety, they are not infallible, and additional external protection (like fuses or current limiting resistors) might be advisable in certain applications. Always refer to the specific regulator's datasheet for detailed information on its capabilities and limitations.
 
 ## USB-Breadboard Power Supply
 
@@ -55,17 +102,6 @@ You must also remember to get USB cables for these.
 Many schools have old USB connectors sitting around and these can be
 used with some soldering and 22-gauge solid wire hookup cable.
 
-## Battery-Based Power Supply
-
-Standard batteries (like AA or AAA) and a battery holder is another good low-cost option.  We combine 2 or 3 batteries to achieve a total of 3 or 4.5 volts.  We like to purchase our batteries in bulk at stores like CostCo.
-
-We can find battery cases on eBay for about $1.10 each in quantity 10.
-
-![](../img/battery-case.png)
-
-[eBay Listing](https://www.ebay.com/itm/115975029782)
-
-[eBay Search for 10PCS 3X AA Black Battery Holder Case](https://www.ebay.com/sch/i.html?_nkw=10PCS+3x+AA+Black+Battery+Holder+Case)
 
 ## Using a Voltage Regulator
 
