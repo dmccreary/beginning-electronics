@@ -1,9 +1,6 @@
 # LED Resistor Calculator
 
-<figure markdown>
 ![LED Resistor Calculator](./led-resistor-calc.png){ width="400" }
-   <figcaption>LED Resistor Calculator</figcaption>
-</figure>
 
 [Run the LED Resistor Calculator MicroSim](./led-resistor-calc.html){ .md-button .md-button--primary }
 [Edit this MicroSim](https://editor.p5js.org/dmccreary/sketches/IoMwFBIi2)
@@ -136,5 +133,14 @@ Create a function called findNearestResistor()
 that takes a single input of resistance.  This
 function will return the nearest resistor value.
 ```
+
+Here is that function in an application that tests
+various values from 1 ohm to 10 M ohms.
+[Find Nearest Resistor](https://editor.p5js.org/dmccreary/sketches/xFSiXFkfd)
+
+![](./find-nearest-resistor.png)
+
+We also had to modify the function that displayed the text of the resistor to use the "K" and "M" notation.
+
 
 
