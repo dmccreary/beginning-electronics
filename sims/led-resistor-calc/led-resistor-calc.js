@@ -105,6 +105,10 @@ function ensureIndexInRange(index, array) {
 
 function drawResistor(x, y, w, h, bands) {
   // Draw the resistor body
+
+  // Draw the wire below
+  fill('black');
+  rect(x-30, y+20, w+60, 10);
   fill("tan");
   // 4th parameter is round corners
   rect(x, y, w, h, 15);
