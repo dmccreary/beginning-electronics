@@ -2,6 +2,9 @@
 
 ![](../img/breadboard-desc-ebay.png)
 
+One rule of thumb, you can never have enough of these
+breadboards for new projects. Always have a few extra on hand.
+
 I recommend finding low-cost breadboards
 on eBay.  The 1/2 size 400-tie breadboards are
 usually fine for beginning projects.  With a little searching, you can usually find them for under $2 each
