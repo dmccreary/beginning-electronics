@@ -32,6 +32,7 @@ nav:
     - Resistors: sims/resistor/index.md
     - 555 Timer: sims/timer.md
     - LED Resistor Calculator: sims/led-resistor-calc/index.md
+    - Flip Flop: sims/flip-flop/index.md
   - Kits:
     - Introduction: kits/index.md
     - 5-Volt Regulator: kits/5v-regulator/index.md
