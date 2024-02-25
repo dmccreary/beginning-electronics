@@ -1,14 +1,14 @@
 # Variable Power Supply
 
-![](./variable-power-supply.jpg)
+![](./variable-power-supply.jpg){ width="400" }
 [$7 LM317 Adjustable DC Voltage Regulator DIY Kit](https://www.ebay.com/itm/355199915646)
 
-![](./voltage-regulator.png)
+![](./voltage-regulator.png){ width="400" }
 [$17 LM317 Adjustable DC Voltage Regulator DIY Kit With Transformer and Enclosure](https://www.ebay.com/itm/275242338730)
 
-We can build a variable for under $10 from a kit using the powerful LM317 variable voltage regulator.  The LM317 is a simple 3-terminal adjustable regulator circuit
-that is low-cost and very flexible.  It only needs a few capacitors and a resistor
-to work.  The kit we used can use any old transformer you have lying around the house.
+We can build a variable DC Power Supply for under $10 from a kit using the popular [LM317](https://en.wikipedia.org/wiki/LM317) adjustable positive linear voltage regulator.  The LM317 is a simple 3-terminal adjustable regulator circuit
+that is low-cost and flexible.  It only needs a few capacitors and a resistor
+to work.  The kit we used can use any old transformer (both AC and DC) you have lying around the house.
 In this example, I used a very old 20-volt AC transformer from an old appliance that
 was no longer working.
 
