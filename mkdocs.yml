@@ -35,8 +35,8 @@ nav:
     - Flip Flop: sims/flip-flop/index.md
   - Kits:
     - Introduction: kits/index.md
-    - 5-Volt Regulator: kits/5v-regulator/index.md
-    - Variable Voltage Regulator: kits/voltage-regulator/index.md
+    - Variable Power Supply: kits/variable-power-supply/index.md
+    - Fixed 5-Volt Regulator: kits/5v-regulator/index.md
     - Buck Converter: kits/buck-converter/index.md
   - License: license.md
   - Contact: contact.md
