@@ -3,7 +3,11 @@
 ![](./variable-power-supply.jpg)
 ![](./voltage-regulator.png)
 
-We can build a variable for under $10 from a kit using the powerful LM317 variable voltage regulator.  The LM317 is a simple 3-terminal adjustable regulator circuit.
+We can build a variable for under $10 from a kit using the powerful LM317 variable voltage regulator.  The LM317 is a simple 3-terminal adjustable regulator circuit
+that is low-cost and very flexible.  It only needs a few capacitors and a resistor
+to work.  The kit we used can use any old transformer you have lying around the house.
+In this example, I used a very old 20-volt AC transformer from an old appliance that
+was no longer working.
 
 We can see from the [LM317 data sheet](https://www.ti.com/lit/ds/symlink/lm317.pdf) that with a single potentiometer, we can change any DC voltage
 into any other lower DC voltage.
@@ -12,7 +16,7 @@ There are many LM317 kits on eBay:
 
 [eBay Search for LM317 Adjustable Voltage Regulator Kit](https://www.ebay.com/sch/i.html?_nkw=LM317+Adjustable+Voltage+Regulator+Kit)
 
-Here is a [Sample Regulated Power Supply from XYZ Electronics](https://www.ebay.com/itm/355199915646) that sells for under $4 with $3 shipping.
+Here is a [Sample Regulated Power Supply from XYZ Electronics](https://www.ebay.com/itm/355199915646) that sells for under $4 with $3 shipping.  For a classroom, you can order many of these for teaching basic soldering skills.
 
 Many kits have a power cord and a potentiometer you can adjust to get
 any output voltage from 1.25V to 30V DC.
