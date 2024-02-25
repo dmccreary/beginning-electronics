@@ -1,7 +1,10 @@
 # Variable Power Supply
 
 ![](./variable-power-supply.jpg)
+[$7 LM317 Adjustable DC Voltage Regulator DIY Kit](https://www.ebay.com/itm/355199915646)
+
 ![](./voltage-regulator.png)
+[$17 LM317 Adjustable DC Voltage Regulator DIY Kit With Transformer and Enclosure](https://www.ebay.com/itm/275242338730)
 
 We can build a variable for under $10 from a kit using the powerful LM317 variable voltage regulator.  The LM317 is a simple 3-terminal adjustable regulator circuit
 that is low-cost and very flexible.  It only needs a few capacitors and a resistor
@@ -39,6 +42,7 @@ Here are a few notes on assembly.
 4. Note the capacitance rating on the printed circuit boards.  Make sure to match them up correctly.  The larger capacitor is easy, but the two smaller ones have the same diameter, but different heights.
 5. You can trim some of the extra wire off the LED display.  In the photos, I kept the original wire length but then I had to wrap the wires around the back of the kit.
 6. The board has places for an LED power indicator and the resistor, but since the LED display is used, they are not included.
+7. The kit does not include [Thermal Heatsink Paste](https://www.ebay.com/sch/i.html?_from=R40&_nkw=thermal+paste+heatsink&_sacat=0&rt=nc&_odkw=heat+sink+thermal+paste+for+electronics&_osacat=0&LH_BIN=1).  You can purchase this on eBay for a few dollars.  You can spread this on the back of the LM317 before you screw it into the heatsink.  This step is optional since the screw will provide a strong heat coupling.
 
 ## Creating an Enclosure or Stand
 
