@@ -12,13 +12,9 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/lessons/11-buttons/">
+        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/kits/variable-power-supply/">
       
       
-        <link rel="prev" href="../10-led-circuit/">
-      
-      
-        <link rel="next" href="../12-and-buttons/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +22,7 @@
     
     
       
-        <title>Buttons - Beginning Electronics</title>
+        <title>Variable Power Supply - Beginning Electronics</title>
       
     
     
@@ -77,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#led-button-circuit" class="md-skip">
+        <a href="#variable-power-supply" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Buttons
+              Variable Power Supply
             
           </span>
         </div>
@@ -296,8 +292,6 @@
       
   
   
-    
-  
   
     
     
@@ -324,214 +318,28 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
+  
+  
+    <a href="../../lessons/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     Lessons
   </span>
   
 
-            </a>
-            
-              <label class="md-nav__link " for="__nav_3">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Lessons
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../05-part-identification/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Identifying Parts
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../08-breadboard/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Breadboard
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../09-power/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Power
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../10-led-circuit/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    LED Circuit
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        <span class="md-nav__icon md-icon"></span>
       
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Buttons
-  </span>
+    </a>
   
 
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../12-and-buttons/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Buttons AND
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../13-or-buttons/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Buttons OR
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../80-rc-circuit/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    RC Circuit
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -634,7 +442,7 @@
         
   
   
-    <a href="../../kits/" class="md-nav__link">
+    <a href="../" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -711,6 +519,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#assembly-suggestions" class="md-nav__link">
+    Assembly Suggestions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-an-enclosure-or-stand" class="md-nav__link">
+    Creating an Enclosure or Stand
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -727,8 +557,34 @@
   
 
 
-<h1 id="led-button-circuit">LED Button Circuit</h1>
-<p><img alt="" src="../../img/led-button-circuit.png" /></p>
+<h1 id="variable-power-supply">Variable Power Supply</h1>
+<p><img alt="" src="variable-power-supply.jpg" />
+<img alt="" src="voltage-regulator.png" /></p>
+<p>We can build a variable for under $10 from a kit using the powerful LM317 variable voltage regulator.  The LM317 is a simple 3-terminal adjustable regulator circuit.</p>
+<p>We can see from the <a href="https://www.ti.com/lit/ds/symlink/lm317.pdf">LM317 data sheet</a> that with a single potentiometer, we can change any DC voltage
+into any other lower DC voltage.</p>
+<p>There are many LM317 kits on eBay:</p>
+<p><a href="https://www.ebay.com/sch/i.html?_nkw=LM317+Adjustable+Voltage+Regulator+Kit">eBay Search for LM317 Adjustable Voltage Regulator Kit</a></p>
+<p>Here is a <a href="https://www.ebay.com/itm/355199915646">Sample Regulated Power Supply from XYZ Electronics</a> that sells for under $4 with $3 shipping.</p>
+<p>Many kits have a power cord and a potentiometer you can adjust to get
+any output voltage from 1.25V to 30V DC.</p>
+<p>The LM317 has overheating and current short-circuit protection.</p>
+<p>Many of these kits also have a 3-digit LED display of output voltage.</p>
+<h2 id="assembly-suggestions">Assembly Suggestions</h2>
+<p>The kit listing on eBay is very minimal.  So here is some additional information.</p>
+<p>Here are some <a href="https://photos.app.goo.gl/6AGQD1yKx1BAAuVP9">photos of this assembly process</a>.</p>
+<p>Here are a few notes on assembly.</p>
+<ol>
+<li>Be careful to note the polarity on both the diodes and capacitors.</li>
+<li>The smallest parts are the screws on the LED offset.  If you put them in first, they are a little bit easier to manage.  You may need needle-nose pliers to position them.</li>
+<li>Note that the band on the capacitors is usually the negative side.  Some of them indicate this with a small negative side in the band.</li>
+<li>Note the capacitance rating on the printed circuit boards.  Make sure to match them up correctly.  The larger capacitor is easy, but the two smaller ones have the same diameter, but different heights.</li>
+<li>You can trim some of the extra wire off the LED display.  In the photos, I kept the original wire length but then I had to wrap the wires around the back of the kit.</li>
+<li>The board has places for an LED power indicator and the resistor, but since the LED display is used, they are not included.</li>
+</ol>
+<h2 id="creating-an-enclosure-or-stand">Creating an Enclosure or Stand</h2>
+<p><img alt="" src="bottom-view.png" /></p>
+<p>The kit does not come with an enclosure.  I had some old pieces of plexiglass in my shop so I just screwed it to a square with some 10mm long M3 screws.  However, you can build a full enclosure for your own projects.  I also added a few rubber feet to the bottom of my kit.  In retrospect, I should have made the base 1/4 larger so I could put the feet directly in the corners.  The screws got in my way on this kit.</p>
 
 
 
@@ -751,44 +607,6 @@
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../10-led-circuit/" class="md-footer__link md-footer__link--prev" aria-label="Previous: LED Circuit" rel="prev">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                LED Circuit
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../12-and-buttons/" class="md-footer__link md-footer__link--next" aria-label="Next: Buttons AND" rel="next">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Buttons AND
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
