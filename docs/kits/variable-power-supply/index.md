@@ -26,7 +26,13 @@ any output voltage from 1.25V to 30V DC.
 
 The LM317 has overheating and current short-circuit protection.
 
-Many of these kits also have a 3-digit LED display of output voltage.
+![](./digital-voltage-display.png)
+Many of these kits also have a 3-digit LED display of output voltage.  The connections on the
+LED displays are as follows:
+
+1. Black is ground (GND)
+2. Red is power (VCC) which powers the display
+2. Yellow is the point you would like to monitor
 
 ## Assembly Suggestions
 
