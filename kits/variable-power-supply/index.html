@@ -551,8 +551,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sample-chatgpt-prompt" class="md-nav__link">
-    Sample ChatGPT Prompt
+  <a href="#parts-list" class="md-nav__link">
+    Parts List
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-chatgpt-prompts" class="md-nav__link">
+    Sample ChatGPT Prompts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation-of-the-circuit" class="md-nav__link">
+    Explanation of the Circuit
   </a>
   
 </li>
@@ -761,8 +775,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sample-chatgpt-prompt" class="md-nav__link">
-    Sample ChatGPT Prompt
+  <a href="#parts-list" class="md-nav__link">
+    Parts List
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-chatgpt-prompts" class="md-nav__link">
+    Sample ChatGPT Prompts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation-of-the-circuit" class="md-nav__link">
+    Explanation of the Circuit
   </a>
   
 </li>
@@ -865,8 +893,9 @@ into any other lower DC voltage.</p>
 <p>Many kits have a power cord and a potentiometer you can adjust to get
 any output voltage from 1.25V to 30V DC.</p>
 <p>The LM317 has overheating and current short-circuit protection.</p>
-<p><img alt="" src="digital-voltage-display.png" />
-Many of these kits also have a 3-digit LED display of output voltage.  The connections on the
+<p><img alt="" src="digital-voltage-display.png" width="300" /></p>
+<p>Many of these kits also have a 3-digit LED display of output voltage.<br />
+The connections on the
 LED displays are as follows:</p>
 <ol>
 <li>Black is ground (GND)</li>
@@ -895,10 +924,42 @@ suggested circuit diagram:</p>
 <p><img alt="" src="circuit-diagram.png" /></p>
 <p>Out kit adds a <a href="https://en.wikipedia.org/wiki/Diode_bridge">Diode Bridge Rectifier</a> on the input and a <a href="https://www.ebay.com/itm/224073010639">Digital LED voltage display</a> on the output.  Note that you can purchase these nice LED Voltage displays for under $1.00 in quantity 10.</p>
 <p><img alt="" src="circuit-diagram-kit.png" /></p>
-<h2 id="sample-chatgpt-prompt">Sample ChatGPT Prompt</h2>
-<div class="highlight"><pre><span></span><code>I have a very nice small variable voltage regulator kit that I created using a standard LM317 voltage regulator.  I added a bridge rectifier on the front end and a digital LED voltage display to display the output voltage.  By turning the potentiometer I can create any DC voltage between 1.2volts and 30volts.
+<h2 id="parts-list">Parts List</h2>
+<ol>
+<li>LM317 Adjustable DC Voltage Regulator with a heatsink</li>
+<li>4x large 4007 diodes (bridge rectifier) - polarized</li>
+<li>1x 1000uF large polarized capacitor with "-" for the band</li>
+<li>2x 0.1 microfarads (uF) small yellow "104" capacitors <img alt="" src="104-cap.png" /></li>
+<li>2x smaller flyback protection diodes to protect the LM317 from reverse currents</li>
+<li>1x 241 Ohm resistor that connects the GND to the output of the LM317</li>
+<li>1x linear potentiometer with three wires with knob</li>
+<li>1x digital LED display (red=VCC, black=GND and yellow for signal)</li>
+<li>1x 10 uF polarized capacitor on the output</li>
+<li>1x 100 uF polarized capacitor on the output</li>
+<li>2x screw terminal blocks for input and output</li>
+<li>1x printed circuit board</li>
+<li>Standoffs for supporting the LED display</li>
+<li>4x very small screws for mounting the standoffs to the PC board</li>
+</ol>
+<h2 id="sample-chatgpt-prompts">Sample ChatGPT Prompts</h2>
+<h2 id="explanation-of-the-circuit">Explanation of the Circuit</h2>
+<div class="highlight"><pre><span></span><code>I have a variable power supply built around an LM317
+Adjustable DC Voltage Regulator.  I have 4 dio
 
-Please suggest a lesson plan for a 5th-grade student that is very interested in learning more about electronics.  Include some fun hands-on activities.  Don&#39;t worry about estimating time, just create ideas of fun things you can learn from this kit.
+### Lesson Plan
+```linenums=&quot;0&quot;
+I have a very nice small variable voltage regulator kit 
+that I created using a standard LM317 voltage regulator.
+I added a bridge rectifier on the front end and a digital
+LED voltage display to display the output voltage.
+By turning the potentiometer I can create any DC voltage
+between 1.2 volts and 30 volts.
+
+Please suggest a lesson plan for a 5th-grade student
+that is very interested in learning more about electronics.
+Include some fun hands-on activities.  Don&#39;t worry about
+estimating time, just create ideas of fun things you can
+learn from this kit.
 </code></pre></div>
 <h2 id="sample-gpt-4-response">Sample GPT-4 Response</h2>
 <p>That sounds like a fantastic project for a 5th-grade student interested in electronics! Here's a lesson plan that incorporates your variable voltage regulator kit with some engaging, hands-on activities. Each activity is designed to introduce basic concepts in electronics and foster curiosity and experimentation.</p>
