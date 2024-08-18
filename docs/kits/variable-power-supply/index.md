@@ -46,22 +46,21 @@ Here are a few notes on assembly.
 
 1. Be careful to note the polarity on both the diodes and capacitors.
 2. The smallest parts are the screws on the LED offset.  If you put them in first, they are a little bit easier to manage.  You may need needle-nose pliers to position them.
-3. Note that the band on the capacitors is usually the negative side.  Some of them indicate this with a small negative side in the band.
+3. Note that the band on the capacitors is usually the negative side.  Some of them indicate this with a small negative sign in the band.
 4. Note the capacitance rating on the printed circuit boards.  Make sure to match them up correctly.  The larger capacitor is easy, but the two smaller ones have the same diameter, but different heights.
 5. You can trim some of the extra wire off the LED display.  In the photos, I kept the original wire length but then I had to wrap the wires around the back of the kit.
-6. The board has places for an LED power indicator and the resistor, but since the LED display is used, they are not included.
+6. The board has places for an LED power indicator and the resistor, but since the LED display is used, they are not included in the kit.
 7. The kit does not include [Thermal Heatsink Paste](https://www.ebay.com/sch/i.html?_from=R40&_nkw=thermal+paste+heatsink&_sacat=0&rt=nc&_odkw=heat+sink+thermal+paste+for+electronics&_osacat=0&LH_BIN=1).  You can purchase this on eBay for a few dollars.  You can spread this on the back of the LM317 before you screw it into the heatsink.  This step is optional since the screw will provide a strong heat coupling.
 
 ## Creating an Enclosure or Stand
 
 ![](bottom-view.png)
 
-The kit does not come with an enclosure.  I had some old pieces of plexiglass in my shop so I just screwed it to a square with some 10mm long M3 screws.  However, you can build a full enclosure for your own projects.  I also added a few rubber feet to the bottom of my kit.  In retrospect, I should have made the base 1/4 larger so I could put the feet directly in the corners.  The screws got in my way on this kit.
+The kit does not come with an enclosure.  I had some old pieces of plexiglass in my shop so I just screwed it to a square with some 10mm long M3 screws.  However, you can build a full enclosure for your projects.  I also added a few rubber feet to the bottom of my kit.  In retrospect, I should have made the base 1/4 larger so I could put the feet directly in the corners.  The screws got in my way on this kit.
 
 ## LM317 Circuit Diagram
 
-From the datasheet for the LM317 we can see they provide the following
-suggested circuit diagram:
+From the datasheet for the LM317 we can see Texas Instruments provides the following suggested circuit diagram:
 
 ![](./circuit-diagram.png)
 
@@ -77,7 +76,7 @@ Out kit adds a [Diode Bridge Rectifier](https://en.wikipedia.org/wiki/Diode_brid
 4. 2x 0.1 microfarads (uF) small yellow "104" capacitors ![](./104-cap.png)
 5. 2x smaller flyback protection diodes to protect the LM317 from reverse currents
 6. 1x 241 Ohm resistor that connects the GND to the output of the LM317
-7. 1x linear potentiometer with three wires with knob
+7. 1x stacked linear potentiometer with three wires and knob
 8. 1x digital LED display (red=VCC, black=GND and yellow for signal)
 9. 1x 10 uF polarized capacitor on the output
 10. 1x 100 uF polarized capacitor on the output
@@ -86,6 +85,7 @@ Out kit adds a [Diode Bridge Rectifier](https://en.wikipedia.org/wiki/Diode_brid
 13. Standoffs for supporting the LED display
 14. 4x very small screws for mounting the standoffs to the PC board
 
+|Part Name|Qty|
 
 
 ## Sample ChatGPT Prompts
