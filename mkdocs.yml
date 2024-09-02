@@ -23,6 +23,7 @@ nav:
     - Buttons: lessons/11-buttons.md
     - Buttons AND: lessons/12-and-buttons.md
     - Buttons OR: lessons/13-or-buttons.md
+    - Transistors: lessons/30-transistors.md
     - RC Circuit: lessons/80-rc-circuit.md
   - Simulations:
     - Introduction: sims/index.md
