@@ -23,6 +23,8 @@ nav:
     - Buttons: lessons/11-buttons.md
     - Buttons AND: lessons/12-and-buttons.md
     - Buttons OR: lessons/13-or-buttons.md
+    - RGB Led: lessons/14-rgb-led.md
+    - Dark Detector: lessons/20-dark-detector.md
     - Transistors: lessons/30-transistors.md
     # - LED Flasher: lessons/35-led-flasher.md
     - LED Noodle Circuit: lessons/40-noodle-led-circuit.md
