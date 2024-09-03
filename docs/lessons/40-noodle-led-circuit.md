@@ -1,6 +1,8 @@
 # Noodle LED Circuit
 
 New flexible "LED noodles" are perfect for costumes.
+They only cost 1-2 dollars.
+They are powered by 3 volts DC and can take over 100 milliamps.
 
 ## Purchasing
 
@@ -8,6 +10,9 @@ New flexible "LED noodles" are perfect for costumes.
 
 [e-Bay Listing](https://www.ebay.com/itm/126264426037?var=427291554300)
 
+![](./../img/noodle-led-ebay-blue.png)
+
+[Blue Noodle LED](https://www.ebay.com/itm/186647016174)
 ## Connections
 
 ![](./../img/noodle-connections.png)
