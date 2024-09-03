@@ -24,7 +24,8 @@ nav:
     - Buttons AND: lessons/12-and-buttons.md
     - Buttons OR: lessons/13-or-buttons.md
     - Transistors: lessons/30-transistors.md
-    - LED Flasher: lessons/35-led-flasher.md
+    # - LED Flasher: lessons/35-led-flasher.md
+    - LED Noodle Circuit: lessons/40-noodle-circuit.md
     - RC Circuit: lessons/80-rc-circuit.md
   - Simulations:
     - Introduction: sims/index.md
