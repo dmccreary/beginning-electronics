@@ -27,6 +27,7 @@ nav:
     - Dark Detector: lessons/20-dark-detector.md
     - Transistors: lessons/30-transistors.md
     # - LED Flasher: lessons/35-led-flasher.md
+    - Boolean Logic: lessons/35-boolean-logic.md
     - LED Noodle Circuit: lessons/40-noodle-led-circuit.md
     - RC Circuit: lessons/80-rc-circuit.md
   - Simulations:
