@@ -12,13 +12,13 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/lessons/40-noodle-led-circuit/">
+        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/lessons/35-boolean-logic/">
       
       
-        <link rel="prev" href="../35-boolean-logic/">
+        <link rel="prev" href="../30-transistors/">
       
       
-        <link rel="next" href="../80-rc-circuit/">
+        <link rel="next" href="../40-noodle-led-circuit/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>LED Noodle Circuit - Beginning Electronics</title>
+        <title>Boolean Logic - Beginning Electronics</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#noodle-led-circuit" class="md-skip">
+        <a href="#boolean-logic-gates-from-transistors" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LED Noodle Circuit
+              Boolean Logic
             
           </span>
         </div>
@@ -592,27 +592,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../35-boolean-logic/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Boolean Logic
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -629,7 +608,7 @@
           
   
   <span class="md-ellipsis">
-    LED Noodle Circuit
+    Boolean Logic
   </span>
   
 
@@ -640,7 +619,7 @@
         
   
   <span class="md-ellipsis">
-    LED Noodle Circuit
+    Boolean Logic
   </span>
   
 
@@ -662,111 +641,97 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#purchasing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Purchasing
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connections" class="md-nav__link">
-    <span class="md-ellipsis">
-      Connections
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testing
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#brightness-control-circuit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Brightness Control Circuit
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lesson-plan-controlling-a-100-ma-filament-led-using-a-2n2222-transistor" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lesson Plan: Controlling a 100 mA Filament LED Using a 2N2222 Transistor
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Lesson Plan: Controlling a 100 mA Filament LED Using a 2N2222 Transistor">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#objective" class="md-nav__link">
-    <span class="md-ellipsis">
-      Objective
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#materials" class="md-nav__link">
     <span class="md-ellipsis">
-      Materials
+      Materials:
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      Introduction:
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#lesson-steps" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#logic-gate-1-buffer-non-inverting" class="md-nav__link">
     <span class="md-ellipsis">
-      Lesson Steps
+      Logic Gate 1: Buffer (Non-Inverting)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Lesson Steps">
+    <nav class="md-nav" aria-label="Logic Gate 1: Buffer (Non-Inverting)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-introduction-to-transistors-10-minutes" class="md-nav__link">
+  <a href="#circuit" class="md-nav__link">
     <span class="md-ellipsis">
-      1 Introduction to Transistors (10 minutes)
+      Circuit:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-circuit-diagram-explanation-10-minutes" class="md-nav__link">
+  <a href="#steps" class="md-nav__link">
     <span class="md-ellipsis">
-      2 Circuit Diagram Explanation (10 minutes)**
+      Steps:
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2 Circuit Diagram Explanation (10 minutes)**">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic-gate-2-and-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic Gate 2: AND Gate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic Gate 2: AND Gate">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#3-circuit-assembly-15-minutes" class="md-nav__link">
+  <a href="#circuit_1" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Circuit Assembly (15 minutes)
+      Circuit:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation:
     </span>
   </a>
   
@@ -776,30 +741,39 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#4-testing-and-observations-15-minutes" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#logic-gate-3-or-gate" class="md-nav__link">
     <span class="md-ellipsis">
-      4 Testing and Observations (15 minutes)
+      Logic Gate 3: OR Gate
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4 Testing and Observations (15 minutes)">
+    <nav class="md-nav" aria-label="Logic Gate 3: OR Gate">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#5-calculations-and-safety-10-minutes" class="md-nav__link">
+  <a href="#circuit_2" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Calculations and Safety (10 minutes)
+      Circuit:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#6-conclusion-and-qa-10-minutes" class="md-nav__link">
+  <a href="#steps_2" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Conclusion and Q&amp;A (10 minutes)
+      Steps:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation:
     </span>
   </a>
   
@@ -809,20 +783,39 @@
     </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#logic-gate-4-nand-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic Gate 4: NAND Gate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic Gate 4: NAND Gate">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#assessment" class="md-nav__link">
+  <a href="#circuit_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Assessment:
+      Circuit:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#extensions" class="md-nav__link">
+  <a href="#steps_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Extensions:
+      Steps:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation:
     </span>
   </a>
   
@@ -832,9 +825,157 @@
     </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#logic-5-nor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic 5: NOR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic-gate-6-xor-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic Gate 6: XOR Gate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic Gate 6: XOR Gate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#circuit_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuit:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation:
+    </span>
+  </a>
+  
+</li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic-gate-7-xnor-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic Gate 7: XNOR Gate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic Gate 7: XNOR Gate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#circuit_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuit:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic-gate-7-inverter-not-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic Gate 7: Inverter (NOT Gate)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic Gate 7: Inverter (NOT Gate)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#circuit_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuit:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
   
 </li>
       
@@ -842,6 +983,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-noodle-led-circuit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LED Noodle Circuit
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1072,111 +1234,97 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#purchasing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Purchasing
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connections" class="md-nav__link">
-    <span class="md-ellipsis">
-      Connections
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testing
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#brightness-control-circuit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Brightness Control Circuit
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lesson-plan-controlling-a-100-ma-filament-led-using-a-2n2222-transistor" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lesson Plan: Controlling a 100 mA Filament LED Using a 2N2222 Transistor
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Lesson Plan: Controlling a 100 mA Filament LED Using a 2N2222 Transistor">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#objective" class="md-nav__link">
-    <span class="md-ellipsis">
-      Objective
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#materials" class="md-nav__link">
     <span class="md-ellipsis">
-      Materials
+      Materials:
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      Introduction:
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#lesson-steps" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#logic-gate-1-buffer-non-inverting" class="md-nav__link">
     <span class="md-ellipsis">
-      Lesson Steps
+      Logic Gate 1: Buffer (Non-Inverting)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Lesson Steps">
+    <nav class="md-nav" aria-label="Logic Gate 1: Buffer (Non-Inverting)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-introduction-to-transistors-10-minutes" class="md-nav__link">
+  <a href="#circuit" class="md-nav__link">
     <span class="md-ellipsis">
-      1 Introduction to Transistors (10 minutes)
+      Circuit:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-circuit-diagram-explanation-10-minutes" class="md-nav__link">
+  <a href="#steps" class="md-nav__link">
     <span class="md-ellipsis">
-      2 Circuit Diagram Explanation (10 minutes)**
+      Steps:
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2 Circuit Diagram Explanation (10 minutes)**">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic-gate-2-and-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic Gate 2: AND Gate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic Gate 2: AND Gate">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#3-circuit-assembly-15-minutes" class="md-nav__link">
+  <a href="#circuit_1" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Circuit Assembly (15 minutes)
+      Circuit:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation:
     </span>
   </a>
   
@@ -1186,30 +1334,39 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#4-testing-and-observations-15-minutes" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#logic-gate-3-or-gate" class="md-nav__link">
     <span class="md-ellipsis">
-      4 Testing and Observations (15 minutes)
+      Logic Gate 3: OR Gate
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4 Testing and Observations (15 minutes)">
+    <nav class="md-nav" aria-label="Logic Gate 3: OR Gate">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#5-calculations-and-safety-10-minutes" class="md-nav__link">
+  <a href="#circuit_2" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Calculations and Safety (10 minutes)
+      Circuit:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#6-conclusion-and-qa-10-minutes" class="md-nav__link">
+  <a href="#steps_2" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Conclusion and Q&amp;A (10 minutes)
+      Steps:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation:
     </span>
   </a>
   
@@ -1219,20 +1376,39 @@
     </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#logic-gate-4-nand-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic Gate 4: NAND Gate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic Gate 4: NAND Gate">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#assessment" class="md-nav__link">
+  <a href="#circuit_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Assessment:
+      Circuit:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#extensions" class="md-nav__link">
+  <a href="#steps_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Extensions:
+      Steps:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation:
     </span>
   </a>
   
@@ -1242,9 +1418,157 @@
     </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#logic-5-nor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic 5: NOR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic-gate-6-xor-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic Gate 6: XOR Gate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic Gate 6: XOR Gate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#circuit_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuit:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation:
+    </span>
+  </a>
+  
+</li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic-gate-7-xnor-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic Gate 7: XNOR Gate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic Gate 7: XNOR Gate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#circuit_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuit:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic-gate-7-inverter-not-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic Gate 7: Inverter (NOT Gate)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic Gate 7: Inverter (NOT Gate)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#circuit_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuit:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
   
 </li>
       
@@ -1266,104 +1590,289 @@
   
 
 
-<h1 id="noodle-led-circuit">Noodle LED Circuit</h1>
-<p>New flexible "LED noodles" are perfect for costumes.
-They only cost 1-2 dollars.
-They are powered by 3 volts DC and can take over 100 milliamps.</p>
-<h2 id="purchasing">Purchasing</h2>
-<p><img alt="" src="../../img/noodle-led-ebay.png" /></p>
-<p><a href="https://www.ebay.com/itm/126264426037?var=427291554300">e-Bay Listing</a></p>
-<p><img alt="" src="../../img/noodle-led-ebay-blue.png" /></p>
-<p><a href="https://www.ebay.com/itm/186647016174">Blue Noodle LED</a></p>
-<h2 id="connections">Connections</h2>
-<p><img alt="" src="../../img/noodle-connections.png" /></p>
-<h2 id="testing">Testing</h2>
-<p>Use 2 AA batteries in series.</p>
-<p>Use 3 AA batteries with a 15K resistor.</p>
-<p>Use a 9 volt battery with a 470 ohm resistor.</p>
-<h2 id="brightness-control-circuit">Brightness Control Circuit</h2>
-<p><img alt="" src="../../img/noodle-led-circuit.png" /></p>
-<h2 id="lesson-plan-controlling-a-100-ma-filament-led-using-a-2n2222-transistor">Lesson Plan: Controlling a 100 mA Filament LED Using a 2N2222 Transistor</h2>
-<h3 id="objective">Objective</h3>
-<p>Students will learn how to use a 2N2222 NPN transistor as a switch to control a 100 mA filament LED. They will understand the basic operation of transistors, how to calculate base resistance, and how to safely operate a circuit with a transistor controlling a higher current load.</p>
-<h3 id="materials">Materials</h3>
+<h1 id="boolean-logic-gates-from-transistors">Boolean Logic Gates From Transistors</h1>
+<p>In this lesson, we will learn how to build simple Boolean logic
+gates using just buttons, resistors, wire and transistors.</p>
+<p>We will learn how to create and understand the operation of fundamental digital logic gates using momentary push buttons, 2K resistors, 2N2222 transistors, and LEDs on a solderless breadboard.</p>
+<h3 id="materials">Materials:</h3>
 <ul>
-<li>1 x 2N2222 NPN transistor</li>
-<li>1 x 100 mA filament LED</li>
-<li>1 x 10K ohm potentiometer</li>
-<li>1 x 6.2 ohm resistor</li>
-<li>1 x 5V power supply (e.g., a USB power bank or regulated DC supply)</li>
-<li>Breadboard and jumper wires</li>
-<li>Multimeter (optional)</li>
+<li>Solderless breadboard</li>
+<li>5V power supply</li>
+<li>Momentary push buttons (for digital inputs)</li>
+<li>2N2222 transistors</li>
+<li>2K resistors</li>
+<li>LEDs (for output)</li>
+<li>Jumper wires</li>
 </ul>
-<p><strong>Duration:</strong> 1 hour</p>
-<h3 id="prerequisites">Prerequisites</h3>
+<h3 id="introduction">Introduction:</h3>
+<ol>
+<li>
+<p><strong>Discuss Digital Logic</strong>:</p>
 <ul>
-<li>Basic understanding how to use a battery and wire to make a circuit</li>
-<li>Basic knowledge of polarity, positive and negative connections</li>
-<li>Familiarity with breadboards and basic circuit connections</li>
+<li>Explain the concept of logic gates in digital circuits, introducing the gates they will build: Buffer, AND, OR, NAND, XOR, XNOR, and Inverter.</li>
+<li>Brief overview of how transistors can act as switches in digital circuits.</li>
 </ul>
-<h3 id="lesson-steps">Lesson Steps</h3>
-<h4 id="1-introduction-to-transistors-10-minutes"><strong>1 Introduction to Transistors (10 minutes)</strong></h4>
-<p><strong>Discussion:</strong>
-    -   Introduce the concept of a transistor as a switch or amplifier.
-    -   Explain the function of the 2N2222 NPN transistor, emphasizing that it allows a small base current to control a larger current between the collector and emitter.
-    -   Mention that the 2N2222 can handle up to 800 mA of collector current, making it suitable for switching applications in circuits.</p>
-<h4 id="2-circuit-diagram-explanation-10-minutes">2 Circuit Diagram Explanation (10 minutes)**</h4>
-<p><strong>Activity:</strong>
-    -   Show the circuit diagram (the one provided) and explain each component's role:
-        -   <strong>Power Supply (5V):</strong> Provides the necessary voltage for the circuit.
-        -   <strong>10K Potentiometer:</strong> Used to vary the base current to the transistor.
-        -   <strong>2N2222 Transistor:</strong> Acts as a switch to control the current through the LED.
-        -   <strong>6.2 Ohm Resistor:</strong> Limits the current through the LED to protect it.
-        -   <strong>LED:</strong> The load that will be controlled by the transistor.
-    -   Explain how the potentiometer allows control over the base current and, therefore, the LED's brightness.</p>
-<h5 id="3-circuit-assembly-15-minutes"><strong>3. Circuit Assembly (15 minutes)</strong></h5>
-<p><strong>Activity:</strong>
-    -   Guide the students in assembling the circuit on a breadboard:
-        -   Connect the 5V power supply to the circuit.
-        -   Connect the potentiometer between the 5V supply and ground, with its wiper going to the transistor's base.
-        -   Connect the 6.2-ohm resistor in series with the LED to the transistor's collector.
-        -   Connect the emitter of the transistor to ground.
-        -   Ensure all connections are secure and correct.</p>
-<h4 id="4-testing-and-observations-15-minutes"><strong>4 Testing and Observations (15 minutes)</strong></h4>
-<p><strong>Activity:</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>-   Power on the circuit and use the potentiometer to vary the brightness of the LED.
--   Use a multimeter to measure the base current and the current through the LED.
--   Ask students to observe how changing the base current affects the LED brightness and discuss why this happens (relating to the transistor&#39;s operation as a current-controlled switch).
-</code></pre></div></td></tr></table></div>
-<h5 id="5-calculations-and-safety-10-minutes"><strong>5. Calculations and Safety (10 minutes)</strong></h5>
+</li>
+<li>
+<p><strong>Components</strong>:</p>
 <ul>
-<li><strong>Discussion:</strong><ul>
-<li>Discuss the importance of choosing the correct base resistor (or potentiometer setting) to avoid damaging the transistor or LED.</li>
-<li>Calculate the base resistor value using the formula: Rb\=Vin-VbeIbR_b = \frac{V_{in} - V_{be}}{I_b}Rb​\=Ib​Vin​-Vbe​​, where VinV_{in}Vin​ is the input voltage, VbeV_{be}Vbe​ is typically 0.7V for the 2N2222, and IbI_bIb​ is the desired base current.</li>
-<li>Emphasize the importance of not exceeding the maximum ratings of the transistor.</li>
+<li>Describe the function of each component:<ul>
+<li><strong>Momentary Push Buttons</strong>: Used to represent binary inputs (1 when pressed, 0 when not pressed).</li>
+<li><strong>Resistors</strong>: Provide current limiting.</li>
+<li><strong>2N2222 Transistors</strong>: Used as switches in the circuit to implement logic gates.</li>
+<li><strong>LEDs</strong>: Show the output of the logic gates.</li>
 </ul>
 </li>
 </ul>
-<h5 id="6-conclusion-and-qa-10-minutes"><strong>6. Conclusion and Q&amp;A (10 minutes)</strong></h5>
-<ul>
-<li><strong>Summary:</strong><ul>
-<li>Recap the key points: how a transistor works as a switch, the role of each component in the circuit, and how to safely control a high-current load using a small signal.</li>
-<li>Open the floor for any questions.</li>
-<li>Suggest some possible extensions of the lesson, such as controlling the LED with a microcontroller or integrating the circuit into a larger project.</li>
-</ul>
 </li>
-</ul>
-<h4 id="assessment"><strong>Assessment:</strong></h4>
+</ol>
+<h3 id="logic-gate-1-buffer-non-inverting">Logic Gate 1: <strong>Buffer (Non-Inverting)</strong></h3>
+<h4 id="circuit">Circuit:</h4>
 <ul>
-<li>Students should be able to explain how the 2N2222 transistor controls the LED.</li>
-<li>They should be able to calculate the necessary base resistance for different load currents.</li>
-<li>Students should demonstrate the ability to safely construct and test the circuit.</li>
+<li>Input: 1 momentary push button</li>
+<li>Output: 1 LED that turns on when the button is pressed</li>
 </ul>
-<h4 id="extensions"><strong>Extensions:</strong></h4>
+<h4 id="steps">Steps:</h4>
+<ol>
+<li>Connect one leg of the push button to the 5V power supply and the other leg to the base of the 2N2222 transistor through a 2K resistor.</li>
+<li>The emitter of the transistor should be connected to ground.</li>
+<li>Connect the collector to the positive leg of the LED, and the negative leg of the LED to ground through a 2K resistor.</li>
+<li>Explain: When the button is pressed (input = 1), the transistor allows current to flow, turning the LED on (output = 1).</li>
+</ol>
+<h4 id="explanation">Explanation:</h4>
+<p>The Buffer gate passes the input directly to the output. When the button is pressed (high input), the LED lights up.</p>
+<h3 id="logic-gate-2-and-gate">Logic Gate 2: <strong>AND Gate</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Input A</th>
+<th>Input B</th>
+<th>Output (A AND B)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Transistor AND" src="../../img/transistor-and.png" /></p>
+<h4 id="circuit_1">Circuit:</h4>
 <ul>
-<li><strong>Advanced:</strong> Have students design a circuit where multiple LEDs are controlled by different transistors, all managed by a microcontroller like an Raspberry Pi Pico.</li>
-<li><strong>Real-World Connection:</strong> Discuss applications of transistors in everyday devices, such as in switching power supplies, amplifiers, and digital logic circuits.</li>
+<li>Input: 2 momentary push buttons</li>
+<li>Output: 1 LED that turns on ONLY when both buttons are pressed</li>
 </ul>
-<p>This lesson will not only teach practical skills in electronics but also reinforce theoretical concepts in a hands-on manner, making it a comprehensive introduction to transistor-based circuits.</p>
+<h4 id="steps_1">Steps:</h4>
+<ol>
+<li>Connect two push buttons. One leg of each button should be connected to the 5V power supply and the other to the base of separate 2N2222 transistors, both through 2K resistors.</li>
+<li>Connect the emitters of both transistors to ground.</li>
+<li>Connect the collectors to a common point. From this common point, connect to the positive leg of the LED, and connect the negative leg of the LED to ground through a 2K resistor.</li>
+<li>Explain: The LED will only light up when both buttons are pressed (input = 1 for both).</li>
+</ol>
+<h4 id="explanation_1">Explanation:</h4>
+<p>The AND gate only outputs a high signal (lights the LED) when both inputs are high (both buttons pressed).</p>
+<h3 id="logic-gate-3-or-gate">Logic Gate 3: <strong>OR Gate</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Input A</th>
+<th>Input B</th>
+<th>Output (A OR B)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="circuit_2">Circuit:</h4>
+<ul>
+<li>Input: 2 momentary push buttons</li>
+<li>Output: 1 LED</li>
+</ul>
+<h4 id="steps_2">Steps:</h4>
+<ol>
+<li>Set up two push buttons with one leg of each connected to the 5V power supply and the other to the base of separate 2N2222 transistors through 2K resistors.</li>
+<li>The emitters of both transistors should be connected to ground.</li>
+<li>Connect the collectors of both transistors to the positive leg of the LED, with the negative leg of the LED connected to ground through a 2K resistor.</li>
+<li>Explain: The LED will light up if either of the buttons is pressed.</li>
+</ol>
+<h4 id="explanation_2">Explanation:</h4>
+<ul>
+<li>The OR gate outputs a high signal when at least one input is high (either button pressed).</li>
+</ul>
+<h3 id="logic-gate-4-nand-gate">Logic Gate 4: <strong>NAND Gate</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Input A</th>
+<th>Input B</th>
+<th>Output (A NAND B)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="circuit_3">Circuit:</h4>
+<ul>
+<li>Input: 2 momentary push buttons</li>
+<li>Output: The LED is on unless both buttons are pressed</li>
+</ul>
+<h4 id="steps_3">Steps:</h4>
+<ol>
+<li>Build the AND gate circuit, but add another 2N2222 transistor as an inverter at the output.</li>
+<li>Connect the collector of the AND gate output to the base of the inverter transistor through a 2K resistor.</li>
+<li>The collector of the inverter transistor goes to the positive leg of the LED, with the negative leg connected to ground through a 2K resistor.</li>
+<li>Explain: The LED will light up unless both buttons are pressed.</li>
+</ol>
+<h4 id="explanation_3">Explanation:</h4>
+<ul>
+<li>The NAND gate outputs a high signal when at least one input is low (opposite of AND).</li>
+</ul>
+<h3 id="logic-5-nor">Logic 5: NOR</h3>
+<table>
+<thead>
+<tr>
+<th>Input A</th>
+<th>Input B</th>
+<th>Output (A NOR B)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="logic-gate-6-xor-gate">Logic Gate 6: XOR Gate</h3>
+<h4 id="circuit_4">Circuit:</h4>
+<ul>
+<li>Input: 2 momentary push buttons</li>
+<li>Output: 1 LED</li>
+</ul>
+<h4 id="steps_4">Steps:</h4>
+<ol>
+<li>Use two 2N2222 transistors to form the XOR logic.</li>
+<li>Connect the base of each transistor to one of the push buttons through 2K resistors.</li>
+<li>The output of one transistor's collector is connected to the base of the second transistor and vice versa, creating a cross-coupled structure.</li>
+<li>Explain: The LED will light up only when the inputs are different.</li>
+</ol>
+<h4 id="explanation_4">Explanation:</h4>
+<ul>
+<li>The XOR gate outputs a high signal only when one input is high and the other is low.</li>
+</ul>
+<h3 id="logic-gate-7-xnor-gate">Logic Gate 7: XNOR Gate</h3>
+<h4 id="circuit_5">Circuit:</h4>
+<ul>
+<li>Input: 2 momentary push buttons</li>
+<li>Output: 1 LED</li>
+</ul>
+<h4 id="steps_5">Steps:</h4>
+<ol>
+<li>Build the XOR gate and then add an inverter at the output.</li>
+<li>Connect the output of the XOR gate to the base of another 2N2222 transistor through a 2K resistor.</li>
+<li>The collector of the inverter goes to the positive leg of the LED.</li>
+<li>Explain: The LED will light up only when the inputs are the same.</li>
+</ol>
+<h4 id="explanation_5">Explanation:</h4>
+<ul>
+<li>The XNOR gate outputs a high signal when both inputs are the same (both high or both low).</li>
+</ul>
+<h3 id="logic-gate-7-inverter-not-gate">Logic Gate 7: <strong>Inverter (NOT Gate)</strong></h3>
+<h4 id="circuit_6">Circuit:</h4>
+<ul>
+<li>Input: 1 momentary push button</li>
+<li>Output: 1 LED</li>
+</ul>
+<h4 id="steps_6">Steps:</h4>
+<ol>
+<li>Connect one leg of the push button to the 5V power supply and the other leg to the base of a 2N2222 transistor through a 2K resistor.</li>
+<li>Connect the emitter of the transistor to ground.</li>
+<li>Connect the collector to the positive leg of the LED and ground the negative leg through a 2K resistor.</li>
+<li>Explain: When the button is not pressed (input = 0), the LED will be on. When the button is pressed (input = 1), the LED will turn off.</li>
+</ol>
+<h4 id="explanation_6">Explanation:</h4>
+<p>The Inverter outputs the opposite of the input. When the button is pressed, the LED turns off, and when the button is not pressed, the LED lights up.</p>
+<h3 id="conclusion">Conclusion:</h3>
+<ul>
+<li>Review the operation of each logic gate.</li>
+<li>Discuss how these simple gates can be combined to create more complex digital systems.</li>
+<li>Encourage students to experiment with different inputs and gates to see how the output changes.</li>
+</ul>
+<h2 id="references">References</h2>
+<p><a href="https://www.youtube.com/watch?v=nB6724G3b3E">Digital Logic Gates from Transistors, AND, NAND, OR, NOR, XOR, XNOR, Buffer, and Inverter</a></p>
 
 
 
@@ -1399,7 +1908,7 @@ They are powered by 3 volts DC and can take over 100 milliamps.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../35-boolean-logic/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Boolean Logic">
+          <a href="../30-transistors/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Transistors">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1409,20 +1918,20 @@ They are powered by 3 volts DC and can take over 100 milliamps.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Boolean Logic
+                Transistors
               </div>
             </div>
           </a>
         
         
           
-          <a href="../80-rc-circuit/" class="md-footer__link md-footer__link--next" aria-label="Next: RC Circuit">
+          <a href="../40-noodle-led-circuit/" class="md-footer__link md-footer__link--next" aria-label="Next: LED Noodle Circuit">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                RC Circuit
+                LED Noodle Circuit
               </div>
             </div>
             <div class="md-footer__button md-icon">
