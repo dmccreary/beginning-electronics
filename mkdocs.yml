@@ -26,6 +26,7 @@ nav:
     - RGB Led: lessons/14-rgb-led.md
     - Dark Detector: lessons/20-dark-detector.md
     - Transistors: lessons/30-transistors.md
+    - BC547 vs. 2N2222: lessons/bc547-vs-2n2222.md
     # - LED Flasher: lessons/35-led-flasher.md
     - Boolean Logic: lessons/35-boolean-logic.md
     - LED Noodle Circuit: lessons/40-noodle-led-circuit.md
@@ -39,12 +40,17 @@ nav:
     - 555 Timer: sims/timer.md
     - LED Resistor Calculator: sims/led-resistor-calc/index.md
     - Flip Flop: sims/flip-flop/index.md
+    - sims/led-resistor-calc/led-circuit-calculator.md
+    - sims/template/index.md
   - Kits:
     - Introduction: kits/index.md
     - RGB LED: kits/rgb-led/index.md
     - Variable Power Supply: kits/variable-power-supply/index.md
     - Fixed 5-Volt Regulator: kits/5v-regulator/index.md
     - Buck Converter: kits/buck-converter/index.md
+    - kits/signal-generator/index.md
+
+
   - License: license.md
   - Contact: contact.md
  
