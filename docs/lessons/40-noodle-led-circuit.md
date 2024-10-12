@@ -1,4 +1,4 @@
-# Noodle LED Circuit
+# LED Noodle Circuit
 
 New flexible "LED noodles" are perfect for costumes.
 They only cost 1-2 dollars.
