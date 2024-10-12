@@ -101,6 +101,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/lessons/31-bc547-vs-2n2222/</loc>
+         <lastmod>2024-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/beginning-electronics/lessons/35-boolean-logic/</loc>
          <lastmod>2024-10-12</lastmod>
          <changefreq>daily</changefreq>
@@ -112,11 +117,6 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/lessons/80-rc-circuit/</loc>
-         <lastmod>2024-10-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/lessons/bc547vs-2n2222/</loc>
          <lastmod>2024-10-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -152,11 +152,6 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/</loc>
-         <lastmod>2024-10-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/sims/breadboard/</loc>
          <lastmod>2024-10-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
