@@ -1,5 +1,9 @@
 # LED Circuit
 
+## LED Resistor Selector
+
+[LED Resistor Simulator](../sims/led-resistor-calc/index.md)
+
 ![](../img/led-circuit.png)
 
 ## On Breadboard

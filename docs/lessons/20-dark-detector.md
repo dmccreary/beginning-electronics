@@ -106,18 +106,26 @@ By the end of the lesson, students will be able to:
 
 - **Activity**: Examine the LED's anode (long leg) and cathode (short leg). Discuss the importance of polarity.
 
-- **Ohm's Law Review**: Introduce the formula 
+- **Ohm's Law Review**: Review the formula:
 
-$$V=IR$$
+$$
+V=IR
+$$
+
+or
+
+$$
+I = V / R
+$$
 
 where:
 
-V = voltage
-I = current
-R = voltage
+* V = voltage
+* I = current
+* R = voltage
 
-to explain how to choose the appropriate resistor value.  Note that a typical
-LED uses 20 milliamps and that 330 ohms
+Explain how to choose the appropriate resistor value. 
+Note that a typical LED uses 20 milliamps and that 330 ohms
 is a good choice for a 5 volt power supply.
 
 **b. Measuring the LDR**
