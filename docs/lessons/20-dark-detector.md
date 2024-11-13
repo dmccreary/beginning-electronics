@@ -83,9 +83,7 @@ By the end of the lesson, students will be able to:
 
 - Discuss devices that use similar technology, such as automatic night lights, street lamps, and security systems.
 
-
-
-#### **2. Safety Discussion (5 minutes)**
+#### Step 2: Safety Discussion (5 minutes)
 
 **a. Electrical Safety**
 
@@ -100,9 +98,7 @@ By the end of the lesson, students will be able to:
 
 - While not necessary for low-voltage circuits, encourage good habits like keeping the workspace organized and dry.
 
-
-
-#### **3. Component Exploration (15 minutes)**
+#### Step 3: Component Exploration (15 minutes)
 
 **a. Light Emitting Diode (LED) and Current Limiting Resistor**
 
@@ -142,11 +138,9 @@ is a good choice for a 5 volt power supply.
 
 - **Activity**: Identify the pins using a datasheet or diagram. Discuss how a small current at the base controls a larger current between the collector and emitter.
 
+#### Step 4: Building and Testing Circuits (40 minutes)
 
-
-#### **4. Building and Testing Circuits (40 minutes)**
-
-**Step 1: Test the Power Supply, LED, and Resistor (10 minutes)**
+**Circuit Step 1: Test the Power Supply, LED, and Resistor (10 minutes)**
 
 - **Instructions**:
     - Connect the 220 ohm resistor to the anode of the LED.
@@ -155,7 +149,7 @@ is a good choice for a 5 volt power supply.
     - Connect the power supply to the breadboard rails (+ to +, - to -).
 - **Discussion**: Explain that the resistor limits current to protect the LED. Verify that the LED lights up.
 
-**Step 2: Measure LDR Resistance (5 minutes)**
+**Circuit Step 2: Measure LDR Resistance (5 minutes)**
 
 - **Instructions**:
     - Disconnect the power supply.
@@ -163,7 +157,7 @@ is a good choice for a 5 volt power supply.
     - Measure the resistance with the LDR exposed to light and then covered.
 - **Observation**: Note the change in resistance and discuss how light affects the LDR.
 
-**Step 3: Experiment with the Potentiometer (10 minutes)**
+**Circuit Step 3: Experiment with the Potentiometer (10 minutes)**
 
 - **Instructions**:
     - Connect the outer pins of the potentiometer to the positive and negative rails.
@@ -171,7 +165,7 @@ is a good choice for a 5 volt power supply.
     - Turn the potentiometer knob and observe voltage changes.
 - **Discussion**: Explain how the potentiometer divides voltage and can control components like the LED.
 
-**Step 4: Create an LED Dimmer with the Potentiometer (10 minutes)**
+**Circuit Step 4: Create an LED Dimmer with the Potentiometer (10 minutes)**
 
 - **Instructions**:
     - Connect the wiper of the potentiometer to the anode of the LED (through the 220 ohm resistor).
@@ -179,7 +173,7 @@ is a good choice for a 5 volt power supply.
     - Adjust the potentiometer and observe changes in LED brightness.
 - **Discussion**: Relate changes in voltage to LED brightness.
 
-**Step 5: Introduce the Transistor into the Circuit (10 minutes)**
+**Circuit Step 5: Introduce the Transistor into the Circuit (10 minutes)**
 
 - **Instructions**:
 
@@ -188,13 +182,12 @@ is a good choice for a 5 volt power supply.
     - Connect the emitter (E) of the transistor to the negative rail.
     - Connect the positive side of the LED (through the 220 ohm resistor) to the positive rail.
     - Connect the base (B) of the transistor to the wiper of the potentiometer through a 10K ohm resistor.
+
 - **Observation**: Adjusting the potentiometer should turn the LED on and off.
 
 - **Discussion**: Explain how the transistor acts as a switch controlled by the base voltage.
 
-
-
-#### **5. Building the Dark Detector Circuit (20 minutes)**
+#### Step 5: Building the Dark Detector Circuit (20 minutes)
 
 **a. Assemble the Voltage Divider with LDR and Potentiometer**
 
@@ -204,6 +197,7 @@ is a good choice for a 5 volt power supply.
     - Connect the other end of the LDR to the wiper of the potentiometer.
     - Connect one outer pin of the potentiometer to the negative rail.
     - Connect the junction of the LDR and potentiometer (voltage divider output) to the base of the transistor through the 10K ohm resistor.
+
 - **Diagram Reference**: Use the printed circuit diagram and breadboard photo to guide assembly.
 
 **b. Test the Dark Detector Circuit**
@@ -212,6 +206,7 @@ is a good choice for a 5 volt power supply.
     - Power the circuit.
     - Observe the LED in ambient light; it should be off.
     - Cover the LDR; the LED should turn on.
+
 - **Adjustment**: If the LED doesn't respond as expected, adjust the potentiometer to change sensitivity.
 
 **c. Discussion**
@@ -220,9 +215,7 @@ is a good choice for a 5 volt power supply.
 
 - **Transistor Operation**: Discuss how increasing resistance (covering the LDR) raises the base voltage, turning on the transistor and LED.
 
-
-
-#### **6. Real-World Applications and Extensions (10 minutes)**
+#### Step 6: Real-World Applications and Extensions (10 minutes)
 
 **a. Applications**
 
@@ -237,8 +230,7 @@ is a good choice for a 5 volt power supply.
 - **Alternative Outputs**: Discuss replacing the LED with other devices like buzzers or relays for different applications.
 
 
-
-#### **7. Review and Assessment (10 minutes)**
+#### Step 7: Review and Assessment (10 minutes)**
 
 **a. Recap Key Concepts**
 
@@ -248,8 +240,8 @@ is a good choice for a 5 volt power supply.
 
 **b. Questions for Understanding**
 
-- "What happens to the voltage at the transistor's base when the LDR is covered?"
-- "How does the potentiometer affect the circuit's sensitivity?"
+- What happens to the voltage at the transistor's base when the LDR is covered?
+- How does the potentiometer affect the circuit's sensitivity?
 
 **c. Exit Ticket**
 
@@ -270,7 +262,7 @@ is a good choice for a 5 volt power supply.
 
 - **Transistor Issues**: Ensure correct identification of transistor pins (consult datasheet if necessary).
 
-#### **Differentiation Strategies**
+#### Differentiation Strategies
 
 - **Advanced Students**: Challenge them to modify the circuit to respond to light instead of darkness.
 
