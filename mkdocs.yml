@@ -26,11 +26,12 @@ nav:
     - RGB Led: lessons/14-rgb-led.md
     - Dark Detector: lessons/20-dark-detector.md
     - Transistors: lessons/30-transistors.md
-    - BC547 vs. 2N2222: lessons/bc547-vs-2n2222.md
+    - BC547 vs. 2N2222: lessons/31-bc547-vs-2n2222.md
     # - LED Flasher: lessons/35-led-flasher.md
     - Boolean Logic: lessons/35-boolean-logic.md
     - LED Noodle Circuit: lessons/40-noodle-led-circuit.md
     - RC Circuit: lessons/80-rc-circuit.md
+    - Using Perf Boards: lessons/70-using-perf-boards.md
   - Simulations:
     - Introduction: sims/index.md
     - Breadboards: sims/breadboard/index.md
