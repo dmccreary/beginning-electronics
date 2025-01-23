@@ -50,6 +50,7 @@ nav:
     - Fixed 5-Volt Regulator: kits/5v-regulator/index.md
     - Buck Converter: kits/buck-converter/index.md
     - kits/signal-generator/index.md
+    - Busy Board: kits/busy-board/index.md
 
 
   - License: license.md
