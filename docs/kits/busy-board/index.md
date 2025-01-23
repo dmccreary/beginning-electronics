@@ -1,5 +1,7 @@
 # Interactive Electronic Busy Board
 
+![](../../img/busy-board.jpg)
+
 ## Educational Purpose and Benefits
 
 A busy board is an interactive learning tool that combines various electronic components and mechanical elements to create an engaging, hands-on experience for young children. These boards develop fine motor skills, cause-and-effect understanding, and basic electronics concepts through play-based learning.
