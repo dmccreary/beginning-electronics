@@ -12,28 +12,24 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/lessons/14-rgb-led/">
+        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/kits/led-dimmer/led-dimmer-circuit/">
       
       
-        <link rel="prev" href="../13-or-buttons/">
       
       
-        <link rel="next" href="../20-dark-detector/">
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45">
     
     
       
-        <title>RGB Led - Beginning Electronics</title>
+        <title>2N2222 Transistor LED Dimmer Circuit - Beginning Electronics</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rgb-led-circuit" class="md-skip">
+        <a href="#2n2222-transistor-led-dimmer-circuit" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Beginning Electronics" class="md-header__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+    <a href="../../.." title="Beginning Electronics" class="md-header__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RGB Led
+              2N2222 Transistor LED Dimmer Circuit
             
           </span>
         </div>
@@ -199,7 +195,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Beginning Electronics" class="md-nav__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+    <a href="../../.." title="Beginning Electronics" class="md-nav__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -229,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -249,7 +245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-description/" class="md-nav__link">
+      <a href="../../../course-description/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -298,7 +294,7 @@
         
   
   
-    <a href="../../setup/" class="md-nav__link">
+    <a href="../../../setup/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -321,8 +317,6 @@
       
   
   
-    
-  
   
   
     
@@ -366,369 +360,29 @@
     
     
       
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
+  
+  
+    <a href="../../../lessons/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     Lessons
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Lessons
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../05-part-identification/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Identifying Parts
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../08-breadboard/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Breadboard
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../09-power/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Power
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../10-led-circuit/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    LED Circuit
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../11-buttons/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Buttons
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../12-and-buttons/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Buttons AND
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../13-or-buttons/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Buttons OR
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        <span class="md-nav__icon md-icon"></span>
       
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    RGB Led
-  </span>
+    </a>
   
 
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../20-dark-detector/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dark Detector
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../30-transistors/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Transistors
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../31-bc547-vs-2n2222/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    BC547 vs. 2N2222
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../35-boolean-logic/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Boolean Logic
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../40-noodle-led-circuit/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    LED Noodle Circuit
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../80-rc-circuit/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    RC Circuit
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../70-using-perf-boards/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Using Perf Boards
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -794,7 +448,7 @@
         
   
   
-    <a href="../../sims/" class="md-nav__link">
+    <a href="../../../sims/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -865,7 +519,7 @@
         
   
   
-    <a href="../../kits/" class="md-nav__link">
+    <a href="../../" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -914,7 +568,7 @@
         
   
   
-    <a href="../../prompts/" class="md-nav__link">
+    <a href="../../../prompts/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -940,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../license/" class="md-nav__link">
+      <a href="../../../license/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -960,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../contact/" class="md-nav__link">
+      <a href="../../../contact/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -993,6 +647,86 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#component-list-and-orientation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component List and Orientation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-placement-and-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Placement and Labels
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-wires" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting Wires
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#circuit-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuit Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operation-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operation Principles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Benefits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-issues-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues and Solutions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1009,8 +743,118 @@
   
 
 
-<h1 id="rgb-led-circuit">RGB LED Circuit</h1>
-<p><img alt="RGB LED Circuit" src="../../img/rgb-led-circuit.png" /></p>
+<h1 id="2n2222-transistor-led-dimmer-circuit">2N2222 Transistor LED Dimmer Circuit</h1>
+<div class="admonition prompt">
+<p class="admonition-title">Prompt</p>
+<p>Please draw the LED dimmer circuit using SVG on a 10x10 grid pattern with (0,0) in the center, (-5,-5) at the lower left and (5,5) at the upper right.  Draw a grid at integers in light gray.</p>
+<p>The circuit has the following components:</p>
+<h2 id="component-list-and-orientation">Component List and Orientation</h2>
+<ul>
+<li>A top power rail in red</li>
+<li>A bottom power rail in black</li>
+<li>A potentiometer with +5 at the top, tap to the right and GND at the bottom</li>
+<li>A horizontal 10K base current limiting resistor</li>
+<li>A 2N2222 transistor with the Base to the left, Collector at the top and Emitter at the bottom and the flat side of the transistor symbol be on the right.
+Draw an LED on the right side at (5, 4).</li>
+<li>A vertical LED</li>
+<li>A vertical 330K LED current limiting resistor</li>
+</ul>
+<h2 id="component-placement-and-labels">Component Placement and Labels</h2>
+<ul>
+<li>Place a wide red +5 line at the top from (-5,5) to (5,5).</li>
+<li>Label the top power "+5 Volts" in red at (-4,4.5)</li>
+<li>Place a wide black GND line at the bottom from (-5,-5) to (5, -5).</li>
+<li>Label the ground "GND" at (-4, -4.5)</li>
+<li>Place the potentiometer symbol to the left + at (-5,0)</li>
+<li>Label he potentiometer center "Tap" at (-5,.5)</li>
+<li>Place the 10K ohm base current limiting resistor at (-4, 0).</li>
+<li>Place the label "10K" at (-4, .5)</li>
+<li>Place a 2N2222 transistor symbol at (0.0) with the base going to the left, the emitter going to GND at (0, -5) and the collector going up.</li>
+<li>Place the label "2N2222" at (1,0)</li>
+<li>Place the label the "Collector" of the 2N2222 at (-.5,1).</li>
+<li>Place the label the "Base" of the transistor at (-.5,.5)</li>
+<li>Place the label the "Emitter" of the transistor at (-.5,-1)</li>
+<li>Place the vertical LED symbol at with the top at (5,5) and the bottom at (5,4)</li>
+<li>Draw a vertical LED current limiting 330 ohm resistor from (5, 3) to (5, 1)</li>
+</ul>
+<h2 id="connecting-wires">Connecting Wires</h2>
+<ul>
+<li>Connect the components only vertical or horizontal wires.</li>
+<li>Using a horizontal wire, connect the tap of the potentiometer from (-5,0) to the 10K resistor at (-4,0)</li>
+<li>Using a horizontal wire, connect the right side of the 10K resistor at (-3,0) to the base of the transistor at (-1,0)</li>
+<li>Using a vertical wire, connect the bottom of the LED at (5,4) to the top of the resistor at (5,3)</li>
+<li>Using a vertical wire, connect the top of the 330 ohm resistor at (5, 3) to the bottom of the LED at (5,4)</li>
+<li>Using a horizontal wire, connect the bottom of the 330 ohm resistor at (5,1) to the Collector at (0,1)</li>
+</ul>
+</div>
+<h2 id="circuit-diagram">Circuit Diagram</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>VCC (5V) ----[10K Potentiometer]----[10K Resistor]----+
+                                                      |
+                                              [Base]  |
+                                            2N2222    |
+VCC (5V) ----[LED]----[220Ω]----[Collector]          |
+                                            [Emitter] |
+                                                      |
+GND ----------------------------------------------[GND]
+</code></pre></div></td></tr></table></div>
+<h2 id="component-details">Component Details</h2>
+<ul>
+<li>2N2222 NPN Transistor (TO-92 package)</li>
+<li>10K ohm potentiometer</li>
+<li>10K ohm base resistor</li>
+<li>220 ohm LED current limiting resistor</li>
+<li>Standard LED (20mA rating)</li>
+</ul>
+<h2 id="operation-principles">Operation Principles</h2>
+<ol>
+<li><strong>Base Current Control</strong></li>
+<li>Potentiometer varies voltage at base</li>
+<li>10K base resistor limits maximum base current to safe level</li>
+<li>
+<p>Base current range: 0 to ~0.5mA</p>
+</li>
+<li>
+<p><strong>Amplification</strong></p>
+</li>
+<li>Transistor operates in active region</li>
+<li>Collector current proportional to base current (β ≈ 100)</li>
+<li>
+<p>Maximum collector current ~50mA (limited by resistors)</p>
+</li>
+<li>
+<p><strong>LED Dimming</strong></p>
+</li>
+<li>Smooth transition through active region</li>
+<li>Minimal dead zone at low pot settings</li>
+<li>Protected from overcurrent by 220Ω resistor</li>
+</ol>
+<h2 id="performance-benefits">Performance Benefits</h2>
+<ul>
+<li>More linear control than direct potentiometer dimming</li>
+<li>Reduced minimum brightness threshold</li>
+<li>Better thermal stability</li>
+<li>Protected against component damage</li>
+</ul>
+<h2 id="common-issues-and-solutions">Common Issues and Solutions</h2>
+<ol>
+<li><strong>LED Flicker</strong></li>
+<li>Add 0.1µF capacitor across pot terminals</li>
+<li>
+<p>Ensure clean power supply</p>
+</li>
+<li>
+<p><strong>Non-linear Response</strong></p>
+</li>
+<li>Adjust base resistor value</li>
+<li>Consider logarithmic potentiometer</li>
+</ol>
 
 
 
@@ -1042,44 +886,6 @@
         <footer class="md-footer">
   
     
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../13-or-buttons/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Buttons OR">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Buttons OR
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../20-dark-detector/" class="md-footer__link md-footer__link--next" aria-label="Next: Dark Detector">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Dark Detector
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1103,10 +909,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
