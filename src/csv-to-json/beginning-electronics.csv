@@ -1,0 +1,226 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Electricity,,1
+2,Voltage,,2
+3,Current,,2
+4,Resistance,,2
+5,Ground,1|2,1
+6,Power Source,1|2,3
+7,USB Power,1,3
+8,Battery Power,1,3
+9,Battery Ratings,8,3
+10,Five Volt Standard,1|2,1
+11,3.3 Volt Standard,1|2,1
+12,Direct Current,1|3,2
+13,Alternating Current,1|3,2
+14,Positive Terminal,2,1
+15,Negative Terminal,2,1
+16,Circuit,1,7
+17,Open Circuit,16,7
+18,Closed Circuit,16,7
+19,Short Circuit,16,7
+20,Conductivity,1,1
+21,Conductor,20,1
+22,Insulator,20,1
+23,Semiconductor,20,1
+24,Wire,20|21,4
+25,Gauge,24,4
+26,Stranded Wire,24,4
+27,Solid Core Wire,24,4
+28,Wire Colors,24,4
+29,Wire Length,24,4
+30,Wire Resistance,24|4,2
+31,Component,1,4
+32,Polarized Component,31,4
+33,Non-polarized Component,31,4
+34,Terminal,31,1
+35,Breadboard,24,4
+36,Power Rails,35,4
+37,Terminal Strips,35,4
+38,DIP Support,35,4
+39,Lead,31,4
+40,Resistor,4,4
+41,Color Code,40,4
+42,Power Rating,40,3
+43,Variable Resistor,40,4
+44,Potentiometer,43,5
+45,Light Dependent Resistor,43,5
+46,LED,31,4
+47,LED Colors,46,4
+48,LED Brightness,46,4
+49,LED Current,46,2
+50,Switch,31,4
+51,Momentary Switch,50,4
+52,Toggle Switch,50,4
+53,DIP Switch,50,4
+54,Reed Switch,50,4
+55,Magnetic Switch,50,4
+56,Capacitor,31,4
+57,Capacitance,56,2
+58,Dielectric,56,1
+59,Electrolytic Capacitor,56,4
+60,Ceramic Capacitor,56,4
+61,Motor,31,6
+62,DC Motor,61,6
+63,Stepper Motor,61,6
+64,Servo Motor,61,6
+65,Motor Speed,61,6
+66,Motor Direction,61,6
+67,Motor Torque,61,6
+68,Motor Current,61,2
+69,555 Timer,31,8
+70,Astable Mode,69,8
+71,Monostable Mode,69,8
+72,Bistable Mode,69,8
+73,Frequency,69,2
+74,Duty Cycle,69,2
+75,Time Constant,69,2
+76,Shift Register,31,8
+77,Serial Input,76,8
+78,Parallel Output,76,8
+79,Clock Input,76,8
+80,Data Transfer,76,8
+81,Button,31,5
+82,Push Button,81,5
+83,Tactile Switch,81,5
+84,Bounce,81,5
+85,Debounce,81,5
+86,Pull-up Resistor,81,4
+87,Pull-down Resistor,81,4
+88,Speaker,31,6
+89,Piezo Buzzer,88,6
+90,Audio Frequency,88,2
+91,Volume Control,88,6
+92,Tone Generation,88,6
+93,Ohm's Law,2|3|4,9
+94,Power Law,2|3,9
+95,Series Circuit,16,9
+96,Parallel Circuit,16,9
+97,Voltage Division,95,9
+98,Current Division,96,9
+99,Power Rating,31,3
+100,Heat Dissipation,99,1
+101,Safety,1,10
+102,Static Electricity,1,1
+103,Electric Shock,101,10
+104,Short Circuit Protection,101,10
+105,Reverse Polarity,101,10
+106,Testing,31,10
+107,Multimeter,106,2
+108,Continuity Test,106,2
+109,Voltage Test,106,2
+110,Current Test,106,2
+111,Resistance Test,106,2
+112,Troubleshooting,106,10
+113,Soldering,31,7
+114,Desoldering,113,7
+115,Heat Sink,113,7
+116,Solder Joint,113,7
+117,Cold Joint,113,7
+118,Project Box,31,10
+119,Heat Ventilation,118,10
+120,Cable Management,118,10
+121,Signal,1,1
+122,Digital Signal,121,1
+123,Analog Signal,121,1
+124,Square Wave,121,1
+125,Sine Wave,121,1
+126,Voltage Regulator,31,3
+127,Linear Regulator,126,3
+128,Switching Regulator,126,3
+129,Dropout Voltage,126,2
+130,Heat Management,126,1
+131,Input Voltage Range,126,3
+132,Output Current,126,2
+133,Efficiency,126,3
+134,Ripple Voltage,126,2
+135,Load Regulation,126,3
+136,Line Regulation,126,3
+137,Protection Circuit,31,10
+138,Fuse,137,4
+139,Circuit Breaker,137,4
+140,Crowbar Circuit,137,4
+141,Reverse Protection,137,4
+142,Overvoltage Protection,137,4
+143,Temperature Sensor,31,5
+144,Thermistor,143,5
+145,Thermocouple,143,5
+146,RTD,143,5
+147,Digital Temperature Sensor,143,5
+148,Temperature Range,143,5
+149,Sensor Accuracy,143,5
+150,Display,31,6
+151,Seven Segment Display,150,6
+152,LCD,150,6
+153,LED Matrix,150,6
+154,Common Anode,150,6
+155,Common Cathode,150,6
+156,Transistor,31,4
+157,BJT,156,4
+158,MOSFET,156,4
+159,Base Current,156,2
+160,Collector Current,156,2
+161,Emitter Current,156,2
+162,Gate Voltage,156,2
+163,Drain Current,156,2
+164,Source Current,156,2
+165,Amplification,156,1
+166,Switching,156,1
+167,Logic Gate,31,8
+168,AND Gate,167,8
+169,OR Gate,167,8
+170,NOT Gate,167,8
+171,NAND Gate,167,8
+172,NOR Gate,167,8
+173,XOR Gate,167,8
+174,Truth Table,167,8
+175,Logic Level,167,8
+176,Crystal Oscillator,31,8
+177,Frequency Stability,176,2
+178,Load Capacitance,176,2
+179,ESR,176,2
+180,Drive Level,176,2
+181,Fundamental Mode,176,8
+182,Overtone Mode,176,8
+183,Relay,31,6
+184,Coil Voltage,183,2
+185,Contact Rating,183,2
+186,Switching Time,183,2
+187,Contact Resistance,183,2
+188,Coil Resistance,183,2
+189,Isolation,183,1
+190,Reed Relay,183,6
+191,Solid State Relay,183,6
+192,PCB,31,7
+193,Copper Layer,192,7
+194,Solder Mask,192,7
+195,Silkscreen,192,7
+196,Through Hole,192,7
+197,Surface Mount,192,7
+198,Via,192,7
+199,Trace Width,192,7
+200,Trace Spacing,192,7
+201,Ground Plane,192,7
+202,Power Plane,192,7
+203,Optocoupler,31,4
+204,Input LED,203,4
+205,Output Transistor,203,4
+206,Transfer Ratio,203,2
+207,Isolation Voltage,203,2
+208,Response Time,203,2
+209,Common Mode Rejection,203,2
+210,Transformer,31,3
+211,Primary Winding,210,3
+212,Secondary Winding,210,3
+213,Turns Ratio,210,3
+214,Core Material,210,3
+215,Inductance,210,2
+216,Coupling Factor,210,2
+217,Leakage Inductance,210,2
+218,Core Loss,210,2
+219,Copper Loss,210,2
+220,Efficiency,210,3
+221,Power Supply,31,3
+222,Input Voltage Range,221,3
+223,Output Voltage,221,3
+224,Output Current,221,2
+225,Regulation,221,3
