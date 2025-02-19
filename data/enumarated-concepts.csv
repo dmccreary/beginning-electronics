@@ -1,0 +1,226 @@
+ConceptID, ConceptLabel
+1,Electricity
+2,Voltage
+3,Current
+4,Resistance
+5,Ground
+6,Power Source
+7,USB Power
+8,Battery Power
+9,Battery Ratings
+10,Five Volt Standard
+11,3.3 Volt Standard
+12,Direct Current
+13,Alternating Current
+14,Positive Terminal
+15,Negative Terminal
+16,Circuit
+17,Open Circuit
+18,Closed Circuit
+19,Short Circuit
+20,Conductivity
+21,Conductor
+22,Insulator
+23,Insulated Wire
+24,Semiconductor
+25,Wire
+26,Stranded Wire
+27,Solid Core Wire
+28,Wire Gauge
+29,Breadboard
+30,Power Rails
+31,Component Rows
+32,Breadboard Connections
+33,Jumper Wires
+34,Circuit Connections
+35,Power Distribution
+36,Circuit Protection
+37,Basic Safety
+38,Multimeter
+39,Voltage Measurement
+40,Current Measurement
+41,Resistance Measurement
+42,Continuity Testing
+43,LED
+44,LED Polarity
+45,Anode
+46,Cathode
+47,Forward Voltage
+48,Current Limiting
+49,Resistor
+50,Resistor Values
+51,Color Code
+52,LED Current Limiter
+53,LED Max Current
+54,Ohm's Law
+55,Series Circuit
+56,Parallel Circuit
+57,Voltage Drop
+58,LED Voltage Drop
+59,Current Division
+60,Power Dissipation
+61,Heat Generation
+62,Component Ratings
+63,Push Button
+64,Momentary Switch
+65,Toggle Switch
+66,Switch States
+67,Switch Types
+68,Single Pole vs. Double Pole
+69,Pull-Up Resistor
+70,Pull-Down Resistor
+71,Switch Debouncing
+72,Potentiometer
+73,Potentiometer Circuit
+74,Variable Resistance
+75,Voltage Divider
+76,Analog Control
+77,Wiper Position
+78,Linear Taper
+79,Logarithmic Taper
+80,Photoresistor
+81,Light Sensing
+82,Dark Detection
+83,Ambient Light
+84,Night Light Circuit
+85,Light Threshold
+86,Sensor Response
+87,DC Motor
+88,Motor Polarity
+89,Motor Speed
+90,Motor Torque
+91,Back EMF
+92,Flyback Diode
+93,Motor Driver
+94,Transistor
+95,NPN Transistor
+96,PNP Transistor
+97,Base Current
+98,Collector Current
+99,Emitter Current
+100,Current Gain
+101,Saturation
+102,Cut-Off
+103,Active Region
+104,Switching Applications
+105,Amplification
+106,Load Current
+107,Base Resistance
+108,Collector Load
+109,Heat Sinking
+110,Speaker
+111,Audio Amplifier
+112,Gain
+113,Oscillator
+114,Flip Flop
+115,Set and Reset
+116,Latch
+117,Timer
+118,555 Timer
+119,Shift Register
+120,Serial Input
+121,Parallel Output
+122,Clock Signal
+123,Data Signal
+124,Latch Enable
+125,Astable Mode
+126,Monostable Mode
+127,Timing Capacitor
+128,Timing Resistor
+129,Duty Cycle
+130,Frequency Control
+131,Bit Pattern
+132,Data Transfer
+133,Binary Counter
+134,Display Driver
+135,Seven Segment Display
+136,Pulse Width
+137,Signal Generation
+138,Voltage Comparator
+139,Reference Voltage
+140,Voltage Meter
+141,Current Meter
+142,Measurement Range
+143,Voltage Regulator
+144,Input Voltage
+145,Output Voltage
+146,Dropout Voltage
+147,Load Regulation
+148,Current Limit
+149,Buck Converter
+150,AC to DC Conversion
+151,Rectifier
+152,Diode Bridge
+153,Capacitor Filter
+154,Ripple Voltage
+155,Switching Regulator
+156,Efficiency
+157,Heat Management
+158,Signal Generator
+159,Waveform Types
+160,Square Wave
+161,Triangle Wave
+162,Frequency Adjustment
+163,Amplitude Control
+164,Output Buffer
+165,Memory Cell
+166,State Storage
+167,Binary Logic
+168,Logic Levels
+169,Solar Power
+170,Solar Cell
+171,Rechargeable Battery
+172,Battery Charging
+173,Battery Safety
+174,TP4056 LiPo Charger
+175,Power Budget
+176,Current Draw
+177,Voltage Sag
+178,Load Testing
+179,Project Planning
+180,Component Selection
+181,Cost Optimization
+182,Parts Sourcing
+183,Circuit Simulation
+184,Virtual Testing
+185,MicroSim
+186,Debugging
+187,Troubleshooting
+188,Circuit Layout
+189,Wire Management
+190,Soldering
+191,Perf Board
+192,Signal Routing
+193,Noise Reduction
+194,Ground Distribution
+195,Testing Points
+196,Circuit Documentation
+197,Schematic Drawing
+198,Component Labels
+199,Wire Colors
+200,Safety Margins
+201,Environmental Factors
+202,Temperature Effects
+203,Humidity Effects
+204,Mechanical Stress
+205,Vibration Effects
+206,Project Enclosure
+207,Ventilation
+208,Access Points
+209,Cable Strain Relief
+210,User Interface
+211,Control Layout
+212,Visual Indicators
+213,Status Monitoring
+214,Power Indication
+215,Fault Detection
+216,Reverse Polarity
+217,Overcurrent Protection
+218,Thermal Protection
+219,Surge Protection
+220,System Integration
+221,Module Interface
+222,Signal Compatibility
+223,Power Compatibility
+224,System Testing
+225,Performance Validation

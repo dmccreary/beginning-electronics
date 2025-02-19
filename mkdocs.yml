@@ -7,6 +7,7 @@ repo_url: 'https://github.com/dmccreary/beginning-electronics'
 
 nav:
   - Home: index.md
+  - Course Description: course-description.md
   - Getting Started:
     - Introduction: setup/index.md
     - Kit Components: setup/05-kit-components.md
@@ -32,8 +33,9 @@ nav:
     - LED Noodle Circuit: lessons/40-noodle-led-circuit.md
     - RC Circuit: lessons/80-rc-circuit.md
     - Using Perf Boards: lessons/70-using-perf-boards.md
-  - Simulations:
+  - Micro Simulations:
     - Introduction: sims/index.md
+    - Learning Graph: sims/learning-graph/index.md
     - Breadboards: sims/breadboard/index.md
     - LEDs: sims/led/index.md
     - Push Buttons: sims/push-buttons.md
@@ -51,7 +53,10 @@ nav:
     - Buck Converter: kits/buck-converter/index.md
     - kits/signal-generator/index.md
     - Busy Board: kits/busy-board/index.md
-
+  - Prompts:
+    - Introduction: prompts/index.md
+    - Course Description: prompts/course-description.md
+    - Enumerated Concepts: prompts/enumerated-concepts.md
   - License: license.md
   - Contact: contact.md
  

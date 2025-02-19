@@ -1,0 +1,228 @@
+1. Electricity
+2. Voltage
+3. Current
+4. Resistance
+5. Ground
+6. Power Source
+7. USB Power
+7. Battery Power
+7. Battery Ratings
+8. Five Volt Standard
+9. 3.3 Volt Standard
+10. Direct Current
+11. Alternating Current
+12. Positive Terminal
+13. Negative Terminal
+14. Circuit
+15. Open Circuit
+16. Closed Circuit
+17. Short Circuit
+18. Conductivity
+19. Conductor
+20. Insulator
+21. Insulated Wire
+22. Semiconductor
+23. Wire
+24. Stranded Wire
+25. Solid Core Wire
+26. Wire Gauge
+27. Breadboard
+28. Power Rails
+29. Component Rows
+30. Breadboard Connections
+31. Jumper Wires
+32. Circuit Connections
+33. Power Distribution
+34. Circuit Protection
+35. Basic Safety
+36. Multimeter
+37. Voltage Measurement
+38. Current Measurement
+39. Resistance Measurement
+40. Continuity Testing
+41. LED
+42. LED Polarity
+43. Anode
+44. Cathode
+45. Forward Voltage
+46. Current Limiting
+47. Resistor
+48. Resistor Values
+49. Color Code
+50. LED Current Limiter
+51. LED Max Current
+52. Ohm's Law
+53. Series Circuit
+54. Parallel Circuit
+55. Voltage Drop
+56. LED Voltage Drop
+57. Current Division
+58. Power Dissipation
+59. Heat Generation
+60. Component Ratings
+61. Push Button
+62. Momentary Switch
+63. Toggle Switch
+64. Switch States
+65. Switch Types
+66. Single Pole vs. Double Pole
+67. Pull-Up Resistor
+68. Pull-Down Resistor
+69. Switch Debouncing
+70. Potentiometer
+71. Potentiometer Circuit
+72. Variable Resistance
+73. Voltage Divider
+74. Analog Control
+75. Wiper Position
+76. Linear Taper
+77. Logarithmic Taper
+78. Photoresistor
+79. Light Sensing
+80. Dark Detection
+81. Ambient Light
+82. Night Light Circuit
+83. Light Threshold
+84. Sensor Response
+85. DC Motor
+86. Motor Polarity
+87. Motor Speed
+88. Motor Torque
+89. Back EMF
+90. Flyback Diode
+91. Motor Driver
+92. Transistor
+93. NPN Transistor
+94. PNP Transistor
+95. Base Current
+96. Collector Current
+97. Emitter Current
+98. Current Gain
+99. Saturation
+100. Cut-Off
+101. Active Region
+102. Switching Applications
+103. Amplification
+104. Load Current
+105. Base Resistance
+106. Collector Load
+107. Heat Sinking
+108. Speaker
+109. Audio Amplifier
+110. Gain
+111. Oscillator
+112. Flip Flop
+113. Set and Reset
+114. Latch
+115. Timer
+116. 555 Timer
+117. Shift Register
+118. Serial Input
+119. Parallel Output
+120. Clock Signal
+121. Data Signal
+122. Latch Enable
+123. Astable Mode
+124. Monostable Mode
+125. Timing Capacitor
+126. Timing Resistor
+127. Duty Cycle
+128. Frequency Control
+129. Bit Pattern
+130. Data Transfer
+131. Binary Counter
+132. Display Driver
+133. Seven Segment Display
+134. Pulse Width
+135. Signal Generation
+136. Voltage Comparator
+137. Reference Voltage
+138. Voltage Meter
+139. Current Meter
+140. Measurement Range
+141. Voltage Regulator
+142. Input Voltage
+143. Output Voltage
+144. Dropout Voltage
+145. Load Regulation
+146. Current Limit
+147. Buck Converter
+148. AC to DC Conversion
+149. Rectifier
+150. Diode Bridge
+151. Capacitor Filter
+152. Ripple Voltage
+153. Switching Regulator
+154. Efficiency
+155. Heat Management
+156. Signal Generator
+157. Waveform Types
+158. Square Wave
+159. Triangle Wave
+160. Frequency Adjustment
+161. Amplitude Control
+162. Output Buffer
+163. Memory Cell
+164. State Storage
+165. Binary Logic
+166. Logic Levels
+
+171. Solar Power
+172. Solar Cell
+173. Rechargeable Battery
+174. Battery Charging
+175. Battery Safety
+174. TP4056 LiPo Charger
+173. Power Budget
+174. Current Draw
+176. Voltage Sag
+177. Load Testing
+178. Project Planning
+179. Component Selection
+180. Cost Optimization
+181. Parts Sourcing
+167. Circuit Simulation
+168. Virtual Testing
+194. MicroSim
+169. Debugging
+170. Troubleshooting
+182. Circuit Layout
+183. Wire Management
+184. Soldering
+184. Perf Board
+184. Signal Routing
+185. Noise Reduction
+186. Power Distribution
+187. Ground Distribution
+188. Testing Points
+189. Circuit Documentation
+190. Schematic Drawing
+191. Component Labels
+192. Wire Colors
+193. Safety Margins
+175. Environmental Factors
+176. Temperature Effects
+177. Humidity Effects
+178. Mechanical Stress
+179. Vibration Effects
+180. Project Enclosure
+181. Ventilation
+182. Access Points
+183. Cable Strain Relief
+184. User Interface
+185. Control Layout
+186. Visual Indicators
+187. Status Monitoring
+188. Power Indication
+189. Fault Detection
+190. Circuit Protection
+191. Reverse Polarity
+192. Overcurrent Protection
+193. Thermal Protection
+194. Surge Protection
+195. System Integration
+196. Module Interface
+197. Signal Compatibility
+198. Power Compatibility
+199. System Testing
+200. Performance Validation

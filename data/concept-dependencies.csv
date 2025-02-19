@@ -1,0 +1,226 @@
+ConceptID,ConceptLabel,Dependencies
+1,Electricity,
+2,Voltage,
+3,Current,
+4,Resistance,
+5,Ground,1|2
+6,Power Source,1|2
+7,USB Power,1
+8,Battery Power,1
+9,Battery Ratings,8
+10,Five Volt Standard,1|2
+11,3.3 Volt Standard,1|2
+12,Direct Current,1|3
+13,Alternating Current,1|3
+14,Positive Terminal,2
+15,Negative Terminal,2
+16,Circuit,1
+17,Open Circuit,16
+18,Closed Circuit,16
+19,Short Circuit,16
+20,Conductivity,1
+21,Conductor,20
+22,Insulator,20
+23,Insulated Wire,22
+24,Semiconductor,20
+25,Wire,1
+26,Stranded Wire,25
+27,Solid Core Wire,25
+28,Wire Gauge,25
+29,Breadboard
+30,Power Rails,29
+31,Component Rows,29
+32,Breadboard Connections,29
+33,Jumper Wires,25|29
+34,Circuit Connections,16
+35,Power Distribution,1
+36,Circuit Protection,16
+37,Basic Safety,1
+38,Multimeter,1
+39,Voltage Measurement,2|38
+40,Current Measurement,3|38
+41,Resistance Measurement,4|38
+42,Continuity Testing,1|38
+43,LED,1
+44,LED Polarity,43
+45,Anode,44
+46,Cathode,44
+47,Forward Voltage,2|44
+48,Current Limiting,3|4
+49,Resistor,4
+50,Resistor Values,49
+51,Color Code,49
+52,LED Current Limiter,43|49
+53,LED Max Current,43|3
+54,Ohm's Law,2|3|4
+55,Series Circuit,16
+56,Parallel Circuit,16
+57,Voltage Drop,2
+58,LED Voltage Drop,43|57
+59,Current Division,3
+60,Power Dissipation,1
+61,Heat Generation,60
+62,Component Ratings,60
+63,Push Button,16
+64,Momentary Switch,63
+65,Toggle Switch,63
+66,Switch States,63
+67,Switch Types,63
+68,Single Pole vs. Double Pole,67
+69,Pull-Up Resistor,49
+70,Pull-Down Resistor,49
+71,Switch Debouncing,67
+72,Potentiometer,49
+73,Potentiometer Circuit,16|72
+74,Variable Resistance,4
+75,Voltage Divider,2|4
+76,Analog Control,2
+77,Wiper Position,72
+78,Linear Taper,72
+79,Logarithmic Taper,72
+80,Photoresistor,4
+81,Light Sensing,80
+82,Dark Detection,80
+83,Ambient Light,80
+84,Night Light Circuit,16|80
+85,Light Threshold,80
+86,Sensor Response,80
+87,DC Motor,1
+88,Motor Polarity,87
+89,Motor Speed,87
+90,Motor Torque,87
+91,Back EMF,87
+92,Flyback Diode,87
+93,Motor Driver,87
+94,Transistor,1
+95,NPN Transistor,94
+96,PNP Transistor,94
+97,Base Current,3|94
+98,Collector Current,3|94
+99,Emitter Current,3|94
+100,Current Gain,3|94
+101,Saturation,94
+102,Cut-Off,94
+103,Active Region,94
+104,Switching Applications,94
+105,Amplification,94
+106,Load Current,3
+107,Base Resistance,4|94
+108,Collector Load,94
+109,Heat Sinking,60
+110,Speaker,1
+111,Audio Amplifier,110|105
+112,Gain,105
+113,Oscillator,1
+114,Flip Flop,1
+115,Set and Reset,114
+116,Latch,114
+117,Timer,1
+118,555 Timer,117
+119,Shift Register,1
+120,Serial Input,119
+121,Parallel Output,119
+122,Clock Signal,119
+123,Data Signal,119
+124,Latch Enable,119
+125,Astable Mode,118
+126,Monostable Mode,118
+127,Timing Capacitor,118
+128,Timing Resistor,118
+129,Duty Cycle,125
+130,Frequency Control,125
+131,Bit Pattern,119
+132,Data Transfer,119
+133,Binary Counter,119
+134,Display Driver,119
+135,Seven Segment Display,134
+136,Pulse Width,125
+137,Signal Generation,113
+138,Voltage Comparator,2
+139,Reference Voltage,2
+140,Voltage Meter,2|38
+141,Current Meter,3|38
+142,Measurement Range,38
+143,Voltage Regulator,2
+144,Input Voltage,2
+145,Output Voltage,2
+146,Dropout Voltage,143
+147,Load Regulation,143
+148,Current Limit,143
+149,Buck Converter,143
+150,AC to DC Conversion,1
+151,Rectifier,150
+152,Diode Bridge,151
+153,Capacitor Filter,151
+154,Ripple Voltage,2|153
+155,Switching Regulator,149
+156,Efficiency,155
+157,Heat Management,60
+158,Signal Generator,1
+159,Waveform Types,158
+160,Square Wave,159
+161,Triangle Wave,159
+162,Frequency Adjustment,158
+163,Amplitude Control,158
+164,Output Buffer,158
+165,Memory Cell,1
+166,State Storage,165
+167,Binary Logic,1
+168,Logic Levels,167
+169,Solar Power,1
+170,Solar Cell,169
+171,Rechargeable Battery,8
+172,Battery Charging,171
+173,Battery Safety,171
+174,TP4056 LiPo Charger,172
+175,Power Budget,1
+176,Current Draw,3
+177,Voltage Sag,2
+178,Load Testing,16
+179,Project Planning,1
+180,Component Selection,179
+181,Cost Optimization,179
+182,Parts Sourcing,179
+183,Circuit Simulation,16
+184,Virtual Testing,183
+185,MicroSim,183
+186,Debugging,16
+187,Troubleshooting,186
+188,Circuit Layout,16
+189,Wire Management,25
+190,Soldering,1
+191,Perf Board,1
+192,Signal Routing,16
+193,Noise Reduction,16
+194,Ground Distribution,5
+195,Testing Points,16
+196,Circuit Documentation,16
+197,Schematic Drawing,16
+198,Component Labels,16
+199,Wire Colors,25
+200,Safety Margins,37
+201,Environmental Factors,1
+202,Temperature Effects,201
+203,Humidity Effects,201
+204,Mechanical Stress,201
+205,Vibration Effects,201
+206,Project Enclosure,179
+207,Ventilation,206
+208,Access Points,206
+209,Cable Strain Relief,206
+210,User Interface,179
+211,Control Layout,210
+212,Visual Indicators,210
+213,Status Monitoring,210
+214,Power Indication,213
+215,Fault Detection,213
+216,Reverse Polarity,1
+217,Overcurrent Protection,4
+218,Thermal Protection,157
+219,Surge Protection,1
+220,System Integration,179
+221,Module Interface,220
+222,Signal Compatibility,167
+223,Power Compatibility,1
+224,System Testing,220
+225,Performance Validation,220
