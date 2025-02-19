@@ -3,22 +3,22 @@
         {
             "id": 1,
             "label": "Electricity",
-            "group": 1
+            "group": "found"
         },
         {
             "id": 2,
             "label": "Voltage",
-            "group": 2
+            "group":  "found"
         },
         {
             "id": 3,
             "label": "Current",
-            "group": 2
+            "group":  "found"
         },
         {
             "id": 4,
             "label": "Resistance",
-            "group": 2
+            "group": "found"
         },
         {
             "id": 5,
@@ -173,7 +173,7 @@
         {
             "id": 35,
             "label": "Breadboard",
-            "group": 4
+            "group":  "found"
         },
         {
             "id": 36,
@@ -757,7 +757,7 @@
         },
         {
             "id": 152,
-            "label": "LCD",
+            "label": "LED Bar Display",
             "group": 6
         },
         {
