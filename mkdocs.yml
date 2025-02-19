@@ -43,24 +43,26 @@ nav:
     - 555 Timer: sims/timer.md
     - LED Resistor Calculator: sims/led-resistor-calc/index.md
     - Flip Flop: sims/flip-flop/index.md
-    - sims/led-resistor-calc/led-circuit-calculator.md
-    - sims/template/index.md
-  - Kits:
+    - LED Circuit Calculator: sims/led-resistor-calc/led-circuit-calculator.md
+    - Template: sims/template/index.md
+  - Kits and Projects:
     - Introduction: kits/index.md
     - RGB LED: kits/rgb-led/index.md
     - LED Dimmer: kits/led-dimmer/index.md
     - Variable Power Supply: kits/variable-power-supply/index.md
     - Fixed 5-Volt Regulator: kits/5v-regulator/index.md
     - Buck Converter: kits/buck-converter/index.md
-    - kits/signal-generator/index.md
     - Busy Board: kits/busy-board/index.md
-                 - kits/busy-board/led-dimmer-circuit.md
-             - kits/solar-night-light/index.md
-             - prompts/course-dependencies.md
+    - Solar Night Light: kits/solar-night-light/index.md
+    - Signal Generator: kits/signal-generator/index.md
   - Prompts:
     - Introduction: prompts/index.md
     - Course Description: prompts/course-description.md
-    - Enumerated Concepts: prompts/enumerated-concepts.md
+    - Concept Enumeration: prompts/concept-enumeration.md
+    - Concept Dependencies: prompts/concept-dependencies.md
+    - Concept Taxonomy: prompts/concept-taxonomy.md
+    - Taxonomy Assignment: prompts/taxonomy-assignment.md
+    - Taxonomy Table: prompts/taxonomy-table.md
   - License: license.md
   - Contact: contact.md
  
@@ -68,8 +70,6 @@ nav:
 edit_uri: 'blob/master/docs'
 theme:
   name: material
-  extra_css:
-    - styles/custom.css
   # logo: img/my-icon.png
   # favicon: img/my-icon.png
   palette:
@@ -96,6 +96,10 @@ markdown_extensions:
   - attr_list
   - pymdownx.highlight:
       linenums: true
+extra_css:
+  - css/extras.css
+extra_javascript:
+  - js/extras.js
 #extra:
 #  analytics:
 #    provider: google
