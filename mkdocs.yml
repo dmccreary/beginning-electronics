@@ -49,6 +49,7 @@ nav:
     - Introduction: kits/index.md
     - RGB LED: kits/rgb-led/index.md
     - LED Dimmer: kits/led-dimmer/index.md
+    - LED Dimmer Circuit: kits/led-dimmer/led-dimmer-circuit.md
     - Variable Power Supply: kits/variable-power-supply/index.md
     - Fixed 5-Volt Regulator: kits/5v-regulator/index.md
     - Buck Converter: kits/buck-converter/index.md
