@@ -1,45 +1,46 @@
 # Concept Dependency Prompt
 
-You are an expert at creating dependency graphs for learning new concepts.
-For each new concept you are given, you have great skills at understanding what
-other concepts from a fixed list of concepts must be understood before a new
-concept can be understood.
+!!! prompt
+    You are an expert at creating dependency graphs for learning new concepts.
+    For each new concept you are given, you have great skills at understanding what
+    other concepts from a fixed list of concepts must be understood before a new
+    concept can be understood.
 
-I am creating a course on Beginning Electronics for a local high school.
-I have a list of the 225 concepts taught in this course.  The 225 concepts
-are provided in a CSV file format below.  The input format is the following:
+    I am creating a course on Beginning Electronics for a local high school.
+    I have a list of the 225 concepts taught in this course.  The 225 concepts
+    are provided in a CSV file format below.  The input format is the following:
 
-1. Column 1 is the ConceptID
-2. Column 2 is the ConceptLabel
+    1. Column 1 is the ConceptID
+    2. Column 2 is the ConceptLabel
 
-Please create a new CSV file of fully connected concept dependency graph
-for the concepts in this course.
-In this step, for each Concept on this list below, create a new
-list of other concepts on which it depends.  If a concept
-depends on a specific concept that is not listed,
-then we will need to add it as a new concept.
-This will help us determine the teaching order of the Concepts.
+    Please create a new CSV file of fully connected concept dependency graph
+    for the concepts in this course.
+    In this step, for each Concept on this list below, create a new
+    list of other concepts on which it depends.  If a concept
+    depends on a specific concept that is not listed,
+    then we will need to add it as a new concept.
+    This will help us determine the teaching order of the Concepts.
 
-Return the new list as a CSV file using the following format:
+    Return the new list as a CSV file using the following format:
 
-1. The first column in the CSV file is a ConceptID from the input file we provided you.
-2. The second column is the ConceptLabel from the input file we provided you.
-3. The third column is called Dependencies and it is a pipe-delimited list of the Concept IDs that the concept depends upon.  You will provide this information.
+    1. The first column in the CSV file is a ConceptID from the input file we provided you.
+    2. The second column is the ConceptLabel from the input file we provided you.
+    3. The third column is called Dependencies and it is a pipe-delimited list of the Concept IDs that the concept depends upon.  You will provide this information.
 
-Check your results to make sure that all concepts are connected to at least one other concept.
+    Check your results to make sure that all concepts are connected to at least one other concept.
 
-Foundation Concepts are concepts that have no dependant concepts in this set.  Limit
-the foundation concepts to the following:
+    Foundation Concepts are concepts that have no dependant concepts in this set.  Limit
+    the foundation concepts to the following:
 
-1,Electricity
-2,Voltage
-3,Current
-4,Resistance
-29,Breadboard
+    1,Electricity
+    2,Voltage
+    3,Current
+    4,Resistance
+    29,Breadboard
 
-Foundation Concepts have an empty Dependencies third column.
+    Foundation Concepts have an empty Dependencies third column.
 
-Here is your input which are the 225 core concepts for our Beginning Electronics course:
+    Here is your input which are the 225 core concepts for our Beginning Electronics course:
 
 ## Result
 
@@ -197,6 +198,6 @@ I'm working through ideas like "Overcurrent Protection" and "Thermal Protection,
 
 ## Link to Data File
 
-[Link to Input](https://github.com/dmccreary/beginning-electronics/data)
+[Link to Input of Enumerated Concepts](https://github.com/dmccreary/beginning-electronics/data/enumarated-concepts.csv)
 
-[Link to Output](https://github.com/dmccreary/beginning-electronics/data)
+[Link to Output of Concept Dependencies](https://github.com/dmccreary/beginning-electronics/data/concept-dependencies.csv)

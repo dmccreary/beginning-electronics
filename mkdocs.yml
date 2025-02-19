@@ -48,11 +48,15 @@ nav:
   - Kits:
     - Introduction: kits/index.md
     - RGB LED: kits/rgb-led/index.md
+    - LED Dimmer: kits/led-dimmer/index.md
     - Variable Power Supply: kits/variable-power-supply/index.md
     - Fixed 5-Volt Regulator: kits/5v-regulator/index.md
     - Buck Converter: kits/buck-converter/index.md
     - kits/signal-generator/index.md
     - Busy Board: kits/busy-board/index.md
+                 - kits/busy-board/led-dimmer-circuit.md
+             - kits/solar-night-light/index.md
+             - prompts/course-dependencies.md
   - Prompts:
     - Introduction: prompts/index.md
     - Course Description: prompts/course-description.md
