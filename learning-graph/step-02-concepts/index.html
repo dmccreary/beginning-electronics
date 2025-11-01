@@ -1,0 +1,1560 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Given a $15 breadboard kit, use AI to generate lessons. All content licensed Creative Commons ShareAlike Attribution Noncommercial">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/learning-graph/step-02-concepts/">
+      
+      
+        <link rel="prev" href="../step-01-course-assessment/">
+      
+      
+        <link rel="next" href="../step-04-quality-analysis/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Concept Enumeration - Beginning Electronics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extras.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#step-2-concept-labels-200-concepts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Beginning Electronics" class="md-header__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Beginning Electronics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Concept Enumeration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Beginning Electronics" class="md-nav__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Beginning Electronics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../setup/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../lessons/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Lessons
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Micro Simulations
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../kits/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Kits and Projects
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Learning Graph
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../step-01-course-assessment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Assessment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Concept Enumeration
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Concept Enumeration
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#foundational-concepts-40-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foundational Concepts (40 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-knowledge-passive-30-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Knowledge - Passive (30 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-knowledge-active-ics-25-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Knowledge - Active &amp; ICs (25 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-components-15-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Components (15 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-components-15-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Components (15 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-skills-breadboarding-25-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Skills - Breadboarding (25 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measurement-testing-15-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement &amp; Testing (15 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-systems-15-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Systems (15 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-logic-boolean-12-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Logic &amp; Boolean (12 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-circuits-projects-8-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Circuits &amp; Projects (8 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary Statistics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distribution-by-category" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distribution by Category
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pedagogical-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pedagogical Alignment
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../step-04-quality-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graph Quality Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../step-05-taxonomy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concept Taxonomy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../step-07-distribution-report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Taxonomy Distribution Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#foundational-concepts-40-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foundational Concepts (40 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-knowledge-passive-30-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Knowledge - Passive (30 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-knowledge-active-ics-25-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Knowledge - Active &amp; ICs (25 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-components-15-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Components (15 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-components-15-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Components (15 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-skills-breadboarding-25-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Skills - Breadboarding (25 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measurement-testing-15-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement &amp; Testing (15 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-systems-15-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Systems (15 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-logic-boolean-12-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Logic &amp; Boolean (12 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-circuits-projects-8-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Circuits &amp; Projects (8 concepts)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary Statistics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distribution-by-category" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distribution by Category
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pedagogical-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pedagogical Alignment
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="step-2-concept-labels-200-concepts">Step 2: Concept Labels (200 Concepts)</h1>
+<h2 id="foundational-concepts-40-concepts">Foundational Concepts (40 concepts)</h2>
+<ol>
+<li>Electric Current</li>
+<li>Voltage</li>
+<li>Resistance</li>
+<li>Ohm's Law</li>
+<li>Power</li>
+<li>Direct Current</li>
+<li>Circuit</li>
+<li>Open Circuit</li>
+<li>Closed Circuit</li>
+<li>Short Circuit</li>
+<li>Series Circuit</li>
+<li>Parallel Circuit</li>
+<li>Ground</li>
+<li>Polarity</li>
+<li>Circuit Diagram</li>
+<li>Schematic Symbol</li>
+<li>Component Lead</li>
+<li>Positive Terminal</li>
+<li>Negative Terminal</li>
+<li>Voltage Drop</li>
+<li>Current Flow</li>
+<li>Electron Flow</li>
+<li>Conventional Current</li>
+<li>Electric Charge</li>
+<li>Potential Difference</li>
+<li>Electrical Safety</li>
+<li>Power Rating</li>
+<li>Heat Dissipation</li>
+<li>Current Limiting</li>
+<li>Voltage Division</li>
+<li>Kirchhoff's Current Law</li>
+<li>Kirchhoff's Voltage Law</li>
+<li>AC vs DC</li>
+<li>Battery Polarity</li>
+<li>Power Supply Voltage</li>
+<li>Circuit Node</li>
+<li>Common Ground</li>
+<li>Forward Voltage</li>
+<li>Reverse Voltage</li>
+<li>Conductivity</li>
+</ol>
+<h2 id="component-knowledge-passive-30-concepts">Component Knowledge - Passive (30 concepts)</h2>
+<ol>
+<li>Resistor</li>
+<li>Resistor Color Code</li>
+<li>Resistor Tolerance</li>
+<li>Fixed Resistor</li>
+<li>Variable Resistor</li>
+<li>Potentiometer</li>
+<li>Trimmer Resistor</li>
+<li>Photoresistor</li>
+<li>Light Dependent Resistor</li>
+<li>Thermistor</li>
+<li>Pull-Up Resistor</li>
+<li>Pull-Down Resistor</li>
+<li>Current Limiting Resistor</li>
+<li>Voltage Divider Circuit</li>
+<li>Capacitor</li>
+<li>Electrolytic Capacitor</li>
+<li>Ceramic Capacitor</li>
+<li>Capacitor Polarity</li>
+<li>Capacitance</li>
+<li>RC Time Constant</li>
+<li>RC Circuit</li>
+<li>Charging Capacitor</li>
+<li>Discharging Capacitor</li>
+<li>Inductor</li>
+<li>Diode</li>
+<li>LED Polarity</li>
+<li>LED Forward Voltage</li>
+<li>LED Current Rating</li>
+<li>Anode</li>
+<li>Cathode</li>
+</ol>
+<h2 id="component-knowledge-active-ics-25-concepts">Component Knowledge - Active &amp; ICs (25 concepts)</h2>
+<ol>
+<li>Transistor</li>
+<li>NPN Transistor</li>
+<li>PNP Transistor</li>
+<li>Transistor Base</li>
+<li>Transistor Collector</li>
+<li>Transistor Emitter</li>
+<li>Transistor Switching</li>
+<li>Transistor Amplification</li>
+<li>Transistor Saturation</li>
+<li>Transistor Cutoff</li>
+<li>2N2222 Transistor</li>
+<li>BC547 Transistor</li>
+<li>Integrated Circuit</li>
+<li>555 Timer IC</li>
+<li>555 Astable Mode</li>
+<li>555 Monostable Mode</li>
+<li>555 Pin Configuration</li>
+<li>Shift Register</li>
+<li>74595 Shift Register</li>
+<li>Serial Data Input</li>
+<li>Parallel Data Output</li>
+<li>Clock Signal</li>
+<li>Latch Signal</li>
+<li>IC Pin Numbering</li>
+<li>IC Notch Orientation</li>
+</ol>
+<h2 id="input-components-15-concepts">Input Components (15 concepts)</h2>
+<ol>
+<li>Push Button</li>
+<li>Momentary Switch</li>
+<li>Toggle Switch</li>
+<li>SPST Switch</li>
+<li>SPDT Switch</li>
+<li>Normally Open</li>
+<li>Normally Closed</li>
+<li>Button Debouncing</li>
+<li>Light Sensor</li>
+<li>Photocell Circuit</li>
+<li>Dark Detector</li>
+<li>Sensor Threshold</li>
+<li>Analog Input</li>
+<li>Digital Input</li>
+<li>Input Pullup</li>
+</ol>
+<h2 id="output-components-15-concepts">Output Components (15 concepts)</h2>
+<ol>
+<li>Light Emitting Diode</li>
+<li>RGB LED</li>
+<li>Common Cathode RGB</li>
+<li>Common Anode RGB</li>
+<li>LED Brightness Control</li>
+<li>LED Series Resistor</li>
+<li>LED Resistor Calculator</li>
+<li>DC Motor</li>
+<li>Motor Control Circuit</li>
+<li>Motor Speed Control</li>
+<li>PWM Control</li>
+<li>Duty Cycle</li>
+<li>Visual Output</li>
+<li>Audio Output</li>
+<li>Actuator</li>
+</ol>
+<h2 id="practical-skills-breadboarding-25-concepts">Practical Skills - Breadboarding (25 concepts)</h2>
+<ol>
+<li>Solderless Breadboard</li>
+<li>Breadboard Power Rails</li>
+<li>Breadboard Tie Points</li>
+<li>Breadboard Rows</li>
+<li>Breadboard Columns</li>
+<li>Breadboard Internal Connections</li>
+<li>Component Placement</li>
+<li>Wire Routing</li>
+<li>Jumper Wire</li>
+<li>Solid Core Wire</li>
+<li>Wire Stripping</li>
+<li>Wire Length Management</li>
+<li>Circuit Layout</li>
+<li>Component Orientation</li>
+<li>Power Rail Connection</li>
+<li>Ground Rail Connection</li>
+<li>Breadboard Bridge Wire</li>
+<li>Neat Wiring Practice</li>
+<li>Component Lead Bending</li>
+<li>Breadboard Limitations</li>
+<li>Temporary Circuits</li>
+<li>Prototyping</li>
+<li>Circuit Testing</li>
+<li>Breadboard Troubleshooting</li>
+<li>Component Removal</li>
+</ol>
+<h2 id="measurement-testing-15-concepts">Measurement &amp; Testing (15 concepts)</h2>
+<ol>
+<li>Multimeter</li>
+<li>Voltage Measurement</li>
+<li>Current Measurement</li>
+<li>Resistance Measurement</li>
+<li>Continuity Testing</li>
+<li>Multimeter Probes</li>
+<li>Voltage Range Selection</li>
+<li>Current Range Selection</li>
+<li>Diode Testing Mode</li>
+<li>Circuit Debugging</li>
+<li>Troubleshooting Strategy</li>
+<li>Component Testing</li>
+<li>Power Supply Testing</li>
+<li>Signal Tracing</li>
+<li>Visual Inspection</li>
+</ol>
+<h2 id="power-systems-15-concepts">Power Systems (15 concepts)</h2>
+<ol>
+<li>USB Power Supply</li>
+<li>5 Volt Power</li>
+<li>Battery Power</li>
+<li>9 Volt Battery</li>
+<li>Power Supply Selection</li>
+<li>Voltage Regulator</li>
+<li>7805 Voltage Regulator</li>
+<li>Buck Converter</li>
+<li>Boost Converter</li>
+<li>Linear Regulator</li>
+<li>Switching Regulator</li>
+<li>Power Efficiency</li>
+<li>Input Voltage</li>
+<li>Output Voltage</li>
+<li>Current Capacity</li>
+</ol>
+<h2 id="digital-logic-boolean-12-concepts">Digital Logic &amp; Boolean (12 concepts)</h2>
+<ol>
+<li>Boolean Logic</li>
+<li>Truth Table</li>
+<li>AND Gate</li>
+<li>OR Gate</li>
+<li>NOT Gate</li>
+<li>NAND Gate</li>
+<li>NOR Gate</li>
+<li>XOR Gate</li>
+<li>Logic Level High</li>
+<li>Logic Level Low</li>
+<li>Combinational Logic</li>
+<li>Sequential Logic</li>
+</ol>
+<h2 id="advanced-circuits-projects-8-concepts">Advanced Circuits &amp; Projects (8 concepts)</h2>
+<ol>
+<li>Flip Flop Circuit</li>
+<li>Memory Cell</li>
+<li>Bistable Circuit</li>
+<li>Timing Circuit</li>
+<li>Oscillator Circuit</li>
+<li>LED Flasher</li>
+<li>Signal Generator</li>
+<li>Night Light Circuit</li>
+</ol>
+<h2 id="summary-statistics">Summary Statistics</h2>
+<ul>
+<li><strong>Total Concepts</strong>: 200</li>
+<li><strong>Max Label Length</strong>: 32 characters (all concepts comply)</li>
+<li><strong>Title Case</strong>: All concepts use Title Case formatting</li>
+<li><strong>Distinct Concepts</strong>: Each represents a unique, pedagogically sound learning unit</li>
+<li><strong>Coverage</strong>: Spans from fundamental electrical concepts to practical circuit applications</li>
+</ul>
+<h2 id="distribution-by-category">Distribution by Category</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Count</th>
+<th>Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Foundational Concepts</td>
+<td>40</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Passive Components</td>
+<td>30</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>Active Components &amp; ICs</td>
+<td>25</td>
+<td>12.5%</td>
+</tr>
+<tr>
+<td>Input Components</td>
+<td>15</td>
+<td>7.5%</td>
+</tr>
+<tr>
+<td>Output Components</td>
+<td>15</td>
+<td>7.5%</td>
+</tr>
+<tr>
+<td>Breadboarding Skills</td>
+<td>25</td>
+<td>12.5%</td>
+</tr>
+<tr>
+<td>Measurement &amp; Testing</td>
+<td>15</td>
+<td>7.5%</td>
+</tr>
+<tr>
+<td>Power Systems</td>
+<td>15</td>
+<td>7.5%</td>
+</tr>
+<tr>
+<td>Digital Logic</td>
+<td>12</td>
+<td>6%</td>
+</tr>
+<tr>
+<td>Advanced Circuits</td>
+<td>8</td>
+<td>4%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pedagogical-alignment">Pedagogical Alignment</h2>
+<p>These 200 concepts align with the Bloom's Taxonomy levels identified in the course:</p>
+<ul>
+<li><strong>Remember/Understand</strong> (Concepts 1-40, 41-95): Component identification, basic principles</li>
+<li><strong>Apply</strong> (Concepts 96-150, 166-180): Practical breadboarding, power systems</li>
+<li><strong>Analyze</strong> (Concepts 151-165, 181-192): Testing, measurement, logic analysis</li>
+<li><strong>Evaluate/Create</strong> (Concepts 193-200): Advanced circuits and custom projects</li>
+</ul>
+<p>All concepts are derivable from the course description and existing lesson content, ensuring sufficient depth for meaningful dependency relationships in subsequent steps.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../step-01-course-assessment/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Course Description Assessment">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Course Description Assessment
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../step-04-quality-analysis/" class="md-footer__link md-footer__link--next" aria-label="Next: Graph Quality Analysis">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Graph Quality Analysis
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extras.js"></script>
+      
+    
+  </body>
+</html>
