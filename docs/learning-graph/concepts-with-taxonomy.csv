@@ -1,0 +1,275 @@
+Concept,Dependency,TaxonomyID
+Electric Current,,FUND
+Voltage,,FUND
+Resistance,,FUND
+Electric Charge,Electric Current,FUND
+Electron Flow,Electric Current,FUND
+Conventional Current,Electric Current,FUND
+Potential Difference,Voltage,FUND
+Conductivity,Electric Current,FUND
+Ohm's Law,Electric Current,FUND
+Ohm's Law,Voltage,FUND
+Ohm's Law,Resistance,FUND
+Power,Voltage,FUND
+Power,Electric Current,FUND
+Voltage Drop,Voltage,FUND
+Current Flow,Electric Current,FUND
+Polarity,Voltage,FUND
+Positive Terminal,Polarity,FUND
+Negative Terminal,Polarity,FUND
+Direct Current,Electric Current,FUND
+Ground,Voltage,FUND
+Common Ground,Ground,FUND
+Circuit,Electric Current,FUND
+Circuit,Voltage,FUND
+Open Circuit,Circuit,FUND
+Closed Circuit,Circuit,FUND
+Short Circuit,Circuit,FUND
+Circuit Node,Circuit,FUND
+Series Circuit,Circuit,FUND
+Parallel Circuit,Circuit,FUND
+Current Limiting,Ohm's Law,FUND
+Voltage Division,Voltage,FUND
+Voltage Division,Resistance,FUND
+Kirchhoff's Current Law,Current Flow,FUND
+Kirchhoff's Current Law,Circuit Node,FUND
+Kirchhoff's Voltage Law,Voltage Drop,FUND
+Kirchhoff's Voltage Law,Circuit,FUND
+AC vs DC,Direct Current,FUND
+Battery Polarity,Polarity,FUND
+Power Supply Voltage,Voltage,FUND
+Forward Voltage,Voltage,FUND
+Forward Voltage,Polarity,FUND
+Reverse Voltage,Voltage,FUND
+Reverse Voltage,Polarity,FUND
+Electrical Safety,Voltage,FUND
+Electrical Safety,Current Flow,FUND
+Power Rating,Power,FUND
+Heat Dissipation,Power,FUND
+Circuit Diagram,Circuit,FUND
+Schematic Symbol,Circuit Diagram,FUND
+Component Lead,,FUND
+Resistor,Resistance,PASS
+Resistor,Component Lead,PASS
+Resistor Color Code,Resistor,PASS
+Resistor Tolerance,Resistor,PASS
+Fixed Resistor,Resistor,PASS
+Variable Resistor,Resistor,PASS
+Potentiometer,Variable Resistor,PASS
+Trimmer Resistor,Variable Resistor,PASS
+Photoresistor,Resistor,PASS
+Light Dependent Resistor,Photoresistor,PASS
+Thermistor,Resistor,PASS
+Pull-Up Resistor,Resistor,PASS
+Pull-Up Resistor,Voltage,PASS
+Pull-Down Resistor,Resistor,PASS
+Pull-Down Resistor,Ground,PASS
+Current Limiting Resistor,Resistor,PASS
+Current Limiting Resistor,Current Limiting,PASS
+Voltage Divider Circuit,Voltage Division,PASS
+Voltage Divider Circuit,Resistor,PASS
+Capacitor,Component Lead,PASS
+Capacitor,Electric Charge,PASS
+Electrolytic Capacitor,Capacitor,PASS
+Ceramic Capacitor,Capacitor,PASS
+Capacitor Polarity,Capacitor,PASS
+Capacitor Polarity,Polarity,PASS
+Capacitance,Capacitor,PASS
+RC Time Constant,Resistor,PASS
+RC Time Constant,Capacitor,PASS
+RC Circuit,RC Time Constant,PASS
+Charging Capacitor,Capacitor,PASS
+Charging Capacitor,Voltage,PASS
+Discharging Capacitor,Capacitor,PASS
+Discharging Capacitor,Current Flow,PASS
+Inductor,Component Lead,PASS
+Inductor,Electric Current,PASS
+Diode,Component Lead,PASS
+Diode,Forward Voltage,PASS
+Diode,Polarity,PASS
+Anode,Polarity,PASS
+Cathode,Polarity,PASS
+LED Polarity,Polarity,PASS
+LED Polarity,Anode,PASS
+LED Polarity,Cathode,PASS
+LED Forward Voltage,Forward Voltage,PASS
+LED Current Rating,Electric Current,PASS
+Transistor,Component Lead,ACT
+Transistor,Electric Current,ACT
+NPN Transistor,Transistor,ACT
+PNP Transistor,Transistor,ACT
+Transistor Base,Transistor,ACT
+Transistor Collector,Transistor,ACT
+Transistor Emitter,Transistor,ACT
+Transistor Switching,Transistor,ACT
+Transistor Switching,Electric Current,ACT
+Transistor Amplification,Transistor,ACT
+Transistor Amplification,Electric Current,ACT
+Transistor Saturation,Transistor Switching,ACT
+Transistor Cutoff,Transistor Switching,ACT
+2N2222 Transistor,NPN Transistor,ACT
+BC547 Transistor,NPN Transistor,ACT
+Integrated Circuit,Component Lead,ACT
+Integrated Circuit,Electric Current,ACT
+IC Pin Numbering,Integrated Circuit,ACT
+IC Notch Orientation,Integrated Circuit,ACT
+555 Timer IC,Integrated Circuit,ACT
+555 Timer IC,Timing Circuit,ACT
+555 Astable Mode,555 Timer IC,ACT
+555 Monostable Mode,555 Timer IC,ACT
+555 Pin Configuration,555 Timer IC,ACT
+Shift Register,Integrated Circuit,ACT
+Shift Register,Digital Input,ACT
+74595 Shift Register,Shift Register,ACT
+Serial Data Input,Digital Input,ACT
+Parallel Data Output,Serial Data Input,ACT
+Parallel Data Output,Shift Register,ACT
+Clock Signal,Digital Input,ACT
+Latch Signal,Digital Input,ACT
+Push Button,Component Lead,IO
+Momentary Switch,Push Button,IO
+Toggle Switch,Component Lead,IO
+SPST Switch,Toggle Switch,IO
+SPDT Switch,Toggle Switch,IO
+Normally Open,Push Button,IO
+Normally Closed,Push Button,IO
+Button Debouncing,Push Button,IO
+Button Debouncing,Capacitor,IO
+Light Sensor,Component Lead,IO
+Photocell Circuit,Light Sensor,IO
+Photocell Circuit,Resistor,IO
+Dark Detector,Photocell Circuit,IO
+Dark Detector,Transistor,IO
+Sensor Threshold,Voltage,IO
+Analog Input,Voltage,IO
+Digital Input,Voltage,IO
+Digital Input,Logic Level High,IO
+Digital Input,Logic Level Low,IO
+Input Pullup,Pull-Up Resistor,IO
+Light Emitting Diode,Diode,IO
+Light Emitting Diode,LED Polarity,IO
+Light Emitting Diode,LED Forward Voltage,IO
+RGB LED,Light Emitting Diode,IO
+Common Cathode RGB,RGB LED,IO
+Common Cathode RGB,Cathode,IO
+Common Anode RGB,RGB LED,IO
+Common Anode RGB,Anode,IO
+LED Brightness Control,Light Emitting Diode,IO
+LED Brightness Control,Current Limiting,IO
+LED Series Resistor,Current Limiting Resistor,IO
+LED Series Resistor,Light Emitting Diode,IO
+LED Resistor Calculator,LED Series Resistor,IO
+LED Resistor Calculator,Ohm's Law,IO
+DC Motor,Electric Current,IO
+DC Motor,Voltage,IO
+Motor Control Circuit,DC Motor,IO
+Motor Control Circuit,Transistor,IO
+Motor Speed Control,Motor Control Circuit,IO
+Motor Speed Control,PWM Control,IO
+Duty Cycle,Digital Input,IO
+PWM Control,Digital Input,IO
+PWM Control,Duty Cycle,IO
+Visual Output,Light Emitting Diode,IO
+Audio Output,Electric Current,IO
+Actuator,Electric Current,IO
+Solderless Breadboard,Circuit,BREAD
+Breadboard Power Rails,Solderless Breadboard,BREAD
+Breadboard Power Rails,Power Supply Voltage,BREAD
+Breadboard Tie Points,Solderless Breadboard,BREAD
+Breadboard Rows,Breadboard Tie Points,BREAD
+Breadboard Columns,Breadboard Tie Points,BREAD
+Breadboard Internal Connections,Solderless Breadboard,BREAD
+Component Placement,Solderless Breadboard,BREAD
+Component Placement,Component Lead,BREAD
+Wire Routing,Solderless Breadboard,BREAD
+Jumper Wire,Wire Routing,BREAD
+Solid Core Wire,Jumper Wire,BREAD
+Wire Stripping,Solid Core Wire,BREAD
+Wire Length Management,Wire Routing,BREAD
+Circuit Layout,Solderless Breadboard,BREAD
+Circuit Layout,Circuit Diagram,BREAD
+Component Orientation,Component Placement,BREAD
+Component Orientation,Polarity,BREAD
+Power Rail Connection,Breadboard Power Rails,BREAD
+Ground Rail Connection,Breadboard Power Rails,BREAD
+Ground Rail Connection,Ground,BREAD
+Breadboard Bridge Wire,Jumper Wire,BREAD
+Neat Wiring Practice,Wire Routing,BREAD
+Component Lead Bending,Component Lead,BREAD
+Breadboard Limitations,Solderless Breadboard,BREAD
+Temporary Circuits,Solderless Breadboard,BREAD
+Prototyping,Temporary Circuits,BREAD
+Circuit Testing,Circuit,BREAD
+Breadboard Troubleshooting,Circuit Testing,BREAD
+Breadboard Troubleshooting,Solderless Breadboard,BREAD
+Component Removal,Component Placement,BREAD
+Multimeter,,MEAS
+Voltage Measurement,Multimeter,MEAS
+Voltage Measurement,Voltage,MEAS
+Current Measurement,Multimeter,MEAS
+Current Measurement,Electric Current,MEAS
+Resistance Measurement,Multimeter,MEAS
+Resistance Measurement,Resistance,MEAS
+Continuity Testing,Multimeter,MEAS
+Continuity Testing,Resistance,MEAS
+Multimeter Probes,Multimeter,MEAS
+Voltage Range Selection,Voltage Measurement,MEAS
+Current Range Selection,Current Measurement,MEAS
+Diode Testing Mode,Multimeter,MEAS
+Diode Testing Mode,Diode,MEAS
+Circuit Debugging,Circuit Testing,MEAS
+Circuit Debugging,Multimeter,MEAS
+Troubleshooting Strategy,Circuit Debugging,MEAS
+Component Testing,Multimeter,MEAS
+Power Supply Testing,Multimeter,MEAS
+Power Supply Testing,Voltage Measurement,MEAS
+Signal Tracing,Circuit Debugging,MEAS
+Visual Inspection,Circuit,MEAS
+USB Power Supply,Power Supply Voltage,PWR
+5 Volt Power,Voltage,PWR
+Battery Power,Battery Polarity,PWR
+9 Volt Battery,Battery Power,PWR
+Power Supply Selection,Power Supply Voltage,PWR
+Voltage Regulator,Voltage,PWR
+Voltage Regulator,Integrated Circuit,PWR
+7805 Voltage Regulator,Voltage Regulator,PWR
+Buck Converter,Voltage Regulator,PWR
+Boost Converter,Voltage Regulator,PWR
+Linear Regulator,Voltage Regulator,PWR
+Switching Regulator,Voltage Regulator,PWR
+Power Efficiency,Power,PWR
+Power Efficiency,Heat Dissipation,PWR
+Input Voltage,Voltage,PWR
+Output Voltage,Voltage,PWR
+Current Capacity,Electric Current,PWR
+Boolean Logic,,DIG
+Truth Table,Boolean Logic,DIG
+Logic Level High,Voltage,DIG
+Logic Level Low,Ground,DIG
+AND Gate,Boolean Logic,DIG
+AND Gate,Truth Table,DIG
+OR Gate,Boolean Logic,DIG
+OR Gate,Truth Table,DIG
+NOT Gate,Boolean Logic,DIG
+NOT Gate,Truth Table,DIG
+NAND Gate,AND Gate,DIG
+NAND Gate,NOT Gate,DIG
+NOR Gate,OR Gate,DIG
+NOR Gate,NOT Gate,DIG
+XOR Gate,Boolean Logic,DIG
+XOR Gate,Truth Table,DIG
+Combinational Logic,Boolean Logic,DIG
+Sequential Logic,Boolean Logic,DIG
+Flip Flop Circuit,Sequential Logic,ADV
+Flip Flop Circuit,Transistor,ADV
+Memory Cell,Flip Flop Circuit,ADV
+Bistable Circuit,Flip Flop Circuit,ADV
+Timing Circuit,Capacitor,ADV
+Timing Circuit,Resistor,ADV
+Oscillator Circuit,Timing Circuit,ADV
+LED Flasher,Oscillator Circuit,ADV
+LED Flasher,Light Emitting Diode,ADV
+Signal Generator,Oscillator Circuit,ADV
+Signal Generator,555 Timer IC,ADV
+Night Light Circuit,Dark Detector,ADV
+Night Light Circuit,Light Emitting Diode,ADV

@@ -45,6 +45,7 @@ nav:
     - Flip Flop: sims/flip-flop/index.md
     - LED Circuit Calculator: sims/led-resistor-calc/led-circuit-calculator.md
     - Template: sims/template/index.md
+  
   - Kits and Projects:
     - Introduction: kits/index.md
     - RGB LED: kits/rgb-led/index.md
@@ -56,6 +57,7 @@ nav:
     - Busy Board: kits/busy-board/index.md
     - Solar Night Light: kits/solar-night-light/index.md
     - Signal Generator: kits/signal-generator/index.md
+  
   - Prompts:
     - Introduction: prompts/index.md
     - Course Description: prompts/course-description.md
@@ -64,6 +66,15 @@ nav:
     - Concept Taxonomy: prompts/concept-taxonomy.md
     - Taxonomy Assignment: prompts/taxonomy-assignment.md
     - Taxonomy Table: prompts/taxonomy-table.md
+    - Run Learning Graph Skill: prompts/learning-graph-skill.md
+
+  - Learning Graph:
+    - Intro: learning-graph/index.md
+    - Course Description Assessment: learning-graph/step-01-course-assessment.md
+    - Concept Enumeration: learning-graph/step-02-concepts.md
+    - Graph Quality Analysis: learning-graph/step-04-quality-analysis.md
+    - Concept Taxonomy: learning-graph/step-05-taxonomy.md
+    - Taxonomy Distribution Report: learning-graph/step-07-distribution-report.md
   - License: license.md
   - Contact: contact.md
  

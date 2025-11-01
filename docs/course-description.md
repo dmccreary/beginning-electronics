@@ -123,8 +123,8 @@ This course focuses on fundamental analog and basic digital electronics. It does
 
 Students interested in advancing their knowledge should consider:
 
-- [Digital Electronics Course] - For advanced digital logic concepts
-- [Microcontrollers Course] - For programming and embedded systems applications
+- [Digital Electronics Course]() - For advanced digital logic concepts
+- [Microcontroller Course] - For programming and embedded systems applications
 
 ## Teaching Methodology
 
