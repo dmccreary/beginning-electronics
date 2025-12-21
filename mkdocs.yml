@@ -39,11 +39,13 @@ nav:
     - Breadboards: sims/breadboard/index.md
     - LEDs: sims/led/index.md
     - Push Buttons: sims/push-buttons.md
-    - Resistors: sims/resistor/index.md
+    - Resistor Symbol: sims/resistor/index.md
+    - Resistor Physical: sims/resistor-physical/index.md
     - 555 Timer: sims/timer.md
     - LED Resistor Calculator: sims/led-resistor-calc/index.md
     - Flip Flop: sims/flip-flop/index.md
     - LED Circuit Calculator: sims/led-resistor-calc/led-circuit-calculator.md
+    - RCL Draw Test: sims/rcl-draw-test/index.md
     - Template: sims/template/index.md
   
   - Kits and Projects:
