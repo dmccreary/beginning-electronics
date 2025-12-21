@@ -8,7 +8,7 @@ let drawHeight = 350;
 let controlHeight = 120;
 let canvasHeight = drawHeight + controlHeight;
 let margin = 25;
-let sliderLeftMargin = 60;
+let sliderLeftMargin = 90;
 let defaultTextSize = 16;
 
 // Component parameters (uses constants from p5-circuit-lib.js)
@@ -179,11 +179,13 @@ function draw() {
 }
 
 function getLabelPositionText(pos) {
-  if (pos === TOP) return 'Top';
-  if (pos === BOTTOM) return 'Bottom';
-  if (pos === LEFT) return 'Left';
-  if (pos === RIGHT) return 'Right';
-  return 'Unknown';
+  // Use numeric values to ensure comparison works
+  // TOP=101, BOTTOM=102, LEFT=37, RIGHT=39
+  if (pos === 101 || pos === TOP) return 'Top';
+  if (pos === 102 || pos === BOTTOM) return 'Bottom';
+  if (pos === 37 || pos === LEFT) return 'Left';
+  if (pos === 39 || pos === RIGHT) return 'Right';
+  return 'Unknown (' + pos + ')';
 }
 
 function windowResized() {
