@@ -19,13 +19,13 @@ Common Parameters:
 
 */
 
-// Define constants if not already defined (these match p5.js constants)
-if (typeof HORIZONTAL === 'undefined') var HORIZONTAL = 0;
-if (typeof VERTICAL === 'undefined') var VERTICAL = 1;
-if (typeof TOP === 'undefined') var TOP = 101;
-if (typeof BOTTOM === 'undefined') var BOTTOM = 102;
-if (typeof LEFT === 'undefined') var LEFT = 37;
-if (typeof RIGHT === 'undefined') var RIGHT = 39;
+// Define orientation constants (not provided by p5.js)
+// Using window assignment to avoid redeclaration errors
+if (typeof HORIZONTAL === 'undefined') window.HORIZONTAL = 0;
+if (typeof VERTICAL === 'undefined') window.VERTICAL = 1;
+
+// Note: This library also uses p5.js constants: TOP, BOTTOM, LEFT, RIGHT
+// These are automatically available when p5.js is loaded
 
 // Draw a black line with red circles as current from (x1,y1) to (x2,y2)
 // note that lineWidth is a global variable for the entire circuit

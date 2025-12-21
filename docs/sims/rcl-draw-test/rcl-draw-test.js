@@ -2,8 +2,12 @@
 // Tests the drawResistor, drawInductor, and drawCapacitor functions
 // from the p5-circuit-lib.js library
 
+// Define orientation constants (not provided by p5.js)
+const HORIZONTAL = 0;
+const VERTICAL = 1;
+
 // Canvas dimensions
-let canvasWidth = 400;
+let canvasWidth = 670;
 let drawHeight = 350;
 let controlHeight = 120;
 let canvasHeight = drawHeight + controlHeight;
@@ -11,9 +15,9 @@ let margin = 25;
 let sliderLeftMargin = 90;
 let defaultTextSize = 16;
 
-// Component parameters (uses constants from p5-circuit-lib.js)
-let compOrientation = HORIZONTAL;
-let compLabelPosition = TOP;
+// Component parameters - initialized in setup() when p5.js constants are available
+let compOrientation;
+let compLabelPosition;
 let componentSize = 1.0;
 
 // UI Elements
@@ -22,9 +26,15 @@ let orientationButtons = [];
 let labelButtons = [];
 
 function setup() {
-  updateCanvasSize();
+  // Initialize with p5.js constants (now available)
+  compOrientation = HORIZONTAL;
+  compLabelPosition = TOP;
+
   const canvas = createCanvas(canvasWidth, canvasHeight);
-  canvas.parent(document.querySelector('main'));
+  var container = document.querySelector('main');
+  if (container) {
+    canvas.parent(container);
+  }
 
   // Create orientation buttons
   let btnY = drawHeight + 10;
@@ -86,11 +96,19 @@ function setup() {
   sizeSlider.position(sliderLeftMargin, btnY);
   sizeSlider.size(canvasWidth - sliderLeftMargin - margin);
 
+  // Now safe to call updateCanvasSize and resize the canvas
+  updateCanvasSize();
+  resizeCanvas(canvasWidth, canvasHeight);
+
   describe('Test visualization for resistor, inductor, and capacitor drawing functions with controls for orientation, label position, and size.');
 }
 
 function draw() {
+  let prevWidth = canvasWidth;
   updateCanvasSize();
+  if (canvasWidth !== prevWidth) {
+    resizeCanvas(canvasWidth, canvasHeight);
+  }
 
   // Drawing area background
   fill('aliceblue');
@@ -197,8 +215,11 @@ function updateCanvasSize() {
   const container = document.querySelector('main');
   if (container) {
     canvasWidth = container.offsetWidth;
-    if (sizeSlider) {
-      sizeSlider.size(canvasWidth - sliderLeftMargin - margin);
-    }
+  } else {
+    // Fallback for p5.js editor (no main element)
+    canvasWidth = windowWidth;
+  }
+  if (sizeSlider) {
+    sizeSlider.size(canvasWidth - sliderLeftMargin - margin);
   }
 }
