@@ -34,5 +34,11 @@
   "visualizationType": [
     "diagram",
     "interactive-demo"
+  ],
+  "learningObjectives": [
+    "Understand the mathematical concept of drawing resistor symbols in a",
+    "Apply drawing resistor symbols in a to solve problems",
+    "Visualize and interpret drawing resistor symbols in a relationships",
+    "Experiment with parameters to observe their effects on drawing resistor symbols in a"
   ]
 }
