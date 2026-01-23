@@ -1,0 +1,42 @@
+{
+  "title": "RCL Draw Test",
+  "description": "An interactive MicroSim for testing the uniformity of drawResistor, drawInductor, and drawCapacitor functions from the p5-circuit-lib.js library.",
+  "subject": "Mathematics",
+  "topic": "RCL Draw Test",
+  "gradeLevel": "6-12",
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply"
+  ],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-23",
+  "dateModified": "2026-01-23",
+  "version": "1.0.0",
+  "license": "MIT",
+  "language": "en",
+  "format": "text/html",
+  "type": "Interactive Simulation",
+  "framework": "p5.js",
+  "url": "https://dmccreary.github.io/beginning-electronics/sims/rcl-draw-test/",
+  "identifier": "https://dmccreary.github.io/beginning-electronics/sims/rcl-draw-test/",
+  "_source": {
+    "repo": "beginning-electronics",
+    "sim": "rcl-draw-test",
+    "github_url": "https://github.com/dmccreary/beginning-electronics/tree/main/docs/sims/rcl-draw-test",
+    "auto_generated": true,
+    "generation_date": "2026-01-23"
+  },
+  "subjects": [
+    "Mathematics",
+    "Chemistry",
+    "Engineering"
+  ],
+  "visualizationType": [
+    "animation",
+    "graph",
+    "diagram",
+    "interactive-demo",
+    "network",
+    "map"
+  ]
+}
