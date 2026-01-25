@@ -40,5 +40,23 @@
     "Apply drawing resistor symbols in a to solve problems",
     "Visualize and interpret drawing resistor symbols in a relationships",
     "Experiment with parameters to observe their effects on drawing resistor symbols in a"
-  ]
+  ],
+  "pedagogical": {
+    "pattern": "worked-example",
+    "bloomAlignment": [
+      "understand",
+      "apply"
+    ],
+    "bloomVerbs": [
+      "describe",
+      "use"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "medium",
+    "feedbackType": [
+      "corrective"
+    ],
+    "interactionStyle": "construct"
+  }
 }
