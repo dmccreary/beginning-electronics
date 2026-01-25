@@ -38,5 +38,34 @@
     "interactive-demo",
     "network",
     "map"
-  ]
+  ],
+  "learningObjectives": [
+    "Understand the mathematical concept of rcl draw test",
+    "Apply rcl draw test to solve problems",
+    "Visualize and interpret rcl draw test relationships",
+    "Experiment with parameters to observe their effects on rcl draw test"
+  ],
+  "pedagogical": {
+    "pattern": "assessment",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "evaluate"
+    ],
+    "bloomVerbs": [
+      "compare",
+      "describe",
+      "calculate",
+      "illustrate",
+      "implement"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "feedbackType": [
+      "immediate",
+      "corrective"
+    ],
+    "interactionStyle": "construct"
+  }
 }
