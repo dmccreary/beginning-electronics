@@ -36,10 +36,11 @@
     "interactive-demo"
   ],
   "learningObjectives": [
-    "Understand the mathematical concept of drawing resistor symbols in a",
-    "Apply drawing resistor symbols in a to solve problems",
-    "Visualize and interpret drawing resistor symbols in a relationships",
-    "Experiment with parameters to observe their effects on drawing resistor symbols in a"
+    "Identify the international 6-peak zig-zag symbol used to represent a resistor in circuit schematics",
+    "Explain how the drawResistor() parameters (x, y, width, height, orientation, label, labelPosition) control where and how the symbol is drawn",
+    "Distinguish horizontal from vertical resistor orientations and select label positions (TOP, BOTTOM, LEFT, RIGHT) that keep a schematic readable",
+    "Trace how the p5.js vertex() loop alternates peak heights to draw the zig-zag body between the two end lead wires",
+    "Interpret resistance value labels such as 220 Ω and 10K Ω placed next to schematic symbols"
   ],
   "pedagogical": {
     "pattern": "worked-example",

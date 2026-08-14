@@ -40,10 +40,11 @@
     "map"
   ],
   "learningObjectives": [
-    "Understand the mathematical concept of rcl draw test",
-    "Apply rcl draw test to solve problems",
-    "Visualize and interpret rcl draw test relationships",
-    "Experiment with parameters to observe their effects on rcl draw test"
+    "Identify the schematic symbols for a resistor, inductor, and capacitor by their zig-zag, coil, and parallel-plate forms",
+    "Explain how a shared parameter signature of x, y, width, height, lineWidth, orientation, label, and labelPosition makes the three drawing functions uniform",
+    "Compare horizontal and vertical component orientations and the four label positions of top, bottom, left, and right",
+    "Trace the required script load order in which p5.js supplies TOP and LEFT, p5-circuit-lib.js supplies HORIZONTAL and VERTICAL, and the sketch consumes both",
+    "Evaluate whether all three components scale uniformly when the size slider varies from 0.5x to 2.0x"
   ],
   "pedagogical": {
     "pattern": "assessment",

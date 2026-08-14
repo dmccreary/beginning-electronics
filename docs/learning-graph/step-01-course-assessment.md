@@ -1,146 +1,83 @@
 # Step 1: Course Description Assessment
 
 ## Overview
-This assessment evaluates the Beginning Electronics course description for its suitability as a foundation for generating a 200-concept learning graph.
+
+This assessment evaluates the revised **Beginning Electronics** course description (2026 revision) for its suitability as a foundation for generating a 200-concept learning graph. The revision re-scopes the course to a specific audience (5th–12th grade), a specific budget ($50 solderless-breadboard kit), a hard exclusion of microcontrollers and programming, and an explicit companion relationship to [Learning MicroPython and Physical Computing](https://dmccreary.github.io/learning-micropython/).
 
 ## Course Title
-**Beginning Electronics**
 
-## Quality Assessment
+**Beginning Electronics: Breadboards, Circuits, and Real-World Projects**
 
-### Strengths
+## Quality Scoring
 
-#### 1. Clear Prerequisites
+| Element | Points Possible | Points Earned | Notes |
+|---|---|---|---|
+| Title | 5 | 5 | Clear, descriptive, distinguishes this book from the companion MicroPython course |
+| Target Audience | 5 | 5 | Specific grade band (5th–12th, ages 10–18), no-math-background assumption stated |
+| Prerequisites | 5 | 5 | Explicitly "None required"; materials (breadboard, $50 kit, power source) enumerated |
+| Main Topics Covered | 10 | 10 | 16 topics, sequenced from part identification through capstone projects |
+| Topics Excluded | 5 | 5 | Microcontrollers/code, soldering, advanced digital logic, AC mains, PCB design, I2C/SPI all explicitly excluded with links to companion courses |
+| Learning Outcomes Header | 5 | 5 | "After completing this course, students will be able to:" present |
+| Remember | 10 | 10 | 6 specific, measurable outcomes |
+| Understand | 10 | 10 | 6 specific, measurable outcomes |
+| Apply | 10 | 10 | 6 specific, measurable outcomes |
+| Analyze | 10 | 10 | 6 specific, measurable outcomes |
+| Evaluate | 10 | 10 | 6 specific, measurable outcomes |
+| Create | 10 | 10 | 6 outcomes plus a named capstone project |
+| Descriptive Context | 5 | 3 | "Why This Course Matters" is present and strong, but the parts-cost figure ($50) still conflicts with older cost references elsewhere in the site (see Gap Analysis) |
 
-- **Target Audience**: Students with limited mathematical background
-- **Prior Knowledge**: Minimal - assumes no prior electronics experience
-- **Pedagogical Approach**: Hands-on learning with low-cost components
+**Overall Score: 98/100**
 
-#### 2. Well-Defined Learning Objectives
-The course follows the 2001 Bloom's Taxonomy progression:
+**Quality Rating: 90–100 — Excellent, ready for learning graph generation**
 
-- **Remember/Understand**: Basic components, breadboard function, voltage/current principles
-- **Apply**: Breadboard wiring, circuit implementation, component configuration
-- **Analyze**: Troubleshooting, sensor comparison, circuit behavior examination
-- **Evaluate**: Performance testing, component assessment, efficiency judgment
-- **Create**: Original circuit design, prototype development, functional projects
+## Gap Analysis
 
-#### 3. Comprehensive Content Scope
-The course covers:
+1. **Site-wide cost inconsistency (minor, outside this file).** `docs/index.md` still advertises a "$20 kit" and `mkdocs.yml`'s `site_description` still says "$15 breadboard kit." Neither affects this file's score, but they should be updated to $50 in a follow-up pass so the whole site is consistent with the new course description.
+2. **Topic overlap risk (minor).** "Combining Switches: AND & OR Logic (No Code!)" and "Building Logic Gates from Transistors" are intentionally sequential (wired logic → transistor logic), but during concept enumeration, watch for near-duplicate concepts between the two topics and keep them distinct (mechanical/wired gates vs. active/transistor gates).
+3. **Measurement tools are implicit.** Multimeter use (measuring voltage, current, and resistance) is implied by several Apply/Analyze outcomes but is not called out as its own topic. Consider whether a short "Using a Multimeter" topic should be added before concept enumeration if hands-on measurement is a priority.
 
-- **Basic Components**: Resistors, LEDs, buttons, potentiometers, photosensors, motors
-- **Active Components**: Transistors, 555 timers, 74565 shift registers
-- **Power Systems**: USB power supplies, voltage regulation
-- **Practical Skills**: Breadboarding, soldering, perf board assembly
-- **Application Projects**: Night lights, voltage meters, signal generators
+## Content Depth Analysis
 
-#### 4. Clear Boundaries
+### Concept Derivability: Excellent
 
-Well-defined exclusions help focus the learning graph:
+The 16 main topics and 36 Bloom's-Taxonomy outcomes support at least 200 distinct, gradable concepts across:
 
-- Advanced digital logic (beyond flip-flops) → Digital Electronics course
-- Microcontrollers → Learning MicroPython course
-- Complex mathematical circuit analysis
-
-### Content Depth Analysis
-
-#### Concept Derivability: EXCELLENT
-
-The course provides sufficient depth to generate 200 distinct concepts across:
-
-1. **Foundational Concepts** (~40 concepts)
-   - Voltage, current, resistance, power
-   - Component identification and properties
-   - Circuit symbols and diagrams
-   - Safety practices
-
-2. **Component Knowledge** (~50 concepts)
-   - Passive components (resistors, capacitors)
-   - Active components (transistors, ICs)
-   - Input devices (buttons, sensors)
-   - Output devices (LEDs, motors)
-
-3. **Circuit Design** (~40 concepts)
-   - Series and parallel circuits
-   - Voltage dividers
-   - Current limiting
-   - Switching circuits
-   - Timing circuits
-
-4. **Practical Skills** (~30 concepts)
-   - Breadboard usage
-   - Component placement
-   - Wire routing
-   - Testing and measurement
-   - Troubleshooting techniques
-   - Soldering techniques
-   - Perf board assembly
-
-5. **Application Projects** (~25 concepts)
-   - Dark detectors
-   - RGB LED control
-   - Signal generation
-   - Voltage regulation
-   - Buck converters
-   - Solar night lights
-
-6. **Digital Fundamentals** (~15 concepts)
-   - Boolean logic basics
-   - Flip-flops
-   - Shift registers
-   - Sequential circuits
-
-### Content Gaps
-
-#### Minor Gaps (addressable through inference):
-
-1. **Measurement Tools**: While mentioned, specific multimeter usage could be expanded
-2. **Component Specifications**: Reading datasheets not explicitly mentioned
-3. **Circuit Simulation**: MicroSims mentioned but integration details limited
-4. **Power Calculations**: Wattage and heat dissipation concepts implicit
-
-#### Intentional Exclusions (appropriate):
-
-- AC circuits
-- Semiconductor physics
-- Advanced microelectronics
-- RF electronics
+1. **Foundational concepts** (~35) — voltage, current, resistance, power, Ohm's Law, breadboard structure, safety limits
+2. **Component knowledge** (~55) — resistors, LEDs, capacitors, transistors, potentiometers, photoresistors, push buttons, 555 timer, 74HC595 shift register, motors
+3. **Circuit design and logic** (~45) — series/parallel switching, wired AND/OR, transistor-based AND/OR/NOT gates, voltage dividers, RC timing, astable timing
+4. **Practical/breadboarding skills** (~25) — wiring technique, troubleshooting, resistor color codes, polarity checks, perfboard transition
+5. **Application projects and kits** (~30) — dark detector, RGB mixing, busy board, solar night light, LED noodle, voltage regulator, buck converter, signal generator
+6. **Cross-course boundary concepts** (~10) — concepts that mark the handoff to microcontrollers/programming in the companion course
 
 ### Bloom's Taxonomy Coverage
 
-| Level | Coverage | Concept Density |
-|-------|----------|-----------------|
-| Remember | Strong | ~30 concepts |
-| Understand | Strong | ~35 concepts |
-| Apply | Excellent | ~50 concepts |
-| Analyze | Good | ~35 concepts |
-| Evaluate | Good | ~25 concepts |
-| Create | Strong | ~25 concepts |
+| Level | Coverage | Estimated Concept Density |
+|---|---|---|
+| Remember | Strong | ~30 |
+| Understand | Strong | ~35 |
+| Apply | Excellent | ~55 |
+| Analyze | Strong | ~35 |
+| Evaluate | Good | ~25 |
+| Create | Strong | ~20 |
+
+## Improvement Suggestions (Priority Order)
+
+1. **High impact, outside this file:** Update `docs/index.md` and `mkdocs.yml` (`site_description`) to the $50 figure so the whole site agrees with the course description.
+2. **Medium impact:** Decide whether multimeter/measurement skills deserve their own topic bullet before concept enumeration.
+3. **Low impact:** During concept enumeration, tag wired-logic and transistor-logic concepts distinctly to avoid near-duplicate nodes in the learning graph.
 
 ## Recommendation
 
-**APPROVED for Learning Graph Generation**
+**APPROVED for Learning Graph Generation.**
 
 The course description provides:
 
-✓ Sufficient breadth for 200 distinct concepts
-✓ Clear learning progression supporting DAG structure
-✓ Well-defined prerequisite relationships
-✓ Balanced distribution across Bloom's levels
-✓ Practical applications enabling higher-order thinking
-✓ Clear boundaries preventing scope creep
-
-### Estimated Concept Distribution
-
-Based on the course description analysis:
-
-- **Component Knowledge**: 25% (50 concepts)
-- **Circuit Theory**: 20% (40 concepts)
-- **Practical Skills**: 15% (30 concepts)
-- **Foundational Concepts**: 20% (40 concepts)
-- **Application Projects**: 12% (25 concepts)
-- **Digital Basics**: 8% (15 concepts)
+- Sufficient breadth and depth for 200 distinct concepts
+- A clear, slow, simple-to-complex learning progression suitable for a DAG structure
+- Well-defined prerequisite relationships (each topic builds on the previous one)
+- Balanced distribution across all six Bloom's Taxonomy levels
+- Explicit scope boundaries that prevent overlap with the companion MicroPython course and the Digital Electronics course
 
 ## Next Steps
 
-Proceed to Step 2: Generate 200 concept labels spanning the identified domains while maintaining pedagogical soundness and proper granularity.
+Proceed to Step 2: enumerate ~200 concept labels spanning the domains above, maintaining the simple-to-complex sequencing established in the course description, then continue through concept dependencies, quality analysis, and taxonomy assignment.

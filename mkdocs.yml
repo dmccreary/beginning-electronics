@@ -1,5 +1,5 @@
 site_name: Beginning Electronics
-site_description: 'Given a $15 breadboard kit, use AI to generate lessons. All content licensed Creative Commons ShareAlike Attribution Noncommercial'
+site_description: 'This is a interactive intelligent textbook that teachers beginning electronics with a $50 solderless breadboard kit.'
 site_author: 'Dan McCreary'
 repo_name: 'GitHub Repo'
 site_url: 'https://dmccreary.github.io/beginning-electronics'

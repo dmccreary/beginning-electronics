@@ -82,3 +82,18 @@ The course employs a hands-on, practical approach utilizing:
 - Progressive skill-building exercises
 
 This approach ensures students develop both theoretical understanding and practical skills in electronics, preparing them for more advanced study or practical applications in their projects.
+
+## Revision (2026): Grade-Banded, No-Soldering, Companion-Course Rewrite
+
+!!! prompt
+    I would like to revise this project to be a full high-quality interactive intelligent textbook. The target audience is students from 5th to 12th grade in the US. The course will focus on a no soldering classroom where every student has a solderless breadboard and about $50 worth of electronic parts, but it does not involve any microcontrollers or programming. This course is designed to complement the learning-micropython course. Make the course as fun and engaging as possible. Start by updating the course description to be very detailed and have a slow step-by-step progression of simple to complex topics.
+
+The course description was rewritten (via the `course-description-analyzer` skill) to:
+
+1. Pin the target audience to 5th–12th grade (ages ~10–18) and a $50 solderless-breadboard kit
+2. Explicitly exclude microcontrollers and programming of any kind, with a hard boundary pointing to the companion course, [Learning MicroPython and Physical Computing](https://dmccreary.github.io/learning-micropython/)
+3. Re-sequence "Main Topics Covered" into a slow, deliberately-ordered, simple-to-complex progression (16 topics: part identification → breadboard basics → power/Ohm's Law → LED circuits → switches → wired AND/OR logic → potentiometers → photoresistors → RGB LEDs → transistors → transistor logic gates → 555 timer → capacitors/RC timing → shift registers → real-world kits → capstone projects)
+4. Match the structure and formatting style of the sibling MicroPython course description (Title / Target Audience / Prerequisites / Course Overview / Main Topics Covered / Topics Not Covered / Learning Outcomes by 2001 Bloom's Taxonomy / Why This Course Matters) for consistency across the two companion books
+5. Adopt a fun, encouraging tone throughout, written for kids rather than adult professionals
+
+See the resulting quality assessment in [Course Description Assessment](../learning-graph/step-01-course-assessment.md).
