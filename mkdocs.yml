@@ -74,6 +74,10 @@ nav:
     - LED Resistor Calculator: sims/led-resistor-calc/index.md
     - Flip Flop: sims/flip-flop/index.md
     - LED Circuit Calculator: sims/led-resistor-calc/led-circuit-calculator.md
+    - Push Button and LED Circuit: sims/button-led-breadboard/index.md
+    - Series vs Parallel Explorer: sims/series-parallel-explorer/index.md
+    - Light and Dark Detector: sims/light-dark-detector/index.md
+    - Wired Logic AND and OR: sims/wired-logic-and-or/index.md
     - RCL Draw Test: sims/rcl-draw-test/index.md
     - Template: sims/template/index.md
   

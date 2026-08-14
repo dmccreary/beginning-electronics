@@ -118,6 +118,18 @@ than letting the line run off the canvas.
 
 ## 6. Educational quality
 
+**6.0 The student can operate something.** At least one interactive element -
+an on-board switch or button, a slider, a dropdown, a checkbox, a hover target -
+and operating it changes what the sim shows. This is a **blocking** check, not a
+nice-to-have: MicroSims exist partly to emit xAPI interaction events into a
+Learning Record Store, and those events are the evidence of concept mastery. A
+sim with nothing to operate produces no evidence and cannot be assessed, however
+good the picture is.
+
+Also check that the interaction is *diagnostic*: operating the control should
+require understanding the concept, not just clicking. A Start button alone does
+not satisfy this - it controls the sim, not the circuit.
+
 **6.1 One concept.** The board teaches one idea. Five parts and one control beats
 fourteen parts and six.
 

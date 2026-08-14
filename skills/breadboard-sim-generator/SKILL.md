@@ -82,8 +82,33 @@ costly mistake, not being wrong about a hole number.
 4. **What can they change, and what should that reveal?** Every control earns
    its place by revealing something. Aim for 2-5 controls total.
 
-If the request asks for animation at an Understand level with nothing to
-manipulate, say so and propose a step-through or a comparison instead.
+### The interactivity requirement (non-negotiable)
+
+**Every MicroSim must have at least one interactive element the student
+operates** - a switch or button on the board, a slider, a dropdown, a checkbox,
+a hover target. A sim with nothing to operate is not finished, however good it
+looks.
+
+The reason is not engagement. A central purpose of a MicroSim is to emit xAPI
+events (IEEE 9274.1.1-2023) into a Learning Record Store (IEEE 1484.20-2024),
+and those interaction events are the evidence used to predict whether a student
+has mastered a concept. A passive animation generates no events, so it produces
+no evidence and cannot be assessed. **The interaction is the measurement
+instrument, not decoration.**
+
+Two consequences worth designing around:
+
+- **Tie the interaction to the objective.** An event stream is only diagnostic
+  if operating the control requires understanding the concept. "Pressed the
+  button" tells you little; "raised the supply to 9 V and then reduced the
+  current with a larger resistor" tells you a lot.
+- **Use the native p5.js controls and on-board parts.** Predictable, enumerable
+  controls are what make events consistent enough to compare across students.
+  Hand-drawn widgets are not.
+
+If a request describes a purely observational picture, say so and propose the
+smallest interaction that would make it measurable - a parameter to vary, a
+fault to introduce, a prediction to check - before building it.
 
 ---
 

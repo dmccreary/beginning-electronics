@@ -631,7 +631,10 @@ function bbLED(o) {
     render: function () {
       const p = BB.pitch;
       const len = bbBeginBody(this.pins[0], this.pins[1]);
-      const d = min(len * 0.55, p * 1.9);
+      // A 5 mm LED is a 5 mm LED however far apart its leads are bent, so the
+      // body is sized from the hole pitch and only shrinks if the leads are
+      // unusually close together.
+      const d = min(len * 0.55, p * 1.5);
       bbDrawLeads(len, d);
 
       // Brightness tracks current, saturating around 20 mA - the point where a
@@ -640,11 +643,13 @@ function bbLED(o) {
       const lit = constrain(mA / 20, 0, 1);
 
       if (lit > 0.02) {
+        // The glow is also sized from the pitch. Scaling it off the body would
+        // make a long-legged LED wash out its neighbours on the board.
         noStroke();
         const g = color(this.color);
         g.setAlpha(90 * lit);
         fill(g);
-        circle(0, 0, d * (2.4 + lit));
+        circle(0, 0, p * (2.0 + lit));
       }
       stroke(60);
       strokeWeight(1);
@@ -743,9 +748,13 @@ function bbSwitch(o) {
       if (!this.closed) return [];
       return [{a: this.pins[0].net, b: this.pins[1].net, R: 0.02, vf: 0, oneWay: false}];
     },
+    // Hit test matches the drawn body rather than a generous circle around it.
+    // Two switches a few rows apart have overlapping circular zones, and one
+    // click would then toggle both of them.
     hit: function (mx, my) {
       const c = this.center();
-      return dist(mx, my, c.x, c.y) < BB.pitch * 1.6;
+      const p = BB.pitch;
+      return Math.abs(mx - c.x) <= p * 1.4 && Math.abs(my - c.y) <= p * 0.9;
     },
     center: function () {
       return {x: (this.pins[0].x + this.pins[1].x) / 2,
@@ -904,14 +913,16 @@ function bbBuzzer(o) {
       circle(c.x, c.y, d);
       fill('dimgray');
       circle(c.x, c.y, d * 0.25);
-      // Sound waves while it is being driven
+      // Sound waves while it is being driven. Kept close to the body: arcs that
+      // sweep a couple of columns out read as noise on a crowded board and can
+      // hide a neighbouring component entirely.
       if (Math.abs(this.current) * 1000 > 1) {
         noFill();
         stroke('gray');
-        strokeWeight(max(1, p * 0.1));
+        strokeWeight(max(1, p * 0.09));
         for (let i = 1; i <= 3; i++) {
-          const r = d * (0.6 + i * 0.35) + sin(bbTime * 8 + i) * p * 0.15;
-          arc(c.x, c.y, r * 2, r * 2, -PI * 0.28, PI * 0.28);
+          const r = d * (0.45 + i * 0.16) + sin(bbTime * 8 + i) * p * 0.08;
+          arc(c.x, c.y, r * 2, r * 2, -PI * 0.26, PI * 0.26);
         }
       }
       pop();
@@ -939,7 +950,12 @@ function bbTransistor(o) {
     label: o.label || '',
     baseOn: false,
     branches: function () {
-      const out = [{a: this.base.net, b: this.emitter.net, R: 1000, vf: 0.7, oneWay: true}];
+      // The base-emitter junction is a forward drop plus a small series
+      // resistance. Keeping that resistance low matters: a real BJT's base sits
+      // near 0.7-0.8 V however hard it is driven, and a large series resistance
+      // would let the displayed base voltage climb to a couple of volts, which
+      // is a number no student would ever measure on a bench.
+      const out = [{a: this.base.net, b: this.emitter.net, R: 120, vf: 0.7, oneWay: true}];
       if (this.baseOn) {
         out.push({a: this.collector.net, b: this.emitter.net, R: 0.2, vf: 0.2, oneWay: true});
       }

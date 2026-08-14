@@ -1,0 +1,143 @@
+{
+  "title": "Series vs Parallel Explorer",
+  "description": "Two identical LEDs with 220 ohm resistors, rewired between a series chain and two parallel branches. The scope plots one branch current against the total current the battery supplies, making Kirchhoff's current law visible as two separating lines.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Electronics",
+    "Electric Circuits",
+    "Series Circuits",
+    "Parallel Circuits",
+    "Kirchhoff's Laws"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": [
+    "Claude Code"
+  ],
+  "identifier": "https://dmccreary.github.io/beginning-electronics/sims/series-parallel-explorer/",
+  "publisher": "Beginning Electronics",
+  "educationalLevel": "Middle School, High School",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Analyze"
+  ],
+  "concepts": [
+    "Series Circuit",
+    "Parallel Circuit",
+    "Kirchhoff's Current Law",
+    "Branch Current",
+    "Total Current",
+    "Circuit Topology",
+    "Breadboard Connectivity"
+  ],
+  "prerequisites": [
+    "Voltage, current and resistance as quantities",
+    "Ohm's law",
+    "How breadboard rows and rails are connected"
+  ],
+  "library": "p5.js",
+  "canvasHeight": 600,
+  "controls": [
+    {
+      "type": "button",
+      "label": "Start/Pause",
+      "purpose": "run or freeze the animation and the plot"
+    },
+    {
+      "type": "button",
+      "label": "Reset",
+      "purpose": "clear the plot history"
+    },
+    {
+      "type": "select",
+      "label": "Series / Parallel",
+      "purpose": "rewire the same two LEDs between the two topologies"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show scope",
+      "purpose": "toggle the current plot"
+    },
+    {
+      "type": "slider",
+      "label": "Supply voltage",
+      "range": "3 to 9 V",
+      "purpose": "vary the supply and watch each topology respond differently"
+    }
+  ],
+  "circuit": {
+    "supplyVolts": 6,
+    "components": [
+      {
+        "label": "BAT",
+        "type": "battery",
+        "value": "3-9 V",
+        "pins": [
+          "T+1",
+          "T-1"
+        ]
+      },
+      {
+        "label": "R1",
+        "type": "resistor",
+        "value": "220 ohm",
+        "pins": [
+          "b5",
+          "b9"
+        ]
+      },
+      {
+        "label": "D1",
+        "type": "led",
+        "value": "red, Vf 1.9 V",
+        "pins": [
+          "d9",
+          "d12"
+        ]
+      },
+      {
+        "label": "R2",
+        "type": "resistor",
+        "value": "220 ohm",
+        "pins": [
+          "g12",
+          "g15"
+        ]
+      },
+      {
+        "label": "D2",
+        "type": "led",
+        "value": "red, Vf 1.9 V",
+        "pins": [
+          "i15",
+          "i18"
+        ]
+      }
+    ]
+  },
+  "simulationModel": {
+    "type": "DC node-voltage analysis with iterative nonlinear element resolution",
+    "equations": [
+      "Kirchhoff's current law at every net",
+      "I = (Va - Vb - Vf) / R per branch",
+      "Ohm's law V = IR"
+    ],
+    "assumptions": [
+      "Every frame is DC steady state",
+      "LEDs use a fixed forward voltage plus a small series resistance",
+      "Components are ideal - no tolerance, temperature, or wire resistance"
+    ],
+    "limitations": [
+      "No transient response - no charging or discharging over time",
+      "Capacitors are open circuits, so RC timing is not modelled",
+      "No inductance and no AC sources",
+      "Transistor current gain (beta) is not modelled"
+    ]
+  }
+}
