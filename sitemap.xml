@@ -349,6 +349,10 @@
          <lastmod>2026-08-14</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/button-led-breadboard/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/flip-flop/</loc>
          <lastmod>2026-08-14</lastmod>
     </url>
@@ -381,6 +385,10 @@
          <lastmod>2026-08-14</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/light-dark-detector/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/rcl-draw-test/</loc>
          <lastmod>2026-08-14</lastmod>
     </url>
@@ -397,11 +405,19 @@
          <lastmod>2026-08-14</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/series-parallel-explorer/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/template/</loc>
          <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/template/TODO/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/wired-logic-and-or/</loc>
          <lastmod>2026-08-14</lastmod>
     </url>
 </urlset>

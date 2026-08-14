@@ -1,0 +1,174 @@
+{
+  "title": "Wired Logic: AND and OR",
+  "description": "Two latching switches in series light a red LED only when both are closed, forming an AND gate. Two switches in parallel light a green LED when either is closed, forming an OR gate. Live truth tables highlight the row matching the current switch settings.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Electronics",
+    "Electric Circuits",
+    "Digital Logic",
+    "Boolean Algebra",
+    "Switches"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": [
+    "Claude Code"
+  ],
+  "identifier": "https://dmccreary.github.io/beginning-electronics/sims/wired-logic-and-or/",
+  "publisher": "Beginning Electronics",
+  "educationalLevel": "Middle School, High School",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply"
+  ],
+  "concepts": [
+    "AND Gate",
+    "OR Gate",
+    "Truth Table",
+    "Series Path",
+    "Parallel Path",
+    "Boolean Logic",
+    "Wired Logic",
+    "Switch Contacts"
+  ],
+  "prerequisites": [
+    "Complete and open circuits",
+    "How breadboard rows and rails are connected"
+  ],
+  "library": "p5.js",
+  "canvasHeight": 545,
+  "controls": [
+    {
+      "type": "button",
+      "label": "Start/Pause",
+      "purpose": "run or freeze the current animation"
+    },
+    {
+      "type": "button",
+      "label": "Reset",
+      "purpose": "open all four switches"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show truth tables",
+      "purpose": "toggle the live truth table panel"
+    },
+    {
+      "type": "switch",
+      "label": "A, B, C, D (on board, keys 1-4)",
+      "purpose": "set the four logic inputs"
+    }
+  ],
+  "circuit": {
+    "supplyVolts": 5,
+    "components": [
+      {
+        "label": "BAT",
+        "type": "battery",
+        "value": "5 V",
+        "pins": [
+          "T+1",
+          "T-1"
+        ]
+      },
+      {
+        "label": "A",
+        "type": "switch",
+        "value": "latching",
+        "pins": [
+          "c5",
+          "c9"
+        ]
+      },
+      {
+        "label": "B",
+        "type": "switch",
+        "value": "latching",
+        "pins": [
+          "c9",
+          "c13"
+        ]
+      },
+      {
+        "label": "R1",
+        "type": "resistor",
+        "value": "220 ohm",
+        "pins": [
+          "a13",
+          "a16"
+        ]
+      },
+      {
+        "label": "D1",
+        "type": "led",
+        "value": "red, Vf 1.9 V",
+        "pins": [
+          "c16",
+          "c19"
+        ]
+      },
+      {
+        "label": "C",
+        "type": "switch",
+        "value": "latching",
+        "pins": [
+          "f5",
+          "f9"
+        ]
+      },
+      {
+        "label": "D",
+        "type": "switch",
+        "value": "latching",
+        "pins": [
+          "j5",
+          "j9"
+        ]
+      },
+      {
+        "label": "R2",
+        "type": "resistor",
+        "value": "220 ohm",
+        "pins": [
+          "h9",
+          "h13"
+        ]
+      },
+      {
+        "label": "D2",
+        "type": "led",
+        "value": "green, Vf 2.2 V",
+        "pins": [
+          "f13",
+          "f16"
+        ]
+      }
+    ]
+  },
+  "simulationModel": {
+    "type": "DC node-voltage analysis with iterative nonlinear element resolution",
+    "equations": [
+      "Kirchhoff's current law at every net",
+      "I = (Va - Vb - Vf) / R per branch",
+      "Ohm's law V = IR"
+    ],
+    "assumptions": [
+      "Every frame is DC steady state",
+      "LEDs use a fixed forward voltage plus a small series resistance",
+      "Components are ideal - no tolerance, temperature, or wire resistance"
+    ],
+    "limitations": [
+      "No transient response - no charging or discharging over time",
+      "Capacitors are open circuits, so RC timing is not modelled",
+      "No inductance and no AC sources",
+      "Transistor current gain (beta) is not modelled",
+      "Switch contact bounce is not modelled - real switches chatter for a few milliseconds on closing"
+    ]
+  }
+}

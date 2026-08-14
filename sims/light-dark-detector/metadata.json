@@ -1,0 +1,168 @@
+{
+  "title": "Light and Dark Detector",
+  "description": "A light dependent resistor and a fixed resistor form a voltage divider that drives an NPN transistor base through a resistor. The transistor switches an LED and a buzzer. Sweeping the light level moves the divider voltage smoothly through the 0.7 volt base threshold, producing an abrupt output change.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Electronics",
+    "Electric Circuits",
+    "Sensors",
+    "Transistors",
+    "Voltage Dividers"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": [
+    "Claude Code"
+  ],
+  "identifier": "https://dmccreary.github.io/beginning-electronics/sims/light-dark-detector/",
+  "publisher": "Beginning Electronics",
+  "educationalLevel": "Middle School, High School",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply",
+    "Analyze"
+  ],
+  "concepts": [
+    "Voltage Divider",
+    "Light Dependent Resistor",
+    "Transistor Switch",
+    "Base Threshold Voltage",
+    "Saturation",
+    "Sensor Interfacing",
+    "Parallel Loads"
+  ],
+  "prerequisites": [
+    "Ohm's law",
+    "Series and parallel resistance",
+    "LED current limiting"
+  ],
+  "library": "p5.js",
+  "canvasHeight": 600,
+  "controls": [
+    {
+      "type": "button",
+      "label": "Start/Pause",
+      "purpose": "run or freeze the animation and the plot"
+    },
+    {
+      "type": "button",
+      "label": "Reset",
+      "purpose": "clear the plot history"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show scope",
+      "purpose": "toggle the voltage and current plot"
+    },
+    {
+      "type": "slider",
+      "label": "Light level",
+      "range": "0 to 100 percent",
+      "purpose": "set the LDR resistance and sweep the divider through the transistor threshold"
+    }
+  ],
+  "circuit": {
+    "supplyVolts": 9,
+    "components": [
+      {
+        "label": "BAT",
+        "type": "battery",
+        "value": "9 V",
+        "pins": [
+          "T+1",
+          "T-1"
+        ]
+      },
+      {
+        "label": "LDR",
+        "type": "potentiometer",
+        "value": "0-100 kohm",
+        "pins": [
+          "b2",
+          "b7"
+        ]
+      },
+      {
+        "label": "R2",
+        "type": "resistor",
+        "value": "4.7 kohm",
+        "pins": [
+          "b7",
+          "b12"
+        ]
+      },
+      {
+        "label": "RB",
+        "type": "resistor",
+        "value": "4.7 kohm",
+        "pins": [
+          "h22",
+          "h15"
+        ]
+      },
+      {
+        "label": "Q1",
+        "type": "npn",
+        "value": "NPN switch",
+        "pins": [
+          "f14",
+          "f15",
+          "f16"
+        ]
+      },
+      {
+        "label": "RL",
+        "type": "resistor",
+        "value": "470 ohm",
+        "pins": [
+          "i7",
+          "i11"
+        ]
+      },
+      {
+        "label": "D1",
+        "type": "led",
+        "value": "red, Vf 1.9 V",
+        "pins": [
+          "g11",
+          "g14"
+        ]
+      },
+      {
+        "label": "BZ1",
+        "type": "buzzer",
+        "value": "300 ohm",
+        "pins": [
+          "j11",
+          "j14"
+        ]
+      }
+    ]
+  },
+  "simulationModel": {
+    "type": "DC node-voltage analysis with iterative nonlinear element resolution",
+    "equations": [
+      "Kirchhoff's current law at every net",
+      "I = (Va - Vb - Vf) / R per branch",
+      "Ohm's law V = IR"
+    ],
+    "assumptions": [
+      "Every frame is DC steady state",
+      "LEDs use a fixed forward voltage plus a small series resistance",
+      "Components are ideal - no tolerance, temperature, or wire resistance"
+    ],
+    "limitations": [
+      "No transient response - no charging or discharging over time",
+      "Capacitors are open circuits, so RC timing is not modelled",
+      "No inductance and no AC sources",
+      "Transistor current gain (beta) is not modelled",
+      "Transistor current gain (beta) is not modelled - Q1 behaves as a switch with a saturation drop, so this sim does not support amplifier lessons"
+    ]
+  }
+}

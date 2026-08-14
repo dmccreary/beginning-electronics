@@ -84,10 +84,12 @@ function setup() {
   });
 
   // --- Scope traces ---
+  // Maxes are divisible by 4 so the five gridlines land on whole numbers
+  // (40/30/20/10/0 and 4/3/2/1/0) instead of values like 22.5.
   bbAddTrace({label: 'D1 current', get: () => bbCurrent('D1'),
-              color: 'crimson', max: 30, unit: 'mA'});
+              color: 'crimson', max: 40, unit: 'mA'});
   bbAddTrace({label: 'D1 voltage', get: () => bbVoltageAcross('D1'),
-              color: 'royalblue', max: 6, unit: 'V'});
+              color: 'royalblue', max: 4, unit: 'V'});
 
   describe('A solderless breadboard with three push buttons, each lighting an LED ' +
     'through a 220 ohm resistor. Pressing a button completes the circuit, animated ' +
@@ -116,7 +118,11 @@ function draw() {
   // Split the drawing region: board on the left, scope on the right.
   // The board gets a height as well as a width so it can never grow past
   // drawHeight and clip its bottom rows.
-  const showScope = scopeCheckbox.checked();
+  //
+  // Below about 640px there is not enough width for both panels - the board
+  // shrinks to the point of being unusable - so the circuit wins and the scope
+  // steps aside, regardless of the checkbox.
+  const showScope = scopeCheckbox.checked() && canvasWidth >= 640;
   const boardW = showScope ? (canvasWidth - margin * 3) * 0.60
                            : (canvasWidth - margin * 2);
   const boardH = drawHeight - boardTop - readoutHeight;
@@ -140,7 +146,7 @@ function draw() {
   noStroke();
   fill('black');
   textAlign(LEFT, TOP);
-  textSize(defaultTextSize);
+  textSize(canvasWidth < 560 ? 13 : defaultTextSize);
   const y = drawHeight - readoutHeight + 6;
   let readout = '';
   CHANNELS.forEach((ch, i) => {

@@ -1,0 +1,85 @@
+{
+  "title": "Push Button and LED Circuit",
+  "description": "A solderless breadboard with three push buttons, each lighting an LED through a 220 ohm current-limiting resistor. Pressing a button closes that branch, animated dots show current flowing along the jumper wires at a speed proportional to the actual current, and a scope plots LED current and voltage over time.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Electronics",
+    "Electric Circuits",
+    "Breadboard",
+    "Ohm's Law",
+    "LEDs"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": [
+    "Claude Code"
+  ],
+  "identifier": "https://dmccreary.github.io/beginning-electronics/sims/button-led-breadboard/",
+  "publisher": "Beginning Electronics",
+  "educationalLevel": "Middle School, High School",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply"
+  ],
+  "concepts": [
+    "Complete Circuit",
+    "Open Circuit",
+    "Series Resistance",
+    "Current Limiting Resistor",
+    "LED Forward Voltage",
+    "Ohm's Law",
+    "Breadboard Connectivity"
+  ],
+  "prerequisites": [
+    "Voltage, current and resistance as quantities",
+    "How breadboard rows and power rails are connected"
+  ],
+  "library": "p5.js",
+  "canvasHeight": 600,
+  "controls": [
+    {"type": "button", "label": "Start/Pause", "purpose": "run or freeze the animation and the plot"},
+    {"type": "button", "label": "Reset", "purpose": "clear the plot history and release all buttons"},
+    {"type": "checkbox", "label": "Show scope", "purpose": "toggle the current and voltage plot"},
+    {"type": "slider", "label": "Supply voltage", "range": "3 to 9 V", "purpose": "change the supply and watch the current respond"}
+  ],
+  "circuit": {
+    "supplyVolts": 5,
+    "components": [
+      {"label": "BAT", "type": "battery", "value": "3-9 V", "pins": ["T+1", "T-1"]},
+      {"label": "SW1", "type": "button", "value": "momentary", "pins": ["e3", "f3"]},
+      {"label": "R1", "type": "resistor", "value": "220 ohm", "pins": ["j3", "j6"]},
+      {"label": "D1", "type": "led", "value": "red, Vf 1.9 V", "pins": ["g6", "g8"]},
+      {"label": "SW2", "type": "button", "value": "momentary", "pins": ["e9", "f9"]},
+      {"label": "R2", "type": "resistor", "value": "220 ohm", "pins": ["j9", "j12"]},
+      {"label": "D2", "type": "led", "value": "green, Vf 2.2 V", "pins": ["g12", "g14"]},
+      {"label": "SW3", "type": "button", "value": "momentary", "pins": ["e15", "f15"]},
+      {"label": "R3", "type": "resistor", "value": "220 ohm", "pins": ["j15", "j18"]},
+      {"label": "D3", "type": "led", "value": "blue, Vf 3.1 V", "pins": ["g18", "g20"]}
+    ]
+  },
+  "simulationModel": {
+    "type": "DC node-voltage analysis with iterative nonlinear element resolution",
+    "equations": [
+      "Kirchhoff's current law at every net",
+      "I = (Va - Vb - Vf) / R per branch",
+      "Ohm's law V = IR"
+    ],
+    "assumptions": [
+      "Every frame is DC steady state",
+      "LEDs use a fixed forward voltage plus a small series resistance",
+      "Components are ideal - no tolerance, temperature, or wire resistance"
+    ],
+    "limitations": [
+      "No transient response - no charging or discharging over time",
+      "Capacitors are open circuits, so RC timing is not modelled",
+      "No inductance and no AC sources",
+      "Transistor current gain (beta) is not modelled"
+    ]
+  }
+}
