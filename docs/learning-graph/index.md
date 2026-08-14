@@ -1,5 +1,9 @@
 # Learning Graph for Beginning Electronics
 
+[Open Learning Graph Viewer Fullscreen](../sims/graph-viewer/main.html){ .md-button .md-button--primary }
+
+<iframe src="../sims/graph-viewer/main.html" width="100%" height="600px" frameborder="0"></iframe>
+
 ## Overview
 
 This learning graph represents a comprehensive knowledge structure for the Beginning Electronics course, mapping 500 interconnected concepts with their dependencies and categorical organization. It was regenerated in 2026 against a revised course description (5th-12th grade, $50 solderless-breadboard kit, no microcontrollers/programming) and then expanded from 200 to 500 concepts for maximum depth.

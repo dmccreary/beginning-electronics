@@ -43,27 +43,28 @@ nav:
     - 24. Boolean Logic and Transistor Gates: chapters/24-boolean-logic-transistor-gates/index.md
     - 25. NAND, NOR, XOR, and the RS Latch: chapters/25-nand-nor-xor-rs-latch/index.md
     - 26. Advanced Circuits and Your Capstone Project: chapters/26-advanced-circuits-capstone-project/index.md
-  - Lessons:
-    - Introduction: lessons/index.md
-    - Identifying Parts: lessons/05-part-identification.md
-    - Breadboard: lessons/08-breadboard.md
-    - Power: lessons/09-power.md
-    - LED Circuit: lessons/10-led-circuit.md
-    - Buttons: lessons/11-buttons.md
-    - Buttons AND: lessons/12-and-buttons.md
-    - Buttons OR: lessons/13-or-buttons.md
-    - RGB Led: lessons/14-rgb-led.md
-    - Dark Detector: lessons/20-dark-detector.md
-    - Transistors: lessons/30-transistors.md
-    - BC547 vs. 2N2222: lessons/31-bc547-vs-2n2222.md
-    # - LED Flasher: lessons/35-led-flasher.md
-    - Boolean Logic: lessons/35-boolean-logic.md
-    - LED Noodle Circuit: lessons/40-noodle-led-circuit.md
-    - RC Circuit: lessons/80-rc-circuit.md
-    - Using Perf Boards: lessons/70-using-perf-boards.md
+  - Hands-on Labs:
+    - Introduction: labs/index.md
+    - Identifying Parts: labs/05-part-identification.md
+    - Breadboard: labs/08-breadboard.md
+    - Power: labs/09-power.md
+    - LED Circuit: labs/10-led-circuit.md
+    - Buttons: labs/11-buttons.md
+    - Buttons AND: labs/12-and-buttons.md
+    - Buttons OR: labs/13-or-buttons.md
+    - RGB Led: labs/14-rgb-led.md
+    - Dark Detector: labs/20-dark-detector.md
+    - Transistors: labs/30-transistors.md
+    - BC547 vs. 2N2222: labs/31-bc547-vs-2n2222.md
+    # - LED Flasher: labs/35-led-flasher.md
+    - Boolean Logic: labs/35-boolean-logic.md
+    - LED Noodle Circuit: labs/40-noodle-led-circuit.md
+    - RC Circuit: labs/80-rc-circuit.md
+    - Using Perf Boards: labs/70-using-perf-boards.md
+    
   - Micro Simulations:
     - Introduction: sims/index.md
-    - Learning Graph: sims/learning-graph/index.md
+    - Learning Graph Viewer: sims/graph-viewer/index.md
     - Breadboards: sims/breadboard/index.md
     - LEDs: sims/led/index.md
     - Push Buttons: sims/push-buttons.md
@@ -105,6 +106,7 @@ nav:
     - Graph Quality Analysis: learning-graph/step-04-quality-analysis.md
     - Concept Taxonomy: learning-graph/step-05-taxonomy.md
     - Taxonomy Distribution Report: learning-graph/step-07-distribution-report.md
+    - Mascot Style Guide: learning-graph/mascot-test.md
   - License: license.md
   - Contact: contact.md
  
@@ -133,15 +135,28 @@ plugins:
 #  - social
 markdown_extensions:
   - admonition
+  - md_in_html
   - pymdownx.details
   - pymdownx.superfences
   - attr_list
   - pymdownx.highlight:
       linenums: true
+  # Enable KaTeX LaTeX equation rendering
+  # Using \(...\) for inline math to avoid conflicts with currency $
+  # Block math uses \[...\]
+  - pymdownx.arithmatex:
+      generic: true
+      inline_syntax: ['round']
+      block_syntax: ['square']
 extra_css:
   - css/extras.css
+  - css/mascot.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
 extra_javascript:
   - js/extras.js
+  - js/katex.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js
 copyright: Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
 extra:
   analytics:
