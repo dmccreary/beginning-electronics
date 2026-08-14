@@ -1,6 +1,6 @@
 ---
 title: "Electricity Basics: Voltage, Current, and Resistance"
-description: An introduction to electric current, voltage, resistance, and Ohm's Law using the water-pipe analogy, plus the core vocabulary for reading any circuit diagram.
+description: "An introduction to electric current, voltage, resistance, and Ohm's Law using the water-pipe analogy, plus the core vocabulary for reading any circuit diagram."
 generated_by: claude skill chapter-content-generator
 date: 2026-08-14 08:51:27
 version: 0.09

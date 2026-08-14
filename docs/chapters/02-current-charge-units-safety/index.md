@@ -1,6 +1,6 @@
 ---
-title: Current, Charge, Units, and Electrical Safety
-description: How current actually flows, the standard electrical units printed on every component, Kirchhoff's laws, and the safety habits every builder needs before powering up a circuit.
+title: "Current, Charge, Units, and Electrical Safety"
+description: "How current actually flows, the standard electrical units printed on every component, Kirchhoff's laws, and the safety habits every builder needs before powering up a circuit."
 generated_by: claude skill chapter-content-generator
 date: 2026-08-14 09:00:13
 version: 0.09
