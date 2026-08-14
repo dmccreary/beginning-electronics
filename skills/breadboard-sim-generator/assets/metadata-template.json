@@ -1,0 +1,66 @@
+{
+  "title": "$MICROSIM_TITLE",
+  "description": "$TWO_TO_THREE_SENTENCE_DESCRIPTION",
+  "creator": "Dan McCreary",
+  "date": "$YYYY-MM-DD",
+  "subject": [
+    "Electronics",
+    "Electric Circuits",
+    "Breadboard"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": [
+    "Claude Code"
+  ],
+  "identifier": "https://$GITHUB_USER.github.io/$REPO_NAME/sims/$MICROSIM_NAME/",
+  "publisher": "$PUBLISHER",
+  "educationalLevel": "Middle School, High School",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "$BLOOM_LEVEL"
+  ],
+  "concepts": [
+    "$CONCEPT_1",
+    "$CONCEPT_2"
+  ],
+  "prerequisites": [
+    "$PREREQUISITE"
+  ],
+  "library": "p5.js",
+  "canvasHeight": $CANVAS_HEIGHT,
+  "controls": [
+    {"type": "button", "label": "Start/Pause", "purpose": "run or freeze the simulation"},
+    {"type": "checkbox", "label": "Show scope", "purpose": "toggle the voltage and current plot"}
+  ],
+  "circuit": {
+    "supplyVolts": $SUPPLY_VOLTS,
+    "components": [
+      {"label": "$LABEL", "type": "$TYPE", "value": "$VALUE", "pins": ["$PIN_A", "$PIN_B"]}
+    ]
+  },
+  "simulationModel": {
+    "type": "DC node-voltage analysis with iterative nonlinear element resolution",
+    "equations": [
+      "Kirchhoff's current law at every net",
+      "I = (Va - Vb - Vf) / R per branch",
+      "Ohm's law V = IR"
+    ],
+    "assumptions": [
+      "Every frame is DC steady state",
+      "Diodes and LEDs use a fixed forward voltage plus a small series resistance",
+      "Transistors are modelled as switches with a saturation drop",
+      "Components are ideal - no tolerance, temperature, or wire resistance"
+    ],
+    "limitations": [
+      "No transient response - no charging or discharging over time",
+      "Capacitors are open circuits, so RC timing is not modelled",
+      "No inductance and no AC sources",
+      "Transistor current gain (beta) is not modelled"
+    ]
+  }
+}
