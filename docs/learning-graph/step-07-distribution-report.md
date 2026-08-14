@@ -1,280 +1,292 @@
-# Step 7: Taxonomy Distribution Report
+# Taxonomy Distribution Report
 
 ## Overview
 
-Total unique concepts analyzed: 200
+- **Total Concepts**: 500
+- **Number of Taxonomies**: 10
+- **Average Concepts per Taxonomy**: 50.0
 
 ## Distribution Summary
 
-| Taxonomy | Category | Count | Percentage | Status |
-|----------|----------|-------|------------|--------|
-| ACT | Active Components | 25 | 12.5% | ✓ |
-| ADV | Advanced Circuits | 8 | 4.0% | ✓ |
-| BREAD | Breadboarding | 25 | 12.5% | ✓ |
-| DIG | Digital Logic | 12 | 6.0% | ✓ |
-| FUND | Fundamentals | 40 | 20.0% | ✓ |
-| IO | Input/Output | 30 | 15.0% | ✓ |
-| MEAS | Measurement | 15 | 7.5% | ✓ |
-| PASS | Passive Components | 30 | 15.0% | ✓ |
-| PWR | Power Systems | 15 | 7.5% | ✓ |
+| Category | TaxonomyID | Count | Percentage | Status |
+|----------|-----------|-------|------------|--------|
+| Foundational Concepts | FOUND | 95 | 19.0% | ✅ |
+| Passive Components | PASV | 75 | 15.0% | ✅ |
+| Active Components & ICs | ACTV | 63 | 12.6% | ✅ |
+| Breadboarding & Assembly | BRDG | 58 | 11.6% | ✅ |
+| Input Components | INPT | 40 | 8.0% | ✅ |
+| Output Components | OUTP | 40 | 8.0% | ✅ |
+| Power Systems | PWR | 40 | 8.0% | ✅ |
+| Measurement & Testing | MEAS | 38 | 7.6% | ✅ |
+| Digital Logic & Boolean | DLOG | 30 | 6.0% | ✅ |
+| Advanced Circuits & Capstone Projects | CAPS | 21 | 4.2% | ✅ |
 
-## Detailed Breakdown by Category
+## Visual Distribution
 
-### ACT - Active Components (25 concepts, 12.5%)
+```
+Foundational Concepts     █████████  95 ( 19.0%)
+Passive Components        ███████  75 ( 15.0%)
+Active Components & ICs   ██████  63 ( 12.6%)
+Breadboarding & Assembly  █████  58 ( 11.6%)
+Input Components          ████  40 (  8.0%)
+Output Components         ████  40 (  8.0%)
+Power Systems             ████  40 (  8.0%)
+Measurement & Testing     ███  38 (  7.6%)
+Digital Logic & Boolean   ███  30 (  6.0%)
+Advanced Circuits & Capst ██  21 (  4.2%)
+```
 
-*Transistors and integrated circuits*
+## Balance Analysis
 
-1. 2N2222 Transistor
-2. 555 Astable Mode
-3. 555 Monostable Mode
-4. 555 Pin Configuration
-5. 555 Timer IC
-6. 74595 Shift Register
-7. BC547 Transistor
-8. Clock Signal
-9. IC Notch Orientation
-10. IC Pin Numbering
-11. Integrated Circuit
-12. Latch Signal
-13. NPN Transistor
-14. PNP Transistor
-15. Parallel Data Output
-16. Serial Data Input
-17. Shift Register
-18. Transistor
-19. Transistor Amplification
-20. Transistor Base
-21. Transistor Collector
-22. Transistor Cutoff
-23. Transistor Emitter
-24. Transistor Saturation
-25. Transistor Switching
+### ✅ No Over-Represented Categories
 
-### ADV - Advanced Circuits (8 concepts, 4.0%)
+All categories are under the 30% threshold. Good balance!
 
-*Complex projects and applications*
+## Category Details
 
-1. Bistable Circuit
-2. Flip Flop Circuit
-3. LED Flasher
-4. Memory Cell
-5. Night Light Circuit
-6. Oscillator Circuit
-7. Signal Generator
-8. Timing Circuit
+### Foundational Concepts (FOUND)
 
-### BREAD - Breadboarding (25 concepts, 12.5%)
+**Count**: 95 concepts (19.0%)
 
-*Prototyping and circuit construction*
+**Concepts**:
 
-1. Breadboard Bridge Wire
-2. Breadboard Columns
-3. Breadboard Internal Connections
-4. Breadboard Limitations
-5. Breadboard Power Rails
-6. Breadboard Rows
-7. Breadboard Tie Points
-8. Breadboard Troubleshooting
-9. Circuit Layout
-10. Circuit Testing
-11. Component Lead Bending
-12. Component Orientation
-13. Component Placement
-14. Component Removal
-15. Ground Rail Connection
-16. Jumper Wire
-17. Neat Wiring Practice
-18. Power Rail Connection
-19. Prototyping
-20. Solderless Breadboard
-21. Solid Core Wire
-22. Temporary Circuits
-23. Wire Length Management
-24. Wire Routing
-25. Wire Stripping
+- 1. Electric Current
+- 2. Voltage
+- 3. Resistance
+- 4. Ohm's Law
+- 5. Power
+- 6. Direct Current
+- 7. Circuit
+- 8. Open Circuit
+- 9. Closed Circuit
+- 10. Short Circuit
+- 11. Series Circuit
+- 12. Parallel Circuit
+- 13. Ground
+- 14. Polarity
+- 15. Circuit Diagram
+- *...and 80 more*
 
-### DIG - Digital Logic (12 concepts, 6.0%)
+### Passive Components (PASV)
 
-*Boolean logic, gates, truth tables*
+**Count**: 75 concepts (15.0%)
 
-1. AND Gate
-2. Boolean Logic
-3. Combinational Logic
-4. Logic Level High
-5. Logic Level Low
-6. NAND Gate
-7. NOR Gate
-8. NOT Gate
-9. OR Gate
-10. Sequential Logic
-11. Truth Table
-12. XOR Gate
+**Concepts**:
 
-### FUND - Fundamentals (40 concepts, 20.0%)
+- 96. Resistor
+- 97. Resistor Color Code
+- 98. Resistor Tolerance
+- 99. Fixed Resistor
+- 100. Variable Resistor
+- 101. Potentiometer
+- 102. Trimmer Resistor
+- 103. Photoresistor
+- 104. Light Dependent Resistor
+- 105. Thermistor
+- 106. Pull-Up Resistor
+- 107. Pull-Down Resistor
+- 108. Current Limiting Resistor
+- 109. Voltage Divider Circuit
+- 110. Capacitor
+- *...and 60 more*
 
-*Core electrical concepts and laws*
+### Active Components & ICs (ACTV)
 
-1. AC vs DC
-2. Battery Polarity
-3. Circuit
-4. Circuit Diagram
-5. Circuit Node
-6. Closed Circuit
-7. Common Ground
-8. Component Lead
-9. Conductivity
-10. Conventional Current
-11. Current Flow
-12. Current Limiting
-13. Direct Current
-14. Electric Charge
-15. Electric Current
-16. Electrical Safety
-17. Electron Flow
-18. Forward Voltage
-19. Ground
-20. Heat Dissipation
-21. Kirchhoff's Current Law
-22. Kirchhoff's Voltage Law
-23. Negative Terminal
-24. Ohm's Law
-25. Open Circuit
-26. Parallel Circuit
-27. Polarity
-28. Positive Terminal
-29. Potential Difference
-30. Power
-31. Power Rating
-32. Power Supply Voltage
-33. Resistance
-34. Reverse Voltage
-35. Schematic Symbol
-36. Series Circuit
-37. Short Circuit
-38. Voltage
-39. Voltage Division
-40. Voltage Drop
+**Count**: 63 concepts (12.6%)
 
-### IO - Input/Output (30 concepts, 15.0%)
+**Concepts**:
 
-*Sensors, buttons, LEDs, motors*
+- 171. Transistor
+- 172. NPN Transistor
+- 173. PNP Transistor
+- 174. Transistor Base
+- 175. Transistor Collector
+- 176. Transistor Emitter
+- 177. Transistor Switching
+- 178. Transistor Amplification
+- 179. Transistor Saturation
+- 180. Transistor Cutoff
+- 181. 2N2222 Transistor
+- 182. BC547 Transistor
+- 183. Integrated Circuit
+- 184. 555 Timer IC
+- 185. 555 Astable Mode
+- *...and 48 more*
 
-1. Actuator
-2. Analog Input
-3. Audio Output
-4. Button Debouncing
-5. Common Anode RGB
-6. Common Cathode RGB
-7. DC Motor
-8. Dark Detector
-9. Digital Input
-10. Duty Cycle
-11. Input Pullup
-12. LED Brightness Control
-13. LED Resistor Calculator
-14. LED Series Resistor
-15. Light Emitting Diode
-16. Light Sensor
-17. Momentary Switch
-18. Motor Control Circuit
-19. Motor Speed Control
-20. Normally Closed
-21. Normally Open
-22. PWM Control
-23. Photocell Circuit
-24. Push Button
-25. RGB LED
-26. SPDT Switch
-27. SPST Switch
-28. Sensor Threshold
-29. Toggle Switch
-30. Visual Output
+### Breadboarding & Assembly (BRDG)
 
-### MEAS - Measurement (15 concepts, 7.5%)
+**Count**: 58 concepts (11.6%)
 
-*Testing, debugging, multimeter use*
+**Concepts**:
 
-1. Circuit Debugging
-2. Component Testing
-3. Continuity Testing
-4. Current Measurement
-5. Current Range Selection
-6. Diode Testing Mode
-7. Multimeter
-8. Multimeter Probes
-9. Power Supply Testing
-10. Resistance Measurement
-11. Signal Tracing
-12. Troubleshooting Strategy
-13. Visual Inspection
-14. Voltage Measurement
-15. Voltage Range Selection
+- 314. Solderless Breadboard
+- 315. Full-Size Breadboard
+- 316. Half-Size Breadboard
+- 317. Breadboard Power Rails
+- 318. Breadboard Tie Points
+- 319. Breadboard Rows
+- 320. Breadboard Columns
+- 321. Breadboard Gutter
+- 322. Breadboard Numbering
+- 323. Breadboard Hole Spacing
+- 324. Breadboard Adhesive Backing
+- 325. Binding Post
+- 326. Breadboard Internal Connections
+- 327. Component Placement
+- 328. Component Lead Forming
+- *...and 43 more*
 
-### PASS - Passive Components (30 concepts, 15.0%)
+### Input Components (INPT)
 
-*Resistors, capacitors, diodes*
+**Count**: 40 concepts (8.0%)
 
-1. Anode
-2. Capacitance
-3. Capacitor
-4. Capacitor Polarity
-5. Cathode
-6. Ceramic Capacitor
-7. Charging Capacitor
-8. Current Limiting Resistor
-9. Diode
-10. Discharging Capacitor
-11. Electrolytic Capacitor
-12. Fixed Resistor
-13. Inductor
-14. LED Current Rating
-15. LED Forward Voltage
-16. LED Polarity
-17. Light Dependent Resistor
-18. Photoresistor
-19. Potentiometer
-20. Pull-Down Resistor
-21. Pull-Up Resistor
-22. RC Circuit
-23. RC Time Constant
-24. Resistor
-25. Resistor Color Code
-26. Resistor Tolerance
-27. Thermistor
-28. Trimmer Resistor
-29. Variable Resistor
-30. Voltage Divider Circuit
+**Concepts**:
 
-### PWR - Power Systems (15 concepts, 7.5%)
+- 234. Push Button
+- 235. Tactile Button
+- 236. 4-Pin Push Button
+- 237. Momentary Switch
+- 238. Latching Switch
+- 239. Toggle Switch
+- 240. Slide Switch
+- 241. Rocker Switch
+- 242. DIP Switch
+- 243. SPST Switch
+- 244. SPDT Switch
+- 245. Normally Open
+- 246. Normally Closed
+- 247. Contact Bounce
+- 248. Button Debouncing
+- *...and 25 more*
 
-*Power supplies, regulation, efficiency*
+### Output Components (OUTP)
 
-1. 5 Volt Power
-2. 7805 Voltage Regulator
-3. 9 Volt Battery
-4. Battery Power
-5. Boost Converter
-6. Buck Converter
-7. Current Capacity
-8. Input Voltage
-9. Linear Regulator
-10. Output Voltage
-11. Power Efficiency
-12. Power Supply Selection
-13. Switching Regulator
-14. USB Power Supply
-15. Voltage Regulator
+**Count**: 40 concepts (8.0%)
 
-## Balance Assessment
+**Concepts**:
 
-✓ **PASS**: All categories are below 30% threshold
+- 274. Light Emitting Diode
+- 275. RGB LED
+- 276. Common Cathode RGB
+- 277. Common Anode RGB
+- 278. Color Mixing With LEDs
+- 279. LED Brightness Control
+- 280. LED Series Resistor
+- 281. LED Resistor Calculator
+- 282. Driving Multiple LEDs
+- 283. Parallel LED Wiring
+- 284. LED Strip
+- 285. LED Matrix
+- 286. LED Chaser Effect
+- 287. Blinking Output Pattern
+- 288. DC Motor
+- *...and 25 more*
 
-  - Maximum category percentage: 20.0%
+### Power Systems (PWR)
 
-## Observations
+**Count**: 40 concepts (8.0%)
 
-- **Largest Category**: FUND with 40 concepts (20.0%)
-- **Smallest Category**: ADV with 8 concepts (4.0%)
-- **Distribution Spread (Std Dev)**: 5.19%
+**Concepts**:
 
-  - Distribution is well-balanced ✓
+- 410. USB Power Supply
+- 411. 5 Volt Power
+- 412. Battery Power
+- 413. 9 Volt Battery
+- 414. AA Battery
+- 415. Battery Holder
+- 416. Battery Pack Wiring
+- 417. Rechargeable Battery
+- 418. LiPo Battery
+- 419. TP4056 Charger Module
+- 420. Power Supply Selection
+- 421. Voltage Regulator
+- 422. 7805 Voltage Regulator
+- 423. Regulator Dropout Voltage
+- 424. Regulator Bypass Capacitors
+- *...and 25 more*
+
+### Measurement & Testing (MEAS)
+
+**Count**: 38 concepts (7.6%)
+
+**Concepts**:
+
+- 372. Multimeter
+- 373. Digital Multimeter
+- 374. Analog Multimeter
+- 375. Multimeter Display
+- 376. Multimeter Dial Settings
+- 377. Auto-Ranging Multimeter
+- 378. Multimeter Probes
+- 379. Multimeter Safety
+- 380. Voltage Measurement
+- 381. Measuring In-Circuit Voltage
+- 382. Measuring Battery Voltage
+- 383. Current Measurement
+- 384. Reading Milliamps
+- 385. Resistance Measurement
+- 386. Verifying Resistor Color Code
+- *...and 23 more*
+
+### Digital Logic & Boolean (DLOG)
+
+**Count**: 30 concepts (6.0%)
+
+**Concepts**:
+
+- 450. Binary State
+- 451. Digital Signal
+- 452. Boolean Logic
+- 453. Logical AND Operation
+- 454. Logical OR Operation
+- 455. Logical NOT Operation
+- 456. Truth Table
+- 457. Reading a Truth Table
+- 458. Building a Truth Table
+- 459. Logic Input Combination
+- 460. Logic Gate Symbol
+- 461. AND Gate
+- 462. Transistor AND Gate
+- 463. OR Gate
+- 464. Transistor OR Gate
+- *...and 15 more*
+
+### Advanced Circuits & Capstone Projects (CAPS)
+
+**Count**: 21 concepts (4.2%)
+
+**Concepts**:
+
+- 480. Flip Flop Circuit
+- 481. Memory Cell
+- 482. Bistable Circuit
+- 483. Timing Circuit
+- 484. Oscillator Circuit
+- 485. LED Flasher
+- 486. Signal Generator
+- 487. Multi-Stage Circuit
+- 488. Combining Sensor and Output
+- 489. Night Light Circuit
+- 490. Solar Night Light Project
+- 491. Busy Board Project
+- 492. LED Noodle Costume
+- 493. Capstone Project Planning
+- 494. Project Proposal
+- *...and 6 more*
+
+## Recommendations
+
+- ✅ **Excellent balance**: Categories are evenly distributed (spread: 14.8%)
+- ✅ **MISC category minimal**: Good categorization specificity
+
+### Educational Use Recommendations
+
+- Use taxonomy categories for color-coding in graph visualizations
+- Design curriculum modules based on taxonomy groupings
+- Create filtered views for focused learning paths
+- Use categories for assessment organization
+- Enable navigation by topic area in interactive tools
+
+---
+
+*Report generated by learning-graph-reports/taxonomy_distribution.py*

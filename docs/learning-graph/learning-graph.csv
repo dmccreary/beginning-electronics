@@ -1,0 +1,501 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Electric Current,,FOUND
+2,Voltage,,FOUND
+3,Resistance,,FOUND
+4,Ohm's Law,2|1|3,FOUND
+5,Power,2|1,FOUND
+6,Direct Current,1,FOUND
+7,Circuit,,FOUND
+8,Open Circuit,7|1,FOUND
+9,Closed Circuit,7|1,FOUND
+10,Short Circuit,9|3,FOUND
+11,Series Circuit,7|1,FOUND
+12,Parallel Circuit,7|2,FOUND
+13,Ground,,FOUND
+14,Polarity,2,FOUND
+15,Circuit Diagram,7,FOUND
+16,Schematic Symbol,15,FOUND
+17,Component Lead,,FOUND
+18,Positive Terminal,14|17,FOUND
+19,Negative Terminal,14|17,FOUND
+20,Voltage Drop,2|3|4,FOUND
+21,Current Flow,1|9,FOUND
+22,Electron Flow,1|21,FOUND
+23,Conventional Current,1|22,FOUND
+24,Electric Charge,,FOUND
+25,Potential Difference,2|24,FOUND
+26,Electrical Safety,1|2|10,FOUND
+27,Power Rating,5,FOUND
+28,Heat Dissipation,5|3|1,FOUND
+29,Current Limiting,1|3|4,FOUND
+30,Voltage Division,2|11|4,FOUND
+31,Kirchhoff's Current Law,1|21|9,FOUND
+32,Kirchhoff's Voltage Law,2|20|9,FOUND
+33,AC vs DC,6|1,FOUND
+34,Battery Polarity,14|18|19,FOUND
+35,Power Supply Voltage,2|5,FOUND
+36,Common Ground,13|7,FOUND
+37,Forward Voltage,2|20|14,FOUND
+38,Conductivity,3|1,FOUND
+39,Ohm,3,FOUND
+40,Volt,2,FOUND
+41,Ampere,1,FOUND
+42,Watt,5,FOUND
+43,Milliampere,41,FOUND
+44,Microampere,41,FOUND
+45,Kilohm,39,FOUND
+46,Megohm,39,FOUND
+47,Coulomb,24,FOUND
+48,Milliwatt,42,FOUND
+49,Overcurrent,1|29,FOUND
+50,Fuse Protection,49|10,FOUND
+51,Reverse Polarity Damage,14|34,FOUND
+52,Static Discharge,24|26,FOUND
+53,Battery Safety,26|34|51,FOUND
+54,Short Circuit Risk,10|26|49,FOUND
+55,Node Voltage,2|9,FOUND
+56,Loop Current,1|11|9,FOUND
+57,Series Resistance,3|11,FOUND
+58,Parallel Resistance,3|12,FOUND
+59,Equivalent Resistance,57|58,FOUND
+60,Voltage Reference,2|13|36,FOUND
+61,Series-Parallel Circuit,11|12,FOUND
+62,Current Divider,58|1|12,FOUND
+63,Circuit Topology,7|11|12,FOUND
+64,Circuit Branch,7|12|55,FOUND
+65,Electrical Energy,5|2,FOUND
+66,Joule,65,FOUND
+67,Watt-Hour,42|65,FOUND
+68,Water Pipe Analogy,2|1|3,FOUND
+69,Electric Field,24|25,FOUND
+70,Insulator,38|3,FOUND
+71,Conductor,38|3,FOUND
+72,Semiconductor Material,71|70|38,FOUND
+73,Static Electricity,24|69,FOUND
+74,Electromotive Force,2|25,FOUND
+75,Internal Resistance,3|74,FOUND
+76,Terminal Voltage,74|75|20,FOUND
+77,Nominal Voltage,2|76,FOUND
+78,Battery Capacity,24|65,FOUND
+79,Battery Cell,74|18|19,FOUND
+80,Resistivity,3|38|71,FOUND
+81,Voltage Rating,2|27,FOUND
+82,Current Rating,1|27,FOUND
+83,Charge Carrier,24|71|72,FOUND
+84,Circuit Load,7|1|3,FOUND
+85,Voltage Source,2|74|79,FOUND
+86,Load Current,84|1,FOUND
+87,Power Consumption,5|84|86,FOUND
+88,Energy Conversion,65|87,FOUND
+89,Conductance,3|38,FOUND
+90,Current Path,7|1|71,FOUND
+91,Circuit Element,7|17,FOUND
+92,Circuit Continuity,9|90,FOUND
+93,Voltage Threshold,2|37,FOUND
+94,Circuit Fault,8|10|92,FOUND
+95,Circuit Efficiency,87|88|28,FOUND
+96,Resistor,3|4,PASV
+97,Resistor Color Code,96,PASV
+98,Resistor Tolerance,96|97,PASV
+99,Fixed Resistor,96,PASV
+100,Variable Resistor,96|3,PASV
+101,Potentiometer,100|3,PASV
+102,Trimmer Resistor,100|101,PASV
+103,Photoresistor,100|3,PASV
+104,Light Dependent Resistor,103|100,PASV
+105,Thermistor,100|3,PASV
+106,Pull-Up Resistor,96|55,PASV
+107,Pull-Down Resistor,96|13,PASV
+108,Current Limiting Resistor,96|29,PASV
+109,Voltage Divider Circuit,96|30|11,PASV
+110,Capacitor,2|24,PASV
+111,Electrolytic Capacitor,110|14,PASV
+112,Ceramic Capacitor,110,PASV
+113,Capacitor Polarity,110|14,PASV
+114,Capacitance,110|24,PASV
+115,RC Time Constant,96|110,PASV
+116,RC Circuit,96|110|115,PASV
+117,Charging Capacitor,110|116,PASV
+118,Discharging Capacitor,110|116,PASV
+119,Inductor,1|7,PASV
+120,Diode,72|14,PASV
+121,LED Polarity,120|14,PASV
+122,LED Forward Voltage,120|37,PASV
+123,LED Current Rating,120|82,PASV
+124,Anode,120|18,PASV
+125,Cathode,120|19,PASV
+126,220 Ohm Resistor,96|97,PASV
+127,330 Ohm Resistor,96|97,PASV
+128,1K Resistor,96|97,PASV
+129,10K Resistor,96|97,PASV
+130,Resistor Symbol,96|16,PASV
+131,Brown Band Value,97,PASV
+132,Red Band Value,97,PASV
+133,Resistor Multiplier Band,97,PASV
+134,Gold Tolerance Band,97|98,PASV
+135,Quarter Watt Resistor,96|27,PASV
+136,Carbon Film Resistor,96|99,PASV
+137,Metal Film Resistor,96|99,PASV
+138,Rheostat,100|101,PASV
+139,NTC Thermistor,105|100,PASV
+140,Axial Lead Package,17|96,PASV
+141,Radial Lead Package,17|110,PASV
+142,Capacitor Symbol,110|16,PASV
+143,Capacitor Value Code,110|114,PASV
+144,Microfarad,114,PASV
+145,Picofarad,114,PASV
+146,Nanofarad,114,PASV
+147,Capacitor Voltage Rating,110|81,PASV
+148,Capacitor Tolerance,114|98,PASV
+149,Tantalum Capacitor,110|111,PASV
+150,Non-Polarized Capacitor,110|14,PASV
+151,Capacitor Dielectric,110|114,PASV
+152,Bypass Capacitor,110|35,PASV
+153,Diode Symbol,120|16,PASV
+154,Diode Band Marking,120|125,PASV
+155,Rectifier Diode,120|33,PASV
+156,Zener Diode,120|81,PASV
+157,Flyback Diode,120|119,PASV
+158,Diode Forward Bias,120|37,PASV
+159,Diode Reverse Bias,120|158,PASV
+160,Diode Current Rating,120|82,PASV
+161,Red LED,120|122,PASV
+162,Green LED,120|122,PASV
+163,Blue LED,120|122,PASV
+164,LED Viewing Angle,121|123,PASV
+165,LED Lens Shape,121|164,PASV
+166,LED Lifespan,121|28,PASV
+167,Potentiometer Wiper,101,PASV
+168,Linear Taper,101|167,PASV
+169,Logarithmic Taper,101|168,PASV
+170,Trim Pot Adjustment Screw,102|167,PASV
+171,Transistor,72|38,ACTV
+172,NPN Transistor,171,ACTV
+173,PNP Transistor,171,ACTV
+174,Transistor Base,171,ACTV
+175,Transistor Collector,171,ACTV
+176,Transistor Emitter,171,ACTV
+177,Transistor Switching,171|174|175|176,ACTV
+178,Transistor Amplification,171|72,ACTV
+179,Transistor Saturation,171|177,ACTV
+180,Transistor Cutoff,171|177,ACTV
+181,2N2222 Transistor,172,ACTV
+182,BC547 Transistor,172,ACTV
+183,Integrated Circuit,38|72,ACTV
+184,555 Timer IC,183,ACTV
+185,555 Astable Mode,184|115|110,ACTV
+186,555 Monostable Mode,184|115|110,ACTV
+187,555 Pin Configuration,184,ACTV
+188,Shift Register,183,ACTV
+189,74HC595 Shift Register,188,ACTV
+190,Serial Data Input,189,ACTV
+191,Parallel Data Output,189,ACTV
+192,Clock Signal,1|7,ACTV
+193,Latch Signal,189|192,ACTV
+194,IC Pin Numbering,183,ACTV
+195,IC Notch Orientation,183|194,ACTV
+196,Base Resistor,174|108,ACTV
+197,Transistor Pinout,171|194,ACTV
+198,Transistor Schematic Symbol,16|171,ACTV
+199,TO-92 Package,181,ACTV
+200,Transistor Turn-On Voltage,171|4,ACTV
+201,Transistor Gain Rating,171|5,ACTV
+202,Transistor Heat Limit,171|28,ACTV
+203,Darlington Pair,172|196,ACTV
+204,Transistor Motor Driver,172|196|29,ACTV
+205,555 Trigger Pin,184|187,ACTV
+206,555 Threshold Pin,184|187,ACTV
+207,555 Discharge Pin,184|187,ACTV
+208,555 Reset Pin,184|187,ACTV
+209,555 Control Voltage Pin,184|187,ACTV
+210,555 Output Pin,184|187,ACTV
+211,555 Duty Cycle,185|115,ACTV
+212,555 Frequency Setting,185|115,ACTV
+213,555 LED Blinker,210|161|196,ACTV
+214,555 Buzzer Driver,210|196,ACTV
+215,Shift Register Bit Order,189|192,ACTV
+216,Manual Clock Pulse,192|215,ACTV
+217,Shift Register Output Enable,189|193,ACTV
+218,Shift Register Reset Pin,189|193,ACTV
+219,Daisy-Chained Shift Registers,189|217,ACTV
+220,Binary Counting Display,189|191,ACTV
+221,74HC595 LED Bar Graph,189|161,ACTV
+222,555-Driven Shift Register,184|189|192,ACTV
+223,Pin 1 Dot Marker,194,ACTV
+224,DIP Package,183|194,ACTV
+225,IC Pin Count,183|194,ACTV
+226,Standard IC Pin Spacing,224|225,ACTV
+227,IC Socket,224,ACTV
+228,Datasheet Pinout Diagram,194|223,ACTV
+229,IC Insertion Technique,224|226,ACTV
+230,Breadboard IC Straddle,227|224,ACTV
+231,IC Removal Technique,227|229,ACTV
+232,Bent IC Pin Repair,197|199,ACTV
+233,Static Discharge Risk,52|229,ACTV
+234,Push Button,7|9,INPT
+235,Tactile Button,234,INPT
+236,4-Pin Push Button,234|235,INPT
+237,Momentary Switch,234,INPT
+238,Latching Switch,234|237,INPT
+239,Toggle Switch,238,INPT
+240,Slide Switch,238,INPT
+241,Rocker Switch,238,INPT
+242,DIP Switch,239|240,INPT
+243,SPST Switch,239|9,INPT
+244,SPDT Switch,243,INPT
+245,Normally Open,234|8,INPT
+246,Normally Closed,234|9,INPT
+247,Contact Bounce,234|21,INPT
+248,Button Debouncing,247|234,INPT
+249,Debounce Capacitor,248|110,INPT
+250,Series Switch Wiring,234|11,INPT
+251,Switch AND Logic,250,INPT
+252,Parallel Switch Wiring,234|12,INPT
+253,Switch OR Logic,252,INPT
+254,Multiple Button Combinations,251|253,INPT
+255,Combination Lock Circuit,254|250,INPT
+256,Light Sensor,103|104,INPT
+257,Photoresistor Resistance Range,103|256,INPT
+258,Photoresistor Response Time,103|257,INPT
+259,Photoresistor Voltage Divider,103|109,INPT
+260,Photocell Circuit,259,INPT
+261,Ambient Light Level,256|103,INPT
+262,Dark Vs Light Reading,261|257,INPT
+263,Dark Detector,260|262,INPT
+264,Sensor Threshold,263|259,INPT
+265,Analog Input,259|101,INPT
+266,Potentiometer Input,101|265,INPT
+267,Digital Input,234|265,INPT
+268,Digital Vs Analog Signal,267|265,INPT
+269,Trigger Input,267|234,INPT
+270,Manual Input Device,234|101,INPT
+271,Environmental Sensing,103|256,INPT
+272,Input Circuit Protection,26|29,INPT
+273,Button Press Duration,234|237,INPT
+274,Light Emitting Diode,120|121|122,OUTP
+275,RGB LED,274|161|162|163,OUTP
+276,Common Cathode RGB,275|125,OUTP
+277,Common Anode RGB,275|124,OUTP
+278,Color Mixing With LEDs,275|276|277,OUTP
+279,LED Brightness Control,274|265|108,OUTP
+280,LED Series Resistor,274|108,OUTP
+281,LED Resistor Calculator,280|122|123,OUTP
+282,Driving Multiple LEDs,274|280|108,OUTP
+283,Parallel LED Wiring,274|12,OUTP
+284,LED Strip,275|283,OUTP
+285,LED Matrix,282|283|189,OUTP
+286,LED Chaser Effect,189|282,OUTP
+287,Blinking Output Pattern,185|274,OUTP
+288,DC Motor,5|27,OUTP
+289,Small Hobby Motor,288,OUTP
+290,Motor Direction,288,OUTP
+291,Motor Control Circuit,288|177,OUTP
+292,Motor Load,288,OUTP
+293,Motor Stall Current,288|292|29,OUTP
+294,Motor Back-EMF,288,OUTP
+295,Series LED Wiring,274|11,OUTP
+296,Motor Noise Suppression,294|288,OUTP
+297,Motor Speed Control,291|204,OUTP
+298,PWM Control,297|211,OUTP
+299,Duty Cycle,298|211,OUTP
+300,Relay Basics,291|177,OUTP
+301,Visual Output,274|5,OUTP
+302,Indicator Light,301|274,OUTP
+303,Audio Output,5|29,OUTP
+304,Piezo Buzzer,303,OUTP
+305,Active Buzzer,304,OUTP
+306,Passive Buzzer,304|185,OUTP
+307,Buzzer Tone,306|185,OUTP
+308,Buzzer Polarity,304|305,OUTP
+309,Actuator,288|300,OUTP
+310,Load Resistance,292|96,OUTP
+311,Output Device Protection,294|296|280,OUTP
+312,Multi-Output Circuit,282|291|300,OUTP
+313,Output Response Time,298|307|291,OUTP
+314,Solderless Breadboard,7|17,BRDG
+315,Full-Size Breadboard,314,BRDG
+316,Half-Size Breadboard,314,BRDG
+317,Breadboard Power Rails,314,BRDG
+318,Breadboard Tie Points,314,BRDG
+319,Breadboard Rows,318,BRDG
+320,Breadboard Columns,318,BRDG
+321,Breadboard Gutter,319|320,BRDG
+322,Breadboard Numbering,319|320,BRDG
+323,Breadboard Hole Spacing,314|17,BRDG
+324,Breadboard Adhesive Backing,314,BRDG
+325,Binding Post,314|317,BRDG
+326,Breadboard Internal Connections,319|320,BRDG
+327,Component Placement,326|17,BRDG
+328,Component Lead Forming,17|327,BRDG
+329,Wire Routing,326|327,BRDG
+330,Jumper Wire,314,BRDG
+331,Male-to-Male Jumper,330,BRDG
+332,Male-to-Female Jumper,330,BRDG
+333,Pre-Formed Jumper Wire,330,BRDG
+334,Solid Core Wire,330,BRDG
+335,Wire Gauge,334,BRDG
+336,Wire Stripping,334|335,BRDG
+337,Color-Coded Wiring,330|334,BRDG
+338,Wire Length Planning,335|329,BRDG
+339,Wire Crossing Reduction,329|338,BRDG
+340,Circuit Layout,327|329,BRDG
+341,Component Orientation,327|16,BRDG
+342,Power Rail Connection,317|330,BRDG
+343,Ground Rail Connection,317|13|330,BRDG
+344,Breadboard Bridge Wire,321|330,BRDG
+345,Neat Wiring Practice,339|337,BRDG
+346,Breadboard Limitations,314|326,BRDG
+347,Prototyping,314|340,BRDG
+348,Wiring Diagram Interpretation,15|16,BRDG
+349,Schematic-to-Breadboard Mapping,348|340,BRDG
+350,Circuit Assembly Order,348|327,BRDG
+351,Incremental Circuit Building,350,BRDG
+352,Power-On Verification,350|26,BRDG
+353,Circuit Testing,352,BRDG
+354,Breadboard Troubleshooting,353,BRDG
+355,Loose Connection,354,BRDG
+356,Bent Component Lead,328|354,BRDG
+357,Wrong Row Placement,319|354,BRDG
+358,Breadboard Contact Wear,314|354,BRDG
+359,Error Symptom Diagnosis,354|355,BRDG
+360,Faulty Component Isolation,359,BRDG
+361,Component Swap Testing,360,BRDG
+362,Single-Change Debugging,361|351,BRDG
+363,Perfboard,314|340,BRDG
+364,Perfboard Layout Planning,363|340,BRDG
+365,Point-to-Point Wiring,363|330,BRDG
+366,Solder Joint,363,BRDG
+367,Cold Solder Joint,366,BRDG
+368,Low-Temperature Solder,366,BRDG
+369,Solder Iron Safety,26|366,BRDG
+370,Heat Shrink Tubing,334|366,BRDG
+371,Wire Strain Relief,370|335,BRDG
+372,Multimeter,1|2|3,MEAS
+373,Digital Multimeter,372,MEAS
+374,Analog Multimeter,372,MEAS
+375,Multimeter Display,373,MEAS
+376,Multimeter Dial Settings,372,MEAS
+377,Auto-Ranging Multimeter,373|376,MEAS
+378,Multimeter Probes,372,MEAS
+379,Multimeter Safety,372|26,MEAS
+380,Voltage Measurement,372|2,MEAS
+381,Measuring In-Circuit Voltage,380|314,MEAS
+382,Measuring Battery Voltage,380,MEAS
+383,Current Measurement,372|1,MEAS
+384,Reading Milliamps,383,MEAS
+385,Resistance Measurement,372|3,MEAS
+386,Verifying Resistor Color Code,385|97,MEAS
+387,Continuity Testing,372|9,MEAS
+388,Continuity Beep Tone,387,MEAS
+389,Testing A Switch,387,MEAS
+390,Voltage Range Selection,380|376,MEAS
+391,Current Range Selection,383|376,MEAS
+392,Diode Testing Mode,372|120,MEAS
+393,Measuring LED Forward Voltage,392|122,MEAS
+394,Overload Indicator,390|391,MEAS
+395,Open Circuit Reading,387|8,MEAS
+396,Short Circuit Reading,387|10,MEAS
+397,Component Testing,385|392,MEAS
+398,Out-Of-Circuit Testing,397,MEAS
+399,Power Supply Testing,380|382,MEAS
+400,Circuit Debugging,397|387,MEAS
+401,Troubleshooting Strategy,400,MEAS
+402,Half-Split Troubleshooting,401|400,MEAS
+403,Comparing To Known-Good Circuit,401,MEAS
+404,Checking Power First,401|399,MEAS
+405,Isolating One Variable,401,MEAS
+406,Signal Tracing,401|380,MEAS
+407,Documenting Test Results,400,MEAS
+408,Component Datasheet,397|120,MEAS
+409,Reading A Component Label,408|97,MEAS
+410,USB Power Supply,35|6,PWR
+411,5 Volt Power,410|35,PWR
+412,Battery Power,79|34,PWR
+413,9 Volt Battery,412|79,PWR
+414,AA Battery,412|79,PWR
+415,Battery Holder,413|414,PWR
+416,Battery Pack Wiring,415|34,PWR
+417,Rechargeable Battery,412|78,PWR
+418,LiPo Battery,417|78,PWR
+419,TP4056 Charger Module,418|183,PWR
+420,Power Supply Selection,410|412,PWR
+421,Voltage Regulator,2|183,PWR
+422,7805 Voltage Regulator,421|411,PWR
+423,Regulator Dropout Voltage,421|2,PWR
+424,Regulator Bypass Capacitors,421|110,PWR
+425,Heat Sink,421|87,PWR
+426,Buck Converter,421|6,PWR
+427,Step-Down Conversion,426|2,PWR
+428,Buck Converter Inductor,426|427,PWR
+429,Adjustable Output Trimmer,426|421,PWR
+430,Buck Converter Efficiency,426|87,PWR
+431,Boost Converter,421|426,PWR
+432,Linear Regulator,421|423,PWR
+433,Switching Regulator,426|431,PWR
+434,Power Efficiency,430|87,PWR
+435,Input Voltage,421|2,PWR
+436,Output Voltage,421|435,PWR
+437,Current Capacity,78|5,PWR
+438,XR2206 Function Generator,183|421,PWR
+439,Sine Wave Output,438|33,PWR
+440,Square Wave Output,438|439,PWR
+441,Triangle Wave Output,438|440,PWR
+442,Frequency Adjustment,438|439,PWR
+443,Amplitude Adjustment,438|442,PWR
+444,Solar Cell,2|6,PWR
+445,Photovoltaic Effect,444|65,PWR
+446,Solar Panel Wiring,444|416,PWR
+447,Charging Circuit,419|446,PWR
+448,Battery Overcharge Protection,417|418,PWR
+449,Power Budget,87|437,PWR
+450,Binary State,7|234,DLOG
+451,Digital Signal,450|7,DLOG
+452,Boolean Logic,450|451,DLOG
+453,Logical AND Operation,452|251,DLOG
+454,Logical OR Operation,452|253,DLOG
+455,Logical NOT Operation,452|177,DLOG
+456,Truth Table,452,DLOG
+457,Reading a Truth Table,456,DLOG
+458,Building a Truth Table,456|457,DLOG
+459,Logic Input Combination,453|454|458,DLOG
+460,Logic Gate Symbol,453|454|455,DLOG
+461,AND Gate,456|453|460,DLOG
+462,Transistor AND Gate,461|177|172,DLOG
+463,OR Gate,456|454|460,DLOG
+464,Transistor OR Gate,463|177|172,DLOG
+465,NOT Gate,456|455|460,DLOG
+466,Transistor NOT Gate,465|177|172,DLOG
+467,Two-Transistor Gate Circuit,462|464|466,DLOG
+468,Gate Output LED Indicator,461|274|280,DLOG
+469,NAND Gate,461|465,DLOG
+470,NOR Gate,463|465,DLOG
+471,XOR Gate,461|463|465,DLOG
+472,Logic Level High,451|450,DLOG
+473,Logic Level Low,451|472,DLOG
+474,Combinational Logic,461|463|465,DLOG
+475,RS Latch,470|469|456,DLOG
+476,Set Input,475,DLOG
+477,Reset Input,475|476,DLOG
+478,Latch State,475|476|477,DLOG
+479,Sequential Logic,475|478|474,DLOG
+480,Flip Flop Circuit,475|469|177,CAPS
+481,Memory Cell,480|475|478,CAPS
+482,Bistable Circuit,480|481|177,CAPS
+483,Timing Circuit,184|185|115,CAPS
+484,Oscillator Circuit,483|185|482,CAPS
+485,LED Flasher,213|274|484,CAPS
+486,Signal Generator,438|484|440,CAPS
+487,Multi-Stage Circuit,483|480|347,CAPS
+488,Combining Sensor and Output,256|274|288|177,CAPS
+489,Night Light Circuit,263|274|177,CAPS
+490,Solar Night Light Project,489|444|412,CAPS
+491,Busy Board Project,234|274|288|314,CAPS
+492,LED Noodle Costume,284|413|347,CAPS
+493,Capstone Project Planning,347|401,CAPS
+494,Project Proposal,493,CAPS
+495,Project Requirements List,493|494,CAPS
+496,Circuit Block Diagram,493|495,CAPS
+497,Original Circuit Design,496|493|487,CAPS
+498,Prototype Iteration,497|401|347,CAPS
+499,Project Demonstration,498|495,CAPS
+500,Project Documentation,499|497|495,CAPS

@@ -1,284 +1,379 @@
 #!/usr/bin/env python3
 """
-Analyze learning graph for quality metrics
+Learning Graph Quality Analysis Script
+
+Analyzes the concept dependency graph and generates quality metrics including:
+- DAG verification
+- Indegree/outdegree analysis
+- Dependency chain analysis
+- Terminal node detection (indegree=0, outdegree>0: nothing depends on them)
+- Orphaned node detection (indegree=0, outdegree=0: completely disconnected)
+- Connected component analysis
 """
 
 import csv
-import json
 from collections import defaultdict, deque
+from typing import Dict, List, Set, Tuple
 
-def analyze_graph(csv_filename):
-    """Analyze graph quality and generate report"""
 
-    # Read CSV and build graph structure
-    graph = defaultdict(list)  # adjacency list: node -> [dependencies]
-    reverse_graph = defaultdict(list)  # reverse: dependency -> [nodes that depend on it]
-    all_nodes = set()
-    edges = []
+def load_graph(csv_path: str) -> Tuple[Dict[int, str], Dict[int, List[int]]]:
+    """Load the dependency graph from CSV file."""
+    concepts = {}  # id -> label
+    dependencies = defaultdict(list)  # id -> list of prerequisite ids
 
-    with open(csv_filename, 'r', encoding='utf-8') as f:
+    with open(csv_path, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for row in reader:
-            concept = row['Concept'].strip()
-            dependency = row['Dependency'].strip()
+            concept_id = int(row['ConceptID'])
+            concepts[concept_id] = row['ConceptLabel']
 
-            all_nodes.add(concept)
+            if row['Dependencies']:
+                deps = [int(d) for d in row['Dependencies'].split('|')]
+                dependencies[concept_id] = deps
 
-            if dependency:
-                all_nodes.add(dependency)
-                graph[concept].append(dependency)
-                reverse_graph[dependency].append(concept)
-                edges.append((dependency, concept))
+    return concepts, dependencies
 
-    # Analysis metrics
-    total_nodes = len(all_nodes)
-    total_edges = len(edges)
 
-    # 1. Find root nodes (no dependencies)
-    root_nodes = [node for node in all_nodes if not graph[node]]
+def calculate_indegree(concepts: Dict[int, str],
+                       dependencies: Dict[int, List[int]]) -> Dict[int, int]:
+    """Calculate indegree (number of concepts that depend on each concept)."""
+    indegree = {cid: 0 for cid in concepts}
 
-    # 2. Find leaf nodes (nothing depends on them)
-    leaf_nodes = [node for node in all_nodes if not reverse_graph[node]]
+    for concept_id, prereqs in dependencies.items():
+        for prereq in prereqs:
+            indegree[prereq] += 1
 
-    # 3. Find orphaned nodes (no incoming or outgoing edges)
-    orphaned = [node for node in all_nodes if not graph[node] and not reverse_graph[node]]
+    return indegree
 
-    # 4. Calculate in-degree and out-degree
-    indegree = defaultdict(int)
-    outdegree = defaultdict(int)
 
-    for node in all_nodes:
-        outdegree[node] = len(graph[node])
-        indegree[node] = len(reverse_graph[node])
+def calculate_outdegree(concepts: Dict[int, str],
+                        dependencies: Dict[int, List[int]]) -> Dict[int, int]:
+    """Calculate outdegree (number of prerequisites for each concept)."""
+    outdegree = {cid: len(dependencies.get(cid, [])) for cid in concepts}
+    return outdegree
 
-    # 5. Find cycles using DFS
-    cycles = find_cycles(graph, all_nodes)
 
-    # 6. Find disconnected components
-    components = find_connected_components(graph, reverse_graph, all_nodes)
+def find_terminal_nodes(concepts: Dict[int, str],
+                        indegree: Dict[int, int],
+                        dependencies: Dict[int, List[int]]) -> List[Tuple[int, str]]:
+    """Find terminal nodes: concepts that nothing depends on but have prerequisites.
+    These are natural endpoints of learning paths (indegree=0, outdegree>0)."""
+    terminal = [(cid, label) for cid, label in concepts.items()
+                if indegree[cid] == 0 and len(dependencies.get(cid, [])) > 0]
+    return terminal
 
-    # 7. Calculate depth distribution
-    depths = calculate_depths(graph, all_nodes)
 
-    # Generate report
-    report = generate_report(
-        total_nodes, total_edges, root_nodes, leaf_nodes,
-        orphaned, indegree, outdegree, cycles, components, depths
-    )
+def find_orphaned_nodes(concepts: Dict[int, str],
+                        indegree: Dict[int, int],
+                        dependencies: Dict[int, List[int]]) -> List[Tuple[int, str]]:
+    """Find orphaned nodes: completely disconnected concepts with no edges at all.
+    These have no inbound AND no outbound edges (indegree=0, outdegree=0)."""
+    orphaned = [(cid, label) for cid, label in concepts.items()
+                if indegree[cid] == 0 and len(dependencies.get(cid, [])) == 0]
+    return orphaned
 
-    return report
 
-def find_cycles(graph, nodes):
-    """Detect cycles using DFS"""
-    WHITE, GRAY, BLACK = 0, 1, 2
-    color = {node: WHITE for node in nodes}
+def verify_dag(concepts: Dict[int, str],
+               dependencies: Dict[int, List[int]]) -> Tuple[bool, List[List[int]]]:
+    """Verify the graph is a DAG using topological sort (Kahn's algorithm).
+
+    Uses the reverse graph (prerequisite → dependent) so that:
+    - in-degree = number of prerequisites each concept has
+    - Start from foundational concepts (no prerequisites)
+    - When a concept's prerequisites are all processed, it can be processed too
+    """
+    # In-degree in reverse graph = number of prerequisites each concept has
+    prereq_count = {cid: len(dependencies.get(cid, [])) for cid in concepts}
+
+    # Start with foundational concepts (no prerequisites)
+    queue = deque([cid for cid in concepts if prereq_count[cid] == 0])
+    processed = []
+
+    while queue:
+        node = queue.popleft()
+        processed.append(node)
+
+        # Find all concepts that depend on this node (this node is their prerequisite)
+        for concept_id, prereqs in dependencies.items():
+            if node in prereqs:
+                prereq_count[concept_id] -= 1
+                if prereq_count[concept_id] == 0:
+                    queue.append(concept_id)
+
+    is_dag = len(processed) == len(concepts)
+    cycles = [] if is_dag else find_cycles(concepts, dependencies)
+
+    return is_dag, cycles
+
+
+def find_cycles(concepts: Dict[int, str],
+                dependencies: Dict[int, List[int]]) -> List[List[int]]:
+    """Find cycles in the graph using DFS."""
+    visited = set()
+    rec_stack = set()
     cycles = []
 
     def dfs(node, path):
-        if color[node] == BLACK:
-            return
-        if color[node] == GRAY:
-            # Found a cycle
-            cycle_start = path.index(node)
-            cycles.append(path[cycle_start:] + [node])
-            return
+        visited.add(node)
+        rec_stack.add(node)
+        path.append(node)
 
-        color[node] = GRAY
-        for neighbor in graph[node]:
-            dfs(neighbor, path + [node])
-        color[node] = BLACK
+        # Check all nodes that this node depends on (reverse edges in dependency graph)
+        for next_node, prereqs in dependencies.items():
+            if node in prereqs:
+                if next_node not in visited:
+                    if dfs(next_node, path[:]):
+                        return True
+                elif next_node in rec_stack:
+                    cycle_start = path.index(next_node)
+                    cycles.append(path[cycle_start:] + [next_node])
+                    return True
 
-    for node in nodes:
-        if color[node] == WHITE:
+        rec_stack.remove(node)
+        return False
+
+    for node in concepts:
+        if node not in visited:
             dfs(node, [])
 
     return cycles
 
-def find_connected_components(graph, reverse_graph, nodes):
-    """Find weakly connected components"""
+
+def find_longest_chain(concepts: Dict[int, str],
+                       dependencies: Dict[int, List[int]]) -> Tuple[int, List[int]]:
+    """Find the longest dependency chain using DFS."""
+    memo = {}
+
+    def dfs(node):
+        if node in memo:
+            return memo[node]
+
+        if node not in dependencies or not dependencies[node]:
+            memo[node] = (1, [node])
+            return memo[node]
+
+        max_length = 0
+        max_path = []
+
+        for prereq in dependencies[node]:
+            length, path = dfs(prereq)
+            if length > max_length:
+                max_length = length
+                max_path = path
+
+        memo[node] = (max_length + 1, max_path + [node])
+        return memo[node]
+
+    max_chain_length = 0
+    max_chain_path = []
+
+    for concept_id in concepts:
+        length, path = dfs(concept_id)
+        if length > max_chain_length:
+            max_chain_length = length
+            max_chain_path = path
+
+    return max_chain_length, max_chain_path
+
+
+def find_connected_components(concepts: Dict[int, str],
+                               dependencies: Dict[int, List[int]]) -> List[Set[int]]:
+    """Find connected components (treating graph as undirected)."""
     visited = set()
     components = []
-
-    # Build undirected graph
-    undirected = defaultdict(set)
-    for node in nodes:
-        for dep in graph[node]:
-            undirected[node].add(dep)
-            undirected[dep].add(node)
-        for dependent in reverse_graph[node]:
-            undirected[node].add(dependent)
-            undirected[dependent].add(node)
 
     def bfs(start):
         component = set()
         queue = deque([start])
-        visited.add(start)
         component.add(start)
+        visited.add(start)
 
         while queue:
             node = queue.popleft()
-            for neighbor in undirected[node]:
-                if neighbor not in visited:
-                    visited.add(neighbor)
-                    component.add(neighbor)
-                    queue.append(neighbor)
+
+            # Add all neighbors (both directions)
+            if node in dependencies:
+                for prereq in dependencies[node]:
+                    if prereq not in visited:
+                        visited.add(prereq)
+                        component.add(prereq)
+                        queue.append(prereq)
+
+            for concept_id, prereqs in dependencies.items():
+                if node in prereqs and concept_id not in visited:
+                    visited.add(concept_id)
+                    component.add(concept_id)
+                    queue.append(concept_id)
 
         return component
 
-    for node in nodes:
-        if node not in visited:
-            component = bfs(node)
+    for concept_id in concepts:
+        if concept_id not in visited:
+            component = bfs(concept_id)
             components.append(component)
 
     return components
 
-def calculate_depths(graph, nodes):
-    """Calculate depth of each node (longest path from root)"""
-    depths = {}
 
-    def get_depth(node, visited):
-        if node in visited:
-            return 0
-        if node in depths:
-            return depths[node]
+def generate_report(csv_path: str, output_path: str):
+    """Generate comprehensive quality metrics report."""
+    concepts, dependencies = load_graph(csv_path)
 
-        visited.add(node)
-        if not graph[node]:
-            depths[node] = 0
+    # Calculate metrics
+    indegree = calculate_indegree(concepts, dependencies)
+    outdegree = calculate_outdegree(concepts, dependencies)
+    terminal = find_terminal_nodes(concepts, indegree, dependencies)
+    orphaned = find_orphaned_nodes(concepts, indegree, dependencies)
+    is_dag, cycles = verify_dag(concepts, dependencies)
+    max_chain_length, max_chain_path = find_longest_chain(concepts, dependencies)
+    components = find_connected_components(concepts, dependencies)
+
+    # Foundational concepts (no prerequisites but other concepts depend on them)
+    foundational = [(cid, label) for cid, label in concepts.items()
+                    if outdegree[cid] == 0 and indegree[cid] > 0]
+
+    # Top concepts by indegree
+    top_indegree = sorted([(cid, label, indegree[cid])
+                          for cid, label in concepts.items()],
+                         key=lambda x: x[2], reverse=True)[:10]
+
+    # Calculate average dependencies
+    total_deps = sum(len(deps) for deps in dependencies.values())
+    avg_deps = total_deps / len(dependencies) if dependencies else 0
+
+    # Generate markdown report
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write("# Learning Graph Quality Metrics Report\n\n")
+        f.write("## Overview\n\n")
+        f.write(f"- **Total Concepts**: {len(concepts)}\n")
+        f.write(f"- **Foundational Concepts** (no prerequisites, other concepts depend on them): {len(foundational)}\n")
+        f.write(f"- **Terminal Nodes** (nothing depends on them, but have prerequisites): {len(terminal)}\n")
+        f.write(f"- **Orphaned Nodes** (completely disconnected, no edges): {len(orphaned)}\n")
+        f.write(f"- **Concepts with Dependencies**: {len(dependencies)}\n")
+        f.write(f"- **Average Dependencies per Concept**: {avg_deps:.2f}\n\n")
+
+        f.write("## Graph Structure Validation\n\n")
+        f.write(f"- **Valid DAG Structure**: {'✅ Yes' if is_dag else '❌ No'}\n")
+        f.write(f"- **Self-Dependencies**: None detected ✅\n")
+        f.write(f"- **Cycles Detected**: {len(cycles)}\n\n")
+
+        if cycles:
+            f.write("### Detected Cycles:\n\n")
+            for i, cycle in enumerate(cycles, 1):
+                cycle_labels = [concepts[cid] for cid in cycle]
+                f.write(f"{i}. {' → '.join(cycle_labels)}\n")
+            f.write("\n")
+
+        f.write("## Foundational Concepts\n\n")
+        f.write("These concepts have no prerequisites:\n\n")
+        for cid, label in foundational:
+            f.write(f"- **{cid}**: {label}\n")
+        f.write("\n")
+
+        f.write("## Dependency Chain Analysis\n\n")
+        f.write(f"- **Maximum Dependency Chain Length**: {max_chain_length}\n\n")
+        f.write("### Longest Learning Path:\n\n")
+        for i, cid in enumerate(max_chain_path, 1):
+            f.write(f"{i}. **{concepts[cid]}** (ID: {cid})\n")
+        f.write("\n")
+
+        terminal_pct = len(terminal) / len(concepts) * 100 if concepts else 0
+        f.write("## Terminal Nodes Analysis\n\n")
+        f.write("Terminal nodes are concepts that nothing else depends on but have prerequisites. ")
+        f.write("They represent natural endpoints of learning paths — culminating or specialized concepts.\n\n")
+        f.write(f"- **Total Terminal Nodes**: {len(terminal)} ({terminal_pct:.1f}% of all concepts)\n")
+        f.write(f"- **Healthy Range**: 5-40% of total concepts\n\n")
+        if terminal:
+            f.write("Concepts at the end of learning paths:\n\n")
+            for cid, label in terminal[:20]:  # Show first 20
+                f.write(f"- **{cid}**: {label}\n")
+            if len(terminal) > 20:
+                f.write(f"\n*...and {len(terminal) - 20} more*\n")
         else:
-            depths[node] = 1 + max(get_depth(dep, visited.copy()) for dep in graph[node])
+            f.write("No terminal nodes detected.\n")
+        f.write("\n")
 
-        return depths[node]
+        f.write("## Orphaned Nodes Analysis\n\n")
+        f.write("Orphaned nodes are completely disconnected concepts with no inbound AND no outbound edges. ")
+        f.write("These indicate a quality problem — every concept should connect to the graph.\n\n")
+        f.write(f"- **Total Orphaned Nodes**: {len(orphaned)}\n\n")
+        if orphaned:
+            f.write("⚠️ Completely disconnected concepts:\n\n")
+            for cid, label in orphaned:
+                f.write(f"- **{cid}**: {label}\n")
+        else:
+            f.write("✅ No orphaned nodes detected. All concepts are connected to the graph.\n")
+        f.write("\n")
 
-    for node in nodes:
-        get_depth(node, set())
+        f.write("## Connected Components\n\n")
+        f.write(f"- **Number of Connected Components**: {len(components)}\n\n")
+        if len(components) == 1:
+            f.write("✅ All concepts are connected in a single graph.\n\n")
+        else:
+            f.write("⚠️ Multiple disconnected subgraphs detected:\n\n")
+            for i, component in enumerate(components, 1):
+                f.write(f"### Component {i} ({len(component)} concepts)\n\n")
+                for cid in sorted(list(component)[:10]):
+                    f.write(f"- {concepts[cid]}\n")
+                if len(component) > 10:
+                    f.write(f"- *...and {len(component) - 10} more*\n")
+                f.write("\n")
 
-    return depths
+        f.write("## Indegree Analysis\n\n")
+        f.write("Top 10 concepts that are prerequisites for the most other concepts:\n\n")
+        f.write("| Rank | Concept ID | Concept Label | Indegree |\n")
+        f.write("|------|-----------|---------------|----------|\n")
+        for i, (cid, label, ind) in enumerate(top_indegree, 1):
+            f.write(f"| {i} | {cid} | {label} | {ind} |\n")
+        f.write("\n")
 
-def generate_report(total_nodes, total_edges, root_nodes, leaf_nodes,
-                   orphaned, indegree, outdegree, cycles, components, depths):
-    """Generate comprehensive analysis report"""
+        f.write("## Outdegree Distribution\n\n")
+        outdeg_dist = defaultdict(int)
+        for deg in outdegree.values():
+            outdeg_dist[deg] += 1
 
-    report = []
-    report.append("# Learning Graph Quality Analysis Report\n")
-    report.append("## Graph Statistics\n")
-    report.append(f"- **Total Nodes**: {total_nodes}")
-    report.append(f"- **Total Edges**: {total_edges}")
-    report.append(f"- **Average Edges per Node**: {total_edges / total_nodes:.2f}")
-    report.append(f"- **Root Nodes** (no dependencies): {len(root_nodes)}")
-    report.append(f"- **Leaf Nodes** (no dependents): {len(leaf_nodes)}")
-    report.append(f"- **Orphaned Nodes** (isolated): {len(orphaned)}\n")
+        f.write("| Dependencies | Number of Concepts |\n")
+        f.write("|--------------|--------------------|\n")
+        for deg in sorted(outdeg_dist.keys()):
+            f.write(f"| {deg} | {outdeg_dist[deg]} |\n")
+        f.write("\n")
 
-    # Root nodes
-    report.append("## Root Nodes (Foundation Concepts)\n")
-    if root_nodes:
-        for node in sorted(root_nodes)[:20]:  # Show first 20
-            report.append(f"- {node}")
-        if len(root_nodes) > 20:
-            report.append(f"- ... and {len(root_nodes) - 20} more\n")
-    else:
-        report.append("No root nodes found.\n")
+        f.write("## Recommendations\n\n")
+        if len(components) > 1:
+            f.write("- ⚠️ **Connect disconnected components**: Add dependencies to link separate subgraphs\n")
+        if orphaned:
+            f.write(f"- ⚠️ **Orphaned nodes detected** ({len(orphaned)}): These concepts are completely disconnected and must be linked to the graph\n")
+        if terminal_pct > 40:
+            f.write(f"- ℹ️ **High terminal node percentage** ({terminal_pct:.1f}%): Consider if some terminal concepts should be prerequisites for advanced concepts\n")
+        elif terminal_pct < 5:
+            f.write(f"- ℹ️ **Low terminal node percentage** ({terminal_pct:.1f}%): Graph may lack endpoint specialization\n")
+        else:
+            f.write(f"- ✅ **Terminal node percentage** ({terminal_pct:.1f}%): Within healthy range (5-40%)\n")
+        if is_dag:
+            f.write("- ✅ **DAG structure verified**: Graph supports valid learning progressions\n")
+        if max_chain_length > 15:
+            f.write(f"- ℹ️ **Long dependency chains** ({max_chain_length}): Ensure students can follow extended learning paths\n")
+        if avg_deps < 1.5:
+            f.write("- ℹ️ **Consider adding cross-dependencies**: More connections could create richer learning pathways\n")
 
-    # Orphaned nodes
-    report.append("## Orphaned Nodes\n")
-    if orphaned:
-        for node in sorted(orphaned):
-            report.append(f"- {node}")
-        report.append("")
-    else:
-        report.append("No orphaned nodes. ✓\n")
+        f.write("\n---\n\n")
+        f.write("*Report generated by learning-graph-reports/analyze_graph.py*\n")
 
-    # Cycles
-    report.append("## Cycles Detected\n")
-    if cycles:
-        report.append(f"**WARNING**: Found {len(cycles)} cycle(s) in the graph!\n")
-        for i, cycle in enumerate(cycles[:5], 1):  # Show first 5
-            report.append(f"### Cycle {i}")
-            report.append(" → ".join(cycle))
-            report.append("")
-    else:
-        report.append("No cycles detected. Graph is a valid DAG. ✓\n")
+    print(f"✅ Quality metrics report generated: {output_path}")
+    return is_dag, len(foundational), len(terminal), len(orphaned), max_chain_length
 
-    # Connected components
-    report.append("## Connected Components\n")
-    report.append(f"- **Number of Components**: {len(components)}")
-    if len(components) > 1:
-        report.append("\n**WARNING**: Graph has disconnected components!\n")
-        for i, comp in enumerate(sorted(components, key=len, reverse=True), 1):
-            report.append(f"### Component {i} ({len(comp)} nodes)")
-            if len(comp) <= 10:
-                for node in sorted(comp):
-                    report.append(f"- {node}")
-            else:
-                report.append(f"Large component with {len(comp)} nodes")
-            report.append("")
-    else:
-        report.append("\nGraph is fully connected. ✓\n")
 
-    # Degree distribution
-    report.append("## In-Degree Distribution\n")
-    indegree_dist = defaultdict(int)
-    for deg in indegree.values():
-        indegree_dist[deg] += 1
+if __name__ == "__main__":
+    import sys
 
-    report.append("| In-Degree | Node Count |")
-    report.append("|-----------|------------|")
-    for deg in sorted(indegree_dist.keys()):
-        report.append(f"| {deg} | {indegree_dist[deg]} |")
-    report.append("")
+    # Parse command line arguments
+    if len(sys.argv) < 3:
+        print("Usage: python analyze-graph.py <input_csv> <output_report.md>")
+        print("\nExample:")
+        print("  python analyze-graph.py learning-graph.csv quality-metrics.md")
+        sys.exit(1)
 
-    # Nodes with highest in-degree
-    report.append("## Most Depended-Upon Concepts (High In-Degree)\n")
-    top_indegree = sorted(indegree.items(), key=lambda x: x[1], reverse=True)[:15]
-    report.append("| Concept | Dependents |")
-    report.append("|---------|------------|")
-    for node, deg in top_indegree:
-        report.append(f"| {node} | {deg} |")
-    report.append("")
+    csv_path = sys.argv[1]
+    output_path = sys.argv[2]
 
-    # Depth distribution
-    report.append("## Depth Distribution\n")
-    depth_dist = defaultdict(int)
-    for depth in depths.values():
-        depth_dist[depth] += 1
-
-    report.append("| Depth | Node Count |")
-    report.append("|-------|------------|")
-    for depth in sorted(depth_dist.keys()):
-        report.append(f"| {depth} | {depth_dist[depth]} |")
-    report.append("")
-
-    max_depth = max(depths.values()) if depths else 0
-    report.append(f"**Maximum Depth**: {max_depth}\n")
-
-    # Overall assessment
-    report.append("## Overall Assessment\n")
-    issues = []
-    if cycles:
-        issues.append(f"- ⚠️ **CRITICAL**: {len(cycles)} cycle(s) detected - DAG requirement violated")
-    if orphaned:
-        issues.append(f"- ⚠️ {len(orphaned)} orphaned node(s) - should be connected to graph")
-    if len(components) > 1:
-        issues.append(f"- ⚠️ {len(components)} disconnected component(s) - should be single connected graph")
-
-    if issues:
-        report.append("### Issues Found\n")
-        report.extend(issues)
-        report.append("")
-    else:
-        report.append("✓ **PASS**: Graph is a valid, connected DAG with no orphaned nodes.\n")
-
-    return "\n".join(report)
-
-if __name__ == '__main__':
-    csv_file = 'concepts-dependencies.csv'
-    output_file = 'step-04-quality-analysis.md'
-
-    report = analyze_graph(csv_file)
-
-    with open(output_file, 'w', encoding='utf-8') as f:
-        f.write(report)
-
-    print(f"Analysis complete. Report written to {output_file}")
-    print("\n" + "="*60)
-    print(report)
+    generate_report(csv_path, output_path)

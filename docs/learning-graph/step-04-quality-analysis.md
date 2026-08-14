@@ -1,89 +1,137 @@
-# Learning Graph Quality Analysis Report
+# Learning Graph Quality Metrics Report
 
-## Graph Statistics
+## Overview
 
-- **Total Nodes**: 200
-- **Total Edges**: 268
-- **Average Edges per Node**: 1.34
-- **Root Nodes** (no dependencies): 6
-- **Leaf Nodes** (no dependents): 121
-- **Orphaned Nodes** (isolated): 0
+- **Total Concepts**: 500
+- **Foundational Concepts** (no prerequisites, other concepts depend on them): 7
+- **Terminal Nodes** (nothing depends on them, but have prerequisites): 221
+- **Orphaned Nodes** (completely disconnected, no edges): 0
+- **Concepts with Dependencies**: 493
+- **Average Dependencies per Concept**: 1.97
 
-## Root Nodes (Foundation Concepts)
+## Graph Structure Validation
 
-- Boolean Logic
-- Component Lead
-- Electric Current
-- Multimeter
-- Resistance
-- Voltage
-## Orphaned Nodes
+- **Valid DAG Structure**: ✅ Yes
+- **Self-Dependencies**: None detected ✅
+- **Cycles Detected**: 0
 
-No orphaned nodes. ✓
+## Foundational Concepts
 
-## Cycles Detected
+These concepts have no prerequisites:
 
-No cycles detected. Graph is a valid DAG. ✓
+- **1**: Electric Current
+- **2**: Voltage
+- **3**: Resistance
+- **7**: Circuit
+- **13**: Ground
+- **17**: Component Lead
+- **24**: Electric Charge
+
+## Dependency Chain Analysis
+
+- **Maximum Dependency Chain Length**: 19
+
+### Longest Learning Path:
+
+1. **Resistance** (ID: 3)
+2. **Conductivity** (ID: 38)
+3. **Conductor** (ID: 71)
+4. **Semiconductor Material** (ID: 72)
+5. **Transistor** (ID: 171)
+6. **Transistor Base** (ID: 174)
+7. **Transistor Switching** (ID: 177)
+8. **Logical NOT Operation** (ID: 455)
+9. **Logic Gate Symbol** (ID: 460)
+10. **OR Gate** (ID: 463)
+11. **NOR Gate** (ID: 470)
+12. **RS Latch** (ID: 475)
+13. **Set Input** (ID: 476)
+14. **Reset Input** (ID: 477)
+15. **Latch State** (ID: 478)
+16. **Memory Cell** (ID: 481)
+17. **Bistable Circuit** (ID: 482)
+18. **Oscillator Circuit** (ID: 484)
+19. **LED Flasher** (ID: 485)
+
+## Terminal Nodes Analysis
+
+Terminal nodes are concepts that nothing else depends on but have prerequisites. They represent natural endpoints of learning paths — culminating or specialized concepts.
+
+- **Total Terminal Nodes**: 221 (44.2% of all concepts)
+- **Healthy Range**: 5-40% of total concepts
+
+Concepts at the end of learning paths:
+
+- **23**: Conventional Current
+- **31**: Kirchhoff's Current Law
+- **32**: Kirchhoff's Voltage Law
+- **40**: Volt
+- **43**: Milliampere
+- **44**: Microampere
+- **45**: Kilohm
+- **46**: Megohm
+- **47**: Coulomb
+- **48**: Milliwatt
+- **50**: Fuse Protection
+- **53**: Battery Safety
+- **54**: Short Circuit Risk
+- **56**: Loop Current
+- **59**: Equivalent Resistance
+- **60**: Voltage Reference
+- **61**: Series-Parallel Circuit
+- **62**: Current Divider
+- **63**: Circuit Topology
+- **64**: Circuit Branch
+
+*...and 201 more*
+
+## Orphaned Nodes Analysis
+
+Orphaned nodes are completely disconnected concepts with no inbound AND no outbound edges. These indicate a quality problem — every concept should connect to the graph.
+
+- **Total Orphaned Nodes**: 0
+
+✅ No orphaned nodes detected. All concepts are connected to the graph.
 
 ## Connected Components
 
-- **Number of Components**: 1
+- **Number of Connected Components**: 1
 
-Graph is fully connected. ✓
+✅ All concepts are connected in a single graph.
 
-## In-Degree Distribution
+## Indegree Analysis
 
-| In-Degree | Node Count |
-|-----------|------------|
-| 0 | 121 |
-| 1 | 31 |
-| 2 | 24 |
-| 3 | 4 |
+Top 10 concepts that are prerequisites for the most other concepts:
+
+| Rank | Concept ID | Concept Label | Indegree |
+|------|-----------|---------------|----------|
+| 1 | 2 | Voltage | 29 |
+| 2 | 1 | Electric Current | 28 |
+| 3 | 3 | Resistance | 23 |
+| 4 | 96 | Resistor | 20 |
+| 5 | 110 | Capacitor | 20 |
+| 6 | 120 | Diode | 19 |
+| 7 | 7 | Circuit | 17 |
+| 8 | 234 | Push Button | 16 |
+| 9 | 171 | Transistor | 14 |
+| 10 | 274 | Light Emitting Diode | 14 |
+
+## Outdegree Distribution
+
+| Dependencies | Number of Concepts |
+|--------------|--------------------|
+| 0 | 7 |
+| 1 | 98 |
+| 2 | 314 |
+| 3 | 77 |
 | 4 | 4 |
-| 5 | 3 |
-| 6 | 2 |
-| 7 | 1 |
-| 9 | 3 |
-| 10 | 1 |
-| 11 | 3 |
-| 13 | 1 |
-| 20 | 1 |
-| 24 | 1 |
 
-## Most Depended-Upon Concepts (High In-Degree)
+## Recommendations
 
-| Concept | Dependents |
-|---------|------------|
-| Voltage | 24 |
-| Electric Current | 20 |
-| Resistor | 13 |
-| Circuit | 11 |
-| Polarity | 11 |
-| Component Lead | 11 |
-| Transistor | 10 |
-| Capacitor | 9 |
-| Solderless Breadboard | 9 |
-| Multimeter | 9 |
-| Boolean Logic | 7 |
-| Light Emitting Diode | 6 |
-| Digital Input | 6 |
-| Voltage Regulator | 5 |
-| Resistance | 5 |
+- ℹ️ **High terminal node percentage** (44.2%): Consider if some terminal concepts should be prerequisites for advanced concepts
+- ✅ **DAG structure verified**: Graph supports valid learning progressions
+- ℹ️ **Long dependency chains** (19): Ensure students can follow extended learning paths
 
-## Depth Distribution
+---
 
-| Depth | Node Count |
-|-------|------------|
-| 0 | 6 |
-| 1 | 43 |
-| 2 | 62 |
-| 3 | 46 |
-| 4 | 23 |
-| 5 | 15 |
-| 6 | 5 |
-
-**Maximum Depth**: 6
-
-## Overall Assessment
-
-✓ **PASS**: Graph is a valid, connected DAG with no orphaned nodes.
+*Report generated by learning-graph-reports/analyze_graph.py*

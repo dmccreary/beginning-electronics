@@ -1,0 +1,10 @@
+{
+  "title": "Beginning Electronics: Breadboards, Circuits, and Real-World Projects",
+  "description": "A hands-on, no-soldering, no-microcontroller electronics course for 5th-12th grade students, built around a solderless breadboard and a $50 kit of parts, progressing from part identification through transistor logic, timing circuits, shift registers, real-world power kits, and a student-designed capstone project.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-14",
+  "version": "2.0",
+  "format": "Learning Graph JSON v1.0",
+  "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+  "license": "CC BY-NC-SA 4.0 DEED"
+}

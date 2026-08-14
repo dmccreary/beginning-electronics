@@ -2,7 +2,7 @@
 
 ## Overview
 
-This learning graph represents a comprehensive knowledge structure for the Beginning Electronics course, mapping 200 interconnected concepts with their dependencies and categorical organization.
+This learning graph represents a comprehensive knowledge structure for the Beginning Electronics course, mapping 500 interconnected concepts with their dependencies and categorical organization. It was regenerated in 2026 against a revised course description (5th-12th grade, $50 solderless-breadboard kit, no microcontrollers/programming) and then expanded from 200 to 500 concepts for maximum depth.
 
 ## Purpose
 
@@ -15,93 +15,109 @@ The learning graph serves as foundational infrastructure for an intelligent text
 
 ## Graph Statistics
 
-- **Total Concepts**: 200
-- **Total Dependencies**: 268
-- **Root Concepts**: 6 (foundation concepts with no prerequisites)
-- **Maximum Depth**: 6 levels
-- **Taxonomy Categories**: 9
+- **Total Concepts**: 500
+- **Total Dependencies (edges)**: 973
+- **Average Dependencies per Concept**: 1.95
+- **Root Concepts**: 7 (foundation concepts with no prerequisites)
+- **Maximum Dependency Chain Length**: 19 concepts deep (18 levels)
+- **Taxonomy Categories**: 10
+- **Orphaned Nodes**: 0
+- **Connected Components**: 1 (fully connected)
 
 ## Files
 
 ### Core Data Files
 
-- **concepts-dependencies.csv** - Original two-column CSV (Concept, Dependency)
-- **concepts-with-taxonomy.csv** - Enhanced CSV with taxonomy IDs (Concept, Dependency, TaxonomyID)
-- **learning-graph.json** - vis.js network format for visualization
+- **learning-graph.csv** - `ConceptID,ConceptLabel,Dependencies,TaxonomyID` (pipe-delimited dependency IDs)
+- **learning-graph.json** - vis.js network format for visualization, includes metadata, groups, nodes, and edges
+- **taxonomy-names.json** - Maps each TaxonomyID to its human-readable category name
+- **color-config.json** - Maps each TaxonomyID to a distinct display color
+- **metadata.json** - Title, description, creator, version, and license for the graph
 
 ### Analysis and Reports
 
-- **step-01-course-assessment.md** - Course description quality analysis
-- **step-02-concepts.md** - Complete list of 200 concepts with categorization
+- **step-01-course-assessment.md** - Course description quality analysis (score: 98/100)
+- **step-02-concepts.md** - Complete list of 500 concepts with categorization
 - **step-04-quality-analysis.md** - Graph validation report (cycles, orphans, connectivity)
 - **step-05-taxonomy.md** - Taxonomy structure and category definitions
 - **step-07-distribution-report.md** - Taxonomy balance analysis
 
 ### Python Scripts
 
-- **csv-to-json.py** - Convert CSV to vis.js JSON format
+- **csv-to-json.py** (v0.04) - Convert CSV to vis.js JSON format
 - **analyze-graph.py** - Validate graph quality (DAG, connectivity, cycles)
 - **add-taxonomy.py** - Add taxonomy IDs to concept CSV
 - **taxonomy-distribution.py** - Generate category distribution report
+- **validate-learning-graph.py** / **validate-learning-graph.sh** - Validate `learning-graph.json` against the schema
 
 ## Taxonomy Categories
 
-| ID | Category | Count | Percentage | Description |
-|----|----------|-------|------------|-------------|
-| FUND | Fundamentals | 40 | 20.0% | Core electrical concepts and laws |
-| PASS | Passive Components | 30 | 15.0% | Resistors, capacitors, diodes |
-| IO | Input/Output | 30 | 15.0% | Sensors, buttons, LEDs, motors |
-| ACT | Active Components | 25 | 12.5% | Transistors and integrated circuits |
-| BREAD | Breadboarding | 25 | 12.5% | Prototyping and circuit construction |
-| MEAS | Measurement | 15 | 7.5% | Testing, debugging, multimeter use |
-| PWR | Power Systems | 15 | 7.5% | Power supplies, regulation, efficiency |
-| DIG | Digital Logic | 12 | 6.0% | Boolean logic, gates, truth tables |
-| ADV | Advanced Circuits | 8 | 4.0% | Complex projects and applications |
+| TaxonomyID | Category | Count | Percentage | Description |
+|------------|----------|-------|------------|-------------|
+| FOUND | Foundational Concepts | 95 | 19.0% | Core electrical theory, units, and safety |
+| PASV | Passive Components | 75 | 15.0% | Resistors, capacitors, diodes, LEDs |
+| ACTV | Active Components & ICs | 63 | 12.6% | Transistors, 555 timer, 74HC595 shift register |
+| BRDG | Breadboarding & Assembly | 58 | 11.6% | Wiring skills, troubleshooting, optional perfboard packaging |
+| INPT | Input Components | 40 | 8.0% | Switches, buttons, wired logic, light sensing |
+| OUTP | Output Components | 40 | 8.0% | LEDs, RGB mixing, motors, buzzers |
+| PWR | Power Systems | 40 | 8.0% | Batteries, regulators, buck converters, solar |
+| MEAS | Measurement & Testing | 38 | 7.6% | Multimeter use, systematic troubleshooting |
+| DLOG | Digital Logic & Boolean | 30 | 6.0% | Transistor-built logic gates, RS latch |
+| CAPS | Advanced Circuits & Capstone Projects | 21 | 4.2% | Timing/memory circuits, named real-world projects, capstone planning |
 
 ## Foundation Concepts (Root Nodes)
 
-These 6 concepts have no prerequisites and form the foundation of the curriculum:
+These 7 concepts have no prerequisites and form the foundation of the curriculum:
 
-1. **Boolean Logic** - Basis for digital logic concepts
-2. **Component Lead** - Physical structure of components
-3. **Electric Current** - Fundamental electrical phenomenon
-4. **Multimeter** - Essential measurement tool
-5. **Resistance** - Opposition to current flow
-6. **Voltage** - Electrical potential difference
+1. **Electric Current** - Fundamental electrical phenomenon
+2. **Voltage** - Electrical potential difference
+3. **Resistance** - Opposition to current flow
+4. **Circuit** - A closed path for current to flow
+5. **Ground** - The reference point for a circuit
+6. **Component Lead** - Physical structure of components
+7. **Electric Charge** - The underlying property that creates current and voltage
 
 ## Most Central Concepts (High In-Degree)
 
 These concepts are depended upon by many other concepts:
 
-1. **Voltage** - 24 dependents
-2. **Electric Current** - 20 dependents
-3. **Resistor** - 13 dependents
-4. **Circuit** - 11 dependents
-5. **Polarity** - 11 dependents
-6. **Component Lead** - 11 dependents
-7. **Transistor** - 10 dependents
+1. **Voltage** - 29 dependents
+2. **Electric Current** - 28 dependents
+3. **Resistance** - 23 dependents
+4. **Resistor** - 20 dependents
+5. **Capacitor** - 20 dependents
+6. **Diode** - 19 dependents
+7. **Circuit** - 17 dependents
+8. **Push Button** - 16 dependents
+9. **Transistor** - 14 dependents
+10. **Light Emitting Diode** - 14 dependents
 
 ## Graph Quality
 
-✓ **Valid DAG**: No cycles detected
+✓ **Valid DAG**: No cycles detected, no self-dependencies
 
 ✓ **Fully Connected**: Single connected component
 
-✓ **No Orphans**: All concepts integrated into graph
+✓ **No Orphans**: All 500 concepts integrated into the graph
 
-✓ **Balanced Distribution**: All categories < 30%
+✓ **Balanced Distribution**: All 10 categories under the 30% threshold (range: 4.2%-19.0%)
 
 ## Depth Distribution
 
-| Depth Level | Concept Count | Description |
-|-------------|---------------|-------------|
-| 0 | 6 | Foundation concepts (no dependencies) |
-| 1 | 43 | First-level concepts |
-| 2 | 62 | Second-level concepts |
-| 3 | 46 | Third-level concepts |
-| 4 | 23 | Fourth-level concepts |
-| 5 | 15 | Fifth-level concepts |
-| 6 | 5 | Most advanced concepts |
+| Level | Concept Count | Description |
+|-------|---------------|--------------|
+| 0 | 7 | Foundation concepts (no dependencies) |
+| 1 | 24 | First-level concepts |
+| 2 | 55 | Second-level concepts |
+| 3 | 75 | Third-level concepts |
+| 4 | 54 | Fourth-level concepts |
+| 5 | 61 | Fifth-level concepts |
+| 6 | 49 | Sixth-level concepts |
+| 7 | 61 | Seventh-level concepts |
+| 8 | 39 | Eighth-level concepts |
+| 9 | 29 | Ninth-level concepts |
+| 10 | 21 | Tenth-level concepts |
+| 11-18 | 25 | Deepest, most advanced/integrative concepts (capstone-adjacent) |
 
 ## Using the Learning Graph
 
@@ -134,10 +150,13 @@ The graph data can be used to:
 
 ## Visualization
 
-The learning-graph.json file can be visualized using [vis.js](https://visjs.org/) or similar network visualization libraries. The JSON structure includes:
+The `learning-graph.json` file can be visualized using [vis.js](https://visjs.org/) or similar network visualization libraries. The JSON structure includes:
 
-- **Nodes**: Each concept with ID, label, and depth level
+- **Nodes**: Each concept with ID, label, and group (TaxonomyID)
 - **Edges**: Directed edges showing dependencies (prerequisite → dependent concept)
+- **Groups**: Taxonomy categories with `classifierName` and display `color`
+
+To install an interactive graph-viewer MicroSim for this data, run the `book-installer` skill's "install learning graph viewer" guide.
 
 ## Course Alignment
 
@@ -145,18 +164,19 @@ This learning graph aligns with the Beginning Electronics course structure:
 
 - **Bloom's Taxonomy**: Concepts progress from Remember/Understand through Create
 - **Hands-On Focus**: Emphasis on practical breadboarding and testing skills
-- **Low-Cost Components**: Focus on accessible, affordable parts
+- **$50 Kit, No Soldering Required**: Focus on accessible, affordable, solderless parts
+- **No Microcontrollers or Programming**: Complements the companion [Learning MicroPython and Physical Computing](https://dmccreary.github.io/learning-micropython/) course
 - **Interactive Learning**: Integration with MicroSims and simulations
 
 ## Maintenance
 
 To update the learning graph:
 
-1. Edit `concepts-dependencies.csv` to add/modify concepts
-2. Run `python3 csv-to-json.py` to regenerate JSON
-3. Run `python3 analyze-graph.py` to validate quality
-4. Run `python3 add-taxonomy.py` to update taxonomy assignments
-5. Run `python3 taxonomy-distribution.py` to check balance
+1. Edit `learning-graph.csv` to add/modify concepts (columns: `ConceptID,ConceptLabel,Dependencies,TaxonomyID`)
+2. Run `python3 analyze-graph.py learning-graph.csv step-04-quality-analysis.md` to validate quality
+3. Run `python3 taxonomy-distribution.py learning-graph.csv step-07-distribution-report.md taxonomy-names.json` to check balance
+4. Run `python3 csv-to-json.py learning-graph.csv learning-graph.json color-config.json metadata.json taxonomy-names.json` to regenerate the JSON
+5. Run `./validate-learning-graph.sh learning-graph.json` to validate against the schema
 
 ## References
 
@@ -170,5 +190,5 @@ For questions about the learning graph structure or usage, see the main course [
 
 ---
 
-*Generated using the learning-graph-generator skill*
-*Last updated: 2025-10-31*
+*Generated using the learning-graph-generator skill (v0.05)*
+*Last updated: 2026-08-14*

@@ -1,0 +1,12 @@
+{
+  "FOUND": "Foundational Concepts",
+  "PASV": "Passive Components",
+  "ACTV": "Active Components & ICs",
+  "INPT": "Input Components",
+  "OUTP": "Output Components",
+  "BRDG": "Breadboarding & Assembly",
+  "MEAS": "Measurement & Testing",
+  "PWR": "Power Systems",
+  "DLOG": "Digital Logic & Boolean",
+  "CAPS": "Advanced Circuits & Capstone Projects"
+}
