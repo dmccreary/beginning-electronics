@@ -1,0 +1,40 @@
+# Chapters
+
+This textbook is organized into 26 chapters covering all 500 concepts from the [learning graph](../learning-graph/index.md).
+
+## Chapter Overview
+
+1. [Electricity Basics: Voltage, Current, and Resistance](01-electricity-basics/index.md) — This chapter introduces the core electrical quantities that every later chapter depends on: electric current, voltage, resistance, and Ohm's Law, along with basic circuit types and terminal/lead vocabulary.
+2. [Current, Charge, Units, and Electrical Safety](02-current-charge-units-safety/index.md) — Building on Chapter 1, this chapter covers how current actually flows (electron flow vs.
+3. [Circuit Analysis, Kirchhoff's Laws, and Energy](03-circuit-analysis-kirchhoff/index.md) — This chapter deepens circuit-analysis intuition with Kirchhoff's Current and Voltage Laws, AC vs.
+4. [Series, Parallel, and Circuit Topology](04-series-parallel-topology/index.md) — Students explore how resistances combine in series and parallel, voltage references, current dividers, and the vocabulary of circuit topology (nodes, loops, branches).
+5. [Conductors, Batteries, and Circuit Vocabulary Review](05-conductors-batteries-review/index.md) — The final foundational chapter covers conductors, insulators, and semiconductor materials, battery behavior (capacity, internal resistance, terminal voltage), and the last of the circuit-analysis vocabulary.
+6. [Meet Your Breadboard](06-meet-your-breadboard/index.md) — Students' first hands-on chapter: how a solderless breadboard's internal rows, columns, and power rails connect components together, and how to safely connect a battery pack or USB power supply.
+7. [Wiring Skills and Circuit Layout](07-wiring-skills-layout/index.md) — This chapter builds practical wiring skills — jumper wire types, wire gauge, color-coded wiring, and reading a wiring diagram — that make every later hands-on chapter faster and less error-prone.
+8. [Troubleshooting and Optional Perfboard Packaging](08-troubleshooting-perfboard/index.md) — Students learn systematic breadboard troubleshooting habits (checking for loose connections, bent leads, wrong-row placement) that they will use for the rest of the course.
+9. [Resistors and Capacitors](09-resistors-and-capacitors/index.md) — The first passive-component chapter introduces resistors and capacitors: fixed vs.
+10. [Capacitor Timing and Resistor Values](10-capacitor-timing-resistor-values/index.md) — This chapter covers the specific resistor values used throughout the course's labs, plus how a capacitor charges and discharges over time and the RC time constant that governs it — a concept that resurfaces later in the 555 timer chapter..
+11. [Resistor Codes and Capacitor Details](11-resistor-codes-capacitor-details/index.md) — Students learn to read a resistor's color bands and a capacitor's printed value code, and meet the different resistor and capacitor types (carbon film, metal film, electrolytic, ceramic, tantalum) they'll encounter while sorting their kit..
+12. [Diodes and LEDs](12-diodes-and-leds/index.md) — This chapter covers diode behavior — forward and reverse bias, rectifier and Zener diodes — and the electrical characteristics of LEDs (forward voltage, current rating, polarity) that set up every LED circuit built in the Output Components chapters..
+13. [Meet the Transistor](13-meet-the-transistor/index.md) — Students meet the transistor: how its base, collector, and emitter let a small signal switch or amplify a much larger current, comparing the course's two transistors (BC547 and 2N2222).
+14. [The 555 Timer Chip](14-555-timer-chip/index.md) — This chapter introduces the classic 555 timer IC — its pin configuration and its astable and monostable modes — for building circuits that blink an LED or sound a buzzer on a schedule the student designs..
+15. [Shift Registers and IC Handling](15-shift-registers-ic-handling/index.md) — Students learn the 74HC595 shift register for controlling many LEDs from just a few input wires, plus general skills for safely inserting, orienting, and reading the pinout of any integrated circuit..
+16. [Switches, Buttons, and Wired Logic](16-switches-buttons-wired-logic/index.md) — This chapter covers push buttons and switches, and the course's signature no-code trick: wiring two buttons in series to build an AND gate, or in parallel to build an OR gate, using nothing but wires and switches..
+17. [Sensing Light: Photoresistors and Dark Detectors](17-sensing-light-dark-detectors/index.md) — Students build the classic 'dark detector' night-light circuit using a photoresistor and a voltage divider, and meet the general vocabulary of analog and digital inputs that applies across every sensor in the kit..
+18. [LEDs, RGB Color, and Motors](18-leds-rgb-color-motors/index.md) — This chapter covers driving single-color and RGB LEDs (including mixing custom colors), LED strips, and controlling small DC motors and their direction — the course's core visible and moving outputs..
+19. [Driving Outputs: Motors, Buzzers, and More](19-driving-outputs-motors-buzzers/index.md) — Students go deeper into motor-driving details (stall current, back-EMF, noise suppression) and meet buzzers and general output-protection concepts needed before combining outputs into a real project..
+20. [Using a Multimeter](20-using-a-multimeter/index.md) — This chapter teaches students to read voltage, current, resistance, and continuity with a multimeter, and to test individual components (resistors, diodes, LEDs) before or after placing them in a circuit..
+21. [Systematic Troubleshooting](21-systematic-troubleshooting/index.md) — Students learn a structured troubleshooting process — checking power first, half-split testing, comparing to a known-good circuit, and isolating one variable at a time — for diagnosing any circuit that isn't behaving as expected..
+22. [Batteries, Regulators, and Buck Converters](22-batteries-regulators-buck-converters/index.md) — This chapter covers battery types and safe handling, the 7805 linear voltage regulator, and how a buck converter steps a higher voltage down efficiently — the first of the course's real-world power kits..
+23. [Signal Generators and Solar Power](23-signal-generators-solar-power/index.md) — Students explore the XR2206 signal-generator kit's sine, square, and triangle wave outputs, plus solar cells and safe battery-charging circuits for a solar-powered night-light project..
+24. [Boolean Logic and Transistor Gates](24-boolean-logic-transistor-gates/index.md) — This chapter formalizes Boolean AND/OR/NOT reasoning with truth tables, then shows students how to build their first transistor-based logic gates — connecting back to the wired-switch logic from the Switches chapter, now built from active components..
+25. [NAND, NOR, XOR, and the RS Latch](25-nand-nor-xor-rs-latch/index.md) — Students complete the course's digital-logic toolkit with NAND, NOR, and XOR gates, and build a simple RS latch — the course's only taste of digital memory, foreshadowing the flip-flops and memory cells in the final chapter..
+26. [Advanced Circuits and Your Capstone Project](26-advanced-circuits-capstone-project/index.md) — The course's capstone chapter combines everything into named real-world projects — a busy board, a solar night light, an LED noodle costume — and walks students through planning, designing, prototyping, and demonstrating an original capstone project of their own..
+
+## How to Use This Textbook
+
+Chapters are ordered so that every concept's prerequisites appear in an earlier (or the same) chapter — you can read straight through from Chapter 1, or jump to a specific topic and follow its "Prerequisites" links backward to fill any gaps. Chapters 1-5 are pure theory with no hands-on building; Chapter 6 onward assumes you have a solderless breadboard and the course's $50 kit of parts in front of you.
+
+---
+
+**Note:** Each chapter includes a list of concepts covered. Make sure to complete prerequisites before moving to advanced chapters.
