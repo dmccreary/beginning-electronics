@@ -1,0 +1,2574 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learn the standard units and metric prefixes printed on every electronic component, the safety habits that protect circuits and builders, and the node-voltage and loop-current vocabulary engineers use to analyze a circuit.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/chapters/03-circuit-analysis-kirchhoff/">
+      
+      
+        <link rel="prev" href="../02-current-charge-units-safety/">
+      
+      
+        <link rel="next" href="../04-series-parallel-topology/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Circuit Analysis, Kirchhoff's Laws, and Energy - Beginning Electronics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extras.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WP3K3TSFJ7"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WP3K3TSFJ7",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WP3K3TSFJ7",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#circuit-analysis-kirchhoffs-laws-and-energy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Beginning Electronics" class="md-header__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Beginning Electronics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Circuit Analysis, Kirchhoff's Laws, and Energy
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Beginning Electronics" class="md-nav__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Beginning Electronics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../setup/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-electricity-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Electricity Basics: Voltage, Current, and Resistance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-current-charge-units-safety/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Current, Charge, Units, and Electrical Safety
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    3. Circuit Analysis, Kirchhoff's Laws, and Energy
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    3. Circuit Analysis, Kirchhoff's Laws, and Energy
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-big-four-units-named-after-real-people" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Big Four Units, Named After Real People
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefixes-talking-about-very-big-and-very-small-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prefixes: Talking About Very Big and Very Small Numbers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prefixes: Talking About Very Big and Very Small Numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefix-multipliers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prefix Multipliers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#small-currents-milliamperes-and-microamperes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Small Currents: Milliamperes and Microamperes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Small Currents: Milliamperes and Microamperes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#milliamperes-to-amperes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Milliamperes to Amperes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#big-resistance-values-kilohms-and-megohms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Big Resistance Values: Kilohms and Megohms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Big Resistance Values: Kilohms and Megohms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kilohms-and-megohms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kilohms and Megohms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#small-amounts-of-power-the-milliwatt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Small Amounts of Power: The Milliwatt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charge-in-coulombs-what-a-battery-actually-stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Charge in Coulombs: What a Battery Actually Stores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Charge in Coulombs: What a Battery Actually Stores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#electric-charge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electric Charge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-unit-prefix-value-converter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Unit Prefix Value Converter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-units-to-safety-protecting-real-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      From Units to Safety: Protecting Real Components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overcurrent-and-fuse-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overcurrent and Fuse Protection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reverse-polarity-damage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reverse Polarity Damage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-discharge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static Discharge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#battery-safety-beyond-the-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Battery Safety Beyond the Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#short-circuit-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Short Circuit Risk
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Short Circuit Risk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-circuit-safety-hazard-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Circuit Safety Hazard Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-engineers-actually-analyze-a-circuit" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Engineers Actually Analyze a Circuit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Engineers Actually Analyze a Circuit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#total-series-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Total Series Resistance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-voltage-in-a-series-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node Voltage in a Series Chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-node-voltage-and-series-resistance-chain-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Node Voltage and Series Resistance Chain Builder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary: Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-series-parallel-topology/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Series, Parallel, and Circuit Topology
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-conductors-batteries-review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Conductors, Batteries, and Circuit Vocabulary Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-meet-your-breadboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Meet Your Breadboard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-wiring-skills-layout/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Wiring Skills and Circuit Layout
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-troubleshooting-perfboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Troubleshooting and Optional Perfboard Packaging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-resistors-and-capacitors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Resistors and Capacitors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-capacitor-timing-resistor-values/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Capacitor Timing and Resistor Values
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-resistor-codes-capacitor-details/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Resistor Codes and Capacitor Details
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-diodes-and-leds/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Diodes and LEDs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-meet-the-transistor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Meet the Transistor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-555-timer-chip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. The 555 Timer Chip
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-shift-registers-ic-handling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Shift Registers and IC Handling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-switches-buttons-wired-logic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Switches, Buttons, and Wired Logic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-sensing-light-dark-detectors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Sensing Light: Photoresistors and Dark Detectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-leds-rgb-color-motors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. LEDs, RGB Color, and Motors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-driving-outputs-motors-buzzers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19. Driving Outputs: Motors, Buzzers, and More
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-using-a-multimeter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20. Using a Multimeter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-systematic-troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21. Systematic Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-batteries-regulators-buck-converters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22. Batteries, Regulators, and Buck Converters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-signal-generators-solar-power/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23. Signal Generators and Solar Power
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-boolean-logic-transistor-gates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24. Boolean Logic and Transistor Gates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-nand-nor-xor-rs-latch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25. NAND, NOR, XOR, and the RS Latch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-advanced-circuits-capstone-project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    26. Advanced Circuits and Your Capstone Project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../labs/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Hands-on Labs
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Micro Simulations
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../kits/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Kits and Projects
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-big-four-units-named-after-real-people" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Big Four Units, Named After Real People
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefixes-talking-about-very-big-and-very-small-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prefixes: Talking About Very Big and Very Small Numbers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prefixes: Talking About Very Big and Very Small Numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefix-multipliers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prefix Multipliers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#small-currents-milliamperes-and-microamperes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Small Currents: Milliamperes and Microamperes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Small Currents: Milliamperes and Microamperes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#milliamperes-to-amperes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Milliamperes to Amperes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#big-resistance-values-kilohms-and-megohms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Big Resistance Values: Kilohms and Megohms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Big Resistance Values: Kilohms and Megohms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kilohms-and-megohms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kilohms and Megohms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#small-amounts-of-power-the-milliwatt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Small Amounts of Power: The Milliwatt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charge-in-coulombs-what-a-battery-actually-stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Charge in Coulombs: What a Battery Actually Stores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Charge in Coulombs: What a Battery Actually Stores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#electric-charge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electric Charge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-unit-prefix-value-converter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Unit Prefix Value Converter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-units-to-safety-protecting-real-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      From Units to Safety: Protecting Real Components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overcurrent-and-fuse-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overcurrent and Fuse Protection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reverse-polarity-damage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reverse Polarity Damage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-discharge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static Discharge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#battery-safety-beyond-the-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Battery Safety Beyond the Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#short-circuit-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Short Circuit Risk
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Short Circuit Risk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-circuit-safety-hazard-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Circuit Safety Hazard Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-engineers-actually-analyze-a-circuit" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Engineers Actually Analyze a Circuit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Engineers Actually Analyze a Circuit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#total-series-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Total Series Resistance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-voltage-in-a-series-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node Voltage in a Series Chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-node-voltage-and-series-resistance-chain-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Node Voltage and Series Resistance Chain Builder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary: Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="circuit-analysis-kirchhoffs-laws-and-energy">Circuit Analysis, Kirchhoff's Laws, and Energy</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter deepens circuit-analysis intuition with Kirchhoff's Current and Voltage Laws, AC vs. DC power, and the beginnings of electrical energy concepts. Students learn to reason about how voltage and current distribute around a complete circuit, a skill used constantly once real components are introduced.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 19 concepts from the learning graph:</p>
+<ol>
+<li>Ohm</li>
+<li>Volt</li>
+<li>Ampere</li>
+<li>Watt</li>
+<li>Milliampere</li>
+<li>Microampere</li>
+<li>Kilohm</li>
+<li>Megohm</li>
+<li>Coulomb</li>
+<li>Milliwatt</li>
+<li>Overcurrent</li>
+<li>Fuse Protection</li>
+<li>Reverse Polarity Damage</li>
+<li>Static Discharge</li>
+<li>Battery Safety</li>
+<li>Short Circuit Risk</li>
+<li>Node Voltage</li>
+<li>Loop Current</li>
+<li>Series Resistance</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-electricity-basics/">1. Electricity Basics: Voltage, Current, and Resistance</a></li>
+<li><a href="../02-current-charge-units-safety/">2. Current, Charge, Units, and Electrical Safety</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Reading the Fine Print</p>
+<p><img alt="Volt waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Welcome back, builder! Flip over any resistor, LED, or battery in your kit and you'll see tiny numbers and letters printed right on it. This chapter hands you the power to read every single one of them, and to know exactly why a fuse, a fresh battery, and a little static-electricity caution all matter before you power up. Let's light it up!</p>
+</div>
+<h2 id="the-big-four-units-named-after-real-people">The Big Four Units, Named After Real People</h2>
+<p>Chapters 1 and 2 already introduced voltage, current, resistance, and power in everyday language. It's time to meet their official units up close, because every part in your kit prints its ratings using these exact names. Here's a fun fact that makes them easier to remember: all four base units are named after real scientists who studied electricity.</p>
+<p>The <strong>ohm</strong> (symbol Ω) measures resistance and honors Georg Simon Ohm, the German physicist behind Ohm's Law. The <strong>volt</strong> (symbol V) measures voltage and honors Alessandro Volta, the Italian scientist who built the first practical battery. The <strong>ampere</strong> (symbol A, often just called an "amp") measures current and honors André-Marie Ampère, a French physicist who studied how electric current creates magnetism. The <strong>watt</strong> (symbol W) measures power and honors James Watt, the Scottish engineer famous for improving the steam engine.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Four Famous Names</p>
+<p><img alt="Volt thinking about units" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Notice the pattern: when a unit is named after a person, we write the <em>unit</em> with a lowercase letter (volt, ohm) but its <em>symbol</em> with a capital letter (V, Ω). It's a small detail, but once you notice it, you'll never mix up "5 volts" and "5 Volta" again — only one of those is a person!</p>
+</div>
+<h2 id="prefixes-talking-about-very-big-and-very-small-numbers">Prefixes: Talking About Very Big and Very Small Numbers</h2>
+<p>Real circuits deal with numbers that are sometimes tiny and sometimes huge. An LED might use twenty-thousandths of an amp, while a pull-up resistor might have a million ohms of resistance. Writing all those zeros every time would get exhausting fast, so electronics uses a small set of metric prefixes as shorthand — the same prefixes you may have seen in "kilometer" or "milliliter."</p>
+<p>Here are the four prefixes you'll see constantly in this course:</p>
+<ul>
+<li><strong>milli-</strong> (symbol m) means one-thousandth (÷ 1,000) of a unit</li>
+<li><strong>micro-</strong> (symbol µ) means one-millionth (÷ 1,000,000) of a unit</li>
+<li><strong>kilo-</strong> (symbol k) means one thousand times (× 1,000) a unit</li>
+<li><strong>mega-</strong> (symbol M) means one million times (× 1,000,000) a unit</li>
+</ul>
+<h4 id="prefix-multipliers">Prefix Multipliers</h4>
+<div class="arithmatex">\[ 1\ \text{unit} = 1000\ \text{milliunits} = 1{,}000{,}000\ \text{microunits} \]</div>
+<p>where:</p>
+<ul>
+<li>a "unit" here stands for any base unit — amp, ohm, watt, or volt</li>
+<li>moving from a base unit to milli- means multiplying by 1,000</li>
+<li>moving from a base unit to micro- means multiplying by 1,000,000</li>
+</ul>
+<p>Once you know these four prefixes, you can read the label on any component in your $50 kit, from a resistor's ohms to an LED's milliamps.</p>
+<h2 id="small-currents-milliamperes-and-microamperes">Small Currents: Milliamperes and Microamperes</h2>
+<p>Most of the currents flowing through your breadboard projects are small — far less than one full amp. That's exactly why the <strong>milliampere</strong> (mA), one-thousandth of an amp, is the unit you'll see most often. A typical LED in your kit glows brightly on about 20 mA, and a small DC motor might draw somewhere between 100 and 250 mA while spinning.</p>
+<p>Currents can get even smaller than that. The <strong>microampere</strong> (µA), one-millionth of an amp, describes truly tiny trickles of current — the kind a sensor or a chip might draw while sitting idle, quietly waiting for something to happen.</p>
+<h4 id="milliamperes-to-amperes">Milliamperes to Amperes</h4>
+<div class="arithmatex">\[ I_{(A)} = \dfrac{I_{(mA)}}{1000} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( I_{(A)} \)</span> is the current in amperes</li>
+<li><span class="arithmatex">\( I_{(mA)} \)</span> is the same current expressed in milliamperes</li>
+</ul>
+<p>For example, an LED drawing 20 mA is really only drawing <span class="arithmatex">\( 20 \div 1000 = 0.02 \)</span> amps — a small enough current that a single AA battery can power dozens of LEDs before it runs out.</p>
+<h2 id="big-resistance-values-kilohms-and-megohms">Big Resistance Values: Kilohms and Megohms</h2>
+<p>Resistors don't stop at a few dozen ohms. Many of the resistors in your kit are rated in the thousands of ohms, which is why the <strong>kilohm</strong> (kΩ), equal to 1,000 ohms, shows up on almost every resistor color-code chart. A very common current-limiting resistor for an LED might be labeled "1k" — meaning 1,000 ohms, or 1 kilohm.</p>
+<p>Some components use resistance values far larger still. A photoresistor sitting in a dark room, or certain resistors used to keep an input pin from "floating," can measure in the <strong>megohm</strong> (MΩ) range — a full million ohms. The prefixes work exactly the same way here as they did for current, just applied to resistance instead.</p>
+<h4 id="kilohms-and-megohms">Kilohms and Megohms</h4>
+<div class="arithmatex">\[ 1\ \text{k}\Omega = 1000\ \Omega \qquad\qquad 1\ \text{M}\Omega = 1{,}000{,}000\ \Omega \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( \text{k}\Omega \)</span> is kilohms, a common unit for resistors in your kit</li>
+<li><span class="arithmatex">\( \text{M}\Omega \)</span> is megohms, used for very large resistance values</li>
+<li><span class="arithmatex">\( \Omega \)</span> is the base unit, the ohm</li>
+</ul>
+<h2 id="small-amounts-of-power-the-milliwatt">Small Amounts of Power: The Milliwatt</h2>
+<p>Power follows the same pattern. Most components in a beginner's kit convert only a small fraction of a watt into light, motion, or sound, so their power ratings are usually given in <strong>milliwatts</strong> (mW), one-thousandth of a watt. A small LED might be rated for around 60 mW of power, which is why it can run safely off a couple of AA batteries without ever feeling warm.</p>
+<h2 id="charge-in-coulombs-what-a-battery-actually-stores">Charge in Coulombs: What a Battery Actually Stores</h2>
+<p>Chapter 2 introduced electric charge as the basic property being pushed through a circuit. Now meet its official unit: the <strong>coulomb</strong> (symbol C), named after French physicist Charles-Augustin de Coulomb. One coulomb is a genuinely enormous amount of charge — about 6.24 quintillion electrons' worth — so a single coulomb almost never shows up all at once in a beginner circuit. Instead, charge, current, and time are linked by a simple equation.</p>
+<h4 id="electric-charge">Electric Charge</h4>
+<div class="arithmatex">\[ Q = I \times t \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( Q \)</span> is electric charge, measured in coulombs (C)</li>
+<li><span class="arithmatex">\( I \)</span> is current, measured in amperes (A)</li>
+<li><span class="arithmatex">\( t \)</span> is time, measured in seconds (s)</li>
+</ul>
+<p>This equation is exactly why a battery's rating (often printed in milliamp-hours, or mAh) tells you roughly how long it can supply a given current before it runs dry — the battery is really just a portable stockpile of coulombs, released a little at a time.</p>
+<p>The table below gathers every unit and prefix from this section into one reference you can bookmark and return to throughout the course.</p>
+<table>
+<thead>
+<tr>
+<th>Unit</th>
+<th>Symbol</th>
+<th>Named After</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ohm</strong></td>
+<td>Ω</td>
+<td>Georg Ohm</td>
+<td>Resistance</td>
+</tr>
+<tr>
+<td><strong>Volt</strong></td>
+<td>V</td>
+<td>Alessandro Volta</td>
+<td>Voltage (electrical push)</td>
+</tr>
+<tr>
+<td><strong>Ampere</strong></td>
+<td>A</td>
+<td>André-Marie Ampère</td>
+<td>Current (rate of charge flow)</td>
+</tr>
+<tr>
+<td><strong>Watt</strong></td>
+<td>W</td>
+<td>James Watt</td>
+<td>Power (rate of doing work)</td>
+</tr>
+<tr>
+<td><strong>Coulomb</strong></td>
+<td>C</td>
+<td>Charles-Augustin de Coulomb</td>
+<td>Electric charge</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Prefix</th>
+<th>Symbol</th>
+<th>Multiplier</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>micro-</td>
+<td>µ</td>
+<td>÷ 1,000,000</td>
+<td>5 µA — a sleeping sensor's current draw</td>
+</tr>
+<tr>
+<td>milli-</td>
+<td>m</td>
+<td>÷ 1,000</td>
+<td>20 mA — a typical LED's current</td>
+</tr>
+<tr>
+<td>(base unit)</td>
+<td>—</td>
+<td>× 1</td>
+<td>9 V — a fresh 9-volt battery</td>
+</tr>
+<tr>
+<td>kilo-</td>
+<td>k</td>
+<td>× 1,000</td>
+<td>1 kΩ — a common LED resistor</td>
+</tr>
+<tr>
+<td>mega-</td>
+<td>M</td>
+<td>× 1,000,000</td>
+<td>1 MΩ — a very high resistance value</td>
+</tr>
+</tbody>
+</table>
+<p>Try the interactive tool below to build a feel for how these prefixes trade off against each other — enter a value, switch its prefix, and watch the equivalent values update instantly across the whole ladder.</p>
+<h4 id="diagram-unit-prefix-value-converter">Diagram: Unit Prefix Value Converter</h4>
+<iframe src="../../sims/unit-prefix-converter/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<p><a class="md-button" href="../../sims/unit-prefix-converter/main.html">Run the Unit Prefix Value Converter fullscreen</a></p>
+<details>
+<summary>Unit Prefix Value Converter</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> unit-prefix-converter<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Template:</strong> https://github.com/dmccreary/intro-to-physics-course/tree/main/docs/sims/metric-scale-zoom</p>
+<p>Purpose: Help learners build fluency converting a single quantity across the micro-, milli-, base, kilo-, and mega- prefixes used throughout the course.</p>
+<p>Bloom Taxonomy: Apply (L3). Bloom Verb: calculate.</p>
+<p>Learning objective: Calculate the equivalent value of a current, resistance, or power reading across microampere/milliampere/ampere, ohm/kilohm/megohm, and milliwatt/watt scales, by entering a number and switching its prefix on an interactive ladder.</p>
+<p>Canvas layout:
+- Top: a dropdown to choose the quantity type (Current, Resistance, or Power)
+- Center: a vertical "prefix ladder" showing five rungs — micro, milli, base, kilo, mega — each rendered as a horizontal bar
+- Bottom: a numeric input box and a live equivalent-value readout for every rung</p>
+<p>Visual elements:
+- Five rungs, one per prefix, labeled with symbol (µ, m, none, k, M) and full name
+- The rung matching the entered value highlighted in orange
+- A readout beside every rung showing the same quantity at that rung's scale (e.g., entering "20" at milliamps shows "0.02 A" on the base rung and "20,000 µA" on the micro rung)</p>
+<p>Interactive controls:
+- Dropdown: quantity type (Current, Resistance, or Power)
+- Numeric input: the value to convert, plus a selector for which rung it represents
+- Button: "Try a Real Example" cycles through preset values from this chapter (20 mA LED current, 1 kΩ resistor, 60 mW LED power, 5 µA sleep current, 1 MΩ pull-up resistor)</p>
+<p>Default parameters:
+- Quantity type: Current; entered value: 20, at the milli- rung (a typical LED)</p>
+<p>Data Visibility Requirements:
+  Stage 1 (default): Show 20 mA entered, with every rung's equivalent value displayed at once
+  Stage 2 (value or rung changed): Recalculate every rung's readout immediately, so the connection between them is obvious
+  Stage 3 ("Try a Real Example" clicked): Drop a real component value from this chapter into the ladder</p>
+<p>Instructional Rationale: This Apply-level objective calls for a parameter-exploration tool, not an animation. Updating all five rungs at once, instead of one conversion at a time, builds the mental model needed to read any label in the kit at a glance.</p>
+<p>Color scheme: Blue rungs on a light background, with the active rung in warm orange, matching the book's theme colors.</p>
+<p>Responsive behavior: Rungs stack vertically at any width; controls stay full-width and touch-friendly on narrow screens.</p>
+<p>Implementation: p5.js, with a simple multiply/divide-by-1000 conversion function shared across all three quantity types, and rung bars redrawn each frame from the current input value.</p>
+</details>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Three Steps at a Time</p>
+<p><img alt="Volt giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Here's my favorite shortcut: every prefix jump — milli to base, base to kilo, kilo to mega — is exactly the same move, sliding the decimal point three places. Once that clicks, you can convert any label in your kit in your head, no calculator required. I promise this trick isn't <em>ohm</em>-work at all.</p>
+</div>
+<h2 id="from-units-to-safety-protecting-real-components">From Units to Safety: Protecting Real Components</h2>
+<p>Knowing the units on a part is only half the job — the other half is knowing what happens when a circuit asks a part to handle more than it was built for. The rest of this chapter covers the handful of hazards every builder should recognize, and the simple habits that keep your kit (and you) safe every time you power up.</p>
+<h2 id="overcurrent-and-fuse-protection">Overcurrent and Fuse Protection</h2>
+<p><strong>Overcurrent</strong> happens whenever more current flows through a component than it's rated to safely handle. Remember from Chapter 2 that current pushing through resistance always makes heat — and overcurrent means that heat-making process runs out of control. A part rated for 20 mA that's suddenly asked to carry 200 mA will heat up fast, and if nothing stops it, that part can be permanently damaged in seconds.</p>
+<p>Bigger electronics projects — cars, appliances, wall-powered devices — guard against this with <strong>fuse protection</strong>: a fuse is a small, sacrificial component containing a thin strip of metal designed to melt and break the circuit the instant current climbs too high. Think of a fuse as a deliberately weak link, built to fail on purpose so that nothing more expensive has to. Your low-voltage breadboard kit rarely needs an actual fuse, since AA batteries and USB supplies can't push out much current in the first place — but the concept matters everywhere, from car headlights to household wiring, and it's the same idea behind the resettable "polyfuses" built into many USB ports.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Overcurrent Is the Root of Most Trouble</p>
+<p><img alt="Volt giving a warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Almost every "magic smoke" story in electronics traces back to overcurrent in disguise — a missing resistor, a wrong value, or a short. If you always ask "what's limiting the current here?" before you power up, you'll catch the vast majority of beginner mistakes before they ever happen.</p>
+</div>
+<h2 id="reverse-polarity-damage">Reverse Polarity Damage</h2>
+<p>Chapter 2 mentioned that flipping a battery backward in a simple LED-and-resistor circuit is harmless at these low voltages — the LED just won't light. But not every part in your kit is that forgiving. <strong>Reverse polarity damage</strong> describes real, permanent harm caused by connecting power backward into a component that depends on current flowing one specific direction. Later in this course you'll work with integrated circuits like the 555 timer and the 74HC595 shift register, and chips like these can be damaged by reversed power even at the safe voltages used in this course, because their internal circuitry expects current to arrive from one particular direction.</p>
+<p>The safe habit is the same one you already learned for batteries: check plus and minus before every single power-up, for every single component, not just the ones you're worried about.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">A Habit, Not a Fear</p>
+<p><img alt="Volt encouraging you" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+This isn't about being scared of your kit — it's about building one small habit that becomes automatic. Glance at the plus and minus marks before every power-up, every time, and reverse polarity damage becomes something that essentially never happens to you.</p>
+</div>
+<h2 id="static-discharge">Static Discharge</h2>
+<p>Walk across a carpet in dry weather and reach for a doorknob, and you might feel a tiny spark jump between your finger and the metal. That spark is <strong>static discharge</strong>: a sudden release of built-up electric charge that has nowhere else to go. You barely notice it on a doorknob, but many electronic chips — especially the transistors, the 555 timer, and the shift register you'll meet later in this course — contain microscopic internal structures that a static spark can destroy instantly, long before the spark is strong enough for a person to even feel.</p>
+<p>A few simple habits keep static discharge from ever becoming a problem:</p>
+<ul>
+<li>Touch a grounded metal object (like a bare metal table leg or a doorknob) before handling a sensitive chip, to drain off any static charge from your body first</li>
+<li>Store loose ICs and transistors in their original anti-static packaging or foam, not loose in a pocket or on a plastic tray</li>
+<li>Avoid working on thick carpet in very dry weather when handling your most sensitive components</li>
+</ul>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Invisible but Real</p>
+<p><img alt="Volt giving a warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Static discharge is sneaky because you often can't see, hear, or feel the spark that does the damage — it can be far too small to notice. That's exactly why the "touch something grounded first" habit is worth building now, before you start handling the pickier chips later in this course.</p>
+</div>
+<h2 id="battery-safety-beyond-the-basics">Battery Safety Beyond the Basics</h2>
+<p>Chapter 2 covered the core battery habits: check polarity, and never let a bare wire short the terminals together. <strong>Battery safety</strong> covers a few more habits worth locking in now, before batteries become a routine part of every project you build.</p>
+<ul>
+<li>Never mix old and new batteries, or different battery types, in the same battery pack — the mismatched cells can push against each other and drain unevenly</li>
+<li>Never puncture, crush, or open a battery, even a small, "dead" one</li>
+<li>Keep batteries away from heat sources and out of direct sunlight for long periods</li>
+<li>If a battery ever feels hot, looks swollen, or is leaking a crusty residue, stop using it immediately and set it aside for proper recycling</li>
+<li>Recycle batteries rather than tossing them in the regular trash — most hardware and electronics stores accept old batteries for free</li>
+</ul>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Batteries Like Routine</p>
+<p><img alt="Volt giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+A good rule of thumb: treat every battery in your kit the way you'd want someone to treat your favorite tool — stored properly, never abused, and retired the moment something looks off. Batteries that are treated well last longer and behave predictably every time.</p>
+</div>
+<h2 id="short-circuit-risk">Short Circuit Risk</h2>
+<p>Chapter 1 defined a short circuit as current finding an unintended, nearly-zero-resistance shortcut around the parts meant to control it. Now you have the vocabulary to see exactly why that's risky: since Ohm's Law says current rises as resistance falls, a resistance near zero sends current soaring — this is <strong>short circuit risk</strong> in a nutshell. That current spike is precisely the scenario overcurrent protection and fuses exist to catch. In a car or a wall-powered appliance, an unprotected short can start a fire; on your breadboard's low-voltage supply, the real-world risk is smaller, but a short still drains a battery in seconds and can make a thin wire uncomfortably hot to the touch.</p>
+<p>Explore the interactive hazard board below. Click each icon to see exactly how that hazard damages a circuit, and what protects against it.</p>
+<h4 id="diagram-circuit-safety-hazard-explorer">Diagram: Circuit Safety Hazard Explorer</h4>
+<iframe src="../../sims/circuit-safety-hazard-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Circuit Safety Hazard Explorer</summary>
+<p>Type: infographic
+<strong>sim-id:</strong> circuit-safety-hazard-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p>Purpose: Help learners connect each of the four circuit hazards introduced in this chapter to its cause, its consequence, and the specific habit or component that protects against it.</p>
+<p>Bloom Taxonomy: Understand (L2). Bloom Verb: explain.</p>
+<p>Learning objective: Explain how overcurrent, reverse polarity, static discharge, and short circuits damage components, and what protection or habit prevents each, by clicking each hazard icon to reveal cause, consequence, and protection.</p>
+<p>Canvas layout:
+- Top: a row of four hazard icons — flame for Overcurrent, flipped battery for Reverse Polarity, lightning spark for Static Discharge, bridging wire for Short Circuit
+- Bottom: an infobox panel that fills in with Cause / What Happens / Prevention text for whichever icon was last clicked</p>
+<p>Visual elements:
+- Each icon in a rounded button labeled underneath; the selected icon highlighted with an orange outline
+- The infobox divided into three labeled rows: "Cause," "What Happens," and "How to Prevent It"</p>
+<p>Interactive controls:
+- Click any hazard icon to load its explanation into the infobox
+- Hover over an icon for a one-line preview tooltip
+- Button: "Reset" clears the infobox to a placeholder</p>
+<p>Default parameters:
+- No icon pre-selected; infobox shows a "Click a hazard to learn about it" placeholder</p>
+<p>Behavior when an icon is clicked:
+- Overcurrent: Cause — "More current flows than a component is rated for." What Happens — "Excess heat builds up and can permanently damage the part." Prevention — "Correctly sized current-limiting resistors, and fuses in larger circuits."
+- Reverse Polarity: Cause — "Power is connected backward into a polarity-sensitive part." What Happens — "Simple parts just don't work; sensitive chips can be permanently damaged." Prevention — "Always check plus and minus marks before powering up."
+- Static Discharge: Cause — "Built-up static charge jumps into a chip." What Happens — "Microscopic internal damage, often invisible until the part fails." Prevention — "Touch a grounded metal object before handling chips; store ICs in anti-static packaging."
+- Short Circuit: Cause — "Current finds a near-zero-resistance shortcut around the intended path." What Happens — "Current spikes rapidly, draining the battery fast and heating wires." Prevention — "Double-check wiring before power-up; this is exactly what fuses protect against."</p>
+<p>Data Visibility Requirements:
+  Stage 1 (default): Show all four hazard icons with no selection
+  Stage 2 (icon clicked): Show the three-row Cause / What Happens / Prevention breakdown, replacing the placeholder
+  Stage 3 (all four explored): Reinforce that "cause → consequence → protection" is a repeatable pattern for reasoning about any hazard</p>
+<p>Instructional Rationale: This Understand-level objective calls for a click-to-reveal comparison, not a simulation with moving parts. The same three-row structure for every hazard helps learners build one reusable mental model instead of memorizing four unrelated warnings.</p>
+<p>Color scheme: Warm orange for the selected icon's highlight; each hazard icon in an intuitive color (red-orange flame, blue/red flipped arrows, yellow lightning bolt, red bridging wire) on a light background.</p>
+<p>Responsive behavior: The four icons wrap to a 2x2 grid on narrow screens, with the infobox always appearing below the icon row.</p>
+<p>Implementation: p5.js, four clickable icon regions bound to a lookup table of Cause/Consequence/Prevention strings, infobox rendered as an HTML panel below the canvas.</p>
+</details>
+<h2 id="how-engineers-actually-analyze-a-circuit">How Engineers Actually Analyze a Circuit</h2>
+<p>Chapter 2 introduced Kirchhoff's Current Law and Kirchhoff's Voltage Law: current into a junction always equals current out, and voltage drops around a loop always add up to the source voltage. Those two laws are the rulebook. This section introduces the vocabulary engineers actually use <em>while</em> applying that rulebook to a real circuit.</p>
+<p>Every point in a circuit where you might want to know the voltage is called a <strong>node</strong>. The voltage measured at a node, relative to a shared reference point like common ground, is called that node's <strong>node voltage</strong>. Rather than talking vaguely about "the voltage somewhere in the middle of the circuit," engineers give each node a name and state its exact voltage — for instance, "node A sits at 6 volts."</p>
+<p>In a simple series loop, there's only one path for current to take, so there's really only one current value flowing through the entire loop at any moment. Engineers call this the <strong>loop current</strong> — a single number that describes how much current is circulating around that particular loop.</p>
+<p>Finally, when resistors are wired one after another along that same single path, their resistances simply add together. This total is called the <strong>series resistance</strong> of the loop, and it's the number you plug directly into Ohm's Law to find the loop current.</p>
+<h4 id="total-series-resistance">Total Series Resistance</h4>
+<div class="arithmatex">\[ R_{total} = R_1 + R_2 + R_3 + \dots \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( R_{total} \)</span> is the combined resistance of every resistor in the series loop</li>
+<li><span class="arithmatex">\( R_1, R_2, R_3 \)</span> are the individual resistor values, in ohms</li>
+</ul>
+<p>For example, three resistors of 100 Ω, 220 Ω, and 330 Ω wired in series add up to <span class="arithmatex">\( 100 + 220 + 330 = 650\ \Omega \)</span> of series resistance. Connect that chain to a 9-volt battery, and Ohm's Law gives the loop current: <span class="arithmatex">\( I = V \div R = 9 \div 650 \approx 0.0138 \)</span> amps, or about 13.8 mA.</p>
+<p>Once you know the loop current, you can find the node voltage at any point in the chain by subtracting the voltage drops that came before it.</p>
+<h4 id="node-voltage-in-a-series-chain">Node Voltage in a Series Chain</h4>
+<div class="arithmatex">\[ V_{node} = V_{source} - (V_1 + V_2 + \dots) \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( V_{node} \)</span> is the voltage at the node in question, measured relative to ground</li>
+<li><span class="arithmatex">\( V_{source} \)</span> is the total voltage supplied by the battery</li>
+<li><span class="arithmatex">\( V_1, V_2 \)</span> are the voltage drops across every resistor between the battery's positive terminal and that node</li>
+</ul>
+<p>Try the interactive circuit below. Adjust each resistor in a series chain and watch the loop current, the total series resistance, and every node voltage update together, live.</p>
+<h4 id="diagram-node-voltage-and-series-resistance-chain-builder">Diagram: Node Voltage and Series Resistance Chain Builder</h4>
+<iframe src="../../sims/node-voltage-series-chain/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<p><a class="md-button" href="../../sims/node-voltage-series-chain/main.html">Run the Node Voltage and Series Resistance Chain Builder fullscreen</a></p>
+<details>
+<summary>Node Voltage and Series Resistance Chain Builder</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> node-voltage-series-chain<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Template:</strong> https://github.com/dmccreary/intro-to-physics-course/tree/main/docs/sims/series-parallel</p>
+<p>Purpose: Let learners calculate total series resistance, loop current, and the node voltage at each point in a series chain, by manipulating a live circuit.</p>
+<p>Bloom Taxonomy: Apply (L3). Bloom Verb: calculate.</p>
+<p>Learning objective: Calculate the total series resistance, the loop current, and the node voltage at each junction of a three-resistor series chain, by adjusting resistor-value sliders and reading live labeled readouts at each node.</p>
+<p>Canvas layout:
+- Top: a single-loop circuit diagram — a battery and three resistors in series — with a labeled node dot (A, B, C) between each pair of components and after the last resistor
+- Bottom: a control panel with three resistor sliders, a source-voltage slider, and a running summary readout</p>
+<p>Visual elements:
+- Battery symbol labeled with its source voltage
+- Three resistors in series, each with a slider-driven value shown beside it
+- Four labeled node dots along the loop, each displaying its live node voltage in a small readout bubble
+- A summary box showing "Series Resistance: R1 + R2 + R3 = ___ Ω" and "Loop Current: ___ A"</p>
+<p>Interactive controls:
+- Sliders: Resistor 1, Resistor 2, Resistor 3 (10–1000 ohms each), and Source voltage (1.5–9 V)
+- Hover over any node dot for a tooltip explaining what "node voltage" means at that point
+- Button: "Load Example" sets the sliders to the chapter's worked example (100 Ω, 220 Ω, 330 Ω, 9 V)</p>
+<p>Default parameters:
+- Resistor 1: 100 Ω, Resistor 2: 220 Ω, Resistor 3: 330 Ω, Source voltage: 9 V</p>
+<p>Data Visibility Requirements:
+  Stage 1 (default circuit): Show the worked-example values with all four node voltages and the series-resistance/loop-current summary visible
+  Stage 2 (slider adjusted): Recalculate every downstream node voltage immediately, so learners see how one resistor change shifts every node after it
+  Stage 3 (node hovered): Show a tooltip stating that node's exact voltage and confirming it equals the source voltage minus every voltage drop before it</p>
+<p>Instructional Rationale: This Apply-level objective calls for a parameter-exploration calculator with live numeric readouts, not a passive animation. Labeling every node and updating its voltage the instant a slider moves turns "node voltage" from an abstract term into something learners watch change.</p>
+<p>Color scheme: Warm orange for node-voltage readouts, cool blue for resistor bars, matching this book's voltage/current color logic.</p>
+<p>Responsive behavior: The diagram scales to fill the available width; sliders stack into a single touch-friendly column on narrow screens.</p>
+<p>Implementation: p5.js, using a simple series-circuit math model (sum resistors, divide for loop current, subtract cumulative voltage drops for each node), redrawn each frame from the current slider values.</p>
+</details>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Same Laws, New Vocabulary</p>
+<p><img alt="Volt thinking about node voltage" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Node voltage, loop current, and series resistance aren't new physics — they're just precise names for ideas you already learned through Kirchhoff's Laws in Chapter 2. Once you can point at any spot in a circuit and say its node voltage with confidence, you're reasoning about circuits the same way a real engineer does.</p>
+</div>
+<h2 id="chapter-summary-key-takeaways">Chapter Summary: Key Takeaways</h2>
+<ul>
+<li>The four base units — <strong>ohm</strong>, <strong>volt</strong>, <strong>ampere</strong>, and <strong>watt</strong> — are each named after a real scientist, and <strong>coulomb</strong> is the unit of electric charge, linked to current and time by <span class="arithmatex">\( Q = I \times t \)</span></li>
+<li>The metric prefixes milli- (÷1,000) and micro- (÷1,000,000) shrink a unit; kilo- (×1,000) and mega- (×1,000,000) grow it — giving you <strong>milliampere</strong>, <strong>microampere</strong>, <strong>kilohm</strong>, <strong>megohm</strong>, and <strong>milliwatt</strong> as everyday units in this course</li>
+<li><strong>Overcurrent</strong> damages components by producing more heat than they can safely handle; <strong>fuse protection</strong> is a sacrificial component designed to break the circuit before that damage happens</li>
+<li><strong>Reverse polarity damage</strong> and <strong>static discharge</strong> are two hazards that matter especially for sensitive chips you'll meet later in this course, and both are prevented by simple, repeatable habits</li>
+<li><strong>Battery safety</strong> means never mixing battery types, never puncturing or shorting a battery, and recycling batteries that look swollen, hot, or leaking</li>
+<li><strong>Short circuit risk</strong> is Ohm's Law in action: resistance near zero sends current soaring, which is exactly what overcurrent protection exists to catch</li>
+<li>A <strong>node voltage</strong> is the voltage at a specific point in a circuit; a <strong>loop current</strong> is the single current flowing around a series loop; <strong>series resistance</strong> is the sum of every resistor along that loop — and together, these three ideas are how engineers put Kirchhoff's Laws to work on a real circuit</li>
+</ul>
+<p>You can now read every label in your kit at a glance, recognize the hazards that matter, and talk about any point in a circuit using the same vocabulary a professional engineer would reach for.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Fully Charged!</p>
+<p><img alt="Volt celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+Nice wiring, builder! You just unlocked the power to read any label, spot any hazard, and calculate the voltage at any point in a circuit — that's a serious upgrade in your circuit-analysis toolkit. Grab your kit, check those battery marks, and get ready to put every one of these ideas to work. Current's flowing your way!</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../02-current-charge-units-safety/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2. Current, Charge, Units, and Electrical Safety">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                2. Current, Charge, Units, and Electrical Safety
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../04-series-parallel-topology/" class="md-footer__link md-footer__link--next" aria-label="Next: 4. Series, Parallel, and Circuit Topology">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                4. Series, Parallel, and Circuit Topology
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extras.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

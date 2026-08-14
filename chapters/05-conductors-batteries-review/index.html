@@ -1,0 +1,2401 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A review chapter on battery cells, nominal voltage, capacity, resistivity, and conductance, plus the source-load-path vocabulary used to describe any working circuit, closing out the theory portion of the course.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/chapters/05-conductors-batteries-review/">
+      
+      
+        <link rel="prev" href="../04-series-parallel-topology/">
+      
+      
+        <link rel="next" href="../06-meet-your-breadboard/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Conductors, Batteries, and Circuit Vocabulary Review - Beginning Electronics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extras.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WP3K3TSFJ7"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WP3K3TSFJ7",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WP3K3TSFJ7",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#conductors-batteries-and-circuit-vocabulary-review" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Beginning Electronics" class="md-header__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Beginning Electronics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Conductors, Batteries, and Circuit Vocabulary Review
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Beginning Electronics" class="md-nav__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Beginning Electronics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../setup/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-electricity-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Electricity Basics: Voltage, Current, and Resistance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-current-charge-units-safety/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Current, Charge, Units, and Electrical Safety
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-circuit-analysis-kirchhoff/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Circuit Analysis, Kirchhoff's Laws, and Energy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-series-parallel-topology/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Series, Parallel, and Circuit Topology
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    5. Conductors, Batteries, and Circuit Vocabulary Review
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    5. Conductors, Batteries, and Circuit Vocabulary Review
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batteries-cells-nominal-voltage-and-capacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batteries: Cells, Nominal Voltage, and Capacity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Batteries: Cells, Nominal Voltage, and Capacity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estimated-battery-life" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estimated Battery Life
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-battery-type-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Battery Type Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voltage-rating-and-current-rating-reading-the-fine-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voltage Rating and Current Rating: Reading the Fine Print
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials-by-the-numbers-resistivity-and-conductance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Materials, By the Numbers: Resistivity and Conductance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Materials, By the Numbers: Resistivity and Conductance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resistance-from-resistivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resistance from Resistivity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conductance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conductance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-resistivity-and-conductance-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Resistivity and Conductance Calculator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-circuit-as-a-system-sources-loads-and-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Circuit as a System: Sources, Loads, and Paths
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continuity-and-faults-when-the-path-breaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continuity and Faults: When the Path Breaks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Continuity and Faults: When the Path Breaks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-circuit-continuity-and-fault-tester" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Circuit Continuity and Fault Tester
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-energy-conversion-and-circuit-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power, Energy Conversion, and Circuit Efficiency
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power, Energy Conversion, and Circuit Efficiency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-consumption-of-a-circuit-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Consumption of a Circuit Load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circuit-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuit Efficiency
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#everything-you-know-so-far-the-full-circuit-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Everything You Know So Far: The Full Circuit Vocabulary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary: Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-meet-your-breadboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Meet Your Breadboard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-wiring-skills-layout/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Wiring Skills and Circuit Layout
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-troubleshooting-perfboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Troubleshooting and Optional Perfboard Packaging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-resistors-and-capacitors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Resistors and Capacitors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-capacitor-timing-resistor-values/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Capacitor Timing and Resistor Values
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-resistor-codes-capacitor-details/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Resistor Codes and Capacitor Details
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-diodes-and-leds/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Diodes and LEDs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-meet-the-transistor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Meet the Transistor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-555-timer-chip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. The 555 Timer Chip
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-shift-registers-ic-handling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Shift Registers and IC Handling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-switches-buttons-wired-logic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Switches, Buttons, and Wired Logic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-sensing-light-dark-detectors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Sensing Light: Photoresistors and Dark Detectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-leds-rgb-color-motors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. LEDs, RGB Color, and Motors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-driving-outputs-motors-buzzers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19. Driving Outputs: Motors, Buzzers, and More
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-using-a-multimeter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20. Using a Multimeter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-systematic-troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21. Systematic Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-batteries-regulators-buck-converters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22. Batteries, Regulators, and Buck Converters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-signal-generators-solar-power/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23. Signal Generators and Solar Power
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-boolean-logic-transistor-gates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24. Boolean Logic and Transistor Gates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-nand-nor-xor-rs-latch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25. NAND, NOR, XOR, and the RS Latch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-advanced-circuits-capstone-project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    26. Advanced Circuits and Your Capstone Project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../labs/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Hands-on Labs
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Micro Simulations
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../kits/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Kits and Projects
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batteries-cells-nominal-voltage-and-capacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batteries: Cells, Nominal Voltage, and Capacity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Batteries: Cells, Nominal Voltage, and Capacity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estimated-battery-life" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estimated Battery Life
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-battery-type-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Battery Type Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voltage-rating-and-current-rating-reading-the-fine-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voltage Rating and Current Rating: Reading the Fine Print
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials-by-the-numbers-resistivity-and-conductance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Materials, By the Numbers: Resistivity and Conductance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Materials, By the Numbers: Resistivity and Conductance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resistance-from-resistivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resistance from Resistivity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conductance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conductance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-resistivity-and-conductance-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Resistivity and Conductance Calculator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-circuit-as-a-system-sources-loads-and-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Circuit as a System: Sources, Loads, and Paths
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continuity-and-faults-when-the-path-breaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continuity and Faults: When the Path Breaks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Continuity and Faults: When the Path Breaks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-circuit-continuity-and-fault-tester" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Circuit Continuity and Fault Tester
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-energy-conversion-and-circuit-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power, Energy Conversion, and Circuit Efficiency
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power, Energy Conversion, and Circuit Efficiency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-consumption-of-a-circuit-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Consumption of a Circuit Load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circuit-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuit Efficiency
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#everything-you-know-so-far-the-full-circuit-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Everything You Know So Far: The Full Circuit Vocabulary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary: Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="conductors-batteries-and-circuit-vocabulary-review">Conductors, Batteries, and Circuit Vocabulary Review</h1>
+<h2 id="summary">Summary</h2>
+<p>The final foundational chapter covers conductors, insulators, and semiconductor materials, battery behavior (capacity, internal resistance, terminal voltage), and the last of the circuit-analysis vocabulary. It closes out the theory-only portion of the course before students pick up a breadboard for the first time.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 19 concepts from the learning graph:</p>
+<ol>
+<li>Nominal Voltage</li>
+<li>Battery Capacity</li>
+<li>Battery Cell</li>
+<li>Resistivity</li>
+<li>Voltage Rating</li>
+<li>Current Rating</li>
+<li>Charge Carrier</li>
+<li>Circuit Load</li>
+<li>Voltage Source</li>
+<li>Load Current</li>
+<li>Power Consumption</li>
+<li>Energy Conversion</li>
+<li>Conductance</li>
+<li>Current Path</li>
+<li>Circuit Element</li>
+<li>Circuit Continuity</li>
+<li>Voltage Threshold</li>
+<li>Circuit Fault</li>
+<li>Circuit Efficiency</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-electricity-basics/">1. Electricity Basics: Voltage, Current, and Resistance</a></li>
+<li><a href="../02-current-charge-units-safety/">2. Current, Charge, Units, and Electrical Safety</a></li>
+<li><a href="../04-series-parallel-topology/">4. Series, Parallel, and Circuit Topology</a></li>
+</ul>
+<hr />
+<p>Four chapters in, and you can already do something most people never learn: read a circuit like a native language. You know the Three Amigos — voltage, current, and resistance — you can solve series and parallel networks, and you know what's really happening inside a battery once it's under load. There is exactly one theory chapter left before this course hands you a breadboard and says "go build something." This chapter closes out the vocabulary you'll need for that leap: batteries in the real world, materials measured with real numbers instead of just labels, and the everyday language engineers use to describe <em>any</em> working circuit, from the simplest LED blink to the most complicated kit in your box.</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">One Chapter to Go</p>
+<p><img alt="Volt waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Welcome to the last stop on Circuit Theory Boulevard, builder! Everything in this chapter — batteries, materials measured with real numbers, and the vocabulary for describing any circuit as a system — is here for one reason: getting your toolbox completely ready before Chapter 6 hands you a real breadboard. No new analogies today, just the good stuff. Let's light it up!</p>
+</div>
+<h2 id="batteries-cells-nominal-voltage-and-capacity">Batteries: Cells, Nominal Voltage, and Capacity</h2>
+<p>Every circuit in this course needs somewhere to get its push from, and up until now you've mostly pictured that as "a battery" without asking what's actually going on inside one. Time to open the case. A <strong>battery cell</strong> is the basic electrochemical building block inside a battery — a small chemical reaction chamber that produces a fairly steady voltage as a byproduct of the chemical reaction happening inside it. A single AA or AAA cell produces about 1.5 volts from its chemistry, no matter how big or small that particular cell's case is; a lithium cell, like the kind inside a rechargeable robotics battery, produces about 3.7 volts instead. What changes between a tiny coin cell and a giant D cell of the <em>same</em> chemistry isn't the voltage at all — it's how long that voltage can be delivered for, which you'll meet in a moment.</p>
+<p>That labeled voltage has its own name, too: the <strong>nominal voltage</strong> is the standard, textbook voltage value printed on a battery's label, representing its typical voltage under normal conditions. "Nominal" is a useful word to add to your vocabulary — it means "by name" or "in name only," and Chapter 4 already showed you why that hedge matters: a battery's real, measured <strong>terminal voltage</strong> sags a little under load and drifts down further as the battery ages. Nominal voltage is the number printed on the wrapper; terminal voltage is the number your multimeter actually reads once current is flowing.</p>
+<p>Ever wondered why a "9-volt battery" is shaped like a little rectangular block instead of a single cylinder? Nine volts doesn't come from one battery cell — it comes from six 1.5-volt alkaline cells wired in series inside that one case, using the exact series-circuit wiring pattern you mastered in Chapter 4. Stack six 1.5-volt pushes one after another and you get 9 volts, with a little room to spare.</p>
+<p>Here's how nominal voltage and typical capacity compare across the battery types you're most likely to meet in a $50 electronics kit:</p>
+<table>
+<thead>
+<tr>
+<th>Battery Type</th>
+<th>Chemistry</th>
+<th>Nominal Voltage</th>
+<th>Typical Capacity</th>
+<th>Common Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AAA (alkaline)</td>
+<td>Alkaline</td>
+<td>1.5 V</td>
+<td>800–1,200 mAh</td>
+<td>Small remotes, toys</td>
+</tr>
+<tr>
+<td>AA (alkaline)</td>
+<td>Alkaline</td>
+<td>1.5 V</td>
+<td>1,800–2,600 mAh</td>
+<td>Remote controls, flashlights, breadboard packs</td>
+</tr>
+<tr>
+<td>Coin cell (CR2032)</td>
+<td>Lithium</td>
+<td>3 V</td>
+<td>200–240 mAh</td>
+<td>Watches, tiny breadboard projects</td>
+</tr>
+<tr>
+<td>Single-cell LiPo</td>
+<td>Lithium-polymer</td>
+<td>3.7 V</td>
+<td>500–2,000 mAh</td>
+<td>Rechargeable robotics, wearables</td>
+</tr>
+<tr>
+<td>9V (rectangular)</td>
+<td>Alkaline</td>
+<td>9 V</td>
+<td>400–600 mAh</td>
+<td>Smoke detectors, small projects needing higher voltage</td>
+</tr>
+<tr>
+<td>D (alkaline)</td>
+<td>Alkaline</td>
+<td>1.5 V</td>
+<td>12,000–18,000 mAh</td>
+<td>High-drain, long-life devices</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Nominal Is a Promise, Not a Guarantee</p>
+<p><img alt="Volt thinking about nominal voltage" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+"Nominal" shows up constantly once you start reading datasheets, and it always means the same thing: this is the expected, typical number, not an ironclad guarantee. A "1.5-volt" AA battery might measure 1.6 volts fresh out of the package and 1.3 volts near the end of its life — both are perfectly normal, and neither one breaks the nominal-voltage label.</p>
+</div>
+<p>Two AA batteries can share the exact same 1.5-volt nominal voltage and still behave very differently in a circuit, because of a separate number entirely: <strong>battery capacity</strong>, the total amount of charge a battery can deliver before it's used up, almost always given in milliamp-hours (mAh) or amp-hours (Ah). A typical AA alkaline battery holds around 2,000 mAh of capacity — enough to supply 2,000 milliamps of current for one hour, or 200 milliamps for ten hours, or any other combination of current and time that multiplies out to roughly the same total.</p>
+<p>That relationship gives you a genuinely useful, back-of-the-envelope tool: estimating how long a battery will last in a real project.</p>
+<h4 id="estimated-battery-life">Estimated Battery Life</h4>
+<div class="arithmatex">\[ t = \frac{C}{I_{load}} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( t \)</span> is the estimated battery life, in hours</li>
+<li><span class="arithmatex">\( C \)</span> is the battery capacity, in milliamp-hours (mAh)</li>
+<li><span class="arithmatex">\( I_{load} \)</span> is the current the circuit draws from the battery, in milliamps (mA)</li>
+</ul>
+<p>Try it with real numbers: a breadboard project drawing a steady 40 mA from a 2,000 mAh AA battery would run for roughly <span class="arithmatex">\( t = 2{,}000 \div 40 = 50 \)</span> hours — a handy estimate to make before committing to a design.</p>
+<p>Explore how battery chemistry, nominal voltage, and capacity relate to each other by clicking through the battery types below.</p>
+<h4 id="diagram-battery-type-explorer">Diagram: Battery Type Explorer</h4>
+<iframe src="../../sims/battery-type-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Battery Type Explorer</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> battery-type-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p>Purpose: Help students compare the nominal voltage, capacity, and typical use of common battery types, reinforcing the comparison table with an interactive, click-to-reveal exploration.</p>
+<p>Bloom Taxonomy: Understand (L2). Bloom Verb: compare.</p>
+<p>Learning objective: Compare the nominal voltage, typical capacity range, and common use of six battery types — AAA, AA, coin cell, single-cell LiPo, 9V, and D cell — by clicking each battery illustration to reveal its specifications in an infobox.</p>
+<p>Canvas layout:
+- Top/center (70%): six battery illustrations to relative scale, smallest (coin cell) to largest (D cell)
+- Right side (30%, stacking below on narrow screens): infobox showing the specs of whichever battery was last clicked</p>
+<p>Visual elements:
+- Six battery illustrations — AAA, AA, coin cell, LiPo pouch, 9V block, D cell — tinted by chemistry (alkaline gray-blue, lithium orange)
+- A "cells inside" toggle on the 9V battery revealing an exploded view of six 1.5V cells in series, reinforcing the Chapter 4 series-circuit connection
+- A comparison bar beneath each battery showing relative capacity at a glance</p>
+<p>Interactive controls:
+- Click a battery for its infobox (chemistry, nominal voltage, capacity range, common use)
+- Click the 9V "cells inside" toggle for the exploded animation
+- Slider: "Load Current (mA)" live-updates an estimated battery life readout once a battery is selected
+- Button: "Reset" clears the selection</p>
+<p>Default parameters:
+- No battery pre-selected; infobox shows "Click a battery to see its specs" placeholder
+- Load Current slider defaults to 40 mA once a battery is selected</p>
+<p>Behavior when a battery is clicked: Infobox displays chemistry, nominal voltage, capacity range, common use, and a live-calculated estimated battery life using the Load Current slider and the midpoint of the capacity range.</p>
+<p>Data Visibility Requirements:
+  Stage 1 (default): All six batteries shown unselected with empty comparison bars
+  Stage 2 (battery clicked): Selected battery highlighted, comparison bar filled to scale, full spec in the infobox
+  Stage 3 (slider moved): Estimated battery life updates live, connecting capacity to a concrete "how long will this last" answer</p>
+<p>Instructional Rationale: An Understand-level comparison objective calls for click-to-reveal specification cards rather than a passive image, so learners compare batteries side by side. The live battery-life slider makes capacity tangible and reinforces load current from earlier in the chapter.</p>
+<p>Color scheme: Cool gray-blue for alkaline chemistry, warm orange for lithium chemistry, matching the book's accent-color convention.</p>
+<p>Responsive behavior: Battery row scrolls horizontally on narrow screens with the infobox stacking below; all controls remain touch-operable.</p>
+<p>Implementation: p5.js, with each battery a clickable region tied to a specification lookup table; infobox and slider rendered as HTML beside (or below) the canvas.</p>
+</details>
+<h2 id="voltage-rating-and-current-rating-reading-the-fine-print">Voltage Rating and Current Rating: Reading the Fine Print</h2>
+<p>Nominal voltage and capacity describe what a battery can <em>supply</em>. Every other component in a circuit has matching numbers describing what it can <em>safely accept</em>. Chapter 1 already introduced the idea of a maximum power rating for LEDs, motors, and buzzers; <strong>voltage rating</strong> and <strong>current rating</strong> are two more numbers cut from that same safety-conscious cloth. A component's voltage rating is the maximum voltage it's designed to handle without damage, and its current rating is the maximum current it's designed to carry — cross either line, and something is likely to overheat, fail, or, in the worst case, let out a puff of Chapter 1's infamous magic smoke.</p>
+<p>Jumper wires are a perfect example: the thin wires in a breadboard kit are usually rated for around 1 amp — plenty for every LED, sensor, and small-motor circuit in this course, but nowhere close to what a car battery or wall outlet can deliver. Respecting a rating is about matching the right part to the right job.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Ratings Are Not Suggestions</p>
+<p><img alt="Volt giving a warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Datasheet ratings might look like fine print, but they're really a promise: stay under a component's voltage rating and current rating, and it'll work reliably for years. Cross either line and you're gambling with the magic smoke. When in doubt, check the rating before you power something up — it takes five seconds and saves a component.</p>
+</div>
+<h2 id="materials-by-the-numbers-resistivity-and-conductance">Materials, By the Numbers: Resistivity and Conductance</h2>
+<p>Chapter 4 sorted every material into three buckets: conductor, insulator, or semiconductor material. Those labels are useful, but they're like sorting runners into "fast," "medium," and "slow" instead of giving an actual race time. <strong>Resistivity</strong> (symbol <span class="arithmatex">\( \rho \)</span>, the Greek letter rho) is that race time — a numeric property of a material itself, describing exactly how strongly it opposes current flow, independent of a particular wire's length or thickness.</p>
+<h4 id="resistance-from-resistivity">Resistance from Resistivity</h4>
+<div class="arithmatex">\[ R = \rho \times \frac{L}{A} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( R \)</span> is the resistance of a specific piece of material, measured in ohms (Ω)</li>
+<li><span class="arithmatex">\( \rho \)</span> is the material's resistivity, measured in ohm-meters (Ω·m)</li>
+<li><span class="arithmatex">\( L \)</span> is the length of the conductor, measured in meters (m)</li>
+<li><span class="arithmatex">\( A \)</span> is the cross-sectional area of the conductor, measured in square meters (m²)</li>
+</ul>
+<p>Two patterns fall out of that formula, and both match the pipe picture: double a wire's length and its resistance doubles, since current has twice as far to fight through; double its cross-sectional area (make it thicker) and resistance is cut in half. Resistivity itself depends only on the <em>material</em>, not the wire's shape — and the range is enormous:</p>
+<ul>
+<li>Copper: about <span class="arithmatex">\( 1.7 \times 10^{-8} \)</span> Ω·m — an excellent conductor, which is exactly why it's the metal inside almost every wire in your kit</li>
+<li>Nichrome (the metal alloy inside a toaster's heating coil): about <span class="arithmatex">\( 1.1 \times 10^{-6} \)</span> Ω·m — conductive enough to carry current, resistive enough to turn a useful amount of it into heat on purpose</li>
+<li>Rubber: roughly <span class="arithmatex">\( 10^{13} \)</span> Ω·m — trillions of times more resistive than copper, which is exactly why it makes such a good wire coating</li>
+</ul>
+<p>Why do materials land in such different places on that scale? It comes down to how many <strong>charge carriers</strong> are free to move. A charge carrier is the physical particle that carries electric charge through a material — in a metal wire, that's the electron; in a battery's chemistry or a cup of salt water, it's charged atoms called ions instead. Copper has enormous numbers of loosely held free electrons drifting from atom to atom, which is exactly why it has such low resistivity. Rubber's electrons are all locked tightly in place, leaving almost no free charge carriers to move — exactly why its resistivity is so astronomically high.</p>
+<p>Flip resistance upside down, literally, and you get a related quantity engineers reach for just as often: <strong>conductance</strong>, the reciprocal of resistance, measuring how easily — rather than how strongly — current flows through a component.</p>
+<h4 id="conductance">Conductance</h4>
+<div class="arithmatex">\[ G = \frac{1}{R} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( G \)</span> is conductance, measured in siemens (S)</li>
+<li><span class="arithmatex">\( R \)</span> is resistance, measured in ohms (Ω)</li>
+</ul>
+<p>A 100 Ω resistor, for example, has a conductance of <span class="arithmatex">\( G = 1 \div 100 = 0.01 \)</span> S, usually written as 10 milli-siemens (mS) using the very same metric prefixes you learned in Chapter 3. Resistance and conductance describe the exact same physical property from opposite directions — a big resistance number always means a tiny conductance number, and vice versa.</p>
+<p>Adjust the material, length, and thickness below to see resistance and conductance respond instantly to each change.</p>
+<h4 id="diagram-resistivity-and-conductance-calculator">Diagram: Resistivity and Conductance Calculator</h4>
+<iframe src="../../sims/resistivity-conductance-calculator/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Resistivity and Conductance Calculator</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> resistivity-conductance-calculator<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p>Purpose: Let students calculate how a wire's resistance and conductance change with material, length, and cross-sectional area, building an intuitive, hands-on feel for the resistivity formula.</p>
+<p>Bloom Taxonomy: Apply (L3). Bloom Verb: calculate.</p>
+<p>Learning objective: Calculate a wire's resistance from its resistivity, length, and cross-sectional area, and calculate its conductance as the reciprocal of that resistance, by adjusting a material dropdown and length/thickness sliders and reading the live-updated results.</p>
+<p>Canvas layout:
+- Left (60%): a schematic wire whose visible length and thickness redraw live as the sliders move
+- Right (40%, stacking below on narrow screens): material dropdown, two sliders, and a results readout</p>
+<p>Visual elements:
+- A wire that stretches/shrinks (length) and thickens/thins (area) as sliders change, tinted by material
+- A readout showing resistivity (Ω·m), calculated resistance (Ω, auto-scaled), and calculated conductance (S, auto-scaled)
+- An animated dot-stream inside the wire, moving faster at high conductance and slower at low conductance</p>
+<p>Interactive controls:
+- Dropdown: "Material" — copper, aluminum, nichrome, or rubber, each pre-loaded with its real resistivity value
+- Slider: "Length (cm)" — 1 to 100 cm
+- Slider: "Thickness / Cross-Sectional Area (mm²)" — 0.1 to 10 mm²
+- Display: resistance and conductance recalculated live on every change</p>
+<p>Default parameters:
+- Material: Copper
+- Length: 20 cm
+- Cross-sectional area: 1 mm²</p>
+<p>Behavior: Changing the material swaps the resistivity value and updates wire tint and dot-stream speed. Increasing length increases displayed resistance and decreases conductance proportionally; increasing cross-sectional area does the opposite. Selecting rubber shows a stalled dot-stream and a "practically an insulator!" callout.</p>
+<p>Data Visibility Requirements:
+  Stage 1 (default): Copper wire at default dimensions with resistance and conductance both visible
+  Stage 2 (slider moved): Wire redraws at new dimensions alongside updated numbers, so cause and effect are visible together
+  Stage 3 (material changed): Dramatic jump in resistance/conductance switching from a metal to rubber, making the resistivity range concrete</p>
+<p>Instructional Rationale: An Apply-level calculation objective calls for a parameter-exploration calculator rather than a passive diagram, so learners manipulate all three formula inputs and see both outputs respond immediately — the fastest way to build fluency with a three-variable formula.</p>
+<p>Color scheme: Copper/orange tint for copper, silver-gray for aluminum, red-orange for nichrome, dull green for rubber, on a light background.</p>
+<p>Responsive behavior: Wire drawing and control panel stack vertically on narrow screens; all controls remain touch-usable.</p>
+<p>Implementation: p5.js, with resistivity values in a lookup table keyed by material; wire dimensions and dot-stream speed recalculated every frame from slider values.</p>
+</details>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Reciprocal Best Friends</p>
+<p><img alt="Volt giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Resistance and conductance will always give you the exact same information, just flipped upside down — literally, since <span class="arithmatex">\( G = 1/R \)</span>. If a datasheet ever gives you conductance instead of resistance, don't panic: just flip the fraction, and you're back on familiar ground.</p>
+</div>
+<h2 id="the-circuit-as-a-system-sources-loads-and-paths">The Circuit as a System: Sources, Loads, and Paths</h2>
+<p>Step back from materials for a moment and look at the big picture: no matter how many components a circuit has, every single one can be sorted into one of a few simple roles. A <strong>voltage source</strong> is any component that supplies the voltage push driving current around a circuit — a battery, a USB power supply, a solar panel, or, later in this course, a voltage regulator kit. A <strong>circuit load</strong> is the flip side of that: any component that consumes electrical energy from the source and converts it into another useful form. Every LED, motor, and buzzer you've read about since Chapter 1 has secretly been a circuit load the whole time — now it has a proper name.</p>
+<p>Connect a voltage source to a circuit load, and current has to travel somewhere in between. That specific route is called the <strong>current path</strong> — the actual journey current takes from the source, through every circuit element along the way, and back again to complete the loop. A <strong>circuit element</strong> is simply the general, catch-all term for any individual component wired into that path: a resistor, an LED, a switch, a battery, or anything else you might drop onto a breadboard.</p>
+<p>Every closed circuit you'll build in this course, no matter how many parts it has, boils down to the same three ingredients:</p>
+<ul>
+<li>At least one <strong>voltage source</strong> supplying the push</li>
+<li>At least one <strong>circuit load</strong> consuming the energy and doing something useful with it</li>
+<li>A <strong>current path</strong> made of <strong>circuit elements</strong> connecting the two into a complete loop</li>
+</ul>
+<p>The actual amount of current a circuit load draws once it's connected and switched on has its own name too: <strong>load current</strong>. You already met this idea earlier in the chapter without the label — <span class="arithmatex">\( I_{load} \)</span> in the estimated-battery-life formula was exactly this, the current a circuit load pulls from its voltage source while it's running.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Same Circuits, Sharper Labels</p>
+<p><img alt="Volt encouraging you" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+Every vocabulary word in this section describes something you've already pictured in your head since Chapter 1. Naming it precisely is what lets you talk about <em>any</em> circuit — from a single blinking LED to next year's most ambitious project — using the exact same three-part mental model: source, load, path.</p>
+</div>
+<h2 id="continuity-and-faults-when-the-path-breaks">Continuity and Faults: When the Path Breaks</h2>
+<p>A current path is only useful if it's actually connected. <strong>Circuit continuity</strong> is the property of having a complete, unbroken current path between two points — the electrical version of Chapter 1's closed circuit, now applied to testing any two specific points instead of judging a whole loop at once. Multimeters, a tool you'll meet for real once you start building, have a dedicated continuity-test mode that beeps the instant it detects an unbroken path between its two probes.</p>
+<p>Anything that breaks that unbroken path, on purpose or by accident, creates a <strong>circuit fault</strong>: any unplanned condition that disrupts a circuit's normal operation. A wire popped out of a breadboard hole is a fault. A resistor that's failed internally and gone open is a fault. Even Chapter 1's short circuit counts as a fault — just the opposite kind, where current finds an unwanted <em>extra</em> path instead of losing an intended one.</p>
+<p>Use the virtual multimeter below to trace a circuit's current path and find where a hidden fault has broken continuity.</p>
+<h4 id="diagram-circuit-continuity-and-fault-tester">Diagram: Circuit Continuity and Fault Tester</h4>
+<iframe src="../../sims/circuit-continuity-fault-tester/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Circuit Continuity and Fault Tester</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> circuit-continuity-fault-tester<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p>Purpose: Give students hands-on practice identifying a voltage source, circuit load, and current path in a simple diagram, and using a virtual continuity tester to locate a circuit fault breaking the loop.</p>
+<p>Bloom Taxonomy: Analyze (L4). Bloom Verb: examine.</p>
+<p>Learning objective: Examine a simple circuit diagram containing a voltage source, one or more circuit elements, and a current path, and use a virtual multimeter continuity tester to identify which segment of the path contains a circuit fault, by clicking test-probe points and interpreting the tester's pass/fail feedback.</p>
+<p>Canvas layout:
+- Left/center (70%): a loop diagram — battery (voltage source), an LED and resistor (circuit elements acting as the circuit load), and wire segments forming the current path — with 5–6 labeled test points
+- Right side (30%, stacking below on narrow screens): a virtual multimeter panel with continuity-test results and a running test log</p>
+<p>Visual elements:
+- A closed-loop diagram with battery, resistor, LED, and wire segments, redrawn with a new random fault each time "New Circuit" is pressed
+- Small numbered test-point markers at each junction and wire segment
+- A multimeter display showing "- - -" by default, a green check when a tested segment has continuity, a red X when it doesn't
+- One randomly placed circuit fault per scenario: a broken wire segment or a disconnected component lead</p>
+<p>Interactive controls:
+- Click any two test points to place the probes and run a continuity test between them
+- Button: "New Circuit" generates a fresh random fault and clears the test log
+- Button: "Reveal Fault" (after at least two tests) highlights the fault location and explains the kind of circuit fault it is
+- Running test log lists every pair of points tested and its pass/fail result</p>
+<p>Default parameters:
+- One fault present per scenario, placed randomly among 5–6 possible wire segments or lead connections
+- No points pre-selected; multimeter shows "- - -" until the first test</p>
+<p>Behavior when two test points are selected: a continuous segment shows a green checkmark and a "Continuity — this path is connected" message with a green highlight; a broken segment shows a red X and a "No continuity — this path is broken" message with a red highlight. Once the fault is located or revealed, an infobox explains what kind of circuit fault it was and how it would show up in real life (an LED that won't light despite a good battery).</p>
+<p>Data Visibility Requirements:
+  Stage 1 (default): Full circuit diagram with all test points visible and the multimeter idle, so the learner sees the whole current path first
+  Stage 2 (test run): Tested segment highlighted with its pass/fail color, plus the updated multimeter message and growing test log
+  Stage 3 (fault located or revealed): The faulted segment stays highlighted with an explanation, tying "circuit fault" to one concrete, visible break</p>
+<p>Instructional Rationale: An Analyze-level objective (examine a circuit and locate a problem) calls for a diagnostic testing pattern — place probes, read feedback, narrow down the fault — rather than passive labeling, mirroring the real troubleshooting skill students will use on their first breadboard project in Chapter 6.</p>
+<p>Color scheme: Blue circuit lines and symbols on a light background; green for confirmed continuity, red for confirmed faults.</p>
+<p>Responsive behavior: Diagram and multimeter panel stack vertically on narrow screens; all test points and buttons remain tappable.</p>
+<p>Implementation: p5.js, with the circuit modeled as segments between named nodes, one segment flagged as "faulted" per scenario; multimeter panel rendered as HTML beside (or below) the canvas.</p>
+</details>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Every Builder Becomes a Detective</p>
+<p><img alt="Volt thinking about troubleshooting" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Finding a circuit fault is basically detective work: test a segment, cross it off the suspect list if it's fine, and narrow the mystery down until only one culprit is left. You'll use exactly this continuity-testing instinct on your very first breadboard project, the moment an LED refuses to light and you need to figure out why.</p>
+</div>
+<h2 id="power-energy-conversion-and-circuit-efficiency">Power, Energy Conversion, and Circuit Efficiency</h2>
+<p>Every circuit load in this course exists to do one job: take in electrical energy and turn it into something more useful. That transformation has a name — <strong>energy conversion</strong>, the process of changing electrical energy into another form of energy, such as light, heat, motion, or sound. Chapter 1 already listed some familiar examples without using this exact term: an LED performs an energy conversion into light, a motor into motion, a buzzer into sound, and a resistor into heat.</p>
+<p>The <em>rate</em> at which a circuit load performs that conversion — how much electrical energy it's using up right now, at this instant — is its <strong>power consumption</strong>, calculated exactly the way you learned back in Chapter 1, just applied specifically to a load:</p>
+<h4 id="power-consumption-of-a-circuit-load">Power Consumption of a Circuit Load</h4>
+<div class="arithmatex">\[ P_{load} = V_{load} \times I_{load} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( P_{load} \)</span> is the circuit load's power consumption, measured in watts (W)</li>
+<li><span class="arithmatex">\( V_{load} \)</span> is the voltage across the load, measured in volts (V)</li>
+<li><span class="arithmatex">\( I_{load} \)</span> is the load current flowing through it, measured in amps (A)</li>
+</ul>
+<p>Not every circuit element responds the moment any voltage at all shows up, either. Plenty of them wait until a <strong>voltage threshold</strong> is reached — the minimum voltage that must be present before a circuit element begins behaving the way it's designed to. You've actually already met one specific example of a voltage threshold: an LED's forward voltage from Chapter 2 is exactly this. Below that threshold, an LED just sits dark no matter how much current tries to push through it; cross the threshold, and it switches on.</p>
+<p>Not all of a circuit's input power turns into useful output, though — some always leaks away, usually as unwanted heat in resistors, connecting wires, and a battery's own internal resistance. <strong>Circuit efficiency</strong> measures exactly how much doesn't leak away: the ratio of useful output power to total input power, usually expressed as a percentage.</p>
+<h4 id="circuit-efficiency">Circuit Efficiency</h4>
+<div class="arithmatex">\[ \eta = \frac{P_{output}}{P_{input}} \times 100\% \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( \eta \)</span> (the Greek letter eta) is circuit efficiency, expressed as a percentage</li>
+<li><span class="arithmatex">\( P_{output} \)</span> is the useful power delivered to the load, measured in watts (W)</li>
+<li><span class="arithmatex">\( P_{input} \)</span> is the total power supplied by the source, measured in watts (W)</li>
+</ul>
+<p>A solar-powered night light is a good example: if its battery supplies 5 watts total, but only 4 watts reach the LED as useful light (the rest lost as heat), its circuit efficiency is <span class="arithmatex">\( \eta = 4 \div 5 \times 100\% = 80\% \)</span>. No real circuit ever reaches 100% — some loss is unavoidable — but well-designed circuits get close.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">100% Efficiency Doesn't Exist (Yet)</p>
+<p><img alt="Volt giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Every real circuit loses a little energy to heat — it's not a design flaw, it's just physics. The goal was never a perfect 100%; it's getting as close as good component choices and clean wiring can manage. Even a "wasteful" 80% efficient circuit is still doing a great job.</p>
+</div>
+<h2 id="everything-you-know-so-far-the-full-circuit-vocabulary">Everything You Know So Far: The Full Circuit Vocabulary</h2>
+<p>Take a breath — you just finished the entire theory portion of this course. Every idea from Chapters 1 through 5 fits together into one picture: a voltage source pushes current down a current path made of circuit elements, that path's resistance depends on the resistivity and length of the materials involved, and a circuit load at the end converts the arriving energy into something useful, at some efficiency less than 100%. Here's the whole toolkit, chapter by chapter:</p>
+<table>
+<thead>
+<tr>
+<th>Chapter</th>
+<th>Core Vocabulary You Now Know</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Voltage, current, resistance, Ohm's Law, power, open/closed/short circuit, series/parallel circuit, ground, polarity</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Electric charge, conventional current vs. electron flow, Kirchhoff's Voltage and Current Laws, forward voltage</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Unit prefixes (milli, kilo, mega), coulombs, overcurrent, reverse polarity, static discharge, node voltage</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Parallel and equivalent resistance, circuit topology (nodes, branches, loops), conductor/insulator/semiconductor, EMF, internal resistance, terminal voltage</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Nominal voltage, battery capacity, resistivity, conductance, voltage/current rating, voltage source, circuit load, current path, circuit continuity, circuit fault, circuit efficiency</td>
+</tr>
+</tbody>
+</table>
+<p>That's five chapters and dozens of precise, reusable terms — every one of them still applies the instant you plug your first LED into a breadboard.</p>
+<h2 id="chapter-summary-key-takeaways">Chapter Summary: Key Takeaways</h2>
+<p>Before you set this book down and pick up a breadboard, make sure each of these ideas feels solid:</p>
+<ul>
+<li>A <strong>battery cell</strong> produces a fixed voltage from chemistry; its <strong>nominal voltage</strong> is the labeled typical value, while its <strong>battery capacity</strong> (in mAh) determines how long it can deliver current</li>
+<li>A component's <strong>voltage rating</strong> and <strong>current rating</strong> are the maximum values it can safely handle without damage</li>
+<li><strong>Resistivity</strong> is a material's built-in resistance-per-shape property, and <strong>conductance</strong> (<span class="arithmatex">\( G = 1/R \)</span>) is the reciprocal of resistance; both trace back to how freely a material's <strong>charge carriers</strong> can move</li>
+<li>Every working circuit is built from a <strong>voltage source</strong>, one or more <strong>circuit loads</strong>, and a <strong>current path</strong> made of <strong>circuit elements</strong> connecting them — and the current a load actually draws is its <strong>load current</strong></li>
+<li><strong>Circuit continuity</strong> means an unbroken current path; a <strong>circuit fault</strong> is anything that breaks it unexpectedly</li>
+<li><strong>Power consumption</strong> is the rate a load converts electrical energy through <strong>energy conversion</strong>; some elements only respond above a <strong>voltage threshold</strong>; and <strong>circuit efficiency</strong> measures how much input power actually reaches useful output</li>
+</ul>
+<p>You now have every piece of vocabulary and every formula this course's hands-on chapters will assume you already know.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Theory Complete — Time to Build</p>
+<p><img alt="Volt celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+Nice wiring, builder — you just finished the entire theory arc of this course! That's five chapters of voltage, current, resistance, batteries, and circuit vocabulary, all now living in your head where it belongs. Here's your biggest superpower yet: you can look at <em>any</em> circuit, name every part playing every role, and predict how it will behave, before you've even touched a single wire. Grab your kit, because Chapter 6 is where all of this stops being words on a page and becomes something you build with your own two hands, on a real breadboard, for the very first time. Current's flowing your way!</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../04-series-parallel-topology/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4. Series, Parallel, and Circuit Topology">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                4. Series, Parallel, and Circuit Topology
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../06-meet-your-breadboard/" class="md-footer__link md-footer__link--next" aria-label="Next: 6. Meet Your Breadboard">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                6. Meet Your Breadboard
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extras.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

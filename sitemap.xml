@@ -2,290 +2,406 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/contact/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/course-description/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/license/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/01-electricity-basics/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/02-current-charge-units-safety/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/03-circuit-analysis-kirchhoff/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/04-series-parallel-topology/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/05-conductors-batteries-review/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/06-meet-your-breadboard/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/07-wiring-skills-layout/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/08-troubleshooting-perfboard/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/09-resistors-and-capacitors/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/10-capacitor-timing-resistor-values/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/11-resistor-codes-capacitor-details/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/12-diodes-and-leds/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/13-meet-the-transistor/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/14-555-timer-chip/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/15-shift-registers-ic-handling/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/16-switches-buttons-wired-logic/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/17-sensing-light-dark-detectors/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/18-leds-rgb-color-motors/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/19-driving-outputs-motors-buzzers/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/20-using-a-multimeter/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/21-systematic-troubleshooting/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/22-batteries-regulators-buck-converters/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/23-signal-generators-solar-power/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/24-boolean-logic-transistor-gates/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/25-nand-nor-xor-rs-latch/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/chapters/26-advanced-circuits-capstone-project/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/img/mascot/character-sheet/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/img/mascot/image-prompts/</loc>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/kits/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/kits/5v-regulator/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/kits/buck-converter/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/kits/busy-board/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/kits/led-dimmer/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/kits/led-dimmer/led-dimmer-circuit/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/kits/rgb-led/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/kits/signal-generator/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/kits/solar-night-light/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/kits/variable-power-supply/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/labs/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/labs/05-part-identification/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/labs/08-breadboard/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/labs/09-power/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/labs/10-led-circuit/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/labs/11-buttons/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/labs/12-and-buttons/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/labs/13-or-buttons/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/labs/14-rgb-led/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/labs/20-dark-detector/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/labs/30-transistors/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/labs/31-bc547-vs-2n2222/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/labs/35-boolean-logic/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/labs/40-noodle-led-circuit/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/labs/70-using-perf-boards/</loc>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/labs/80-rc-circuit/</loc>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/learning-graph/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/learning-graph/book-metrics/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/learning-graph/chapter-metrics/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/learning-graph/mascot-test/</loc>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/learning-graph/step-01-course-assessment/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/learning-graph/step-02-concepts/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/learning-graph/step-04-quality-analysis/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/learning-graph/step-05-taxonomy/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/learning-graph/step-07-distribution-report/</loc>
-         <lastmod>2026-06-18</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/lessons/</loc>
-         <lastmod>2026-06-18</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/lessons/05-part-identification/</loc>
-         <lastmod>2026-06-18</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/lessons/08-breadboard/</loc>
-         <lastmod>2026-06-18</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/lessons/09-power/</loc>
-         <lastmod>2026-06-18</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/lessons/10-led-circuit/</loc>
-         <lastmod>2026-06-18</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/lessons/11-buttons/</loc>
-         <lastmod>2026-06-18</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/lessons/12-and-buttons/</loc>
-         <lastmod>2026-06-18</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/lessons/13-or-buttons/</loc>
-         <lastmod>2026-06-18</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/lessons/14-rgb-led/</loc>
-         <lastmod>2026-06-18</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/lessons/20-dark-detector/</loc>
-         <lastmod>2026-06-18</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/lessons/30-transistors/</loc>
-         <lastmod>2026-06-18</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/lessons/31-bc547-vs-2n2222/</loc>
-         <lastmod>2026-06-18</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/lessons/35-boolean-logic/</loc>
-         <lastmod>2026-06-18</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/lessons/40-noodle-led-circuit/</loc>
-         <lastmod>2026-06-18</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/lessons/70-using-perf-boards/</loc>
-         <lastmod>2026-06-18</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/lessons/80-rc-circuit/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/prompts/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/prompts/concept-dependencies/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/prompts/concept-enumeration/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/prompts/concept-taxonomy/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/prompts/course-description/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/prompts/learning-graph-skill/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/prompts/taxonomy-assignment/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/prompts/taxonomy-table/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/setup/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/setup/05-kit-components/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/setup/breadboard-kits/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/setup/generating-lessons/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/setup/power-supplies/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/setup/purchasing-breadboards/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/push-buttons/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/timer/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/breadboard/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/breadboard/TODO/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/flip-flop/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/flip-flop/TODO/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/sims/learning-graph/</loc>
-         <lastmod>2026-06-18</lastmod>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/beginning-electronics/sims/learning-graph/TODO/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/graph-viewer/</loc>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/led/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/led/TODO/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/led-resistor-calc/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/led-resistor-calc/TODO/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/led-resistor-calc/led-circuit-calculator/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/rcl-draw-test/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/resistor/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/resistor-physical/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/resistor-physical/TODO/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/template/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/template/TODO/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-08-14</lastmod>
     </url>
 </urlset>

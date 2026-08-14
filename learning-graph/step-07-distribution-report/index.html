@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Given a $15 breadboard kit, use AI to generate lessons. All content licensed Creative Commons ShareAlike Attribution Noncommercial">
+        <meta name="description" content="This is a interactive intelligent textbook that teachers beginning electronics with a $50 solderless breadboard kit.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -18,7 +18,7 @@
         <link rel="prev" href="../step-05-taxonomy/">
       
       
-        <link rel="next" href="../../license/">
+        <link rel="next" href="../mascot-test/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -54,6 +54,10 @@
     
       <link rel="stylesheet" href="../../css/extras.css">
     
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -88,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#step-7-taxonomy-distribution-report" class="md-skip">
+        <a href="#taxonomy-distribution-report" class="md-skip">
           Skip to content
         </a>
       
@@ -343,6 +347,155 @@
         
       
         
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
       
         
       
@@ -385,11 +538,11 @@
         
   
   
-    <a href="../../lessons/" class="md-nav__link">
+    <a href="../../labs/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Lessons
+    Hands-on Labs
   </span>
   
 
@@ -654,6 +807,8 @@
       
         
       
+        
+      
     
     
     
@@ -663,7 +818,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
           
@@ -679,14 +834,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             Learning Graph
           </label>
@@ -849,91 +1004,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#detailed-breakdown-by-category" class="md-nav__link">
+  <a href="#visual-distribution" class="md-nav__link">
     <span class="md-ellipsis">
-      Detailed Breakdown by Category
+      Visual Distribution
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Detailed Breakdown by Category">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#balance-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balance Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Balance Analysis">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#act-active-components-25-concepts-125" class="md-nav__link">
+  <a href="#no-over-represented-categories" class="md-nav__link">
     <span class="md-ellipsis">
-      ACT - Active Components (25 concepts, 12.5%)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adv-advanced-circuits-8-concepts-40" class="md-nav__link">
-    <span class="md-ellipsis">
-      ADV - Advanced Circuits (8 concepts, 4.0%)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bread-breadboarding-25-concepts-125" class="md-nav__link">
-    <span class="md-ellipsis">
-      BREAD - Breadboarding (25 concepts, 12.5%)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dig-digital-logic-12-concepts-60" class="md-nav__link">
-    <span class="md-ellipsis">
-      DIG - Digital Logic (12 concepts, 6.0%)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fund-fundamentals-40-concepts-200" class="md-nav__link">
-    <span class="md-ellipsis">
-      FUND - Fundamentals (40 concepts, 20.0%)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#io-inputoutput-30-concepts-150" class="md-nav__link">
-    <span class="md-ellipsis">
-      IO - Input/Output (30 concepts, 15.0%)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#meas-measurement-15-concepts-75" class="md-nav__link">
-    <span class="md-ellipsis">
-      MEAS - Measurement (15 concepts, 7.5%)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pass-passive-components-30-concepts-150" class="md-nav__link">
-    <span class="md-ellipsis">
-      PASS - Passive Components (30 concepts, 15.0%)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pwr-power-systems-15-concepts-75" class="md-nav__link">
-    <span class="md-ellipsis">
-      PWR - Power Systems (15 concepts, 7.5%)
+      ✅ No Over-Represented Categories
     </span>
   </a>
   
@@ -945,20 +1037,131 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#balance-assessment" class="md-nav__link">
+  <a href="#category-details" class="md-nav__link">
     <span class="md-ellipsis">
-      Balance Assessment
+      Category Details
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Category Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#foundational-concepts-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foundational Concepts (FOUND)
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#observations" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#passive-components-pasv" class="md-nav__link">
     <span class="md-ellipsis">
-      Observations
+      Passive Components (PASV)
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#active-components-ics-actv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active Components &amp; ICs (ACTV)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breadboarding-assembly-brdg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breadboarding &amp; Assembly (BRDG)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-components-inpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Components (INPT)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-components-outp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Components (OUTP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-systems-pwr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Systems (PWR)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measurement-testing-meas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement &amp; Testing (MEAS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digital-logic-boolean-dlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Logic &amp; Boolean (DLOG)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-circuits-capstone-projects-caps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Circuits &amp; Capstone Projects (CAPS)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommendations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#educational-use-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Educational Use Recommendations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -966,6 +1169,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mascot-test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mascot Style Guide
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1063,91 +1287,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#detailed-breakdown-by-category" class="md-nav__link">
+  <a href="#visual-distribution" class="md-nav__link">
     <span class="md-ellipsis">
-      Detailed Breakdown by Category
+      Visual Distribution
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Detailed Breakdown by Category">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#balance-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balance Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Balance Analysis">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#act-active-components-25-concepts-125" class="md-nav__link">
+  <a href="#no-over-represented-categories" class="md-nav__link">
     <span class="md-ellipsis">
-      ACT - Active Components (25 concepts, 12.5%)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adv-advanced-circuits-8-concepts-40" class="md-nav__link">
-    <span class="md-ellipsis">
-      ADV - Advanced Circuits (8 concepts, 4.0%)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bread-breadboarding-25-concepts-125" class="md-nav__link">
-    <span class="md-ellipsis">
-      BREAD - Breadboarding (25 concepts, 12.5%)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dig-digital-logic-12-concepts-60" class="md-nav__link">
-    <span class="md-ellipsis">
-      DIG - Digital Logic (12 concepts, 6.0%)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fund-fundamentals-40-concepts-200" class="md-nav__link">
-    <span class="md-ellipsis">
-      FUND - Fundamentals (40 concepts, 20.0%)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#io-inputoutput-30-concepts-150" class="md-nav__link">
-    <span class="md-ellipsis">
-      IO - Input/Output (30 concepts, 15.0%)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#meas-measurement-15-concepts-75" class="md-nav__link">
-    <span class="md-ellipsis">
-      MEAS - Measurement (15 concepts, 7.5%)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pass-passive-components-30-concepts-150" class="md-nav__link">
-    <span class="md-ellipsis">
-      PASS - Passive Components (30 concepts, 15.0%)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pwr-power-systems-15-concepts-75" class="md-nav__link">
-    <span class="md-ellipsis">
-      PWR - Power Systems (15 concepts, 7.5%)
+      ✅ No Over-Represented Categories
     </span>
   </a>
   
@@ -1159,20 +1320,131 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#balance-assessment" class="md-nav__link">
+  <a href="#category-details" class="md-nav__link">
     <span class="md-ellipsis">
-      Balance Assessment
+      Category Details
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Category Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#foundational-concepts-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foundational Concepts (FOUND)
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#observations" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#passive-components-pasv" class="md-nav__link">
     <span class="md-ellipsis">
-      Observations
+      Passive Components (PASV)
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#active-components-ics-actv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active Components &amp; ICs (ACTV)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breadboarding-assembly-brdg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breadboarding &amp; Assembly (BRDG)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-components-inpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Components (INPT)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-components-outp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Components (OUTP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-systems-pwr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Systems (PWR)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measurement-testing-meas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement &amp; Testing (MEAS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digital-logic-boolean-dlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Logic &amp; Boolean (DLOG)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-circuits-capstone-projects-caps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Circuits &amp; Capstone Projects (CAPS)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommendations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#educational-use-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Educational Use Recommendations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1194,15 +1466,19 @@
   
 
 
-<h1 id="step-7-taxonomy-distribution-report">Step 7: Taxonomy Distribution Report</h1>
+<h1 id="taxonomy-distribution-report">Taxonomy Distribution Report</h1>
 <h2 id="overview">Overview</h2>
-<p>Total unique concepts analyzed: 200</p>
+<ul>
+<li><strong>Total Concepts</strong>: 500</li>
+<li><strong>Number of Taxonomies</strong>: 10</li>
+<li><strong>Average Concepts per Taxonomy</strong>: 50.0</li>
+</ul>
 <h2 id="distribution-summary">Distribution Summary</h2>
 <table>
 <thead>
 <tr>
-<th>Taxonomy</th>
 <th>Category</th>
+<th>TaxonomyID</th>
 <th>Count</th>
 <th>Percentage</th>
 <th>Status</th>
@@ -1210,323 +1486,927 @@
 </thead>
 <tbody>
 <tr>
-<td>ACT</td>
-<td>Active Components</td>
-<td>25</td>
-<td>12.5%</td>
-<td>✓</td>
+<td>Foundational Concepts</td>
+<td>FOUND</td>
+<td>95</td>
+<td>19.0%</td>
+<td>✅</td>
 </tr>
 <tr>
-<td>ADV</td>
-<td>Advanced Circuits</td>
-<td>8</td>
-<td>4.0%</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>BREAD</td>
-<td>Breadboarding</td>
-<td>25</td>
-<td>12.5%</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>DIG</td>
-<td>Digital Logic</td>
-<td>12</td>
-<td>6.0%</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>FUND</td>
-<td>Fundamentals</td>
-<td>40</td>
-<td>20.0%</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>IO</td>
-<td>Input/Output</td>
-<td>30</td>
-<td>15.0%</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>MEAS</td>
-<td>Measurement</td>
-<td>15</td>
-<td>7.5%</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>PASS</td>
 <td>Passive Components</td>
-<td>30</td>
+<td>PASV</td>
+<td>75</td>
 <td>15.0%</td>
-<td>✓</td>
+<td>✅</td>
 </tr>
 <tr>
-<td>PWR</td>
+<td>Active Components &amp; ICs</td>
+<td>ACTV</td>
+<td>63</td>
+<td>12.6%</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Breadboarding &amp; Assembly</td>
+<td>BRDG</td>
+<td>58</td>
+<td>11.6%</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Input Components</td>
+<td>INPT</td>
+<td>40</td>
+<td>8.0%</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Output Components</td>
+<td>OUTP</td>
+<td>40</td>
+<td>8.0%</td>
+<td>✅</td>
+</tr>
+<tr>
 <td>Power Systems</td>
-<td>15</td>
-<td>7.5%</td>
-<td>✓</td>
+<td>PWR</td>
+<td>40</td>
+<td>8.0%</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Measurement &amp; Testing</td>
+<td>MEAS</td>
+<td>38</td>
+<td>7.6%</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Digital Logic &amp; Boolean</td>
+<td>DLOG</td>
+<td>30</td>
+<td>6.0%</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Advanced Circuits &amp; Capstone Projects</td>
+<td>CAPS</td>
+<td>21</td>
+<td>4.2%</td>
+<td>✅</td>
 </tr>
 </tbody>
 </table>
-<h2 id="detailed-breakdown-by-category">Detailed Breakdown by Category</h2>
-<h3 id="act-active-components-25-concepts-125">ACT - Active Components (25 concepts, 12.5%)</h3>
-<p><em>Transistors and integrated circuits</em></p>
+<h2 id="visual-distribution">Visual Distribution</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>Foundational Concepts     █████████  95 ( 19.0%)
+Passive Components        ███████  75 ( 15.0%)
+Active Components &amp; ICs   ██████  63 ( 12.6%)
+Breadboarding &amp; Assembly  █████  58 ( 11.6%)
+Input Components          ████  40 (  8.0%)
+Output Components         ████  40 (  8.0%)
+Power Systems             ████  40 (  8.0%)
+Measurement &amp; Testing     ███  38 (  7.6%)
+Digital Logic &amp; Boolean   ███  30 (  6.0%)
+Advanced Circuits &amp; Capst ██  21 (  4.2%)
+</code></pre></div></td></tr></table></div>
+<h2 id="balance-analysis">Balance Analysis</h2>
+<h3 id="no-over-represented-categories">✅ No Over-Represented Categories</h3>
+<p>All categories are under the 30% threshold. Good balance!</p>
+<h2 id="category-details">Category Details</h2>
+<h3 id="foundational-concepts-found">Foundational Concepts (FOUND)</h3>
+<p><strong>Count</strong>: 95 concepts (19.0%)</p>
+<p><strong>Concepts</strong>:</p>
+<ul>
+<li>
 <ol>
-<li>2N2222 Transistor</li>
-<li>555 Astable Mode</li>
-<li>555 Monostable Mode</li>
-<li>555 Pin Configuration</li>
-<li>555 Timer IC</li>
-<li>74595 Shift Register</li>
-<li>BC547 Transistor</li>
-<li>Clock Signal</li>
-<li>IC Notch Orientation</li>
-<li>IC Pin Numbering</li>
-<li>Integrated Circuit</li>
-<li>Latch Signal</li>
-<li>NPN Transistor</li>
-<li>PNP Transistor</li>
-<li>Parallel Data Output</li>
-<li>Serial Data Input</li>
-<li>Shift Register</li>
-<li>Transistor</li>
-<li>Transistor Amplification</li>
-<li>Transistor Base</li>
-<li>Transistor Collector</li>
-<li>Transistor Cutoff</li>
-<li>Transistor Emitter</li>
-<li>Transistor Saturation</li>
-<li>Transistor Switching</li>
-</ol>
-<h3 id="adv-advanced-circuits-8-concepts-40">ADV - Advanced Circuits (8 concepts, 4.0%)</h3>
-<p><em>Complex projects and applications</em></p>
-<ol>
-<li>Bistable Circuit</li>
-<li>Flip Flop Circuit</li>
-<li>LED Flasher</li>
-<li>Memory Cell</li>
-<li>Night Light Circuit</li>
-<li>Oscillator Circuit</li>
-<li>Signal Generator</li>
-<li>Timing Circuit</li>
-</ol>
-<h3 id="bread-breadboarding-25-concepts-125">BREAD - Breadboarding (25 concepts, 12.5%)</h3>
-<p><em>Prototyping and circuit construction</em></p>
-<ol>
-<li>Breadboard Bridge Wire</li>
-<li>Breadboard Columns</li>
-<li>Breadboard Internal Connections</li>
-<li>Breadboard Limitations</li>
-<li>Breadboard Power Rails</li>
-<li>Breadboard Rows</li>
-<li>Breadboard Tie Points</li>
-<li>Breadboard Troubleshooting</li>
-<li>Circuit Layout</li>
-<li>Circuit Testing</li>
-<li>Component Lead Bending</li>
-<li>Component Orientation</li>
-<li>Component Placement</li>
-<li>Component Removal</li>
-<li>Ground Rail Connection</li>
-<li>Jumper Wire</li>
-<li>Neat Wiring Practice</li>
-<li>Power Rail Connection</li>
-<li>Prototyping</li>
-<li>Solderless Breadboard</li>
-<li>Solid Core Wire</li>
-<li>Temporary Circuits</li>
-<li>Wire Length Management</li>
-<li>Wire Routing</li>
-<li>Wire Stripping</li>
-</ol>
-<h3 id="dig-digital-logic-12-concepts-60">DIG - Digital Logic (12 concepts, 6.0%)</h3>
-<p><em>Boolean logic, gates, truth tables</em></p>
-<ol>
-<li>AND Gate</li>
-<li>Boolean Logic</li>
-<li>Combinational Logic</li>
-<li>Logic Level High</li>
-<li>Logic Level Low</li>
-<li>NAND Gate</li>
-<li>NOR Gate</li>
-<li>NOT Gate</li>
-<li>OR Gate</li>
-<li>Sequential Logic</li>
-<li>Truth Table</li>
-<li>XOR Gate</li>
-</ol>
-<h3 id="fund-fundamentals-40-concepts-200">FUND - Fundamentals (40 concepts, 20.0%)</h3>
-<p><em>Core electrical concepts and laws</em></p>
-<ol>
-<li>AC vs DC</li>
-<li>Battery Polarity</li>
-<li>Circuit</li>
-<li>Circuit Diagram</li>
-<li>Circuit Node</li>
-<li>Closed Circuit</li>
-<li>Common Ground</li>
-<li>Component Lead</li>
-<li>Conductivity</li>
-<li>Conventional Current</li>
-<li>Current Flow</li>
-<li>Current Limiting</li>
-<li>Direct Current</li>
-<li>Electric Charge</li>
 <li>Electric Current</li>
-<li>Electrical Safety</li>
-<li>Electron Flow</li>
-<li>Forward Voltage</li>
-<li>Ground</li>
-<li>Heat Dissipation</li>
-<li>Kirchhoff's Current Law</li>
-<li>Kirchhoff's Voltage Law</li>
-<li>Negative Terminal</li>
-<li>Ohm's Law</li>
-<li>Open Circuit</li>
-<li>Parallel Circuit</li>
-<li>Polarity</li>
-<li>Positive Terminal</li>
-<li>Potential Difference</li>
-<li>Power</li>
-<li>Power Rating</li>
-<li>Power Supply Voltage</li>
-<li>Resistance</li>
-<li>Reverse Voltage</li>
-<li>Schematic Symbol</li>
-<li>Series Circuit</li>
-<li>Short Circuit</li>
+</ol>
+</li>
+<li>
+<ol>
 <li>Voltage</li>
-<li>Voltage Division</li>
-<li>Voltage Drop</li>
 </ol>
-<h3 id="io-inputoutput-30-concepts-150">IO - Input/Output (30 concepts, 15.0%)</h3>
-<p><em>Sensors, buttons, LEDs, motors</em></p>
+</li>
+<li>
 <ol>
-<li>Actuator</li>
-<li>Analog Input</li>
-<li>Audio Output</li>
-<li>Button Debouncing</li>
-<li>Common Anode RGB</li>
-<li>Common Cathode RGB</li>
-<li>DC Motor</li>
-<li>Dark Detector</li>
-<li>Digital Input</li>
-<li>Duty Cycle</li>
-<li>Input Pullup</li>
-<li>LED Brightness Control</li>
-<li>LED Resistor Calculator</li>
-<li>LED Series Resistor</li>
-<li>Light Emitting Diode</li>
-<li>Light Sensor</li>
-<li>Momentary Switch</li>
-<li>Motor Control Circuit</li>
-<li>Motor Speed Control</li>
-<li>Normally Closed</li>
-<li>Normally Open</li>
-<li>PWM Control</li>
-<li>Photocell Circuit</li>
-<li>Push Button</li>
-<li>RGB LED</li>
-<li>SPDT Switch</li>
-<li>SPST Switch</li>
-<li>Sensor Threshold</li>
-<li>Toggle Switch</li>
-<li>Visual Output</li>
+<li>Resistance</li>
 </ol>
-<h3 id="meas-measurement-15-concepts-75">MEAS - Measurement (15 concepts, 7.5%)</h3>
-<p><em>Testing, debugging, multimeter use</em></p>
+</li>
+<li>
 <ol>
-<li>Circuit Debugging</li>
-<li>Component Testing</li>
-<li>Continuity Testing</li>
-<li>Current Measurement</li>
-<li>Current Range Selection</li>
-<li>Diode Testing Mode</li>
-<li>Multimeter</li>
-<li>Multimeter Probes</li>
-<li>Power Supply Testing</li>
-<li>Resistance Measurement</li>
-<li>Signal Tracing</li>
-<li>Troubleshooting Strategy</li>
-<li>Visual Inspection</li>
-<li>Voltage Measurement</li>
-<li>Voltage Range Selection</li>
+<li>Ohm's Law</li>
 </ol>
-<h3 id="pass-passive-components-30-concepts-150">PASS - Passive Components (30 concepts, 15.0%)</h3>
-<p><em>Resistors, capacitors, diodes</em></p>
+</li>
+<li>
 <ol>
-<li>Anode</li>
-<li>Capacitance</li>
-<li>Capacitor</li>
-<li>Capacitor Polarity</li>
-<li>Cathode</li>
-<li>Ceramic Capacitor</li>
-<li>Charging Capacitor</li>
-<li>Current Limiting Resistor</li>
-<li>Diode</li>
-<li>Discharging Capacitor</li>
-<li>Electrolytic Capacitor</li>
-<li>Fixed Resistor</li>
-<li>Inductor</li>
-<li>LED Current Rating</li>
-<li>LED Forward Voltage</li>
-<li>LED Polarity</li>
-<li>Light Dependent Resistor</li>
-<li>Photoresistor</li>
-<li>Potentiometer</li>
-<li>Pull-Down Resistor</li>
-<li>Pull-Up Resistor</li>
-<li>RC Circuit</li>
-<li>RC Time Constant</li>
+<li>Power</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Direct Current</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Circuit</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Open Circuit</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Closed Circuit</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Short Circuit</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Series Circuit</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Parallel Circuit</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Ground</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Polarity</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Circuit Diagram</li>
+</ol>
+</li>
+<li><em>...and 80 more</em></li>
+</ul>
+<h3 id="passive-components-pasv">Passive Components (PASV)</h3>
+<p><strong>Count</strong>: 75 concepts (15.0%)</p>
+<p><strong>Concepts</strong>:</p>
+<ul>
+<li>
+<ol>
 <li>Resistor</li>
+</ol>
+</li>
+<li>
+<ol>
 <li>Resistor Color Code</li>
+</ol>
+</li>
+<li>
+<ol>
 <li>Resistor Tolerance</li>
-<li>Thermistor</li>
-<li>Trimmer Resistor</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Fixed Resistor</li>
+</ol>
+</li>
+<li>
+<ol>
 <li>Variable Resistor</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Potentiometer</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Trimmer Resistor</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Photoresistor</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Light Dependent Resistor</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Thermistor</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Pull-Up Resistor</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Pull-Down Resistor</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Current Limiting Resistor</li>
+</ol>
+</li>
+<li>
+<ol>
 <li>Voltage Divider Circuit</li>
 </ol>
-<h3 id="pwr-power-systems-15-concepts-75">PWR - Power Systems (15 concepts, 7.5%)</h3>
-<p><em>Power supplies, regulation, efficiency</em></p>
+</li>
+<li>
+<ol>
+<li>Capacitor</li>
+</ol>
+</li>
+<li><em>...and 60 more</em></li>
+</ul>
+<h3 id="active-components-ics-actv">Active Components &amp; ICs (ACTV)</h3>
+<p><strong>Count</strong>: 63 concepts (12.6%)</p>
+<p><strong>Concepts</strong>:</p>
+<ul>
+<li>
+<ol>
+<li>Transistor</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>NPN Transistor</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>PNP Transistor</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Transistor Base</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Transistor Collector</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Transistor Emitter</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Transistor Switching</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Transistor Amplification</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Transistor Saturation</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Transistor Cutoff</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>2N2222 Transistor</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>BC547 Transistor</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Integrated Circuit</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>555 Timer IC</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>555 Astable Mode</li>
+</ol>
+</li>
+<li><em>...and 48 more</em></li>
+</ul>
+<h3 id="breadboarding-assembly-brdg">Breadboarding &amp; Assembly (BRDG)</h3>
+<p><strong>Count</strong>: 58 concepts (11.6%)</p>
+<p><strong>Concepts</strong>:</p>
+<ul>
+<li>
+<ol>
+<li>Solderless Breadboard</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Full-Size Breadboard</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Half-Size Breadboard</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Breadboard Power Rails</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Breadboard Tie Points</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Breadboard Rows</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Breadboard Columns</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Breadboard Gutter</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Breadboard Numbering</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Breadboard Hole Spacing</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Breadboard Adhesive Backing</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Binding Post</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Breadboard Internal Connections</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Component Placement</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Component Lead Forming</li>
+</ol>
+</li>
+<li><em>...and 43 more</em></li>
+</ul>
+<h3 id="input-components-inpt">Input Components (INPT)</h3>
+<p><strong>Count</strong>: 40 concepts (8.0%)</p>
+<p><strong>Concepts</strong>:</p>
+<ul>
+<li>
+<ol>
+<li>Push Button</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Tactile Button</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>4-Pin Push Button</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Momentary Switch</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Latching Switch</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Toggle Switch</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Slide Switch</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Rocker Switch</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>DIP Switch</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>SPST Switch</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>SPDT Switch</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Normally Open</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Normally Closed</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Contact Bounce</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Button Debouncing</li>
+</ol>
+</li>
+<li><em>...and 25 more</em></li>
+</ul>
+<h3 id="output-components-outp">Output Components (OUTP)</h3>
+<p><strong>Count</strong>: 40 concepts (8.0%)</p>
+<p><strong>Concepts</strong>:</p>
+<ul>
+<li>
+<ol>
+<li>Light Emitting Diode</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>RGB LED</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Common Cathode RGB</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Common Anode RGB</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Color Mixing With LEDs</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>LED Brightness Control</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>LED Series Resistor</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>LED Resistor Calculator</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Driving Multiple LEDs</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Parallel LED Wiring</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>LED Strip</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>LED Matrix</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>LED Chaser Effect</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Blinking Output Pattern</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>DC Motor</li>
+</ol>
+</li>
+<li><em>...and 25 more</em></li>
+</ul>
+<h3 id="power-systems-pwr">Power Systems (PWR)</h3>
+<p><strong>Count</strong>: 40 concepts (8.0%)</p>
+<p><strong>Concepts</strong>:</p>
+<ul>
+<li>
+<ol>
+<li>USB Power Supply</li>
+</ol>
+</li>
+<li>
 <ol>
 <li>5 Volt Power</li>
-<li>7805 Voltage Regulator</li>
-<li>9 Volt Battery</li>
+</ol>
+</li>
+<li>
+<ol>
 <li>Battery Power</li>
-<li>Boost Converter</li>
-<li>Buck Converter</li>
-<li>Current Capacity</li>
-<li>Input Voltage</li>
-<li>Linear Regulator</li>
-<li>Output Voltage</li>
-<li>Power Efficiency</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>9 Volt Battery</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>AA Battery</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Battery Holder</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Battery Pack Wiring</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Rechargeable Battery</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>LiPo Battery</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>TP4056 Charger Module</li>
+</ol>
+</li>
+<li>
+<ol>
 <li>Power Supply Selection</li>
-<li>Switching Regulator</li>
-<li>USB Power Supply</li>
+</ol>
+</li>
+<li>
+<ol>
 <li>Voltage Regulator</li>
 </ol>
-<h2 id="balance-assessment">Balance Assessment</h2>
-<p>✓ <strong>PASS</strong>: All categories are below 30% threshold</p>
-<ul>
-<li>Maximum category percentage: 20.0%</li>
-</ul>
-<h2 id="observations">Observations</h2>
-<ul>
-<li><strong>Largest Category</strong>: FUND with 40 concepts (20.0%)</li>
-<li><strong>Smallest Category</strong>: ADV with 8 concepts (4.0%)</li>
-<li>
-<p><strong>Distribution Spread (Std Dev)</strong>: 5.19%</p>
 </li>
 <li>
-<p>Distribution is well-balanced ✓</p>
+<ol>
+<li>7805 Voltage Regulator</li>
+</ol>
 </li>
+<li>
+<ol>
+<li>Regulator Dropout Voltage</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Regulator Bypass Capacitors</li>
+</ol>
+</li>
+<li><em>...and 25 more</em></li>
 </ul>
+<h3 id="measurement-testing-meas">Measurement &amp; Testing (MEAS)</h3>
+<p><strong>Count</strong>: 38 concepts (7.6%)</p>
+<p><strong>Concepts</strong>:</p>
+<ul>
+<li>
+<ol>
+<li>Multimeter</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Digital Multimeter</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Analog Multimeter</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Multimeter Display</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Multimeter Dial Settings</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Auto-Ranging Multimeter</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Multimeter Probes</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Multimeter Safety</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Voltage Measurement</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Measuring In-Circuit Voltage</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Measuring Battery Voltage</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Current Measurement</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Reading Milliamps</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Resistance Measurement</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Verifying Resistor Color Code</li>
+</ol>
+</li>
+<li><em>...and 23 more</em></li>
+</ul>
+<h3 id="digital-logic-boolean-dlog">Digital Logic &amp; Boolean (DLOG)</h3>
+<p><strong>Count</strong>: 30 concepts (6.0%)</p>
+<p><strong>Concepts</strong>:</p>
+<ul>
+<li>
+<ol>
+<li>Binary State</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Digital Signal</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Boolean Logic</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Logical AND Operation</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Logical OR Operation</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Logical NOT Operation</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Truth Table</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Reading a Truth Table</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Building a Truth Table</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Logic Input Combination</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Logic Gate Symbol</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>AND Gate</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Transistor AND Gate</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>OR Gate</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Transistor OR Gate</li>
+</ol>
+</li>
+<li><em>...and 15 more</em></li>
+</ul>
+<h3 id="advanced-circuits-capstone-projects-caps">Advanced Circuits &amp; Capstone Projects (CAPS)</h3>
+<p><strong>Count</strong>: 21 concepts (4.2%)</p>
+<p><strong>Concepts</strong>:</p>
+<ul>
+<li>
+<ol>
+<li>Flip Flop Circuit</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Memory Cell</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Bistable Circuit</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Timing Circuit</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Oscillator Circuit</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>LED Flasher</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Signal Generator</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Multi-Stage Circuit</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Combining Sensor and Output</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Night Light Circuit</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Solar Night Light Project</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Busy Board Project</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>LED Noodle Costume</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Capstone Project Planning</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Project Proposal</li>
+</ol>
+</li>
+<li><em>...and 6 more</em></li>
+</ul>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>✅ <strong>Excellent balance</strong>: Categories are evenly distributed (spread: 14.8%)</li>
+<li>✅ <strong>MISC category minimal</strong>: Good categorization specificity</li>
+</ul>
+<h3 id="educational-use-recommendations">Educational Use Recommendations</h3>
+<ul>
+<li>Use taxonomy categories for color-coding in graph visualizations</li>
+<li>Design curriculum modules based on taxonomy groupings</li>
+<li>Create filtered views for focused learning paths</li>
+<li>Use categories for assessment organization</li>
+<li>Enable navigation by topic area in interactive tools</li>
+</ul>
+<hr />
+<p><em>Report generated by learning-graph-reports/taxonomy_distribution.py</em></p>
 
 
 
@@ -1581,13 +2461,13 @@
         
         
           
-          <a href="../../license/" class="md-footer__link md-footer__link--next" aria-label="Next: License">
+          <a href="../mascot-test/" class="md-footer__link md-footer__link--next" aria-label="Next: Mascot Style Guide">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                License
+                Mascot Style Guide
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1626,6 +2506,12 @@
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
         <script src="../../js/extras.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
       
     
   </body>

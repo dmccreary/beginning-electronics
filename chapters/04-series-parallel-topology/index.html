@@ -1,0 +1,2403 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="How resistors combine in series and parallel, how current divides among branches, the vocabulary of circuit topology, and the boundary between conductors, insulators, and semiconductor materials.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/chapters/04-series-parallel-topology/">
+      
+      
+        <link rel="prev" href="../03-circuit-analysis-kirchhoff/">
+      
+      
+        <link rel="next" href="../05-conductors-batteries-review/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Series, Parallel, and Circuit Topology - Beginning Electronics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extras.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WP3K3TSFJ7"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WP3K3TSFJ7",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WP3K3TSFJ7",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#series-parallel-and-circuit-topology" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Beginning Electronics" class="md-header__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Beginning Electronics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Series, Parallel, and Circuit Topology
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Beginning Electronics" class="md-nav__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Beginning Electronics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../setup/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-electricity-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Electricity Basics: Voltage, Current, and Resistance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-current-charge-units-safety/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Current, Charge, Units, and Electrical Safety
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-circuit-analysis-kirchhoff/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Circuit Analysis, Kirchhoff's Laws, and Energy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    4. Series, Parallel, and Circuit Topology
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    4. Series, Parallel, and Circuit Topology
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parallel-resistance-when-current-gets-a-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallel Resistance: When Current Gets a Choice
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parallel Resistance: When Current Gets a Choice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parallel-resistance-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallel Resistance Formula
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-resistor-parallel-shortcut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-Resistor Parallel Shortcut
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#series-parallel-circuits-mixing-both-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Series-Parallel Circuits: Mixing Both Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Series-Parallel Circuits: Mixing Both Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-series-and-parallel-circuits-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Series and Parallel Circuits Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-dividers-and-voltage-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current Dividers and Voltage References
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Current Dividers and Voltage References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-divider-formula-two-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current Divider Formula (Two Branches)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#circuit-topology-reading-the-map-not-just-the-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuit Topology: Reading the Map, Not Just the Board
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Circuit Topology: Reading the Map, Not Just the Board">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-circuit-topology-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Circuit Topology Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-material-world-conductors-insulators-and-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Material World: Conductors, Insulators, and Semiconductors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Material World: Conductors, Insulators, and Semiconductors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-material-conductivity-sorter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Material Conductivity Sorter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#electric-fields-and-static-electricity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electric Fields and Static Electricity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storing-and-spending-electrical-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storing and Spending Electrical Energy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Storing and Spending Electrical Energy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#electrical-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electrical Energy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batteries-in-the-real-world-emf-internal-resistance-and-terminal-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batteries in the Real World: EMF, Internal Resistance, and Terminal Voltage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Batteries in the Real World: EMF, Internal Resistance, and Terminal Voltage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminal-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminal Voltage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary: Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-conductors-batteries-review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Conductors, Batteries, and Circuit Vocabulary Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-meet-your-breadboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Meet Your Breadboard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-wiring-skills-layout/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Wiring Skills and Circuit Layout
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-troubleshooting-perfboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Troubleshooting and Optional Perfboard Packaging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-resistors-and-capacitors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Resistors and Capacitors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-capacitor-timing-resistor-values/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Capacitor Timing and Resistor Values
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-resistor-codes-capacitor-details/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Resistor Codes and Capacitor Details
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-diodes-and-leds/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Diodes and LEDs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-meet-the-transistor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Meet the Transistor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-555-timer-chip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. The 555 Timer Chip
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-shift-registers-ic-handling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Shift Registers and IC Handling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-switches-buttons-wired-logic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Switches, Buttons, and Wired Logic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-sensing-light-dark-detectors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Sensing Light: Photoresistors and Dark Detectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-leds-rgb-color-motors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. LEDs, RGB Color, and Motors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-driving-outputs-motors-buzzers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19. Driving Outputs: Motors, Buzzers, and More
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-using-a-multimeter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20. Using a Multimeter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-systematic-troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21. Systematic Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-batteries-regulators-buck-converters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22. Batteries, Regulators, and Buck Converters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-signal-generators-solar-power/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23. Signal Generators and Solar Power
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-boolean-logic-transistor-gates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24. Boolean Logic and Transistor Gates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-nand-nor-xor-rs-latch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25. NAND, NOR, XOR, and the RS Latch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-advanced-circuits-capstone-project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    26. Advanced Circuits and Your Capstone Project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../labs/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Hands-on Labs
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Micro Simulations
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../kits/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Kits and Projects
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parallel-resistance-when-current-gets-a-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallel Resistance: When Current Gets a Choice
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parallel Resistance: When Current Gets a Choice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parallel-resistance-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallel Resistance Formula
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-resistor-parallel-shortcut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-Resistor Parallel Shortcut
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#series-parallel-circuits-mixing-both-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Series-Parallel Circuits: Mixing Both Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Series-Parallel Circuits: Mixing Both Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-series-and-parallel-circuits-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Series and Parallel Circuits Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-dividers-and-voltage-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current Dividers and Voltage References
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Current Dividers and Voltage References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-divider-formula-two-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current Divider Formula (Two Branches)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#circuit-topology-reading-the-map-not-just-the-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuit Topology: Reading the Map, Not Just the Board
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Circuit Topology: Reading the Map, Not Just the Board">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-circuit-topology-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Circuit Topology Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-material-world-conductors-insulators-and-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Material World: Conductors, Insulators, and Semiconductors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Material World: Conductors, Insulators, and Semiconductors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-material-conductivity-sorter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Material Conductivity Sorter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#electric-fields-and-static-electricity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electric Fields and Static Electricity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storing-and-spending-electrical-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storing and Spending Electrical Energy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Storing and Spending Electrical Energy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#electrical-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electrical Energy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batteries-in-the-real-world-emf-internal-resistance-and-terminal-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batteries in the Real World: EMF, Internal Resistance, and Terminal Voltage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Batteries in the Real World: EMF, Internal Resistance, and Terminal Voltage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminal-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminal Voltage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary: Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="series-parallel-and-circuit-topology">Series, Parallel, and Circuit Topology</h1>
+<h2 id="summary">Summary</h2>
+<p>Students explore how resistances combine in series and parallel, voltage references, current dividers, and the vocabulary of circuit topology (nodes, loops, branches). This chapter sets up the math-light intuition needed for the voltage-divider circuits used throughout the passive-components chapters.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 19 concepts from the learning graph:</p>
+<ol>
+<li>Parallel Resistance</li>
+<li>Equivalent Resistance</li>
+<li>Voltage Reference</li>
+<li>Series-Parallel Circuit</li>
+<li>Current Divider</li>
+<li>Circuit Topology</li>
+<li>Circuit Branch</li>
+<li>Electrical Energy</li>
+<li>Joule</li>
+<li>Watt-Hour</li>
+<li>Water Pipe Analogy</li>
+<li>Electric Field</li>
+<li>Insulator</li>
+<li>Conductor</li>
+<li>Semiconductor Material</li>
+<li>Static Electricity</li>
+<li>Electromotive Force</li>
+<li>Internal Resistance</li>
+<li>Terminal Voltage</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-electricity-basics/">1. Electricity Basics: Voltage, Current, and Resistance</a></li>
+<li><a href="../02-current-charge-units-safety/">2. Current, Charge, Units, and Electrical Safety</a></li>
+<li><a href="../03-circuit-analysis-kirchhoff/">3. Circuit Analysis, Kirchhoff's Laws, and Energy</a></li>
+</ul>
+<hr />
+<p>Chapter 3 ended with a single, tidy loop: one battery, resistors wired one after another, one loop current flowing through all of them. Real circuits are almost never that simple. The moment you plug two LEDs into the same breadboard power rail, or wire a sensor next to a motor, you've built something with more than one path for current to choose from. This chapter gives you the tools to handle that — and to talk about <em>any</em> circuit's wiring pattern with confidence, no matter how tangled it looks at first glance.</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Time to Branch Out</p>
+<p><img alt="Volt waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Welcome back, builder! Chapter 3 handed you the math for a single-path circuit. This chapter adds the missing piece: what happens the instant current gets a <em>choice</em> of paths. We'll cover parallel resistance, series-parallel combinations, the map-reading vocabulary engineers use for any circuit's layout, and — because every circuit is built out of <em>something</em> — a quick tour of the materials that make electricity possible in the first place. Let's light it up!</p>
+</div>
+<h2 id="parallel-resistance-when-current-gets-a-choice">Parallel Resistance: When Current Gets a Choice</h2>
+<p>In a series circuit, current has exactly one route, so every resistor along that route fights the flow together, and resistances simply add. A <strong>parallel resistance</strong> is different: it describes what happens when two or more resistors are connected side by side across the same two nodes, giving current more than one route to choose between at once. Water finds this idea intuitive — if a river splits around an island into two channels, more total water can get past that island than if it only had one narrow channel to squeeze through.</p>
+<p>That's exactly why adding a resistor in parallel always makes the combined resistance <em>go down</em>, never up — a fact that trips up almost every beginner the first time they meet it. Adding another resistor in series always slows the flow down further. Adding another resistor in parallel opens up another lane, so the flow finds it easier to get through overall.</p>
+<p>The <strong>equivalent resistance</strong> of any network of resistors is the single resistor value that could replace the whole network without changing the current the battery delivers. You already calculated an equivalent resistance in Chapter 3, without the fancy name: when three resistors were wired in series, you added them up to find the total series resistance the loop "feels." Parallel resistors get their own version of that same idea, using a different formula.</p>
+<h4 id="parallel-resistance-formula">Parallel Resistance Formula</h4>
+<div class="arithmatex">\[ \frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \dots \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( R_{eq} \)</span> is the equivalent resistance of the whole parallel combination, in ohms</li>
+<li><span class="arithmatex">\( R_1, R_2, R_3 \)</span> are the individual resistor values in each parallel branch, in ohms</li>
+</ul>
+<p>For just two resistors — the case you'll meet constantly on a breadboard — there's a shortcut version of the same formula that skips the reciprocals:</p>
+<h4 id="two-resistor-parallel-shortcut">Two-Resistor Parallel Shortcut</h4>
+<div class="arithmatex">\[ R_{eq} = \frac{R_1 \times R_2}{R_1 + R_2} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( R_{eq} \)</span> is the equivalent resistance of the two-resistor pair, in ohms</li>
+<li><span class="arithmatex">\( R_1 \)</span> and <span class="arithmatex">\( R_2 \)</span> are the two resistor values, in ohms</li>
+</ul>
+<p>Try it with real numbers: a 100 Ω resistor and a 300 Ω resistor wired in parallel combine to <span class="arithmatex">\( R_{eq} = \dfrac{100 \times 300}{100 + 300} = \dfrac{30{,}000}{400} = 75 \)</span> Ω — a smaller number than <em>either</em> original resistor. That's the pattern to remember: a parallel combination is always smaller than its smallest branch.</p>
+<p>Here's how series and parallel resistance compare side by side:</p>
+<table>
+<thead>
+<tr>
+<th>Circuit Type</th>
+<th>Equivalent Resistance Formula</th>
+<th>What Happens as You Add More Resistors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Series</td>
+<td><span class="arithmatex">\( R_{eq} = R_1 + R_2 + R_3 + \dots \)</span></td>
+<td>Total resistance always goes <strong>up</strong></td>
+</tr>
+<tr>
+<td>Parallel</td>
+<td><span class="arithmatex">\( \dfrac{1}{R_{eq}} = \dfrac{1}{R_1} + \dfrac{1}{R_2} + \dfrac{1}{R_3} + \dots \)</span></td>
+<td>Total resistance always goes <strong>down</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The Backwards-Feeling Rule</p>
+<p><img alt="Volt thinking about parallel resistance" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+I know, I know — "add a resistor and get <em>less</em> resistance" sounds backwards the first time you hear it. Picture toll booths on a highway instead of one pipe: adding a second booth doesn't slow traffic down, it opens up another lane. More parallel paths, less overall resistance to the flow. Once that clicks, you'll never forget it.</p>
+</div>
+<h2 id="series-parallel-circuits-mixing-both-patterns">Series-Parallel Circuits: Mixing Both Patterns</h2>
+<p>Most real circuits — including plenty you'll build later in this course — aren't purely series or purely parallel. They're a <strong>series-parallel circuit</strong>: a circuit that combines both wiring patterns in the same network, some components chained one after another and others branching side by side. Solving one looks intimidating at first, but the trick is simple: find any parallel section, collapse it down into its single equivalent resistance, and then treat the whole thing as one ordinary series chain.</p>
+<p>Let's reuse the three resistors from Chapter 3's worked example — 100 Ω, 220 Ω, and 330 Ω — but rewire them. Instead of one long chain, put the 220 Ω and 330 Ω resistors side by side in parallel, then wire that parallel pair in series with the 100 Ω resistor and a 9-volt battery. First, collapse the parallel pair: <span class="arithmatex">\( R_{eq} = \dfrac{220 \times 330}{220 + 330} = \dfrac{72{,}600}{550} = 132 \)</span> Ω. Now it's just a two-resistor series chain: <span class="arithmatex">\( R_{total} = 100 + 132 = 232 \)</span> Ω. Ohm's Law finishes the job: <span class="arithmatex">\( I = V \div R = 9 \div 232 \approx 0.0388 \)</span> amps, or about 38.8 mA flowing out of the battery.</p>
+<p>The interactive simulation below lets you build both simple patterns side by side and watch exactly how current and voltage behave differently in each one.</p>
+<h4 id="diagram-series-and-parallel-circuits-comparison">Diagram: Series and Parallel Circuits Comparison</h4>
+<iframe src="https://dmccreary.github.io/intro-to-physics-course/sims/series-parallel/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<p><a class="md-button" href="https://dmccreary.github.io/intro-to-physics-course/sims/series-parallel/main.html">Run the Series and Parallel Circuits Comparison fullscreen</a></p>
+<details>
+<summary>Series and Parallel Circuits Comparison (reused MicroSim)</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> series-parallel<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Reused<br/>
+<strong>Source:</strong> https://dmccreary.github.io/intro-to-physics-course/sims/series-parallel/<br/>
+<strong>Source Repo:</strong> https://github.com/dmccreary/intro-to-physics-course/tree/main/docs/sims/series-parallel</p>
+<p>Reused from the MicroSim catalog (WHAT match score 0.7829). Bloom Taxonomy: Apply (L3). Bloom Verb: calculate. Learning objective: Calculate the equivalent resistance of a series circuit and a parallel circuit side by side, and predict how current and voltage divide differently in each, by adjusting resistor values and observing which bulb glows brightest in an animated comparison.</p>
+</details>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Collapse, Then Conquer</p>
+<p><img alt="Volt giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Whenever a circuit looks like a tangle of series and parallel sections at once, don't panic — just work from the inside out. Collapse the smallest parallel group into one equivalent resistor first, then treat the result as a plain series chain. Repeat as needed. Even complicated-looking circuits fall apart into simple steps this way.</p>
+</div>
+<h2 id="current-dividers-and-voltage-references">Current Dividers and Voltage References</h2>
+<p>Chapter 2 taught you that a series circuit divides voltage among its components — that's voltage division. A parallel circuit has a mirror-image trick: it divides <em>current</em> instead. A <strong>current divider</strong> splits a single incoming current across two or more parallel branches, sending more current down the branch with less resistance and less current down the branch with more resistance.</p>
+<h4 id="current-divider-formula-two-branches">Current Divider Formula (Two Branches)</h4>
+<div class="arithmatex">\[ I_1 = I_{total} \times \frac{R_2}{R_1 + R_2} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( I_1 \)</span> is the current flowing through branch 1, in amps</li>
+<li><span class="arithmatex">\( I_{total} \)</span> is the total current arriving at the junction, in amps</li>
+<li><span class="arithmatex">\( R_1 \)</span> is the resistance of branch 1, and <span class="arithmatex">\( R_2 \)</span> is the resistance of the <em>other</em> branch, both in ohms</li>
+</ul>
+<p>Notice the branch with the <em>smaller</em> resistance value shows up as the <em>larger</em> fraction — current always prefers the easier path, just like Chapter 3's junction rule (Kirchhoff's Current Law) demands. Going back to the 100 Ω and 300 Ω parallel pair from earlier: if that 75 Ω combination carries a total of 120 mA fed by a 9-volt source, the current divider formula gives 90 mA through the 100 Ω branch and 30 mA through the 300 Ω branch — and <span class="arithmatex">\( 90 + 30 = 120 \)</span> mA, exactly matching the total, just as Kirchhoff's Current Law promises.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Watch the Flipped Fraction</p>
+<p><img alt="Volt giving a warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+The single most common current-divider mistake: putting the <em>wrong</em> resistor on top of the fraction. To find the current through branch 1, the formula uses <span class="arithmatex">\( R_2 \)</span> — the <em>other</em> branch's resistance — in the numerator, not <span class="arithmatex">\( R_1 \)</span>. Double-check which resistor you're solving for before you plug in numbers.</p>
+</div>
+<p>Every one of these voltage and current calculations is measured <em>relative to something</em> — you can't just say "this point is at 5 volts" without agreeing on a starting line. That starting line is called a <strong>voltage reference</strong>: a fixed point in a circuit that every other voltage gets compared against. Chapter 1 already introduced the most common choice of voltage reference, ground, but technically <em>any</em> node in a circuit could be chosen as the zero-volt reference point — ground is simply the overwhelmingly popular convention, because it usually lines up with a battery's negative terminal.</p>
+<h2 id="circuit-topology-reading-the-map-not-just-the-board">Circuit Topology: Reading the Map, Not Just the Board</h2>
+<p>Two circuits can look completely different laid out on a breadboard — one squeezed into a corner, one spread across the whole board — and still be electrically identical underneath. What matters isn't where the wires <em>physically</em> sit, but how the components <em>connect</em>. That underlying connection pattern is called <strong>circuit topology</strong>: the map of nodes, branches, and loops that describes a circuit's wiring, independent of its physical layout.</p>
+<p>Three vocabulary words make that map precise:</p>
+<ul>
+<li>A node (introduced in Chapter 3) is any point in a circuit where two or more components connect</li>
+<li>A <strong>circuit branch</strong> is a single path between two nodes, containing one or more components wired in series along that path</li>
+<li>A loop is any closed path through a circuit that starts and ends at the same node without repeating a branch</li>
+</ul>
+<p>Here's a detail that surprises a lot of beginners: two points that look far apart on your physical breadboard can be the same electrical node, because the breadboard's hidden metal strips connect entire rows together internally. Topology is about that hidden, electrical reality — not about how far apart two holes look on the plastic.</p>
+<p>Explore the circuit below to see nodes, branches, and loops highlighted directly on a series-parallel circuit diagram.</p>
+<h4 id="diagram-circuit-topology-explorer">Diagram: Circuit Topology Explorer</h4>
+<iframe src="../../sims/circuit-topology-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Circuit Topology Explorer</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> circuit-topology-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p>Purpose: Help students recognize and label nodes, branches, and loops on a real series-parallel circuit diagram, and see that topology describes electrical connection, not physical position.</p>
+<p>Bloom Taxonomy: Remember (L1). Bloom Verb: identify.</p>
+<p>Learning objective: Identify the nodes, branches, and loops in a series-parallel circuit (one battery, one series resistor, and two parallel resistors) by clicking each part of the diagram and reading its definition in an infobox.</p>
+<p>Canvas layout:
+- Left/center (roughly 70% of width): a series-parallel circuit diagram — a battery, one resistor in series, then two resistors in parallel, forming a closed loop — with four labeled node dots (A, B, C, D)
+- Right side (roughly 30%, stacking below on narrow screens): an infobox panel showing information about whichever element was last clicked</p>
+<p>Visual elements:
+- Four node dots, drawn as filled circles at every junction point, each labeled A–D
+- Three branches, drawn as distinct colored line segments: the series-resistor branch, and the two parallel-resistor branches
+- A toggle-highlighted loop overlay that traces one full loop around the circuit when the "Loop" button is active
+- A small "same node!" pulse effect that flashes both ends of a node whenever a node with multiple visual connection points is clicked, reinforcing that spread-out points can share one electrical identity</p>
+<p>Interactive controls:
+- Click any node dot to open an infobox defining "node" and confirming how many branches meet there
+- Click any branch to open an infobox defining "circuit branch" and listing which components lie along it
+- Button: "Highlight a Loop" traces one closed loop in a pulsing outline and opens an infobox defining "loop"
+- Button: "Reset View" clears all highlights and infobox content</p>
+<p>Default parameters:
+- No element pre-selected; infobox shows a "Click a node, a branch, or the Loop button to explore this circuit's topology" placeholder</p>
+<p>Behavior when an element is clicked:
+- Node: infobox shows "Node — a connection point where two or more components meet. This node connects N branches." (N calculated from the actual diagram)
+- Branch: infobox shows "Circuit Branch — a single path between two nodes. This branch contains: [component list]."
+- Loop button: infobox shows "Loop — a closed path that returns to its starting node without reusing a branch. This circuit has more than one possible loop!"</p>
+<p>Data Visibility Requirements:
+  Stage 1 (default): Show the full series-parallel diagram with all four nodes and three branches visible but unselected
+  Stage 2 (node or branch clicked): Show the selected element highlighted in the diagram plus its matching infobox definition
+  Stage 3 (Highlight a Loop clicked): Show one complete loop traced in an animated outline, so "loop" becomes a visible path rather than an abstract word</p>
+<p>Instructional Rationale: This is a Remember-level objective (identify and label topology vocabulary), so the interaction is a straightforward click-to-reveal labeling pattern rather than a calculation tool — matching how a beginner actually learns new vocabulary: point at something, learn its name, repeat.</p>
+<p>Color scheme: Blue circuit lines and node dots on a light background, with the currently selected element highlighted in warm orange, consistent with the color logic used throughout this book.</p>
+<p>Responsive behavior: The diagram and infobox panel reflow into a stacked layout on narrow screens; all nodes, branches, and buttons remain clickable at any window width.</p>
+<p>Implementation: p5.js, using clickable regions defined around each node and branch; infobox rendered as an HTML panel beside (or below, on narrow screens) the canvas.</p>
+</details>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">New Vocabulary, Same Circuits</p>
+<p><img alt="Volt encouraging you" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+Nodes, branches, and loops can feel like a lot of new words at once, but you already understand every circuit they describe — you built plenty of them in Chapter 3. This section just gives you the precise language engineers use, so when a datasheet or a teammate says "loop," you'll know exactly what they mean.</p>
+</div>
+<h2 id="a-material-world-conductors-insulators-and-semiconductors">A Material World: Conductors, Insulators, and Semiconductors</h2>
+<p>Every circuit you've studied so far assumed wires just work — that electrons flow freely through them and stop dead at the plastic coating. That behavior isn't an accident; it comes straight from the material each part is made of. A <strong>conductor</strong> is a material that allows electric current to flow through it easily, because its atoms hold onto their outer electrons loosely, letting them drift from atom to atom with very little resistance. Copper, aluminum, and most metals are excellent conductors, which is exactly why they're used inside wires.</p>
+<p>An <strong>insulator</strong> is the opposite: a material that strongly resists the flow of electric current, because its electrons are held tightly in place and simply won't drift. Rubber, glass, plastic, and wood are all insulators, which is why the coating around every wire in your kit is made of plastic — it keeps current safely contained inside the copper instead of leaking out to your fingers.</p>
+<p>Between those two extremes sits one of the most important materials in modern electronics: <strong>semiconductor material</strong>. A semiconductor conducts current better than an insulator but worse than a true conductor on its own — and, more importantly, its conductivity can be controlled and switched on purpose. Silicon is by far the most common semiconductor material, and it's the substance hiding inside every transistor, every 555 timer, and every 74HC595 shift register in your kit. You'll learn exactly how transistors use this switchable behavior later in this course.</p>
+<table>
+<thead>
+<tr>
+<th>Material Type</th>
+<th>How Easily Current Flows</th>
+<th>Everyday Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Conductor</strong></td>
+<td>Very easily — electrons drift almost freely</td>
+<td>Copper wire, aluminum foil, most metals</td>
+</tr>
+<tr>
+<td><strong>Insulator</strong></td>
+<td>Barely at all — electrons stay locked in place</td>
+<td>Rubber, glass, plastic, wood</td>
+</tr>
+<tr>
+<td><strong>Semiconductor Material</strong></td>
+<td>In between — and controllable on purpose</td>
+<td>Silicon, germanium (inside every transistor and chip)</td>
+</tr>
+</tbody>
+</table>
+<p>Sort the everyday materials below into their correct category, and see immediately whether your guess was right.</p>
+<h4 id="diagram-material-conductivity-sorter">Diagram: Material Conductivity Sorter</h4>
+<iframe src="../../sims/material-conductivity-sorter/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Material Conductivity Sorter</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> material-conductivity-sorter<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p>Purpose: Help students classify common, everyday materials as conductors, insulators, or semiconductor materials, reinforcing the comparison table with hands-on sorting practice.</p>
+<p>Bloom Taxonomy: Understand (L2). Bloom Verb: classify.</p>
+<p>Learning objective: Classify everyday materials — copper wire, aluminum foil, rubber, glass, plastic, wood, a silicon chip, pencil graphite, salt water, and a steel paperclip — as a conductor, insulator, or semiconductor material, by dragging each material card into the correct one of three labeled bins and receiving immediate right/wrong feedback.</p>
+<p>Canvas layout:
+- Top strip: a horizontal row of draggable material cards, each showing an icon and a name
+- Bottom: three labeled drop bins side by side — "Conductor," "Insulator," "Semiconductor Material" — each with a distinct background color
+- Small score readout in the corner: "Correct: _ / 10"</p>
+<p>Visual elements:
+- Ten material cards: copper wire, aluminum foil, rubber, glass, plastic, wood, silicon chip, pencil graphite, salt water, and steel paperclip
+- Each bin glows green briefly when a correct card is dropped in, and glows red with a gentle shake animation when an incorrect card is dropped in, then the card returns to the top row to try again
+- A small info icon on each card that, when hovered, shows a one-line reason for its correct classification</p>
+<p>Interactive controls:
+- Drag-and-drop: move each material card into one of the three bins
+- Hover any card for a tooltip explaining why it belongs where it does (shown even before sorting, as an optional hint)
+- Button: "Reset" returns all cards to the top row and clears the score
+- Button: "Reveal All" (after at least one attempt) shows every card correctly sorted, for review</p>
+<p>Default parameters:
+- All ten cards start in the top row, unsorted; score starts at 0/10</p>
+<p>Data Visibility Requirements:
+  Stage 1 (default): Show all ten unsorted cards and three empty bins
+  Stage 2 (card dropped): Show immediate color feedback (green/red) plus the card's one-line explanation, and update the running score
+  Stage 3 (Reveal All): Show the fully sorted board with every material in its correct bin, so learners can review any they missed</p>
+<p>Instructional Rationale: This is an Understand-level classification objective, so the design uses a drag-and-drop sorter with immediate corrective feedback rather than a passive diagram. Sorting concrete, familiar objects (a paperclip, a pencil, a glass) builds the category boundaries faster than reading definitions alone, and the always-visible hint tooltip keeps the activity encouraging rather than purely a test.</p>
+<p>Color scheme: Green bin highlight for conductor-friendly feedback, cool gray for insulator, warm orange for semiconductor material (echoing this book's accent color for anything related to switching or control), on a light neutral background.</p>
+<p>Responsive behavior: The three bins stack vertically on narrow screens with the card row scrolling horizontally above them; drag-and-drop gestures work with touch as well as mouse.</p>
+<p>Implementation: p5.js, with each material card as a draggable object checked against a lookup table of correct bins on drop; bins rendered as fixed drop-target regions.</p>
+</details>
+<h2 id="electric-fields-and-static-electricity">Electric Fields and Static Electricity</h2>
+<p>Zoom in past the level of wires and resistors, and there's a deeper reason voltage pushes current at all: electric charge creates an invisible push-and-pull all around it, called an <strong>electric field</strong>. Every charged object — an electron, a battery terminal, even your own body after shuffling across a carpet — is surrounded by this field, and any other charge sitting inside that field feels a force from it. Voltage, the "push" you met all the way back in Chapter 1, is really just a way of measuring how strong that electric field's push is between two points.</p>
+<p>Most of the time, charge moves — that's current, the whole subject of this course. But charge can also sit still and simply build up in one place, especially on materials that don't conduct it away easily. That buildup of charge, with nowhere to flow, is called <strong>static electricity</strong>. Chapter 3 already mentioned one consequence of static electricity — a static discharge that can silently damage a sensitive chip — but the buildup itself shows up in plenty of everyday, harmless ways too:</p>
+<ul>
+<li>Rubbing a balloon on your hair and watching strands stand up, pulled by the balloon's electric field</li>
+<li>A sock clinging to a shirt straight out of the dryer</li>
+<li>A small spark and snap when you touch a metal doorknob after walking across a carpet in dry weather</li>
+<li>Lightning itself — an enormous static discharge between a storm cloud and the ground</li>
+</ul>
+<p>Static electricity is really just an electric field with nowhere convenient to send its charge — the instant a conductor offers a path (a finger near a doorknob, a wire touching a chip), that stored-up charge finds it and discharges all at once.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Same Idea, Bigger and Smaller Scale</p>
+<p><img alt="Volt giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+A doorknob spark and a lightning bolt are the exact same phenomenon at wildly different scales — that's <em>shockingly</em> satisfying once you notice it. Both are just built-up charge finally finding a conductor to jump through.</p>
+</div>
+<h2 id="storing-and-spending-electrical-energy">Storing and Spending Electrical Energy</h2>
+<p>Power told you how <em>fast</em> a circuit does work, measured in watts — but it never told you the total <em>amount</em> of work done over time. That total is called <strong>electrical energy</strong>: the overall amount of electrical work a circuit performs, found by multiplying power by the time it acts.</p>
+<h4 id="electrical-energy">Electrical Energy</h4>
+<div class="arithmatex">\[ E = P \times t \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( E \)</span> is electrical energy, measured in joules (J) when power is in watts and time is in seconds</li>
+<li><span class="arithmatex">\( P \)</span> is power, measured in watts (W)</li>
+<li><span class="arithmatex">\( t \)</span> is time, measured in seconds (s)</li>
+</ul>
+<p>When power is measured in watts and time in seconds, the energy comes out in an official unit called the <strong>joule</strong> (J), named after physicist James Joule — one joule is a genuinely tiny amount of energy, roughly what it takes to lift a small apple one meter off a table. A single AA battery powering an LED for an hour releases only a few dozen joules, which is why joules are the natural unit for a single instant of circuit behavior, but an awkward one for describing how long a battery lasts.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Tiny Unit, Huge Job</p>
+<p><img alt="Volt thinking about energy units" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+A single joule doesn't sound like much, and it isn't — but that's exactly why it's the right-sized unit for a single instant of circuit behavior. Zoom out to a whole afternoon of use, though, and joules pile up fast, which is exactly the problem the next unit solves.</p>
+</div>
+<p>For longer stretches of time, electronics uses a more convenient, practical unit: the <strong>watt-hour</strong> (Wh) — the amount of energy used by something drawing one watt of power for one full hour. A battery's printed capacity (often given in milliamp-hours) is really just a shorthand way of expressing how many watt-hours of energy it can deliver before running dry.</p>
+<p>Go all the way back to Chapter 1's <strong>water pipe analogy</strong> for one last comparison: if power is how fast water flows through a pipe right now, electrical energy is the <em>total volume</em> of water that ends up in a bucket after the tap has been running for a while. A wide-open tap (high power) fills the bucket fast; leave a narrow trickle running for hours (lower power, longer time) and you can end up with the exact same total volume — the exact same energy — in the bucket either way.</p>
+<h2 id="batteries-in-the-real-world-emf-internal-resistance-and-terminal-voltage">Batteries in the Real World: EMF, Internal Resistance, and Terminal Voltage</h2>
+<p>Every battery so far in this course has been treated as a perfect, unwavering source of voltage. Real batteries aren't quite that perfect, and the vocabulary in this final section explains why a battery's voltage sags a little whenever it's actually put to work.</p>
+<p>The voltage a battery <em>would</em> supply if it had absolutely nothing inside fighting the flow is called its <strong>electromotive force</strong> (often abbreviated EMF, and written with the Greek letter <span class="arithmatex">\( \varepsilon \)</span>) — the ideal, ceiling-level push the battery's chemistry is capable of producing. But every real battery also has a tiny bit of resistance built into its own internal chemistry and construction, called its <strong>internal resistance</strong>, which quietly eats into that push the instant current starts flowing.</p>
+<p>That leftover, usable voltage — the voltage you'd actually measure with a meter across the battery's real terminals while current is flowing — is called the <strong>terminal voltage</strong>, and it's always a little lower than the EMF once a circuit is drawing current.</p>
+<h4 id="terminal-voltage">Terminal Voltage</h4>
+<div class="arithmatex">\[ V_{terminal} = \varepsilon - I \times r_{internal} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( V_{terminal} \)</span> is the terminal voltage, measured in volts (V)</li>
+<li><span class="arithmatex">\( \varepsilon \)</span> is the battery's electromotive force (EMF), measured in volts (V)</li>
+<li><span class="arithmatex">\( I \)</span> is the current the battery is supplying, measured in amps (A)</li>
+<li><span class="arithmatex">\( r_{internal} \)</span> is the battery's internal resistance, measured in ohms (Ω)</li>
+</ul>
+<p>This is exactly why a battery pack can measure a healthy voltage with a meter when nothing is connected, then sag noticeably the moment a power-hungry motor switches on: more current flowing means more voltage lost across that small internal resistance. A gently used AA battery has only a tiny internal resistance, so the sag is barely noticeable in most of this course's projects — but it grows as a battery ages, which is one more reason a "dead" battery struggles the most exactly when a circuit asks it for the most current.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">A Little Sag Is Normal</p>
+<p><img alt="Volt encouraging you" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+If you ever measure a battery's voltage and get a slightly different number once a motor or a bright LED is actually running, don't worry — that's terminal voltage doing exactly what it's supposed to do. It's not a broken battery or a mistake in your circuit; it's just internal resistance quietly doing its job.</p>
+</div>
+<h2 id="chapter-summary-key-takeaways">Chapter Summary: Key Takeaways</h2>
+<p>You now have the full toolkit for reading, describing, and calculating any circuit's wiring pattern, no matter how tangled it looks:</p>
+<ul>
+<li><strong>Parallel resistance</strong> always makes the combined <strong>equivalent resistance</strong> smaller, the opposite of what adding resistors in series does</li>
+<li>A <strong>series-parallel circuit</strong> combines both patterns; solve it by collapsing each parallel section into its equivalent resistance, then treating the result as a series chain</li>
+<li>A <strong>current divider</strong> splits current across parallel branches, sending more current down the lower-resistance path; a <strong>voltage reference</strong> is the fixed point every other voltage in a circuit is measured against</li>
+<li><strong>Circuit topology</strong> — the map of nodes, <strong>circuit branches</strong>, and loops — describes how a circuit connects electrically, independent of its physical layout on a breadboard</li>
+<li><strong>Conductors</strong> (like copper) let current flow easily, <strong>insulators</strong> (like plastic) resist it almost completely, and <strong>semiconductor material</strong> (like silicon) sits in between and can be switched on purpose</li>
+<li>Every charge is surrounded by an <strong>electric field</strong>; when charge builds up with nowhere to flow, that's <strong>static electricity</strong></li>
+<li><strong>Electrical energy</strong> (<span class="arithmatex">\( E = P \times t \)</span>) is measured in <strong>joules</strong> for small, instant amounts and <strong>watt-hours</strong> for practical, everyday amounts — just like the total volume filling a bucket in the <strong>water pipe analogy</strong></li>
+<li>A battery's <strong>electromotive force</strong> is its ideal push; its <strong>internal resistance</strong> quietly reduces that push under load, leaving a slightly lower <strong>terminal voltage</strong> at the battery's actual terminals</li>
+</ul>
+<p>That's a serious circuit-analysis toolkit — parallel math, topology vocabulary, materials science, and real-battery behavior, all in one chapter.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Every Path Accounted For</p>
+<p><img alt="Volt celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+Nice wiring, builder! You just unlocked the power to solve any series-parallel circuit, name every node and branch like a pro, and explain what's really happening inside a battery under load. Grab your kit — Chapter 5 is where these ideas start meeting real components. Current's flowing your way!</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../03-circuit-analysis-kirchhoff/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3. Circuit Analysis, Kirchhoff&#39;s Laws, and Energy">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                3. Circuit Analysis, Kirchhoff's Laws, and Energy
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../05-conductors-batteries-review/" class="md-footer__link md-footer__link--next" aria-label="Next: 5. Conductors, Batteries, and Circuit Vocabulary Review">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                5. Conductors, Batteries, and Circuit Vocabulary Review
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extras.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
