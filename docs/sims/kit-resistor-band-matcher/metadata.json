@@ -1,0 +1,23 @@
+{
+  "title": "Kit Resistor Band Matcher",
+  "description": "Given a rendered resistor showing three color bands drawn from the set {brown, red, orange, black}, identify which of the four kit resistor values (220 Ω, 330 Ω, 1K, 10K) it represents, restricted to only the four band patterns taught in this chapter.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "kit-resistor-band-matcher",
+  "library": "p5.js",
+  "bloomLevel": "Remember (L1). Bloom Verb: identify, recognize.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 10,
+  "chapter_title": "\"Capacitor Timing and Resistor Values\"",
+  "chapter_dir": "10-capacitor-timing-resistor-values",
+  "chapter_rel_dir": "chapters/10-capacitor-timing-resistor-values"
+}

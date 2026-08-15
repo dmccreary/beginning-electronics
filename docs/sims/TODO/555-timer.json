@@ -1,0 +1,15 @@
+{
+  "sim_id": "555-timer",
+  "diagram_name": "555 Timer Astable and Monostable Simulator",
+  "chapter_number": 14,
+  "chapter_title": "\"The 555 Timer Chip\"",
+  "chapter_dir": "14-555-timer-chip",
+  "chapter_rel_dir": "chapters/14-555-timer-chip",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-14",
+  "specification": "Type: microsim\n**sim-id:** 555-timer<br/>\n**Library:** p5.js<br/>\n**Status:** Reused<br/>\n**Source:** https://dmccreary.github.io/microsims/sims/555-timer/<br/>\n**Source Repo:** https://github.com/dmccreary/microsims/tree/main/docs/sims/555-timer\n\nReused from the MicroSim catalog (WHAT match score 0.8136). This simulation demonstrates the 555 timer's astable (oscillator) and monostable (one-shot) modes with accurate RC timing formulas, a real-time waveform display, and an LED output indicator. Learning objective: Given resistor and capacitor values, calculate the 555 timer's astable frequency and duty cycle using \\( f = 1.44 / ((R_1 + 2R_2) C) \\) and \\( D = (R_1 + R_2) / (R_1 + 2R_2) \\), and compare the resulting behavior against monostable mode's single timed pulse."
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Voltage Divider Circuit Explorer",
+  "description": "Given a rendered breadboard voltage divider circuit with two adjustable resistors, predict and then verify the output voltage at the midpoint tap as \\( R_1 \\) and \\( R_2 \\) change, connecting the observed value to the voltage divider equation.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "voltage-divider-circuit-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3). Bloom Verb: calculate, demonstrate.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 9,
+  "chapter_title": "\"Resistors and Capacitors\"",
+  "chapter_dir": "09-resistors-and-capacitors",
+  "chapter_rel_dir": "chapters/09-resistors-and-capacitors"
+}

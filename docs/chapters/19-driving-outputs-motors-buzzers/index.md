@@ -56,25 +56,25 @@ By the end of this chapter you'll protect a transistor from a motor's electrical
 
 !!! mascot-welcome "Motors, Sound, and Safer Switching"
     ![Volt waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Welcome back, builder! You already made a motor spin in Chapter 18 — now let's make it spin *smarter*, protect the parts around it, and add some noise (the fun kind) with buzzers. Grab your motor, your buzzer, and that flyback diode. This is one of the most practical chapters in the whole course. Let's light it up!
+    Welcome back, builder! You already made a motor spin in Chapter 18 — now let's make it spin *smarter*, protect the parts around it, and add some noise (the fun kind) with buzzers. Grab your motor, your buzzer, and that flyback diode. Let's light it up!
 
 ## The Motor's Secret Push-Back: Motor Back-EMF
 
-Chapter 18 told you to wire a flyback diode backward across a motor's leads, but it didn't fully explain why. Here's the missing piece: a spinning DC motor isn't only a motor. The same coil-and-magnet setup that makes it spin also makes it act like a tiny electric generator the instant current flows through it.
+Chapter 18 told you to wire a flyback diode backward across a motor's leads, but didn't fully explain why. Here's the missing piece: a spinning DC motor isn't only a motor. The same coil-and-magnet setup that makes it spin also makes it act like a tiny electric generator.
 
-**Motor back-EMF** is the voltage a spinning motor generates on its own, pushing opposite the voltage driving it, created by the same magnetic interaction that spins the shaft. ("EMF" stands for electromotive force, an older name for voltage.) While a motor runs normally, this back-EMF actually helps you — it naturally limits the motor's running current from climbing too high.
+**Motor back-EMF** is the voltage a spinning motor generates on its own, pushing opposite the voltage driving it, created by the same magnetic interaction that spins the shaft. ("EMF" stands for electromotive force, an older name for voltage.) While a motor runs normally, this back-EMF helps you — it naturally limits the running current from climbing too high.
 
-The real danger shows up the instant power switches off. The motor's coil is still surrounded by a magnetic field, and a field that collapses suddenly creates a sharp voltage spike — one that can reach many times higher than the supply voltage a moment earlier. That spike has to go somewhere, and without a safe path, it slams straight into the transistor that was switching the motor.
+The real danger shows up the instant power switches off. The coil is still surrounded by a magnetic field, and a field that collapses suddenly creates a sharp voltage spike — one that can reach many times the supply voltage. That spike has to go somewhere, and without a safe path, it slams straight into the transistor that was switching the motor.
 
 !!! mascot-thinking "A Motor Living a Double Life"
     ![Volt thinking about it](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
-    Picture the motor living a double life. While it's spinning, it's a motor. The instant it gets switched off, its collapsing magnetic field turns it into a tiny generator for a fraction of a second — and generators make voltage of their own, whether you wanted them to or not.
+    Picture the motor living a double life. While spinning, it's a motor. The instant it switches off, its collapsing field turns it into a tiny generator for a fraction of a second — and generators make voltage of their own, whether you wanted them to or not.
 
 That's exactly why Chapter 12's flyback diode belongs in every motor circuit, not just this course's example projects. Wired backward across the motor's two leads, the flyback diode does nothing while the motor spins normally — it sits reverse-biased, blocking current, out of the way. The instant the circuit switches off, that voltage spike finally pushes the diode forward, giving the spike a safe, short loop to fade out in instead of slamming into the transistor.
 
 !!! mascot-warning "No Flyback Diode, No Mercy"
     ![Volt giving a warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
-    Skip the flyback diode, and motor back-EMF can spike high enough to punch straight through a transistor, destroying it the instant you switch the motor off — even though that same transistor handled the motor just fine while it was running. Always wire the flyback diode before you power the circuit, not after something breaks.
+    Skip the flyback diode, and motor back-EMF can spike high enough to punch straight through a transistor, destroying it the instant you switch the motor off — even though that same transistor handled the motor just fine while running. Wire the flyback diode before you power the circuit, not after something breaks.
 
 ## Keeping the Noise Down: Motor Noise Suppression
 
@@ -103,16 +103,16 @@ where:
 - \( t_{on} \) is how long the power stays on during each switching cycle
 - \( t_{off} \) is how long the power stays off during each switching cycle
 
-A few duty cycle values show what the formula means in practice for a motor's felt speed.
+A few duty cycle values show what the formula means for a motor's felt speed.
 
-- 10% duty cycle — power is on only a tenth of the time; the motor barely creeps, or may not turn at all against friction
-- 50% duty cycle — power is on and off equally; the motor spins at roughly half its full speed
-- 90% duty cycle — power is on nearly the whole time; the motor spins close to full speed
-- 100% duty cycle — power is on the entire time, exactly like Chapter 18's plain on/off switch
+- 10% — barely creeps, or may not turn at all against friction
+- 50% — spins at roughly half its full speed
+- 90% — spins close to full speed
+- 100% — full speed, exactly like Chapter 18's plain on/off switch
 
 !!! mascot-tip "Same Idea, Different Speed"
     ![Volt giving a tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    If duty cycle already clicked for you back in Chapter 14, you're most of the way there. A 555 timer's astable duty cycle might repeat a few times a second, slow enough to watch an LED blink. A motor's PWM duty cycle repeats hundreds or even thousands of times a second — too fast to see, but plenty fast for a motor's spinning mass to average it out into one smooth, steady speed.
+    If duty cycle clicked for you back in Chapter 14, you're most of the way there. A 555 timer's astable duty cycle might repeat a few times a second, slow enough to watch an LED blink. A motor's PWM duty cycle repeats hundreds or thousands of times a second — too fast to see, but plenty fast for a motor's spinning mass to average into one smooth speed.
 
 Try the simulator below to see PWM duty cycle and motor speed side by side, on a wired breadboard circuit.
 
@@ -135,9 +135,9 @@ Learning objective: Given a duty-cycle slider driving a transistor-switched DC m
 
 Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: PWM Motor Speed Control Breadboard | Topic: PWM control, duty cycle, motor speed control, motor back-EMF, motor noise suppression | Subjects: Electronics, Electric Circuits | Grade Level: Junior High | Learning Objectives: Given a duty cycle slider driving a transistor-switched DC motor on a breadboard, predict and observe how PWM duty cycle percentage controls average motor speed" topped out at "Pwm" (dmccreary/microsims, WHAT score 0.582, "generate") — below the 0.60 template threshold and an unwired abstract waveform demo. New specification, extending `breadboard-lib.js` with a PWM signal-source component and a duty-cycle-driven speed model, reusing Chapter 18's spinning-motor component.
 
-Canvas layout: Breadboard with a battery, 2N2222 transistor, base resistor fed by a "PWM Source" block, flyback diode across the motor, and a small hobby motor with an animated spinning shaft; right panel holds a duty-cycle slider (0-100%), an on/off pulse-train mini-graph, a speed readout, and an infobox.
+Canvas layout: Breadboard with a battery, 2N2222, base resistor fed by a "PWM Source" block, flyback diode across the motor, and a motor with an animated spinning shaft; right panel holds a duty-cycle slider (0-100%), a pulse-train mini-graph, a speed readout, and an infobox.
 
-Components/elements involved: Breadboard with rails; battery; labeled 2N2222; base resistor; PWM source block; flyback diode; motor with animated rotating shaft; wires; current-flow dots that pulse on/off in sync with duty cycle instead of flowing steadily.
+Components/elements involved: Breadboard with rails; battery; labeled 2N2222; base resistor; PWM source block; flyback diode; motor with rotating shaft; wires; current-flow dots that pulse on/off with duty cycle instead of flowing steadily.
 
 Required interactivity:
 - Dragging the duty-cycle slider (0-100%) changes the pulse-train graph's on/off ratio and the shaft's spin speed proportionally
@@ -155,9 +155,9 @@ Stage 4: Show current readout scaling with duty cycle
 
 Instructional Rationale: An Apply-level "demonstrate/predict" objective calls for a continuous slider with immediate visible feedback, connecting the abstract duty-cycle percentage to a concrete, observable motor speed.
 
-Color scheme: Green current dots pulsing with duty cycle, blue shaft that spins faster as duty cycle rises, orange pulse-train highlight, consistent with this chapter's other diagrams.
+Color scheme: Green current dots pulsing with duty cycle, blue shaft spinning faster as duty cycle rises, orange pulse-train highlight.
 
-Responsive behavior: Breadboard and control panel stack vertically on narrow screens; the slider stays full-width and touch-draggable.
+Responsive behavior: Breadboard and controls stack vertically on narrow screens; the slider stays full-width and touch-draggable.
 
 Implementation: p5.js, breadboard-sim-generator approach, extending `breadboard-lib.js` with a PWM signal-source component and a duty-cycle-driven motor speed model.
 </details>
@@ -197,9 +197,9 @@ Learning objective: Given a control-side switch driving a relay's coil, predict 
 
 Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: Relay Basics Explorer | Topic: relay, electromagnetic switch, actuator, load resistance, output device protection | Subjects: Electronics, Electric Circuits | Grade Level: Junior High | Learning Objectives: Explain how a relay uses a small control current to switch a much larger load current through electromagnetic coupling" topped out at "Wire MicroSim" (dmccreary/circuits, WHAT score 0.4824, "generate") — well below the 0.60 template threshold and not relay-specific. New specification. Since a relay isn't in this course's $50 kit, this diagram uses a schematic, non-breadboard layout, styled with the same palette as `breadboard-lib.js` sims.
 
-Canvas layout: Two circuit halves joined only by a dashed "no electrical connection" line: control side on the left (small battery, toggle switch, coil symbol), load side on the right (separate battery, lamp icon, switch contacts next to a spring-loaded armature); right panel holds a "Control Switch" toggle and an infobox.
+Canvas layout: Two circuit halves joined only by a dashed "no electrical connection" line: control side (small battery, toggle switch, coil symbol), load side (separate battery, lamp icon, contacts next to a spring-loaded armature); right panel holds a "Control Switch" toggle and an infobox.
 
-Components/elements involved: Control-side battery, toggle switch, coil symbol; load-side battery, lamp icon, spring-loaded armature, movable contact; animated field lines around the coil when energized; current-flow dots on whichever side is active.
+Components/elements involved: Control-side battery, switch, coil symbol; load-side battery, lamp icon, armature, movable contact; animated field lines when energized; current-flow dots on the active side.
 
 Required interactivity:
 - Clicking the "Control Switch" toggle energizes the coil, shown with animated field lines, pulling the armature down to close the load-side contacts and light the lamp
@@ -217,9 +217,9 @@ Stage 4: Show the load-side circuit's resulting open/closed and lamp state
 
 Instructional Rationale: An Apply-level "demonstrate/predict" objective calls for a single manipulable switch with an immediate, visible cause-and-effect chain — coil, armature, contacts, lamp.
 
-Color scheme: Blue for the control side, orange for the load side, red field lines when energized, consistent with this chapter's other diagrams.
+Color scheme: Blue for the control side, orange for the load side, red field lines when energized.
 
-Responsive behavior: The two halves stack vertically on narrow screens; the toggle button stays full-width and touch-friendly.
+Responsive behavior: The two halves stack vertically on narrow screens; the toggle stays full-width and touch-friendly.
 
 Implementation: p5.js, schematic-style diagram styled consistently with `breadboard-lib.js`'s palette, even though it does not render an actual breadboard.
 </details>
@@ -237,7 +237,7 @@ An **actuator** is any device that converts an electrical signal into physical m
 
 !!! mascot-thinking "One Word, Many Parts"
     ![Volt thinking about it](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
-    Notice that "actuator" isn't a specific part you can buy — it's a category, like "output device" or "sensor." Whenever you read a project description that says "an actuator moves the arm," you now know exactly what family of part it's talking about, even before you know which specific one.
+    Notice that "actuator" isn't a specific part you can buy — it's a category, like "output device" or "sensor." Whenever a project description says "an actuator moves the arm," you now know exactly what family of part it means, even before you know which specific one.
 
 ## Visual Output, Completed: Series LED Wiring
 
@@ -259,9 +259,9 @@ where:
 - \( n \) is the number of LEDs wired in series
 - \( V_f \) is each LED's own forward voltage (assuming matching LEDs)
 
-A chain of three red LEDs at 2.0 V forward voltage each needs at least 6.0 V to light every LED — more than this course's 5 V USB supply can provide, which is exactly why series LED wiring works best with a higher-voltage battery pack, or with fewer LEDs per chain.
+A chain of three red LEDs at 2.0 V each needs at least 6.0 V — more than this course's 5 V USB supply can provide, which is why series wiring works best with a higher-voltage battery pack or fewer LEDs per chain.
 
-Before moving on, it helps to see series and parallel LED wiring side by side, since you now know both.
+See series and parallel LED wiring side by side, now that you know both.
 
 | Feature | Series LED Wiring | Parallel LED Wiring |
 |---|---|---|
@@ -275,21 +275,21 @@ Before moving on, it helps to see series and parallel LED wiring side by side, s
 
 Every output device this chapter has covered so far communicates through light or motion. It's time to add a third channel. **Audio output** is the general term for output devices that communicate information through sound instead of light — the same kind of category visual output belongs to, just for your ears.
 
-The buzzer in this course's kit is a **piezo buzzer** — a small disc that vibrates and produces sound when voltage is applied across it, using a piezoelectric material that physically flexes whenever current flows through it. That flexing pushes air fast enough to make an audible tone, the same physics behind a speaker cone, just built from a crystal disc instead of a magnet and coil.
+The buzzer in this course's kit is a **piezo buzzer** — a small disc that vibrates and produces sound when voltage is applied across it, using a piezoelectric material that flexes whenever current flows through it. That flexing pushes air fast enough to make an audible tone, the same physics behind a speaker cone, just built from a crystal disc instead of a magnet and coil.
 
 Piezo buzzers come in two very different flavors, and mixing them up is a common beginner surprise.
 
-An **active buzzer** has a tiny built-in oscillator that generates its own fixed tone the instant power is applied. Wire one straight to a battery, and it beeps immediately at one preset pitch — no signal shaping required, similar to a single-color LED that only ever glows one color.
+An **active buzzer** has a tiny built-in oscillator that generates its own fixed tone the instant power is applied. Wire one straight to a battery and it beeps immediately at one preset pitch — no signal shaping required, similar to a single-color LED that only ever glows one color.
 
-A **passive buzzer** has no built-in oscillator. It needs an external, changing signal — like a 555 timer's astable output from Chapter 14, or any variable-frequency square wave — to make any sound at all. That signal's frequency directly sets the pitch you hear, making a passive buzzer the audio counterpart of Chapter 14's blinking LED, just turned into sound instead of light.
+A **passive buzzer** has no built-in oscillator. It needs an external, changing signal — like a 555 timer's astable output from Chapter 14 — to make any sound at all. That signal's frequency directly sets the pitch, making a passive buzzer the audio counterpart of Chapter 14's blinking LED, just turned into sound instead of light.
 
-That pitch has its own name. **Buzzer tone** is the pitch, high or low, a buzzer produces — fixed inside an active buzzer, or set entirely by the driving signal's frequency on a passive buzzer.
+That pitch has its own name. **Buzzer tone** is the pitch, high or low, a buzzer produces — fixed inside an active buzzer, or set by the driving signal's frequency on a passive buzzer.
 
-Both buzzer types share one more thing with LEDs. **Buzzer polarity** is the requirement that most piezo buzzers be wired with correct positive and negative orientation, exactly like an LED's anode and cathode, or they won't produce sound.
+Both types share one more thing with LEDs. **Buzzer polarity** is the requirement that most piezo buzzers be wired with correct positive and negative orientation, exactly like an LED's anode and cathode, or they won't produce sound.
 
 !!! mascot-warning "Silent Buzzer? Check the Leads"
     ![Volt giving a warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
-    A buzzer wired backward at this course's safe voltages won't get damaged — it will simply stay completely silent, which can look exactly like a dead component or a broken circuit. Before you assume something's broken, check buzzer polarity first. It's the single most common reason a "working" buzzer circuit makes no sound at all.
+    A buzzer wired backward at this course's safe voltages won't get damaged — it will simply stay silent, which can look exactly like a dead component. Before you assume something's broken, check buzzer polarity first. It's the single most common reason a "working" buzzer circuit makes no sound.
 
 A side-by-side comparison makes the active/passive difference easy to remember.
 
@@ -320,30 +320,30 @@ Learning objective: Compare an active buzzer's fixed tone against a passive buzz
 
 Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: Active vs Passive Buzzer Tone Comparison Breadboard | Topic: piezo buzzer, active buzzer, passive buzzer, buzzer tone, buzzer polarity, audio output | Subjects: Electronics, Electric Circuits | Grade Level: Junior High | Learning Objectives: Compare an active buzzer's fixed tone against a passive buzzer's frequency-controlled tone on a wired breadboard circuit, and predict the audio output produced by each" topped out at "Tone Generator" (dmccreary/signal-processing, WHAT score 0.4897, "generate") — below the 0.60 template threshold and not wired or polarity-aware. New specification, extending `breadboard-lib.js`'s existing `bbBuzzer({a, b})` component with an active/passive mode and an oscillator block.
 
-Canvas layout: Breadboard with two buzzers side by side, each with its own switch and polarity-marked leads: the left buzzer wired straight to the battery (active), the right through a small "oscillator" block (passive); right panel holds an "Active Switch" toggle, a "Passive Switch" toggle, a frequency slider (200-2000 Hz, passive only), a "Reverse Passive Polarity" button, and an infobox.
+Canvas layout: Breadboard with two buzzers side by side, each with its own switch and polarity-marked leads: left wired straight to the battery (active), right through an "oscillator" block (passive); right panel holds "Active Switch" and "Passive Switch" toggles, a frequency slider (200-2000 Hz, passive only), a "Reverse Passive Polarity" button, and an infobox.
 
-Components/elements involved: Breadboard with rails; battery; two labeled piezo buzzers with +/- polarity markings; an oscillator block feeding the passive buzzer; switches; wires; animated sound-wave rings expanding from whichever buzzer sounds, ring spacing matching pitch.
+Components/elements involved: Breadboard with rails; battery; two labeled piezo buzzers with +/- markings; oscillator block feeding the passive buzzer; switches; wires; animated sound-wave rings expanding from whichever buzzer sounds, spacing matching pitch.
 
 Required interactivity:
 - Clicking "Active Switch" immediately sounds the active buzzer at one fixed pitch, regardless of the frequency slider
-- Clicking "Passive Switch" sounds the passive buzzer only at the slider's frequency; dragging the slider changes the pitch and ring spacing live
-- Clicking "Reverse Passive Polarity" flips the passive buzzer's leads and silences it even with switch and slider active, reinforcing buzzer polarity
+- Clicking "Passive Switch" sounds the passive buzzer only at the slider's frequency; dragging it changes the pitch and ring spacing live
+- Clicking "Reverse Passive Polarity" flips the passive buzzer's leads and silences it even with switch and slider active
 - Hovering either buzzer's polarity markings opens an infobox explaining buzzer polarity
-- Button "Reset" turns both switches off, resets polarity, and returns the slider to its minimum
+- Button "Reset" turns both switches off and resets polarity and slider
 
 Default state: Both switches off, silent, standard polarity, infobox reads "Active buzzers beep the instant they get power. Passive buzzers need a changing signal to make any sound at all."
 
 Data Visibility Requirements:
 Stage 1: Show each buzzer's switch state
-Stage 2: Show the frequency slider's value and whether it is affecting sound
-Stage 3: Show the animated ring spacing matching the active pitch
-Stage 4: Show silence when the passive buzzer's polarity is reversed, even with power and signal present
+Stage 2: Show the frequency slider's value and whether it affects sound
+Stage 3: Show the animated ring spacing matching pitch
+Stage 4: Show silence when the passive buzzer's polarity is reversed
 
-Instructional Rationale: An Understand/Apply "compare/demonstrate" objective calls for a side-by-side toggle so the active/passive distinction, and buzzer polarity's effect, are directly observable rather than only described in text.
+Instructional Rationale: An Understand/Apply "compare/demonstrate" objective calls for a side-by-side toggle so the active/passive distinction, and buzzer polarity's effect, are directly observable.
 
-Color scheme: Orange expanding sound-wave rings, green current-flow dots, red flash when polarity is reversed and no sound plays, consistent with this chapter's other diagrams.
+Color scheme: Orange expanding sound-wave rings, green current dots, red flash when polarity is reversed and no sound plays.
 
-Responsive behavior: Breadboard and control panel stack vertically on narrow screens; sliders and buttons stay full-width and touch-friendly.
+Responsive behavior: Breadboard and controls stack vertically on narrow screens; sliders and buttons stay full-width and touch-friendly.
 
 Implementation: p5.js, breadboard-sim-generator approach, extending `breadboard-lib.js`'s `bbBuzzer` component with active/passive modes and animated sound-wave rendering.
 </details>
@@ -352,20 +352,20 @@ Implementation: p5.js, breadboard-sim-generator approach, extending `breadboard-
 
 Look back over this chapter, and a pattern connects the flyback diode, the noise-suppression capacitor, and even Chapter 10's current-limiting resistor for an LED. **Output device protection** is the general principle that every output device pushes back on its circuit in its own way, and needs a matching protection technique to keep the rest of the circuit safe.
 
-- A flyback diode protects a transistor from a motor's back-EMF voltage spike at switch-off
-- A noise-suppression capacitor calms the electrical noise a motor's brushes create
-- A current-limiting resistor keeps an LED, or a buzzer, from drawing more current than its rating allows
-- Correct polarity wiring protects an LED, a buzzer, or a relay's coil from behaving unpredictably, or simply staying silent or dark
+- A flyback diode protects a transistor from a motor's back-EMF spike at switch-off
+- A noise-suppression capacitor calms a motor's brush-spark noise
+- A current-limiting resistor keeps an LED or buzzer from drawing more current than its rating allows
+- Correct polarity wiring keeps an LED, buzzer, or relay coil from staying silent or dark
 
 !!! mascot-encourage "A Lot of New Terms, One Simple Habit"
     ![Volt encouraging you](../../img/mascot/encouraging.png){ class="mascot-admonition-img" }
-    Back-EMF, noise suppression, load resistance, buzzer polarity — that's a wall of new vocabulary in one chapter. You don't need to memorize every definition perfectly today. Just build one habit: before you power any output device for the first time, ask "does this one need a protection part?" That single question will save you more transistors than any amount of memorizing.
+    Back-EMF, noise suppression, load resistance, buzzer polarity — that's a wall of new vocabulary. You don't need to memorize every definition today. Just build one habit: before powering any new output device, ask "does this one need a protection part?" That question saves more transistors than memorizing ever will.
 
 ## Multi-Output Circuit: Combining Everything
 
 Every output device in this course has, so far, mostly lived in its own example circuit. Real projects rarely stop at one output. A **multi-output circuit** is a single circuit that drives more than one kind of output device at once — an LED and a buzzer and a motor, sharing one supply and responding to the same control signal.
 
-Building one successfully means applying everything else in this chapter at once. Every branch's current draw adds up, so total current has to stay within what the supply and any switching transistor can safely provide. Every output device keeps its own protection component — the flyback diode stays with the motor, the resistor stays with the LED — even sharing one power source, and every branch still needs correct polarity.
+Building one successfully means applying everything from this chapter at once. Every branch's current draw adds up, so total current must stay within what the supply and any switching transistor can safely provide. Every output device keeps its own protection component — the flyback diode stays with the motor, the resistor with the LED — even sharing one power source, and every branch still needs correct polarity.
 
 ## Output Response Time: How Fast Is "Instant"?
 
@@ -375,9 +375,9 @@ An LED reacts about as close to instantly as this course's circuits ever get. A 
 
 | Output Type | Typical Response Time | Why |
 |---|---|---|
-| Visual Output (LED) | Near-instant (microseconds) | Light has essentially no inertia to overcome |
-| Audio Output (Buzzer) | Very fast (a few cycles) | The disc vibrates almost immediately, though pitch takes a few cycles to recognize |
-| Motor (Actuator) | Noticeably slower (milliseconds to seconds) | The shaft's physical mass must speed up or slow down |
+| Visual Output (LED) | Near-instant (microseconds) | Light has no inertia to overcome |
+| Audio Output (Buzzer) | Very fast (a few cycles) | Disc vibrates almost immediately; pitch takes a few cycles to recognize |
+| Motor (Actuator) | Slower (milliseconds to seconds) | Shaft's physical mass must speed up or slow down |
 
 This is why Chapter 18's chaser effect could switch LEDs crisply from one to the next, while a PWM-controlled motor visibly ramps up to its new speed instead of jumping there instantly. Different output response times aren't a flaw to fix — they're a property to design around.
 
@@ -385,16 +385,16 @@ This is why Chapter 18's chaser effect could switch LEDs crisply from one to the
 
 You started this chapter with a motor already spinning, and you're ending it with a much deeper toolkit for controlling — and protecting — every output device in your kit. Here's what's now part of your toolkit:
 
-- **Motor back-EMF** is a spinning motor's own generated voltage, spiking dangerously at switch-off without a flyback diode, and **motor noise suppression** calms the extra electrical noise a motor's brushes create
-- **Motor speed control** goes beyond on/off using **PWM control**, which relies on the same **duty cycle** idea Chapter 14 first taught with a 555 timer's blinking LED
+- **Motor back-EMF** spikes dangerously at switch-off without a flyback diode, and **motor noise suppression** calms the extra noise a motor's brushes create
+- **Motor speed control** goes beyond on/off using **PWM control**, relying on the same **duty cycle** idea Chapter 14 first taught with a 555 timer's blinking LED
 - **Load resistance** generalizes motor load into a rule that applies to every output device
-- **Relay basics** show a second way to let a small signal switch a big one, and **actuator** names the whole category of devices, like motors and relays, that convert electricity into motion
-- **Visual output** now includes **series LED wiring** as the counterpart to Chapter 18's parallel wiring, alongside the **indicator light**'s specific job of showing status at a glance
-- **Audio output** introduced the **piezo buzzer**, split into the **active buzzer** and **passive buzzer**, each with its own **buzzer tone** and both needing correct **buzzer polarity**
-- **Output device protection** ties every safety technique in this chapter together, and a **multi-output circuit** combines several outputs while respecting each one's own **output response time**
+- **Relay basics** show a second way to let a small signal switch a big one, and **actuator** names the category of devices, like motors and relays, that convert electricity into motion
+- **Visual output** now includes **series LED wiring** as the counterpart to Chapter 18's parallel wiring, alongside the **indicator light**'s job of showing status at a glance
+- **Audio output** introduced the **piezo buzzer**, split into **active buzzer** and **passive buzzer**, each with its own **buzzer tone** and needing correct **buzzer polarity**
+- **Output device protection** ties every safety technique together, and a **multi-output circuit** combines several outputs while respecting each one's own **output response time**
 
-Chapter 20 hands you the tool every builder eventually reaches for: a multimeter. You'll learn to measure the very voltages, currents, and resistances this chapter only described in theory, on the real circuits you've already built.
+Chapter 20 hands you the tool every builder eventually reaches for: a multimeter, to measure the voltages, currents, and resistances this chapter only described in theory, on circuits you've already built.
 
 !!! mascot-celebration "Motors, Buzzers, and Protection: Unlocked"
     ![Volt celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
-    Huge chapter, builder! You can now protect a transistor from a motor's electrical kickback, control motor speed with PWM and duty cycle, wire up a relay and name it as an actuator, and make buzzers sing — safely, in either flavor. That's a serious upgrade to your toolkit. Current's flowing your way — see you in Chapter 20!
+    Huge chapter, builder! You can now protect a transistor from a motor's electrical kickback, control motor speed with PWM and duty cycle, wire up a relay, and make buzzers sing safely in either flavor. Current's flowing your way — see you in Chapter 20!

@@ -1,0 +1,23 @@
+{
+  "title": "Jumper Wire Routing Practice",
+  "description": "Construct a valid connection between two highlighted breadboard tie points by selecting the correct jumper wire type (male-to-male or male-to-female) for the situation and routing a wire between them without crossing the gutter incorrectly or bridging the power rails.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "jumper-wire-routing-practice",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3). Bloom Verb: construct, demonstrate.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 6,
+  "chapter_title": "\"Meet Your Breadboard\"",
+  "chapter_dir": "06-meet-your-breadboard",
+  "chapter_rel_dir": "chapters/06-meet-your-breadboard"
+}

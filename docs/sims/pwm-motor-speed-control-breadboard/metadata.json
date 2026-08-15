@@ -1,0 +1,23 @@
+{
+  "title": "PWM Motor Speed Control Breadboard",
+  "description": "Given a duty-cycle slider driving a transistor-switched DC motor on a breadboard, predict and observe how PWM duty cycle changes average motor speed, connecting the result to Chapter 14's 555 duty cycle.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "pwm-motor-speed-control-breadboard",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3). Bloom Verb: demonstrate, predict, adjust.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 19,
+  "chapter_title": "\"Driving Outputs: Motors, Buzzers, and More\"",
+  "chapter_dir": "19-driving-outputs-motors-buzzers",
+  "chapter_rel_dir": "chapters/19-driving-outputs-motors-buzzers"
+}

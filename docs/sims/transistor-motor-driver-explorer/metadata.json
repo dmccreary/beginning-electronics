@@ -1,0 +1,23 @@
+{
+  "title": "Transistor Motor Driver — Base Resistor and Darlington Pair Explorer",
+  "description": "Given a target motor current and a selected transistor (BC547 or 2N2222) or a Darlington pair of two BC547s, calculate a safe base resistor value using \\( R_B = (V_{in} - V_{BE}) / I_B \\) and \\( I_B = I_C / \\beta \\), and observe the resulting base current, collector current, and heat-limit status.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "transistor-motor-driver-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3). Bloom Verb: calculate, demonstrate, compare.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 14,
+  "chapter_title": "\"The 555 Timer Chip\"",
+  "chapter_dir": "14-555-timer-chip",
+  "chapter_rel_dir": "chapters/14-555-timer-chip"
+}

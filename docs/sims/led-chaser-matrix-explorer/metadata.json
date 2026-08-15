@@ -1,0 +1,23 @@
+{
+  "title": "LED Chaser and Matrix Wiring Explorer",
+  "description": "Compare how six LEDs are wired under parallel LED wiring versus an LED matrix layout, and demonstrate a blinking output pattern by starting a chaser sequence and observing which single LED is lit at each step.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "led-chaser-matrix-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2) / Apply (L3). Bloom Verb: compare, demonstrate, differentiate.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 18,
+  "chapter_title": "\"LEDs, RGB Color, and Motors\"",
+  "chapter_dir": "18-leds-rgb-color-motors",
+  "chapter_rel_dir": "chapters/18-leds-rgb-color-motors"
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Half-Split Fault Finder",
+  "description": "Given a rendered six-stage breadboard circuit (battery, switch, two resistors, a diode, and an LED wired in a single current path) with exactly one hidden fault at an unknown stage, use a virtual multimeter in voltage mode to test the midpoint of the remaining suspect range, apply the result to eliminate half of the remaining stages, and repeat until the single faulty stage is identified in three or fewer measurements.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "half-split-fault-finder",
+  "library": "p5.js",
+  "bloomLevel": "Analyze (L4). Bloom Verb: examine, distinguish, trace.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 21,
+  "chapter_title": "\"Systematic Troubleshooting\"",
+  "chapter_dir": "21-systematic-troubleshooting",
+  "chapter_rel_dir": "chapters/21-systematic-troubleshooting"
+}

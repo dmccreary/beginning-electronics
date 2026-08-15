@@ -1,0 +1,23 @@
+{
+  "title": "Resistivity and Conductance Calculator",
+  "description": "Calculate a wire's resistance from its resistivity, length, and cross-sectional area, and calculate its conductance as the reciprocal of that resistance, by adjusting a material dropdown and length/thickness sliders and reading the live-updated results.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "resistivity-conductance-calculator",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3). Bloom Verb: calculate.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 5,
+  "chapter_title": "\"Conductors, Batteries, and Circuit Vocabulary Review\"",
+  "chapter_dir": "05-conductors-batteries-review",
+  "chapter_rel_dir": "chapters/05-conductors-batteries-review"
+}

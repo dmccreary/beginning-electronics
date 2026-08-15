@@ -1,0 +1,23 @@
+{
+  "title": "Full Resistor Color Code Decoder",
+  "description": "Given a rendered resistor showing four color bands drawn from the complete ten-color digit code, the multiplier band, and a gold or silver tolerance band, calculate the resistor's exact value in ohms and its tolerance range.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "full-resistor-color-code-decoder",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3). Bloom Verb: calculate, decode.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 11,
+  "chapter_title": "\"Resistor Codes and Capacitor Details\"",
+  "chapter_dir": "11-resistor-codes-capacitor-details",
+  "chapter_rel_dir": "chapters/11-resistor-codes-capacitor-details"
+}

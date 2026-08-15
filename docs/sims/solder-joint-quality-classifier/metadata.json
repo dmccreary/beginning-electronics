@@ -1,0 +1,23 @@
+{
+  "title": "Solder Joint Quality Classifier",
+  "description": "Given eight vector-rendered solder joint examples on a perfboard pad, sort each one into a \"Good Joint\" or \"Cold Joint\" bin by judging its shine, shape, and coverage, and justify each judgment against a three-criteria rubric revealed in the feedback infobox.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "solder-joint-quality-classifier",
+  "library": "p5.js",
+  "bloomLevel": "Evaluate (L5). Bloom Verb: judge, assess.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 8,
+  "chapter_title": "\"Troubleshooting and Optional Perfboard Packaging\"",
+  "chapter_dir": "08-troubleshooting-perfboard",
+  "chapter_rel_dir": "chapters/08-troubleshooting-perfboard"
+}

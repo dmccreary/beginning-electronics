@@ -144,15 +144,15 @@ A **Debounce Capacitor** is a small capacitor wired across a switch's output, pa
 
 #### Debounce Time Constant
 
-$\tau = R \times C$
+\[ \tau = R \times C \]
 
 where:
 
-- $\tau$ is the RC time constant, in seconds — roughly how long the capacitor takes to smooth over a bounce
-- $R$ is the resistor value paired with the debounce capacitor, in ohms
-- $C$ is the debounce capacitor's value, in farads
+- \( \tau \) is the RC time constant, in seconds — roughly how long the capacitor takes to smooth over a bounce
+- \( R \) is the resistor value paired with the debounce capacitor, in ohms
+- \( C \) is the debounce capacitor's value, in farads
 
-A typical debounce network — a 10 kΩ resistor and a 0.1 µF capacitor — gives $\tau$ = 1 millisecond, plenty of time to smooth out contact bounce that usually finishes settling within a few milliseconds, all without any lag a human finger could ever notice.
+A typical debounce network — a 10 kΩ resistor and a 0.1 µF capacitor — gives \( \tau \) = 1 millisecond, plenty of time to smooth out contact bounce that usually finishes settling within a few milliseconds, all without any lag a human finger could ever notice.
 
 !!! mascot-warning "Too Much of a Good Thing"
     ![Volt giving a warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }

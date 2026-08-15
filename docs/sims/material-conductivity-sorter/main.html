@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- microsim-scaffold-stub -->
+    <title>Material Conductivity Sorter</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Material Conductivity Sorter</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> material-conductivity-sorter</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Understand (L2). Bloom Verb: classify.</p>
+            <p><strong>Learning Objective:</strong> Classify everyday materials — copper wire, aluminum foil, rubber, glass, plastic, wood, a silicon chip, pencil graphite, salt water, and a steel paperclip — as a conductor, insulator, or semiconductor material, by dragging each material card into the correct one of three labeled bins and receiving immediate right/wrong feedback.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: microsim
+    **sim-id:** material-conductivity-sorter<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified
+    
+    Purpose: Help students classify common, everyday materials as conductors, insulators, or semiconductor materials, reinforcing the comparison table with hands-on sorting practice.
+    
+    Bloom Taxonomy: Understand (L2). Bloom Verb: classify.
+    
+    Learning objective: Classify everyday materials — copper wire, aluminum foil, rubber, glass, plastic, wood, a silicon chip, pencil graphite, salt water, and a steel paperclip — as a conductor, insulator, or semiconductor material, by dragging each material card into the correct one of three labeled bins and receiving immediate right/wrong feedback.
+    
+    Canvas layout:
+    - Top strip: a horizontal row of draggable material cards, each showing an icon and a name
+    - Bottom: three labeled drop bins side by side — "Conductor," "Insulator," "Semiconductor Material" — each with a distinct background color
+    - Small score readout in the corner: "Correct: _ / 10"
+    
+    Visual elements:
+    - Ten material cards: copper wire, aluminum foil, rubber, glass, plastic, wood, silicon chip, pencil graphite, salt water, and steel paperclip
+    - Each bin glows green briefly when a correct card is dropped in, and glows red with a gentle shake animation when an incorrect card is dropped in, then the card returns to the top row to try again
+    - A small info icon on each card that, when hovered, shows a one-line reason for its correct classification
+    
+    Interactive controls:
+    - Drag-and-drop: move each material card into one of the three bins
+    - Hover any card for a tooltip explaining why it belongs where it does (shown even before sorting, as an optional hint)
+    - Button: "Reset" returns all cards to the top row and clears the score
+    - Button: "Reveal All" (after at least one attempt) shows every card correctly sorted, for review
+    
+    Default parameters:
+    - All ten cards start in the top row, unsorted; score starts at 0/10
+    
+    Data Visibility Requirements:
+      Stage 1 (default): Show all ten unsorted cards and three empty bins
+      Stage 2 (card dropped): Show immediate color feedback (green/red) plus the card's one-line explanation, and update the running score
+      Stage 3 (Reveal All): Show the fully sorted board with every material in its correct bin, so learners can review any they missed
+    
+    Instructional Rationale: This is an Understand-level classification objective, so the design uses a drag-and-drop sorter with immediate corrective feedback rather than a passive diagram. Sorting concrete, familiar objects (a paperclip, a pencil, a glass) builds the category boundaries faster than reading definitions alone, and the always-visible hint tooltip keeps the activity encouraging rather than purely a test.
+    
+    Color scheme: Green bin highlight for conductor-friendly feedback, cool gray for insulator, warm orange for semiconductor material (echoing this book's accent color for anything related to switching or control), on a light neutral background.
+    
+    Responsive behavior: The three bins stack vertically on narrow screens with the card row scrolling horizontally above them; drag-and-drop gestures work with touch as well as mouse.
+    
+    Implementation: p5.js, with each material card as a draggable object checked against a lookup table of correct bins on drop; bins rendered as fixed drop-target regions.
+    -->
+</body>
+</html>

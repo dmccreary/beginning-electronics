@@ -1,0 +1,23 @@
+{
+  "title": "Relay Basics Explorer",
+  "description": "Given a control-side switch driving a relay's coil, predict and observe how energizing the coil pulls the armature to close a separate load-side circuit, and explain why the two sides stay electrically isolated.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "relay-basics-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3). Bloom Verb: demonstrate, predict.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 19,
+  "chapter_title": "\"Driving Outputs: Motors, Buzzers, and More\"",
+  "chapter_dir": "19-driving-outputs-motors-buzzers",
+  "chapter_rel_dir": "chapters/19-driving-outputs-motors-buzzers"
+}

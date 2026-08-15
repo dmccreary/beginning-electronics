@@ -1,0 +1,23 @@
+{
+  "title": "DC Motor Control and Stall Current Explorer",
+  "description": "Given a breadboard circuit with a 2N2222, a base switch, a flyback diode, and a small hobby motor, predict how the switch starts and stops the motor, how swapping its leads reverses spin direction, and how rising load drives current up to a stall spike.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "dc-motor-direction-control-circuit",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3) / Analyze (L4). Bloom Verb: demonstrate, predict, examine.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 18,
+  "chapter_title": "\"LEDs, RGB Color, and Motors\"",
+  "chapter_dir": "18-leds-rgb-color-motors",
+  "chapter_rel_dir": "chapters/18-leds-rgb-color-motors"
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Schematic-to-Breadboard Mapper",
+  "description": "Given a simple schematic (battery, resistor, LED, ground) shown side-by-side with a blank breadboard, correctly map each schematic symbol to its breadboard placement and each schematic connection to a jumper wire, demonstrating both wiring diagram interpretation and schematic-to-breadboard mapping.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "schematic-to-breadboard-mapper",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3). Bloom Verb: construct, demonstrate.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 7,
+  "chapter_title": "\"Wiring Skills and Circuit Layout\"",
+  "chapter_dir": "07-wiring-skills-layout",
+  "chapter_rel_dir": "chapters/07-wiring-skills-layout"
+}

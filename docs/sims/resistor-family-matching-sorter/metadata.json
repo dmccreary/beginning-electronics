@@ -1,0 +1,23 @@
+{
+  "title": "Resistor Family Matching Sorter",
+  "description": "Given five resistor-type cards and five shuffled behavior-description cards, match each resistor type to the one description that correctly explains how and why its resistance changes.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "resistor-family-matching-sorter",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2). Bloom Verb: classify, identify.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 9,
+  "chapter_title": "\"Resistors and Capacitors\"",
+  "chapter_dir": "09-resistors-and-capacitors",
+  "chapter_rel_dir": "chapters/09-resistors-and-capacitors"
+}

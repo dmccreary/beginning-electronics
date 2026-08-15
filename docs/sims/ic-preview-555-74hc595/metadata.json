@@ -1,0 +1,23 @@
+{
+  "title": "Two ICs Coming Soon — 555 Timer and 74HC595 Preview",
+  "description": "Identify the 555 timer IC and the 74HC595 shift register by their pin count and package shape, and summarize in one sentence each what job every chip will perform later in the course.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "ic-preview-555-74hc595",
+  "library": "p5.js",
+  "bloomLevel": "Remember (L1) / Understand (L2). Bloom Verb: identify, describe, summarize.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 13,
+  "chapter_title": "\"Meet the Transistor\"",
+  "chapter_dir": "13-meet-the-transistor",
+  "chapter_rel_dir": "chapters/13-meet-the-transistor"
+}

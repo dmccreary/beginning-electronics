@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- microsim-scaffold-stub -->
+    <title>Unit Prefix Value Converter</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Unit Prefix Value Converter</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> unit-prefix-converter</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Apply (L3). Bloom Verb: calculate.</p>
+            <p><strong>Learning Objective:</strong> Calculate the equivalent value of a current, resistance, or power reading across microampere/milliampere/ampere, ohm/kilohm/megohm, and milliwatt/watt scales, by entering a number and switching its prefix on an interactive ladder.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: microsim
+    **sim-id:** unit-prefix-converter<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified<br/>
+    **Template:** https://github.com/dmccreary/intro-to-physics-course/tree/main/docs/sims/metric-scale-zoom
+    
+    Purpose: Help learners build fluency converting a single quantity across the micro-, milli-, base, kilo-, and mega- prefixes used throughout the course.
+    
+    Bloom Taxonomy: Apply (L3). Bloom Verb: calculate.
+    
+    Learning objective: Calculate the equivalent value of a current, resistance, or power reading across microampere/milliampere/ampere, ohm/kilohm/megohm, and milliwatt/watt scales, by entering a number and switching its prefix on an interactive ladder.
+    
+    Canvas layout:
+    - Top: a dropdown to choose the quantity type (Current, Resistance, or Power)
+    - Center: a vertical "prefix ladder" showing five rungs — micro, milli, base, kilo, mega — each rendered as a horizontal bar
+    - Bottom: a numeric input box and a live equivalent-value readout for every rung
+    
+    Visual elements:
+    - Five rungs, one per prefix, labeled with symbol (µ, m, none, k, M) and full name
+    - The rung matching the entered value highlighted in orange
+    - A readout beside every rung showing the same quantity at that rung's scale (e.g., entering "20" at milliamps shows "0.02 A" on the base rung and "20,000 µA" on the micro rung)
+    
+    Interactive controls:
+    - Dropdown: quantity type (Current, Resistance, or Power)
+    - Numeric input: the value to convert, plus a selector for which rung it represents
+    - Button: "Try a Real Example" cycles through preset values from this chapter (20 mA LED current, 1 kΩ resistor, 60 mW LED power, 5 µA sleep current, 1 MΩ pull-up resistor)
+    
+    Default parameters:
+    - Quantity type: Current; entered value: 20, at the milli- rung (a typical LED)
+    
+    Data Visibility Requirements:
+      Stage 1 (default): Show 20 mA entered, with every rung's equivalent value displayed at once
+      Stage 2 (value or rung changed): Recalculate every rung's readout immediately, so the connection between them is obvious
+      Stage 3 ("Try a Real Example" clicked): Drop a real component value from this chapter into the ladder
+    
+    Instructional Rationale: This Apply-level objective calls for a parameter-exploration tool, not an animation. Updating all five rungs at once, instead of one conversion at a time, builds the mental model needed to read any label in the kit at a glance.
+    
+    Color scheme: Blue rungs on a light background, with the active rung in warm orange, matching the book's theme colors.
+    
+    Responsive behavior: Rungs stack vertically at any width; controls stay full-width and touch-friendly on narrow screens.
+    
+    Implementation: p5.js, with a simple multiply/divide-by-1000 conversion function shared across all three quantity types, and rung bars redrawn each frame from the current input value.
+    -->
+</body>
+</html>

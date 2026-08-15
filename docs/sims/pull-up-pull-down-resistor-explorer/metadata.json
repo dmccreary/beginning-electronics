@@ -1,0 +1,23 @@
+{
+  "title": "Pull-Up and Pull-Down Resistor Explorer",
+  "description": "Given a rendered breadboard circuit with a push button, a resistor, and a HIGH/LOW state indicator, and a toggle between pull-up and pull-down wiring, predict and then observe the indicator's state in each of the four combinations of wiring style (pull-up or pull-down) and button state (pressed or not pressed).",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "pull-up-pull-down-resistor-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2) / Apply (L3). Bloom Verb: explain, demonstrate.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 9,
+  "chapter_title": "\"Resistors and Capacitors\"",
+  "chapter_dir": "09-resistors-and-capacitors",
+  "chapter_rel_dir": "chapters/09-resistors-and-capacitors"
+}

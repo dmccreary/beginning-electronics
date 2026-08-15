@@ -1,0 +1,23 @@
+{
+  "title": "Breadboard Troubleshooting Detective",
+  "description": "Given a rendered breadboard circuit (battery, resistor, LED) with exactly one hidden fault — a loose connection, a bent component lead, wrong row placement, or breadboard contact wear — inspect the circuit, form a hypothesis about the cause, and use a virtual swap test to confirm or reject that hypothesis, changing only one variable at a time.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "breadboard-troubleshooting-detective",
+  "library": "p5.js",
+  "bloomLevel": "Analyze (L4). Bloom Verb: examine, distinguish.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 8,
+  "chapter_title": "\"Troubleshooting and Optional Perfboard Packaging\"",
+  "chapter_dir": "08-troubleshooting-perfboard",
+  "chapter_rel_dir": "chapters/08-troubleshooting-perfboard"
+}
