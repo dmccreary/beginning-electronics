@@ -152,10 +152,12 @@ markdown_extensions:
       generic: true
       inline_syntax: ['round']
       block_syntax: ['square']
+
 extra_css:
-  - css/extras.css
+  - css/extra.css
   - css/mascot.css
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
+
 extra_javascript:
   - js/extras.js
   - js/katex.js

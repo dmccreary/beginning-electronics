@@ -56,6 +56,11 @@ This chapter has no LEDs, no resistors, and no batteries connected yet — on pu
 
 ## Meet the Solderless Breadboard
 
+<figure markdown="span">
+  ![A 400 tie-point solderless breadboard](../../img/breadboard.png){ width="600" }
+  <figcaption>400 tie-point solderless breadboard (1/2 size)</figcaption>
+</figure>
+
 A **solderless breadboard** is a reusable plastic board full of small holes that let you build and rewire electronic circuits by simply pushing component leads and wires into place — no melted metal, no permanent joints, no waiting for anything to cool down. Underneath its plastic surface, rows of tiny metal spring clips grab onto whatever you plug in and hold it firmly while also making an electrical connection, which is exactly why it's the tool this entire course is built around.
 
 The name is a fun bit of electronics history. Decades ago, hobbyists really did build early radio circuits by nailing components straight onto a literal wooden bread-cutting board — bread board, two words. Modern versions ditched the wood and the nails for reusable plastic and spring clips, but the name stuck around. Every time you hear "breadboard" in this book, picture that same do-it-yourself spirit: fast, flexible, and endlessly reusable.
@@ -63,6 +68,11 @@ The name is a fun bit of electronics history. Decades ago, hobbyists really did 
 Because nothing is soldered down, a solderless breadboard is the perfect practice space. Wire a circuit wrong? Pull the part out and move it. Want to try a different resistor? Swap it in ten seconds. That single feature — instant, painless rewiring — is exactly what makes this course's entire hands-on approach possible.
 
 ## Full-Size and Half-Size Breadboards
+
+<figure markdown="span">
+  ![A full-size solderless breadboard](../../img/breadboard-fullsize.jpg){ width="600" }
+  <figcaption>A full-size solderless breadboard with 830 tie points</figcaption>
+</figure>
 
 Not every breadboard is the same size, and this course mostly uses one of two standard options. A **full-size breadboard** is the larger of the two, built for bigger projects with lots of components at once, while a **half-size breadboard** is roughly half its length — smaller, lighter, and perfectly sized for the simpler circuits you'll build in this course's early chapters.
 
@@ -143,6 +153,9 @@ Color scheme: Warm orange highlight for the currently selected region (matching 
 Responsive behavior: Breadboard graphic scales to container width; infobox stacks below the graphic on narrow screens; all regions remain tappable at touch-target size on mobile.
 
 Implementation: p5.js, with the breadboard drawn as a vector graphic (or the existing photographed asset) and every row, column, rail segment, and gutter region defined as a clickable/hoverable zone tied to a lookup table of names, definitions, and tie-point counts.
+
+Reference: skills/breadboard-sim-generator/assets/breadboard-lib.js contains the vector drawing for
+a horizontal half-height breadboard.
 </details>
 
 !!! mascot-thinking "X-Ray Vision, Unlocked"
