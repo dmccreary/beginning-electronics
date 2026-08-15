@@ -1,0 +1,23 @@
+{
+  "title": "Combination Lock Circuit",
+  "description": "Given a series-wired, three-button combination lock circuit, predict and verify which combinations of held-down buttons light the \"Unlocked\" LED, and observe that the LED goes dark the instant any single button is released.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "combination-lock-circuit",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2) / Apply (L3). Bloom Verb: demonstrate, predict.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 17,
+  "chapter_title": "\"Sensing Light: Photoresistors and Dark Detectors\"",
+  "chapter_dir": "17-sensing-light-dark-detectors",
+  "chapter_rel_dir": "chapters/17-sensing-light-dark-detectors"
+}

@@ -1,0 +1,23 @@
+{
+  "title": "SR Flip Flop MicroSim (Cross-Coupled NAND RS Latch)",
+  "description": "Given a rendered RS latch built from two cross-coupled NAND gates, press the Set Input and Reset Input independently and verify that the Latch State persists after both inputs are released.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "flip-flop",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3). Bloom Verb: demonstrate, verify.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 25,
+  "chapter_title": "\"NAND, NOR, XOR, and the RS Latch\"",
+  "chapter_dir": "25-nand-nor-xor-rs-latch",
+  "chapter_rel_dir": "chapters/25-nand-nor-xor-rs-latch"
+}

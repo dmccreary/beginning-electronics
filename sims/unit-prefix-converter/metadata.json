@@ -1,0 +1,23 @@
+{
+  "title": "Unit Prefix Value Converter",
+  "description": "Calculate the equivalent value of a current, resistance, or power reading across microampere/milliampere/ampere, ohm/kilohm/megohm, and milliwatt/watt scales, by entering a number and switching its prefix on an interactive ladder.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "unit-prefix-converter",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3). Bloom Verb: calculate.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 3,
+  "chapter_title": "\"Circuit Analysis, Kirchhoff's Laws, and Energy\"",
+  "chapter_dir": "03-circuit-analysis-kirchhoff",
+  "chapter_rel_dir": "chapters/03-circuit-analysis-kirchhoff"
+}

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This is a interactive intelligent textbook that teachers beginning electronics with a $50 solderless breadboard kit.">
+        <meta name="description" content="Students learn to physically wire a transistor using its pinout, package, and base resistor, then take a pin-by-pin tour of the classic 555 timer IC to calculate exactly how fast it blinks an LED or beeps a buzzer.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>14. The 555 Timer Chip - Beginning Electronics</title>
+        <title>The 555 Timer Chip - Beginning Electronics</title>
       
     
     
@@ -52,7 +52,7 @@
       
     
     
-      <link rel="stylesheet" href="../../css/extras.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
@@ -128,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              14. The 555 Timer Chip
+              The 555 Timer Chip
             
           </span>
         </div>
@@ -844,6 +844,165 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reading-a-real-transistor-pinout-package-and-symbol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading a Real Transistor: Pinout, Package, and Symbol
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sizing-a-base-resistor-so-nothing-gets-fried" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sizing a Base Resistor So Nothing Gets Fried
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sizing a Base Resistor So Nothing Gets Fried">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-current-from-desired-collector-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base Current from Desired Collector Current
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-resistor-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base Resistor Value
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-muscle-the-darlington-pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      More Muscle: The Darlington Pair
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-transistor-motor-driver-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Transistor Motor Driver Pattern
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Transistor Motor Driver Pattern">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-transistor-motor-driver-base-resistor-and-darlington-pair-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Transistor Motor Driver — Base Resistor and Darlington Pair Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-any-chip-ic-pin-numbering-and-notch-orientation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading Any Chip: IC Pin Numbering and Notch Orientation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reading Any Chip: IC Pin Numbering and Notch Orientation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-555-pin-numbering-and-ic-notch-orientation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: 555 Pin Numbering and IC Notch Orientation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inside-the-555-a-pin-by-pin-tour" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inside the 555: A Pin-by-Pin Tour
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-the-beat-duty-cycle-and-frequency-in-astable-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting the Beat: Duty Cycle and Frequency in Astable Mode
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting the Beat: Duty Cycle and Frequency in Astable Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#astable-frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Astable Frequency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#astable-duty-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Astable Duty Cycle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-555-timer-astable-and-monostable-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: 555 Timer Astable and Monostable Simulator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary: Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1213,6 +1372,10 @@
         
       
         
+          
+        
+      
+        
       
         
           
@@ -1275,7 +1438,7 @@
       
   
   <span class="md-ellipsis">
-    Micro Simulations
+    MicroSims
   </span>
   
 
@@ -1578,6 +1741,165 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reading-a-real-transistor-pinout-package-and-symbol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading a Real Transistor: Pinout, Package, and Symbol
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sizing-a-base-resistor-so-nothing-gets-fried" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sizing a Base Resistor So Nothing Gets Fried
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sizing a Base Resistor So Nothing Gets Fried">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-current-from-desired-collector-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base Current from Desired Collector Current
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-resistor-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base Resistor Value
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-muscle-the-darlington-pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      More Muscle: The Darlington Pair
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-transistor-motor-driver-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Transistor Motor Driver Pattern
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Transistor Motor Driver Pattern">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-transistor-motor-driver-base-resistor-and-darlington-pair-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Transistor Motor Driver — Base Resistor and Darlington Pair Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-any-chip-ic-pin-numbering-and-notch-orientation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading Any Chip: IC Pin Numbering and Notch Orientation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reading Any Chip: IC Pin Numbering and Notch Orientation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-555-pin-numbering-and-ic-notch-orientation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: 555 Pin Numbering and IC Notch Orientation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inside-the-555-a-pin-by-pin-tour" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inside the 555: A Pin-by-Pin Tour
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-the-beat-duty-cycle-and-frequency-in-astable-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting the Beat: Duty Cycle and Frequency in Astable Mode
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting the Beat: Duty Cycle and Frequency in Astable Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#astable-frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Astable Frequency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#astable-duty-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Astable Duty Cycle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-555-timer-astable-and-monostable-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: 555 Timer Astable and Monostable Simulator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary: Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1634,13 +1956,342 @@
 <li><a href="../13-meet-the-transistor/">13. Meet the Transistor</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<p>Chapter 13 met the transistor and, right at the very end, took a first peek at two chips waiting in the wings — the 555 timer and the 74HC595 shift register. That peek even included a table naming the 555's eight pins. This chapter is where those names finally get real jobs.</p>
+<p>Before any pin-by-pin work happens, though, there's unfinished business. Chapter 13 explained <em>what</em> a transistor's base, collector, and emitter do. It never covered how to find those three leads on a real BC547 sitting in your kit, how to protect a transistor from its own heat, or how to team two transistors up for a job too big for one. Those are exactly the skills you need before wiring anything fun to a 555 — a blinking LED, a beeping buzzer, or a spinning motor. So that's where this chapter starts, before it circles back to the chip itself.</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Three Fives and a Whole Lot of Blinking</p>
+<p><img alt="Volt waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Welcome back, builder! This is the chapter a lot of electronics fans wait for — the one where things finally blink and beep on a schedule <em>you</em> design. First we finish turning your transistor knowledge into real wiring skills. Then we crack open the legendary 555 timer chip. Let's light it up!</p>
+</div>
+<h2 id="reading-a-real-transistor-pinout-package-and-symbol">Reading a Real Transistor: Pinout, Package, and Symbol</h2>
+<p>Every transistor in this course's kit — the BC547 and the 2N2222 — ships in the same small plastic case. <strong>TO-92 package</strong> is the name for that case: a half-cylinder of black or gray plastic with one flat face, three metal legs sticking out the bottom, and no markings anywhere except a tiny printed part number. That flat face is your landmark. Every time you pick up a transistor, find the flat side first.</p>
+<p>With the flat side facing you and the three legs pointing down, the <strong>transistor pinout</strong> for both the BC547 and the 2N2222 reads left to right: emitter, base, collector. That order — E, B, C — is worth memorizing, because it never changes for these two parts.</p>
+<table>
+<thead>
+<tr>
+<th>Position (flat side facing you, legs pointing down)</th>
+<th>Lead</th>
+<th>Job</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left</td>
+<td>Emitter</td>
+<td>Larger current exits here</td>
+</tr>
+<tr>
+<td>Middle</td>
+<td>Base</td>
+<td>Small control current enters here</td>
+</tr>
+<tr>
+<td>Right</td>
+<td>Collector</td>
+<td>Larger current enters here</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Flat Side, Every Time</p>
+<p><img alt="Volt giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Just like a diode's band or an LED's flat edge told you which way current could flow, a transistor's flat side tells you which lead is which. Get in the habit of turning every transistor so its flat side faces you before you push it into the breadboard.</p>
+</div>
+<p>A breadboard sketch shows where a transistor physically sits. A schematic diagram uses a symbol instead. The <strong>transistor schematic symbol</strong> draws a transistor as three straight lines meeting a vertical bar — the base — with a small arrow on the emitter line showing which way current flows. Chapter 13 already showed that an arrow pointing away from the base marks an NPN transistor, exactly like the ones in this course's kit. From now on, whenever a wiring diagram shows a transistor as a symbol instead of a photo, that arrow is your first clue to what family you're looking at.</p>
+<p>Every transistor's base-emitter connection behaves a lot like the diodes from Chapter 12 — it only conducts once it's pushed past a minimum voltage. <strong>Transistor turn-on voltage</strong> is the minimum voltage, roughly 0.6 to 0.7 volts for silicon transistors like the BC547 and 2N2222, that must appear between the base and emitter before any base current — and therefore any collector current — can flow. Push less than that, and the transistor stays off no matter how patiently you wait.</p>
+<p>Chapter 13 already showed that a small base current controls a much larger collector current, using the formula <span class="arithmatex">\( I_C = \beta \times I_B \)</span>. The <strong>transistor gain rating</strong> is just another name for that same <span class="arithmatex">\( \beta \)</span> value, often printed on a datasheet as hFE, and it's the single spec you'll check most often when choosing a transistor for a job. A higher gain rating means a smaller base current can control the same collector current.</p>
+<p>A transistor's gain rating only tells half the story of what it can safely handle, though. Every transistor converts a little electrical energy into heat whenever current flows through it, and every transistor has a <strong>transistor heat limit</strong> — a maximum amount of power it can turn into heat before the silicon inside is permanently damaged. That power is approximately the collector-emitter voltage times the collector current, so pushing more current through a transistor than its rating allows cooks it from the inside out, often with no visible warning until it's already too late.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">No Smoke Alarm Required</p>
+<p><img alt="Volt giving a warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+A transistor that exceeds its heat limit doesn't blink a warning light first — it just quietly fails, sometimes for good. Always check a transistor's maximum collector current and power rating before wiring it to a motor or a bank of LEDs, the same safety habit Chapter 12 taught you for an LED's current rating.</p>
+</div>
+<h2 id="sizing-a-base-resistor-so-nothing-gets-fried">Sizing a Base Resistor So Nothing Gets Fried</h2>
+<p>Turn-on voltage, gain rating, and heat limit aren't three separate facts to memorize — they combine into one practical calculation every time you wire a transistor. A <strong>base resistor</strong> is the resistor placed between a control signal and a transistor's base, chosen specifically to limit the base current to a safe, useful value instead of letting it run wild.</p>
+<p>Here's the logic, one step at a time. First, decide how much collector current the job needs — say, enough to light an LED or spin a small motor. Second, use the transistor's gain rating to figure out how little base current can produce that collector current. Third, size a resistor that limits the base current to exactly that value, given the voltage you're feeding it from.</p>
+<h4 id="base-current-from-desired-collector-current">Base Current from Desired Collector Current</h4>
+<div class="arithmatex">\[ I_B = \frac{I_C}{\beta} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( I_B \)</span> is the base current needed</li>
+<li><span class="arithmatex">\( I_C \)</span> is the collector current the job requires</li>
+<li><span class="arithmatex">\( \beta \)</span> is the transistor's gain rating</li>
+</ul>
+<h4 id="base-resistor-value">Base Resistor Value</h4>
+<div class="arithmatex">\[ R_B = \frac{V_{in} - V_{BE}}{I_B} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( R_B \)</span> is the base resistor's value</li>
+<li><span class="arithmatex">\( V_{in} \)</span> is the control voltage feeding the base resistor</li>
+<li><span class="arithmatex">\( V_{BE} \)</span> is the transistor's turn-on voltage, about 0.7 V</li>
+<li><span class="arithmatex">\( I_B \)</span> is the base current calculated above</li>
+</ul>
+<p>Try the math with real numbers. Say a 2N2222 needs to switch a small motor drawing 100 mA, fed by this course's typical 5 V supply. A careful builder sizes for the <em>worst-case</em> gain rating a real 2N2222 might have, not the best case — using 100 for <span class="arithmatex">\( \beta \)</span> even though some parts test higher keeps the circuit working with every transistor in the bag. That gives <span class="arithmatex">\( I_B = 100 \text{ mA} / 100 = 1 \text{ mA} \)</span>, and then <span class="arithmatex">\( R_B = (5 - 0.7) / 0.001 = 4{,}300 \, \Omega \)</span> — close enough to a standard 4.7 kΩ resistor to use it directly.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">The Formula Does the Worrying For You</p>
+<p><img alt="Volt encouraging you" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+That's three formulas landing back to back, and it's completely normal if the algebra feels like a lot. The habit that matters is smaller than the math: always calculate a base resistor instead of guessing one. The arithmetic just makes sure your guess would have been safe.</p>
+</div>
+<h2 id="more-muscle-the-darlington-pair">More Muscle: The Darlington Pair</h2>
+<p>Sometimes a job needs a huge collector current, but the only control signal available is a tiny one — weaker than even a well-chosen base resistor can comfortably handle with a single transistor. A <strong>Darlington pair</strong> solves that by wiring two transistors together so the first transistor's emitter feeds directly into the second transistor's base, multiplying their gain ratings together instead of just adding them.</p>
+<ul>
+<li>A single BC547 with a gain rating of 100 needs 1 mA of base current to produce 100 mA of collector current</li>
+<li>Two BC547s wired as a Darlington pair, each with a gain rating of 100, multiply to an effective gain of <span class="arithmatex">\( 100 \times 100 = 10{,}000 \)</span></li>
+<li>That same 100 mA of collector current now needs only <span class="arithmatex">\( 100 \text{ mA} / 10{,}000 = 0.01 \text{ mA} \)</span> — ten microamps — of base current</li>
+</ul>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Two Transistors, One Bigger Job</p>
+<p><img alt="Volt thinking about it" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+A Darlington pair is really just "the transistor amplification trick" applied twice in a row — the first transistor amplifies the tiny control current, and the second transistor amplifies that result again. The tradeoff: because current passes through two base-emitter junctions instead of one, a Darlington pair needs roughly 1.4 V to turn on instead of 0.7 V.</p>
+</div>
+<h2 id="the-transistor-motor-driver-pattern">The Transistor Motor Driver Pattern</h2>
+<p>All of this pinout, base-resistor, and Darlington knowledge exists for a reason: it's exactly what you need before wiring a 555 timer to anything that draws real current. A 555 timer's output pin can only safely source or sink a couple hundred milliamps, and a spinning DC motor is both power-hungry and, worse, an inductive load — it stores energy in a magnetic field and fires a voltage spike backward the instant its current is switched off. That spike can damage a chip that's driving it directly.</p>
+<p>The <strong>transistor motor driver</strong> pattern solves both problems at once: instead of wiring a motor straight to the 555's output pin, the 555 drives a base resistor, the base resistor drives a transistor's base, and the transistor's collector switches the motor's much larger current — using a separate, more robust supply if the motor needs one. A diode wired backward across the motor's terminals, the same one-way-valve part from Chapter 12, gives that voltage spike a safe path to dissipate instead of blasting back into the transistor.</p>
+<p>Explore the whole pattern — base resistor, transistor, motor, and the Darlington-pair option — in the breadboard sim below.</p>
+<h4 id="diagram-transistor-motor-driver-base-resistor-and-darlington-pair-explorer">Diagram: Transistor Motor Driver — Base Resistor and Darlington Pair Explorer</h4>
+<iframe src="../../sims/transistor-motor-driver-explorer/main.html" width="100%" height="580px" scrolling="no"></iframe>
+
+<details>
+<summary>Transistor Motor Driver — Base Resistor and Darlington Pair Explorer</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> transistor-motor-driver-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p>Purpose: Let students size a base resistor for an NPN transistor switching a small DC motor, watch what happens when the resistor is too small (excess base current, heat-limit warning) or too large (motor doesn't reach full speed), and toggle between a single transistor and a Darlington pair to see the base-current savings.</p>
+<p>Bloom Taxonomy: Apply (L3). Bloom Verb: calculate, demonstrate, compare.</p>
+<p>Learning objective: Given a target motor current and a selected transistor (BC547 or 2N2222) or a Darlington pair of two BC547s, calculate a safe base resistor value using <span class="arithmatex">\( R_B = (V_{in} - V_{BE}) / I_B \)</span> and <span class="arithmatex">\( I_B = I_C / \beta \)</span>, and observe the resulting base current, collector current, and heat-limit status.</p>
+<p>Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: Transistor Motor Driver Breadboard Demo | Topic: NPN transistor switching a DC motor, base resistor sizing, transistor heat limit, Darlington pair | Subjects: Electronics, Beginning Electronics | Grade Level: Junior High | Learning Objectives: Size a base resistor to safely switch a DC motor with an NPN transistor and observe the effect of exceeding current and heat limits" returned a top match of "LED Dimmer Circuit" (dmccreary/moving-rainbow, WHAT score 0.4779, recommendation "generate") — below the 0.60 template threshold, and topically centered on PWM brightness dimming rather than base-resistor sizing or a motor load. This is written as a new specification.</p>
+<p>Canvas layout: Rendered half breadboard on the left with a battery pack, a push-button control, a base-resistor slider feeding an NPN transistor (Q1, plus a second chained transistor Q2 when Darlington mode is on), a DC motor as the collector-side load, and a flyback diode wired backward across the motor terminals; right side panel holds a base-resistor slider, a BC547/2N2222 selector, a "Darlington Mode" toggle, numeric readouts, and an infobox.</p>
+<p>Components/elements involved: A rendered breadboard with power and ground rails; a battery pack; a base-resistor slider (100 Ω-10 kΩ); one or two <code>bbTransistor</code> NPN transistors wired base-to-collector for Darlington mode; a new <code>bbMotor</code> component (a small cylindrical motor body with a spinning fan-blade icon whose rotation speed animates proportional to current through it, electrically modeled as a fixed low-resistance load like <code>bbBuzzer</code> so the existing DC solver handles it without a transient model); a flyback diode across the motor; a red heat-limit warning indicator near the transistor body.</p>
+<p>Required interactivity:
+- Dragging the base-resistor slider recalculates <span class="arithmatex">\( I_B = (V_{in} - V_{BE}) / R_B \)</span> live, then <span class="arithmatex">\( I_C = \beta \times I_B \)</span> (capped at the selected transistor's maximum rated current and the motor's maximum draw), and updates both the motor's spin speed and the numeric readouts
+- Toggling "Darlington Mode" chains a second transistor's collector-base internally, multiplying the effective gain rating (<span class="arithmatex">\( \beta_1 \times \beta_2 \)</span>), so the same motor speed is reached with a far smaller base current, matching the chapter's worked numbers
+- Selecting BC547 or 2N2222 changes the maximum collector current and heat limit used for the warning check
+- When calculated collector current or power (<span class="arithmatex">\( I_C \times V_{CE} \)</span>) exceeds the selected transistor's rating, a red "Heat Limit Exceeded" indicator flashes near the transistor body and the infobox explains why
+- Hovering the flyback diode opens an infobox explaining that it protects the transistor from the motor's voltage spike when current is switched off
+- Button "Reset" returns to BC547, single-transistor mode, base resistor at 4.7 kΩ</p>
+<p>Default state: BC547 selected, single-transistor mode, base resistor at 4.7 kΩ, motor spinning at partial speed, infobox reads "Active region — base current is controlling collector current safely, under the heat limit."</p>
+<p>Data Visibility Requirements:
+Stage 1: Show the base resistor's current value from the slider
+Stage 2: Show the calculated base current using the substituted formula
+Stage 3: Show the calculated collector current using the substituted formula, with the gain rating used (single or Darlington)
+Stage 4: Show the motor's resulting spin speed and the heat-limit status (safe or exceeded)</p>
+<p>Instructional Rationale: An Apply-level "calculate/demonstrate" objective calls for a parameter-exploration pattern where every slider move immediately shows the arithmetic and its physical consequence, so students connect the base-resistor formula to a real safety decision instead of memorizing it in the abstract.</p>
+<p>Color scheme: Thin blue current-flow dots on the base wire, thick orange dots on the collector-emitter/motor path, red flash for the heat-limit warning, green spinning motor blades — consistent with this book's other transistor diagrams.</p>
+<p>Responsive behavior: Breadboard view and the control/infobox panel stack vertically on narrow screens; the slider and toggle remain full-width and touch-friendly; the scope panel, if shown, hides below 640 px per this book's standard breadboard-sim rule.</p>
+<p>Implementation: p5.js, built with the breadboard-sim-generator skill, extending this repository's <code>breadboard-lib.js</code> with a new <code>bbMotor</code> component (a fixed-resistance load, consistent with the library's DC-steady-state solver) and reusing the existing <code>bbTransistor</code> component twice for Darlington mode.</p>
+</details>
+<h2 id="reading-any-chip-ic-pin-numbering-and-notch-orientation">Reading Any Chip: IC Pin Numbering and Notch Orientation</h2>
+<p>Before any 555 timer can do its job, it has to go into the breadboard the right way — and a chip has a lot more legs to keep straight than a transistor does. The 555 packs eight of them into one small plastic case called a DIP, short for dual in-line package, with two straight rows of pins facing each other across the breadboard's center channel.</p>
+<p>Every DIP chip has a small semicircular notch — sometimes paired with a printed dot — molded into one short end of the case. <strong>IC Pin Numbering</strong> is the standard convention for labeling every pin on a chip: pin 1 sits immediately next to that notch, and every following pin number counts counter-clockwise around the chip when viewed from above.</p>
+<p><strong>IC Notch Orientation</strong> is the practice of always inserting a chip so its notch points the direction a wiring diagram expects, usually toward the left edge of the breadboard. Getting the orientation right lines up every pin with its correct hole — and, far more importantly, makes sure the chip's power and ground pins land on the power and ground rails instead of getting swapped with signal pins.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Backward Is Not a Small Mistake</p>
+<p><img alt="Volt giving a warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Plugging a chip in rotated 180 degrees puts its ground pin where a power pin belongs, and its power pin where a signal pin belongs. That's not a quiet mistake like a dim LED — it can destroy the chip the instant power is applied. Always find the notch first, every single time.</p>
+</div>
+<p>Practice spotting the notch and counting pins on the 555's own pinout below — the exact chip you'll wire up next.</p>
+<h4 id="diagram-555-pin-numbering-and-ic-notch-orientation">Diagram: 555 Pin Numbering and IC Notch Orientation</h4>
+<iframe src="../../sims/ic-pin-numbering-notch-orientation/main.html" width="100%" height="480px" scrolling="no"></iframe>
+
+<details>
+<summary>555 Pin Numbering and IC Notch Orientation</summary>
+<p>Type: infographic
+<strong>sim-id:</strong> ic-pin-numbering-notch-orientation<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p>Purpose: Teach the general skill of reading any DIP chip's pin numbers from its notch, using the 555 timer's own eight pins as the worked example, and show what goes electrically wrong when a chip is inserted backward.</p>
+<p>Bloom Taxonomy: Remember (L1) / Understand (L2). Bloom Verb: identify, describe, locate.</p>
+<p>Learning objective: Given a top-down view of an 8-pin DIP chip with a notch, identify pin 1 and correctly count the remaining pins counter-clockwise, and describe what happens electrically when the chip is inserted rotated 180 degrees from its intended orientation.</p>
+<p>Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: IC Pin Numbering and Notch Orientation | Topic: DIP integrated circuit pin numbering counterclockwise from notch, IC notch orientation on a breadboard | Subjects: Electronics, Beginning Electronics | Grade Level: Junior High | Learning Objectives: Identify pin 1 of a DIP integrated circuit from its notch and correctly orient the chip when inserting it into a breadboard" returned a top match of "Breadboard" (dmccreary/microsims, WHAT score 0.4414, recommendation "generate") — a generic empty breadboard renderer with no chip or pin-numbering logic — below the 0.60 template threshold. This is written as a new specification, modeled on Chapter 13's "ic-preview-555-74hc595" click-to-reveal infographic pattern (same catalog, same style) but focused specifically on the 555's own eight pin names instead of a generic chip preview.</p>
+<p>Canvas layout: Main area shows a rendered 8-pin DIP chip with a semicircular notch at one end, straddling a drawn breadboard center-channel outline for context; right side panel holds a "Rotate 180°" button and an infobox.</p>
+<p>Components/elements involved: Chip body outline; notch marker; eight numbered, individually clickable pin pads that reveal their 555 names (GND, TRIGGER, OUTPUT, RESET, CONTROL VOLTAGE, THRESHOLD, DISCHARGE, VCC) once clicked; a highlighted "Pin 1" indicator near the notch; breadboard center-channel outline.</p>
+<p>Required interactivity:
+- Clicking any pin pad opens an infobox showing that pin's number, its counting position relative to the notch (for example, "2 pins counter-clockwise from the notch"), and its 555 function name
+- Clicking the "Rotate 180°" button spins the chip's orientation; when rotated, the notch moves to the opposite end, and clicking any pin now shows a warning infobox explaining that pin 1 (GND) would sit where pin 5 (CONTROL VOLTAGE) belongs — the chip's power, ground, and signal pins would all be swapped
+- Hovering the notch itself, in either orientation, highlights it and displays "This notch marks Pin 1 — always start counting here, going counter-clockwise"
+- Button "Reset" returns the chip to its correct, un-rotated orientation</p>
+<p>Default state: Chip correctly oriented with the notch at the left end, no pin selected, infobox reads "Click a pin, or the notch, to see how IC pin numbering works."</p>
+<p>Data Visibility Requirements:
+Stage 1: Show the notch position and the label "Pin 1 starts here"
+Stage 2: On pin click, show that pin's number and counting direction from the notch
+Stage 3: On pin click, show that pin's 555 function name
+Stage 4: On rotate, show the mismatch between the chip's physical pins and the breadboard holes it would actually be plugged into</p>
+<p>Instructional Rationale: A Remember/Understand "identify/describe" objective calls for a simple click-to-reveal exploration rather than a manipulated simulation, matching this reading level's guidance to avoid unnecessary animation; the rotate control turns the abstract warning "line up the notch" into a concrete, visible consequence.</p>
+<p>Color scheme: Blue chip outline matching the site's primary theme color, orange notch highlight matching the accent color, red highlight overlay when rotated to show the pin mismatch — consistent with Chapter 13's IC preview diagram.</p>
+<p>Responsive behavior: The chip view and control panel stack vertically on narrow screens; pin pads remain large enough to tap comfortably on mobile.</p>
+<p>Implementation: Plain p5.js, not the breadboard-sim-generator — a click-to-reveal orientation diagram, matching the approach of Chapter 13's IC-preview sim rather than a wired, solved circuit.</p>
+</details>
+<h2 id="inside-the-555-a-pin-by-pin-tour">Inside the 555: A Pin-by-Pin Tour</h2>
+<p>With a correctly oriented 555 seated on the breadboard, it's time to give every one of its eight pins the job it actually does. Two of them are the simplest: pin 1 (GND) connects to ground, and pin 8 (VCC) connects to the positive supply. The other six are where the timing magic happens.</p>
+<p>A timing cycle starts and ends by watching a capacitor's voltage rise and fall between two thresholds. The <strong>555 Trigger Pin</strong> (pin 2) starts a new timing cycle the instant its voltage drops below one-third of the supply voltage — it's the "go" signal. The <strong>555 Threshold Pin</strong> (pin 6) does the opposite job: it ends the high part of a timing cycle the instant its voltage climbs above two-thirds of the supply voltage. Between those two thresholds, the timing capacitor is charging through a resistor, exactly like the RC circuits from Chapter 10.</p>
+<p>Once threshold is reached, the capacitor needs to empty back out before the next cycle can begin. The <strong>555 Discharge Pin</strong> (pin 7) connects internally to a transistor switch — the same kind of switch this chapter just spent so much time on — that turns on to drain the timing capacitor back toward zero volts, resetting it for the next cycle.</p>
+<p>Two more pins override the normal cycle entirely. The <strong>555 Reset Pin</strong> (pin 4) forces the output pin low no matter what the trigger or threshold pins are doing, any time its voltage is pulled low — it's an emergency stop that most simple circuits simply tie to the positive supply so it never interferes. The <strong>555 Output Pin</strong> (pin 3) is where the chip actually delivers its result: a clean high or low voltage that can light an LED or drive a buzzer directly.</p>
+<p>That one-third and two-thirds split isn't a coincidence — it comes from three identical resistors wired in series inside the chip, each one exactly 5,000 ohms. Three resistors of 5 kΩ each is, in fact, exactly where the "555" in the chip's name comes from. The <strong>555 Control Voltage Pin</strong> (pin 5) taps directly into that internal resistor ladder, letting a circuit fine-tune those one-third and two-thirds thresholds if needed — though most simple projects, including every one in this course, leave it disconnected or bridged with a small stabilizing capacitor.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Three Fives, One Famous Chip</p>
+<p><img alt="Volt giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Three 5,000-ohm resistors in a row — that's genuinely where the "555" comes from. It's not a shocking secret, but it <em>is</em> a pretty tidy piece of trivia to drop the next time someone asks why this chip has such a strange name.</p>
+</div>
+<p>The high-low pattern that pops out of pin 3 has a name that reaches far beyond the 555. A <strong>clock signal</strong> is any signal that toggles between two states on a predictable, repeating schedule — and a 555 wired in astable mode is generating exactly that, all on its own, forever, for as long as it has power. Nearly every digital circuit you'll ever meet, from a simple blinking-LED project to the processor inside a computer, depends on some version of a clock signal to keep its steps in order.</p>
+<p>Inside the 555, a hidden circuit keeps the output pin holding steady at high or low <em>between</em> the moments the trigger and threshold pins fire, instead of flickering unpredictably in between. That kind of circuit has its own name, too. A <strong>latch signal</strong> is a signal that holds its state steady until something specifically resets it, rather than drifting or reverting on its own. This chapter only needs that one-sentence definition — you'll build a latch circuit from scratch, transistor by transistor, in Chapter 25.</p>
+<p>Now that every pin has a job attached to it, the full picture is easy to hold in your head at once.</p>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Name</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>GND</td>
+<td>Connects to the circuit's ground</td>
+</tr>
+<tr>
+<td>2</td>
+<td>TRIGGER</td>
+<td>Starts a timing cycle when pulled below ⅓ supply voltage</td>
+</tr>
+<tr>
+<td>3</td>
+<td>OUTPUT</td>
+<td>Delivers the chip's high/low clock signal</td>
+</tr>
+<tr>
+<td>4</td>
+<td>RESET</td>
+<td>Forces the output low whenever pulled low</td>
+</tr>
+<tr>
+<td>5</td>
+<td>CONTROL VOLTAGE</td>
+<td>Fine-tunes the ⅓ and ⅔ threshold levels</td>
+</tr>
+<tr>
+<td>6</td>
+<td>THRESHOLD</td>
+<td>Ends a timing cycle when pushed above ⅔ supply voltage</td>
+</tr>
+<tr>
+<td>7</td>
+<td>DISCHARGE</td>
+<td>Drains the timing capacitor between cycles</td>
+</tr>
+<tr>
+<td>8</td>
+<td>VCC</td>
+<td>Connects to the positive supply</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Eight Pins, One Solid Habit</p>
+<p><img alt="Volt encouraging you" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+Eight pin names landed in just a few paragraphs, and that's a lot at once. You don't need to recite all eight from memory — you need this table, and the habit of checking it before you wire a 555. That habit will serve you for the rest of this course.</p>
+</div>
+<h2 id="setting-the-beat-duty-cycle-and-frequency-in-astable-mode">Setting the Beat: Duty Cycle and Frequency in Astable Mode</h2>
+<p>Chapter 13 already named astable mode as the wiring that makes a 555 blink forever without any outside trigger. What it didn't cover is exactly <em>how fast</em> that blinking happens — and that's entirely up to two resistors and a capacitor that you choose.</p>
+<p>In the classic astable wiring, one resistor (R1) sits between the supply and the discharge pin, a second resistor (R2) sits between the discharge pin and the tied-together trigger and threshold pins, and a capacitor (C) sits between those pins and ground. Together, R1, R2, and C set both how fast the output cycles and what fraction of each cycle it spends high.</p>
+<p>That fraction has its own name. <strong>555 Duty Cycle</strong> is the percentage of each full cycle that the output spends high instead of low — a 50% duty cycle spends equal time high and low, while a higher duty cycle spends more time high than low. And the number of full cycles completed each second has its own name too. <strong>555 Frequency Setting</strong> is the rate, measured in hertz, at which the astable 555 completes one full high-low cycle — exactly the "how fast does it blink" number every builder wants to control.</p>
+<h4 id="astable-frequency">Astable Frequency</h4>
+<div class="arithmatex">\[ f = \frac{1.44}{(R_1 + 2R_2) \, C} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( f \)</span> is the frequency in hertz (cycles per second)</li>
+<li><span class="arithmatex">\( R_1 \)</span> and <span class="arithmatex">\( R_2 \)</span> are the two timing resistors, in ohms</li>
+<li><span class="arithmatex">\( C \)</span> is the timing capacitor, in farads</li>
+</ul>
+<h4 id="astable-duty-cycle">Astable Duty Cycle</h4>
+<div class="arithmatex">\[ D = \frac{R_1 + R_2}{R_1 + 2R_2} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( D \)</span> is the duty cycle, as a fraction (multiply by 100 for a percentage)</li>
+<li><span class="arithmatex">\( R_1 \)</span> and <span class="arithmatex">\( R_2 \)</span> are the same two timing resistors used above</li>
+</ul>
+<p>Both formulas trace straight back to Chapter 10's RC time constant — the discharge pin's resistor-capacitor pair is exactly the kind of RC circuit that chapter introduced, just wired to charge and discharge over and over instead of just once. Bigger resistors or a bigger capacitor slow the whole cycle down; smaller ones speed it up.</p>
+<p>A few real component combinations show what those formulas produce in practice.</p>
+<table>
+<thead>
+<tr>
+<th>R1</th>
+<th>R2</th>
+<th>C</th>
+<th>Frequency</th>
+<th>Duty Cycle</th>
+<th>Good for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 kΩ</td>
+<td>68 kΩ</td>
+<td>10 µF</td>
+<td>≈ 1.1 Hz</td>
+<td>≈ 50%</td>
+<td>A slow, easy-to-watch LED blink</td>
+</tr>
+<tr>
+<td>1 kΩ</td>
+<td>13 kΩ</td>
+<td>10 µF</td>
+<td>≈ 5.3 Hz</td>
+<td>≈ 52%</td>
+<td>A fast, attention-grabbing blink</td>
+</tr>
+<tr>
+<td>1 kΩ</td>
+<td>6.8 kΩ</td>
+<td>0.1 µF</td>
+<td>≈ 990 Hz</td>
+<td>≈ 53%</td>
+<td>An audible tone through a buzzer</td>
+</tr>
+</tbody>
+</table>
+<p>Explore the astable and monostable 555 for yourself — adjust the resistor and capacitor values, watch the output waveform, and see the frequency and duty cycle formulas update live — in the simulator below.</p>
+<h4 id="diagram-555-timer-astable-and-monostable-simulator">Diagram: 555 Timer Astable and Monostable Simulator</h4>
+<iframe src="https://dmccreary.github.io/microsims/sims/555-timer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<p><a class="md-button" href="https://dmccreary.github.io/microsims/sims/555-timer/main.html">Run the 555 Timer Simulator fullscreen</a></p>
+<details>
+<summary>555 Timer Astable and Monostable Simulator (reused MicroSim)</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> 555-timer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Reused<br/>
+<strong>Source:</strong> https://dmccreary.github.io/microsims/sims/555-timer/<br/>
+<strong>Source Repo:</strong> https://github.com/dmccreary/microsims/tree/main/docs/sims/555-timer</p>
+<p>Reused from the MicroSim catalog (WHAT match score 0.8136). This simulation demonstrates the 555 timer's astable (oscillator) and monostable (one-shot) modes with accurate RC timing formulas, a real-time waveform display, and an LED output indicator. Learning objective: Given resistor and capacitor values, calculate the 555 timer's astable frequency and duty cycle using <span class="arithmatex">\( f = 1.44 / ((R_1 + 2R_2) C) \)</span> and <span class="arithmatex">\( D = (R_1 + R_2) / (R_1 + 2R_2) \)</span>, and compare the resulting behavior against monostable mode's single timed pulse.</p>
+</details>
+<h2 id="chapter-summary-key-takeaways">Chapter Summary: Key Takeaways</h2>
+<p>You've just turned last chapter's transistor theory into real wiring skill, and cracked open one of the most famous chips ever made:</p>
+<ul>
+<li>A <strong>TO-92 package</strong> transistor's <strong>transistor pinout</strong> — emitter, base, collector — is found from its flat side; its <strong>transistor schematic symbol</strong> uses an arrow to show current direction</li>
+<li>A <strong>transistor turn-on voltage</strong> of about 0.7 V must be crossed before any current flows, and a <strong>transistor gain rating</strong> (β) sets how much base current controls how much collector current — always respecting the <strong>transistor heat limit</strong></li>
+<li>A <strong>base resistor</strong>, sized with <span class="arithmatex">\( R_B = (V_{in} - V_{BE}) / I_B \)</span>, keeps that base current safe; a <strong>Darlington pair</strong> multiplies gain ratings together when one transistor isn't enough</li>
+<li>The <strong>transistor motor driver</strong> pattern lets a 555 safely switch a motor or other power-hungry load through a transistor instead of directly</li>
+<li><strong>IC Pin Numbering</strong> counts counter-clockwise from a chip's notch, and correct <strong>IC Notch Orientation</strong> keeps power, ground, and signal pins from getting swapped</li>
+<li>The 555's <strong>trigger</strong>, <strong>threshold</strong>, <strong>discharge</strong>, <strong>reset</strong>, <strong>control voltage</strong>, and <strong>output</strong> pins work together to generate a repeating <strong>clock signal</strong>, internally held steady by a <strong>latch signal</strong> — a concept that returns in Chapter 25</li>
+<li><strong>555 duty cycle</strong> and <strong>555 frequency setting</strong>, both set by R1, R2, and C, determine exactly how a 555 in astable mode blinks or beeps</li>
+</ul>
+<p>Chapter 15 picks up the IC-handling habits you just built — pin numbering, notch orientation, careful wiring — and applies them to a 16-pin chip: the 74HC595 shift register, controlling eight LEDs from just three wires.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">555 Handler: Unlocked</p>
+<p><img alt="Volt celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+Huge milestone, builder! You can now wire a transistor safely, insert a chip the right way every time, and calculate exactly how fast a 555 timer blinks or beeps. That's a whole toolbox of new superpowers in one chapter. Current's flowing your way — see you in Chapter 15!</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

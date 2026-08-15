@@ -1,0 +1,23 @@
+{
+  "title": "RGB LED Color Mixing Breadboard",
+  "description": "Given three brightness sliders wired to a common-cathode RGB LED on a breadboard, predict and observe the resulting blended color, and reproduce the common mixes (yellow, magenta, cyan, white) from the chapter text.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "rgb-led-color-mixer-breadboard",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3). Bloom Verb: demonstrate, predict, apply.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 18,
+  "chapter_title": "\"LEDs, RGB Color, and Motors\"",
+  "chapter_dir": "18-leds-rgb-color-motors",
+  "chapter_rel_dir": "chapters/18-leds-rgb-color-motors"
+}

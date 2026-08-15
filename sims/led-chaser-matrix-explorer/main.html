@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- microsim-scaffold-stub -->
+    <title>LED Chaser and Matrix Wiring Explorer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>LED Chaser and Matrix Wiring Explorer</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> led-chaser-matrix-explorer</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Understand (L2) / Apply (L3). Bloom Verb: compare, demonstrate, differentiate.</p>
+            <p><strong>Learning Objective:</strong> Compare how six LEDs are wired under parallel LED wiring versus an LED matrix layout, and demonstrate a blinking output pattern by starting a chaser sequence and observing which single LED is lit at each step.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: microsim
+    **sim-id:** led-chaser-matrix-explorer<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified
+    
+    Purpose: Let students compare parallel LED wiring against an LED matrix's row/column wiring, and run a chaser effect, so the wire-count trade-off and chaser timing both become visible.
+    
+    Bloom Taxonomy: Understand (L2) / Apply (L3). Bloom Verb: compare, demonstrate, differentiate.
+    
+    Learning objective: Compare how six LEDs are wired under parallel LED wiring versus an LED matrix layout, and demonstrate a blinking output pattern by starting a chaser sequence and observing which single LED is lit at each step.
+    
+    Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: LED Chaser and LED Matrix Blinking Pattern | Topic: LED strip, LED matrix, LED chaser effect, blinking output pattern, driving multiple LEDs, parallel LED wiring | Subjects: Electronics, Electric Circuits | Grade Level: Junior High | Learning Objectives: Compare wiring multiple LEDs in parallel versus as an LED strip or matrix, and predict the lit pattern produced by a chaser or blinking sequence" returned a top match of "Animation Pattern Comparison" (dmccreary/moving-rainbow, WHAT score 0.5816, "generate") — below the 0.60 template threshold, naming pre-recorded animation algorithms rather than comparing wiring topologies. Two lower matches (linear-algebra matrix visualizers) are unrelated despite the word "matrix." This is a new specification, a strong candidate for the breadboard-sim-generator skill, extending `breadboard-lib.js` with a six-LED row redrawable as a grid for the matrix view.
+    
+    Canvas layout: Main area shows a breadboard with six LEDs in a row, each with its own resistor, wired in parallel; a mode toggle switches the same six LEDs into a 2x3 grid labeled with row/column wires; right panel holds a "Play Chaser" button, a speed slider, a wire-count readout, and an infobox.
+    
+    Components/elements involved: Breadboard with rails; battery; six LEDs, each with its own resistor in parallel mode or at row/column intersections in matrix mode; wires that redraw between modes; animated current-flow and lit-LED indicators.
+    
+    Required interactivity:
+    - Toggling Parallel/Matrix mode redraws the wiring and updates a live wire-count readout ("12 wires" parallel, "5 wires" matrix)
+    - Clicking "Play Chaser" lights the six LEDs one at a time in a looping sequence, with the lit LED's position named in the infobox
+    - Dragging the speed slider changes how fast the chaser steps
+    - Hovering any LED opens an infobox stating its wiring role in the current mode
+    - Button "Reset" stops the chaser, returns to Parallel mode, all LEDs off
+    
+    Default state: Parallel mode, chaser stopped, wire-count readout "12 wires," infobox reads "Parallel LED wiring — each LED is its own independent branch."
+    
+    Data Visibility Requirements:
+    Stage 1: Show which mode is active
+    Stage 2: Show the live wire-count readout for that mode
+    Stage 3: Show which single LED is lit at each chaser step
+    Stage 4: Show the chaser looping back to the first LED
+    
+    Instructional Rationale: An Understand/Apply "compare/demonstrate" objective calls for a toggleable layout with a live wire-count readout, so students see the wiring trade-off directly, plus a running chaser to make "blinking output pattern" concrete.
+    
+    Color scheme: Green current dots on lit branches, orange highlight on the lit chaser LED, gray for off LEDs, consistent with this chapter's other diagrams.
+    
+    Responsive behavior: Breadboard and control panel stack vertically on narrow screens; buttons and sliders stay full-width and touch-friendly.
+    
+    Implementation: p5.js, breadboard-sim-generator approach, extending `breadboard-lib.js` with a redrawable parallel/matrix layout and a chaser timing loop.
+    -->
+</body>
+</html>

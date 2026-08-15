@@ -1,0 +1,15 @@
+{
+  "sim_id": "led-resistor-calc",
+  "diagram_name": "LED Resistor Calculator",
+  "chapter_number": 18,
+  "chapter_title": "\"LEDs, RGB Color, and Motors\"",
+  "chapter_dir": "18-leds-rgb-color-motors",
+  "chapter_rel_dir": "chapters/18-leds-rgb-color-motors",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-14",
+  "specification": "Type: microsim\n**sim-id:** led-resistor-calc<br/>\n**Library:** p5.js<br/>\n**Status:** Reused<br/>\n**Source:** docs/sims/led-resistor-calc/ (local reuse — already deployed in this same book; demo file is `led-resistor-calc.html`)\n\nReused from this book's own MicroSim library (local reuse, not an external-catalog match). Bloom Taxonomy: Apply (L3). Bloom Verb: calculate, select. Learning objective: Given a source voltage slider, an LED forward-voltage slider, and a target-current slider, calculate the ideal current-limiting resistor value and identify the nearest standard resistor and its color bands, reinforcing the current-limiting resistor equation from Chapter 10 and applied per color channel in this chapter."
+}

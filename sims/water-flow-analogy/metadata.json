@@ -1,0 +1,23 @@
+{
+  "title": "Water Flow Analogy MicroSim",
+  "description": "Water Flow Analogy MicroSim",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "water-flow-analogy",
+  "library": "p5.js",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 1,
+  "chapter_title": "\"Electricity Basics: Voltage, Current, and Resistance\"",
+  "chapter_dir": "01-electricity-basics",
+  "chapter_rel_dir": "chapters/01-electricity-basics"
+}

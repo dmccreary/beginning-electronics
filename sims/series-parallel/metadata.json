@@ -1,0 +1,23 @@
+{
+  "title": "Series and Parallel Circuits Comparison",
+  "description": "Series and Parallel Circuits Comparison",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "series-parallel",
+  "library": "p5.js",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 4,
+  "chapter_title": "\"Series, Parallel, and Circuit Topology\"",
+  "chapter_dir": "04-series-parallel-topology",
+  "chapter_rel_dir": "chapters/04-series-parallel-topology"
+}

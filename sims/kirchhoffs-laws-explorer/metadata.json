@@ -1,0 +1,23 @@
+{
+  "title": "Kirchhoff's Laws Circuit Explorer",
+  "description": "Calculate the voltage drop across each resistor in a series section of a circuit and the current in each branch of a parallel section, by adjusting resistor-value sliders and confirming that voltage drops sum to the source voltage and that branch currents sum to the total current.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "kirchhoffs-laws-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3). Bloom Verb: calculate.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 2,
+  "chapter_title": "\"Current, Charge, Units, and Electrical Safety\"",
+  "chapter_dir": "02-current-charge-units-safety",
+  "chapter_rel_dir": "chapters/02-current-charge-units-safety"
+}

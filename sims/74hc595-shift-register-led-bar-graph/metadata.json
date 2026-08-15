@@ -1,0 +1,23 @@
+{
+  "title": "74HC595 Shift Register LED Bar Graph and Daisy-Chain Explorer",
+  "description": "Given a sequence of data bits and clock pulses, demonstrate how the 74HC595's shift register bit order fills its eight outputs one pulse at a time, distinguish the effect of the Output Enable and Reset pins, and compare manually-clocked stepping to an automatic 555-driven clock.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "74hc595-shift-register-led-bar-graph",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3). Bloom Verb: demonstrate, apply, experiment.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 15,
+  "chapter_title": "\"Shift Registers and IC Handling\"",
+  "chapter_dir": "15-shift-registers-ic-handling",
+  "chapter_rel_dir": "chapters/15-shift-registers-ic-handling"
+}

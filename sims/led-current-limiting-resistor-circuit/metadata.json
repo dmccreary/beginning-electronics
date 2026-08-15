@@ -1,0 +1,23 @@
+{
+  "title": "LED with Current-Limiting Resistor Breadboard Circuit",
+  "description": "Given a rendered breadboard LED circuit with a swappable current-limiting resistor, identify the LED's anode and cathode, predict what happens when the LED is wired backwards, and calculate the resulting current for different resistor choices using the current-limiting resistor equation.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "led-current-limiting-resistor-circuit",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2) / Apply (L3). Bloom Verb: identify, demonstrate, calculate.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 10,
+  "chapter_title": "\"Capacitor Timing and Resistor Values\"",
+  "chapter_dir": "10-capacitor-timing-resistor-values",
+  "chapter_rel_dir": "chapters/10-capacitor-timing-resistor-values"
+}

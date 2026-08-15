@@ -1,0 +1,23 @@
+{
+  "title": "555 Pin Numbering and IC Notch Orientation",
+  "description": "Given a top-down view of an 8-pin DIP chip with a notch, identify pin 1 and correctly count the remaining pins counter-clockwise, and describe what happens electrically when the chip is inserted rotated 180 degrees from its intended orientation.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "ic-pin-numbering-notch-orientation",
+  "library": "p5.js",
+  "bloomLevel": "Remember (L1) / Understand (L2). Bloom Verb: identify, describe, locate.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 14,
+  "chapter_title": "\"The 555 Timer Chip\"",
+  "chapter_dir": "14-555-timer-chip",
+  "chapter_rel_dir": "chapters/14-555-timer-chip"
+}

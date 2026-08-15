@@ -1,0 +1,23 @@
+{
+  "title": "74HC595 Datasheet Pinout Diagram Reader",
+  "description": "Given a top-down datasheet-style pinout diagram of a 16-pin DIP chip with both a notch and a pin-1 dot, identify pin 1, count the remaining pins counter-clockwise, and locate each pin's printed function label.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "74hc595-datasheet-pinout-reader",
+  "library": "p5.js",
+  "bloomLevel": "Remember (L1) / Understand (L2). Bloom Verb: identify, describe, locate.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 15,
+  "chapter_title": "\"Shift Registers and IC Handling\"",
+  "chapter_dir": "15-shift-registers-ic-handling",
+  "chapter_rel_dir": "chapters/15-shift-registers-ic-handling"
+}

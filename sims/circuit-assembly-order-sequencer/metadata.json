@@ -1,0 +1,23 @@
+{
+  "title": "Circuit Assembly Order Sequencer",
+  "description": "Arrange a shuffled set of circuit-building step cards (such as \"place the resistor,\" \"place the LED,\" \"connect ground wire,\" \"connect power wire,\" \"check polarity,\" \"apply power\") into a safe, correct incremental build order, and explain in a follow-up infobox why each step precedes the next.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "circuit-assembly-order-sequencer",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3). Bloom Verb: sequence, construct.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 7,
+  "chapter_title": "\"Wiring Skills and Circuit Layout\"",
+  "chapter_dir": "07-wiring-skills-layout",
+  "chapter_rel_dir": "chapters/07-wiring-skills-layout"
+}

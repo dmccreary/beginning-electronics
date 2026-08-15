@@ -52,7 +52,7 @@
       
     
     
-      <link rel="stylesheet" href="../../css/extras.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
@@ -1306,6 +1306,10 @@
         
       
         
+          
+        
+      
+        
       
         
           
@@ -1368,7 +1372,7 @@
       
   
   <span class="md-ellipsis">
-    Micro Simulations
+    MicroSims
   </span>
   
 
@@ -1823,10 +1827,18 @@
 Grab a breadboard, builder — this is the chapter where the reading stops and the <em>building</em> starts! I promise this board is friendlier than it looks; give it about five minutes and its whole hidden layout will click into place. Let's light it up!</p>
 </div>
 <h2 id="meet-the-solderless-breadboard">Meet the Solderless Breadboard</h2>
+<figure>
+  <img alt="A 400 tie-point solderless breadboard" src="../../img/breadboard.png" width="600" />
+  <figcaption>400 tie-point solderless breadboard (1/2 size)</figcaption>
+</figure>
 <p>A <strong>solderless breadboard</strong> is a reusable plastic board full of small holes that let you build and rewire electronic circuits by simply pushing component leads and wires into place — no melted metal, no permanent joints, no waiting for anything to cool down. Underneath its plastic surface, rows of tiny metal spring clips grab onto whatever you plug in and hold it firmly while also making an electrical connection, which is exactly why it's the tool this entire course is built around.</p>
 <p>The name is a fun bit of electronics history. Decades ago, hobbyists really did build early radio circuits by nailing components straight onto a literal wooden bread-cutting board — bread board, two words. Modern versions ditched the wood and the nails for reusable plastic and spring clips, but the name stuck around. Every time you hear "breadboard" in this book, picture that same do-it-yourself spirit: fast, flexible, and endlessly reusable.</p>
 <p>Because nothing is soldered down, a solderless breadboard is the perfect practice space. Wire a circuit wrong? Pull the part out and move it. Want to try a different resistor? Swap it in ten seconds. That single feature — instant, painless rewiring — is exactly what makes this course's entire hands-on approach possible.</p>
 <h2 id="full-size-and-half-size-breadboards">Full-Size and Half-Size Breadboards</h2>
+<figure>
+  <img alt="A full-size solderless breadboard" src="../../img/breadboard-fullsize.jpg" width="600" />
+  <figcaption>A full-size solderless breadboard with 830 tie points</figcaption>
+</figure>
 <p>Not every breadboard is the same size, and this course mostly uses one of two standard options. A <strong>full-size breadboard</strong> is the larger of the two, built for bigger projects with lots of components at once, while a <strong>half-size breadboard</strong> is roughly half its length — smaller, lighter, and perfectly sized for the simpler circuits you'll build in this course's early chapters.</p>
 <p>Here's how the two compare on the specs that matter most to a builder:</p>
 <table>
@@ -1879,14 +1891,15 @@ That 0.1-inch spacing shows up on almost every electronic component ever made fo
 <p>Down the center of the board runs the <strong>breadboard gutter</strong> — a narrow plastic channel splitting the terminal area into a left half and a right half that are never connected to each other, even at the same column number. Its main job is to give multi-legged chips a place to straddle, with legs plugged into both halves at once, without any risk of shorting one side of the chip to the other. Every individual hole on the board, meanwhile, has a name for what it actually is electrically: a <strong>breadboard tie point</strong> — one connection point in a larger, internally-wired group, whether that group is a five-hole row or a much longer power rail.</p>
 <p>Explore a rendered breadboard below to see exactly which holes are secretly wired together.</p>
 <h4 id="diagram-breadboard-anatomy-explorer">Diagram: Breadboard Anatomy Explorer</h4>
-<iframe src="../../sims/breadboard-anatomy-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/breadboard-anatomy-explorer/main.html" width="100%" height="562px" scrolling="no"></iframe>
 
 <details>
 <summary>Breadboard Anatomy Explorer</summary>
 <p>Type: microsim
 <strong>sim-id:</strong> breadboard-anatomy-explorer<br/>
 <strong>Library:</strong> p5.js<br/>
-<strong>Status:</strong> Specified</p>
+<strong>Status:</strong> Generated<br/>
+<strong>Source:</strong> docs/sims/breadboard-anatomy-explorer/ (built on the horizontal breadboard layout in <code>skills/breadboard-sim-generator/assets/breadboard-lib.js</code>)</p>
 <p>Purpose: Help students identify and label every named region of a solderless breadboard — rows, columns, tie points, gutter, numbering, power rails — by clicking or hovering directly on a rendered breadboard graphic.</p>
 <p>Bloom Taxonomy: Remember (L1) / Understand (L2). Bloom Verb: identify, explain.</p>
 <p>Learning objective: Identify the power rails, terminal-strip rows, columns, tie points, gutter, and numbering system of a half-size solderless breadboard by clicking each labeled region on a rendered breadboard graphic and reading its definition and behavior in an infobox.</p>
@@ -1909,6 +1922,8 @@ That 0.1-inch spacing shows up on almost every electronic component ever made fo
 <p>Color scheme: Warm orange highlight for the currently selected region (matching the book's accent color), red/blue for the "+"/"−" power rail markings, light neutral gray for the unselected board.</p>
 <p>Responsive behavior: Breadboard graphic scales to container width; infobox stacks below the graphic on narrow screens; all regions remain tappable at touch-target size on mobile.</p>
 <p>Implementation: p5.js, with the breadboard drawn as a vector graphic (or the existing photographed asset) and every row, column, rail segment, and gutter region defined as a clickable/hoverable zone tied to a lookup table of names, definitions, and tie-point counts.</p>
+<p>Reference: skills/breadboard-sim-generator/assets/breadboard-lib.js contains the vector drawing for
+a horizontal half-height breadboard.</p>
 </details>
 <div class="admonition mascot-thinking">
 <p class="admonition-title">X-Ray Vision, Unlocked</p>

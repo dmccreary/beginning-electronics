@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- microsim-scaffold-stub -->
+    <title>Forward vs. Reverse Bias Breadboard Demo</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Forward vs. Reverse Bias Breadboard Demo</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> diode-forward-reverse-bias-demo</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Understand (L2) / Apply (L3). Bloom Verb: demonstrate, predict.</p>
+            <p><strong>Learning Objective:</strong> Given a rendered breadboard circuit with a diode, a battery, and an LED current indicator, predict and observe whether current flows when the diode is forward-biased versus reverse-biased, and observe what happens as forward current approaches and exceeds the diode's current rating.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: microsim
+    **sim-id:** diode-forward-reverse-bias-demo<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified
+    
+    Purpose: Let students flip a battery's orientation on a rendered breadboard circuit and directly observe current flowing (forward bias, indicator LED lit) versus current being blocked (reverse bias, indicator dark), then push current past the diode's current rating to see why the rating matters.
+    
+    Bloom Taxonomy: Understand (L2) / Apply (L3). Bloom Verb: demonstrate, predict.
+    
+    Learning objective: Given a rendered breadboard circuit with a diode, a battery, and an LED current indicator, predict and observe whether current flows when the diode is forward-biased versus reverse-biased, and observe what happens as forward current approaches and exceeds the diode's current rating.
+    
+    Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: Forward vs Reverse Bias Diode Breadboard Demo | Topic: Diode forward bias and reverse bias, current flow through a diode on a breadboard, diode current rating | Subjects: Electronics, Beginning Electronics | Grade Level: Junior High | Learning Objectives: Demonstrate how current flows through a forward-biased diode and is blocked by a reverse-biased diode on a breadboard circuit" returned a top match of "Breadboard" (dmccreary/microsims, WHAT score 0.5246, recommendation "generate") — below the 0.60 template threshold, though it is the closest structural match. The second match, "P-N Junction Voltage Explorer" (0.4908), is undergraduate-level depletion-region physics and out of scope. This is a new specification, and a strong candidate for the breadboard-sim-generator skill: this repository's existing `button-led-breadboard` and `light-dark-detector` sims already share a `breadboard-lib.js` rendering library with real tie-point positions and animated current flow that this sim can extend directly with a diode component and bias-direction logic.
+    
+    Canvas layout: Main area shows a rendered half breadboard with a battery pack, a diode (band clearly visible), and a series LED current indicator; right side panel holds a "Flip Battery" button, a current-source slider (0-30 mA), and an infobox.
+    
+    Components/elements involved: A rendered breadboard with power and ground rails; a battery pack with a visible polarity marking; a diode with a rendered band marking; a series LED that lights when current flows; connecting wires; an animated current-flow indicator along the wires.
+    
+    Required interactivity:
+    - Clicking "Flip Battery" reverses the battery's polarity, toggling the diode between forward and reverse bias; forward bias animates current flow and lights the indicator LED, while reverse bias halts the animation and the infobox explains that the diode is blocking current with no damage at this course's low voltage
+    - Dragging the current-source slider raises the simulated source current; below the diode's current rating the indicator brightens normally, and past the rating a warning flash appears and the infobox explains the overheating risk, without actually damaging the simulated part
+    - Hovering the diode opens an infobox stating the current bias condition and the diode's current rating
+    - Button "Reset" returns to the default forward-biased, low-current state
+    
+    Default state: Battery oriented for forward bias, current slider at 15 mA, indicator LED lit at normal brightness, infobox reads "Forward biased — current flows from anode to cathode, well under the rating."
+    
+    Data Visibility Requirements:
+    Stage 1: Show the battery's current polarity orientation
+    Stage 2: Show the resulting bias condition label ("Forward Biased" or "Reverse Biased")
+    Stage 3: Show the animated current flow, or its absence, along the wires
+    Stage 4: Show the current-source value next to the diode's current rating for direct comparison
+    
+    Instructional Rationale: An Understand/Apply "demonstrate/predict" objective calls for a manipulable breadboard simulation with concrete before-and-after states for each bias direction and current level, so students connect the abstract bias vocabulary to a visible, testable outcome rather than an animation they only watch.
+    
+    Color scheme: Green current-flow dots and a lit indicator LED for forward bias, gray and dim for reverse bias, red warning flash when current exceeds the diode's rating, consistent with the palette used in this chapter's other diagrams.
+    
+    Responsive behavior: Breadboard view and the control/infobox panel stack vertically on narrow screens; the current slider and Flip Battery button remain full-width and touch-friendly.
+    
+    Implementation: p5.js, built using the breadboard-sim-generator skill's rendered tie-point approach, extending this repository's existing `breadboard-lib.js` (already used in `button-led-breadboard` and `light-dark-detector`) with a diode component and bias-direction logic.
+    -->
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "title": "Battery Type Explorer",
+  "description": "Compare the nominal voltage, typical capacity range, and common use of six battery types — AAA, AA, coin cell, single-cell LiPo, 9V, and D cell — by clicking each battery illustration to reveal its specifications in an infobox.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "battery-type-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2). Bloom Verb: compare.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 5,
+  "chapter_title": "\"Conductors, Batteries, and Circuit Vocabulary Review\"",
+  "chapter_dir": "05-conductors-batteries-review",
+  "chapter_rel_dir": "chapters/05-conductors-batteries-review"
+}

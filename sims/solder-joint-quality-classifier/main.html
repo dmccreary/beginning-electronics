@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- microsim-scaffold-stub -->
+    <title>Solder Joint Quality Classifier</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Solder Joint Quality Classifier</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> solder-joint-quality-classifier</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Evaluate (L5). Bloom Verb: judge, assess.</p>
+            <p><strong>Learning Objective:</strong> Given eight vector-rendered solder joint examples on a perfboard pad, sort each one into a "Good Joint" or "Cold Joint" bin by judging its shine, shape, and coverage, and justify each judgment against a three-criteria rubric revealed in the feedback infobox.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: microsim
+    **sim-id:** solder-joint-quality-classifier<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified
+    
+    Purpose: Let students practice visually distinguishing a good solder joint from a cold solder joint using shine, shape, and coverage as judging criteria, reinforcing solder joint and cold solder joint before any real soldering activity.
+    
+    Bloom Taxonomy: Evaluate (L5). Bloom Verb: judge, assess.
+    
+    Learning objective: Given eight vector-rendered solder joint examples on a perfboard pad, sort each one into a "Good Joint" or "Cold Joint" bin by judging its shine, shape, and coverage, and justify each judgment against a three-criteria rubric revealed in the feedback infobox.
+    
+    Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Solder Joint Quality Classifier" returned a top match of "Purpose Classification Sorter" (dmccreary/infographics, WHAT score 0.4369, recommendation "generate") — below the 0.60 template threshold, so no existing sim is a close enough starting point. A keyword grep of the 3,764-entry MicroSim catalog for "solder" and "solder joint" returned zero matches. This is a new specification.
+    
+    Canvas layout: A tray of eight shuffled solder-joint icons across the top of the canvas; two labeled drop bins ("Good Joint" and "Cold Joint") below; a small infobox panel to the side or bottom.
+    
+    Components/elements involved: Eight vector-rendered solder joint icons, each showing a wire lead soldered to a round copper perfboard pad, varying in shine (glossy vs. dull), shape (smooth cone vs. lumpy blob), and coverage (fully coated vs. partially bare); two sorting bins; a rubric card listing the three judging criteria.
+    
+    Required interactivity:
+    - Drag (or tap-to-select, tap-to-place) each joint icon into the "Good Joint" or "Cold Joint" bin
+    - Immediate per-joint feedback: a green outline and a one-sentence explanation for a correct sort, a red outline and an explanation of the visual cue that was missed for an incorrect sort
+    - Hover any joint at any time, before sorting, to see a neutral callout labeling its shine/shape/coverage without revealing whether it's good or cold
+    - Button: "Check All" tallies the final score once all eight are sorted
+    - Button: "New Set" reshuffles a fresh set of eight joints, with a different mix of good and cold examples, for repeated practice
+    
+    Default state: All eight joints unsorted in the top tray; both bins empty; "Check All" disabled until every joint has been placed in a bin.
+    
+    Instructional Rationale: An Evaluate-level "judge/assess" objective calls for a classification-sorter pattern with rubric-based feedback rather than a passive description, so learners practice the exact visual judgment call — shine, shape, coverage — they will need before ever picking up a real soldering iron.
+    
+    Color scheme: Warm orange for the currently dragged joint, green/red for correct/incorrect bin feedback, light neutral gray for the unsorted tray, consistent with the palette used across this chapter's other diagrams.
+    
+    Responsive behavior: Tray and bins stack vertically on narrow screens; drag-and-drop also supports tap-to-select-then-tap-to-place as a touch-friendly alternative.
+    
+    Implementation: p5.js, with solder joint icons as procedurally drawn vector shapes (not photographs) so shine, shape, and coverage can be adjusted parametrically; each icon keyed to a metadata table of {shine, shape, coverage, isGood} used both for rendering and for grading.
+    -->
+</body>
+</html>

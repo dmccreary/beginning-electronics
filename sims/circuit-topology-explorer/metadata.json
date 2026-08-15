@@ -1,0 +1,23 @@
+{
+  "title": "Circuit Topology Explorer",
+  "description": "Identify the nodes, branches, and loops in a series-parallel circuit (one battery, one series resistor, and two parallel resistors) by clicking each part of the diagram and reading its definition in an infobox.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "circuit-topology-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Remember (L1). Bloom Verb: identify.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 4,
+  "chapter_title": "\"Series, Parallel, and Circuit Topology\"",
+  "chapter_dir": "04-series-parallel-topology",
+  "chapter_rel_dir": "chapters/04-series-parallel-topology"
+}

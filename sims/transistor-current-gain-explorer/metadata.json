@@ -1,0 +1,23 @@
+{
+  "title": "Transistor Current Gain Explorer",
+  "description": "Given a base current value and a selected transistor (BC547 or 2N2222), calculate the resulting collector current using \\( I_C = \\beta \\times I_B \\), and compare how the two transistors' different gain and current-rating values change that outcome.",
+  "creator": "Beginning Electronics",
+  "author": "Dan McCreary",
+  "date": "2026-08-14",
+  "subject": [
+    "Beginning Electronics"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "transistor-current-gain-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3). Bloom Verb: calculate, demonstrate, compare.",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 13,
+  "chapter_title": "\"Meet the Transistor\"",
+  "chapter_dir": "13-meet-the-transistor",
+  "chapter_rel_dir": "chapters/13-meet-the-transistor"
+}
