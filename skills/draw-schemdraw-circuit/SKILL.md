@@ -33,6 +33,8 @@ Apply these rules whenever the circuit belongs in a textbook chapter:
 - Use a relative image path that resolves from the chapter Markdown file. Keep the Python source and image in the location requested by the surrounding workflow.
 - Avoid duplicate headings or figures. If the chapter already contains a diagram heading for the same concept, update that figure in place.
 
+The `#### Diagram: ...` heading is also a classroom navigation feature: it creates a direct section anchor that an instructor can share in a Zoom, Google Meet, or Microsoft Teams chat so every student opens the same diagram on their local computer. Use a unique, descriptive heading and keep its wording stable so previously shared links continue to work.
+
 Use this chapter-generation pattern:
 
 ```markdown

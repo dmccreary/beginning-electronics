@@ -1,4 +1,6 @@
-# Esaki Flasher
+# LED Flasher Circuit
+
+(also known as an Esaki Flasher)
 
 **Lesson Plan: Building an LED Flasher Circuit with a 2N2222 Transistor**
 

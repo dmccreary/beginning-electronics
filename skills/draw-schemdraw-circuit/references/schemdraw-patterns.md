@@ -131,6 +131,7 @@ Place the device first, store it, then wire to named anchors such as `opamp.in1`
 - Give each component a unique conventional designator: R1, C1, L1, D1, Q1, U1, V1, and so on.
 - Put the designator and value together; split long labels with `\n`.
 - Let Schemdraw choose label placement first. Specify `loc` only after visual inspection shows a need.
+- Aim for about 0.15 drawing units of clear edge-to-edge space between a symbol and its label. Treat this as a visual target rather than a center-coordinate offset, and increase it when a long or multiline label needs more room.
 - Use one font size and line width throughout. Use color only when it conveys meaning requested by the user.
 - Keep annotations outside wires and symbols. Avoid titles inside the schematic canvas unless requested.
 

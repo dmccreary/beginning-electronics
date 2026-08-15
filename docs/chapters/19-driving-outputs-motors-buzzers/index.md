@@ -72,6 +72,16 @@ The real danger shows up the instant power switches off. The coil is still surro
 
 That's exactly why Chapter 12's flyback diode belongs in every motor circuit, not just this course's example projects. Wired backward across the motor's two leads, the flyback diode does nothing while the motor spins normally — it sits reverse-biased, blocking current, out of the way. The instant the circuit switches off, that voltage spike finally pushes the diode forward, giving the spike a safe, short loop to fade out in instead of slamming into the transistor.
 
+#### Diagram: Protected Transistor Motor Driver
+
+<figure markdown="span">
+  ![Protected NPN low-side motor driver with a base resistor, flyback diode whose cathode connects to positive 5 volts, and an optional suppression capacitor across the motor](protected-transistor-motor-driver.png)
+  <figcaption>Q1 switches the motor on the low side. D1 is reverse-biased while the motor runs, then safely carries the collapsing motor current at switch-off; its cathode connects to +5 V. Optional C1 suppresses brush noise directly across the motor terminals.</figcaption>
+</figure>
+
+!!! note "Why Is the Cathode Marked K?"
+    Diode terminals are commonly labeled **A** for anode and **K** for cathode. The **K** comes from *Kathode*, the German-derived spelling, and avoids confusing the cathode with **C**, which already identifies capacitors and a transistor's collector. In the diagram, D1's **K** terminal connects to the positive supply.
+
 !!! mascot-warning "No Flyback Diode, No Mercy"
     ![Volt giving a warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
     Skip the flyback diode, and motor back-EMF can spike high enough to punch straight through a transistor, destroying it the instant you switch the motor off — even though that same transistor handled the motor just fine while running. Wire the flyback diode before you power the circuit, not after something breaks.

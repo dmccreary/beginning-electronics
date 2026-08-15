@@ -169,6 +169,13 @@ This course's voltages, five volts from a USB supply or a small battery pack, ar
 
 **Voltage measurement** is the job of comparing the electrical potential between two points and reporting the difference, and it's the gentlest mode to start with because it never requires you to break a circuit open. You simply touch the red probe to one point, the black probe to another, and read the difference straight off the display — the circuit keeps running exactly as it was the whole time.
 
+#### Diagram: Voltage, Current, and Resistance Measurement Connections
+
+<figure markdown="span">
+  ![Three multimeter connection diagrams showing a voltmeter in parallel across a powered load, an ammeter inserted in series, and an ohmmeter across an isolated unpowered resistor](multimeter-measurement-connections.png)
+  <figcaption>Connect a voltmeter in parallel on a powered circuit, insert an ammeter in series through an opened path, and use an ohmmeter only across an isolated, unpowered component. Never connect an ammeter directly across a voltage source.</figcaption>
+</figure>
+
 **Measuring battery voltage** is the simplest voltage check you'll ever make. Set the dial to DC voltage, touch the red probe to the battery's positive terminal and the black probe to its negative terminal, and read the result. A fresh AA battery reads close to 1.5 V; a rundown one might read closer to 1.1 V, even though it still looks identical on the outside. This is exactly how you'll catch a "dead" battery before it ruins an afternoon of building.
 
 **Measuring in-circuit voltage** means taking that same red-probe/black-probe technique and applying it to a circuit that's already wired and powered on, instead of a bare battery. Touch the probes across a resistor's two leads, or across an LED's two legs, and the meter reports the voltage drop across that exact part — the same voltage drop this book has been describing in words since Chapter 9. Measuring across a lit red LED should read close to the 1.9 V forward voltage Chapter 12 promised, turning a chapter's worth of promises into a number on a screen.
