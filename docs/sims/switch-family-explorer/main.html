@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <title>Meet the Switch Family — Interactive Infographic</title>
+  <link rel="stylesheet" href="../shared-libs/grid-overlay.css">
+  <style>
+    .sim-title {
+      margin: 2px 0 10px;
+      color: #1f3349;
+      font-size: clamp(20px, 3.2vw, 30px);
+      line-height: 1.15;
+      text-align: center;
+    }
+    .sim-subtitle {
+      margin: -4px 0 10px;
+      color: #526579;
+      font-size: 13px;
+      text-align: center;
+    }
+    .zone-chip {
+      top: 8px;
+      padding: 3px 9px;
+      font-size: 13px;
+      opacity: 1;
+    }
+    .grid-zone:focus-visible {
+      border-color: var(--zone-color, #1389A6);
+      border-width: 3px;
+      outline: 3px solid white;
+      outline-offset: -6px;
+    }
+    #detail-panel { min-height: 122px; }
+    #panel-facts strong { color: #1f3349; }
+  </style>
+</head>
+<body>
+<main>
+  <h1 class="sim-title">Meet the Switch Family</h1>
+  <p class="sim-subtitle">Select a column to learn how the switch behaves and when to use it.</p>
+
+  <div id="image-wrapper" aria-label="Five common electronic switch types">
+    <!-- Image and interactive zones are injected by grid-diagram.js. -->
+  </div>
+
+  <div id="controls" aria-label="Activity mode">
+    <button class="mode-btn active" id="btn-explore">Explore</button>
+    <button class="mode-btn" id="btn-quiz">Quiz Me</button>
+    <span id="quiz-score" style="display:none">
+      Score: <strong id="score-val">0</strong> / <strong id="score-total">0</strong>
+    </span>
+    <span id="edit-badge">EDIT MODE</span>
+  </div>
+
+  <div id="detail-panel" aria-live="polite">
+    <div id="panel-prompt">Choose a switch column to see its description, contact style, and best uses.</div>
+    <div id="panel-content">
+      <div id="panel-label"></div>
+      <div id="panel-summary"></div>
+      <ul id="panel-facts"></ul>
+    </div>
+  </div>
+
+  <div id="quiz-question" aria-live="polite"></div>
+
+  <div id="edit-panel">
+    <h3>Edit Mode — drag corner handles to calibrate zone boundaries</h3>
+    <div id="coord-display">Drag a corner handle to see live coordinates.</div>
+    <textarea id="json-output" readonly spellcheck="false"></textarea>
+    <div id="edit-actions">
+      <button id="copy-json-btn" onclick="sim.copyJSON()">Copy JSON</button>
+      <span id="copy-confirm"></span>
+    </div>
+  </div>
+</main>
+
+<script src="../shared-libs/grid-diagram.js"></script>
+<script src="switch-family-explorer.js"></script>
+</body>
+</html>

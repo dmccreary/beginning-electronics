@@ -105,6 +105,7 @@ nav:
     - LED with Current-Limiting Resistor Breadboard Circuit: sims/led-current-limiting-resistor-circuit/index.md
     - Light and Dark Detector: sims/light-dark-detector/index.md
     - Material Conductivity Sorter: sims/material-conductivity-sorter/index.md
+    - Meet the Switch Family: sims/switch-family-explorer/index.md
     - MicroSim Template: sims/template/index.md
     - Multimeter Anatomy Explorer: sims/multimeter-anatomy-explorer/index.md
     - Node Voltage and Series Resistance Chain Builder: sims/node-voltage-series-chain/index.md
@@ -140,7 +141,15 @@ nav:
     - XR2206 Waveform Generator Explorer: sims/xr2206-waveform-generator-explorer/index.md
 
 
-  
+
+
+
+
+
+
+
+
+
   - Kits and Projects:
     - Introduction: kits/index.md
     - RGB LED: kits/rgb-led/index.md
@@ -181,8 +190,8 @@ theme:
   custom_dir: overrides
   static_templates:
     - 404.html
-  # logo: img/my-icon.png
-  # favicon: img/my-icon.png
+  logo: img/mascot/welcome.png
+  favicon: img/favicon.ico
   palette:
     primary: 'blue'
     accent: 'orange'
@@ -200,6 +209,8 @@ theme:
 plugins:
   - search
 #  - social
+exclude_docs: |
+  sims/switch-family-explorer/image-prompt.md
 markdown_extensions:
   - admonition
   - md_in_html

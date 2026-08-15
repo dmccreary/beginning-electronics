@@ -95,7 +95,7 @@ Explore how battery chemistry, nominal voltage, and capacity relate to each othe
 
 #### Diagram: Battery Type Explorer
 
-<iframe src="../../sims/battery-type-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/battery-type-explorer/main.html" width="100%" height="502px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Battery Type Explorer</summary>
@@ -195,7 +195,7 @@ Adjust the material, length, and thickness below to see resistance and conductan
 
 #### Diagram: Resistivity and Conductance Calculator
 
-<iframe src="../../sims/resistivity-conductance-calculator/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/resistivity-conductance-calculator/main.html" width="100%" height="457px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Resistivity and Conductance Calculator</summary>
@@ -278,7 +278,7 @@ Use the virtual multimeter below to trace a circuit's current path and find wher
 
 #### Diagram: Circuit Continuity and Fault Tester
 
-<iframe src="../../sims/circuit-continuity-fault-tester/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/circuit-continuity-fault-tester/main.html" width="100%" height="522px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Circuit Continuity and Fault Tester</summary>

@@ -128,7 +128,7 @@ Practice this exact method on a broken circuit in the sim below.
 
 #### Diagram: Breadboard Troubleshooting Detective
 
-<iframe src="../../sims/breadboard-troubleshooting-detective/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/breadboard-troubleshooting-detective/main.html" width="100%" height="532px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Breadboard Troubleshooting Detective</summary>
@@ -236,7 +236,7 @@ Practice sorting good and cold solder joints by eye in the sim below.
 
 #### Diagram: Solder Joint Quality Classifier
 
-<iframe src="../../sims/solder-joint-quality-classifier/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/solder-joint-quality-classifier/main.html" width="100%" height="522px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Solder Joint Quality Classifier</summary>

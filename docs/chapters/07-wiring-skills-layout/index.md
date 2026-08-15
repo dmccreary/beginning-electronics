@@ -153,7 +153,7 @@ Practice mapping a simple schematic onto a breadboard in the sim below.
 
 #### Diagram: Schematic-to-Breadboard Mapper
 
-<iframe src="../../sims/schematic-to-breadboard-mapper/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/schematic-to-breadboard-mapper/main.html" width="100%" height="542px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Schematic-to-Breadboard Mapper</summary>
@@ -212,7 +212,7 @@ Practice sequencing a safe, incremental build order in the sim below.
 
 #### Diagram: Circuit Assembly Order Sequencer
 
-<iframe src="../../sims/circuit-assembly-order-sequencer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/circuit-assembly-order-sequencer/main.html" width="100%" height="522px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Circuit Assembly Order Sequencer</summary>

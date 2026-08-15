@@ -114,6 +114,10 @@ Your kit and the wider world of electronics use several different physical shape
 
 Every one of these switches also has a "shape" to its internal wiring, described using pole-and-throw language borrowed from railroad switches. An **SPST Switch** — Single Pole, Single Throw — is the simplest wiring of all: one input, one output, on or off, nothing more. Most push buttons and many toggle switches are SPST. An **SPDT Switch** — Single Pole, Double Throw — has one input that can connect to either of two different outputs, exactly like a train-track switch sending a single incoming train down one of two possible tracks instead of just stopping or going. Here's how the whole switch family compares side by side.
 
+<iframe src="../../sims/switch-family-explorer/main.html" height="652px" width="100%" scrolling="no"></iframe>
+
+[Open the Switch Family Explorer fullscreen](../../sims/switch-family-explorer/main.html){ .md-button .md-button--primary }
+
 | Switch Type | Momentary or Latching? | Typical Wiring | Common Use |
 |---|---|---|---|
 | Push Button (Tactile) | Momentary | SPST, usually NO | Doorbells, game controllers, reset buttons |

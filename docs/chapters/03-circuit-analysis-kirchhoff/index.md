@@ -157,7 +157,7 @@ Try the interactive tool below to build a feel for how these prefixes trade off 
 
 #### Diagram: Unit Prefix Value Converter
 
-<iframe src="../../sims/unit-prefix-converter/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/unit-prefix-converter/main.html" width="100%" height="442px" scrolling="no"></iframe>
 
 [Run the Unit Prefix Value Converter fullscreen](../../sims/unit-prefix-converter/main.html){ .md-button }
 
@@ -271,7 +271,7 @@ Explore the interactive hazard board below. Click each icon to see exactly how t
 
 #### Diagram: Circuit Safety Hazard Explorer
 
-<iframe src="../../sims/circuit-safety-hazard-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/circuit-safety-hazard-explorer/main.html" width="100%" height="482px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Circuit Safety Hazard Explorer</summary>
@@ -359,7 +359,7 @@ Try the interactive circuit below. Adjust each resistor in a series chain and wa
 
 #### Diagram: Node Voltage and Series Resistance Chain Builder
 
-<iframe src="../../sims/node-voltage-series-chain/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/node-voltage-series-chain/main.html" width="100%" height="587px" scrolling="no"></iframe>
 
 [Run the Node Voltage and Series Resistance Chain Builder fullscreen](../../sims/node-voltage-series-chain/main.html){ .md-button }
 

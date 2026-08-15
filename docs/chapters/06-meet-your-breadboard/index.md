@@ -212,7 +212,7 @@ Practice choosing the right jumper wire and routing it cleanly in the sim below.
 
 #### Diagram: Jumper Wire Routing Practice
 
-<iframe src="../../sims/jumper-wire-routing-practice/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/jumper-wire-routing-practice/main.html" width="100%" height="472px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Jumper Wire Routing Practice</summary>

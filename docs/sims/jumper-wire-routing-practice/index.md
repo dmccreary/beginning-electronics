@@ -11,7 +11,7 @@ quality_score: 0
 
 # Jumper Wire Routing Practice
 
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="472px" width="100%" scrolling="no"></iframe>
 
 [Run the Jumper Wire Routing Practice MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>
@@ -31,7 +31,7 @@ You can add this MicroSim to any web page by adding this to your HTML:
 
 ```html
 <iframe src="https://dmccreary.github.io/beginning-electronics/sims/jumper-wire-routing-practice/main.html"
-        height="450px"
+        height="472px"
         width="100%"
         scrolling="no"></iframe>
 ```

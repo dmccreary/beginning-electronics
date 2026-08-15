@@ -1,0 +1,40 @@
+{
+  "title": "Meet the Switch Family",
+  "creator": "Dan McCreary",
+  "subject": "Beginning electronics and switch selection",
+  "description": "An interactive five-column infographic comparing tactile push buttons, toggle switches, slide switches, rocker switches, and DIP switches.",
+  "date": "2026-08-15",
+  "educational": {
+    "gradeLevel": ["6", "7", "8", "9", "10"],
+    "subjectArea": "Electronics",
+    "topic": "Switch and button types",
+    "learningObjectives": [
+      "Explain how physical form, switching behavior, and contact arrangement make each common switch type suitable for different uses."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "duration": "10-15 minutes",
+    "prerequisites": ["Open and closed circuits", "Basic breadboard familiarity"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Custom grid infographic overlay",
+    "version": "1.0",
+    "canvasDimensions": {"width": "responsive", "height": 650},
+    "responsive": true,
+    "dependencies": ["grid-diagram.js", "grid-overlay.css"],
+    "accessibility": {"hasAltText": true, "keyboardNavigable": true}
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive comparison and retrieval practice",
+    "keyQuestions": [
+      "Which switches are momentary and which are latching?",
+      "How does a switch's physical form make it better for a particular use?"
+    ],
+    "commonMisconceptions": [
+      "A four-pin tactile button has four independent contacts.",
+      "The physical switch style alone determines whether its contacts are SPST or SPDT."
+    ],
+    "assessmentOpportunities": ["Five-question switch selection quiz"]
+  },
+  "chapter": "16-switches-buttons-wired-logic"
+}

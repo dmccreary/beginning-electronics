@@ -161,7 +161,7 @@ Explore the circuit below to see nodes, branches, and loops highlighted directly
 
 #### Diagram: Circuit Topology Explorer
 
-<iframe src="../../sims/circuit-topology-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/circuit-topology-explorer/main.html" width="100%" height="482px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Circuit Topology Explorer</summary>
@@ -236,7 +236,7 @@ Sort the everyday materials below into their correct category, and see immediate
 
 #### Diagram: Material Conductivity Sorter
 
-<iframe src="../../sims/material-conductivity-sorter/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/material-conductivity-sorter/main.html" width="100%" height="502px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Material Conductivity Sorter</summary>

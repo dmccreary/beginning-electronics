@@ -107,7 +107,7 @@ Test how well the differences stuck in the sim below.
 
 #### Diagram: Resistor Family Matching Sorter
 
-<iframe src="../../sims/resistor-family-matching-sorter/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/resistor-family-matching-sorter/main.html" width="100%" height="502px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Resistor Family Matching Sorter</summary>
@@ -162,7 +162,7 @@ Both pull-up and pull-down resistors do the same essential job: giving a wire a 
 
 #### Diagram: Pull-Up and Pull-Down Resistor Explorer
 
-<iframe src="../../sims/pull-up-pull-down-resistor-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/pull-up-pull-down-resistor-explorer/main.html" width="100%" height="492px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Pull-Up and Pull-Down Resistor Explorer</summary>
@@ -226,7 +226,7 @@ Try the numbers yourself: with a 5-volt supply, a 1,000-ohm \( R_1 \), and a 1,0
 
 #### Diagram: Voltage Divider Circuit Explorer
 
-<iframe src="../../sims/voltage-divider-circuit-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/voltage-divider-circuit-explorer/main.html" width="100%" height="537px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Voltage Divider Circuit Explorer</summary>
