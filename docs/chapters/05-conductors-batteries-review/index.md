@@ -253,6 +253,13 @@ Step back from materials for a moment and look at the big picture: no matter how
 
 Connect a voltage source to a circuit load, and current has to travel somewhere in between. That specific route is called the **current path** — the actual journey current takes from the source, through every circuit element along the way, and back again to complete the loop. A **circuit element** is simply the general, catch-all term for any individual component wired into that path: a resistor, an LED, a switch, a battery, or anything else you might drop onto a breadboard.
 
+#### Diagram: Source-Path-Load Circuit System
+
+<figure markdown="span">
+  ![Battery source, closed switch and wiring path, resistor-and-LED load, and return path labeled as one circuit system](source-path-load-system.png)
+  <figcaption>Every working circuit combines a source, a complete controlled path, a load that converts energy, and a return path to the source.</figcaption>
+</figure>
+
 Every closed circuit you'll build in this course, no matter how many parts it has, boils down to the same three ingredients:
 
 - At least one **voltage source** supplying the push

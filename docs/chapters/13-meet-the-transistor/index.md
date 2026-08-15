@@ -83,6 +83,13 @@ A **PNP transistor** is the mirror image — a thin N-type layer sandwiched betw
 
 Before comparing the two, it helps to see them side by side.
 
+#### Diagram: NPN Low-Side and PNP High-Side Switches
+
+<figure markdown="span">
+  ![Matched NPN low-side and PNP high-side transistor switches with loads, base resistors, terminals, control polarity, and current arrows](npn-pnp-switches.png)
+  <figcaption>An NPN switch completes the load's path to ground when its base goes high; a PNP switch connects the positive rail to the load when its base is pulled low.</figcaption>
+</figure>
+
 | Feature | NPN Transistor | PNP Transistor |
 |---|---|---|
 | Layer order | N-type / P-type / N-type | P-type / N-type / P-type |

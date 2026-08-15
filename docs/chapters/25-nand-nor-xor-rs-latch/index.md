@@ -56,6 +56,13 @@ A **NOT Gate** is any real circuit that implements the Logical NOT Operation fro
 
 A **Transistor NOT Gate** builds that inversion with a single NPN transistor, using the exact saturation-and-cutoff switching behavior from Chapter 13. The input connects through a base resistor to the transistor's base. The collector connects through a separate resistor up to the positive supply rail, and that same collector point doubles as the gate's output. The emitter ties straight to ground.
 
+#### Diagram: Transistor NOT, NAND, and NOR Gates
+
+<figure markdown="span">
+  ![Complete NPN transistor inverter followed by block-level AND-then-NOT NAND and OR-then-NOT NOR signal paths](transistor-not-nand-nor.png)
+  <figcaption>The transistor stage produces NOT directly; adding the same inversion after AND or OR produces NAND or NOR, making the signal flow behind the truth tables explicit.</figcaption>
+</figure>
+
 Watch what happens as the input changes. Drive the base HIGH, and the transistor saturates — current flows straight through it to ground, pulling the collector down near 0 V. Drive the base LOW, and the transistor cuts off completely — no path to ground exists, so the pull-up resistor holds the collector up near the supply voltage instead.
 
 - Input HIGH → transistor saturated → output pulled down → **output LOW**
@@ -223,6 +230,13 @@ An **RS Latch** — short for "Set-Reset latch" — is the simplest sequential c
 Two more wires complete the circuit, and each one earns its own name. The **Set Input** is the control line that, when pressed, forces the latch's stored value to HIGH. The **Reset Input** is the control line that, when pressed, forces that same stored value back to LOW. Together they're the only two ways to change what the latch is holding onto.
 
 That stored value has a name too, and it's the whole reason this circuit exists. The **Latch State**, usually labeled Q, is the single bit of information the RS latch is currently holding. Release both the Set Input and the Reset Input, and the Latch State doesn't drift back to some default zero. It just stays exactly where you left it — that's memory, built from nothing but two NAND gates and a feedback loop.
+
+#### Diagram: Cross-Coupled NAND RS Latch
+
+<figure markdown="span">
+  ![Two NAND gates cross-coupled with separate Q and Q-bar feedback paths and active-low Set and Reset inputs](cross-coupled-nand-rs-latch.png)
+  <figcaption>Each output feeds the opposite gate, so the active-low Set and Reset inputs can change Q while the crossed feedback paths preserve the last state after both controls are released.</figcaption>
+</figure>
 
 | Set | Reset | Latch State (Q) | What's Happening |
 |-----|-------|------------------|-------------------|

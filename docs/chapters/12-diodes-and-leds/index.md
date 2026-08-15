@@ -83,6 +83,13 @@ A **Zener diode** is a diode specifically designed to conduct current in the rev
 
 A **flyback diode** is a diode wired backward across a motor, relay, or other coil-based part, added to safely absorb the voltage spike created when current through that coil is suddenly switched off. This course's kit includes DC motors, and every one of them can produce that kind of spike. A flyback diode sits reverse-biased — blocking, doing nothing at all — the entire time the motor spins normally. The instant the motor switches off, its collapsing magnetic field tries to push current backward through the circuit, and the flyback diode gives that surge a safe path instead of letting it fry a nearby transistor or switch.
 
+#### Diagram: Rectifier, Flyback, and Zener Diode Circuits
+
+<figure markdown="span">
+  ![Three diode applications showing a half-wave rectifier, a flyback loop around a coil, and a series-resistor Zener clamp](rectifier-flyback-zener-circuits.png)
+  <figcaption>The diode orientation changes with the job: pass one AC half-cycle, conduct a coil's switch-off current, or clamp a node after a required current-limiting resistor.</figcaption>
+</figure>
+
 The table below lines up all three types side by side.
 
 | Diode Type | Normal Job | Conducts When | Common Location |
@@ -246,6 +253,13 @@ Beyond color and shape, LEDs share one more standout trait. **LED lifespan** is 
 Chapter 9 introduced the potentiometer as a way to dim an LED by hand, and Chapter 11 even showed how disconnecting one terminal turns it into a rheostat. This chapter finishes the story by looking at what's actually moving inside.
 
 A **potentiometer wiper** is the sliding or rotating contact inside a potentiometer that touches a resistive strip at one point, dividing the strip's total resistance into two separate parts on either side of that contact point. Turn the knob or slide the lever, and the wiper physically moves along the strip, changing exactly where that division happens. Every voltage-divider behavior you explored back in Chapter 9 traces back to this one moving part.
+
+#### Diagram: Potentiometer as an Adjustable Voltage Divider
+
+<figure markdown="span">
+  ![Ten-kilohm potentiometer with its end terminals across five volts and ground and its wiper producing an adjustable output](potentiometer-voltage-divider.png)
+  <figcaption>The two end terminals span the supply while terminal 2 taps the resistive track, allowing the wiper output to move continuously from 0 to 5 V.</figcaption>
+</figure>
 
 ## Linear Taper vs. Logarithmic Taper
 

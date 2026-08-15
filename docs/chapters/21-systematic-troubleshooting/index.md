@@ -101,6 +101,13 @@ An **open circuit reading** is what a meter shows when there's no complete path 
 
 A **short circuit reading** is nearly the opposite: a connection exists where one shouldn't, letting current flow through a path that should have resistance in the way. In resistance mode, a short reads suspiciously close to zero ohms on a part that should measure much higher. In continuity mode, it beeps between points you expected to be separate. In voltage mode, a shorted component reads close to 0 V across its own leads.
 
+#### Diagram: Healthy, Open, and Shorted Circuit Measurements
+
+<figure markdown="span">
+  ![The same five-volt resistor-load circuit shown healthy, with an open load, and with a shorted load, using consistent test points and predicted voltages](healthy-open-shorted-measurements.png)
+  <figcaption>At the same test node, a healthy divider reads about half supply, an open load rises to full supply with no current, and a shorted load falls near ground.</figcaption>
+</figure>
+
 The table below gathers every mode's normal, open, and shorted signature into one place you can check against any confusing reading.
 
 | Mode | Normal Reading | Open Circuit Reading | Short Circuit Reading |

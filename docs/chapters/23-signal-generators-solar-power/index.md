@@ -62,6 +62,13 @@ The 7805 and the buck converter you built in Chapter 22 are each one example of 
 
 A **linear regulator** is any voltage regulator — the 7805 is one example — that holds a steady output by continuously burning off extra input voltage as heat. A **switching regulator** is any voltage regulator — a buck converter is one example — that holds a steady output by rapidly switching current on and off and storing energy in an inductor, instead of burning it away. Every fact you learned about the 7805's heat and the buck converter's cool efficiency in Chapter 22 was really a fact about these two whole families.
 
+#### Diagram: Linear, Buck, and Boost Regulator Topologies
+
+<figure markdown="span">
+  ![Simplified linear, buck, and boost regulator schematics with their pass element, switches, diodes, inductors, capacitors, and voltage relationships labeled](regulator-topologies.png)
+  <figcaption>A linear regulator dissipates excess voltage in a pass element; buck and boost converters rearrange a switch, diode, inductor, and capacitor to step voltage down or up efficiently.</figcaption>
+</figure>
+
 That efficiency difference has a name and a number attached to it.
 
 #### Power Efficiency
@@ -235,6 +242,13 @@ A single solar cell produces only a small voltage — often under a volt. Real p
 <figure markdown="span">
   ![Safe solar charging path from a 5-to-6-volt panel through a conditional Schottky blocking diode and a protected single-cell LiPo charge controller to separate battery and night-light load ports, with direct panel-to-bare-cell wiring crossed out](solar-panel-lipo-charging-circuit.png)
   <figcaption>Route panel power through a solar-rated one-cell CC/CV charge controller whose current setting matches the battery. Use D1 when the selected module lacks equivalent reverse-current protection, connect the LiPo only to the BAT terminals, and power the project from the protected LOAD output. Never connect a panel directly to a bare LiPo cell.</figcaption>
+</figure>
+
+#### Diagram: Solar Cells in Series and Parallel
+
+<figure markdown="span">
+  ![Matched solar cells connected in series to add voltage and in parallel to add current capacity](solar-cells-series-parallel.png)
+  <figcaption>With matched illumination, series-connected cells add their voltages while parallel-connected cells keep one-cell voltage and add current capacity.</figcaption>
 </figure>
 
 - Two identical solar cells wired in **series** → their voltages add together, current capacity stays the same as one cell

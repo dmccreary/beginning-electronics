@@ -75,6 +75,13 @@ Before hunting for a specific problem, start with the basics. **Power-on verific
 
 **Circuit testing** is the broader practice of checking whether a circuit is behaving the way you expect, at any stage of building it — not just once, but throughout the whole process. Circuit testing after every step is what incremental building, from Chapter 7, was setting you up to do all along.
 
+#### Diagram: Power-to-Load Troubleshooting Test Points
+
+<figure markdown="span">
+  ![Source-switch-resistor-LED circuit with five numbered voltage test points progressing from the supply to the ground reference](power-to-load-test-points.png)
+  <figcaption>Probe from TP1 toward ground in order; the first unexpected voltage identifies the stage where power stops behaving normally.</figcaption>
+</figure>
+
 Run through this checklist the moment you power up any circuit that isn't behaving:
 
 1. Is the power source actually on and connected — battery seated, USB cable plugged in firmly?

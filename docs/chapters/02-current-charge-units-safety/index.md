@@ -264,6 +264,13 @@ Most components in your kit don't care which direction current flows through the
 
 Even wired the correct direction, an LED still needs a minimum push before it lights up at all. That minimum required voltage is called **forward voltage**, and it's different for every LED color, because color depends on the exact material inside the LED. Below its forward voltage, an LED simply stays dark: no light, no damage, just no current flowing yet.
 
+#### Diagram: LED Forward Voltage and Current-Limiting Resistor
+
+<figure markdown="span">
+  ![Five-volt source driving a red LED through a 330-ohm resistor with voltage drops, polarity, and current direction labeled](led-forward-voltage-path.png)
+  <figcaption>The LED uses about 2 V in the forward direction; the series resistor absorbs the remaining voltage and limits current to a safe value.</figcaption>
+</figure>
+
 | LED Color | Typical Forward Voltage |
 |---|---|
 | Red | about 2.0 V |

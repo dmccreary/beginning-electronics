@@ -249,6 +249,13 @@ Picture filling a bucket through a garden hose instead of dumping a full pitcher
 
 Both charging and discharging follow the same basic shape every single time: fast movement at the start, then a gradual slowdown as the capacitor gets closer to its final voltage — never truly instant, and never truly abrupt.
 
+#### Diagram: RC Charging and Discharging Circuit
+
+<figure markdown="span">
+  ![Matched RC circuits showing current charging a polarized capacitor from five volts and discharging it through the same resistor](rc-charging-discharging.png)
+  <figcaption>Closing the charge path raises the capacitor voltage toward 5 V; reconnecting the charged capacitor through the resistor makes that voltage fall toward ground with the same time constant.</figcaption>
+</figure>
+
 ## The RC Time Constant: Putting a Number on "How Fast"
 
 Saying a capacitor charges "gradually" is a start, but engineers need an actual number to design real circuits — a blinking LED, an alarm delay, a timed buzzer. That number has a name.

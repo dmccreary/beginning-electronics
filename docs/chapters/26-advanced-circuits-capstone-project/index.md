@@ -91,6 +91,13 @@ A **Timing Circuit** is any circuit whose job is to produce a precise, predictab
 
 The most familiar oscillator circuit in this entire course deserves its own name too. An **LED Flasher** is an oscillator circuit wired specifically so its repeating output blinks an LED on and off — the very first 555 astable project you built back in Chapter 14 was an LED flasher, and it's the simplest possible proof that an oscillator circuit is actually doing something. Zoom out one more level, and a **Signal Generator** is any device or circuit built specifically to produce a chosen, controllable waveform on demand — the XR2206 kit is a signal generator with knobs for shape, frequency, and amplitude, but so, in a much simpler one-shape-only sense, is a single 555 timer set to a fixed square wave.
 
+#### Diagram: RC Timer, 555 Oscillator, and Signal Generator
+
+<figure markdown="span">
+  ![Simplified RC timing circuit, 555 astable oscillator, and controlled signal generator showing the progression from one transition to continuous waveforms](timing-circuit-families.png)
+  <figcaption>An RC network creates one timed voltage change; feedback lets a 555 retrigger continuously; a signal generator extends the same oscillator idea with adjustable waveform control.</figcaption>
+</figure>
+
 Here's how all four words line up against circuits you've already built with your own hands.
 
 | Term | What It Names | Circuit You Already Built | Chapter |

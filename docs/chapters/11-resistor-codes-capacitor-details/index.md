@@ -155,6 +155,13 @@ A **rheostat** is a two-terminal variable resistor used to control current direc
 
 Chapter 9's thermistor comes in more than one flavor, and the kind you're most likely to hold in your hand has a specific name. An **NTC thermistor** is a thermistor whose resistance falls as its temperature rises — "NTC" stands for "negative temperature coefficient," meaning resistance and temperature move in opposite directions. NTC thermistors are by far the more common type in hobby kits and consumer electronics, which is why "thermistor" and "NTC thermistor" are often used almost interchangeably in casual conversation.
 
+#### Diagram: Rheostat and Thermistor Control Circuits
+
+<figure markdown="span">
+  ![Potentiometer wired as a safe two-terminal rheostat beside an NTC thermistor voltage divider with its output node](rheostat-thermistor-circuits.png)
+  <figcaption>Tying the rheostat wiper to one outer terminal avoids a floating-wiper failure; in the NTC divider, warming the sensor lowers its resistance and the output voltage.</figcaption>
+</figure>
+
 - **Potentiometer** — uses all three terminals to create an adjustable voltage divider
 - **Rheostat** — uses only two terminals (the wiper plus one outer terminal) to add adjustable resistance directly in series with current
 
@@ -310,6 +317,13 @@ Not every capacitor cares about direction, though. A **non-polarized capacitor**
 One last capacitor job deserves its own name, even though the part doing it is often just an ordinary small capacitor placed in exactly the right spot.
 
 A **bypass capacitor** is a small capacitor placed close to a component's power pins to absorb quick electrical noise and voltage spikes, keeping the power supply smooth and steady for sensitive parts nearby. Bypass capacitors are almost always small, non-polarized ceramic capacitors — fast-reacting and cheap, exactly what's needed to catch a brief noise spike before it disturbs a nearby chip.
+
+#### Diagram: Bypass Capacitor Across IC Power Pins
+
+<figure markdown="span">
+  ![Correct 100-nanofarad ceramic bypass capacitor beside an IC compared with a crossed-out remote capacitor on long wires](bypass-capacitor-placement.png)
+  <figcaption>Place the ceramic capacitor directly between VCC and GND beside the chip; long leads enlarge the current loop and reduce its ability to catch fast noise.</figcaption>
+</figure>
 
 You won't wire a bypass capacitor into a project quite yet, but keep the name in your back pocket. Later chapters featuring integrated circuits — the 555 timer and the 74HC595 shift register — will call for exactly this small, unglamorous, essential part sitting right next to the chip's power pins.
 

@@ -187,6 +187,13 @@ The following components from your $50 kit each convert electrical power into a 
 
 Now that you know the Three Amigos and the golden rule that connects them, it's time to talk about the path they travel on. A **circuit** is a complete, connected loop that current can flow around — starting at a power source (like a battery), traveling through wires and components, and returning to the power source. Think of it as a racetrack: current only keeps moving if the track forms a full, unbroken loop.
 
+#### Diagram: Closed, Open, and Short Circuit Paths
+
+<figure markdown="span">
+  ![Matched battery-and-lamp circuits showing a closed loop, an open switch, and a dangerous short-circuit bypass](closed-open-short-paths.png)
+  <figcaption>A closed path powers the lamp, an open path stops all current, and a short creates a dangerous low-resistance route around the load.</figcaption>
+</figure>
+
 Circuits come in three important states, and every single one of them matters for troubleshooting your projects later in this course:
 
 | Circuit State | What's Happening | Everyday Example |
@@ -208,6 +215,13 @@ A **short circuit** is different from both of those, and it's the one every buil
 Once you start connecting more than one component into a circuit, you get to choose how they're wired together — and that choice changes how current and voltage behave. There are two basic wiring patterns you'll use constantly throughout this course.
 
 A **series circuit** connects components one after another along a single path, like beads on a single string. Every bit of current that flows through the first component has no choice but to flow through the next one too, since there's only one route available. A **parallel circuit**, on the other hand, connects components along separate branching paths, like several side-by-side lanes on a highway — current can split up and take more than one route at the same time.
+
+#### Diagram: Series and Parallel Circuit Comparison
+
+<figure markdown="span">
+  ![Two identical lamps connected first in one series path and then in two parallel branches](series-parallel-comparison.png)
+  <figcaption>Series wiring gives both loads one shared current path; parallel wiring gives each load its own branch between common supply and return nodes.</figcaption>
+</figure>
 
 Here's how the two patterns compare:
 

@@ -225,6 +225,13 @@ Bigger electronics projects — cars, appliances, wall-powered devices — guard
     ![Volt giving a warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
     Almost every "magic smoke" story in electronics traces back to overcurrent in disguise — a missing resistor, a wrong value, or a short. If you always ask "what's limiting the current here?" before you power up, you'll catch the vast majority of beginner mistakes before they ever happen.
 
+#### Diagram: Fuse and Reverse-Polarity Protection Circuits
+
+<figure markdown="span">
+  ![Low-voltage circuits showing a source-adjacent fuse and a fused series Schottky diode that blocks reversed battery current](fuse-reverse-polarity-protection.png)
+  <figcaption>Place the fuse close to the source so downstream faults disconnect safely; a correctly oriented series Schottky diode passes normal current but blocks a reversed battery.</figcaption>
+</figure>
+
 ## Reverse Polarity Damage
 
 Chapter 2 mentioned that flipping a battery backward in a simple LED-and-resistor circuit is harmless at these low voltages — the LED just won't light. But not every part in your kit is that forgiving. **Reverse polarity damage** describes real, permanent harm caused by connecting power backward into a component that depends on current flowing one specific direction. Later in this course you'll work with integrated circuits like the 555 timer and the 74HC595 shift register, and chips like these can be damaged by reversed power even at the safe voltages used in this course, because their internal circuitry expects current to arrive from one particular direction.

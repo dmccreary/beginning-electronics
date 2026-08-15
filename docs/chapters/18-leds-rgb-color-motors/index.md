@@ -71,6 +71,13 @@ A **common cathode RGB** LED wires all three chips' cathodes together into a sin
 
 Before wiring either kind, it helps to see the two side by side.
 
+#### Diagram: Common-Cathode and Common-Anode RGB LED Wiring
+
+<figure markdown="span">
+  ![Common-cathode and common-anode RGB LED packages with one resistor per color channel and opposite drive polarities](rgb-common-lead-wiring.png)
+  <figcaption>A common-cathode package shares ground and turns a color on with HIGH; a common-anode package shares +5 V and turns a color on by pulling its channel LOW.</figcaption>
+</figure>
+
 | Feature | Common Cathode RGB | Common Anode RGB |
 |---|---|---|
 | Shared lead | Cathode (all three chips) | Anode (all three chips) |

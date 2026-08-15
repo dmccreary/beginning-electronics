@@ -157,6 +157,13 @@ Zoom out one more level and you get the whole assembly's name. A **Photocell Cir
     ![Volt thinking about it](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
     Nothing about the voltage divider equation changed from Chapter 9 — only one resistor's value did, and now it changes itself, all day long, just by sitting in a room. That's the entire trick behind sensing the world with two resistors and a little math.
 
+#### Diagram: Light Detector and Dark Detector Voltage Dividers
+
+<figure markdown="span">
+  ![Photoresistor-above and photoresistor-below voltage dividers showing how light or darkness raises the transistor input voltage](light-dark-detector-dividers.png)
+  <figcaption>Putting the LDR above the tap makes brighter light raise the output; putting it below the tap makes darker conditions raise the output toward the transistor threshold.</figcaption>
+</figure>
+
 ## Finding the Trip Point: Sensor Threshold and the Dark Detector
 
 A divider voltage that smoothly rises and falls is useful, but most projects don't want a smooth response — they want something to snap decisively on or off. That's exactly the transistor switch from Chapter 13 — cutoff when base current is too small, saturation once it isn't — except this time you're tracking the base *voltage* the divider delivers, because a typical silicon transistor lets essentially no base current flow until that voltage crosses about 0.7 V. Cross it, and the transistor snaps from cutoff to saturation almost immediately.

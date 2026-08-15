@@ -265,6 +265,13 @@ Chapter 18 showed you how to wire multiple LEDs in parallel, each its own indepe
 
 Series LED wiring uses fewer wires than parallel wiring — every LED just connects to the next — but it has two trade-offs. Supply voltage must cover every LED's forward voltage added together, and if even one LED in the chain fails open, the entire chain goes dark, since there's only one path current can take.
 
+#### Diagram: Series and Parallel LED Wiring
+
+<figure markdown="span">
+  ![Two LEDs in one series string compared with two separately resisted parallel LED branches and open-failure behavior](series-parallel-led-wiring.png)
+  <figcaption>A series string shares one current and one resistor but fails as a whole if any LED opens; parallel branches need separate resistors but fail independently.</figcaption>
+</figure>
+
 #### Series LED Chain Voltage Requirement
 
 \[ V_{supply} \geq n \times V_f \]
@@ -302,6 +309,13 @@ A **passive buzzer** has no built-in oscillator. It needs an external, changing 
 That pitch has its own name. **Buzzer tone** is the pitch, high or low, a buzzer produces — fixed inside an active buzzer, or set by the driving signal's frequency on a passive buzzer.
 
 Both types share one more thing with LEDs. **Buzzer polarity** is the requirement that most piezo buzzers be wired with correct positive and negative orientation, exactly like an LED's anode and cathode, or they won't produce sound.
+
+#### Diagram: Active and Passive Buzzer Driver Circuits
+
+<figure markdown="span">
+  ![Vertically connected active buzzer on switched DC beside a passive piezo driven by a 555 square-wave output](active-passive-buzzer-drivers.png)
+  <figcaption>An active buzzer needs only switched DC because its oscillator is internal; a passive piezo needs an alternating waveform whose frequency sets the pitch.</figcaption>
+</figure>
 
 !!! mascot-warning "Silent Buzzer? Check the Leads"
     ![Volt giving a warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }

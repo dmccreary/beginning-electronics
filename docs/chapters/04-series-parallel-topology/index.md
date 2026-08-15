@@ -127,6 +127,13 @@ Reused from the MicroSim catalog (WHAT match score 0.7829). Bloom Taxonomy: Appl
 
 Chapter 2 taught you that a series circuit divides voltage among its components — that's voltage division. A parallel circuit has a mirror-image trick: it divides *current* instead. A **current divider** splits a single incoming current across two or more parallel branches, sending more current down the branch with less resistance and less current down the branch with more resistance.
 
+#### Diagram: Two-Branch Current Divider
+
+<figure markdown="span">
+  ![Ten-milliamp source dividing between one-kilohm and two-kilohm parallel branches with branch currents labeled](two-branch-current-divider.png)
+  <figcaption>The lower-resistance branch carries more current, while the two branch currents still add exactly to the source current.</figcaption>
+</figure>
+
 #### Current Divider Formula (Two Branches)
 
 \[ I_1 = I_{total} \times \frac{R_2}{R_1 + R_2} \]
@@ -332,6 +339,13 @@ Every battery so far in this course has been treated as a perfect, unwavering so
 The voltage a battery *would* supply if it had absolutely nothing inside fighting the flow is called its **electromotive force** (often abbreviated EMF, and written with the Greek letter \( \varepsilon \)) — the ideal, ceiling-level push the battery's chemistry is capable of producing. But every real battery also has a tiny bit of resistance built into its own internal chemistry and construction, called its **internal resistance**, which quietly eats into that push the instant current starts flowing.
 
 That leftover, usable voltage — the voltage you'd actually measure with a meter across the battery's real terminals while current is flowing — is called the **terminal voltage**, and it's always a little lower than the EMF once a circuit is drawing current.
+
+#### Diagram: Battery EMF and Internal Resistance Model
+
+<figure markdown="span">
+  ![Ideal battery EMF source and internal resistance feeding a load with open-circuit and loaded terminal voltages marked](battery-internal-resistance-model.png)
+  <figcaption>A real battery behaves like an ideal EMF source in series with internal resistance, so its terminal voltage falls slightly when load current flows.</figcaption>
+</figure>
 
 #### Terminal Voltage
 
