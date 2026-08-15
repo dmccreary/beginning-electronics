@@ -187,7 +187,7 @@ Flip the inputs yourself and watch both gates — and both truth tables — come
 
 #### Diagram: Transistor AND and OR Logic Gates with Live Truth Table
 
-<iframe src="../../sims/transistor-and-or-logic-gates/main.html" width="100%" height="560px" scrolling="no"></iframe>
+<iframe src="../../sims/transistor-and-or-logic-gates/main.html" width="100%" height="587px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Transistor AND and OR Logic Gates with Live Truth Table</summary>

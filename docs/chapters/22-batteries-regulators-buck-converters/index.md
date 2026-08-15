@@ -100,6 +100,101 @@ That's exactly the job a dedicated charging module exists to do safely and autom
 
 A **TP4056 charger module** is a small circuit board, built around the TP4056 charging chip, that takes in standard 5V USB power and charges a single-cell LiPo battery safely, automatically stopping once the battery reaches full charge. Most TP4056 modules include a tiny status LED — often red while charging and blue or green once complete — so you can tell at a glance whether the battery underneath is still topping up or ready to use.
 
+<figure markdown="span">
+  ![A TP4056 LiPo charging module](../../img/tp4056-lipo-recharger.jpg){ width="500" }
+  <figcaption>A TP4056 charger module, about the size of a postage stamp. Micro-USB jack on the left, the TP4056 chip in the middle, two status LEDs along the top edge, and six solder pads around the outside.</figcaption>
+</figure>
+
+### The Six Pads: What Connects Where
+
+Wiring a TP4056 is genuinely simple, because the whole job is deciding which of six pads each wire belongs on. Look at the photo above and you'll find them all: a **+** and a **−** beside the USB jack, and **OUT+**, **B+**, **B−**, **OUT−** stacked down the opposite edge.
+
+| Pad pair | What connects here | Notes |
+|---|---|---|
+| **+ / −** (next to the USB jack) | 5V power in | These are the *same* electrical connection as the USB jack — a solder-pad alternative to it, not an addition. Feed one or the other, never both at once. |
+| **B+ / B−** | The LiPo battery, and nothing else | Red battery wire to B+, black to B−. Most LiPo cells arrive with a small white JST plug on those two wires. |
+| **OUT+ / OUT−** | Your project's circuit board | OUT+ to your project's V+ (or VIN), OUT− to your project's ground. |
+
+That leaves one question worth answering carefully, because it's the mistake almost every beginner makes at least once: if B+ already carries battery voltage, why not just wire your project there too and skip the OUT pads entirely?
+
+!!! mascot-thinking "Why the Project Goes on OUT, Not on B+"
+    ![Volt thinking about it](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
+    Look closely at the photo and you'll spot two extra 8-pin chips crowded near the right-hand pads. That's a **protection circuit** — a DW01A watching the cell's voltage and a pair of FS8205 transistors ready to act as its switch. It sits between the battery and the OUT pads, so it can disconnect your project the moment the cell runs too low. Wire your project straight to B+ and you've walked right around that guard, leaving nothing to stop a hungry circuit from draining a LiPo past the point of no return. One pad over is the difference between a battery that lasts for years and one that's ruined in an afternoon.
+
+### Wiring It Up
+
+Here's the whole circuit, start to finish — five connections, and you're charging safely:
+
+1. **Battery red wire → B+**, and **battery black wire → B−**. If your cell has a JST plug, this is where a matching JST socket gets soldered.
+2. **Project V+ → OUT+**, and **project ground → OUT−**. Everything your project needs now runs through the module's protection circuit.
+3. **Plug a USB cable into the module's jack** whenever the battery needs topping up. The red CHRG LED lights while charging; the blue STDBY LED takes over when the cell is full and the module has stopped on its own.
+
+Notice what's *not* in that list: no switch you have to remember to flip, no timer, no watching the clock. Charging stops by itself at 4.2 volts, and your project keeps running from OUT the whole time the battery is charging.
+
+Trace all five connections yourself in the diagram below — then unplug the USB and watch what the module does when the battery runs down.
+
+#### Diagram: TP4056 Charging Circuit Wiring
+
+<iframe src="../../sims/tp4056-lipo-charging-wiring/main.html" width="100%" height="592px" scrolling="no"></iframe>
+
+[Run the TP4056 Charging Circuit Wiring MicroSim fullscreen](../../sims/tp4056-lipo-charging-wiring/main.html){ .md-button .md-button--primary }
+
+<details markdown="1">
+<summary>TP4056 Charging Circuit Wiring</summary>
+Type: microsim
+**sim-id:** tp4056-lipo-charging-wiring<br/>
+**Library:** p5.js<br/>
+**Status:** Built
+
+Purpose: Give students a labeled, animated wiring diagram of a real TP4056 module so they can see exactly which pads the USB supply, the LiPo cell, and their own project board connect to — and discover, by mis-wiring it deliberately, why the load belongs on OUT+/OUT− rather than B+/B−.
+
+Bloom Taxonomy: Understand (L2) / Apply (L3). Bloom Verb: identify, demonstrate.
+
+Learning objective: Given a wiring diagram of a TP4056 charger module connected to a single-cell LiPo battery and a project board, identify which pads each wire connects to, plug and unplug the USB supply, and observe the charge current, status LEDs, and cell voltage respond — including the protection circuit disconnecting an empty cell.
+
+Canvas layout: A left-to-right wiring diagram across the top of the canvas — USB supply, TP4056 module with all six pads labeled in the order they appear on the real board, LiPo cell wired to B+/B−, and a project board fed from OUT+/OUT− — above a four-column readout strip (USB input, current into the cell, cell voltage, project board draw) with a one-line explanation of the current state.
+
+Components/elements involved: 5V USB supply; TP4056 module rendered to match the chapter photograph (micro-USB jack, TP4056 chip, DW01A + FS8205 protection pair, R_PROG resistor, CHRG and STDBY status LEDs, six gold pads); single-cell LiPo with a charge-level bar; project board with a power LED; animated current dots along the wires.
+
+Required interactivity:
+
+- A plug/unplug button starts and stops charging; the CHRG and STDBY LEDs follow the real module's behavior and the charge current tapers to zero on its own near 4.2 V
+- A menu swaps R_PROG (1.2 kΩ, 2 kΩ, 5 kΩ, 10 kΩ), changing the charge current per I = 1200 ÷ R_PROG, so a load drawing more than the charge current visibly stops the cell from gaining charge
+- A checkbox switches the project board on and off, showing that the module's current is shared between charging and running the project
+- A checkbox re-routes the project board's wires to B+/B−, and with the USB unplugged the cell then drains past empty into a clearly flagged over-discharge state — the same scenario ends safely with the wires on OUT+/OUT−
+- Hovering any part (chip, protection pair, R_PROG, status LEDs, each pad pair, cell, project board) opens an explanatory note
+
+Default state: USB plugged in, cell at 35%, project board switched on, charging at the module's as-shipped 1000 mA; the readout reads "Charging. Current runs USB → the module → B+ → the cell."
+
+Instructional Rationale: The chapter's claim that the load belongs on OUT+/OUT− is easy to state and easy to ignore. Letting students wire it the wrong way and watch the cell drain past its floor — with no protection chip in the path — turns a rule to memorize into a consequence they've seen.
+
+Color scheme: Blue PCB matching the module in the chapter photograph, gold pads, red wires for positive and black for negative, red CHRG and blue STDBY status LEDs, orange highlight for hovered parts.
+
+Responsive behavior: Parts and wire routing scale with canvas width; at phone widths the helper wire labels and the finer silkscreen detail drop away so the pad labels stay legible, and the readout strip reflows to two columns.
+
+Implementation: Plain p5.js via the microsim-generator's standard scaffolding — a sealed module with solder pads has no breadboard tie points, the same choice the buck converter sim made. Charging follows a constant-current phase then a constant-voltage taper, and time only advances while the pointer is over the diagram so nothing important happens before the student is watching.
+</details>
+
+### Setting the Charge Current
+
+One more detail separates a module that charges a battery well from one that merely charges it. A LiPo cell has a preferred charging speed, and the module has to be told what it is.
+
+The TP4056 reads that setting from a single resistor on the board, labeled **R_PROG** — the one marked `121` in the photo, meaning 1.2 kΩ.
+
+#### Charge Current Set by R_PROG
+
+\[ I_{charge} = \frac{1200}{R_{PROG}} \]
+
+where:
+
+- \( I_{charge} \) is the current the module pushes into the battery, in amps
+- \( R_{PROG} \) is the programming resistor's value, in ohms
+- The 1200 is a fixed property of the TP4056 chip itself
+
+The 1.2 kΩ resistor modules ship with gives 1200 ÷ 1200 = 1 amp, which suits a large cell but is aggressive for a small one. A good rule of thumb is to charge at no more than the battery's capacity per hour — a 500 mAh cell wants about 500 mA, not a full amp — which means swapping R_PROG for a larger resistor on small batteries.
+
+One last habit is worth building before your first plug-in: **red goes to B+ and black goes to B−, every single time.** Reverse those two and the TP4056 is usually destroyed the instant power arrives, sometimes taking the battery with it. Checking the wire colors twice costs five seconds and saves a part you can't un-burn.
+
 ## Choosing the Right Power Supply
 
 You now know four real options for powering a project: USB's steady 5 volts, a 9V battery, a pack of AA batteries, or a rechargeable LiPo. **Power supply selection** is the practice of matching a project's power source to what it actually needs — voltage, portability, run time, and cost — instead of grabbing whatever's closest on the workbench.

@@ -11,7 +11,7 @@ quality_score: 0
 
 # Transistor AND and OR Logic Gates with Live Truth Table
 
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="587px" width="100%" scrolling="no"></iframe>
 
 [Run the Transistor AND and OR Logic Gates with Live Truth Table MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>
@@ -31,7 +31,7 @@ You can add this MicroSim to any web page by adding this to your HTML:
 
 ```html
 <iframe src="https://dmccreary.github.io/beginning-electronics/sims/transistor-and-or-logic-gates/main.html"
-        height="450px"
+        height="587px"
         width="100%"
         scrolling="no"></iframe>
 ```

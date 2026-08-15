@@ -167,7 +167,7 @@ Try out every gate in this family yourself, and confirm each truth table row aga
 
 #### Diagram: Transistor Gate Explorer with LED Output
 
-<iframe src="../../sims/transistor-gate-explorer/main.html" width="100%" height="560px" scrolling="no"></iframe>
+<iframe src="../../sims/transistor-gate-explorer/main.html" width="100%" height="547px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Transistor Gate Explorer with LED Output</summary>

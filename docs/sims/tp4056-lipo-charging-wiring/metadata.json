@@ -1,0 +1,63 @@
+{
+  "title": "TP4056 Charging Circuit Wiring",
+  "creator": "Dan McCreary",
+  "subject": "Beginning Electronics",
+  "description": "Interactive wiring diagram of a TP4056 charger module connected to a single-cell LiPo battery and a project board",
+  "date": "2026-08-15",
+  "educational": {
+    "gradeLevel": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "subjectArea": "Electronics",
+    "topic": "TP4056 LiPo Charging Circuit Wiring",
+    "learningObjectives": [
+      "Identify which TP4056 pads the USB supply, the LiPo cell, and the project board connect to",
+      "Trace the charging current from the USB supply through the module into the cell",
+      "Explain why the project board is wired to OUT+/OUT- rather than B+/B-",
+      "Relate the R_PROG resistor to the module's charge current"
+    ],
+    "bloomsTaxonomy": "Understand",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "LiPo battery basics",
+      "Battery pack wiring",
+      "Reading a simple circuit diagram"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 590
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive wiring diagram with a deliberate mis-wiring case",
+    "keyQuestions": [
+      "Which pads does the battery connect to, and which pads does the project connect to?",
+      "What happens to the charge current as the cell approaches 4.2 V?",
+      "Why does a protected module cut the load off when the cell is empty?"
+    ],
+    "commonMisconceptions": [
+      "Any 5 V charger will charge a LiPo safely",
+      "The project board can be wired directly to B+/B- alongside the battery",
+      "The charge current is set by the USB supply rather than by R_PROG"
+    ],
+    "assessmentOpportunities": [
+      "Ask students to label B+, B-, OUT+, and OUT- from the photograph of a real module",
+      "Ask students to predict what happens when the load is wired to B+/B- and the USB is unplugged"
+    ]
+  },
+  "chapter": "22-batteries-regulators-buck-converters"
+}

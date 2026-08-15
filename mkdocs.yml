@@ -135,6 +135,7 @@ nav:
     - Solar Panel Charging Circuit Explorer: sims/solar-charging-circuit-explorer/index.md
     - Solder Joint Quality Classifier: sims/solder-joint-quality-classifier/index.md
     - Solderless Breadboard Layout: sims/breadboard/index.md
+    - TP4056 Charging Circuit Wiring: sims/tp4056-lipo-charging-wiring/index.md
     - Transistor AND and OR Logic Gates with Live Truth Table: sims/transistor-and-or-logic-gates/index.md
     - Transistor as a Switch — Breadboard Demo: sims/transistor-switch-breadboard-demo/index.md
     - Transistor Current Gain Explorer: sims/transistor-current-gain-explorer/index.md
@@ -147,6 +148,8 @@ nav:
     - Water Flow Analogy MicroSim: sims/water-flow-analogy/index.md
     - "Wired Logic: AND and OR": sims/wired-logic-and-or/index.md
     - XR2206 Waveform Generator Explorer: sims/xr2206-waveform-generator-explorer/index.md
+
+
 
 
 

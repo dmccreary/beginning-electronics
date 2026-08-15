@@ -116,7 +116,7 @@ Try assembling your own multi-stage circuit in the sim below — drag a sensor b
 
 #### Diagram: Sensor-Logic-Output Block Diagram Builder
 
-<iframe src="../../sims/sensor-logic-output-block-builder/main.html" width="100%" height="540px" scrolling="no"></iframe>
+<iframe src="../../sims/sensor-logic-output-block-builder/main.html" width="100%" height="522px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Sensor-Logic-Output Block Diagram Builder</summary>
@@ -191,7 +191,7 @@ Whatever you decide to build, the same repeatable process that professional engi
 
 #### Diagram: Capstone Project Planning Workflow
 
-<iframe src="../../sims/capstone-project-planning-workflow/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/capstone-project-planning-workflow/main.html" width="100%" height="502px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Capstone Project Planning Workflow</summary>
