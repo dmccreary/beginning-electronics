@@ -1,0 +1,111 @@
+{
+  "title": "Meet the Switch Family",
+  "image": "switch-family.png",
+  "layout": "grid",
+  "showLabels": true,
+  "palette": ["#2878A8", "#168779", "#C77B16", "#C85B4B", "#7446A6"],
+  "zones": [
+    {
+      "id": "tactile-push-button",
+      "label": "Push Button",
+      "color": "#2878A8",
+      "x1": 0.5,
+      "y1": 0.5,
+      "x2": 19.5,
+      "y2": 99.5,
+      "summary": "A spring-return button that connects the circuit only while you press it.",
+      "facts": [
+        "Behavior: Momentary — it returns to its resting state when released.",
+        "Typical wiring: SPST, usually normally open (NO); four-pin tactile versions contain two internally joined pin pairs.",
+        "Use it for: Doorbells, game controls, reset inputs, and any action that should last only while pressed."
+      ]
+    },
+    {
+      "id": "toggle-switch",
+      "label": "Toggle",
+      "color": "#168779",
+      "x1": 20.2,
+      "y1": 0.5,
+      "x2": 39.5,
+      "y2": 99.5,
+      "summary": "A latching lever switch that is easy to see, feel, and flip deliberately.",
+      "facts": [
+        "Behavior: Latching — the lever stays where you leave it.",
+        "Typical wiring: SPST for simple on/off control or SPDT for selecting between two paths.",
+        "Use it for: Main power, mode selection, and controls that must be found by touch."
+      ]
+    },
+    {
+      "id": "slide-switch",
+      "label": "Slide",
+      "color": "#C77B16",
+      "x1": 40.2,
+      "y1": 0.5,
+      "x2": 59.5,
+      "y2": 99.5,
+      "summary": "A compact latching switch moved along a short straight track.",
+      "facts": [
+        "Behavior: Latching — the slider remains in the selected position.",
+        "Typical wiring: SPST or SPDT, often in a small low-current package.",
+        "Use it for: Toys, handheld projects, and tight battery compartments where space matters."
+      ]
+    },
+    {
+      "id": "rocker-switch",
+      "label": "Rocker",
+      "color": "#C85B4B",
+      "x1": 60.2,
+      "y1": 0.5,
+      "x2": 79.5,
+      "y2": 99.5,
+      "summary": "A broad latching switch that tips like a seesaw when either end is pressed.",
+      "facts": [
+        "Behavior: Latching — one end stays down until the other is pressed.",
+        "Typical wiring: SPST or SPDT; many panel-mount versions handle appliance power.",
+        "Use it for: Power strips, kitchen appliances, and panels needing a large, obvious control."
+      ]
+    },
+    {
+      "id": "dip-switch",
+      "label": "DIP",
+      "color": "#7446A6",
+      "x1": 80.2,
+      "y1": 0.5,
+      "x2": 99.5,
+      "y2": 99.5,
+      "summary": "A bank of tiny latching switches packaged together for configuration choices.",
+      "facts": [
+        "Behavior: Latching — each miniature switch independently keeps its setting.",
+        "Typical wiring: Several SPST switches in one breadboard-friendly package.",
+        "Use it for: Circuit-board settings, device addresses, feature options, and startup configuration."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which switch should you choose for a reset input that is active only while a finger is pressing it?",
+      "correct_zone": "tactile-push-button",
+      "explanation": "A tactile push button is momentary and returns to its resting state when released."
+    },
+    {
+      "question": "Which switch is a compact choice for turning a small battery-powered toy on and off?",
+      "correct_zone": "slide-switch",
+      "explanation": "Slide switches are compact, latching, and common in toys and battery compartments."
+    },
+    {
+      "question": "Which switch style is most familiar on a power strip or kitchen appliance?",
+      "correct_zone": "rocker-switch",
+      "explanation": "Rocker switches offer a large, obvious latching control for appliance power."
+    },
+    {
+      "question": "Which switch lets a circuit board store several independent on/off configuration settings?",
+      "correct_zone": "dip-switch",
+      "explanation": "A DIP package contains a bank of independent SPST switches."
+    },
+    {
+      "question": "Which switch is a sturdy, easy-to-find-by-touch choice for a project's main power control?",
+      "correct_zone": "toggle-switch",
+      "explanation": "A toggle's lever is easy to locate and gives clear latching feedback."
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "title": "Multimeter Anatomy Explorer",
+  "image": "multimeter.svg",
+  "layout": "grid",
+  "showLabels": true,
+  "palette": [
+    "#5F8D35",
+    "#2878A8",
+    "#7A7A6B",
+    "#C0392B",
+    "#22282E",
+    "#B02A1F"
+  ],
+  "zones": [
+    {
+      "id": "display",
+      "label": "display",
+      "color": "#5F8D35",
+      "summary": "The LCD shows the number and the unit for whatever the meter is currently measuring.",
+      "facts": [
+        "It reports the numeric result plus its unit — here 4.98 V on DC volts.",
+        "A small DC or AC marker tells you which kind of measurement is showing.",
+        "\"OL\" means overload: the reading is larger than the selected range can display. Turn the dial to a bigger range, or check you picked the right mode."
+      ],
+      "x1": 32.9,
+      "y1": 10.3,
+      "x2": 67.1,
+      "y2": 28.7
+    },
+    {
+      "id": "dial",
+      "label": "dial",
+      "color": "#2878A8",
+      "summary": "The rotary dial selects which of the meter's jobs is active.",
+      "facts": [
+        "Each position picks one job: OFF, V for DC volts, mA for small currents, Ω for resistance, and the speaker-wave mark for continuity.",
+        "The dial must match the measurement you are attempting — a voltage reading taken in resistance mode is meaningless.",
+        "Leave it on OFF when you put the meter away, or the battery drains."
+      ],
+      "x1": 36.7,
+      "y1": 28.1,
+      "x2": 63.3,
+      "y2": 65.6
+    },
+    {
+      "id": "com-jack",
+      "label": "COM",
+      "color": "#7A7A6B",
+      "summary": "The black probe plugs in here, for every measurement mode without exception.",
+      "facts": [
+        "COM is short for common — it is the meter's reference point, the equivalent of ground.",
+        "The black lead never moves. Whatever you are measuring, it stays in COM.",
+        "If a reading comes out negative, your two probes are simply the other way round; nothing is wrong."
+      ],
+      "x1": 35.6,
+      "y1": 63.7,
+      "x2": 44.4,
+      "y2": 77.5
+    },
+    {
+      "id": "vohm-jack",
+      "label": "VΩmA",
+      "color": "#C0392B",
+      "summary": "The red probe plugs in here for voltage, resistance and small-current measurements.",
+      "facts": [
+        "This one jack serves volts, ohms and milliamps — the three modes you use most.",
+        "Larger currents use a separate high-current jack on most meters, often marked 10A. Moving the lead there and forgetting to move it back is a common way to blow the meter's fuse.",
+        "Red into VΩmA, black into COM, is the default setup for nearly everything in this book."
+      ],
+      "x1": 55.6,
+      "y1": 63.7,
+      "x2": 64.4,
+      "y2": 77.5
+    },
+    {
+      "id": "black-probe",
+      "label": "black probe",
+      "color": "#22282E",
+      "summary": "The negative, or reference, lead.",
+      "facts": [
+        "It runs from the COM jack to the point you are treating as the reference.",
+        "For voltage measurements this is usually the ground rail of your circuit.",
+        "Hold probes by the moulded grips, never by the metal tips."
+      ],
+      "x1": 10.7,
+      "y1": 81.2,
+      "x2": 33.3,
+      "y2": 99.4
+    },
+    {
+      "id": "red-probe",
+      "label": "red probe",
+      "color": "#B02A1F",
+      "summary": "The positive, or measuring, lead.",
+      "facts": [
+        "It runs from the VΩmA jack to the point you want to measure.",
+        "For voltage you touch it to the node of interest while black stays at ground.",
+        "For current the circuit must be broken and both probes placed in the gap, so the current flows through the meter."
+      ],
+      "x1": 66.7,
+      "y1": 81.2,
+      "x2": 89.3,
+      "y2": 99.4
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which jack does the black probe plug into, no matter what you are measuring?",
+      "correct_zone": "com-jack",
+      "explanation": "COM is the reference jack; the black lead never moves."
+    },
+    {
+      "question": "Which part decides whether the meter is measuring volts, ohms or current?",
+      "correct_zone": "dial",
+      "explanation": "The rotary dial selects the mode, and it must match the measurement."
+    },
+    {
+      "question": "Where would you see the letters \"OL\", and what do they mean?",
+      "correct_zone": "display",
+      "explanation": "On the display — it means the value is beyond the selected range."
+    },
+    {
+      "question": "Which jack takes the red probe for voltage, resistance and milliamp readings?",
+      "correct_zone": "vohm-jack",
+      "explanation": "The VΩmA jack serves all three of those modes."
+    },
+    {
+      "question": "Which lead do you move to the node you want to measure, leaving the other at ground?",
+      "correct_zone": "red-probe",
+      "explanation": "The red probe is the measuring lead."
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "title": "74HC595 Datasheet Pinout Reader",
+  "image": "pinout-595.svg",
+  "layout": "grid",
+  "showLabels": true,
+  "palette": [
+    "#2878A8",
+    "#168779",
+    "#C77B16",
+    "#6953B8",
+    "#C85B4B",
+    "#5F8D35",
+    "#B4650F",
+    "#8E44AD"
+  ],
+  "zones": [
+    {
+      "id": "notch-dot",
+      "label": "notch",
+      "color": "#C0392B",
+      "x1": 10.9,
+      "y1": 42.9,
+      "x2": 18.6,
+      "y2": 57.1,
+      "summary": "Notch and dot always agree — either one marks Pin 1.",
+      "facts": [
+        "The semicircular notch is cut into the end of the package nearest pin 1.",
+        "The pressed dot sits in the corner beside pin 1 itself, as a second check.",
+        "If the plastic is worn and you can only find one of the two, that one is enough."
+      ]
+    },
+    {
+      "id": "pin-1",
+      "label": "1",
+      "color": "#2878A8",
+      "x1": 15.4,
+      "y1": 58.9,
+      "x2": 21.0,
+      "y2": 67.1,
+      "summary": "Pin 1 — Q1.",
+      "facts": [
+        "Position: 0 pins counter-clockwise from the notch.",
+        "74HC595 function: Q1 — Parallel output 1 — drives one LED of the bar graph."
+      ]
+    },
+    {
+      "id": "pin-16",
+      "label": "16",
+      "color": "#8E44AD",
+      "x1": 15.4,
+      "y1": 32.9,
+      "x2": 21.0,
+      "y2": 41.1,
+      "summary": "Pin 16 — VCC.",
+      "facts": [
+        "Position: 15 pins counter-clockwise from the notch.",
+        "74HC595 function: VCC — Positive supply."
+      ]
+    },
+    {
+      "id": "pin-2",
+      "label": "2",
+      "color": "#168779",
+      "x1": 23.5,
+      "y1": 58.9,
+      "x2": 29.2,
+      "y2": 67.1,
+      "summary": "Pin 2 — Q2.",
+      "facts": [
+        "Position: 1 pins counter-clockwise from the notch.",
+        "74HC595 function: Q2 — Parallel output 2."
+      ]
+    },
+    {
+      "id": "pin-15",
+      "label": "15",
+      "color": "#B4650F",
+      "x1": 23.5,
+      "y1": 32.9,
+      "x2": 29.2,
+      "y2": 41.1,
+      "summary": "Pin 15 — Q0.",
+      "facts": [
+        "Position: 14 pins counter-clockwise from the notch.",
+        "74HC595 function: Q0 — Parallel output 0 — the first LED of the bar graph."
+      ]
+    },
+    {
+      "id": "pin-3",
+      "label": "3",
+      "color": "#C77B16",
+      "x1": 31.7,
+      "y1": 58.9,
+      "x2": 37.4,
+      "y2": 67.1,
+      "summary": "Pin 3 — Q3.",
+      "facts": [
+        "Position: 2 pins counter-clockwise from the notch.",
+        "74HC595 function: Q3 — Parallel output 3."
+      ]
+    },
+    {
+      "id": "pin-14",
+      "label": "14",
+      "color": "#5F8D35",
+      "x1": 31.7,
+      "y1": 32.9,
+      "x2": 37.4,
+      "y2": 41.1,
+      "summary": "Pin 14 — SER.",
+      "facts": [
+        "Position: 13 pins counter-clockwise from the notch.",
+        "74HC595 function: SER — Serial data in — the bit that gets shifted in on the next clock."
+      ]
+    },
+    {
+      "id": "pin-4",
+      "label": "4",
+      "color": "#6953B8",
+      "x1": 39.9,
+      "y1": 58.9,
+      "x2": 45.5,
+      "y2": 67.1,
+      "summary": "Pin 4 — Q4.",
+      "facts": [
+        "Position: 3 pins counter-clockwise from the notch.",
+        "74HC595 function: Q4 — Parallel output 4."
+      ]
+    },
+    {
+      "id": "pin-13",
+      "label": "13",
+      "color": "#C85B4B",
+      "x1": 39.9,
+      "y1": 32.9,
+      "x2": 45.5,
+      "y2": 41.1,
+      "summary": "Pin 13 — OE'.",
+      "facts": [
+        "Position: 12 pins counter-clockwise from the notch.",
+        "74HC595 function: OE' — Output enable, active low. Take it high to blank all outputs without losing the stored bits."
+      ]
+    },
+    {
+      "id": "pin-5",
+      "label": "5",
+      "color": "#C85B4B",
+      "x1": 48.1,
+      "y1": 58.9,
+      "x2": 53.7,
+      "y2": 67.1,
+      "summary": "Pin 5 — Q5.",
+      "facts": [
+        "Position: 4 pins counter-clockwise from the notch.",
+        "74HC595 function: Q5 — Parallel output 5."
+      ]
+    },
+    {
+      "id": "pin-12",
+      "label": "12",
+      "color": "#6953B8",
+      "x1": 48.1,
+      "y1": 32.9,
+      "x2": 53.7,
+      "y2": 41.1,
+      "summary": "Pin 12 — RCLK.",
+      "facts": [
+        "Position: 11 pins counter-clockwise from the notch.",
+        "74HC595 function: RCLK — Latch clock. A pulse here copies the register onto the output pins."
+      ]
+    },
+    {
+      "id": "pin-6",
+      "label": "6",
+      "color": "#5F8D35",
+      "x1": 56.3,
+      "y1": 58.9,
+      "x2": 61.9,
+      "y2": 67.1,
+      "summary": "Pin 6 — Q6.",
+      "facts": [
+        "Position: 5 pins counter-clockwise from the notch.",
+        "74HC595 function: Q6 — Parallel output 6."
+      ]
+    },
+    {
+      "id": "pin-11",
+      "label": "11",
+      "color": "#C77B16",
+      "x1": 56.3,
+      "y1": 32.9,
+      "x2": 61.9,
+      "y2": 41.1,
+      "summary": "Pin 11 — SRCLK.",
+      "facts": [
+        "Position: 10 pins counter-clockwise from the notch.",
+        "74HC595 function: SRCLK — Shift clock. Each rising edge shifts one bit further along the register."
+      ]
+    },
+    {
+      "id": "pin-7",
+      "label": "7",
+      "color": "#B4650F",
+      "x1": 64.5,
+      "y1": 58.9,
+      "x2": 70.1,
+      "y2": 67.1,
+      "summary": "Pin 7 — Q7.",
+      "facts": [
+        "Position: 6 pins counter-clockwise from the notch.",
+        "74HC595 function: Q7 — Parallel output 7 — the far end of the bar."
+      ]
+    },
+    {
+      "id": "pin-10",
+      "label": "10",
+      "color": "#168779",
+      "x1": 64.5,
+      "y1": 32.9,
+      "x2": 70.1,
+      "y2": 41.1,
+      "summary": "Pin 10 — SRCLR'.",
+      "facts": [
+        "Position: 9 pins counter-clockwise from the notch.",
+        "74HC595 function: SRCLR' — Shift-register clear, active low. Pull it low to wipe the register to zeros."
+      ]
+    },
+    {
+      "id": "pin-8",
+      "label": "8",
+      "color": "#8E44AD",
+      "x1": 72.6,
+      "y1": 58.9,
+      "x2": 78.3,
+      "y2": 67.1,
+      "summary": "Pin 8 — GND.",
+      "facts": [
+        "Position: 7 pins counter-clockwise from the notch.",
+        "74HC595 function: GND — Ground, the negative supply connection."
+      ]
+    },
+    {
+      "id": "pin-9",
+      "label": "9",
+      "color": "#2878A8",
+      "x1": 72.6,
+      "y1": 32.9,
+      "x2": 78.3,
+      "y2": 41.1,
+      "summary": "Pin 9 — QH'.",
+      "facts": [
+        "Position: 8 pins counter-clockwise from the notch.",
+        "74HC595 function: QH' — Serial output — feeds the SER pin of the next chip when you daisy-chain."
+      ]
+    },
+    {
+      "id": "backwards",
+      "label": "backwards?",
+      "color": "#7A7A6B",
+      "x1": 82.7,
+      "y1": 42.9,
+      "x2": 97.3,
+      "y2": 57.1,
+      "summary": "Rotate the chip 180° and both markers move together — but every pin lands in the wrong column.",
+      "facts": [
+        "Pin 1 (Q1) would sit where pin 16 (VCC) belongs, so the supply pins swap ends.",
+        "VCC into a Q output and ground into another is the fastest way to destroy the chip.",
+        "The notch and the dot always move together, so either one catches the mistake."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which pin do you clock to shift one more bit along the register?",
+      "correct_zone": "pin-11",
+      "explanation": "SRCLK on pin 11 is the shift clock."
+    },
+    {
+      "question": "Which pin blanks every output without erasing the stored bits?",
+      "correct_zone": "pin-13",
+      "explanation": "OE' on pin 13 mutes the outputs; the register keeps its contents."
+    },
+    {
+      "question": "Which pin feeds the SER input of a second chip when daisy-chaining?",
+      "correct_zone": "pin-9",
+      "explanation": "QH' on pin 9 is the serial output."
+    },
+    {
+      "question": "Which two markers on the package tell you where pin 1 is?",
+      "correct_zone": "notch-dot",
+      "explanation": "The notch and the pressed dot — they always agree."
+    },
+    {
+      "question": "Which pin is the positive supply?",
+      "correct_zone": "pin-16",
+      "explanation": "VCC is pin 16, diagonally opposite pin 1's end of the count."
+    }
+  ]
+}

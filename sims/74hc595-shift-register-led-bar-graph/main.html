@@ -3,132 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>74HC595 Shift Register LED Bar Graph and Daisy-Chain Explorer</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>74HC595 Shift Register LED Bar Graph and Daisy-Chain Explorer using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="breadboard-lib.js"></script>
+    <script src="74hc595-shift-register-led-bar-graph.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>74HC595 Shift Register LED Bar Graph and Daisy-Chain Explorer</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> 74hc595-shift-register-led-bar-graph</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Apply (L3). Bloom Verb: demonstrate, apply, experiment.</p>
-            <p><strong>Learning Objective:</strong> Given a sequence of data bits and clock pulses, demonstrate how the 74HC595's shift register bit order fills its eight outputs one pulse at a time, distinguish the effect of the Output Enable and Reset pins, and compare manually-clocked stepping to an automatic 555-driven clock.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** 74hc595-shift-register-led-bar-graph<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Let students step data bits into a 74HC595 one clock pulse at a time, observe the shift-register bit order as it marches toward Q7, distinguish Output Enable from Reset, extend the register by daisy-chaining a second chip, watch a binary-counting demo mode, and swap the manual clock button for the 555 timer's own oscillating output.
-    
-    Bloom Taxonomy: Apply (L3). Bloom Verb: demonstrate, apply, experiment.
-    
-    Learning objective: Given a sequence of data bits and clock pulses, demonstrate how the 74HC595's shift register bit order fills its eight outputs one pulse at a time, distinguish the effect of the Output Enable and Reset pins, and compare manually-clocked stepping to an automatic 555-driven clock.
-    
-    Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: 74HC595 Shift Register LED Bar Graph and Daisy Chain Explorer | Topic: 74HC595 shift register bit order, manual clock pulse, output enable pin, reset pin, daisy-chained shift registers, binary counting display, LED bar graph, 555-driven automatic clock | Subjects: Electronics, Beginning Electronics, Digital Electronics | Grade Level: Junior High | Learning Objectives: Given a data bit and clock pulses, demonstrate how bits shift through a 74HC595 register into eight LEDs, and compare manual clock pulses to an automatic 555-driven clock" returned a top match of "Shift Register MicroSim" (dmccreary/digital-electronics, WHAT score 0.6959, recommendation "template") — above the 0.60 threshold, but built as a schematic-style logic-analyzer view of a 74HC594 (a related but different chip, with a separate output-storage register variant) rather than this book's rendered-breadboard format. A parallel keyword grep of `microsims-data.json` for "shift register" and "74HC595" surfaced the same catalog entry plus its sibling "Shift Register" sim (dmccreary/clocks-and-watches, also 74HC594-based); neither lists an explicit grade level, so a manual sanity check against their junior-high-appropriate subject tags ("Shift Register", "Serial to Parallel") confirms topical fit even though the implementation style differs. Used as a **Template:** (https://dmccreary.github.io/digital-electronics/sims/shift-register/) for the clock/bit-shift interaction pattern only — the breadboard rendering, 74HC595-specific pin behavior, daisy-chaining, and 555-driven clock toggle are written fresh with the breadboard-sim-generator skill, extending this project's own `docs/sims/flip-flop/` (an unrelated NAND-based SR latch, not breadboard-rendered, so not reusable here either) with the newer breadboard format instead.
-    
-    Canvas layout: Rendered breadboard on the left with a 74HC595 straddling the center channel, eight LEDs (each with its own resistor) wired to Q0-Q7, a push button wired to SRCLK for the manual clock pulse, and a second 74HC595 that appears when daisy-chain mode is toggled on; right side panel holds a "Clock Pulse" button, a data-bit input (0/1 toggle), an "Output Enable" checkbox, a "Reset" button, a "Daisy-Chain 2nd Chip" toggle, a "Binary Counting Demo" toggle, a "555-Driven Clock" toggle, and an infobox.
-    
-    Components/elements involved: A rendered breadboard; a new `bbShiftRegister595` component (16-pin DIP body drawn straddling the center channel, with SER, SRCLK, RCLK, OE′, SRCLR′, GND, VCC, and Q0-Q7 pins in their real datasheet positions, and internal 8-bit state tracked by the sim's own JavaScript rather than the DC solver); eight `bbLED` components with `bbResistor` current-limiters on Q0-Q7; a `bbButton` wired to SRCLK; a second `bbShiftRegister595` instance whose SER pin wires to the first chip's QH′ pin and whose SRCLK/RCLK wire to the same control lines, shown only in daisy-chain mode.
-    
-    Required interactivity:
-    - Clicking "Clock Pulse" shifts the currently selected data bit into the register (SRCLK pulse), visually animating the bit's position moving one step toward Q7, and the infobox reports the new register contents in binary
-    - Toggling the data-bit input (0/1) before the next clock pulse changes what value is shifted in next
-    - Unchecking "Output Enable" instantly blanks all LEDs without changing the infobox's reported register contents; re-checking it restores the display, demonstrating OE′ is a mute, not a delete
-    - Clicking "Reset" clears the register to all zeros and the infobox explicitly notes the difference from Output Enable
-    - Toggling "Daisy-Chain 2nd Chip" adds a second 74HC595 wired from the first chip's QH′ to the second chip's SER, and further clock pulses (9 and beyond) visibly move a bit from chip 1 into chip 2
-    - Toggling "Binary Counting Demo" auto-increments the 8-bit pattern once per second, displaying the running decimal value (0-255) next to the LED pattern
-    - Toggling "555-Driven Clock" replaces the manual push button with a simulated 555 astable output (using the Chapter 14 LED-blinker frequency, ≈1.1 Hz) automatically pulsing SRCLK, with the infobox noting "The 555's clock signal is now stepping the shift register for you"
-    - Button "Reset View" returns to single-chip mode, Output Enable on, register cleared, manual clocking, data bit 1
-    
-    Default state: Single 74HC595, Output Enable checked, register cleared (all LEDs off), data bit set to 1, manual clock mode, infobox reads "Press Clock Pulse to shift a 1 into the register and watch it move."
-    
-    Data Visibility Requirements:
-    Stage 1: Show the current 8-bit register contents as both LED pattern and binary text
-    Stage 2: On each clock pulse, show which single bit moved and from which position to which
-    Stage 3: Show the decimal value of the register when Binary Counting Demo is active
-    Stage 4: Show which clock source (manual button or 555-driven) is currently active
-    
-    Instructional Rationale: An Apply-level "demonstrate/experiment" objective calls for direct manipulation of the register one pulse at a time so students build an accurate mental model of shift-register bit order before trusting an automatic mode; the 555-driven toggle deliberately reuses Chapter 14's own timing values so the callback is concrete, not just named.
-    
-    Color scheme: Thin blue current-flow dots on the SRCLK and RCLK control wires, orange dots on each lit LED's supply path, a highlighted yellow outline tracking the bit currently in motion, green accent on the "555-Driven Clock" toggle when active — consistent with this book's other digital-signal diagrams.
-    
-    Responsive behavior: Breadboard view and the control/infobox panel stack vertically on narrow screens; the scope panel is not used in this sim so no width-based hiding is needed; all toggles and buttons remain full-width and touch-friendly below 640 px.
-    
-    Implementation: p5.js, built with the breadboard-sim-generator skill, extending this repository's `breadboard-lib.js` with a new `bbShiftRegister595` component that models the 74HC595's internal 8-bit shift-and-latch behavior in JavaScript (not the DC steady-state solver, since shifting is a discrete-event process) while reusing `bbLED`, `bbResistor`, and `bbButton` for the visible circuit.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

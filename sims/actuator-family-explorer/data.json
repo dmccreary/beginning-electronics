@@ -1,0 +1,90 @@
+{
+  "title": "Actuator Family Explorer",
+  "image": "actuator-family.png",
+  "layout": "grid",
+  "showLabels": true,
+  "zones": [
+    {
+      "id": "dc-motor",
+      "label": "DC Motor",
+      "color": "#2878A8",
+      "x1": 0.4,
+      "y1": 0.5,
+      "x2": 24.6,
+      "y2": 99.5,
+      "summary": "Turns continuously, converting electrical energy into rotary motion.",
+      "facts": [
+        "Motion: Continuous rotation; reverse polarity reverses direction.",
+        "Control: A transistor or motor driver handles current; PWM can vary speed.",
+        "Use it for: Wheels, fans, pumps, spinners, and mechanisms needing ongoing rotation."
+      ]
+    },
+    {
+      "id": "relay",
+      "label": "Relay",
+      "color": "#168779",
+      "x1": 25.2,
+      "y1": 0.5,
+      "x2": 49.6,
+      "y2": 99.5,
+      "summary": "Uses an electromagnet to move isolated electrical contacts rather than an external load directly.",
+      "facts": [
+        "Motion: Internal contacts click between states.",
+        "Control: Drive the coil through a transistor when a logic pin cannot supply enough current; add flyback protection for a DC coil.",
+        "Use it for: Switching a separate voltage or current while maintaining galvanic isolation."
+      ]
+    },
+    {
+      "id": "solenoid",
+      "label": "Solenoid",
+      "color": "#C77B16",
+      "x1": 50.2,
+      "y1": 0.5,
+      "x2": 74.6,
+      "y2": 99.5,
+      "summary": "Produces a short linear push or pull when its coil is energized.",
+      "facts": [
+        "Motion: Straight-line stroke, often spring-returned.",
+        "Control: Requires a transistor or MOSFET driver and a flyback diode across a DC coil.",
+        "Use it for: Latches, locks, valves, knockers, and mechanisms needing on/off linear motion."
+      ]
+    },
+    {
+      "id": "servo",
+      "label": "Hobby Servo",
+      "color": "#6953B8",
+      "x1": 75.2,
+      "y1": 0.5,
+      "x2": 99.6,
+      "y2": 99.5,
+      "summary": "Moves to a commanded angle using a motor, gears, sensor, and controller in one case.",
+      "facts": [
+        "Motion: Controlled position over a limited angle on standard hobby servos.",
+        "Control: Receives repeating control pulses while drawing motor power from its supply.",
+        "Use it for: Robot joints, steering, gauges, camera mounts, and precise levers."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which actuator is best for continuously spinning a robot wheel?",
+      "correct_zone": "dc-motor",
+      "explanation": "A DC motor naturally provides continuous rotary motion."
+    },
+    {
+      "question": "Which device uses a coil to operate electrically isolated switch contacts?",
+      "correct_zone": "relay",
+      "explanation": "A relay moves contacts while isolating its control coil from the switched circuit."
+    },
+    {
+      "question": "Which actuator directly creates a short straight-line push or pull?",
+      "correct_zone": "solenoid",
+      "explanation": "A solenoid converts coil current into linear plunger motion."
+    },
+    {
+      "question": "Which actuator should you choose when you need to command a specific shaft angle?",
+      "correct_zone": "servo",
+      "explanation": "A hobby servo includes feedback and position control."
+    }
+  ]
+}

@@ -3,123 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Resistor Family Matching Sorter</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Resistor Family Matching Sorter using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="resistor-family-matching-sorter.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Resistor Family Matching Sorter</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> resistor-family-matching-sorter</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Understand (L2). Bloom Verb: classify, identify.</p>
-            <p><strong>Learning Objective:</strong> Given five resistor-type cards and five shuffled behavior-description cards, match each resistor type to the one description that correctly explains how and why its resistance changes.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** resistor-family-matching-sorter<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Reinforce the five resistor types just introduced (Fixed Resistor, Potentiometer, Trimmer Resistor, Photoresistor/LDR, Thermistor) by having students actively match each type to the behavior that defines it, immediately after the comparison table.
-    
-    Bloom Taxonomy: Understand (L2). Bloom Verb: classify, identify.
-    
-    Learning objective: Given five resistor-type cards and five shuffled behavior-description cards, match each resistor type to the one description that correctly explains how and why its resistance changes.
-    
-    Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Resistor Family Matching Sorter | Topic: Resistor Types (Fixed, Variable, Potentiometer, Trimmer, Photoresistor, Thermistor) | Subjects: Electronics, Beginning Electronics | Grade Level: Junior High | Learning Objectives: Identify and classify each resistor type by its defining characteristic and typical use case" returned a top match of "Photoresistor Component Visualization" (dmccreary/moving-rainbow, WHAT score 0.4948, recommendation "generate") — below the 0.60 template threshold. A keyword grep of the 3,764-entry MicroSim catalog for "potentiometer," "photoresistor," and "thermistor" found no existing matching game covering all five resistor types together. This is a new specification.
-    
-    Canvas layout: Top row shows five resistor-type cards (icon + name) in a shuffled order; bottom row shows five behavior-description cards in a different shuffled order; a small infobox sits beneath both rows.
-    
-    Components/elements involved: Five labeled resistor-type cards (Fixed Resistor, Potentiometer, Trimmer Resistor, Photoresistor/LDR, Thermistor), each with a simple icon; five behavior-description cards drawn from the comparison table above; connector lines drawn between matched pairs.
-    
-    Required interactivity:
-    - Click a resistor-type card, then click a behavior-description card to propose a match; a connecting line is drawn between them
-    - Correct matches turn green and lock in place with a one-sentence confirmation in the infobox
-    - Incorrect matches flash red, unlock, and the infobox explains what's actually true about the resistor type that was clicked, without revealing the correct pairing
-    - Button: "Check All" reveals any remaining unmatched pairs once all five have been attempted
-    - Button: "Shuffle Again" re-randomizes both rows for repeated practice
-    
-    Default state: All ten cards unmatched and shuffled; infobox reads "Click a resistor type, then click its matching behavior."
-    
-    Instructional Rationale: An Understand-level "classify/identify" objective is well served by a matching-pairs pattern, which forces active recall of each resistor type's defining behavior rather than passive re-reading of the table above it.
-    
-    Color scheme: Warm orange highlight for the currently selected card, green for a correct match, red flash for an incorrect attempt, light neutral gray for unmatched cards, consistent with this chapter's other diagrams.
-    
-    Responsive behavior: The two card rows stack into a single scrollable column on narrow screens; tap-to-select works identically to click on touch devices.
-    
-    Implementation: p5.js, with card data (name, icon, description, correct pairing) stored in a lookup array so the same sim can be reshuffled without reloading.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

@@ -1,0 +1,111 @@
+{
+  "title": "LED Color and Viewing Angle Explorer",
+  "image": "led-comparison.svg",
+  "layout": "grid",
+  "showLabels": true,
+  "palette": ["#C0392B", "#2E7D32", "#1565C0", "#C77B16", "#7A7A6B"],
+  "zones": [
+    {
+      "id": "red-led",
+      "label": "Red",
+      "color": "#C0392B",
+      "x1": 0.4,
+      "y1": 0.5,
+      "x2": 19.6,
+      "y2": 99.5,
+      "summary": "The lowest forward voltage of the three, which is why a red LED lights on the smallest supply.",
+      "facts": [
+        "Forward voltage: roughly 1.8–2.2 V, usually quoted as about 2.0 V.",
+        "Why it matters: subtract this from your supply before sizing the current-limiting resistor.",
+        "On a 5 V supply: about 3.0 V is left across the resistor — the largest headroom of the three colors."
+      ]
+    },
+    {
+      "id": "green-led",
+      "label": "Green",
+      "color": "#2E7D32",
+      "x1": 20.4,
+      "y1": 0.5,
+      "x2": 39.6,
+      "y2": 99.5,
+      "summary": "A little more forward voltage than red, because shorter-wavelength light takes more energy per photon.",
+      "facts": [
+        "Forward voltage: roughly 2.0–2.4 V, usually quoted as about 2.2 V.",
+        "Why it matters: the same resistor gives slightly less current than it would with a red LED.",
+        "On a 5 V supply: about 2.8 V is left across the resistor."
+      ]
+    },
+    {
+      "id": "blue-led",
+      "label": "Blue",
+      "color": "#1565C0",
+      "x1": 40.4,
+      "y1": 0.5,
+      "x2": 59.6,
+      "y2": 99.5,
+      "summary": "The highest forward voltage here — blue light carries the most energy per photon of the three.",
+      "facts": [
+        "Forward voltage: roughly 2.8–3.4 V, usually quoted as about 3.1 V.",
+        "Why it matters: a blue LED will not light at all from a supply below its forward voltage.",
+        "On a 5 V supply: only about 1.9 V is left across the resistor, so use a smaller resistor than you would for red."
+      ]
+    },
+    {
+      "id": "dome-lens",
+      "label": "Rounded dome",
+      "color": "#C77B16",
+      "x1": 60.4,
+      "y1": 0.5,
+      "x2": 79.6,
+      "y2": 99.5,
+      "summary": "A clear, rounded lens focuses the light into a narrow, bright cone.",
+      "facts": [
+        "Viewing angle: roughly 20–30 degrees.",
+        "How it looks: bright and spot-like from straight on, and it fades quickly as you move off to the side.",
+        "Use it for: indicators meant to be read head-on, or anywhere you want reach rather than spread."
+      ]
+    },
+    {
+      "id": "diffused-lens",
+      "label": "Flat diffused",
+      "color": "#7A7A6B",
+      "x1": 80.4,
+      "y1": 0.5,
+      "x2": 99.6,
+      "y2": 99.5,
+      "summary": "A flat, milky lens scatters the light so it leaves over a much wider angle.",
+      "facts": [
+        "Viewing angle: roughly 100–140 degrees.",
+        "How it looks: softer and more even, and still visible from well off to one side.",
+        "Use it for: panel indicators seen from odd angles, and anywhere an even glow beats raw brightness."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which LED color needs the most forward voltage before it will light at all?",
+      "correct_zone": "blue-led",
+      "explanation": "Blue sits around 3.1 V, so a supply below that will not light it."
+    },
+    {
+      "question": "Which LED color leaves the most voltage across the resistor on a 5 V supply?",
+      "correct_zone": "red-led",
+      "explanation": "Red drops only about 2.0 V, leaving roughly 3.0 V across the resistor."
+    },
+    {
+      "question": "Which lens shape gives the narrowest, most spot-like beam?",
+      "correct_zone": "dome-lens",
+      "explanation": "A clear rounded dome focuses the light into roughly a 30 degree cone."
+    },
+    {
+      "question": "You need an indicator that stays visible when viewed from well off to one side. Which lens?",
+      "correct_zone": "diffused-lens",
+      "explanation": "A flat diffused lens spreads light over roughly 100 to 140 degrees."
+    },
+    {
+      "question": "Which color sits between the other two in forward voltage?",
+      "correct_zone": "green-led",
+      "explanation": "Green is about 2.2 V, above red and well below blue."
+    }
+  ]
+}

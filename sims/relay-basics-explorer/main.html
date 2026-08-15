@@ -3,128 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Relay Basics Explorer</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Relay Basics Explorer using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="relay-basics-explorer.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Relay Basics Explorer</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> relay-basics-explorer</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Apply (L3). Bloom Verb: demonstrate, predict.</p>
-            <p><strong>Learning Objective:</strong> Given a control-side switch driving a relay's coil, predict and observe how energizing the coil pulls the armature to close a separate load-side circuit, and explain why the two sides stay electrically isolated.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: diagram
-    **sim-id:** relay-basics-explorer<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Let students toggle a relay's control-side switch and observe how energizing the coil pulls the armature to open or close a completely separate, electrically isolated load-side circuit.
-    
-    Bloom Taxonomy: Apply (L3). Bloom Verb: demonstrate, predict.
-    
-    Learning objective: Given a control-side switch driving a relay's coil, predict and observe how energizing the coil pulls the armature to close a separate load-side circuit, and explain why the two sides stay electrically isolated.
-    
-    Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: Relay Basics Explorer | Topic: relay, electromagnetic switch, actuator, load resistance, output device protection | Subjects: Electronics, Electric Circuits | Grade Level: Junior High | Learning Objectives: Explain how a relay uses a small control current to switch a much larger load current through electromagnetic coupling" topped out at "Wire MicroSim" (dmccreary/circuits, WHAT score 0.4824, "generate") — well below the 0.60 template threshold and not relay-specific. New specification. Since a relay isn't in this course's $50 kit, this diagram uses a schematic, non-breadboard layout, styled with the same palette as `breadboard-lib.js` sims.
-    
-    Canvas layout: Two circuit halves joined only by a dashed "no electrical connection" line: control side (small battery, toggle switch, coil symbol), load side (separate battery, lamp icon, contacts next to a spring-loaded armature); right panel holds a "Control Switch" toggle and an infobox.
-    
-    Components/elements involved: Control-side battery, switch, coil symbol; load-side battery, lamp icon, armature, movable contact; animated field lines when energized; current-flow dots on the active side.
-    
-    Required interactivity:
-    - Clicking the "Control Switch" toggle energizes the coil, shown with animated field lines, pulling the armature down to close the load-side contacts and light the lamp
-    - Releasing the switch de-energizes the coil; a spring animation pulls the armature back open, turning the lamp off
-    - Hovering the coil, armature, or contacts opens an infobox explaining that part's role; hovering the dashed line explains the isolation
-    - Button "Reset" returns the control switch to off
-    
-    Default state: Control switch off, coil de-energized, contacts open, lamp off, infobox reads "Coil off — no magnetic pull, so the spring holds the contacts open."
-    
-    Data Visibility Requirements:
-    Stage 1: Show the control switch's on/off state
-    Stage 2: Show the coil energized or de-energized, with field-line animation
-    Stage 3: Show the armature's position
-    Stage 4: Show the load-side circuit's resulting open/closed and lamp state
-    
-    Instructional Rationale: An Apply-level "demonstrate/predict" objective calls for a single manipulable switch with an immediate, visible cause-and-effect chain — coil, armature, contacts, lamp.
-    
-    Color scheme: Blue for the control side, orange for the load side, red field lines when energized.
-    
-    Responsive behavior: The two halves stack vertically on narrow screens; the toggle stays full-width and touch-friendly.
-    
-    Implementation: p5.js, schematic-style diagram styled consistently with `breadboard-lib.js`'s palette, even though it does not render an actual breadboard.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

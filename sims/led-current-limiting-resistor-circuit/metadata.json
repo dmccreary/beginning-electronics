@@ -1,23 +1,45 @@
 {
   "title": "LED with Current-Limiting Resistor Breadboard Circuit",
-  "description": "Given a rendered breadboard LED circuit with a swappable current-limiting resistor, identify the LED's anode and cathode, predict what happens when the LED is wired backwards, and calculate the resulting current for different resistor choices using the current-limiting resistor equation.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for led with current-limiting resistor breadboard circuit",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "led-current-limiting-resistor-circuit",
-  "library": "p5.js",
-  "bloomLevel": "Understand (L2) / Apply (L3). Bloom Verb: identify, demonstrate, calculate.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 10,
-  "chapter_title": "\"Capacitor Timing and Resistor Values\"",
-  "chapter_dir": "10-capacitor-timing-resistor-values",
-  "chapter_rel_dir": "chapters/10-capacitor-timing-resistor-values"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "LED with Current-Limiting Resistor Breadboard Circuit",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Apply",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "10-capacitor-timing-resistor-values"
 }

@@ -1,0 +1,62 @@
+{
+  "title": "Multi-LED Configuration Explorer",
+  "creator": "Dan McCreary",
+  "subject": "Beginning electronics and LED systems",
+  "description": "An interactive four-column infographic comparing parallel LED branches, strips, matrices, and chasers.",
+  "date": "2026-08-15",
+  "canvasHeight": 730,
+  "educational": {
+    "gradeLevel": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "subjectArea": "Electronics",
+    "topic": "Multi-LED configurations",
+    "learningObjectives": [
+      "Explain how wiring and control strategy differ among parallel LEDs, strips, matrices, and chaser circuits."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "LED polarity",
+      "Current-limiting resistors"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Custom grid infographic overlay",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 730
+    },
+    "responsive": true,
+    "dependencies": [
+      "grid-diagram.js",
+      "grid-overlay.css",
+      "comparison-explorer.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive comparison and retrieval practice",
+    "keyQuestions": [
+      "When does each LED need its own resistor?",
+      "How do matrices and chasers reduce or sequence control connections?"
+    ],
+    "commonMisconceptions": [
+      "Parallel LEDs can safely share one resistor in every situation.",
+      "An LED matrix drives every LED continuously."
+    ],
+    "assessmentOpportunities": [
+      "Four-question LED-configuration quiz"
+    ]
+  },
+  "chapter": "18-leds-rgb-color-motors"
+}

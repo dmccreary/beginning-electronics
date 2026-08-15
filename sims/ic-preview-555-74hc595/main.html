@@ -1,129 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Two ICs Coming Soon — 555 Timer and 74HC595 Preview</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <title>IC Preview — 555 Timer and 74HC595 Shift Register</title>
+  <link rel="icon" href="../../img/favicon.ico">
+  <link rel="stylesheet" href="../shared-libs/grid-overlay.css">
+  <style>
+    .sim-title {
+      margin: 2px 0 10px;
+      color: #1f3349;
+      font-size: clamp(20px, 3.2vw, 30px);
+      line-height: 1.15;
+      text-align: center;
+    }
+    .sim-subtitle {
+      margin: -4px 0 10px;
+      color: #526579;
+      font-size: 13px;
+      text-align: center;
+    }
+    .zone-chip {
+      top: 8px;
+      max-width: calc(100% - 10px);
+      padding: 4px 9px;
+      font-size: clamp(10px, 1.6vw, 13px);
+      line-height: 1.2;
+      text-align: center;
+      opacity: 1;
+    }
+    .grid-zone:focus-visible {
+      border-color: var(--zone-color, #1389A6);
+      border-width: 3px;
+      outline: 3px solid white;
+      outline-offset: -6px;
+    }
+    #detail-panel { min-height: 132px; }
+  </style>
 </head>
 <body>
-    <div id="container">
-        <h1>Two ICs Coming Soon — 555 Timer and 74HC595 Preview</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> ic-preview-555-74hc595</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Remember (L1) / Understand (L2). Bloom Verb: identify, describe, summarize.</p>
-            <p><strong>Learning Objective:</strong> Identify the 555 timer IC and the 74HC595 shift register by their pin count and package shape, and summarize in one sentence each what job every chip will perform later in the course.</p>
-        </div>
+<main>
+  <h1 class="sim-title">Two Chips You Will Meet Soon</h1>
+  <p class="sim-subtitle">Click a chip to preview the job it does later in the course.</p>
+
+  <div id="image-wrapper" aria-label="An 8-pin 555 timer and a 16-pin 74HC595 shift register">
+    <!-- Image and interactive zones are injected by grid-diagram.js. -->
+  </div>
+
+  <div id="controls" aria-label="Activity mode">
+    <button class="mode-btn active" id="btn-explore">Explore</button>
+    <button class="mode-btn" id="btn-quiz">Quiz Me</button>
+    <span id="quiz-score" style="display:none">
+      Score: <strong id="score-val">0</strong> / <strong id="score-total">0</strong>
+    </span>
+    <span id="edit-badge">EDIT MODE</span>
+  </div>
+
+  <div id="detail-panel" aria-live="polite">
+    <div id="panel-prompt">Click a chip to preview what it does.</div>
+    <div id="panel-content">
+      <div id="panel-label"></div>
+      <div id="panel-summary"></div>
+      <ul id="panel-facts"></ul>
     </div>
+  </div>
 
-    <!--
-    SPECIFICATION (from chapter index.md):
+  <div id="quiz-question" aria-live="polite"></div>
 
-    Type: infographic
-    **sim-id:** ic-preview-555-74hc595<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Give students a light, survey-level preview of the 555 timer and 74HC595 shift register chips they will build with in Chapters 14 and 15, without teaching full wiring or timing formulas here.
-    
-    Bloom Taxonomy: Remember (L1) / Understand (L2). Bloom Verb: identify, describe, summarize.
-    
-    Learning objective: Identify the 555 timer IC and the 74HC595 shift register by their pin count and package shape, and summarize in one sentence each what job every chip will perform later in the course.
-    
-    Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: Meet the ICs Coming Soon: 555 Timer and 74HC595 Shift Register | Topic: Integrated circuit survey introduction, 555 timer astable and monostable modes, 555 pin configuration, 74HC595 shift register serial data input and parallel data output | Subjects: Electronics, Beginning Electronics | Grade Level: Junior High | Learning Objectives: Identify the 555 timer IC and the 74HC595 shift register and summarize what each chip will be used for later in the course" returned two matches at "template" strength: "555 Timer" (dmccreary/microsims, WHAT score 0.6463) and "Shift Register MicroSim" (dmccreary/digital-electronics, WHAT score 0.6351). Both are full teaching simulations — the 555 Timer sim includes accurate RC timing formulas and a live waveform display, and the Shift Register sim includes a logic analyzer showing clock and latch timing — exactly the deep, formula-level content this chapter is intentionally deferring to Chapters 14 and 15. Reusing either sim here would duplicate those future chapters' central teaching tool before students have the RC-timing (Chapter 10) and clocked-logic background those sims assume. This is written as a new, deliberately shallow specification instead, and both existing sims are flagged here as the direct, ready-to-embed resources Chapters 14 and 15 should reuse when those chapters are generated.
-    
-    Canvas layout: Two side-by-side chip panels on a single canvas — left panel shows an 8-pin DIP outline labeled "555 Timer," right panel shows a 16-pin DIP outline labeled "74HC595 Shift Register"; a small infobox sits below both panels.
-    
-    Components/elements involved: A rendered 8-pin DIP chip silhouette; a rendered 16-pin DIP chip silhouette; a "Coming in Chapter 14" tag on the 555 panel; a "Coming in Chapter 15" tag on the 74HC595 panel; an infobox.
-    
-    Required interactivity:
-    - Clicking the 555 Timer chip panel reveals an infobox with one sentence on astable mode, one sentence on monostable mode, and the note "Full wiring and timing math in Chapter 14"
-    - Clicking the 74HC595 chip panel reveals an infobox with one sentence on serial data input, one sentence on parallel data output, and the note "Full wiring and 8-LED project in Chapter 15"
-    - Hovering either chip silhouette gives it a highlight border to show it is clickable
-    - No sliders, waveforms, or timing simulation are included — this element is intentionally kept at preview depth
-    
-    Default state: Neither panel expanded; infobox reads "Click a chip to preview what it does."
-    
-    Data Visibility Requirements:
-    Stage 1: Show each chip's name and pin-count package shape
-    Stage 2: Show which future chapter teaches that chip in full
-    Stage 3: On click, show the one or two teaser sentences for that chip
-    
-    Instructional Rationale: A Remember/Understand "identify/summarize" objective at survey depth calls for a simple click-to-reveal pattern with short teaser text, not a manipulable simulation — matching this chapter's intentional choice to name and preview these chips without teaching their internal timing or clocking behavior, which belongs to Chapters 14 and 15.
-    
-    Color scheme: Blue chip outlines matching the site's primary theme color, orange highlight border on hover matching the accent color, consistent with this chapter's other diagrams.
-    
-    Responsive behavior: The two chip panels stack vertically on narrow screens instead of sitting side by side; the infobox remains full-width beneath them.
-    
-    Implementation: Plain p5.js, not the breadboard-sim-generator — this is a lightweight click-to-reveal preview, not a wired or timed circuit.
-    -->
+  <div id="edit-panel">
+    <h3>Edit Mode — drag corner handles to calibrate zone boundaries</h3>
+    <div id="coord-display">Drag a corner handle to see live coordinates.</div>
+    <textarea id="json-output" readonly spellcheck="false"></textarea>
+    <div id="edit-actions">
+      <button id="copy-json-btn" onclick="sim.copyJSON()">Copy JSON</button>
+      <span id="copy-confirm"></span>
+    </div>
+  </div>
+</main>
+
+<script src="../shared-libs/grid-diagram.js"></script>
+<script src="ic-preview-555-74hc595.js"></script>
 </body>
 </html>

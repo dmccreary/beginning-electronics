@@ -3,130 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Jumper Wire Routing Practice</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Jumper Wire Routing Practice using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="breadboard-lib.js"></script>
+    <script src="jumper-wire-routing-practice.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Jumper Wire Routing Practice</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> jumper-wire-routing-practice</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Apply (L3). Bloom Verb: construct, demonstrate.</p>
-            <p><strong>Learning Objective:</strong> Construct a valid connection between two highlighted breadboard tie points by selecting the correct jumper wire type (male-to-male or male-to-female) for the situation and routing a wire between them without crossing the gutter incorrectly or bridging the power rails.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** jumper-wire-routing-practice<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Let students practice choosing the right jumper wire type and a clean physical path to connect two given tie points on a breadboard, reinforcing jumper wire, male-to-male/male-to-female, and wire-routing concepts before any real current is involved.
-    
-    Bloom Taxonomy: Apply (L3). Bloom Verb: construct, demonstrate.
-    
-    Learning objective: Construct a valid connection between two highlighted breadboard tie points by selecting the correct jumper wire type (male-to-male or male-to-female) for the situation and routing a wire between them without crossing the gutter incorrectly or bridging the power rails.
-    
-    Reuse check: An embeddings search (find-similar-templates, mode=reuse) found no strong match for a jumper-wire or wire-routing sim specifically; the closest hits were general breadboard-anatomy sims ("Breadboard Layout Explorer," score 0.54) flagged "generate." A keyword grep of the project's 3,764-entry MicroSim index for "jumper" returned zero existing entries. This is a new specification.
-    
-    Breadboard region shown: The same half-size breadboard graphic as the Breadboard Anatomy Explorer above (reuse that rendering approach for visual consistency within the chapter), pre-populated each round with two highlighted target tie points — sometimes on the same side of the gutter, sometimes on opposite sides, sometimes one target on a power rail.
-    
-    Components/elements involved: No electronic components — only the bare board, two highlighted target tie points per round, and a supply tray showing one male-to-male jumper icon and one male-to-female jumper icon (with a small pin-header module icon shown only when a male-to-female connection is the correct choice).
-    
-    Labels/values that must be shown: The two target tie points' row-column addresses (e.g., "connect row b, column 5 to the + power rail"), the wire type currently selected, and a running "connections completed" counter.
-    
-    Required interactivity:
-    - Click one of the two jumper wire icons (male-to-male or male-to-female) to select it before routing
-    - Drag from the first highlighted tie point to the second to draw a routed wire; the path snaps along the board's row/column grid rather than a diagonal straight line, visualizing real wire routing
-    - On a completed connection, immediate feedback: a green confirmation and a one-sentence explanation if correct ("Nice — male-to-male is right for two breadboard holes"); a red explanation if the wrong wire type was chosen or the wire bridges the power rails incorrectly ("That bridges the + and − rails — check Chapter 6's warning about shorting the rails")
-    - Button: "New Round" generates a fresh pair of target tie points, occasionally including a simulated sensor-module pin header, which requires a male-to-female jumper
-    - Toggle: "Show Neat vs. Messy Routing" swaps between a tidy, grid-aligned example path and a tangled diagonal path between the same two points, reinforcing the wire-routing concept from the text
-    
-    Default parameters: Round 1 always uses two ordinary breadboard-hole targets on the same side of the gutter, so the first successful connection is a straightforward male-to-male placement.
-    
-    Data Visibility Requirements:
-      Stage 1 (round starts): Two target tie points highlighted on the board, jumper wire tray shown, no wire drawn yet
-      Stage 2 (wire type selected): Chosen wire icon highlighted, ready to route
-      Stage 3 (wire routed and released): Completed connection shown snapped to the grid, with immediate correct/incorrect feedback and explanation
-    
-    Instructional Rationale: An Apply-level "construct a connection" objective calls for a hands-on select-then-act pattern with immediate feedback, rather than passive viewing, so learners rehearse the actual decision (which wire type?) and the routing habit they'll need moments before their first real breadboard build in Chapter 7.
-    
-    Color scheme: Warm orange for the currently selected jumper wire type, green/red for correct/incorrect feedback, light neutral gray for the unselected board, matching the Breadboard Anatomy Explorer's palette for visual consistency within the chapter.
-    
-    Responsive behavior: Board and supply tray stack vertically on narrow screens; drag-to-route also supports tap-tap (tap start hole, tap end hole) as a touch-friendly alternative to dragging.
-    
-    Implementation: p5.js, with the breadboard grid shared from the Breadboard Anatomy Explorer's rendering approach; routing paths computed as orthogonal (grid-aligned) segments between two selected holes; a small rules table checks wire-type validity and power-rail bridging per round.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

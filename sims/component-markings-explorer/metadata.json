@@ -1,0 +1,61 @@
+{
+  "title": "Component Markings: What You Can Read",
+  "creator": "Dan McCreary",
+  "subject": "Beginning electronics component identification",
+  "description": "An interactive five-column infographic comparing visible markings on resistors, diodes, transistors, capacitors, and integrated circuits.",
+  "date": "2026-08-15",
+  "canvasHeight": 710,
+  "educational": {
+    "gradeLevel": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "subjectArea": "Electronics",
+    "topic": "Component markings and datasheets",
+    "learningObjectives": [
+      "Distinguish information that can be read from component markings from information that must be confirmed in a datasheet."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Basic component identification"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Custom grid infographic overlay",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 710
+    },
+    "responsive": true,
+    "dependencies": [
+      "grid-diagram.js",
+      "grid-overlay.css",
+      "comparison-explorer.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive comparison and retrieval practice",
+    "keyQuestions": [
+      "Which markings indicate orientation or polarity?",
+      "Which safety-critical facts require a datasheet?"
+    ],
+    "commonMisconceptions": [
+      "A transistor flat face guarantees one universal pinout.",
+      "Package size alone reveals every electrical rating."
+    ],
+    "assessmentOpportunities": [
+      "Five-question component-marking quiz"
+    ]
+  },
+  "chapter": "21-systematic-troubleshooting"
+}

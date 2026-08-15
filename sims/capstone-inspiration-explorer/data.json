@@ -1,0 +1,70 @@
+{
+  "title": "Capstone Project Inspiration",
+  "image": "capstone-projects.png",
+  "layout": "grid",
+  "showLabels": true,
+  "zones": [
+    {
+      "id": "solar-light",
+      "label": "Solar Night Light",
+      "color": "#2878A8",
+      "x1": 0.4,
+      "y1": 0.5,
+      "x2": 32.9,
+      "y2": 99.5,
+      "summary": "An autonomous light that collects energy by day and turns on after dark.",
+      "facts": [
+        "Core parts: Solar panel, rechargeable cell, charge/protection circuit, light sensor, LED, and enclosure.",
+        "Design challenge: Balance harvested energy, battery capacity, LED brightness, and weather protection.",
+        "Best fit: A moderate project for learners interested in renewable energy and outdoor electronics."
+      ]
+    },
+    {
+      "id": "busy-board",
+      "label": "Interactive Busy Board",
+      "color": "#C77B16",
+      "x1": 33.5,
+      "y1": 0.5,
+      "x2": 66.1,
+      "y2": 99.5,
+      "summary": "A tactile panel where switches and knobs produce lights, sounds, or motion.",
+      "facts": [
+        "Core parts: Multiple input controls, LEDs or actuators, power distribution, and a durable enclosure.",
+        "Design challenge: Make every interaction understandable, safe, strain-relieved, and satisfying.",
+        "Best fit: A moderate-to-advanced project for learners who enjoy interface design and many small circuits."
+      ]
+    },
+    {
+      "id": "wearable",
+      "label": "LED Noodle Wearable",
+      "color": "#6953B8",
+      "x1": 66.7,
+      "y1": 0.5,
+      "x2": 99.6,
+      "y2": 99.5,
+      "summary": "A wearable light project that turns flexible LED tubing into a bold visual pattern.",
+      "facts": [
+        "Core parts: LED noodle or flexible light, battery, switch, current-control or driver circuit, and garment attachments.",
+        "Design challenge: Keep wiring flexible, insulated, lightweight, and comfortable while managing battery runtime.",
+        "Best fit: A beginner-to-moderate project blending electronics, fashion, and event lighting."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which project must balance daytime energy harvesting with nighttime battery use?",
+      "correct_zone": "solar-light",
+      "explanation": "The solar night light is an energy-budget and outdoor-enclosure challenge."
+    },
+    {
+      "question": "Which project emphasizes many tactile inputs and immediate feedback?",
+      "correct_zone": "busy-board",
+      "explanation": "A busy board combines switches, knobs, lights, and other responses."
+    },
+    {
+      "question": "Which project makes flexibility, comfort, and portable power central design constraints?",
+      "correct_zone": "wearable",
+      "explanation": "Wearable lighting must move safely and comfortably with the garment."
+    }
+  ]
+}

@@ -1,23 +1,69 @@
 {
   "title": "Water Flow Analogy MicroSim",
-  "description": "Water Flow Analogy MicroSim",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
-  "date": "2026-08-14",
+  "description": "Interactive simulation comparing water flow in pipes to electric current in wires, demonstrating voltage-pressure and current-flow rate analogies",
+  "creator": "Dan McCreary",
+  "date": "2026-01-30",
   "subject": [
-    "Beginning Electronics"
+    "Electric Current",
+    "Voltage",
+    "Water Analogy",
+    "Circuit Fundamentals",
+    "Current Flow Visualization"
   ],
   "type": "Interactive Simulation",
   "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "water-flow-analogy",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "publisher": "AI Circuits Course",
+  "identifier": "https://dmccreary.github.io/circuits/sims/water-flow-analogy/",
+  "educationalLevel": "Undergraduate",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand"
+  ],
+  "concepts": [
+    "Electric Current",
+    "Voltage",
+    "Resistance",
+    "Current Flow",
+    "Pressure Analogy"
+  ],
+  "prerequisites": [
+    "Basic understanding of water flow",
+    "Familiarity with pumps and pipes"
+  ],
   "library": "p5.js",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 1,
-  "chapter_title": "\"Electricity Basics: Voltage, Current, and Resistance\"",
-  "chapter_dir": "01-electricity-basics",
-  "chapter_rel_dir": "chapters/01-electricity-basics"
+  "visualizationType": [
+    "animation",
+    "split-screen comparison",
+    "interactive-demo",
+    "simulation"
+  ],
+  "learningObjectives": [
+    "Explain how electric current flow is analogous to water flow in pipes",
+    "Compare voltage to water pressure as the driving force",
+    "Compare current to flow rate as the rate of charge movement",
+    "Describe how conductor size affects current flow"
+  ],
+  "pedagogical": {
+    "pattern": "analogy-comparison",
+    "bloomAlignment": [
+      "understand"
+    ],
+    "bloomVerbs": [
+      "compare",
+      "explain",
+      "describe"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "feedbackType": [
+      "immediate",
+      "visual"
+    ],
+    "interactionStyle": "manipulate"
+  }
 }

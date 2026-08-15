@@ -3,127 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Combination Lock Circuit</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Combination Lock Circuit using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="breadboard-lib.js"></script>
+    <script src="combination-lock-circuit.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Combination Lock Circuit</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> combination-lock-circuit</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Understand (L2) / Apply (L3). Bloom Verb: demonstrate, predict.</p>
-            <p><strong>Learning Objective:</strong> Given a series-wired, three-button combination lock circuit, predict and verify which combinations of held-down buttons light the "Unlocked" LED, and observe that the LED goes dark the instant any single button is released.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** combination-lock-circuit<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Let students press and hold three momentary push buttons on a rendered breadboard, in any order, and see for themselves that an "Unlocked" LED lights only during the exact window when all three are held down together, extending Chapter 16's two-switch series-AND idea to a three-switch combination lock.
-    
-    Bloom Taxonomy: Understand (L2) / Apply (L3). Bloom Verb: demonstrate, predict.
-    
-    Learning objective: Given a series-wired, three-button combination lock circuit, predict and verify which combinations of held-down buttons light the "Unlocked" LED, and observe that the LED goes dark the instant any single button is released.
-    
-    Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: Combination Lock Circuit | Topic: Multiple push buttons wired in sequence, manual input device, trigger input, digital input, button press duration | Subjects: Electronics, Electric Circuits, Digital Logic | Grade Level: Junior High | Learning Objectives: Given a sequence of button presses, predict whether a combination lock circuit unlocks, demonstrating series wiring and ordered manual input" returned a top match of "Animated Switches MicroSim" (dmccreary/circuits, WHAT score 0.5691, recommendation "generate"), followed by "Switch Drawing MicroSim" (0.5536) and "Logic Gates" (0.5437) — all below the 0.60 template threshold and none built around a multi-button, press-and-hold combination lock. This is a new specification, and it is a strong candidate for the breadboard-sim-generator skill since it can directly extend this chapter's `light-dark-detector` breadboard rendering approach and this repository's existing `breadboard-lib.js` (already used by `button-led-breadboard` and `wired-logic-and-or` in Chapter 16) with three press-and-hold buttons in series.
-    
-    Canvas layout: Main area shows a rendered breadboard with a battery pack, three labeled push buttons (Button 1, Button 2, Button 3) wired in series, and an "Unlocked" LED with its own current-limiting resistor at the end of the path; right side panel holds a live status readout listing each button's current state and a single combined "LOCKED / UNLOCKED" indicator.
-    
-    Components/elements involved: A rendered breadboard with power and ground rails; a battery pack; three momentary push buttons at series tie-points; a current-limiting resistor and LED; connecting wires; an animated current-flow indicator on the wire segments.
-    
-    Required interactivity:
-    - Press-and-hold each button (mouse-down / touch-hold to press, release to let go); animated current only flows along the full path, and the LED only lights, while all three buttons are held simultaneously
-    - The status panel updates live to show each button's pressed/released state and the combined lock state as each button is pressed or released
-    - Button "Reset" releases all three buttons back to the default locked state
-    
-    Default state: All three buttons released, LED dark, status panel reads "LOCKED — 0 of 3 buttons held."
-    
-    Data Visibility Requirements:
-    Stage 1: Show each button's individual pressed/released state
-    Stage 2: Show the running count of how many buttons are currently held
-    Stage 3: Show the animated current stopping at the first open (unpressed) button in the series path
-    Stage 4: Show the LED lighting and status flipping to "UNLOCKED" only when the count reaches 3
-    
-    Instructional Rationale: An Understand/Apply "demonstrate/predict" objective calls for a manipulable circuit with a visible cause-and-effect chain, so students can press combinations themselves and directly observe that a single released button breaks the whole path, rather than reading the rule as an abstract statement.
-    
-    Color scheme: Green animated current dots while flowing, gray and static when a button in the path is open; red "LOCKED" and green "UNLOCKED" text in the status panel, consistent with the palette used in Chapter 16's wired-logic diagram.
-    
-    Responsive behavior: Breadboard view and the status panel stack vertically on narrow screens; buttons support tap-and-hold on touch devices as an alternative to click-and-hold.
-    
-    Implementation: p5.js, built on the breadboard-sim-generator rendering approach (real tie-point hole grid, component placement, and animated current flow).
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

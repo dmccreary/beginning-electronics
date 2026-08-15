@@ -1,23 +1,40 @@
 {
   "title": "Battery Type Explorer",
-  "description": "Compare the nominal voltage, typical capacity range, and common use of six battery types — AAA, AA, coin cell, single-cell LiPo, 9V, and D cell — by clicking each battery illustration to reveal its specifications in an infobox.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
-  "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "battery-type-explorer",
-  "library": "p5.js",
-  "bloomLevel": "Understand (L2). Bloom Verb: compare.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 5,
-  "chapter_title": "\"Conductors, Batteries, and Circuit Vocabulary Review\"",
-  "chapter_dir": "05-conductors-batteries-review",
-  "chapter_rel_dir": "chapters/05-conductors-batteries-review"
+  "creator": "Dan McCreary",
+  "subject": "Beginning electronics and battery selection",
+  "description": "An interactive six-column infographic comparing coin, AAA, AA, 18650 lithium-ion, 9V, and D batteries.",
+  "date": "2026-08-15",
+  "educational": {
+    "gradeLevel": ["6", "7", "8", "9", "10"],
+    "subjectArea": "Electronics",
+    "topic": "Battery chemistry, voltage, capacity, and applications",
+    "learningObjectives": [
+      "Compare the nominal voltage, typical capacity, chemistry, and common use of six battery types."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "duration": "10-15 minutes",
+    "prerequisites": ["Voltage", "Current", "Battery capacity"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Custom grid infographic overlay",
+    "version": "2.0",
+    "canvasDimensions": {"width": "responsive", "height": 720},
+    "responsive": true,
+    "dependencies": ["grid-diagram.js", "grid-overlay.css"],
+    "accessibility": {"hasAltText": true, "keyboardNavigable": true}
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive comparison and retrieval practice",
+    "keyQuestions": [
+      "How can batteries with the same voltage have very different capacities?",
+      "Which battery chemistry and package best fit a particular project?"
+    ],
+    "commonMisconceptions": [
+      "A physically larger battery must have a higher voltage.",
+      "An 18650 lithium-ion cell is the same format as a lithium-polymer pouch cell."
+    ],
+    "assessmentOpportunities": ["Six-question battery selection quiz"]
+  },
+  "chapter": "05-conductors-batteries-review"
 }

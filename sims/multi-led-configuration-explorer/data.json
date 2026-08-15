@@ -1,0 +1,90 @@
+{
+  "title": "Multi-LED Configuration Explorer",
+  "image": "multi-led-configurations.png",
+  "layout": "grid",
+  "showLabels": true,
+  "zones": [
+    {
+      "id": "parallel",
+      "label": "Parallel LEDs",
+      "color": "#2878A8",
+      "x1": 0.4,
+      "y1": 0.5,
+      "x2": 24.6,
+      "y2": 99.5,
+      "summary": "Separate LED branches share a supply while each LED gets its own current-limiting resistor.",
+      "facts": [
+        "Wiring: Put one resistor in series with each LED branch; do not make unlike LEDs share one resistor.",
+        "Control: Branches can switch together or independently, depending on the circuit.",
+        "Use it for: Small groups of indicators or lights where simple direct control matters."
+      ]
+    },
+    {
+      "id": "strip",
+      "label": "LED Strip",
+      "color": "#168779",
+      "x1": 25.2,
+      "y1": 0.5,
+      "x2": 49.6,
+      "y2": 99.5,
+      "summary": "A flexible strip packages LEDs and support components into repeatable segments.",
+      "facts": [
+        "Wiring: Connect at marked power and data/control pads; cut only at designated points.",
+        "Control: Analog strips light groups together; addressable strips can control pixels individually.",
+        "Use it for: Long outlines, under-shelf lighting, costumes, and quick decorative installations."
+      ]
+    },
+    {
+      "id": "matrix",
+      "label": "LED Matrix",
+      "color": "#C77B16",
+      "x1": 50.2,
+      "y1": 0.5,
+      "x2": 74.6,
+      "y2": 99.5,
+      "summary": "Rows and columns organize many LEDs into a compact display grid.",
+      "facts": [
+        "Wiring: Row/column scanning reduces the number of control connections.",
+        "Control: A driver IC or microcontroller rapidly multiplexes pixels to form patterns.",
+        "Use it for: Symbols, simple animation, scrolling messages, and low-resolution displays."
+      ]
+    },
+    {
+      "id": "chaser",
+      "label": "LED Chaser",
+      "color": "#6953B8",
+      "x1": 75.2,
+      "y1": 0.5,
+      "x2": 99.6,
+      "y2": 99.5,
+      "summary": "Timing logic lights outputs in sequence to create apparent motion.",
+      "facts": [
+        "Wiring: LEDs connect to sequential outputs, each with suitable current limiting.",
+        "Control: A clock plus counter, shift register, or microcontroller advances the lit position.",
+        "Use it for: Marquees, turn indicators, animated props, and lessons about timing and sequence."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which setup should give every separate LED branch its own resistor?",
+      "correct_zone": "parallel",
+      "explanation": "Parallel LEDs need individual current limiting for predictable branch currents."
+    },
+    {
+      "question": "Which format is fastest for tracing a long flexible outline?",
+      "correct_zone": "strip",
+      "explanation": "LED strips provide flexible, repeatable light segments."
+    },
+    {
+      "question": "Which configuration uses row-and-column addressing to form two-dimensional patterns?",
+      "correct_zone": "matrix",
+      "explanation": "An LED matrix organizes pixels by rows and columns."
+    },
+    {
+      "question": "Which configuration creates motion by advancing the active output through a sequence?",
+      "correct_zone": "chaser",
+      "explanation": "A chaser uses timing and sequential outputs."
+    }
+  ]
+}

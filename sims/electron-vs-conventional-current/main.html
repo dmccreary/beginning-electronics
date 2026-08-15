@@ -3,134 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Electron Flow vs. Conventional Current</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Electron Flow vs. Conventional Current using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="electron-vs-conventional-current.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Electron Flow vs. Conventional Current</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> electron-vs-conventional-current</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Understand (L2). Bloom Verb: explain.</p>
-            <p><strong>Learning Objective:</strong> Explain why conventional current is drawn from positive to negative even though electrons physically flow from negative to positive, by toggling between an animated electron-flow view and an animated conventional-current view of the same battery-and-resistor loop.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** electron-vs-conventional-current<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified<br/>
-    **Template:** https://github.com/dmccreary/intro-to-physics-course/tree/main/docs/sims/current-animation
-    
-    Purpose: Resolve the beginner confusion between electron flow and conventional current by showing both directions on the same simple circuit, under learner control.
-    
-    Bloom Taxonomy: Understand (L2). Bloom Verb: explain.
-    
-    Learning objective: Explain why conventional current is drawn from positive to negative even though electrons physically flow from negative to positive, by toggling between an animated electron-flow view and an animated conventional-current view of the same battery-and-resistor loop.
-    
-    Canvas layout:
-    - Center (roughly 80% of width): a single closed-loop circuit diagram — a battery, a wire loop, and one resistor — drawn large enough for moving dots to be clearly visible
-    - Bottom strip (remaining height): a control bar with the view toggle, a play/pause button, and a speed slider
-    
-    Visual elements:
-    - The battery drawn with its positive (long line) and negative (short line) terminals clearly labeled
-    - Small orange dots representing electrons, animated moving through the wire
-    - A separate, larger arrow representing conventional current, shown in blue, animated moving through the wire
-    - A label near the moving dots/arrow that updates to read either "Electron Flow (real motion)" or "Conventional Current (the arrow engineers draw)"
-    
-    Interactive controls:
-    - Toggle switch or two buttons: "Show Electron Flow" and "Show Conventional Current"
-    - Button: Play/Pause the animation
-    - Slider: Animation speed (slow to fast)
-    - Hover over the battery to see a tooltip confirming which terminal is positive and which is negative
-    
-    Default parameters:
-    - View starts on "Show Electron Flow," paused, with a "Press Play" prompt
-    - Medium animation speed
-    
-    Data Visibility Requirements:
-      Stage 1 (Electron Flow view): Show orange electron dots moving from the negative terminal, around the loop, into the positive terminal, with a label reading "Electrons move negative to positive — this is the real, physical motion"
-      Stage 2 (toggle to Conventional Current view): Show the same loop with a blue arrow moving from the positive terminal, around the loop, into the negative terminal, with a label reading "Conventional current is drawn positive to negative — this is the direction engineers agreed to use on every diagram"
-      Stage 3 (both views available on demand): Learner can toggle back and forth as many times as needed, always on the identical circuit, so the only thing that changes is direction and label
-    
-    Instructional Rationale: This is an Understand-level objective, so the design deliberately uses a controlled toggle between two labeled, concrete views rather than showing both directions superimposed, which would be visually confusing for a first encounter. Letting the learner flip back and forth on demand, at a pace they control, is what makes the historical-convention explanation click instead of feeling like an arbitrary rule to memorize.
-    
-    Color scheme: Orange dots for electron flow (matching Volt's eye color and this book's accent color), blue arrow for conventional current (matching the book's primary theme color), on a light circuit-diagram background.
-    
-    Responsive behavior: The circuit diagram scales to fill the available width; the control bar reflows below the diagram on narrow screens, and all buttons remain reachable by touch on mobile devices.
-    
-    Implementation: p5.js, with electron dots as an array of positions animated along a predefined loop path, and the conventional-current arrow drawn as a single animated segment moving along the same path in the opposite direction.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

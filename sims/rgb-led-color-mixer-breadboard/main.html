@@ -3,129 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>RGB LED Color Mixing Breadboard</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>RGB LED Color Mixing Breadboard using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="breadboard-lib.js"></script>
+    <script src="rgb-led-color-mixer-breadboard.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>RGB LED Color Mixing Breadboard</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> rgb-led-color-mixer-breadboard</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Apply (L3). Bloom Verb: demonstrate, predict, apply.</p>
-            <p><strong>Learning Objective:</strong> Given three brightness sliders wired to a common-cathode RGB LED on a breadboard, predict and observe the resulting blended color, and reproduce the common mixes (yellow, magenta, cyan, white) from the chapter text.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** rgb-led-color-mixer-breadboard<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Let students drag three brightness sliders for a rendered common-cathode RGB LED and directly observe additive color mixing on a wired breadboard circuit.
-    
-    Bloom Taxonomy: Apply (L3). Bloom Verb: demonstrate, predict, apply.
-    
-    Learning objective: Given three brightness sliders wired to a common-cathode RGB LED on a breadboard, predict and observe the resulting blended color, and reproduce the common mixes (yellow, magenta, cyan, white) from the chapter text.
-    
-    Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: RGB LED Color Mixing Breadboard | Topic: RGB LED, common cathode RGB, common anode RGB, color mixing with LEDs, LED brightness control | Subjects: Electronics, Electric Circuits | Grade Level: Junior High | Learning Objectives: Given three sliders for red, green, and blue LED brightness, predict and observe the resulting mixed color on a breadboard-rendered RGB LED, demonstrating additive color mixing" returned a top match of "RGB Color Mixer" (dmccreary/learning-python, WHAT score 0.6062, "template") — a bare color swatch mixer from a Geometry repo, with no wired circuit or resistors. "NeoPixel Color Mixer" (0.5757) and "Rainbow Color Picker" (0.5485) scored lower and are also unwired. Per this course's guidance to prefer breadboard-rendered circuits, this is a new specification, extending this repository's `breadboard-lib.js` (already used by `button-led-breadboard`, `light-dark-detector`, `wired-logic-and-or`) with three resistor-and-LED branches sharing one RGB LED's common lead.
-    
-    Canvas layout: Main area shows a rendered breadboard with a battery, three resistors (one per color anode), and one RGB LED rendered as three overlapping colored dies inside a single lens; right panel holds three vertical brightness sliders (R, G, B, 0-255), a color swatch, a Common Cathode / Common Anode toggle, and four presets (Yellow, Magenta, Cyan, White).
-    
-    Components/elements involved: Breadboard with rails; battery; three resistors; one RGB LED with three hoverable dies; connecting wires; animated current-flow dots on each color branch, moving faster as that channel's slider rises.
-    
-    Required interactivity:
-    - Dragging a brightness slider changes that die's glow, that branch's current speed, and the blended swatch color live
-    - Clicking a preset (Yellow, Magenta, Cyan, White) snaps all three sliders to that color's values
-    - Toggling Common Cathode / Common Anode redraws the wiring and flips the on-state logic in the infobox
-    - Hovering a die opens an infobox naming that color channel and its current slider value
-    - Button "Reset" returns all sliders to 0 with Common Cathode selected
-    
-    Default state: Common Cathode, all sliders at 0, LED dark, infobox reads "All three channels off — no current, no light."
-    
-    Data Visibility Requirements:
-    Stage 1: Show all three slider values at once
-    Stage 2: Show each die's glow matching its slider
-    Stage 3: Show the additively blended swatch color
-    Stage 4: Show current speed on each branch, scaled to brightness
-    
-    Instructional Rationale: An Apply-level "demonstrate/predict" objective calls for parameter exploration where dragging a slider produces an immediate color change, building intuition for additive mixing rather than memorizing a rule.
-    
-    Color scheme: True RGB glow colors on sliders and dies; swatch at true computed color; green current dots scaled by brightness, consistent with this chapter's other diagrams.
-    
-    Responsive behavior: Breadboard and slider/swatch panel stack vertically on narrow screens; sliders stay full-width and touch-draggable.
-    
-    Implementation: p5.js, breadboard-sim-generator approach, extending `breadboard-lib.js` with three resistor-and-LED branches feeding one shared RGB LED lead.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

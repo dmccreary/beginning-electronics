@@ -1,0 +1,131 @@
+{
+  "title": "Battery Type Explorer",
+  "image": "battery-family.png",
+  "layout": "grid",
+  "showLabels": true,
+  "palette": ["#2878A8", "#168779", "#C77B16", "#6953B8", "#C85B4B", "#5F8D35"],
+  "zones": [
+    {
+      "id": "coin-cell",
+      "label": "Coin Cell",
+      "color": "#2878A8",
+      "x1": 0.4,
+      "y1": 0.5,
+      "x2": 16.3,
+      "y2": 99.5,
+      "summary": "A tiny, flat primary cell for circuits that need very little current.",
+      "facts": [
+        "Chemistry and voltage: Usually lithium manganese dioxide; 3.0 V nominal.",
+        "Typical capacity: About 200–240 mAh for a CR2032-sized cell.",
+        "Use it for: Watches, calculators, real-time clocks, and memory backup—not motors or other high-current loads."
+      ]
+    },
+    {
+      "id": "aaa-cell",
+      "label": "AAA",
+      "color": "#168779",
+      "x1": 16.9,
+      "y1": 0.5,
+      "x2": 32.9,
+      "y2": 99.5,
+      "summary": "A slim disposable cell for compact devices with modest current needs.",
+      "facts": [
+        "Chemistry and voltage: Commonly alkaline; 1.5 V nominal.",
+        "Typical capacity: Roughly 850–1,200 mAh, depending on load and brand.",
+        "Use it for: Small remotes, compact flashlights, wireless accessories, and lightweight battery holders."
+      ]
+    },
+    {
+      "id": "aa-cell",
+      "label": "AA",
+      "color": "#C77B16",
+      "x1": 33.5,
+      "y1": 0.5,
+      "x2": 49.5,
+      "y2": 99.5,
+      "summary": "A widely available general-purpose cell with more capacity than AAA.",
+      "facts": [
+        "Chemistry and voltage: Commonly alkaline; 1.5 V nominal.",
+        "Typical capacity: Roughly 1,800–2,800 mAh, depending on load and brand.",
+        "Use it for: Breadboard battery packs, toys, sensors, and everyday portable electronics."
+      ]
+    },
+    {
+      "id": "18650-li-ion",
+      "label": "18650 Li-ion",
+      "color": "#6953B8",
+      "x1": 50.1,
+      "y1": 0.5,
+      "x2": 66.1,
+      "y2": 99.5,
+      "summary": "A cylindrical rechargeable lithium-ion cell—not a soft lithium-polymer pouch.",
+      "facts": [
+        "Chemistry and voltage: Rechargeable lithium-ion; typically 3.6–3.7 V nominal and about 4.2 V fully charged.",
+        "Typical capacity: About 2,000–3,500 mAh for reputable modern cells.",
+        "Use it for: Rechargeable robots, flashlights, and portable projects with a proper holder, protection circuit, and Li-ion charger."
+      ]
+    },
+    {
+      "id": "nine-volt",
+      "label": "9V",
+      "color": "#C85B4B",
+      "x1": 66.7,
+      "y1": 0.5,
+      "x2": 82.7,
+      "y2": 99.5,
+      "summary": "A compact high-voltage battery made from six small 1.5 V cells in series.",
+      "facts": [
+        "Chemistry and voltage: Commonly alkaline; 9.0 V nominal from six internal cells in series.",
+        "Typical capacity: Roughly 400–600 mAh and best suited to modest current draw.",
+        "Use it for: Multimeters, smoke alarms, and low-current breadboard circuits—often through a voltage regulator."
+      ]
+    },
+    {
+      "id": "d-cell",
+      "label": "D Cell",
+      "color": "#5F8D35",
+      "x1": 83.3,
+      "y1": 0.5,
+      "x2": 99.6,
+      "y2": 99.5,
+      "summary": "A large primary cell built for long runtime and comparatively high current.",
+      "facts": [
+        "Chemistry and voltage: Commonly alkaline; 1.5 V nominal, just like AA and AAA.",
+        "Typical capacity: Roughly 12,000–18,000 mAh, strongly dependent on load.",
+        "Use it for: Large flashlights, radios, motorized devices, and projects that must run for a long time."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which battery is the best fit for a watch or a real-time-clock backup circuit?",
+      "correct_zone": "coin-cell",
+      "explanation": "Coin cells are compact and work well for very low-current circuits."
+    },
+    {
+      "question": "Which 1.5 V cell is slimmer and usually has less capacity than an AA cell?",
+      "correct_zone": "aaa-cell",
+      "explanation": "AAA cells trade capacity for a narrower, lighter package."
+    },
+    {
+      "question": "Which common cell is a practical choice for a beginner breadboard battery pack?",
+      "correct_zone": "aa-cell",
+      "explanation": "AA cells are widely available and offer useful capacity for breadboard projects."
+    },
+    {
+      "question": "Which battery shown is rechargeable, cylindrical, and requires a dedicated lithium-ion charger?",
+      "correct_zone": "18650-li-ion",
+      "explanation": "An 18650 is a rechargeable lithium-ion cell and must be charged with suitable circuitry."
+    },
+    {
+      "question": "Which battery contains six small 1.5 V cells connected in series?",
+      "correct_zone": "nine-volt",
+      "explanation": "Six internal 1.5 V cells add in series to produce about 9 V."
+    },
+    {
+      "question": "Which battery has the largest typical capacity and is suited to long-running, higher-current devices?",
+      "correct_zone": "d-cell",
+      "explanation": "The large D cell provides far more capacity than the smaller primary cells shown."
+    }
+  ]
+}

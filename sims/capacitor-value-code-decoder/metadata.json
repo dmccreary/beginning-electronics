@@ -1,23 +1,45 @@
 {
   "title": "Capacitor Value Code Decoder",
-  "description": "Given a 3-digit capacitor value code, calculate the capacitance in picofarads using the digit-and-multiplier rule, then convert that value into nanofarads and microfarads.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for capacitor value code decoder",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "capacitor-value-code-decoder",
-  "library": "p5.js",
-  "bloomLevel": "Apply (L3). Bloom Verb: calculate, convert.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 11,
-  "chapter_title": "\"Resistor Codes and Capacitor Details\"",
-  "chapter_dir": "11-resistor-codes-capacitor-details",
-  "chapter_rel_dir": "chapters/11-resistor-codes-capacitor-details"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Capacitor Value Code Decoder",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Apply",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "11-resistor-codes-capacitor-details"
 }

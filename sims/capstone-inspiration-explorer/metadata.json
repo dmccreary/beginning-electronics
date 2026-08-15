@@ -1,0 +1,62 @@
+{
+  "title": "Capstone Project Inspiration",
+  "creator": "Dan McCreary",
+  "subject": "Beginning electronics capstone planning",
+  "description": "An interactive three-column infographic comparing a solar night light, interactive busy board, and LED noodle wearable.",
+  "date": "2026-08-15",
+  "canvasHeight": 730,
+  "educational": {
+    "gradeLevel": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "subjectArea": "Electronics",
+    "topic": "Capstone project selection",
+    "learningObjectives": [
+      "Compare project purpose, core components, constraints, and challenge level to choose a feasible capstone direction."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Basic circuit construction",
+      "Project safety"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Custom grid infographic overlay",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 730
+    },
+    "responsive": true,
+    "dependencies": [
+      "grid-diagram.js",
+      "grid-overlay.css",
+      "comparison-explorer.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive comparison and retrieval practice",
+    "keyQuestions": [
+      "Which project best matches the learner's interests?",
+      "What constraint is most important in each project?"
+    ],
+    "commonMisconceptions": [
+      "The most visually impressive project is automatically the best choice.",
+      "Enclosure and power decisions can be postponed until the end."
+    ],
+    "assessmentOpportunities": [
+      "Three-question capstone matching quiz"
+    ]
+  },
+  "chapter": "26-advanced-circuits-capstone-project"
+}

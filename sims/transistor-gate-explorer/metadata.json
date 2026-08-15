@@ -1,23 +1,45 @@
 {
   "title": "Transistor Gate Explorer with LED Output",
-  "description": "Given a rendered breadboard with a transistor-based NOT, NAND, NOR, or XOR gate selected from a dropdown, predict and then verify the output LED's state and the corresponding row of a live truth table for every possible input combination.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for transistor gate explorer with led output",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "transistor-gate-explorer",
-  "library": "p5.js",
-  "bloomLevel": "Apply (L3). Bloom Verb: demonstrate, predict, verify.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 25,
-  "chapter_title": "\"NAND, NOR, XOR, and the RS Latch\"",
-  "chapter_dir": "25-nand-nor-xor-rs-latch",
-  "chapter_rel_dir": "chapters/25-nand-nor-xor-rs-latch"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Transistor Gate Explorer with LED Output",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "25-nand-nor-xor-rs-latch"
 }

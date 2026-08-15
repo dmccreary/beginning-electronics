@@ -1,23 +1,45 @@
 {
   "title": "Solder Joint Quality Classifier",
-  "description": "Given eight vector-rendered solder joint examples on a perfboard pad, sort each one into a \"Good Joint\" or \"Cold Joint\" bin by judging its shine, shape, and coverage, and justify each judgment against a three-criteria rubric revealed in the feedback infobox.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for solder joint quality classifier",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "solder-joint-quality-classifier",
-  "library": "p5.js",
-  "bloomLevel": "Evaluate (L5). Bloom Verb: judge, assess.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 8,
-  "chapter_title": "\"Troubleshooting and Optional Perfboard Packaging\"",
-  "chapter_dir": "08-troubleshooting-perfboard",
-  "chapter_rel_dir": "chapters/08-troubleshooting-perfboard"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Solder Joint Quality Classifier",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "08-troubleshooting-perfboard"
 }

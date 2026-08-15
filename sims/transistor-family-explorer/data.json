@@ -1,0 +1,110 @@
+{
+  "title": "Five Common Transistor Types",
+  "image": "transistor-family.png",
+  "layout": "grid",
+  "showLabels": true,
+  "zones": [
+    {
+      "id": "2n2222",
+      "label": "2N2222 / 2N2222A",
+      "color": "#2878A8",
+      "x1": 0.4,
+      "y1": 0.5,
+      "x2": 19.6,
+      "y2": 99.5,
+      "summary": "A general-purpose NPN transistor popular for switching moderate small loads.",
+      "facts": [
+        "Typical official 2N2222A rating: 50 V collector-emitter; current capability depends on variant, package, and thermal conditions.",
+        "Package clue: The classic 2N2222 uses a TO-18 metal can, while related plastic-package versions also exist.",
+        "Use it for: Relays, small lamps, buzzers, and other moderate-current switching or amplification."
+      ]
+    },
+    {
+      "id": "2n3904",
+      "label": "2N3904",
+      "color": "#168779",
+      "x1": 20.2,
+      "y1": 0.5,
+      "x2": 39.6,
+      "y2": 99.5,
+      "summary": "A widely used NPN small-signal transistor for modest amplification and switching.",
+      "facts": [
+        "Published maximums: 40 V collector-emitter and 200 mA collector current.",
+        "Package: Commonly TO-92, but always confirm the exact manufacturer's pinout.",
+        "Use it for: Sensor interfaces, signal amplification, oscillators, and small LED or logic loads."
+      ]
+    },
+    {
+      "id": "bc547",
+      "label": "BC547",
+      "color": "#C77B16",
+      "x1": 40.2,
+      "y1": 0.5,
+      "x2": 59.6,
+      "y2": 99.5,
+      "summary": "A general-purpose NPN small-signal transistor often chosen for low-current analog work.",
+      "facts": [
+        "Published maximums: 45 V collector-emitter and 100 mA collector current.",
+        "Variants: A, B, and C gain groups provide different DC current-gain ranges.",
+        "Use it for: Low-noise amplification, sensor stages, bias networks, and light switching."
+      ]
+    },
+    {
+      "id": "2n3906",
+      "label": "2N3906",
+      "color": "#6953B8",
+      "x1": 60.2,
+      "y1": 0.5,
+      "x2": 79.6,
+      "y2": 99.5,
+      "summary": "A PNP complement to small NPN devices, useful when current must be sourced from the positive rail.",
+      "facts": [
+        "Published maximums: −40 V collector-emitter and −200 mA collector current.",
+        "Polarity: PNP behavior reverses junction polarities and conventional current direction compared with an NPN transistor.",
+        "Use it for: Small high-side switches, complementary amplifier stages, and polarity-matched signal circuits."
+      ]
+    },
+    {
+      "id": "2n3055",
+      "label": "2N3055",
+      "color": "#C85B4B",
+      "x1": 80.2,
+      "y1": 0.5,
+      "x2": 99.6,
+      "y2": 99.5,
+      "summary": "A rugged NPN power transistor in a metal TO-3 case for much larger currents and heat.",
+      "facts": [
+        "Published maximums: 60 V collector-emitter, 15 A collector current, and 115 W device dissipation under specified case-temperature conditions.",
+        "Package: TO-3; the metal case is the collector and the device normally needs a heat sink.",
+        "Use it for: Linear power stages, power supplies, large motors, and other high-current applications with proper drive and thermal design."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which general-purpose NPN is classically shown in a small metal TO-18 can?",
+      "correct_zone": "2n2222",
+      "explanation": "The classic 2N2222 package is the three-lead TO-18 metal can shown."
+    },
+    {
+      "question": "Which 40 V, 200 mA NPN is a common first choice for small-signal work?",
+      "correct_zone": "2n3904",
+      "explanation": "The 2N3904 is a widely used NPN small-signal transistor."
+    },
+    {
+      "question": "Which 45 V, 100 mA NPN comes in A, B, and C gain groups?",
+      "correct_zone": "bc547",
+      "explanation": "BC547 variants are grouped by DC current gain."
+    },
+    {
+      "question": "Which transistor is PNP and useful as a small high-side switch?",
+      "correct_zone": "2n3906",
+      "explanation": "The 2N3906 is the PNP device in this lineup."
+    },
+    {
+      "question": "Which transistor uses a large TO-3 metal case and is rated for power applications up to 15 A?",
+      "correct_zone": "2n3055",
+      "explanation": "The 2N3055 is the much larger NPN power transistor."
+    }
+  ]
+}

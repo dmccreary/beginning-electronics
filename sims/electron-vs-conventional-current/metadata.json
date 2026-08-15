@@ -1,23 +1,45 @@
 {
   "title": "Electron Flow vs. Conventional Current",
-  "description": "Explain why conventional current is drawn from positive to negative even though electrons physically flow from negative to positive, by toggling between an animated electron-flow view and an animated conventional-current view of the same battery-and-resistor loop.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for electron flow vs. conventional current",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "electron-vs-conventional-current",
-  "library": "p5.js",
-  "bloomLevel": "Understand (L2). Bloom Verb: explain.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 2,
-  "chapter_title": "\"Current, Charge, Units, and Electrical Safety\"",
-  "chapter_dir": "02-current-charge-units-safety",
-  "chapter_rel_dir": "chapters/02-current-charge-units-safety"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Electron Flow vs. Conventional Current",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Create",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "02-current-charge-units-safety"
 }

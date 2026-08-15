@@ -3,129 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Active vs. Passive Buzzer Tone Comparison</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Active vs. Passive Buzzer Tone Comparison using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="breadboard-lib.js"></script>
+    <script src="active-passive-buzzer-breadboard.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Active vs. Passive Buzzer Tone Comparison</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> active-passive-buzzer-breadboard</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Understand (L2) / Apply (L3). Bloom Verb: compare, demonstrate.</p>
-            <p><strong>Learning Objective:</strong> Compare an active buzzer's fixed tone against a passive buzzer's frequency-controlled tone by switching each on a breadboard and adjusting a frequency slider that only affects the passive buzzer, and predict the effect of reversing buzzer polarity.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** active-passive-buzzer-breadboard<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Let students switch an active buzzer and a passive buzzer on a shared breadboard and directly compare a fixed built-in tone against a frequency-controlled tone, including what happens when polarity is reversed.
-    
-    Bloom Taxonomy: Understand (L2) / Apply (L3). Bloom Verb: compare, demonstrate.
-    
-    Learning objective: Compare an active buzzer's fixed tone against a passive buzzer's frequency-controlled tone by switching each on a breadboard and adjusting a frequency slider that only affects the passive buzzer, and predict the effect of reversing buzzer polarity.
-    
-    Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: Active vs Passive Buzzer Tone Comparison Breadboard | Topic: piezo buzzer, active buzzer, passive buzzer, buzzer tone, buzzer polarity, audio output | Subjects: Electronics, Electric Circuits | Grade Level: Junior High | Learning Objectives: Compare an active buzzer's fixed tone against a passive buzzer's frequency-controlled tone on a wired breadboard circuit, and predict the audio output produced by each" topped out at "Tone Generator" (dmccreary/signal-processing, WHAT score 0.4897, "generate") — below the 0.60 template threshold and not wired or polarity-aware. New specification, extending `breadboard-lib.js`'s existing `bbBuzzer({a, b})` component with an active/passive mode and an oscillator block.
-    
-    Canvas layout: Breadboard with two buzzers side by side, each with its own switch and polarity-marked leads: left wired straight to the battery (active), right through an "oscillator" block (passive); right panel holds "Active Switch" and "Passive Switch" toggles, a frequency slider (200-2000 Hz, passive only), a "Reverse Passive Polarity" button, and an infobox.
-    
-    Components/elements involved: Breadboard with rails; battery; two labeled piezo buzzers with +/- markings; oscillator block feeding the passive buzzer; switches; wires; animated sound-wave rings expanding from whichever buzzer sounds, spacing matching pitch.
-    
-    Required interactivity:
-    - Clicking "Active Switch" immediately sounds the active buzzer at one fixed pitch, regardless of the frequency slider
-    - Clicking "Passive Switch" sounds the passive buzzer only at the slider's frequency; dragging it changes the pitch and ring spacing live
-    - Clicking "Reverse Passive Polarity" flips the passive buzzer's leads and silences it even with switch and slider active
-    - Hovering either buzzer's polarity markings opens an infobox explaining buzzer polarity
-    - Button "Reset" turns both switches off and resets polarity and slider
-    
-    Default state: Both switches off, silent, standard polarity, infobox reads "Active buzzers beep the instant they get power. Passive buzzers need a changing signal to make any sound at all."
-    
-    Data Visibility Requirements:
-    Stage 1: Show each buzzer's switch state
-    Stage 2: Show the frequency slider's value and whether it affects sound
-    Stage 3: Show the animated ring spacing matching pitch
-    Stage 4: Show silence when the passive buzzer's polarity is reversed
-    
-    Instructional Rationale: An Understand/Apply "compare/demonstrate" objective calls for a side-by-side toggle so the active/passive distinction, and buzzer polarity's effect, are directly observable.
-    
-    Color scheme: Orange expanding sound-wave rings, green current dots, red flash when polarity is reversed and no sound plays.
-    
-    Responsive behavior: Breadboard and controls stack vertically on narrow screens; sliders and buttons stay full-width and touch-friendly.
-    
-    Implementation: p5.js, breadboard-sim-generator approach, extending `breadboard-lib.js`'s `bbBuzzer` component with active/passive modes and animated sound-wave rendering.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

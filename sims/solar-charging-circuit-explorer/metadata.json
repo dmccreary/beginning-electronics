@@ -1,23 +1,45 @@
 {
   "title": "Solar Panel Charging Circuit Explorer",
-  "description": "Given a rendered solar panel wired through a blocking diode and a TP4056-style charge module to a LiPo battery and LED load, adjust a sunlight-intensity slider and observe panel voltage/current, charging current into the battery, the automatic overcharge cutoff once full, and the LED switching to battery power at night.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for solar panel charging circuit explorer",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "solar-charging-circuit-explorer",
-  "library": "p5.js",
-  "bloomLevel": "Apply (L3) / Analyze (L4). Bloom Verb: demonstrate, examine, distinguish.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 23,
-  "chapter_title": "\"Signal Generators and Solar Power\"",
-  "chapter_dir": "23-signal-generators-solar-power",
-  "chapter_rel_dir": "chapters/23-signal-generators-solar-power"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Solar Panel Charging Circuit Explorer",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "23-signal-generators-solar-power"
 }

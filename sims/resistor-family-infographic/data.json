@@ -1,0 +1,110 @@
+{
+  "title": "Resistor Family Explorer",
+  "image": "resistor-family.png",
+  "layout": "grid",
+  "showLabels": true,
+  "zones": [
+    {
+      "id": "fixed",
+      "label": "Fixed Resistor",
+      "color": "#2878A8",
+      "x1": 0.4,
+      "y1": 0.5,
+      "x2": 19.6,
+      "y2": 99.5,
+      "summary": "Provides one designed resistance value for current limiting and voltage division.",
+      "facts": [
+        "Change mechanism: Its resistance is intended to stay constant.",
+        "How to identify it: Color bands or printed markings show the nominal value and tolerance.",
+        "Use it for: LED current limiting, pull-up and pull-down networks, biasing, and voltage dividers."
+      ]
+    },
+    {
+      "id": "potentiometer",
+      "label": "Potentiometer",
+      "color": "#168779",
+      "x1": 20.2,
+      "y1": 0.5,
+      "x2": 39.6,
+      "y2": 99.5,
+      "summary": "A user-adjustable three-terminal resistor that can act as a voltage divider.",
+      "facts": [
+        "Change mechanism: Turning the shaft moves a wiper along a resistive track.",
+        "Control style: Designed for repeated front-panel adjustment.",
+        "Use it for: Volume, brightness, speed, threshold, and calibration controls."
+      ]
+    },
+    {
+      "id": "trim-pot",
+      "label": "Trim Pot",
+      "color": "#C77B16",
+      "x1": 40.2,
+      "y1": 0.5,
+      "x2": 59.6,
+      "y2": 99.5,
+      "summary": "A small adjustable resistor intended for occasional circuit calibration.",
+      "facts": [
+        "Change mechanism: A screwdriver turns the internal wiper.",
+        "Control style: Compact and normally adjusted only during setup or servicing.",
+        "Use it for: Sensor zeroing, reference trimming, and one-time threshold calibration."
+      ]
+    },
+    {
+      "id": "ldr",
+      "label": "Photoresistor",
+      "color": "#6953B8",
+      "x1": 60.2,
+      "y1": 0.5,
+      "x2": 79.6,
+      "y2": 99.5,
+      "summary": "A light-dependent resistor whose resistance falls as illumination increases.",
+      "facts": [
+        "Change mechanism: Light changes the material's conductivity.",
+        "Response: Useful for detecting broad light levels, not precision or high-speed measurement.",
+        "Use it for: Night lights, light alarms, and automatic brightness controls."
+      ]
+    },
+    {
+      "id": "thermistor",
+      "label": "Thermistor",
+      "color": "#C85B4B",
+      "x1": 80.2,
+      "y1": 0.5,
+      "x2": 99.6,
+      "y2": 99.5,
+      "summary": "A temperature-sensitive resistor used for sensing and protection.",
+      "facts": [
+        "Change mechanism: Temperature changes resistance; an NTC type decreases as temperature rises.",
+        "Response: Nonlinear, so precise temperature readings need calibration.",
+        "Use it for: Temperature sensing, inrush-current limiting, and thermal protection."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which component should you choose for a permanent LED current-limiting value?",
+      "correct_zone": "fixed",
+      "explanation": "A fixed resistor provides a stable designed resistance."
+    },
+    {
+      "question": "Which component gives a user a knob for continuously adjusting volume or brightness?",
+      "correct_zone": "potentiometer",
+      "explanation": "A potentiometer is built for repeated user adjustment."
+    },
+    {
+      "question": "Which adjustable resistor is normally set with a screwdriver during calibration?",
+      "correct_zone": "trim-pot",
+      "explanation": "A trim pot is compact and intended for occasional setup adjustments."
+    },
+    {
+      "question": "Which component can detect when a room becomes dark?",
+      "correct_zone": "ldr",
+      "explanation": "A photoresistor changes resistance with light level."
+    },
+    {
+      "question": "Which component changes resistance with temperature?",
+      "correct_zone": "thermistor",
+      "explanation": "A thermistor is designed to respond strongly to temperature."
+    }
+  ]
+}

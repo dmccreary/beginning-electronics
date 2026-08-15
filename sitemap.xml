@@ -17,6 +17,14 @@
          <lastmod>2026-08-15</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/appendices/</loc>
+         <lastmod>2026-08-15</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/appendices/list-of-symbols/</loc>
+         <lastmod>2026-08-15</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/beginning-electronics/chapters/</loc>
          <lastmod>2026-08-15</lastmod>
     </url>
@@ -122,6 +130,10 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/chapters/26-advanced-circuits-capstone-project/</loc>
+         <lastmod>2026-08-15</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/img/cover-image-prompt/</loc>
          <lastmod>2026-08-15</lastmod>
     </url>
     <url>
@@ -234,6 +246,10 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/labs/80-rc-circuit/</loc>
+         <lastmod>2026-08-15</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/labs/90-led-flasher/</loc>
          <lastmod>2026-08-15</lastmod>
     </url>
     <url>
@@ -353,6 +369,10 @@
          <lastmod>2026-08-15</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/actuator-family-explorer/</loc>
+         <lastmod>2026-08-15</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/battery-type-explorer/</loc>
          <lastmod>2026-08-15</lastmod>
     </url>
@@ -381,7 +401,19 @@
          <lastmod>2026-08-15</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/capacitor-family-explorer/</loc>
+         <lastmod>2026-08-15</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/capacitor-value-code-decoder/</loc>
+         <lastmod>2026-08-15</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/capstone-inspiration-explorer/</loc>
+         <lastmod>2026-08-15</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/capstone-project-planning-workflow/</loc>
          <lastmod>2026-08-15</lastmod>
     </url>
     <url>
@@ -402,6 +434,10 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/combination-lock-circuit/</loc>
+         <lastmod>2026-08-15</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/component-markings-explorer/</loc>
          <lastmod>2026-08-15</lastmod>
     </url>
     <url>
@@ -501,6 +537,10 @@
          <lastmod>2026-08-15</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/multi-led-configuration-explorer/</loc>
+         <lastmod>2026-08-15</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/multimeter-anatomy-explorer/</loc>
          <lastmod>2026-08-15</lastmod>
     </url>
@@ -514,6 +554,10 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/potentiometer-taper-explorer/</loc>
+         <lastmod>2026-08-15</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/power-source-chooser/</loc>
          <lastmod>2026-08-15</lastmod>
     </url>
     <url>
@@ -545,6 +589,10 @@
          <lastmod>2026-08-15</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/resistor-family-infographic/</loc>
+         <lastmod>2026-08-15</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/resistor-family-matching-sorter/</loc>
          <lastmod>2026-08-15</lastmod>
     </url>
@@ -569,6 +617,10 @@
          <lastmod>2026-08-15</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/sensor-logic-output-block-builder/</loc>
+         <lastmod>2026-08-15</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/series-parallel/</loc>
          <lastmod>2026-08-15</lastmod>
     </url>
@@ -585,6 +637,10 @@
          <lastmod>2026-08-15</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/switch-family-explorer/</loc>
+         <lastmod>2026-08-15</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/template/</loc>
          <lastmod>2026-08-15</lastmod>
     </url>
@@ -593,11 +649,19 @@
          <lastmod>2026-08-15</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/tp4056-lipo-charging-wiring/</loc>
+         <lastmod>2026-08-15</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/transistor-and-or-logic-gates/</loc>
          <lastmod>2026-08-15</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/beginning-electronics/sims/transistor-current-gain-explorer/</loc>
+         <lastmod>2026-08-15</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/beginning-electronics/sims/transistor-family-explorer/</loc>
          <lastmod>2026-08-15</lastmod>
     </url>
     <url>

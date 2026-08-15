@@ -3,122 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Diode Test Mode Explorer</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Diode Test Mode Explorer using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="diode-test-mode-explorer.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Diode Test Mode Explorer</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> diode-test-mode-explorer</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Understand (L2) / Apply (L3). Bloom Verb: interpret, demonstrate, classify.</p>
-            <p><strong>Learning Objective:</strong> Given a multimeter set to diode-test mode and four out-of-circuit diode/LED samples, probe each sample in both directions and interpret the resulting reading (a forward voltage, an overload indicator, or a low voltage in both directions) to classify the part as good, shorted, or open.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: infographic
-    **sim-id:** diode-test-mode-explorer<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Let students select one of four out-of-circuit diode/LED samples (good diode, good red LED, shorted diode, open diode), touch a virtual meter set to diode-test mode to it in both directions, and read the resulting voltage or overload indicator so they can classify the part as normal, shorted, or open.
-    
-    Bloom Taxonomy: Understand (L2) / Apply (L3). Bloom Verb: interpret, demonstrate, classify.
-    
-    Learning objective: Given a multimeter set to diode-test mode and four out-of-circuit diode/LED samples, probe each sample in both directions and interpret the resulting reading (a forward voltage, an overload indicator, or a low voltage in both directions) to classify the part as good, shorted, or open.
-    
-    Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: Diode Testing Mode and LED Forward Voltage Explorer | Topic: multimeter diode test mode, LED forward voltage, open circuit reading, short circuit reading, overload indicator | Subjects: Electronics, Electric Circuits | Grade Level: Junior High | Learning Objectives: Identify what a multimeter's diode-test mode reading means for a good diode, a reversed diode, an open diode, and a shorted diode" returned a top match of "Transistor Driver and Dimmer Circuit" (dmccreary/moving-rainbow, WHAT score 0.4722, recommendation "generate") — well below the 0.60 template threshold and topically about PWM dimming, not diode-test diagnosis. A keyword grep of the catalog for "multimeter," "voltmeter," "diode test," and "forward voltage" found nothing relevant. New specification.
-    
-    Canvas layout: A row of four labeled sample cards along the top (Good Diode, Good Red LED, Shorted Diode, Open Diode); a drawn multimeter fixed on the diode-test symbol with two probes and a "Reverse Probes" toggle below; a reading display with an infobox beneath.
-    
-    Components/elements involved: Four out-of-circuit sample cards; a multimeter body with red/black probes; a "Reverse Probes" button; a numeric/OL reading display; an infobox panel.
-    
-    Required interactivity:
-    - Clicking a sample card probes it in the current orientation: Good Diode forward ≈ 0.6 V / reverse OL; Good Red LED forward ≈ 1.9 V (faint glow) / reverse OL; Shorted Diode ≈ 0.05 V both ways; Open Diode reads OL both ways
-    - "Reverse Probes" swaps polarity and re-reads the selected sample, so both directions can be compared
-    - Once both directions are checked, an infobox prompts a Good/Shorted/Open classification via three buttons, with green/red feedback and a one-sentence explanation
-    - Button "New Set" reshuffles which sample is Shorted vs. Open, for repeated practice
-    
-    Default state: No sample selected, probes forward, display empty; infobox reads "Pick a sample, then read it in both directions before you classify it."
-    
-    Instructional Rationale: An Understand/Apply-level "interpret/classify" objective needs a manipulable instrument producing a number or overload indicator the student reasons about, not an animation — requiring both probe directions before classifying is the actual diagnostic skill.
-    
-    Color scheme: Yellow-orange multimeter body matching Chapter 20's diagrams; green/red classification feedback; blue highlight on the active probe.
-    
-    Responsive behavior: Sample cards wrap to two rows on narrow screens; meter and infobox stack below instead of beside them.
-    
-    Implementation: Plain p5.js, not the breadboard-sim-generator — a standalone out-of-circuit tester, not a wired breadboard circuit. A lookup table of {sampleId, forwardReading, reverseReading, trueClass} drives display and grading.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

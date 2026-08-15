@@ -3,129 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Potentiometer Taper Explorer</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Potentiometer Taper Explorer using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="potentiometer-taper-explorer.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Potentiometer Taper Explorer</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> potentiometer-taper-explorer</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Apply (L3). Bloom Verb: demonstrate, predict.</p>
-            <p><strong>Learning Objective:</strong> Given a potentiometer with an adjustable wiper position, predict and observe how a linear taper and a logarithmic taper produce different resistance values for the same wiper rotation, and locate the trim pot adjustment screw on a rendered trimmer potentiometer.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** potentiometer-taper-explorer<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Let students drag a potentiometer's wiper and watch how a linear taper and a logarithmic taper produce different resistance curves for the same wiper motion, then locate the adjustment screw on a rendered trimmer potentiometer.
-    
-    Bloom Taxonomy: Apply (L3). Bloom Verb: demonstrate, predict.
-    
-    Learning objective: Given a potentiometer with an adjustable wiper position, predict and observe how a linear taper and a logarithmic taper produce different resistance values for the same wiper rotation, and locate the trim pot adjustment screw on a rendered trimmer potentiometer.
-    
-    Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: Potentiometer Taper and Trim Pot Explorer | Topic: Potentiometer wiper position, linear taper versus logarithmic taper resistance curve, trim pot adjustment screw | Subjects: Electronics, Beginning Electronics | Grade Level: Junior High | Learning Objectives: Demonstrate how a potentiometer wiper position changes output and compare a linear taper to a logarithmic taper resistance curve" returned a top match of "ADC and Potentiometer Explorer" (dmccreary/learning-micropython, WHAT score 0.4777, recommendation "generate") — below the 0.60 template threshold, and out of scope regardless, since it teaches reading a potentiometer through a microcontroller's ADC, which this no-code course explicitly excludes. A keyword grep of the 3,764-entry catalog for "potentiometer" returned only that same result; grep for "taper" and "trim pot" returned zero hits. This is a new specification.
-    
-    Canvas layout: Left side shows a rendered potentiometer with a draggable wiper position, plus a rendered trimmer potentiometer variant showing an adjustment screw slot; right side holds a resistance-vs-position graph plotting both taper curves, a taper-type toggle, and an infobox.
-    
-    Components/elements involved: A rendered rotary potentiometer with a visible wiper indicator; a rendered trim pot with a screw-slot adjustment point; a wiper-position slider (0-100%); a taper toggle (Linear / Logarithmic); a dual-curve resistance graph.
-    
-    Required interactivity:
-    - Dragging the wiper-position slider moves the wiper on the rendered potentiometer and moves a marker along the currently selected curve on the graph
-    - Toggling Linear/Logarithmic switches which curve is active and updates the resistance readout to match
-    - Hovering the graph at any point shows the wiper percentage and the corresponding resistance value on both curves at once, for direct comparison
-    - Clicking the trim pot's adjustment screw opens an infobox explaining that it is turned with a small screwdriver for an infrequent, precise calibration adjustment, not everyday hands-on control
-    - Button "Reset" returns to a 50% wiper position with Linear taper selected
-    
-    Default state: Wiper at 50%, Linear taper selected, readout reads "50% rotation = 50% of total resistance," graph showing both curves with the linear curve highlighted.
-    
-    Data Visibility Requirements:
-    Stage 1: Show the wiper position as a percentage of full rotation
-    Stage 2: Show which taper curve (Linear or Logarithmic) is currently active
-    Stage 3: Show the resulting resistance value read directly off that curve
-    Stage 4: Show both curves overlaid on the same graph for direct visual comparison
-    
-    Instructional Rationale: An Apply-level "demonstrate/predict" objective calls for a parameter-exploration pattern where dragging the wiper produces an immediate, concrete resistance value on a visible curve, letting students predict the logarithmic curve's unevenness before dragging confirms it.
-    
-    Color scheme: Blue curve for Linear taper, orange curve for Logarithmic taper, warm orange highlight on the active wiper marker, consistent with the palette used in this chapter's other diagrams.
-    
-    Responsive behavior: The potentiometer rendering and graph panel stack vertically on narrow screens; the wiper slider remains full-width and touch-draggable.
-    
-    Implementation: Plain p5.js, not the breadboard-sim-generator — this is a component-behavior explorer rather than a wired circuit, matching the pattern used by this book's other component decoder sims in Chapters 10 and 11.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

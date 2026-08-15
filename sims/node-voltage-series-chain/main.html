@@ -3,132 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Node Voltage and Series Resistance Chain Builder</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Node Voltage and Series Resistance Chain Builder using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="node-voltage-series-chain.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Node Voltage and Series Resistance Chain Builder</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> node-voltage-series-chain</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Apply (L3). Bloom Verb: calculate.</p>
-            <p><strong>Learning Objective:</strong> Calculate the total series resistance, the loop current, and the node voltage at each junction of a three-resistor series chain, by adjusting resistor-value sliders and reading live labeled readouts at each node.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** node-voltage-series-chain<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified<br/>
-    **Template:** https://github.com/dmccreary/intro-to-physics-course/tree/main/docs/sims/series-parallel
-    
-    Purpose: Let learners calculate total series resistance, loop current, and the node voltage at each point in a series chain, by manipulating a live circuit.
-    
-    Bloom Taxonomy: Apply (L3). Bloom Verb: calculate.
-    
-    Learning objective: Calculate the total series resistance, the loop current, and the node voltage at each junction of a three-resistor series chain, by adjusting resistor-value sliders and reading live labeled readouts at each node.
-    
-    Canvas layout:
-    - Top: a single-loop circuit diagram — a battery and three resistors in series — with a labeled node dot (A, B, C) between each pair of components and after the last resistor
-    - Bottom: a control panel with three resistor sliders, a source-voltage slider, and a running summary readout
-    
-    Visual elements:
-    - Battery symbol labeled with its source voltage
-    - Three resistors in series, each with a slider-driven value shown beside it
-    - Four labeled node dots along the loop, each displaying its live node voltage in a small readout bubble
-    - A summary box showing "Series Resistance: R1 + R2 + R3 = ___ Ω" and "Loop Current: ___ A"
-    
-    Interactive controls:
-    - Sliders: Resistor 1, Resistor 2, Resistor 3 (10–1000 ohms each), and Source voltage (1.5–9 V)
-    - Hover over any node dot for a tooltip explaining what "node voltage" means at that point
-    - Button: "Load Example" sets the sliders to the chapter's worked example (100 Ω, 220 Ω, 330 Ω, 9 V)
-    
-    Default parameters:
-    - Resistor 1: 100 Ω, Resistor 2: 220 Ω, Resistor 3: 330 Ω, Source voltage: 9 V
-    
-    Data Visibility Requirements:
-      Stage 1 (default circuit): Show the worked-example values with all four node voltages and the series-resistance/loop-current summary visible
-      Stage 2 (slider adjusted): Recalculate every downstream node voltage immediately, so learners see how one resistor change shifts every node after it
-      Stage 3 (node hovered): Show a tooltip stating that node's exact voltage and confirming it equals the source voltage minus every voltage drop before it
-    
-    Instructional Rationale: This Apply-level objective calls for a parameter-exploration calculator with live numeric readouts, not a passive animation. Labeling every node and updating its voltage the instant a slider moves turns "node voltage" from an abstract term into something learners watch change.
-    
-    Color scheme: Warm orange for node-voltage readouts, cool blue for resistor bars, matching this book's voltage/current color logic.
-    
-    Responsive behavior: The diagram scales to fill the available width; sliders stack into a single touch-friendly column on narrow screens.
-    
-    Implementation: p5.js, using a simple series-circuit math model (sum resistors, divide for loop current, subtract cumulative voltage drops for each node), redrawn each frame from the current slider values.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" width="900" height="640" role="img"
+     aria-label="A handheld digital multimeter with its display, rotary dial, COM and V-ohm-milliamp jacks, and red and black probes">
+  <defs>
+    <linearGradient id="case" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5A623"/><stop offset="60%" stop-color="#E08E12"/><stop offset="100%" stop-color="#C87A0B"/>
+    </linearGradient>
+    <linearGradient id="lcd" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C9D8C2"/><stop offset="100%" stop-color="#A9BFA2"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="640" fill="#FBFCFD"/>
+  <rect x="250" y="30" width="400" height="470" rx="34" fill="url(#case)" stroke="#A96608" stroke-width="3"/>
+  <rect x="266" y="46" width="368" height="438" rx="26" fill="none" stroke="#F7C46A" stroke-width="2"/>
+  <rect x="300" y="70" width="300" height="106" rx="10" fill="url(#lcd)" stroke="#6F8268" stroke-width="3"/>
+  <text x="556" y="150" font-family="Helvetica,Arial,sans-serif" font-size="60" font-weight="bold" fill="#1E2A20" text-anchor="end">4.98</text>
+  <text x="586" y="150" font-family="Helvetica,Arial,sans-serif" font-size="28" font-weight="bold" fill="#1E2A20" text-anchor="start">V</text>
+  <text x="318" y="102" font-family="Helvetica,Arial,sans-serif" font-size="17" fill="#43553D">DC</text>
+  <circle cx="450" cy="300" r="88" fill="#2C3742" stroke="#1A2027" stroke-width="4"/>
+  <circle cx="450" cy="300" r="60" fill="#3E4A57"/>
+  <path d="M450 300 L397 262" stroke="#F5F7F9" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="450" cy="300" r="12" fill="#F5F7F9"/>
+  <line x1="359" y1="324" x2="348" y2="327" stroke="#3B2A08" stroke-width="4"/>
+  <text x="332" y="338" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="bold" fill="#3B2A08" text-anchor="middle">OFF</text>
+  <line x1="474" y1="209" x2="477" y2="198" stroke="#3B2A08" stroke-width="4"/>
+  <text x="482" y="188" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="bold" fill="#3B2A08" text-anchor="middle">V</text>
+  <line x1="535" y1="260" x2="546" y2="255" stroke="#3B2A08" stroke-width="4"/>
+  <text x="561" y="254" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="bold" fill="#3B2A08" text-anchor="middle">mA</text>
+  <line x1="535" y1="340" x2="546" y2="345" stroke="#3B2A08" stroke-width="4"/>
+  <text x="561" y="358" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="bold" fill="#3B2A08" text-anchor="middle">Ω</text>
+  <line x1="474" y1="391" x2="477" y2="402" stroke="#3B2A08" stroke-width="4"/>
+  <text x="482" y="424" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="bold" fill="#3B2A08" text-anchor="middle">cont</text>
+  <circle cx="360" cy="442" r="25" fill="#1A2027" stroke="#0E1216" stroke-width="3"/>
+  <circle cx="360" cy="442" r="11" fill="#3E4A57"/>
+  <text x="360" y="486" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="bold" fill="#3B2A08" text-anchor="middle">COM</text>
+  <circle cx="540" cy="442" r="25" fill="#8B1A12" stroke="#5E100A" stroke-width="3"/>
+  <circle cx="540" cy="442" r="11" fill="#C0392B"/>
+  <text x="540" y="486" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="bold" fill="#3B2A08" text-anchor="middle">VΩmA</text>
+  <path d="M360 467 C 330 545, 220 545, 170 612" fill="none" stroke="#22282E" stroke-width="10" stroke-linecap="round"/>
+  <path d="M540 467 C 570 545, 680 545, 730 612" fill="none" stroke="#B02A1F" stroke-width="10" stroke-linecap="round"/>
+  <path d="M170 612 l-26 22 l10 -30 z" fill="#22282E"/>
+  <path d="M730 612 l26 22 l-10 -30 z" fill="#B02A1F"/>
+</svg>

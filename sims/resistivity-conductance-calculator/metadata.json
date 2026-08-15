@@ -1,23 +1,45 @@
 {
   "title": "Resistivity and Conductance Calculator",
-  "description": "Calculate a wire's resistance from its resistivity, length, and cross-sectional area, and calculate its conductance as the reciprocal of that resistance, by adjusting a material dropdown and length/thickness sliders and reading the live-updated results.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for resistivity and conductance calculator",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "resistivity-conductance-calculator",
-  "library": "p5.js",
-  "bloomLevel": "Apply (L3). Bloom Verb: calculate.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 5,
-  "chapter_title": "\"Conductors, Batteries, and Circuit Vocabulary Review\"",
-  "chapter_dir": "05-conductors-batteries-review",
-  "chapter_rel_dir": "chapters/05-conductors-batteries-review"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Resistivity and Conductance Calculator",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Apply",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "05-conductors-batteries-review"
 }

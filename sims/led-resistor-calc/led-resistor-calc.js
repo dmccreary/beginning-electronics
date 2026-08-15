@@ -1,4 +1,5 @@
 // LED resistor calculator MicroSim
+// CANVAS_HEIGHT: 250
 let voltageSlider, voltageDropSlider, currentSlider;
 let resistorValue, resistorBands;
 let voltage, voltageDrop, current;

@@ -1,23 +1,128 @@
 {
   "title": "Ohm's Law Circuit Simulator",
-  "description": "Ohm's Law Circuit Simulator",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
-  "date": "2026-08-14",
+  "description": "An interactive circuit simulator demonstrating Ohm's Law (V = IR) with animated current flow, adjustable voltage and resistance sliders, real-time calculations, and overload warnings.",
+  "creator": "Dan McCreary",
   "subject": [
-    "Beginning Electronics"
+    "Physics",
+    "Electronics",
+    "Electrical Engineering"
   ],
+  "date": "2025-01-13",
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "ohms-law-simulator",
-  "library": "p5.js",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 1,
-  "chapter_title": "\"Electricity Basics: Voltage, Current, and Resistance\"",
-  "chapter_dir": "01-electricity-basics",
-  "chapter_rel_dir": "chapters/01-electricity-basics"
+  "rights": "CC BY 4.0",
+  "gradeLevel": "Middle School, High School, Undergraduate",
+  "subjectArea": "Physics",
+  "topic": "Ohm's Law",
+  "learningObjectives": [
+    "State and apply Ohm's Law formula (V = IR)",
+    "Explain the direct relationship between voltage and current",
+    "Explain the inverse relationship between resistance and current",
+    "Calculate current given voltage and resistance values",
+    "Predict how changing circuit parameters affects current"
+  ],
+  "bloomsTaxonomyLevels": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze"
+  ],
+  "duration": "10-20 minutes",
+  "prerequisites": [
+    "Basic understanding of electrical circuits",
+    "Familiarity with voltage, current, and resistance units"
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive x 450",
+  "responsive": "Width-responsive",
+  "dependencies": [
+    "p5.js 1.11.10"
+  ],
+  "controls": [
+    {
+      "type": "slider",
+      "name": "Voltage",
+      "range": "1V - 24V",
+      "default": "12V",
+      "description": "Adjusts the battery voltage in the circuit"
+    },
+    {
+      "type": "slider",
+      "name": "Resistance",
+      "range": "1 ohm - 20 ohm",
+      "default": "4 ohm",
+      "description": "Adjusts the resistor value in the circuit"
+    },
+    {
+      "type": "button",
+      "name": "Reset",
+      "description": "Resets all parameters to default values"
+    },
+    {
+      "type": "checkbox",
+      "name": "Show Equation",
+      "default": "checked",
+      "description": "Toggles display of the V = IR equation"
+    }
+  ],
+  "visualElements": [
+    {
+      "name": "Battery",
+      "description": "Standard battery symbol with voltage label"
+    },
+    {
+      "name": "Resistor",
+      "description": "Zigzag symbol that changes color based on current (blue=cold, red=hot)"
+    },
+    {
+      "name": "Ammeter",
+      "description": "Circle display showing current value, flashes red on overload"
+    },
+    {
+      "name": "Current Flow Animation",
+      "description": "Yellow particles moving through circuit at speed proportional to current"
+    }
+  ],
+  "modelType": "Physics Simulation",
+  "physicsModel": "Ohm's Law (V = IR)",
+  "safetyFeatures": [
+    "Overload warning when current exceeds 20A"
+  ],
+  "visualizationType": [
+    "animation",
+    "interactive-demo",
+    "map",
+    "network",
+    "simulation"
+  ],
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply",
+    "Analyze"
+  ],
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "describe",
+      "explain",
+      "apply",
+      "calculate",
+      "demonstrate"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "feedbackType": [
+      "immediate",
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "manipulate"
+  }
 }

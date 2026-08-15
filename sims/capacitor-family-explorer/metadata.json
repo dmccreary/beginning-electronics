@@ -1,0 +1,62 @@
+{
+  "title": "Meet the Capacitor Family",
+  "creator": "Dan McCreary",
+  "subject": "Beginning electronics and capacitor selection",
+  "description": "An interactive three-column infographic comparing ceramic, electrolytic, and tantalum capacitors.",
+  "date": "2026-08-15",
+  "canvasHeight": 730,
+  "educational": {
+    "gradeLevel": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "subjectArea": "Electronics",
+    "topic": "Capacitor types",
+    "learningObjectives": [
+      "Explain how polarity, capacitance range, and construction make common capacitor types suitable for different uses."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Open and closed circuits",
+      "Capacitance basics"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Custom grid infographic overlay",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 730
+    },
+    "responsive": true,
+    "dependencies": [
+      "grid-diagram.js",
+      "grid-overlay.css",
+      "comparison-explorer.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive comparison and retrieval practice",
+    "keyQuestions": [
+      "How does polarity affect capacitor selection?",
+      "Why are different capacitor constructions suited to different jobs?"
+    ],
+    "commonMisconceptions": [
+      "All capacitors are polarized.",
+      "A larger capacitance value is always the best choice."
+    ],
+    "assessmentOpportunities": [
+      "Three-question capacitor selection quiz"
+    ]
+  },
+  "chapter": "11-resistor-codes-capacitor-details"
+}

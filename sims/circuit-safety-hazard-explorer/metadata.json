@@ -1,23 +1,45 @@
 {
   "title": "Circuit Safety Hazard Explorer",
-  "description": "Explain how overcurrent, reverse polarity, static discharge, and short circuits damage components, and what protection or habit prevents each, by clicking each hazard icon to reveal cause, consequence, and protection.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for circuit safety hazard explorer",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "circuit-safety-hazard-explorer",
-  "library": "p5.js",
-  "bloomLevel": "Understand (L2). Bloom Verb: explain.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 3,
-  "chapter_title": "\"Circuit Analysis, Kirchhoff's Laws, and Energy\"",
-  "chapter_dir": "03-circuit-analysis-kirchhoff",
-  "chapter_rel_dir": "chapters/03-circuit-analysis-kirchhoff"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Circuit Safety Hazard Explorer",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Understand",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "03-circuit-analysis-kirchhoff"
 }

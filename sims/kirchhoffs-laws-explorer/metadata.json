@@ -1,23 +1,45 @@
 {
   "title": "Kirchhoff's Laws Circuit Explorer",
-  "description": "Calculate the voltage drop across each resistor in a series section of a circuit and the current in each branch of a parallel section, by adjusting resistor-value sliders and confirming that voltage drops sum to the source voltage and that branch currents sum to the total current.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for kirchhoff's laws circuit explorer",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "kirchhoffs-laws-explorer",
-  "library": "p5.js",
-  "bloomLevel": "Apply (L3). Bloom Verb: calculate.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 2,
-  "chapter_title": "\"Current, Charge, Units, and Electrical Safety\"",
-  "chapter_dir": "02-current-charge-units-safety",
-  "chapter_rel_dir": "chapters/02-current-charge-units-safety"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Kirchhoff's Laws Circuit Explorer",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Create",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "02-current-charge-units-safety"
 }

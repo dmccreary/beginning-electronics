@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" role="img"
+     aria-label="Top-down view of an 8-pin DIP chip with its notch at the left, pins numbered 1 to 8 counter-clockwise from the notch">
+  <defs>
+    <linearGradient id="chipTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3B4552"/>
+      <stop offset="60%" stop-color="#262E38"/>
+      <stop offset="100%" stop-color="#1A2027"/>
+    </linearGradient>
+    <linearGradient id="pinMetal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#DCE1E6"/>
+      <stop offset="100%" stop-color="#98A1A9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="560" fill="#FBFCFD"/>
+
+  <!-- breadboard centre channel, for context -->
+  <rect x="60" y="196" width="880" height="168" fill="#ECEFF2"/>
+  <rect x="60" y="264" width="880" height="32" fill="#DDE2E7"/>
+  <!-- kept at the right-hand end: the notch callout occupies the left side -->
+  <text x="928" y="286" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#8B95A0" text-anchor="end">breadboard centre channel</text>
+
+  <!-- ================= PIN PADS =================
+       Pins 1-4 run left to right along the BOTTOM, 5-8 right to left along
+       the TOP. That is counter-clockwise when viewed from above, starting at
+       the notch. -->
+  <g fill="url(#pinMetal)">
+    <rect x="286" y="330" width="30" height="46" rx="3"/>
+    <rect x="406" y="330" width="30" height="46" rx="3"/>
+    <rect x="526" y="330" width="30" height="46" rx="3"/>
+    <rect x="646" y="330" width="30" height="46" rx="3"/>
+    <rect x="646" y="184" width="30" height="46" rx="3"/>
+    <rect x="526" y="184" width="30" height="46" rx="3"/>
+    <rect x="406" y="184" width="30" height="46" rx="3"/>
+    <rect x="286" y="184" width="30" height="46" rx="3"/>
+  </g>
+
+  <!-- ================= CHIP BODY ================= -->
+  <rect x="256" y="226" width="450" height="108" rx="9" fill="url(#chipTop)"/>
+  <!-- the notch: a semicircle cut into the LEFT end -->
+  <path d="M256 254 a26 26 0 0 0 0 52 z" fill="#FBFCFD"/>
+  <!-- pin-1 dimple -->
+  <circle cx="292" cy="252" r="7" fill="#0E1216"/>
+
+  <text x="481" y="272" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="bold" fill="#E9EDF1" text-anchor="middle">NE555</text>
+  <text x="481" y="300" font-family="Helvetica,Arial,sans-serif" font-size="15" fill="#AEB8C2" text-anchor="middle">viewed from above</text>
+
+  <!-- ================= PIN NUMBERS AND NAMES ================= -->
+  <g font-family="Helvetica,Arial,sans-serif" text-anchor="middle">
+    <!-- bottom row: pins 1-4, left to right -->
+    <text x="301" y="404" font-size="26" font-weight="bold" fill="#C0392B">1</text>
+    <text x="301" y="428" font-size="14" fill="#5B6773">GND</text>
+    <text x="421" y="404" font-size="26" font-weight="bold" fill="#2C3742">2</text>
+    <text x="421" y="428" font-size="14" fill="#5B6773">TRIGGER</text>
+    <text x="541" y="404" font-size="26" font-weight="bold" fill="#2C3742">3</text>
+    <text x="541" y="428" font-size="14" fill="#5B6773">OUTPUT</text>
+    <text x="661" y="404" font-size="26" font-weight="bold" fill="#2C3742">4</text>
+    <text x="661" y="428" font-size="14" fill="#5B6773">RESET</text>
+
+    <!-- top row: pins 5-8, right to left -->
+    <text x="661" y="168" font-size="26" font-weight="bold" fill="#2C3742">5</text>
+    <text x="661" y="146" font-size="14" fill="#5B6773">CONTROL</text>
+    <text x="541" y="168" font-size="26" font-weight="bold" fill="#2C3742">6</text>
+    <text x="541" y="146" font-size="14" fill="#5B6773">THRESHOLD</text>
+    <text x="421" y="168" font-size="26" font-weight="bold" fill="#2C3742">7</text>
+    <text x="421" y="146" font-size="14" fill="#5B6773">DISCHARGE</text>
+    <text x="301" y="168" font-size="26" font-weight="bold" fill="#C0392B">8</text>
+    <text x="301" y="146" font-size="14" fill="#5B6773">VCC</text>
+  </g>
+
+  <!-- ================= COUNTING DIRECTION ARROW ================= -->
+  <!-- down the bottom row, then back along the top: counter-clockwise -->
+  <path d="M301 448 H661" fill="none" stroke="#E8710A" stroke-width="3"/>
+  <path d="M661 448 l-12 -6 v12 z" fill="#E8710A"/>
+  <path d="M301 126 H661" fill="none" stroke="#E8710A" stroke-width="3"/>
+  <path d="M301 126 l12 -6 v12 z" fill="#E8710A"/>
+  <text x="481" y="470" font-family="Helvetica,Arial,sans-serif" font-size="15" fill="#B4650F" text-anchor="middle">count this way from the notch</text>
+
+  <!-- ================= NOTCH CALLOUT ================= -->
+  <g>
+    <path d="M232 280 H150" fill="none" stroke="#C0392B" stroke-width="2.5"/>
+    <path d="M232 280 l-12 -6 v12 z" fill="#C0392B"/>
+    <text x="146" y="266" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="bold" fill="#C0392B" text-anchor="end">the notch</text>
+    <text x="146" y="290" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#7A5148" text-anchor="end">pin 1 starts here</text>
+  </g>
+
+  <!-- ================= TITLE STRIP ================= -->
+  <text x="500" y="60" font-family="Helvetica,Arial,sans-serif" font-size="19" fill="#5B6773" text-anchor="middle">
+    find the notch, then count counter-clockwise
+  </text>
+  <text x="500" y="520" font-family="Helvetica,Arial,sans-serif" font-size="15" fill="#8B95A0" text-anchor="middle">
+    pins 1–4 along the bottom, 5–8 back along the top
+  </text>
+</svg>

@@ -1,0 +1,62 @@
+{
+  "title": "Meet the Resistor Family",
+  "creator": "Dan McCreary",
+  "subject": "Beginning electronics and resistor selection",
+  "description": "An interactive five-column infographic comparing fixed resistors, potentiometers, trim pots, photoresistors, and thermistors.",
+  "date": "2026-08-15",
+  "canvasHeight": 700,
+  "educational": {
+    "gradeLevel": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "subjectArea": "Electronics",
+    "topic": "Resistor and resistive sensor types",
+    "learningObjectives": [
+      "Explain how fixed, adjustable, light-sensitive, and temperature-sensitive resistance support different circuit functions."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Resistance",
+      "Ohm's law"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Custom grid infographic overlay",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 700
+    },
+    "responsive": true,
+    "dependencies": [
+      "grid-diagram.js",
+      "grid-overlay.css",
+      "comparison-explorer.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive comparison and retrieval practice",
+    "keyQuestions": [
+      "Which resistor types are adjusted by people and which respond to the environment?",
+      "How does the intended use determine resistor type?"
+    ],
+    "commonMisconceptions": [
+      "All resistor-like components have fixed values.",
+      "A potentiometer and trim pot are intended for the same kind of adjustment."
+    ],
+    "assessmentOpportunities": [
+      "Five-question resistor selection quiz"
+    ]
+  },
+  "chapter": "09-resistors-and-capacitors"
+}
