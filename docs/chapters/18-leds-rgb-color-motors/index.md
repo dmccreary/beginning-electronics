@@ -105,7 +105,7 @@ That word "dial" matters just as much as the colors themselves. **LED brightness
 
 #### Diagram: RGB LED Color Mixing Breadboard
 
-<iframe src="../../sims/rgb-led-color-mixer-breadboard/main.html" width="100%" height="560px" scrolling="no"></iframe>
+<iframe src="../../sims/rgb-led-color-mixer-breadboard/main.html" width="100%" height="587px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>RGB LED Color Mixing Breadboard</summary>
@@ -217,9 +217,15 @@ The table below lines up all four configurations side by side.
 | LED Matrix | LEDs sit at row/column intersections | Rows + columns, far fewer than LED count | Displays, scrolling signs, grids of pixels |
 | LED Chaser Effect | Any of the above, switched in a timed sequence | Depends on wiring, plus a timing source | Marquee-style "running light" effects |
 
+#### Diagram: Multi-LED Configuration Explorer
+
+<iframe src="../../sims/multi-led-configuration-explorer/main.html" width="100%" height="732px" scrolling="no"></iframe>
+
+[Run the Multi-LED Configuration Explorer fullscreen](../../sims/multi-led-configuration-explorer/main.html){ .md-button .md-button--primary }
+
 #### Diagram: LED Chaser and Matrix Wiring Explorer
 
-<iframe src="../../sims/led-chaser-matrix-explorer/main.html" width="100%" height="540px" scrolling="no"></iframe>
+<iframe src="../../sims/led-chaser-matrix-explorer/main.html" width="100%" height="522px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>LED Chaser and Matrix Wiring Explorer</summary>
@@ -296,7 +302,7 @@ Push that load all the way to its limit, and something dramatic happens. **Motor
 
 #### Diagram: DC Motor Control and Stall Current Explorer
 
-<iframe src="../../sims/dc-motor-direction-control-circuit/main.html" width="100%" height="560px" scrolling="no"></iframe>
+<iframe src="../../sims/dc-motor-direction-control-circuit/main.html" width="100%" height="522px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>DC Motor Control and Stall Current Explorer</summary>

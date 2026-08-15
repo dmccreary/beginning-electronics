@@ -11,7 +11,7 @@ quality_score: 0
 
 # LED Color, Viewing Angle, and Lens Shape Explorer
 
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="722px" width="100%" scrolling="no"></iframe>
 
 [Run the LED Color, Viewing Angle, and Lens Shape Explorer MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>
@@ -31,7 +31,7 @@ You can add this MicroSim to any web page by adding this to your HTML:
 
 ```html
 <iframe src="https://dmccreary.github.io/beginning-electronics/sims/led-color-viewing-angle-explorer/main.html"
-        height="450px"
+        height="722px"
         width="100%"
         scrolling="no"></iframe>
 ```

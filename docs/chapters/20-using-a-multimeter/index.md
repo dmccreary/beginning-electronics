@@ -84,7 +84,7 @@ Before you touch a probe to a real circuit, take a labeled tour of a digital mul
 
 #### Diagram: Multimeter Anatomy Explorer
 
-<iframe src="../../sims/multimeter-anatomy-explorer/main.html" width="100%" height="480px" scrolling="no"></iframe>
+<iframe src="../../sims/multimeter-anatomy-explorer/main.html" width="100%" height="762px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Multimeter Anatomy Explorer</summary>
@@ -231,7 +231,7 @@ Now put every mode to work on one virtual breadboard, complete with a real dial 
 
 #### Diagram: Virtual Multimeter Breadboard
 
-<iframe src="../../sims/virtual-multimeter-breadboard/main.html" width="100%" height="600px" scrolling="no"></iframe>
+<iframe src="../../sims/virtual-multimeter-breadboard/main.html" width="100%" height="542px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Virtual Multimeter Breadboard</summary>

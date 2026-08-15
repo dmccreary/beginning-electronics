@@ -177,6 +177,12 @@ The table below lines all three up side by side, so you can compare what each on
 | Busy Board | Moderate to advanced | Buttons, switches, potentiometer, photoresistor, LED noodle, one or more transistors | Wired logic (Ch. 16), transistor dimming (Ch. 13), several multi-stage circuits on one board | A builder who wants to combine many small circuits into one gift-worthy board |
 | LED Noodle Costume | Beginner to moderate | LED noodle (3 V, up to 100 mA), 2N2222 transistor, potentiometer, battery pack | Transistor switching (Ch. 13), current-limiting, wearable wiring | A builder who wants a wearable showpiece for a costume or performance |
 
+#### Diagram: Capstone Project Inspiration Explorer
+
+<iframe src="../../sims/capstone-inspiration-explorer/main.html" width="100%" height="732px" scrolling="no"></iframe>
+
+[Run the Capstone Project Inspiration MicroSim fullscreen](../../sims/capstone-inspiration-explorer/main.html){ .md-button .md-button--primary }
+
 ## Your Own Original Project: The Capstone Process
 
 Whatever you decide to build, the same repeatable process that professional engineers use can carry any idea from a rough thought to a finished, demonstrated project. This is where every skill in this course finally gets to work together at once.

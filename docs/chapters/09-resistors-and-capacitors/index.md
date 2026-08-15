@@ -103,6 +103,12 @@ Before moving on, let's line up all five resistor types side by side. The table 
 | Photoresistor (LDR) | Automatically, with light level | Light-activated night light |
 | Thermistor | Automatically, with temperature | Sensing heat in a circuit |
 
+#### Diagram: Meet the Resistor Family
+
+<iframe src="../../sims/resistor-family-infographic/main.html" width="100%" height="702px" scrolling="no"></iframe>
+
+[Run the Meet the Resistor Family MicroSim fullscreen](../../sims/resistor-family-infographic/main.html){ .md-button .md-button--primary }
+
 Test how well the differences stuck in the sim below.
 
 #### Diagram: Resistor Family Matching Sorter

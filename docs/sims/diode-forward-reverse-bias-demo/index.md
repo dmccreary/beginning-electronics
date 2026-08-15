@@ -11,7 +11,7 @@ quality_score: 0
 
 # Forward vs. Reverse Bias Breadboard Demo
 
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="522px" width="100%" scrolling="no"></iframe>
 
 [Run the Forward vs. Reverse Bias Breadboard Demo MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>
@@ -31,7 +31,7 @@ You can add this MicroSim to any web page by adding this to your HTML:
 
 ```html
 <iframe src="https://dmccreary.github.io/beginning-electronics/sims/diode-forward-reverse-bias-demo/main.html"
-        height="450px"
+        height="522px"
         width="100%"
         scrolling="no"></iframe>
 ```

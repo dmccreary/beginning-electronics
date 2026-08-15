@@ -129,7 +129,7 @@ Try both diode-test techniques from this chapter's earlier section — reading a
 
 #### Diagram: Diode Test Mode Explorer
 
-<iframe src="../../sims/diode-test-mode-explorer/main.html" width="100%" height="480px" scrolling="no"></iframe>
+<iframe src="../../sims/diode-test-mode-explorer/main.html" width="100%" height="542px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Diode Test Mode Explorer</summary>
@@ -209,7 +209,7 @@ Put every piece of this section to work on a genuinely broken circuit below — 
 
 #### Diagram: Half-Split Fault Finder
 
-<iframe src="../../sims/half-split-fault-finder/main.html" width="100%" height="600px" scrolling="no"></iframe>
+<iframe src="../../sims/half-split-fault-finder/main.html" width="100%" height="547px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Half-Split Fault Finder</summary>
@@ -293,6 +293,12 @@ A **component datasheet** is a manufacturer's official document listing a part's
 | Transistor | A part number printed on the flat face (e.g., BC547) | Which specific transistor you're holding | Its pinout — which leg is base, collector, emitter |
 | Capacitor | A printed number or written value (e.g., "104" or "10 µF") | Capacitance, and sometimes a max voltage | Its exact voltage rating and polarity requirements |
 | Integrated Circuit (555, 74HC595) | A part number and a notch marking pin 1 | Which chip it is, and how to orient it | Every pin's function — essential before wiring one in |
+
+#### Diagram: Component Markings — What You Can Read
+
+<iframe src="../../sims/component-markings-explorer/main.html" width="100%" height="712px" scrolling="no"></iframe>
+
+[Run the Component Markings MicroSim fullscreen](../../sims/component-markings-explorer/main.html){ .md-button .md-button--primary }
 
 Being able to read a label at a glance is a fast, everyday skill. Being able to open a datasheet when a label alone isn't enough is a skill that lasts your entire life as a builder — it's the exact same skill an engineer uses on a part they've never even heard of before.
 

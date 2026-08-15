@@ -1,0 +1,62 @@
+{
+  "title": "Meet the Actuator Family",
+  "creator": "Dan McCreary",
+  "subject": "Beginning electronics and actuator selection",
+  "description": "An interactive four-column infographic comparing DC motors, relays, solenoids, and hobby servos.",
+  "date": "2026-08-15",
+  "canvasHeight": 730,
+  "educational": {
+    "gradeLevel": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "subjectArea": "Electronics",
+    "topic": "Actuator types",
+    "learningObjectives": [
+      "Explain how rotary, linear, switching, and position-controlled actuator behaviors determine suitable applications and drivers."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Transistor switching",
+      "Inductive loads"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Custom grid infographic overlay",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 730
+    },
+    "responsive": true,
+    "dependencies": [
+      "grid-diagram.js",
+      "grid-overlay.css",
+      "comparison-explorer.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive comparison and retrieval practice",
+    "keyQuestions": [
+      "Which actuator creates the motion a design requires?",
+      "Why do inductive loads need driver and flyback components?"
+    ],
+    "commonMisconceptions": [
+      "A microcontroller pin can directly power any small motor.",
+      "A relay and a solenoid perform the same external job."
+    ],
+    "assessmentOpportunities": [
+      "Four-question actuator selection quiz"
+    ]
+  },
+  "chapter": "19-driving-outputs-motors-buzzers"
+}

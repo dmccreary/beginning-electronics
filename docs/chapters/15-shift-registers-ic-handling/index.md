@@ -173,7 +173,7 @@ Explore the whole chip below — press the manual clock button to step bits in o
 
 #### Diagram: 74HC595 Shift Register LED Bar Graph and Daisy-Chain Explorer
 
-<iframe src="../../sims/74hc595-shift-register-led-bar-graph/main.html" width="100%" height="600px" scrolling="no"></iframe>
+<iframe src="../../sims/74hc595-shift-register-led-bar-graph/main.html" width="100%" height="567px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>74HC595 Shift Register LED Bar Graph and Daisy-Chain Explorer</summary>
@@ -249,7 +249,7 @@ Reading one is a skill on its own: find the notch or dot first, confirm it match
 
 #### Diagram: 74HC595 Datasheet Pinout Diagram Reader
 
-<iframe src="../../sims/74hc595-datasheet-pinout-reader/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/74hc595-datasheet-pinout-reader/main.html" width="100%" height="722px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>74HC595 Datasheet Pinout Diagram Reader</summary>

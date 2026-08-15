@@ -1,0 +1,190 @@
+{
+  "title": "IC Pin Numbering and Notch Orientation",
+  "image": "ic-pins.svg",
+  "layout": "grid",
+  "showLabels": true,
+  "palette": [
+    "#C0392B",
+    "#2878A8",
+    "#168779",
+    "#C77B16",
+    "#6953B8",
+    "#5F8D35",
+    "#B4650F",
+    "#8E44AD",
+    "#7A7A6B"
+  ],
+  "zones": [
+    {
+      "id": "notch",
+      "label": "notch",
+      "color": "#C0392B",
+      "x1": 20.0,
+      "y1": 43.0,
+      "x2": 28.0,
+      "y2": 57.0,
+      "summary": "This notch marks Pin 1 — always start counting here, going counter-clockwise.",
+      "facts": [
+        "Every DIP chip has one: a semicircular cut, a dimple, or both, at one end of the package.",
+        "Hold the chip so the notch is on your left, then pin 1 is the first pin along the bottom edge.",
+        "If a chip has no notch, look for a small dot pressed into the plastic beside pin 1."
+      ]
+    },
+    {
+      "id": "pin-1",
+      "label": "1",
+      "color": "#C0392B",
+      "x1": 26.0,
+      "y1": 58.9,
+      "x2": 34.2,
+      "y2": 67.1,
+      "summary": "Pin 1: the first pin counter-clockwise from the notch. On a 555 this is ground.",
+      "facts": [
+        "Position: 0 pins counter-clockwise from the notch — it is the starting point.",
+        "555 function: GND, the negative supply connection.",
+        "Insert the chip backwards and this pin lands where pin 5 belongs."
+      ]
+    },
+    {
+      "id": "pin-2",
+      "label": "2",
+      "color": "#2878A8",
+      "x1": 38.0,
+      "y1": 58.9,
+      "x2": 46.2,
+      "y2": 67.1,
+      "summary": "Pin 2: one step counter-clockwise from pin 1.",
+      "facts": [
+        "Position: 1 pin counter-clockwise from the notch.",
+        "555 function: TRIGGER — pulling it low starts the timing cycle."
+      ]
+    },
+    {
+      "id": "pin-3",
+      "label": "3",
+      "color": "#168779",
+      "x1": 50.0,
+      "y1": 58.9,
+      "x2": 58.2,
+      "y2": 67.1,
+      "summary": "Pin 3: two steps counter-clockwise from pin 1.",
+      "facts": [
+        "Position: 2 pins counter-clockwise from the notch.",
+        "555 function: OUTPUT — this is the pin that drives your LED or buzzer."
+      ]
+    },
+    {
+      "id": "pin-4",
+      "label": "4",
+      "color": "#C77B16",
+      "x1": 62.0,
+      "y1": 58.9,
+      "x2": 70.2,
+      "y2": 67.1,
+      "summary": "Pin 4: the last pin along the bottom edge.",
+      "facts": [
+        "Position: 3 pins counter-clockwise from the notch.",
+        "555 function: RESET — hold it high for normal running; pull it low to force the output off."
+      ]
+    },
+    {
+      "id": "pin-5",
+      "label": "5",
+      "color": "#6953B8",
+      "x1": 62.0,
+      "y1": 32.9,
+      "x2": 70.2,
+      "y2": 41.1,
+      "summary": "Pin 5: the count turns the corner and comes back along the top edge.",
+      "facts": [
+        "Position: 4 pins counter-clockwise from the notch — directly opposite pin 4.",
+        "555 function: CONTROL VOLTAGE — usually left alone, often with a small capacitor to ground."
+      ]
+    },
+    {
+      "id": "pin-6",
+      "label": "6",
+      "color": "#5F8D35",
+      "x1": 50.0,
+      "y1": 32.9,
+      "x2": 58.2,
+      "y2": 41.1,
+      "summary": "Pin 6: continuing right to left along the top edge.",
+      "facts": [
+        "Position: 5 pins counter-clockwise from the notch.",
+        "555 function: THRESHOLD — when the voltage here rises high enough, the cycle ends."
+      ]
+    },
+    {
+      "id": "pin-7",
+      "label": "7",
+      "color": "#B4650F",
+      "x1": 38.0,
+      "y1": 32.9,
+      "x2": 46.2,
+      "y2": 41.1,
+      "summary": "Pin 7: second from the end of the top edge.",
+      "facts": [
+        "Position: 6 pins counter-clockwise from the notch.",
+        "555 function: DISCHARGE — it drains the timing capacitor to start the next cycle."
+      ]
+    },
+    {
+      "id": "pin-8",
+      "label": "8",
+      "color": "#8E44AD",
+      "x1": 26.0,
+      "y1": 32.9,
+      "x2": 34.2,
+      "y2": 41.1,
+      "summary": "Pin 8: the last pin, sitting directly across the package from pin 1.",
+      "facts": [
+        "Position: 7 pins counter-clockwise from the notch — right back beside where you started.",
+        "555 function: VCC, the positive supply.",
+        "Pin 8 and pin 1 are the supply pair, on opposite corners of the notch end."
+      ]
+    },
+    {
+      "id": "backwards",
+      "label": "backwards?",
+      "color": "#7A7A6B",
+      "x1": 72.0,
+      "y1": 42.0,
+      "x2": 96.0,
+      "y2": 58.0,
+      "summary": "Rotate the chip 180° and every pin lands somewhere it does not belong.",
+      "facts": [
+        "Pin 1 (GND) would sit where pin 5 (CONTROL VOLTAGE) belongs, and pin 8 (VCC) would land on pin 4 (RESET).",
+        "Power and ground end up reversed across the chip — the one mistake most likely to destroy it.",
+        "This is why the notch matters: it is the only thing on the package telling you which end is which."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which feature on the package tells you where pin 1 is?",
+      "correct_zone": "notch",
+      "explanation": "The notch (and often a dimple beside pin 1) is the orientation marker."
+    },
+    {
+      "question": "Which pin is the positive supply, VCC, on a 555?",
+      "correct_zone": "pin-8",
+      "explanation": "Pin 8 is VCC, sitting directly across the notch end from pin 1."
+    },
+    {
+      "question": "Which pin drives the load — the one you would wire your LED to?",
+      "correct_zone": "pin-3",
+      "explanation": "Pin 3 is OUTPUT on a 555."
+    },
+    {
+      "question": "Counting counter-clockwise from the notch, which pin comes immediately after pin 4?",
+      "correct_zone": "pin-5",
+      "explanation": "The count turns the corner at pin 4 and continues with pin 5 on the top edge."
+    },
+    {
+      "question": "You seat the chip rotated 180 degrees. Where does pin 1 end up?",
+      "correct_zone": "backwards",
+      "explanation": "Pin 1 lands in pin 5's socket, and power and ground are reversed across the chip."
+    }
+  ]
+}

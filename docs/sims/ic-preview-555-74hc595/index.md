@@ -11,7 +11,7 @@ quality_score: 0
 
 # Two ICs Coming Soon — 555 Timer and 74HC595 Preview
 
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="702px" width="100%" scrolling="no"></iframe>
 
 [Run the Two ICs Coming Soon — 555 Timer and 74HC595 Preview MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>
@@ -31,7 +31,7 @@ You can add this MicroSim to any web page by adding this to your HTML:
 
 ```html
 <iframe src="https://dmccreary.github.io/beginning-electronics/sims/ic-preview-555-74hc595/main.html"
-        height="450px"
+        height="702px"
         width="100%"
         scrolling="no"></iframe>
 ```

@@ -195,16 +195,18 @@ function drawCircuit(mA, unsafe) {
   textAlign(LEFT, TOP);
   text('ground', BB.x + 4, railMinus + 4);
 
-  // Unsafe-current banner
+  // Unsafe-current banner, placed under the board so it never collides with
+  // the title at the top of the canvas.
   if (unsafe) {
     const pulse = 150 + sin(flowPhase * 10) * 80;
+    const by = min(BB.y + bbHeight() + 6, drawHeight - 24);
     noStroke();
     fill(220, 20, 60, pulse);
-    rect(BB.x, BB.y - 22, BB.w, 20, 4);
+    rect(BB.x, by, BB.w, 20, 4);
     fill('white');
     textAlign(CENTER, CENTER);
     textSize(12);
-    text('current is above the LED\'s ' + LED_SAFE_MA + ' mA rating', BB.x + BB.w / 2, BB.y - 12);
+    text('current is above the LED\'s ' + LED_SAFE_MA + ' mA rating', BB.x + BB.w / 2, by + 10);
   }
 
   hoverPart = null;
@@ -376,7 +378,12 @@ function drawPanel(r, mA, unsafe) {
   ty += 20;
   fill('mediumblue');
   textSize(13);
-  if (r > 0) {
+  if (reversed) {
+    // The equation does not apply while the diode is blocking - saying
+    // otherwise would contradict the "no current flows" headline above.
+    text('I = 0 mA — the diode blocks current in this direction, so the ' +
+         'equation does not apply until the LED is turned around.', padX, ty, innerW);
+  } else if (r > 0) {
     text('I = (' + VSUPPLY + ' − ' + nf(VFORWARD, 1, 1) + ') / ' + r +
          ' = ' + nf(mA, 1, 1) + ' mA', padX, ty, innerW);
   } else {

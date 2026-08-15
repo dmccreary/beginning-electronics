@@ -1,0 +1,70 @@
+{
+  "title": "Capacitor Family Explorer",
+  "image": "capacitor-family.png",
+  "layout": "grid",
+  "showLabels": true,
+  "zones": [
+    {
+      "id": "ceramic",
+      "label": "Ceramic",
+      "color": "#2878A8",
+      "x1": 0.4,
+      "y1": 0.5,
+      "x2": 32.9,
+      "y2": 99.5,
+      "summary": "A small, non-polarized capacitor well suited to fast signal and noise-control jobs.",
+      "facts": [
+        "Polarity: Non-polarized, so either lead may face either direction.",
+        "Typical range: Often picofarads through fractions of a microfarad, though multilayer ceramic capacitors can be larger.",
+        "Use it for: High-frequency bypassing, filtering, coupling, and short timing intervals."
+      ]
+    },
+    {
+      "id": "electrolytic",
+      "label": "Electrolytic",
+      "color": "#C77B16",
+      "x1": 33.5,
+      "y1": 0.5,
+      "x2": 66.1,
+      "y2": 99.5,
+      "summary": "A polarized capacitor that packs large capacitance into a compact cylinder.",
+      "facts": [
+        "Polarity: Usually polarized; the body stripe commonly marks the negative lead.",
+        "Typical range: Commonly microfarads to thousands of microfarads.",
+        "Use it for: Power-supply smoothing, energy storage, audio coupling, and long timing intervals."
+      ]
+    },
+    {
+      "id": "tantalum",
+      "label": "Tantalum",
+      "color": "#6953B8",
+      "x1": 66.7,
+      "y1": 0.5,
+      "x2": 99.6,
+      "y2": 99.5,
+      "summary": "A compact polarized capacitor valued for stable capacitance in limited space.",
+      "facts": [
+        "Polarity: Polarized and easily damaged by reverse voltage or excessive surge current.",
+        "Typical form: Often a small bead or molded package with a polarity mark.",
+        "Use it for: Compact decoupling and filtering where size and stability matter."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which capacitor can be inserted either way around and is a strong choice for high-frequency bypassing?",
+      "correct_zone": "ceramic",
+      "explanation": "Ceramic capacitors are non-polarized and respond well at high frequencies."
+    },
+    {
+      "question": "Which capacitor is commonly used for bulk power-supply smoothing and has a stripe marking its negative side?",
+      "correct_zone": "electrolytic",
+      "explanation": "Electrolytic capacitors provide large capacitance and are normally polarized."
+    },
+    {
+      "question": "Which compact polarized type needs especially careful polarity and surge-current control?",
+      "correct_zone": "tantalum",
+      "explanation": "Tantalum capacitors are compact and stable but unforgiving of electrical abuse."
+    }
+  ]
+}

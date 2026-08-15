@@ -173,7 +173,7 @@ Try all three waveforms, and both knobs, in the sim below.
 
 #### Diagram: XR2206 Waveform Generator Explorer
 
-<iframe src="../../sims/xr2206-waveform-generator-explorer/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/xr2206-waveform-generator-explorer/main.html" width="100%" height="542px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>XR2206 Waveform Generator Explorer</summary>
@@ -284,7 +284,7 @@ Watch sunlight, charging current, and overcharge protection all work together in
 
 #### Diagram: Solar Panel Charging Circuit Explorer
 
-<iframe src="../../sims/solar-charging-circuit-explorer/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/solar-charging-circuit-explorer/main.html" width="100%" height="542px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Solar Panel Charging Circuit Explorer</summary>

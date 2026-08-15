@@ -11,7 +11,7 @@ quality_score: 0
 
 # 555 Pin Numbering and IC Notch Orientation
 
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="722px" width="100%" scrolling="no"></iframe>
 
 [Run the 555 Pin Numbering and IC Notch Orientation MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>
@@ -31,7 +31,7 @@ You can add this MicroSim to any web page by adding this to your HTML:
 
 ```html
 <iframe src="https://dmccreary.github.io/beginning-electronics/sims/ic-pin-numbering-notch-orientation/main.html"
-        height="450px"
+        height="722px"
         width="100%"
         scrolling="no"></iframe>
 ```

@@ -1,0 +1,61 @@
+{
+  "title": "IC Preview — 555 Timer and 74HC595 Shift Register",
+  "image": "ic-preview.svg",
+  "layout": "grid",
+  "showLabels": true,
+  "palette": ["#1565C0", "#6953B8"],
+  "zones": [
+    {
+      "id": "ic-555",
+      "label": "555 Timer",
+      "color": "#1565C0",
+      "x1": 0.4,
+      "y1": 0.5,
+      "x2": 49.6,
+      "y2": 99.5,
+      "summary": "An 8-pin DIP chip that makes timing pulses — the part behind blinkers, delays and simple tones.",
+      "facts": [
+        "In astable mode it runs free, switching its output on and off over and over to make a steady stream of pulses.",
+        "In monostable mode it fires once when triggered, holding its output on for a set time and then dropping back.",
+        "Full wiring and timing math in Chapter 14."
+      ]
+    },
+    {
+      "id": "ic-74hc595",
+      "label": "74HC595 Shift Register",
+      "color": "#6953B8",
+      "x1": 50.4,
+      "y1": 0.5,
+      "x2": 99.6,
+      "y2": 99.5,
+      "summary": "A 16-pin DIP chip that turns a handful of control wires into eight separate outputs.",
+      "facts": [
+        "Serial data in: you clock bits into it one at a time, over a single data wire.",
+        "Parallel data out: once the bits are loaded it drives all eight output pins at once.",
+        "Full wiring and the 8-LED project in Chapter 15."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which chip has 16 pins, with 8 down each side?",
+      "correct_zone": "ic-74hc595",
+      "explanation": "The 74HC595 is a 16-pin DIP; the 555 has only 8 pins."
+    },
+    {
+      "question": "Which chip would you reach for to make an LED blink on its own, over and over?",
+      "correct_zone": "ic-555",
+      "explanation": "That is the 555 running in astable mode, producing a repeating stream of pulses."
+    },
+    {
+      "question": "Which chip lets you drive eight outputs while using only a few control wires?",
+      "correct_zone": "ic-74hc595",
+      "explanation": "A shift register takes serial data in and drives eight parallel outputs."
+    },
+    {
+      "question": "Which chip fires once when triggered and then returns to its resting state?",
+      "correct_zone": "ic-555",
+      "explanation": "That is monostable mode on the 555 timer."
+    }
+  ]
+}

@@ -113,6 +113,12 @@ The table below gathers everything you've just learned about each option side by
 | AA battery pack | 1.5 V × number of cells | No (unless rechargeable NiMH) | Portable projects needing more current | Bulkier; needs a holder and wiring |
 | LiPo battery | ~3.7 V per cell | Yes | Lightweight, high-power portable builds | Requires careful, supervised charging |
 
+#### Diagram: Power Source Chooser
+
+<iframe src="../../sims/power-source-chooser/main.html" width="100%" height="732px" scrolling="no"></iframe>
+
+[Run the Power Source Chooser MicroSim fullscreen](../../sims/power-source-chooser/main.html){ .md-button .md-button--primary }
+
 !!! mascot-tip "When in Doubt, Start With USB"
     ![Volt giving a tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
     Not sure which power source to reach for? USB is usually the easiest starting point on a breadboard — it's already a steady 5 volts, it never needs recharging mid-project, and it won't quietly drain overnight the way a battery can. Save batteries for the moment your project actually needs to leave the desk.
@@ -172,7 +178,7 @@ You've now met every part of this course's 5V regulator kit: the 7805 itself, it
 
 #### Diagram: 7805 Voltage Regulator Breadboard Circuit
 
-<iframe src="../../sims/7805-regulator-breadboard/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/7805-regulator-breadboard/main.html" width="100%" height="542px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>7805 Voltage Regulator Breadboard Circuit</summary>
@@ -269,7 +275,7 @@ Turn the trimmer yourself, and watch duty cycle and output voltage respond toget
 
 #### Diagram: Buck Converter Trimmer Explorer
 
-<iframe src="../../sims/buck-converter-trimmer-explorer/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/buck-converter-trimmer-explorer/main.html" width="100%" height="542px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Buck Converter Trimmer Explorer</summary>

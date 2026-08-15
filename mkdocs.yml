@@ -78,6 +78,7 @@ nav:
     - Breadboard Troubleshooting Detective: sims/breadboard-troubleshooting-detective/index.md
     - Buck Converter Trimmer Explorer: sims/buck-converter-trimmer-explorer/index.md
     - Capacitor Value Code Decoder: sims/capacitor-value-code-decoder/index.md
+    - Capstone Project Inspiration: sims/capstone-inspiration-explorer/index.md
     - Capstone Project Planning Workflow: sims/capstone-project-planning-workflow/index.md
     - Circuit Assembly Order Sequencer: sims/circuit-assembly-order-sequencer/index.md
     - Circuit Continuity and Fault Tester: sims/circuit-continuity-fault-tester/index.md
@@ -85,12 +86,14 @@ nav:
     - Circuit Safety Hazard Explorer: sims/circuit-safety-hazard-explorer/index.md
     - Circuit Topology Explorer: sims/circuit-topology-explorer/index.md
     - Combination Lock Circuit: sims/combination-lock-circuit/index.md
+    - "Component Markings: What You Can Read": sims/component-markings-explorer/index.md
     - DC Motor Control and Stall Current Explorer: sims/dc-motor-direction-control-circuit/index.md
     - Diode Test Mode Explorer: sims/diode-test-mode-explorer/index.md
     - Draw LEDs: sims/led/index.md
     - Drawing Resistor Symbols in a MicroSim: sims/resistor/index.md
     - Drawing Resistors in a MicroSim: sims/resistor-physical/index.md
     - Electron Flow vs. Conventional Current: sims/electron-vs-conventional-current/index.md
+    - Five Common Transistor Types: sims/transistor-family-explorer/index.md
     - Flip Flop: sims/flip-flop/index.md
     - Forward vs. Reverse Bias Breadboard Demo: sims/diode-forward-reverse-bias-demo/index.md
     - Full Resistor Color Code Decoder: sims/full-resistor-color-code-decoder/index.md
@@ -105,12 +108,17 @@ nav:
     - LED with Current-Limiting Resistor Breadboard Circuit: sims/led-current-limiting-resistor-circuit/index.md
     - Light and Dark Detector: sims/light-dark-detector/index.md
     - Material Conductivity Sorter: sims/material-conductivity-sorter/index.md
+    - Meet the Actuator Family: sims/actuator-family-explorer/index.md
+    - Meet the Capacitor Family: sims/capacitor-family-explorer/index.md
+    - Meet the Resistor Family: sims/resistor-family-infographic/index.md
     - Meet the Switch Family: sims/switch-family-explorer/index.md
     - MicroSim Template: sims/template/index.md
+    - Multi-LED Configuration Explorer: sims/multi-led-configuration-explorer/index.md
     - Multimeter Anatomy Explorer: sims/multimeter-anatomy-explorer/index.md
     - Node Voltage and Series Resistance Chain Builder: sims/node-voltage-series-chain/index.md
     - Ohm's Law Circuit Simulator: sims/ohms-law-simulator/index.md
     - Potentiometer Taper Explorer: sims/potentiometer-taper-explorer/index.md
+    - Power Source Chooser: sims/power-source-chooser/index.md
     - Pull-Up and Pull-Down Resistor Explorer: sims/pull-up-pull-down-resistor-explorer/index.md
     - Push Button and LED Circuit: sims/button-led-breadboard/index.md
     - PWM Motor Speed Control Breadboard: sims/pwm-motor-speed-control-breadboard/index.md
@@ -139,6 +147,34 @@ nav:
     - Water Flow Analogy MicroSim: sims/water-flow-analogy/index.md
     - "Wired Logic: AND and OR": sims/wired-logic-and-or/index.md
     - XR2206 Waveform Generator Explorer: sims/xr2206-waveform-generator-explorer/index.md
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -210,8 +246,16 @@ plugins:
   - search
 #  - social
 exclude_docs: |
+  sims/actuator-family-explorer/image-prompt.md
   sims/battery-type-explorer/image-prompt.md
+  sims/capacitor-family-explorer/image-prompt.md
+  sims/capstone-inspiration-explorer/image-prompt.md
+  sims/component-markings-explorer/image-prompt.md
+  sims/multi-led-configuration-explorer/image-prompt.md
+  sims/power-source-chooser/image-prompt.md
+  sims/resistor-family-infographic/image-prompt.md
   sims/switch-family-explorer/image-prompt.md
+  sims/transistor-family-explorer/image-prompt.md
 markdown_extensions:
   - admonition
   - md_in_html

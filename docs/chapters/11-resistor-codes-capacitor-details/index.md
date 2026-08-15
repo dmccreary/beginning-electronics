@@ -94,7 +94,7 @@ Put the whole system to the test in the sim below — every color, every band, a
 
 #### Diagram: Full Resistor Color Code Decoder
 
-<iframe src="../../sims/full-resistor-color-code-decoder/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/full-resistor-color-code-decoder/main.html" width="100%" height="502px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Full Resistor Color Code Decoder</summary>
@@ -225,7 +225,7 @@ See the whole conversion chain happen live, starting from a real 3-digit code, i
 
 #### Diagram: Capacitor Value Code Decoder
 
-<iframe src="../../sims/capacitor-value-code-decoder/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/capacitor-value-code-decoder/main.html" width="100%" height="502px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Capacitor Value Code Decoder</summary>
@@ -294,6 +294,12 @@ Not every capacitor cares about direction, though. A **non-polarized capacitor**
 | Polarity | Non-polarized | Polarized | Polarized |
 | Typical capacitance | Small (under 1 µF) | Large (1 µF and up) | Small to medium, very precise |
 | Common use in this course | Fast timing, bypass duty | Smoothing power, longer RC timing | Precision circuits, compact spaces |
+
+#### Diagram: Meet the Capacitor Family
+
+<iframe src="../../sims/capacitor-family-explorer/main.html" width="100%" height="732px" scrolling="no"></iframe>
+
+[Run the Meet the Capacitor Family MicroSim fullscreen](../../sims/capacitor-family-explorer/main.html){ .md-button .md-button--primary }
 
 !!! mascot-warning "Tantalum Capacitors Fail Loud"
     ![Volt giving a warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }

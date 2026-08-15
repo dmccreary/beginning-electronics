@@ -70,7 +70,8 @@ function setup() {
   rSlider.size(canvasWidth - sliderLeftMargin - margin);
 
   // C runs 1 to 1000 uF on a log scale so the small end stays controllable.
-  cSlider = createSlider(0, 100, 66, 1);
+  // 67 lands on 100 uF, the chapter's worked example.
+  cSlider = createSlider(0, 100, 67, 1);
   cSlider.position(sliderLeftMargin, drawHeight + 8 + 70);
   cSlider.size(canvasWidth - sliderLeftMargin - margin);
 
@@ -184,9 +185,12 @@ function drawGrid(tMax) {
     text(nf(v, 1, 1) + ' V', plot.x - 6, plot.y + (i / 4) * plot.h);
   }
 
-  textAlign(CENTER, TOP);
-  textSize(13);
-  text('Time', plot.x + plot.w / 2, plot.y + plot.h + 30);
+  // The x-axis caption sits inside the plot: the tau markers occupy the strip
+  // just below the axis, and the readout box occupies the strip below that.
+  textAlign(RIGHT, BOTTOM);
+  textSize(12);
+  fill('gray');
+  text('Time →', plot.x + plot.w - 6, plot.y + plot.h - 6);
 
   push();
   translate(plot.x - 38, plot.y + plot.h / 2);
@@ -388,7 +392,7 @@ function toggleMode() {
 
 function resetAll() {
   rSlider.value(2);
-  cSlider.value(66);
+  cSlider.value(67);
   charging = true;
   elapsed = 0;
   running = false;

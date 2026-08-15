@@ -11,7 +11,7 @@ quality_score: 0
 
 # Potentiometer Taper Explorer
 
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="547px" width="100%" scrolling="no"></iframe>
 
 [Run the Potentiometer Taper Explorer MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>
@@ -31,7 +31,7 @@ You can add this MicroSim to any web page by adding this to your HTML:
 
 ```html
 <iframe src="https://dmccreary.github.io/beginning-electronics/sims/potentiometer-taper-explorer/main.html"
-        height="450px"
+        height="547px"
         width="100%"
         scrolling="no"></iframe>
 ```

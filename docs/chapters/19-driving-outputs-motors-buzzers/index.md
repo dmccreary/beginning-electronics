@@ -118,7 +118,7 @@ Try the simulator below to see PWM duty cycle and motor speed side by side, on a
 
 #### Diagram: PWM Motor Speed Control Breadboard
 
-<iframe src="../../sims/pwm-motor-speed-control-breadboard/main.html" width="100%" height="560px" scrolling="no"></iframe>
+<iframe src="../../sims/pwm-motor-speed-control-breadboard/main.html" width="100%" height="522px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>PWM Motor Speed Control Breadboard</summary>
@@ -180,7 +180,7 @@ Relays aren't in this course's $50 kit, but understanding relay basics completes
 
 #### Diagram: Relay Basics Explorer
 
-<iframe src="../../sims/relay-basics-explorer/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/relay-basics-explorer/main.html" width="100%" height="502px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Relay Basics Explorer</summary>
@@ -234,6 +234,12 @@ An **actuator** is any device that converts an electrical signal into physical m
 - **Relay** — an actuator that converts current into a single mechanical click, opening or closing a switch
 - **Solenoid** (not in this course's kit) — an actuator that converts current into a short, straight-line push or pull
 - **Servo motor** (not in this course's kit) — an actuator that converts a control signal into rotation to a specific, precise angle
+
+#### Diagram: Meet the Actuator Family
+
+<iframe src="../../sims/actuator-family-explorer/main.html" width="100%" height="732px" scrolling="no"></iframe>
+
+[Run the Meet the Actuator Family MicroSim fullscreen](../../sims/actuator-family-explorer/main.html){ .md-button .md-button--primary }
 
 !!! mascot-thinking "One Word, Many Parts"
     ![Volt thinking about it](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
@@ -303,7 +309,7 @@ A side-by-side comparison makes the active/passive difference easy to remember.
 
 #### Diagram: Active vs. Passive Buzzer Tone Comparison
 
-<iframe src="../../sims/active-passive-buzzer-breadboard/main.html" width="100%" height="540px" scrolling="no"></iframe>
+<iframe src="../../sims/active-passive-buzzer-breadboard/main.html" width="100%" height="522px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Active vs. Passive Buzzer Tone Comparison</summary>

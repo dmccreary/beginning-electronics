@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" role="img"
+     aria-label="Three LED colors compared by forward voltage, and two lens shapes compared by beam spread">
+  <defs>
+    <radialGradient id="glowRed" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#FF6B6B"/><stop offset="100%" stop-color="#B3211F"/>
+    </radialGradient>
+    <radialGradient id="glowGreen" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#7BE495"/><stop offset="100%" stop-color="#1B7A38"/>
+    </radialGradient>
+    <radialGradient id="glowBlue" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#7FB2FF"/><stop offset="100%" stop-color="#12459E"/>
+    </radialGradient>
+    <radialGradient id="glowClear" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#FFF6C9"/><stop offset="100%" stop-color="#D9C06B"/>
+    </radialGradient>
+    <radialGradient id="glowDiff" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#FDFDF4"/><stop offset="100%" stop-color="#CFCFC0"/>
+    </radialGradient>
+    <linearGradient id="coneNarrow" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#F6C08A" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#F6C08A" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="coneWide" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#F6C08A" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#F6C08A" stop-opacity="0.04"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="560" fill="#FBFCFD"/>
+
+  <!-- column tints -->
+  <rect x="0"   y="0" width="200" height="560" fill="#FDF0F0"/>
+  <rect x="200" y="0" width="200" height="560" fill="#EEF8F0"/>
+  <rect x="400" y="0" width="200" height="560" fill="#EEF3FD"/>
+  <rect x="600" y="0" width="200" height="560" fill="#FCF6EA"/>
+  <rect x="800" y="0" width="200" height="560" fill="#F4F4F2"/>
+
+  <!-- ================= COLUMN 1 - RED LED ================= -->
+  <g>
+    <!-- 5 mm LED: dome, flange, two leads. Anode lead drawn longer. -->
+    <path d="M70 150 a30 30 0 0 1 60 0 v45 h-60 z" fill="url(#glowRed)"/>
+    <rect x="66" y="193" width="68" height="12" rx="3" fill="#B3211F"/>
+    <rect x="86" y="205" width="7" height="58" fill="#9AA3AB"/>
+    <rect x="107" y="205" width="7" height="42" fill="#9AA3AB"/>
+    <text x="100" y="288" font-family="Helvetica,Arial,sans-serif" font-size="15" fill="#4A5560" text-anchor="middle">longer lead = anode</text>
+
+    <!-- forward-voltage bar: scale is 0 to 3.5 V over 150 px -->
+    <rect x="72" y="330" width="56" height="150" rx="4" fill="#E3E7EB"/>
+    <rect x="72" y="394" width="56" height="86" rx="4" fill="#C0392B"/>
+    <text x="100" y="382" font-family="Helvetica,Arial,sans-serif" font-size="24" font-weight="bold" fill="#8E2119" text-anchor="middle">2.0 V</text>
+    <text x="100" y="508" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="bold" fill="#2C3742" text-anchor="middle">Red</text>
+    <text x="100" y="530" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#5B6773" text-anchor="middle">lowest forward voltage</text>
+  </g>
+
+  <!-- ================= COLUMN 2 - GREEN LED ================= -->
+  <g>
+    <path d="M270 150 a30 30 0 0 1 60 0 v45 h-60 z" fill="url(#glowGreen)"/>
+    <rect x="266" y="193" width="68" height="12" rx="3" fill="#1B7A38"/>
+    <rect x="286" y="205" width="7" height="58" fill="#9AA3AB"/>
+    <rect x="307" y="205" width="7" height="42" fill="#9AA3AB"/>
+
+    <rect x="272" y="330" width="56" height="150" rx="4" fill="#E3E7EB"/>
+    <rect x="272" y="386" width="56" height="94" rx="4" fill="#2E7D32"/>
+    <text x="300" y="374" font-family="Helvetica,Arial,sans-serif" font-size="24" font-weight="bold" fill="#1B5E20" text-anchor="middle">2.2 V</text>
+    <text x="300" y="508" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="bold" fill="#2C3742" text-anchor="middle">Green</text>
+    <text x="300" y="530" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#5B6773" text-anchor="middle">a little above red</text>
+  </g>
+
+  <!-- ================= COLUMN 3 - BLUE LED ================= -->
+  <g>
+    <path d="M470 150 a30 30 0 0 1 60 0 v45 h-60 z" fill="url(#glowBlue)"/>
+    <rect x="466" y="193" width="68" height="12" rx="3" fill="#12459E"/>
+    <rect x="486" y="205" width="7" height="58" fill="#9AA3AB"/>
+    <rect x="507" y="205" width="7" height="42" fill="#9AA3AB"/>
+
+    <rect x="472" y="330" width="56" height="150" rx="4" fill="#E3E7EB"/>
+    <rect x="472" y="347" width="56" height="133" rx="4" fill="#1565C0"/>
+    <text x="500" y="335" font-family="Helvetica,Arial,sans-serif" font-size="24" font-weight="bold" fill="#0D3C8A" text-anchor="middle">3.1 V</text>
+    <text x="500" y="508" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="bold" fill="#2C3742" text-anchor="middle">Blue</text>
+    <text x="500" y="530" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#5B6773" text-anchor="middle">highest — needs more volts</text>
+  </g>
+
+  <!-- ================= COLUMN 4 - ROUNDED DOME LENS ================= -->
+  <g>
+    <!-- narrow beam: half-angle 15 degrees, length 150 -->
+    <polygon points="700,300 661,155 739,155" fill="url(#coneNarrow)"/>
+    <path d="M670 300 a30 30 0 0 1 60 0 v40 h-60 z" fill="url(#glowClear)" stroke="#B9A25A" stroke-width="2"/>
+    <rect x="666" y="338" width="68" height="12" rx="3" fill="#B9A25A"/>
+    <rect x="686" y="350" width="7" height="44" fill="#9AA3AB"/>
+    <rect x="707" y="350" width="7" height="32" fill="#9AA3AB"/>
+
+    <!-- angle annotation -->
+    <path d="M676 262 a40 40 0 0 1 48 0" fill="none" stroke="#C77B16" stroke-width="2.5"/>
+    <text x="700" y="128" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="bold" fill="#B4650F" text-anchor="middle">≈ 30°</text>
+    <text x="700" y="508" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="bold" fill="#2C3742" text-anchor="middle">Rounded dome</text>
+    <text x="700" y="530" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#5B6773" text-anchor="middle">narrow, bright, spot-like</text>
+  </g>
+
+  <!-- ================= COLUMN 5 - FLAT DIFFUSED LENS ================= -->
+  <g>
+    <!-- wide beam: half-angle 60 degrees (tan 60 = 95/55), sized to stay
+         inside this column so it never overlaps the dome-lens zone -->
+    <polygon points="900,300 805,245 995,245" fill="url(#coneWide)"/>
+    <rect x="870" y="284" width="60" height="56" rx="6" fill="url(#glowDiff)" stroke="#A8A89A" stroke-width="2"/>
+    <rect x="866" y="338" width="68" height="12" rx="3" fill="#A8A89A"/>
+    <rect x="886" y="350" width="7" height="44" fill="#9AA3AB"/>
+    <rect x="907" y="350" width="7" height="32" fill="#9AA3AB"/>
+
+    <path d="M846 262 a58 58 0 0 1 108 0" fill="none" stroke="#C77B16" stroke-width="2.5"/>
+    <text x="900" y="128" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="bold" fill="#B4650F" text-anchor="middle">≈ 120°</text>
+    <text x="900" y="508" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="bold" fill="#2C3742" text-anchor="middle">Flat diffused</text>
+    <text x="900" y="530" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#5B6773" text-anchor="middle">wide, softer, even</text>
+  </g>
+
+  <!-- The two groups are separated by this divider only. Section captions used
+       to sit along the top, but the overlay's own zone-label chips are drawn
+       there and covered them. -->
+  <line x1="600" y1="16" x2="600" y2="544" stroke="#D6DCE2" stroke-width="2" stroke-dasharray="7 6"/>
+</svg>

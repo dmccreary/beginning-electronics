@@ -1,0 +1,90 @@
+{
+  "title": "Power Source Chooser",
+  "image": "power-sources.png",
+  "layout": "grid",
+  "showLabels": true,
+  "zones": [
+    {
+      "id": "usb",
+      "label": "USB Adapter",
+      "color": "#2878A8",
+      "x1": 0.4,
+      "y1": 0.5,
+      "x2": 24.6,
+      "y2": 99.5,
+      "summary": "A regulated 5 V source that is convenient for bench work and tethered projects.",
+      "facts": [
+        "Voltage: Typically a regulated 5 V output from a standard USB supply.",
+        "Strength: Recharge-free, stable power with more current than many small disposable batteries.",
+        "Use it for: Breadboard experiments, desk devices, and projects that can remain near an outlet."
+      ]
+    },
+    {
+      "id": "nine-volt",
+      "label": "9V Battery",
+      "color": "#C77B16",
+      "x1": 25.2,
+      "y1": 0.5,
+      "x2": 49.6,
+      "y2": 99.5,
+      "summary": "A compact portable source with useful voltage but limited sustained current.",
+      "facts": [
+        "Voltage: About 9 V when fresh, falling as the battery discharges and under load.",
+        "Tradeoff: Convenient snap connector, but relatively high internal resistance and modest capacity.",
+        "Use it for: Multimeters, alarms, and low-current circuits—not motors or long LED runs."
+      ]
+    },
+    {
+      "id": "aa-pack",
+      "label": "AA Battery Pack",
+      "color": "#168779",
+      "x1": 50.2,
+      "y1": 0.5,
+      "x2": 74.6,
+      "y2": 99.5,
+      "summary": "A robust portable source whose voltage is set by the number and chemistry of cells.",
+      "facts": [
+        "Voltage: Alkaline cells contribute about 1.5 V each in series; four cells give about 6 V when fresh.",
+        "Strength: Generally better current delivery and runtime than a rectangular 9 V battery.",
+        "Use it for: Robots, motors, portable breadboards, and projects needing replaceable cells."
+      ]
+    },
+    {
+      "id": "lipo",
+      "label": "LiPo Pouch",
+      "color": "#6953B8",
+      "x1": 75.2,
+      "y1": 0.5,
+      "x2": 99.6,
+      "y2": 99.5,
+      "summary": "A light rechargeable lithium-polymer source with high energy density and strict safety needs.",
+      "facts": [
+        "Voltage: A single cell is about 3.7 V nominal and reaches about 4.2 V when fully charged.",
+        "Safety: Use a suitable protection circuit and dedicated Li-ion/LiPo charger; prevent puncture and short circuits.",
+        "Use it for: Lightweight portable and wearable projects that benefit from rechargeability."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which source is the simplest choice for a 5 V desk project that stays near an outlet?",
+      "correct_zone": "usb",
+      "explanation": "A USB adapter supplies convenient regulated 5 V power."
+    },
+    {
+      "question": "Which portable source is compact but a poor choice for a motor because of limited current delivery?",
+      "correct_zone": "nine-volt",
+      "explanation": "Rectangular 9 V batteries suit modest loads, not hungry motors."
+    },
+    {
+      "question": "Which source combines replaceable cells with useful motor current and adjustable series voltage?",
+      "correct_zone": "aa-pack",
+      "explanation": "An AA holder is practical for portable, higher-current beginner projects."
+    },
+    {
+      "question": "Which source is light and rechargeable but requires a dedicated charger and protection?",
+      "correct_zone": "lipo",
+      "explanation": "LiPo pouch cells need lithium-specific charging and careful handling."
+    }
+  ]
+}

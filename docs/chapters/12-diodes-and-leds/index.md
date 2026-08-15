@@ -105,7 +105,7 @@ Flip the bias direction yourself and watch current respond in the sim below.
 
 #### Diagram: Forward vs. Reverse Bias Breadboard Demo
 
-<iframe src="../../sims/diode-forward-reverse-bias-demo/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/diode-forward-reverse-bias-demo/main.html" width="100%" height="522px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Forward vs. Reverse Bias Breadboard Demo</summary>
@@ -187,7 +187,7 @@ Compare colors, lens shapes, and the beams they produce in the sim below.
 
 #### Diagram: LED Color, Viewing Angle, and Lens Shape Explorer
 
-<iframe src="../../sims/led-color-viewing-angle-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/led-color-viewing-angle-explorer/main.html" width="100%" height="722px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>LED Color, Viewing Angle, and Lens Shape Explorer</summary>
@@ -262,7 +262,7 @@ See both curves plotted against the exact same wiper motion in the sim below.
 
 #### Diagram: Potentiometer Taper Explorer
 
-<iframe src="../../sims/potentiometer-taper-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/potentiometer-taper-explorer/main.html" width="100%" height="547px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Potentiometer Taper Explorer</summary>

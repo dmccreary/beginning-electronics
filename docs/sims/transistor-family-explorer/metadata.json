@@ -1,0 +1,62 @@
+{
+  "title": "Five Common Transistor Types",
+  "creator": "Dan McCreary",
+  "subject": "Beginning electronics and transistor selection",
+  "description": "An interactive five-column infographic comparing the 2N2222, 2N3904, BC547, 2N3906, and 2N3055.",
+  "date": "2026-08-15",
+  "canvasHeight": 755,
+  "educational": {
+    "gradeLevel": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "subjectArea": "Electronics",
+    "topic": "Bipolar transistor types",
+    "learningObjectives": [
+      "Compare polarity, package, voltage, current, power, and practical use for five common bipolar junction transistors."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "NPN transistor switching",
+      "Base current and load current"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Custom grid infographic overlay",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 755
+    },
+    "responsive": true,
+    "dependencies": [
+      "grid-diagram.js",
+      "grid-overlay.css",
+      "comparison-explorer.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive comparison and retrieval practice",
+    "keyQuestions": [
+      "When is a PNP transistor useful?",
+      "Why does a power transistor require thermal design?"
+    ],
+    "commonMisconceptions": [
+      "All TO-92 transistors have the same pinout.",
+      "The 2N3055 can be treated like a small-signal transistor without a heat sink."
+    ],
+    "assessmentOpportunities": [
+      "Five-question transistor selection quiz"
+    ]
+  },
+  "chapter": "13-meet-the-transistor"
+}

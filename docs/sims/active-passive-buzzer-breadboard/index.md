@@ -11,7 +11,7 @@ quality_score: 0
 
 # Active vs. Passive Buzzer Tone Comparison
 
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="522px" width="100%" scrolling="no"></iframe>
 
 [Run the Active vs. Passive Buzzer Tone Comparison MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>
@@ -31,7 +31,7 @@ You can add this MicroSim to any web page by adding this to your HTML:
 
 ```html
 <iframe src="https://dmccreary.github.io/beginning-electronics/sims/active-passive-buzzer-breadboard/main.html"
-        height="450px"
+        height="522px"
         width="100%"
         scrolling="no"></iframe>
 ```

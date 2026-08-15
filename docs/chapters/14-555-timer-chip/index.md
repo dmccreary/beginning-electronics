@@ -141,7 +141,7 @@ Explore the whole pattern — base resistor, transistor, motor, and the Darlingt
 
 #### Diagram: Transistor Motor Driver — Base Resistor and Darlington Pair Explorer
 
-<iframe src="../../sims/transistor-motor-driver-explorer/main.html" width="100%" height="580px" scrolling="no"></iframe>
+<iframe src="../../sims/transistor-motor-driver-explorer/main.html" width="100%" height="557px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Transistor Motor Driver — Base Resistor and Darlington Pair Explorer</summary>
@@ -203,7 +203,7 @@ Practice spotting the notch and counting pins on the 555's own pinout below — 
 
 #### Diagram: 555 Pin Numbering and IC Notch Orientation
 
-<iframe src="../../sims/ic-pin-numbering-notch-orientation/main.html" width="100%" height="480px" scrolling="no"></iframe>
+<iframe src="../../sims/ic-pin-numbering-notch-orientation/main.html" width="100%" height="722px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>555 Pin Numbering and IC Notch Orientation</summary>

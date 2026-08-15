@@ -11,7 +11,7 @@ quality_score: 0
 
 # RC Charge and Discharge Curve Explorer
 
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="517px" width="100%" scrolling="no"></iframe>
 
 [Run the RC Charge and Discharge Curve Explorer MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>
@@ -31,7 +31,7 @@ You can add this MicroSim to any web page by adding this to your HTML:
 
 ```html
 <iframe src="https://dmccreary.github.io/beginning-electronics/sims/rc-charge-discharge-explorer/main.html"
-        height="450px"
+        height="517px"
         width="100%"
         scrolling="no"></iframe>
 ```

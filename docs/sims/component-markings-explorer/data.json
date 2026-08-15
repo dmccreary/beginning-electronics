@@ -1,0 +1,110 @@
+{
+  "title": "Component Markings Explorer",
+  "image": "component-markings.png",
+  "layout": "grid",
+  "showLabels": true,
+  "zones": [
+    {
+      "id": "resistor",
+      "label": "Resistor Bands",
+      "color": "#2878A8",
+      "x1": 0.4,
+      "y1": 0.5,
+      "x2": 19.6,
+      "y2": 99.5,
+      "summary": "Colored bands encode resistance, multiplier, tolerance, and sometimes temperature coefficient.",
+      "facts": [
+        "Read directly: Nominal resistance and tolerance using the resistor color code.",
+        "Physical clue: A separated tolerance band helps establish reading direction.",
+        "Look up or calculate: Power rating is estimated from package size and confirmed by the part specification."
+      ]
+    },
+    {
+      "id": "diode",
+      "label": "Diode Stripe",
+      "color": "#168779",
+      "x1": 20.2,
+      "y1": 0.5,
+      "x2": 39.6,
+      "y2": 99.5,
+      "summary": "The body stripe identifies the cathode and therefore the diode's orientation.",
+      "facts": [
+        "Read directly: The stripe marks the cathode on most axial diodes.",
+        "Physical clue: LED packages may use a flat edge and lead length instead of a printed stripe.",
+        "Look up: Forward voltage, maximum current, and reverse-voltage rating."
+      ]
+    },
+    {
+      "id": "transistor",
+      "label": "Transistor Face",
+      "color": "#C77B16",
+      "x1": 40.2,
+      "y1": 0.5,
+      "x2": 59.6,
+      "y2": 99.5,
+      "summary": "The printed part number identifies the device; the flat face is only an orientation reference.",
+      "facts": [
+        "Read directly: A printed code or part number, when present.",
+        "Physical clue: The flat face helps describe orientation but does not guarantee a universal E-B-C pin order.",
+        "Look up: Exact pinout, polarity, package, current, voltage, gain, and power limits."
+      ]
+    },
+    {
+      "id": "capacitor",
+      "label": "Capacitor Marks",
+      "color": "#6953B8",
+      "x1": 60.2,
+      "y1": 0.5,
+      "x2": 79.6,
+      "y2": 99.5,
+      "summary": "Printed value, voltage, and polarity marks reveal essential installation information.",
+      "facts": [
+        "Read directly: Capacitance code or value, working voltage, and polarity when marked.",
+        "Physical clue: On common aluminum electrolytics, the stripe usually marks the negative terminal.",
+        "Look up: Dielectric type, tolerance, temperature range, and ripple-current rating."
+      ]
+    },
+    {
+      "id": "ic",
+      "label": "IC Notch & Dot",
+      "color": "#C85B4B",
+      "x1": 80.2,
+      "y1": 0.5,
+      "x2": 99.6,
+      "y2": 99.5,
+      "summary": "A notch or dot establishes pin-numbering orientation; the part code identifies function.",
+      "facts": [
+        "Read directly: Part number, manufacturer code, and sometimes date or lot code.",
+        "Physical clue: The notch or dot locates pin 1 so pins can be counted correctly.",
+        "Look up: Pin functions, supply range, truth table, timing, and absolute maximum ratings."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which marking system encodes a numerical value using colored bands?",
+      "correct_zone": "resistor",
+      "explanation": "Resistor bands encode significant digits, multiplier, and tolerance."
+    },
+    {
+      "question": "Which visible mark normally identifies a cathode?",
+      "correct_zone": "diode",
+      "explanation": "The stripe on an axial diode marks its cathode."
+    },
+    {
+      "question": "Which flat-faced package still requires a datasheet because its three leads have no universal order?",
+      "correct_zone": "transistor",
+      "explanation": "The transistor part number and datasheet determine the pinout."
+    },
+    {
+      "question": "Which component commonly prints both capacitance and a working-voltage rating?",
+      "correct_zone": "capacitor",
+      "explanation": "Capacitors commonly show capacitance, voltage, and polarity information."
+    },
+    {
+      "question": "Which component uses a notch or dot to establish where pin numbering begins?",
+      "correct_zone": "ic",
+      "explanation": "IC notches and dots provide pin-1 orientation."
+    }
+  ]
+}

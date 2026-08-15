@@ -151,15 +151,17 @@ function drawResistor() {
   rect(x0, cy - bodyH / 2, 14, bodyH, 18, 0, 0, 18);
   rect(x0 + bodyW - 14, cy - bodyH / 2, 14, bodyH, 0, 18, 18, 0);
 
-  // The three bands
+  // The three bands. They spread across most of the body and leave a wider
+  // gap at the right, the way a real resistor leaves room for its tolerance
+  // band — and the spacing also keeps the position captions from colliding.
   const bands = KIT[current].bands;
   const bandW = 20;
-  const startX = x0 + 34;
-  const gap = 30;
+  const startX = x0 + bodyW * 0.12;
+  const step = (bodyW * 0.58) / 2;
 
   bandBoxes = [];
   for (let i = 0; i < bands.length; i++) {
-    const bx = startX + i * (bandW + gap);
+    const bx = startX + i * step;
     noStroke();
     fill(COLORS[bands[i]].swatch);
     rect(bx, cy - bodyH / 2, bandW, bodyH);

@@ -1,0 +1,62 @@
+{
+  "title": "Power Source Chooser",
+  "creator": "Dan McCreary",
+  "subject": "Beginning electronics power-source selection",
+  "description": "An interactive four-column infographic comparing USB adapters, 9 V batteries, AA packs, and LiPo pouch cells.",
+  "date": "2026-08-15",
+  "canvasHeight": 730,
+  "educational": {
+    "gradeLevel": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "subjectArea": "Electronics",
+    "topic": "Project power sources",
+    "learningObjectives": [
+      "Compare voltage, portability, current capability, charging, and safety when selecting a project power source."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Voltage",
+      "Series-connected cells"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Custom grid infographic overlay",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 730
+    },
+    "responsive": true,
+    "dependencies": [
+      "grid-diagram.js",
+      "grid-overlay.css",
+      "comparison-explorer.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive comparison and retrieval practice",
+    "keyQuestions": [
+      "Why is a 9 V battery often poor for motors?",
+      "When does rechargeability justify added protection and charging circuitry?"
+    ],
+    "commonMisconceptions": [
+      "A higher battery voltage always means more useful power.",
+      "Any charger can safely charge a LiPo cell."
+    ],
+    "assessmentOpportunities": [
+      "Four-question power-source selection quiz"
+    ]
+  },
+  "chapter": "22-batteries-regulators-buck-converters"
+}

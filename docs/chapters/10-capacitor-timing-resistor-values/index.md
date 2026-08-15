@@ -99,7 +99,7 @@ Test your eye against all four patterns in the sim below.
 
 #### Diagram: Kit Resistor Band Matcher
 
-<iframe src="../../sims/kit-resistor-band-matcher/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/kit-resistor-band-matcher/main.html" width="100%" height="482px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Kit Resistor Band Matcher</summary>
@@ -196,7 +196,7 @@ See every one of these ideas working together on a real breadboard circuit below
 
 #### Diagram: LED with Current-Limiting Resistor Breadboard Circuit
 
-<iframe src="../../sims/led-current-limiting-resistor-circuit/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/led-current-limiting-resistor-circuit/main.html" width="100%" height="522px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>LED with Current-Limiting Resistor Breadboard Circuit</summary>
@@ -278,7 +278,7 @@ Explore the curve for yourself, with real kit resistor and capacitor values, in 
 
 #### Diagram: RC Charge and Discharge Curve Explorer
 
-<iframe src="../../sims/rc-charge-discharge-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/rc-charge-discharge-explorer/main.html" width="100%" height="517px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>RC Charge and Discharge Curve Explorer</summary>

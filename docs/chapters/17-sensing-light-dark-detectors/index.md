@@ -80,7 +80,7 @@ That moment when the correct combination is finally achieved has its own name. A
 
 #### Diagram: Combination Lock Circuit
 
-<iframe src="../../sims/combination-lock-circuit/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/combination-lock-circuit/main.html" width="100%" height="492px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Combination Lock Circuit</summary>

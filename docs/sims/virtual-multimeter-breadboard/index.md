@@ -11,7 +11,7 @@ quality_score: 0
 
 # Virtual Multimeter Breadboard
 
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="542px" width="100%" scrolling="no"></iframe>
 
 [Run the Virtual Multimeter Breadboard MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>
@@ -31,7 +31,7 @@ You can add this MicroSim to any web page by adding this to your HTML:
 
 ```html
 <iframe src="https://dmccreary.github.io/beginning-electronics/sims/virtual-multimeter-breadboard/main.html"
-        height="450px"
+        height="542px"
         width="100%"
         scrolling="no"></iframe>
 ```

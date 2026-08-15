@@ -107,7 +107,7 @@ Try that exact circuit yourself in the sim below. Flip the base switch on and of
 
 #### Diagram: Transistor as a Switch — Breadboard Demo
 
-<iframe src="../../sims/transistor-switch-breadboard-demo/main.html" width="100%" height="550px" scrolling="no"></iframe>
+<iframe src="../../sims/transistor-switch-breadboard-demo/main.html" width="100%" height="532px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Transistor as a Switch — Breadboard Demo</summary>
@@ -187,7 +187,7 @@ Explore the gain formula yourself, and compare how the BC547 and 2N2222 respond 
 
 #### Diagram: Transistor Current Gain Explorer
 
-<iframe src="../../sims/transistor-current-gain-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/transistor-current-gain-explorer/main.html" width="100%" height="502px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Transistor Current Gain Explorer</summary>
@@ -251,6 +251,14 @@ This course's kit includes two different NPN transistors, and each earns its spo
 
 Both transistors share the exact same three-lead base/collector/emitter layout and the exact same NPN switching behavior — the only real difference that matters for choosing between them is how much collector current each one can safely handle. A project that only needs to light one LED barely notices the difference. A project that needs to spin a motor absolutely does.
 
+The larger transistor family adds two important choices: the 2N3906 is PNP rather than NPN, and the metal-cased 2N3055 is a power device that needs deliberate thermal design. Package and pinout can vary by manufacturer, so always verify the exact datasheet before wiring any transistor.
+
+#### Diagram: Five Common Transistor Types
+
+<iframe src="../../sims/transistor-family-explorer/main.html" width="100%" height="757px" scrolling="no"></iframe>
+
+[Run the Five Common Transistor Types MicroSim fullscreen](../../sims/transistor-family-explorer/main.html){ .md-button .md-button--primary }
+
 ## From One Switch to Many: What's an Integrated Circuit?
 
 Every transistor you've met so far does exactly one job: it's a single switch or a single amplifier, sitting alone in its own three-legged package. But real gadgets — phones, game controllers, even a blinking holiday light — need dozens, sometimes billions, of transistors working together to do anything useful. Wiring that many individual transistors by hand would be impossible.
@@ -301,7 +309,7 @@ See both chips side by side, and preview what each one does, in the interactive 
 
 #### Diagram: Two ICs Coming Soon — 555 Timer and 74HC595 Preview
 
-<iframe src="../../sims/ic-preview-555-74hc595/main.html" width="100%" height="480px" scrolling="no"></iframe>
+<iframe src="../../sims/ic-preview-555-74hc595/main.html" width="100%" height="702px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Two ICs Coming Soon — 555 Timer and 74HC595 Preview</summary>
