@@ -369,9 +369,9 @@ Building one successfully means applying everything else in this chapter at once
 
 ## Output Response Time: How Fast Is "Instant"?
 
-One last idea ties every output device in this chapter together. **Output response time** is how quickly an output device visibly, audibly, or physically reacts after its control signal changes — and it's not the same for every kind of output, even when the control signal changes instantly.
+One last idea ties every output device in this chapter together. **Output response time** is how quickly an output device visibly, audibly, or physically reacts after its control signal changes — and it's not the same for every output, even when the signal changes instantly.
 
-An LED reacts about as close to instantly as this course's circuits ever get — light switches on and off in a fraction of a millisecond. A buzzer reacts almost as fast, though your ear needs a few cycles of vibration before it can actually recognize a pitch. A motor is the slowest of the three, since its shaft has real physical mass that has to speed up or slow down, taking noticeably longer than either an LED or a buzzer to reach its new speed.
+An LED reacts about as close to instantly as this course's circuits ever get. A buzzer reacts almost as fast, though your ear needs a few cycles of vibration to recognize a pitch. A motor is the slowest of the three, since its shaft has real physical mass that must speed up or slow down.
 
 | Output Type | Typical Response Time | Why |
 |---|---|---|
@@ -379,7 +379,7 @@ An LED reacts about as close to instantly as this course's circuits ever get —
 | Audio Output (Buzzer) | Very fast (a few cycles) | The disc vibrates almost immediately, though pitch takes a few cycles to recognize |
 | Motor (Actuator) | Noticeably slower (milliseconds to seconds) | The shaft's physical mass must speed up or slow down |
 
-This is exactly why Chapter 18's chaser effect could switch LEDs crisply from one to the next, while a PWM-controlled motor visibly ramps up to its new speed instead of jumping there instantly. Different output response times aren't a flaw to fix — they're a property to design around.
+This is why Chapter 18's chaser effect could switch LEDs crisply from one to the next, while a PWM-controlled motor visibly ramps up to its new speed instead of jumping there instantly. Different output response times aren't a flaw to fix — they're a property to design around.
 
 ## Chapter Summary: Key Takeaways
 
