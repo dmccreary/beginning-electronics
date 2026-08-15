@@ -1,3 +1,10 @@
 site
 .DS_Store
 ~$*
+
+# Image queue: task specs and receipts are tracked (they are provenance).
+# Transient delivery/rollback artifacts are not.
+image-tasks/inbox/*
+!image-tasks/inbox/.gitkeep
+image-tasks/archive/
+image-tasks/NOTIFY.md

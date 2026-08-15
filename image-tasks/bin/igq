@@ -1,0 +1,813 @@
+#!/usr/bin/env python3
+"""
+igq — Image Generation Queue for the Beginning Electronics textbook.
+
+A tiny work queue that lets an external image-generation agent (ChatGPT
+desktop, Google Antigravity, or a human with any image tool) discover
+image tasks, work on them, deliver results, and signal completion back
+to Claude Code.
+
+The protocol is deliberately filesystem-only so that it works for a fully
+agentic tool AND for a human couriering a PNG out of a chat window:
+
+    THE ONLY REQUIRED ACTION IS:
+    save the finished image to  image-tasks/inbox/<task-id>.png
+
+Everything else (validation, optimization, installation into the repo,
+status tracking, notification) is automated from that one file drop.
+
+Run `igq help` for commands.
+"""
+
+import argparse
+import json
+import os
+import platform
+import re
+import shutil
+import subprocess
+import sys
+import time
+from datetime import datetime, timezone
+
+try:
+    import yaml
+except ImportError:
+    sys.exit("igq: PyYAML is required.  pip3 install pyyaml")
+
+try:
+    from PIL import Image
+except ImportError:
+    sys.exit("igq: Pillow is required.  pip3 install pillow")
+
+
+# ---------------------------------------------------------------- paths
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+QDIR = os.path.join(ROOT, "image-tasks")
+TASKS = os.path.join(QDIR, "tasks")
+INBOX = os.path.join(QDIR, "inbox")
+RECEIPTS = os.path.join(QDIR, "receipts")
+ARCHIVE = os.path.join(QDIR, "archive")
+NOTIFY = os.path.join(QDIR, "NOTIFY.md")
+QUEUE_MD = os.path.join(QDIR, "QUEUE.md")
+
+IMAGE_EXTS = (".png", ".jpg", ".jpeg", ".webp")
+STATUSES = ("open", "claimed", "delivered", "accepted", "rejected", "blocked")
+
+# Status shown in listings, in queue order.
+ACTIVE = ("open", "claimed", "delivered", "rejected", "blocked")
+
+
+def now():
+    return datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
+
+
+def today():
+    return datetime.now().strftime("%Y-%m-%d")
+
+
+def ensure_dirs():
+    for d in (TASKS, INBOX, RECEIPTS, ARCHIVE):
+        os.makedirs(d, exist_ok=True)
+    # inbox/ is gitignored and receipts/ is often empty; both need a .gitkeep
+    # or the directory vanishes when the repo is cloned on another machine.
+    for d in (INBOX, RECEIPTS):
+        gk = os.path.join(d, ".gitkeep")
+        if not os.path.exists(gk):
+            open(gk, "w").close()
+
+
+def machine():
+    return platform.node().split(".")[0]
+
+
+# ------------------------------------------------------------ task i/o
+
+FM_RE = re.compile(r"\A---\s*\n(.*?)\n---\s*\n(.*)\Z", re.S)
+
+
+class Task:
+    def __init__(self, path, meta, body):
+        self.path = path
+        self.meta = meta
+        self.body = body
+
+    @property
+    def id(self):
+        return self.meta.get("id") or os.path.splitext(os.path.basename(self.path))[0]
+
+    @property
+    def status(self):
+        return self.meta.get("status", "open")
+
+    @property
+    def priority(self):
+        try:
+            return int(self.meta.get("priority", 5))
+        except (TypeError, ValueError):
+            return 5
+
+    @property
+    def accept(self):
+        return self.meta.get("accept") or {}
+
+    def save(self):
+        meta = dict(self.meta)
+        meta["updated"] = today()
+        text = "---\n" + yaml.safe_dump(meta, sort_keys=False, allow_unicode=True) + "---\n" + self.body
+        with open(self.path, "w", encoding="utf-8") as fh:
+            fh.write(text)
+
+    def log(self, msg):
+        hist = self.meta.setdefault("history", [])
+        hist.append(f"{now()}  {msg}")
+
+
+def load_task(path):
+    with open(path, encoding="utf-8") as fh:
+        raw = fh.read()
+    m = FM_RE.match(raw)
+    if not m:
+        raise ValueError(f"{path}: missing YAML frontmatter")
+    meta = yaml.safe_load(m.group(1)) or {}
+    return Task(path, meta, m.group(2))
+
+
+def all_tasks():
+    ensure_dirs()
+    out = []
+    for name in sorted(os.listdir(TASKS)):
+        if not name.endswith(".md"):
+            continue
+        try:
+            out.append(load_task(os.path.join(TASKS, name)))
+        except ValueError as e:
+            print(f"  ! skipping {name}: {e}", file=sys.stderr)
+    out.sort(key=lambda t: (t.priority, t.id))
+    return out
+
+
+def find_task(task_id):
+    for t in all_tasks():
+        if t.id == task_id:
+            return t
+    sys.exit(f"igq: no such task '{task_id}'.  Run `igq list` to see the queue.")
+
+
+# ------------------------------------------------------------ prompting
+
+def prompt_text(task):
+    """Return the exact text an image agent should be given.
+
+    If the task points at an existing prompt file in the repo (prompt_file),
+    that file's relevant section is inlined so the agent never has to go
+    hunting.  Otherwise the task body itself is the prompt.
+    """
+    ref = task.meta.get("prompt_file")
+    if not ref:
+        return task.body.strip()
+
+    path, _, anchor = ref.partition("#")
+    full = os.path.join(ROOT, path)
+    if not os.path.exists(full):
+        return (f"[igq] prompt_file not found: {path}\n\n" + task.body.strip())
+
+    with open(full, encoding="utf-8") as fh:
+        text = fh.read()
+
+    if not anchor:
+        return text.strip()
+
+    # Pull just the ## section whose slugified heading matches the anchor.
+    sections = re.split(r"^(#{2,3} .+)$", text, flags=re.M)
+    for i in range(1, len(sections), 2):
+        head = sections[i]
+        slug = re.sub(r"[^a-z0-9]+", "-", head.lstrip("#").strip().lower()).strip("-")
+        if slug == anchor.strip("-").lower():
+            return (head + "\n" + sections[i + 1]).strip()
+    return (f"[igq] anchor '#{anchor}' not found in {path}; showing whole file.\n\n"
+            + text.strip())
+
+
+def full_brief(task):
+    """The complete, copy-pasteable brief: prompt + hard output requirements."""
+    a = task.accept
+    reqs = []
+    if a.get("width") and a.get("height"):
+        reqs.append(f"- Exact pixel dimensions: {a['width']} x {a['height']}")
+    elif a.get("min_width") or a.get("min_height"):
+        reqs.append(f"- Minimum dimensions: {a.get('min_width', 1)} x {a.get('min_height', 1)}")
+    if a.get("aspect"):
+        reqs.append(f"- Aspect ratio: {a['aspect']}")
+    fmt = a.get("format", "png")
+    reqs.append(f"- File format: {fmt.upper()}")
+    if a.get("alpha") == "required":
+        reqs.append("- MUST have a real alpha channel with a FULLY TRANSPARENT background "
+                    "(not white, not black, not a checkerboard pattern drawn into the pixels)")
+    elif a.get("alpha") == "forbidden":
+        reqs.append("- Opaque background (no transparency)")
+    if a.get("no_text"):
+        reqs.append("- ABSOLUTELY NO text, letters, numbers, labels, titles, arrows, "
+                    "callout lines, watermarks, or logos anywhere in the image")
+    if a.get("max_kb"):
+        reqs.append(f"- Target file size under {a['max_kb']} KB "
+                    f"(deliver at full quality; the pipeline will compress)")
+
+    # A previously rejected attempt must show the next agent what went wrong,
+    # up front — otherwise the same mistake comes back.
+    fb = task.meta.get("feedback") or []
+    fb_block = ""
+    if fb:
+        fb_block = (
+            "## READ FIRST — a previous attempt was rejected\n\n"
+            "Earlier submissions for this task were sent back for these reasons. "
+            "Do not repeat them:\n\n"
+            + "\n".join(f"- {line}" for line in fb) + "\n\n"
+        )
+
+    return (
+        f"# Image task: {task.id}\n"
+        f"# {task.meta.get('title', '')}\n"
+        f"\n"
+        + fb_block +
+        f"## Output requirements\n\n" + "\n".join(reqs) + "\n\n"
+        f"## Deliver to\n\n"
+        f"Save the finished image as exactly this file:\n\n"
+        f"    {os.path.join('image-tasks', 'inbox', task.id + '.' + fmt)}\n\n"
+        f"(absolute: {os.path.join(INBOX, task.id + '.' + fmt)})\n\n"
+        f"Do not rename it. The filename is how the pipeline identifies your work.\n\n"
+        f"## Prompt\n\n"
+        f"{prompt_text(task)}\n"
+    )
+
+
+# ----------------------------------------------------------- validation
+
+def validate(path, accept):
+    """Return (ok, checks, info). checks is a list of (name, ok, detail)."""
+    checks = []
+    info = {}
+
+    size_kb = os.path.getsize(path) / 1024.0
+    info["size_kb"] = round(size_kb, 1)
+
+    try:
+        im = Image.open(path)
+        im.load()
+    except Exception as e:
+        return False, [("readable", False, str(e))], info
+
+    w, h = im.size
+    info.update(width=w, height=h, mode=im.mode, format=im.format)
+    checks.append(("readable", True, f"{im.format} {w}x{h} {im.mode}"))
+
+    want_fmt = (accept.get("format") or "png").upper()
+    if want_fmt == "JPG":
+        want_fmt = "JPEG"
+    checks.append(("format", im.format == want_fmt, f"{im.format} (want {want_fmt})"))
+
+    if accept.get("width") and accept.get("height"):
+        ok = (w == int(accept["width"]) and h == int(accept["height"]))
+        checks.append(("dimensions", ok, f"{w}x{h} (want {accept['width']}x{accept['height']})"))
+    else:
+        if accept.get("min_width"):
+            checks.append(("min_width", w >= int(accept["min_width"]),
+                           f"{w} (min {accept['min_width']})"))
+        if accept.get("min_height"):
+            checks.append(("min_height", h >= int(accept["min_height"]),
+                           f"{h} (min {accept['min_height']})"))
+
+    if accept.get("aspect"):
+        try:
+            aw, ah = (float(x) for x in str(accept["aspect"]).replace("x", ":").split(":"))
+            want = aw / ah
+            got = w / h
+            tol = float(accept.get("aspect_tolerance", 0.02))
+            checks.append(("aspect", abs(got - want) / want <= tol,
+                           f"{got:.3f} (want {want:.3f} +/-{tol:.0%})"))
+        except Exception:
+            checks.append(("aspect", False, f"unparseable aspect {accept['aspect']!r}"))
+
+    alpha_rule = accept.get("alpha", "any")
+    rgba = im.convert("RGBA")
+    a = rgba.getchannel("A")
+    lo, hi = a.getextrema()
+    has_alpha = lo < 250
+    info["has_alpha"] = has_alpha
+    if alpha_rule == "required":
+        checks.append(("alpha", has_alpha,
+                       "transparent pixels present" if has_alpha
+                       else "NO transparency — background is baked in"))
+    elif alpha_rule == "forbidden":
+        checks.append(("alpha", not has_alpha, "opaque" if not has_alpha else "unexpected transparency"))
+
+    if accept.get("transparent_corners"):
+        corners = [a.getpixel(c) for c in ((0, 0), (w - 1, 0), (0, h - 1), (w - 1, h - 1))]
+        ok = all(c < 10 for c in corners)
+        checks.append(("transparent_corners", ok, f"alpha at corners = {corners}"))
+
+    if accept.get("trim_border_px") is not None:
+        want_b = int(accept["trim_border_px"])
+        mask = a.point(lambda v: 255 if v > 10 else 0)
+        bbox = mask.getbbox()
+        if not bbox:
+            checks.append(("trim_border", False, "image is fully transparent"))
+        else:
+            got_b = min(bbox[0], bbox[1], w - bbox[2], h - bbox[3])
+            info["border_px"] = got_b
+            tol = int(accept.get("trim_border_tolerance", 1))
+            checks.append(("trim_border", abs(got_b - want_b) <= tol,
+                           f"{got_b}px (want {want_b}px +/-{tol})"))
+
+    if accept.get("max_kb"):
+        checks.append(("max_kb", size_kb <= float(accept["max_kb"]),
+                       f"{size_kb:.0f} KB (max {accept['max_kb']} KB)"))
+
+    ok = all(c[1] for c in checks)
+    return ok, checks, info
+
+
+def optimize(path, accept, verbose=True):
+    """Shrink a PNG in place if a palette version is smaller and still valid."""
+    if not path.lower().endswith(".png"):
+        return False
+    before = os.path.getsize(path)
+    try:
+        im = Image.open(path)
+        im.load()
+        colors = int(accept.get("palette_colors", 256))
+        # FASTOCTREE is the only PIL quantizer that preserves an alpha channel.
+        q = im.convert("RGBA").quantize(colors=colors, method=Image.Quantize.FASTOCTREE)
+        tmp = path + ".opt.png"
+        q.save(tmp, optimize=True)
+        after = os.path.getsize(tmp)
+        if after < before:
+            os.replace(tmp, path)
+            if verbose:
+                print(f"    optimized {before/1024:.0f} KB -> {after/1024:.0f} KB "
+                      f"({100 * (1 - after / before):.0f}% smaller)")
+            return True
+        os.remove(tmp)
+    except Exception as e:
+        if verbose:
+            print(f"    optimize skipped: {e}")
+    return False
+
+
+# --------------------------------------------------------- notification
+
+def notify(title, message, wake=False):
+    """Append to NOTIFY.md, raise a macOS banner, optionally wake Claude."""
+    line = f"- **{now()}** — {title}: {message}\n"
+    header = "# Image Queue Notifications\n\nClaude reads this file. Newest entries at the bottom.\n\n"
+    if not os.path.exists(NOTIFY):
+        with open(NOTIFY, "w", encoding="utf-8") as fh:
+            fh.write(header)
+    with open(NOTIFY, "a", encoding="utf-8") as fh:
+        fh.write(line)
+
+    if sys.platform == "darwin":
+        try:
+            subprocess.run(
+                ["osascript", "-e",
+                 f'display notification {json.dumps(message)} with title {json.dumps("igq: " + title)}'],
+                check=False, capture_output=True, timeout=5)
+        except Exception:
+            pass
+
+    if wake:
+        claude = shutil.which("claude")
+        if claude:
+            print("    waking Claude Code (headless)…")
+            subprocess.Popen(
+                [claude, "-p", "Images were delivered to the image queue. "
+                                "Run `image-tasks/bin/igq scan`, then review and accept "
+                                "anything that passes."],
+                cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+
+# -------------------------------------------------------------- helpers
+
+def inbox_files():
+    ensure_dirs()
+    return sorted(
+        f for f in os.listdir(INBOX)
+        if f.lower().endswith(IMAGE_EXTS) and not f.startswith(".")
+    )
+
+
+def print_checks(checks, indent="    "):
+    for name, ok, detail in checks:
+        print(f"{indent}{'PASS' if ok else 'FAIL'}  {name:<20} {detail}")
+
+
+# ------------------------------------------------------------- commands
+
+def cmd_list(args):
+    tasks = all_tasks()
+    if args.status:
+        tasks = [t for t in tasks if t.status == args.status]
+    elif not args.all:
+        tasks = [t for t in tasks if t.status in ACTIVE]
+    if not tasks:
+        print("Queue is empty." if args.all else "No open tasks. (`igq list --all` to see accepted ones.)")
+        return
+    print(f"{'PRI':<4}{'STATUS':<11}{'ID':<34}{'TITLE'}")
+    print("-" * 100)
+    for t in tasks:
+        print(f"{t.priority:<4}{t.status:<11}{t.id:<34}{t.meta.get('title','')[:44]}")
+    print()
+    print(f"{len(tasks)} task(s).  `igq brief <id>` prints the copy-paste prompt.")
+
+
+def cmd_status(args):
+    tasks = all_tasks()
+    counts = {s: 0 for s in STATUSES}
+    for t in tasks:
+        counts[t.status] = counts.get(t.status, 0) + 1
+    print("Image queue status")
+    print("-" * 30)
+    for s in STATUSES:
+        if counts.get(s):
+            print(f"  {s:<12}{counts[s]}")
+    pending = inbox_files()
+    print(f"\n  inbox/      {len(pending)} file(s) awaiting `igq scan`")
+    for f in pending:
+        print(f"                - {f}")
+
+    # Task status is committed to git but inbox/ is not, so a task delivered
+    # on another machine arrives here as "delivered" with no file to accept.
+    here = {os.path.splitext(f)[0] for f in pending}
+    orphaned = [t for t in tasks if t.status == "delivered" and t.id not in here]
+    if orphaned:
+        print("\n  Delivered elsewhere — status says delivered but no file is in this")
+        print("  machine's inbox. The image was produced on another computer:")
+        for t in orphaned:
+            on = t.meta.get("claimed_on", "?")
+            print(f"    - {t.id}  (claimed on {on})")
+        print("  Either pull the accepted image from git, re-deliver it here,")
+        print("  or run `igq reject <id> --reason 'lost in transit'` to reopen it.")
+
+    stale_claims = [t for t in tasks
+                    if t.status == "claimed" and t.meta.get("claimed_on") not in (None, machine())]
+    if stale_claims:
+        print(f"\n  Claimed on another machine (you are on {machine()}):")
+        for t in stale_claims:
+            print(f"    - {t.id}  by {t.meta.get('claimed_by','?')} on {t.meta.get('claimed_on')}")
+        print("  Use `igq claim <id> --agent NAME --force` to take one over.")
+
+    if _git_dirty_tasks():
+        print("\n  Uncommitted task changes — commit and push so your other")
+        print("  machines pick them up:  git add image-tasks && git commit && git push")
+
+
+def _git_dirty_tasks():
+    try:
+        out = subprocess.run(["git", "status", "--porcelain", "--", "image-tasks"],
+                             cwd=ROOT, capture_output=True, text=True, timeout=5)
+        return bool(out.stdout.strip())
+    except Exception:
+        return False
+
+
+def cmd_brief(args):
+    task = find_task(args.id)
+    text = full_brief(task)
+    if args.copy and sys.platform == "darwin":
+        subprocess.run(["pbcopy"], input=text.encode(), check=False)
+        print(f"Brief for '{task.id}' copied to clipboard "
+              f"({len(text)} chars). Paste it into your image tool.")
+    else:
+        print(text)
+
+
+def cmd_claim(args):
+    task = find_task(args.id)
+    if task.status not in ("open", "rejected") and not args.force:
+        sys.exit(f"igq: task '{task.id}' is '{task.status}' "
+                 f"(claimed by {task.meta.get('claimed_by','?')}). Use --force to take it anyway.")
+    task.meta["status"] = "claimed"
+    task.meta["claimed_by"] = args.agent
+    task.meta["claimed_at"] = now()
+    task.meta["claimed_on"] = machine()
+    task.log(f"claimed by {args.agent} on {machine()}")
+    task.save()
+    print(f"Claimed '{task.id}' for {args.agent} on {machine()}.")
+    print("Commit and push the task file so your other machines see the claim.")
+    print(f"Deliver to: image-tasks/inbox/{task.id}.{task.accept.get('format','png')}")
+
+
+def cmd_deliver(args):
+    """Agent-side convenience: copy a finished file into the inbox correctly named."""
+    task = find_task(args.id)
+    src = os.path.abspath(args.file)
+    if not os.path.exists(src):
+        sys.exit(f"igq: no such file {src}")
+    ext = task.accept.get("format", "png").lower()
+    dest = os.path.join(INBOX, f"{task.id}.{ext}")
+    ensure_dirs()
+    shutil.copy2(src, dest)
+    print(f"Delivered -> image-tasks/inbox/{task.id}.{ext}")
+    cmd_scan(argparse.Namespace(wake=False, quiet=False))
+
+
+def cmd_scan(args):
+    """Validate everything in the inbox, update task status, notify Claude."""
+    files = inbox_files()
+    if not files:
+        if not getattr(args, "quiet", False):
+            print("Inbox is empty — nothing to scan.")
+        return 0
+
+    delivered, failed = [], []
+    for f in files:
+        task_id = os.path.splitext(f)[0]
+        path = os.path.join(INBOX, f)
+        match = next((t for t in all_tasks() if t.id == task_id), None)
+        print(f"\n{f}")
+        if not match:
+            print(f"    ORPHAN — no task named '{task_id}'. "
+                  f"Rename the file to <task-id>.png or create the task.")
+            failed.append(task_id)
+            continue
+
+        ok, checks, info = validate(path, match.accept)
+        print_checks(checks)
+
+        receipt = {
+            "task": task_id, "file": f, "checked_at": now(),
+            "passed": ok, "info": info,
+            "checks": [{"name": n, "ok": o, "detail": d} for n, o, d in checks],
+            "human_review_required": bool(match.accept.get("no_text")),
+        }
+        with open(os.path.join(RECEIPTS, f"{task_id}.json"), "w", encoding="utf-8") as fh:
+            json.dump(receipt, fh, indent=2)
+
+        match.meta["status"] = "delivered"
+        match.meta["delivered_at"] = now()
+        match.meta["auto_check"] = "pass" if ok else "fail"
+        match.log(f"delivered ({'auto-check pass' if ok else 'auto-check FAIL'})")
+        match.save()
+        (delivered if ok else failed).append(task_id)
+
+    print()
+    if delivered:
+        print(f"PASS ({len(delivered)}): {', '.join(delivered)}")
+    if failed:
+        print(f"FAIL ({len(failed)}): {', '.join(failed)}")
+
+    msg = f"{len(delivered)} passed, {len(failed)} failed auto-check"
+    notify("images delivered", msg, wake=getattr(args, "wake", False))
+    print(f"\nLogged to image-tasks/NOTIFY.md")
+    print("Next: `igq accept <id>` to install, or `igq reject <id> --reason '...'`")
+    return len(failed)
+
+
+def cmd_accept(args):
+    ids = [t.id for t in all_tasks() if t.status == "delivered"] if args.all else [args.id]
+    if not ids or ids == [None]:
+        sys.exit("igq: give a task id or --all")
+
+    for task_id in ids:
+        task = find_task(task_id)
+        ext = task.accept.get("format", "png").lower()
+        src = os.path.join(INBOX, f"{task_id}.{ext}")
+        if not os.path.exists(src):
+            print(f"{task_id}: nothing in inbox — skipped")
+            continue
+
+        out_rel = task.meta.get("output")
+        if not out_rel:
+            print(f"{task_id}: task has no 'output:' path — skipped")
+            continue
+        out_abs = os.path.join(ROOT, out_rel)
+
+        ok, checks, info = validate(src, task.accept)
+        if not ok and not args.force:
+            print(f"\n{task_id}: auto-check FAILED — not installing. Use --force to override.")
+            print_checks(checks)
+            continue
+
+        print(f"\n{task_id} -> {out_rel}")
+        if not args.no_optimize:
+            optimize(src, task.accept)
+
+        os.makedirs(os.path.dirname(out_abs), exist_ok=True)
+        if os.path.exists(out_abs):
+            os.makedirs(ARCHIVE, exist_ok=True)
+            bak = os.path.join(ARCHIVE, f"{task_id}.{today()}.{ext}")
+            shutil.copy2(out_abs, bak)
+            print(f"    previous version archived -> image-tasks/archive/{os.path.basename(bak)}")
+        shutil.move(src, out_abs)
+        print(f"    installed ({os.path.getsize(out_abs)/1024:.0f} KB)")
+
+        task.meta["status"] = "accepted"
+        task.meta["accepted_at"] = now()
+        task.log(f"accepted and installed to {out_rel}")
+        task.save()
+
+    write_queue_md()
+
+
+def cmd_reject(args):
+    task = find_task(args.id)
+    ext = task.accept.get("format", "png").lower()
+    src = os.path.join(INBOX, f"{task.id}.{ext}")
+    if os.path.exists(src):
+        os.makedirs(ARCHIVE, exist_ok=True)
+        shutil.move(src, os.path.join(ARCHIVE, f"{task.id}.rejected.{today()}.{ext}"))
+    task.meta["status"] = "rejected"
+    fb = task.meta.setdefault("feedback", [])
+    fb.append(f"{today()}: {args.reason}")
+    task.log(f"rejected: {args.reason}")
+    task.save()
+    print(f"Rejected '{task.id}'. Feedback recorded in the task file; "
+          f"it is back in the queue for another attempt.")
+    notify("image rejected", f"{task.id}: {args.reason}")
+
+
+def cmd_new(args):
+    ensure_dirs()
+    path = os.path.join(TASKS, f"{args.id}.md")
+    if os.path.exists(path) and not args.force:
+        sys.exit(f"igq: {path} already exists (use --force to overwrite)")
+    meta = {
+        "id": args.id,
+        "title": args.title,
+        "status": "open",
+        "priority": args.priority,
+        "output": args.output,
+        "requester": os.environ.get("USER", "dan"),
+        "created": today(),
+        "accept": {
+            "format": args.format,
+            "min_width": args.min_width,
+            "max_kb": args.max_kb,
+            "alpha": args.alpha,
+            "no_text": args.no_text,
+        },
+    }
+    body = "\n" + (args.prompt or "TODO: write the image prompt here.\n")
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write("---\n" + yaml.safe_dump(meta, sort_keys=False, allow_unicode=True) + "---\n" + body)
+    print(f"Created image-tasks/tasks/{args.id}.md")
+    write_queue_md()
+
+
+def cmd_watch(args):
+    """Poll the inbox and react the moment an agent drops a file."""
+    ensure_dirs()
+    print(f"igq watch — polling image-tasks/inbox/ every {args.interval}s")
+    print(f"  wake Claude on delivery: {'YES' if args.wake else 'no (notification only)'}")
+    print("  Ctrl-C to stop.\n")
+    seen = set(inbox_files())
+    if seen:
+        print(f"  ({len(seen)} file(s) already waiting — run `igq scan`)")
+    try:
+        while True:
+            time.sleep(args.interval)
+            cur = set(inbox_files())
+            new = cur - seen
+            if new:
+                # Let the writing tool finish flushing before we read.
+                time.sleep(1.5)
+                print(f"\n[{now()}] new: {', '.join(sorted(new))}")
+                cmd_scan(argparse.Namespace(wake=args.wake, quiet=True))
+            seen = cur
+    except KeyboardInterrupt:
+        print("\nstopped.")
+
+
+def write_queue_md():
+    tasks = all_tasks()
+    rows = []
+    for t in tasks:
+        rows.append(f"| {t.priority} | `{t.id}` | {t.status} | {t.meta.get('title','')} | "
+                    f"`{t.meta.get('output','—')}` |")
+    body = (
+        "# Image Queue\n\n"
+        f"_Generated by `igq` on {today()}. Do not edit by hand — "
+        "edit the task files in `tasks/` and run `igq list`._\n\n"
+        "| Pri | Task ID | Status | Title | Output path |\n"
+        "|-----|---------|--------|-------|-------------|\n"
+        + "\n".join(rows) + "\n"
+    )
+    with open(QUEUE_MD, "w", encoding="utf-8") as fh:
+        fh.write(body)
+
+
+def cmd_optimize(args):
+    """Standalone: shrink existing repo images that are heavier than they need to be."""
+    targets = []
+    for pat in args.paths:
+        p = os.path.join(ROOT, pat)
+        if os.path.isdir(p):
+            for dp, _, fns in os.walk(p):
+                targets += [os.path.join(dp, f) for f in fns if f.lower().endswith(".png")]
+        elif os.path.exists(p):
+            targets.append(p)
+    total_before = total_after = 0
+    for t in sorted(targets):
+        b = os.path.getsize(t)
+        if b / 1024 < args.min_kb:
+            continue
+        rel = os.path.relpath(t, ROOT)
+        print(f"{rel}  ({b/1024:.0f} KB)")
+        if args.dry_run:
+            continue
+        optimize(t, {"palette_colors": args.colors})
+        total_before += b
+        total_after += os.path.getsize(t)
+    if total_before:
+        print(f"\nTotal: {total_before/1024/1024:.1f} MB -> {total_after/1024/1024:.1f} MB "
+              f"({100*(1-total_after/total_before):.0f}% smaller)")
+
+
+# ---------------------------------------------------------------- main
+
+def main():
+    p = argparse.ArgumentParser(prog="igq", description=__doc__,
+                                formatter_class=argparse.RawDescriptionHelpFormatter)
+    sub = p.add_subparsers(dest="cmd")
+
+    s = sub.add_parser("list", help="show the queue")
+    s.add_argument("--status", choices=STATUSES)
+    s.add_argument("--all", action="store_true", help="include accepted tasks")
+    s.set_defaults(func=cmd_list)
+
+    s = sub.add_parser("status", help="summary counts + inbox contents")
+    s.set_defaults(func=cmd_status)
+
+    s = sub.add_parser("queue", help="regenerate QUEUE.md from the task files")
+    s.set_defaults(func=lambda a: (write_queue_md(), print("Wrote image-tasks/QUEUE.md"))[1])
+
+    s = sub.add_parser("brief", help="print the full copy-paste prompt for a task")
+    s.add_argument("id")
+    s.add_argument("--copy", action="store_true", help="copy to clipboard (macOS)")
+    s.set_defaults(func=cmd_brief)
+
+    s = sub.add_parser("claim", help="mark a task as being worked on")
+    s.add_argument("id")
+    s.add_argument("--agent", required=True, help="e.g. antigravity, chatgpt-desktop, dan")
+    s.add_argument("--force", action="store_true")
+    s.set_defaults(func=cmd_claim)
+
+    s = sub.add_parser("deliver", help="copy a finished image into the inbox and scan it")
+    s.add_argument("id")
+    s.add_argument("file")
+    s.set_defaults(func=cmd_deliver)
+
+    s = sub.add_parser("scan", help="validate inbox files and notify Claude")
+    s.add_argument("--wake", action="store_true", help="also launch headless Claude to accept them")
+    s.add_argument("--quiet", action="store_true")
+    s.set_defaults(func=cmd_scan)
+
+    s = sub.add_parser("accept", help="install a delivered image into the repo")
+    s.add_argument("id", nargs="?")
+    s.add_argument("--all", action="store_true", help="accept every passing delivery")
+    s.add_argument("--force", action="store_true", help="install even if auto-check failed")
+    s.add_argument("--no-optimize", action="store_true")
+    s.set_defaults(func=cmd_accept)
+
+    s = sub.add_parser("reject", help="send a delivery back for another attempt")
+    s.add_argument("id")
+    s.add_argument("--reason", required=True)
+    s.set_defaults(func=cmd_reject)
+
+    s = sub.add_parser("new", help="create a new image task")
+    s.add_argument("id")
+    s.add_argument("--title", required=True)
+    s.add_argument("--output", required=True, help="repo-relative destination path")
+    s.add_argument("--prompt", help="the image prompt text")
+    s.add_argument("--priority", type=int, default=5)
+    s.add_argument("--format", default="png")
+    s.add_argument("--min-width", type=int, default=1024, dest="min_width")
+    s.add_argument("--max-kb", type=int, default=500, dest="max_kb")
+    s.add_argument("--alpha", default="any", choices=["required", "forbidden", "any"])
+    s.add_argument("--no-text", action="store_true", default=True, dest="no_text")
+    s.add_argument("--force", action="store_true")
+    s.set_defaults(func=cmd_new)
+
+    s = sub.add_parser("watch", help="poll the inbox and react to deliveries")
+    s.add_argument("--interval", type=float, default=3.0)
+    s.add_argument("--wake", action="store_true",
+                   help="launch headless Claude when images land (spends tokens)")
+    s.set_defaults(func=cmd_watch)
+
+    s = sub.add_parser("optimize", help="shrink oversized PNGs already in the repo")
+    s.add_argument("paths", nargs="*", default=["docs/img", "docs/sims"])
+    s.add_argument("--min-kb", type=float, default=300, dest="min_kb")
+    s.add_argument("--colors", type=int, default=256)
+    s.add_argument("--dry-run", action="store_true")
+    s.set_defaults(func=cmd_optimize)
+
+    args = p.parse_args()
+    if not getattr(args, "func", None):
+        p.print_help()
+        return 0
+    return args.func(args) or 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
