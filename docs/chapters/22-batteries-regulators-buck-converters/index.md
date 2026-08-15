@@ -119,7 +119,9 @@ That leaves one question worth answering carefully, because it's the mistake alm
 
 !!! mascot-thinking "Why the Project Goes on OUT, Not on B+"
     ![Volt thinking about it](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
-    Look closely at the photo and you'll spot two extra 8-pin chips crowded near the right-hand pads. That's a **protection circuit** — a DW01A watching the cell's voltage and a pair of FS8205 transistors ready to act as its switch. It sits between the battery and the OUT pads, so it can disconnect your project the moment the cell runs too low. Wire your project straight to B+ and you've walked right around that guard, leaving nothing to stop a hungry circuit from draining a LiPo past the point of no return. One pad over is the difference between a battery that lasts for years and one that's ruined in an afternoon.
+    Look closely at the photo and you'll spot two extra 8-pin chips crowded near the right-hand pads. That's a **protection circuit** — a DW01A watching the cell's voltage, and an FS8205 (two transistors in one package) standing by as its switch. It sits between the battery and the OUT pads, so it can disconnect your project the moment the cell runs too low. Wire your project straight to B+ and you've walked right around that guard, leaving nothing to stop a hungry circuit from draining a LiPo past the point of no return. One pad over is the difference between a battery that lasts for years and one that's ruined in an afternoon.
+
+Not every TP4056 board carries those protection chips — the cheapest versions have only the charging chip on them. If yours looks bare next to the photo above, the cell has no low-voltage guard at all, and it's worth spending a little more on a protected board before trusting it with a battery.
 
 ### Wiring It Up
 
@@ -127,7 +129,7 @@ Here's the whole circuit, start to finish — five connections, and you're charg
 
 1. **Battery red wire → B+**, and **battery black wire → B−**. If your cell has a JST plug, this is where a matching JST socket gets soldered.
 2. **Project V+ → OUT+**, and **project ground → OUT−**. Everything your project needs now runs through the module's protection circuit.
-3. **Plug a USB cable into the module's jack** whenever the battery needs topping up. The red CHRG LED lights while charging; the blue STDBY LED takes over when the cell is full and the module has stopped on its own.
+3. **Plug a USB cable into the module's jack** whenever the battery needs topping up. The red CHRG LED lights while charging; the STDBY LED — blue on some boards, green on others — takes over when the cell is full and the module has stopped on its own.
 
 Notice what's *not* in that list: no switch you have to remember to flip, no timer, no watching the clock. Charging stops by itself at 4.2 volts, and your project keeps running from OUT the whole time the battery is charging.
 

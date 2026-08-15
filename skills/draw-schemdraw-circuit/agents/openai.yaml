@@ -1,0 +1,4 @@
+interface:
+  display_name: "Draw Schemdraw Circuit"
+  short_description: "Turn circuit descriptions into verified diagrams"
+  default_prompt: "Use $draw-schemdraw-circuit to create a verified circuit diagram from my description."

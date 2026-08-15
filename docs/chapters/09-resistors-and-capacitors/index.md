@@ -213,6 +213,11 @@ Put two fixed resistors in series and something useful happens at the point wher
 
 This is the exact trick a potentiometer performs internally: its wiper is really just tapping the midpoint of a built-in voltage divider, and turning the dial changes how much resistance sits on each side of that tap. Understanding the voltage divider equation is understanding how every potentiometer, and a huge number of sensor circuits, actually work underneath.
 
+<figure markdown="span">
+  ![A 5-volt voltage divider made from two 10-kilohm resistors in series, with a 2.5-volt center tap](voltage-divider.png)
+  <figcaption>Two equal 10 kΩ resistors divide a 5 V supply in half, producing 2.5 V at the center tap.</figcaption>
+</figure>
+
 #### Voltage Divider Equation
 
 \[ V_{out} = V_{in} \times \frac{R_2}{R_1 + R_2} \]
