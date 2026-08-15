@@ -1,23 +1,76 @@
 {
-  "title": "Series and Parallel Circuits Comparison",
-  "description": "Series and Parallel Circuits Comparison",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
-  "date": "2026-08-14",
+  "title": "Series and Parallel Circuits",
+  "description": "Interactive simulation comparing series and parallel circuit configurations. Shows how current and voltage distribute differently in each type.",
+  "creator": "Dan McCreary",
+  "date": "2025-01-01",
   "subject": [
-    "Beginning Electronics"
+    "electricity",
+    "circuits",
+    "physics"
   ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
   "rights": "CC BY-NC-SA 4.0",
-  "identifier": "series-parallel",
   "library": "p5.js",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 4,
-  "chapter_title": "\"Series, Parallel, and Circuit Topology\"",
-  "chapter_dir": "04-series-parallel-topology",
-  "chapter_rel_dir": "chapters/04-series-parallel-topology"
+  "concepts": [
+    "series circuits",
+    "parallel circuits",
+    "equivalent resistance",
+    "current division",
+    "voltage division"
+  ],
+  "bloomsLevel": [
+    "Understand",
+    "Apply",
+    "Analyze"
+  ],
+  "prerequisites": [
+    "Ohm's law",
+    "Current",
+    "Voltage",
+    "Resistance"
+  ],
+  "visualizationType": [
+    "animation",
+    "interactive-demo",
+    "map",
+    "network",
+    "simulation"
+  ],
+  "learningObjectives": [
+    "Calculate equivalent resistance for a series circuit using R = R₁ + R₂ + R₃ and for a parallel circuit using 1/R = 1/R₁ + 1/R₂ + 1/R₃",
+    "Compare how current stays constant while voltage divides in series, versus voltage staying constant while current divides in parallel",
+    "Predict which bulb glows brightest in each configuration by relating branch power to the resistor values",
+    "Explain why removing one resistor stops a series circuit entirely but leaves the remaining parallel branches operating",
+    "Analyze why a parallel combination's total resistance is always less than its smallest individual resistance"
+  ],
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply",
+    "Analyze"
+  ],
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "compare",
+      "describe",
+      "explain",
+      "calculate",
+      "demonstrate"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "feedbackType": [
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "manipulate"
+  }
 }

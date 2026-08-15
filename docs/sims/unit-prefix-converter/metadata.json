@@ -1,23 +1,45 @@
 {
   "title": "Unit Prefix Value Converter",
-  "description": "Calculate the equivalent value of a current, resistance, or power reading across microampere/milliampere/ampere, ohm/kilohm/megohm, and milliwatt/watt scales, by entering a number and switching its prefix on an interactive ladder.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for unit prefix value converter",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "unit-prefix-converter",
-  "library": "p5.js",
-  "bloomLevel": "Apply (L3). Bloom Verb: calculate.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 3,
-  "chapter_title": "\"Circuit Analysis, Kirchhoff's Laws, and Energy\"",
-  "chapter_dir": "03-circuit-analysis-kirchhoff",
-  "chapter_rel_dir": "chapters/03-circuit-analysis-kirchhoff"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Unit Prefix Value Converter",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Apply",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "03-circuit-analysis-kirchhoff"
 }

@@ -3,135 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Resistivity and Conductance Calculator</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Resistivity and Conductance Calculator using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="resistivity-conductance-calculator.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Resistivity and Conductance Calculator</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> resistivity-conductance-calculator</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Apply (L3). Bloom Verb: calculate.</p>
-            <p><strong>Learning Objective:</strong> Calculate a wire's resistance from its resistivity, length, and cross-sectional area, and calculate its conductance as the reciprocal of that resistance, by adjusting a material dropdown and length/thickness sliders and reading the live-updated results.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** resistivity-conductance-calculator<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Let students calculate how a wire's resistance and conductance change with material, length, and cross-sectional area, building an intuitive, hands-on feel for the resistivity formula.
-    
-    Bloom Taxonomy: Apply (L3). Bloom Verb: calculate.
-    
-    Learning objective: Calculate a wire's resistance from its resistivity, length, and cross-sectional area, and calculate its conductance as the reciprocal of that resistance, by adjusting a material dropdown and length/thickness sliders and reading the live-updated results.
-    
-    Canvas layout:
-    - Left (60%): a schematic wire whose visible length and thickness redraw live as the sliders move
-    - Right (40%, stacking below on narrow screens): material dropdown, two sliders, and a results readout
-    
-    Visual elements:
-    - A wire that stretches/shrinks (length) and thickens/thins (area) as sliders change, tinted by material
-    - A readout showing resistivity (Ω·m), calculated resistance (Ω, auto-scaled), and calculated conductance (S, auto-scaled)
-    - An animated dot-stream inside the wire, moving faster at high conductance and slower at low conductance
-    
-    Interactive controls:
-    - Dropdown: "Material" — copper, aluminum, nichrome, or rubber, each pre-loaded with its real resistivity value
-    - Slider: "Length (cm)" — 1 to 100 cm
-    - Slider: "Thickness / Cross-Sectional Area (mm²)" — 0.1 to 10 mm²
-    - Display: resistance and conductance recalculated live on every change
-    
-    Default parameters:
-    - Material: Copper
-    - Length: 20 cm
-    - Cross-sectional area: 1 mm²
-    
-    Behavior: Changing the material swaps the resistivity value and updates wire tint and dot-stream speed. Increasing length increases displayed resistance and decreases conductance proportionally; increasing cross-sectional area does the opposite. Selecting rubber shows a stalled dot-stream and a "practically an insulator!" callout.
-    
-    Data Visibility Requirements:
-      Stage 1 (default): Copper wire at default dimensions with resistance and conductance both visible
-      Stage 2 (slider moved): Wire redraws at new dimensions alongside updated numbers, so cause and effect are visible together
-      Stage 3 (material changed): Dramatic jump in resistance/conductance switching from a metal to rubber, making the resistivity range concrete
-    
-    Instructional Rationale: An Apply-level calculation objective calls for a parameter-exploration calculator rather than a passive diagram, so learners manipulate all three formula inputs and see both outputs respond immediately — the fastest way to build fluency with a three-variable formula.
-    
-    Color scheme: Copper/orange tint for copper, silver-gray for aluminum, red-orange for nichrome, dull green for rubber, on a light background.
-    
-    Responsive behavior: Wire drawing and control panel stack vertically on narrow screens; all controls remain touch-usable.
-    
-    Implementation: p5.js, with resistivity values in a lookup table keyed by material; wire dimensions and dot-stream speed recalculated every frame from slider values.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

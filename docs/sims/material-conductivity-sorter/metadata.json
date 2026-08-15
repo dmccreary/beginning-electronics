@@ -1,23 +1,45 @@
 {
   "title": "Material Conductivity Sorter",
-  "description": "Classify everyday materials — copper wire, aluminum foil, rubber, glass, plastic, wood, a silicon chip, pencil graphite, salt water, and a steel paperclip — as a conductor, insulator, or semiconductor material, by dragging each material card into the correct one of three labeled bins and receiving immediate right/wrong feedback.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for material conductivity sorter",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "material-conductivity-sorter",
-  "library": "p5.js",
-  "bloomLevel": "Understand (L2). Bloom Verb: classify.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 4,
-  "chapter_title": "\"Series, Parallel, and Circuit Topology\"",
-  "chapter_dir": "04-series-parallel-topology",
-  "chapter_rel_dir": "chapters/04-series-parallel-topology"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Material Conductivity Sorter",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Create",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "04-series-parallel-topology"
 }

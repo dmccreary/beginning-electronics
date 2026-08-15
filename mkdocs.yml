@@ -66,24 +66,80 @@ nav:
     - Using Perf Boards: labs/70-using-perf-boards.md
     
   - MicroSims:
-    - Introduction: sims/index.md
-    - Learning Graph Viewer: sims/graph-viewer/index.md
-    - Breadboards: sims/breadboard/index.md
+    - List of MicroSims: sims/index.md
+    - 555 Pin Numbering and IC Notch Orientation: sims/ic-pin-numbering-notch-orientation/index.md
+    - 555 Timer Astable and Monostable Simulator: sims/555-timer/index.md
+    - 74HC595 Datasheet Pinout Diagram Reader: sims/74hc595-datasheet-pinout-reader/index.md
+    - 74HC595 Shift Register LED Bar Graph and Daisy-Chain Explorer: sims/74hc595-shift-register-led-bar-graph/index.md
+    - 7805 Voltage Regulator Breadboard Circuit: sims/7805-regulator-breadboard/index.md
+    - Active vs. Passive Buzzer Tone Comparison: sims/active-passive-buzzer-breadboard/index.md
+    - Battery Type Explorer: sims/battery-type-explorer/index.md
     - Breadboard Anatomy Explorer: sims/breadboard-anatomy-explorer/index.md
-    - LEDs: sims/led/index.md
-    - Push Buttons: sims/push-buttons.md
-    - Resistor Symbol: sims/resistor/index.md
-    - Resistor Physical: sims/resistor-physical/index.md
-    - 555 Timer: sims/timer.md
-    - LED Resistor Calculator: sims/led-resistor-calc/index.md
+    - Breadboard Troubleshooting Detective: sims/breadboard-troubleshooting-detective/index.md
+    - Buck Converter Trimmer Explorer: sims/buck-converter-trimmer-explorer/index.md
+    - Capacitor Value Code Decoder: sims/capacitor-value-code-decoder/index.md
+    - Capstone Project Planning Workflow: sims/capstone-project-planning-workflow/index.md
+    - Circuit Assembly Order Sequencer: sims/circuit-assembly-order-sequencer/index.md
+    - Circuit Continuity and Fault Tester: sims/circuit-continuity-fault-tester/index.md
+    - Circuit Diagram and Schematic Symbol Explorer: sims/schematic-symbol-explorer/index.md
+    - Circuit Safety Hazard Explorer: sims/circuit-safety-hazard-explorer/index.md
+    - Circuit Topology Explorer: sims/circuit-topology-explorer/index.md
+    - Combination Lock Circuit: sims/combination-lock-circuit/index.md
+    - DC Motor Control and Stall Current Explorer: sims/dc-motor-direction-control-circuit/index.md
+    - Diode Test Mode Explorer: sims/diode-test-mode-explorer/index.md
+    - Draw LEDs: sims/led/index.md
+    - Drawing Resistor Symbols in a MicroSim: sims/resistor/index.md
+    - Drawing Resistors in a MicroSim: sims/resistor-physical/index.md
+    - Electron Flow vs. Conventional Current: sims/electron-vs-conventional-current/index.md
     - Flip Flop: sims/flip-flop/index.md
-    - LED Circuit Calculator: sims/led-resistor-calc/led-circuit-calculator.md
-    - Push Button and LED Circuit: sims/button-led-breadboard/index.md
-    - Series vs Parallel Explorer: sims/series-parallel-explorer/index.md
+    - Forward vs. Reverse Bias Breadboard Demo: sims/diode-forward-reverse-bias-demo/index.md
+    - Full Resistor Color Code Decoder: sims/full-resistor-color-code-decoder/index.md
+    - Half-Split Fault Finder: sims/half-split-fault-finder/index.md
+    - Jumper Wire Routing Practice: sims/jumper-wire-routing-practice/index.md
+    - Kirchhoff's Laws Circuit Explorer: sims/kirchhoffs-laws-explorer/index.md
+    - Kit Resistor Band Matcher: sims/kit-resistor-band-matcher/index.md
+    - Learning Graph Viewer: sims/graph-viewer/index.md
+    - LED Chaser and Matrix Wiring Explorer: sims/led-chaser-matrix-explorer/index.md
+    - LED Color, Viewing Angle, and Lens Shape Explorer: sims/led-color-viewing-angle-explorer/index.md
+    - LED Resistor Calculator: sims/led-resistor-calc/index.md
+    - LED with Current-Limiting Resistor Breadboard Circuit: sims/led-current-limiting-resistor-circuit/index.md
     - Light and Dark Detector: sims/light-dark-detector/index.md
-    - Wired Logic AND and OR: sims/wired-logic-and-or/index.md
+    - Material Conductivity Sorter: sims/material-conductivity-sorter/index.md
+    - MicroSim Template: sims/template/index.md
+    - Multimeter Anatomy Explorer: sims/multimeter-anatomy-explorer/index.md
+    - Node Voltage and Series Resistance Chain Builder: sims/node-voltage-series-chain/index.md
+    - Ohm's Law Circuit Simulator: sims/ohms-law-simulator/index.md
+    - Potentiometer Taper Explorer: sims/potentiometer-taper-explorer/index.md
+    - Pull-Up and Pull-Down Resistor Explorer: sims/pull-up-pull-down-resistor-explorer/index.md
+    - Push Button and LED Circuit: sims/button-led-breadboard/index.md
+    - PWM Motor Speed Control Breadboard: sims/pwm-motor-speed-control-breadboard/index.md
+    - RC Charge and Discharge Curve Explorer: sims/rc-charge-discharge-explorer/index.md
     - RCL Draw Test: sims/rcl-draw-test/index.md
-    - Template: sims/template/index.md
+    - Relay Basics Explorer: sims/relay-basics-explorer/index.md
+    - Resistivity and Conductance Calculator: sims/resistivity-conductance-calculator/index.md
+    - Resistor Family Matching Sorter: sims/resistor-family-matching-sorter/index.md
+    - RGB LED Color Mixing Breadboard: sims/rgb-led-color-mixer-breadboard/index.md
+    - Schematic-to-Breadboard Mapper: sims/schematic-to-breadboard-mapper/index.md
+    - Sensor-Logic-Output Block Diagram Builder: sims/sensor-logic-output-block-builder/index.md
+    - Series and Parallel Circuits Comparison: sims/series-parallel/index.md
+    - Series vs Parallel Explorer: sims/series-parallel-explorer/index.md
+    - Solar Panel Charging Circuit Explorer: sims/solar-charging-circuit-explorer/index.md
+    - Solder Joint Quality Classifier: sims/solder-joint-quality-classifier/index.md
+    - Solderless Breadboard Layout: sims/breadboard/index.md
+    - Transistor AND and OR Logic Gates with Live Truth Table: sims/transistor-and-or-logic-gates/index.md
+    - Transistor as a Switch — Breadboard Demo: sims/transistor-switch-breadboard-demo/index.md
+    - Transistor Current Gain Explorer: sims/transistor-current-gain-explorer/index.md
+    - Transistor Gate Explorer with LED Output: sims/transistor-gate-explorer/index.md
+    - Transistor Motor Driver — Base Resistor and Darlington Pair Explorer: sims/transistor-motor-driver-explorer/index.md
+    - Two ICs Coming Soon — 555 Timer and 74HC595 Preview: sims/ic-preview-555-74hc595/index.md
+    - Unit Prefix Value Converter: sims/unit-prefix-converter/index.md
+    - Virtual Multimeter Breadboard: sims/virtual-multimeter-breadboard/index.md
+    - Voltage Divider Circuit Explorer: sims/voltage-divider-circuit-explorer/index.md
+    - Water Flow Analogy MicroSim: sims/water-flow-analogy/index.md
+    - "Wired Logic: AND and OR": sims/wired-logic-and-or/index.md
+    - XR2206 Waveform Generator Explorer: sims/xr2206-waveform-generator-explorer/index.md
+
+
   
   - Kits and Projects:
     - Introduction: kits/index.md
@@ -122,6 +178,9 @@ nav:
 edit_uri: 'blob/master/docs'
 theme:
   name: material
+  custom_dir: overrides
+  static_templates:
+    - 404.html
   # logo: img/my-icon.png
   # favicon: img/my-icon.png
   palette:

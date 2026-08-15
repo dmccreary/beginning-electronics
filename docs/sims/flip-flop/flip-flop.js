@@ -1,4 +1,5 @@
 /*  SR Flip Flop MicroSim
+// CANVAS_HEIGHT: 300
  A Set/Reset flip flop simulator, also called a latch
  uses two NAND gates to create a primitive 1-bit memory
  cell.  It has two buttons, one for setting the output (Q)

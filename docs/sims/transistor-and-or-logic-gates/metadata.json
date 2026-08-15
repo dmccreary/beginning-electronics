@@ -1,23 +1,45 @@
 {
   "title": "Transistor AND and OR Logic Gates with Live Truth Table",
-  "description": "Given a rendered breadboard with two NPN transistors wired in series (AND) and two NPN transistors wired in parallel (OR), predict and then verify the output LED's state and the corresponding row of a live truth table for every possible combination of two input buttons on each gate.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for transistor and and or logic gates with live truth table",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "transistor-and-or-logic-gates",
-  "library": "p5.js",
-  "bloomLevel": "Apply (L3). Bloom Verb: demonstrate, predict, verify.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 24,
-  "chapter_title": "\"Boolean Logic and Transistor Gates\"",
-  "chapter_dir": "24-boolean-logic-transistor-gates",
-  "chapter_rel_dir": "chapters/24-boolean-logic-transistor-gates"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Transistor AND and OR Logic Gates with Live Truth Table",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Apply",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "24-boolean-logic-transistor-gates"
 }

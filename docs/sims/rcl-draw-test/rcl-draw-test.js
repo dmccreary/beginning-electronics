@@ -1,4 +1,5 @@
 // RCL Draw Test MicroSim
+// CANVAS_HEIGHT: 470
 // Tests the drawResistor, drawInductor, and drawCapacitor functions
 // from the p5-circuit-lib.js library
 

@@ -1,23 +1,45 @@
 {
   "title": "Half-Split Fault Finder",
-  "description": "Given a rendered six-stage breadboard circuit (battery, switch, two resistors, a diode, and an LED wired in a single current path) with exactly one hidden fault at an unknown stage, use a virtual multimeter in voltage mode to test the midpoint of the remaining suspect range, apply the result to eliminate half of the remaining stages, and repeat until the single faulty stage is identified in three or fewer measurements.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for half-split fault finder",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "half-split-fault-finder",
-  "library": "p5.js",
-  "bloomLevel": "Analyze (L4). Bloom Verb: examine, distinguish, trace.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 21,
-  "chapter_title": "\"Systematic Troubleshooting\"",
-  "chapter_dir": "21-systematic-troubleshooting",
-  "chapter_rel_dir": "chapters/21-systematic-troubleshooting"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Half-Split Fault Finder",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "21-systematic-troubleshooting"
 }

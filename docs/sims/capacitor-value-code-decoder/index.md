@@ -1,66 +1,61 @@
 ---
 title: Capacitor Value Code Decoder
-description: Given a 3-digit capacitor value code, calculate the capacitance in picofarads using the digit-and-multiplier rule, then convert that value into nanofarads and microfarads.
-status: scaffold
-library: p5.js
-bloom_level: Apply (L3). Bloom Verb: calculate, convert.
+description: Interactive p5.js MicroSim for capacitor value code decoder.
+image: /sims/capacitor-value-code-decoder/capacitor-value-code-decoder.png
+og:image: /sims/capacitor-value-code-decoder/capacitor-value-code-decoder.png
+twitter:image: /sims/capacitor-value-code-decoder/capacitor-value-code-decoder.png
+social:
+   cards: false
+quality_score: 0
 ---
 
 # Capacitor Value Code Decoder
 
+<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
 
+[Run the Capacitor Value Code Decoder MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+<br/>
+[Edit in the p5.js Editor](https://editor.p5js.org/)
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+## About This MicroSim
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+TODO: Describe what this MicroSim demonstrates.
 
-## Specification
+## How to Use
 
-The full specification below is extracted from
-[Chapter 11: "Resistor Codes and Capacitor Details"](../../chapters/11-resistor-codes-capacitor-details/index.md).
+TODO: Describe how students should interact with this MicroSim.
 
-```text
-Type: microsim
-**sim-id:** capacitor-value-code-decoder<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
+## Iframe Embed Code
 
-Purpose: Let students decode the 3-digit numeric code printed on small ceramic capacitors into an exact capacitance value, and see that value converted automatically across picofarads, nanofarads, and microfarads.
+You can add this MicroSim to any web page by adding this to your HTML:
 
-Bloom Taxonomy: Apply (L3). Bloom Verb: calculate, convert.
-
-Learning objective: Given a 3-digit capacitor value code, calculate the capacitance in picofarads using the digit-and-multiplier rule, then convert that value into nanofarads and microfarads.
-
-Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: Capacitor Value Code Decoder | Topic: Reading the 3-digit capacitor value code printed on small ceramic capacitors, converting to picofarads nanofarads and microfarads, e.g. 104 equals 100 nanofarads | Subjects: Electronics, Beginning Electronics | Grade Level: Junior High | Learning Objectives: Given a 3-digit capacitor code, calculate the capacitance value in picofarads and convert between pF nF and microF units" returned a top match of "Capacitor Drawing MicroSim" (dmccreary/circuits, WHAT score 0.5805, recommendation "generate") — below the 0.60 template threshold, since that sim draws capacitor schematic symbols in different orientations rather than decoding a printed value code. A keyword grep of the 3,764-entry MicroSim catalog for "capacitor code," "capacitor value code," and "farad" found no existing value-code decoder (the "farad" match was the same symbol-drawing sim). This is a new specification.
-
-Canvas layout: Left/main area shows a rendered small ceramic capacitor (tan or blue disc shape with two radial leads) with its 3-digit code printed on the body; right side panel holds three digit-selector spinners (one per digit, 0-9), a computed-value readout showing pF, nF, and µF simultaneously, and an infobox.
-
-Components/elements involved: A rendered ceramic capacitor with radial leads and a printed 3-digit code; three digit-selector spinners; a three-line computed-value readout (picofarads, nanofarads, microfarads); a row of preset buttons for common real-world codes (104, 223, 471, 105).
-
-Required interactivity:
-- Adjusting any of the three digit selectors updates the printed code on the rendered capacitor and recalculates the picofarad, nanofarad, and microfarad readouts live
-- Hovering the printed code opens an infobox showing the calculation broken into stages: the first two digits as the base number, the third digit as "how many zeros to add," the resulting picofarad value, and the converted nanofarad and microfarad values
-- Clicking a preset button (104, 223, 471, 105) jumps directly to that real-world code so students can check familiar values
-- Button "Random Code" picks a random valid 3-digit code for practice
-- Button "Reset" returns to the default state
-
-Default state: Code set to "104"; readout shows "100,000 pF = 100 nF = 0.1 µF"; infobox reads "Adjust the digits above, or try a preset code from a real capacitor."
-
-Data Visibility Requirements:
-Stage 1: Show the raw 3-digit code as printed on the capacitor (e.g., "104")
-Stage 2: Show the code split into its two value digits ("10") and its multiplier digit ("4," meaning ×10,000)
-Stage 3: Show the resulting picofarad value (100,000 pF)
-Stage 4: Show that same value converted to nanofarads (100 nF) and microfarads (0.1 µF), matching the unit-prefix table above
-
-Instructional Rationale: An Apply-level "calculate/convert" objective calls for a parameter-exploration calculator with every intermediate value visible, so students can see exactly how the digit-and-multiplier rule produces a picofarad value and how that value maps onto the more commonly used nanofarad and microfarad units.
-
-Color scheme: Warm orange highlight on the digit currently being adjusted, blue readout text for picofarads, green for nanofarads, and violet for microfarads, consistent with this chapter's other diagrams.
-
-Responsive behavior: The capacitor illustration and readout panel stack vertically on narrow screens; digit selectors remain large and touch-friendly.
-
-Implementation: Plain p5.js, not the breadboard-sim-generator — like the resistor decoder above, this is a standalone component-reading exercise rather than a wired breadboard circuit. Builds a simple rendered capacitor body and label from scratch, since no existing sim in the catalog renders a coded ceramic capacitor.
+```html
+<iframe src="https://dmccreary.github.io/beginning-electronics/sims/capacitor-value-code-decoder/main.html"
+        height="450px"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 11: "Resistor Codes and Capacitor Details"](../../chapters/11-resistor-codes-capacitor-details/index.md)
+### Grade Level
+9-12 (High School Geometry)
+
+### Duration
+10-15 minutes
+
+### Prerequisites
+TODO: List prerequisites.
+
+### Activities
+
+1. **Exploration** (5 min): TODO
+2. **Guided Practice** (5 min): TODO
+3. **Assessment** (5 min): TODO
+
+### Assessment
+TODO: List assessment criteria.
+
+## References
+
+1. TODO: Add references.

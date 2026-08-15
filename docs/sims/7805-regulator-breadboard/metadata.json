@@ -1,23 +1,45 @@
 {
   "title": "7805 Voltage Regulator Breadboard Circuit",
-  "description": "Given a rendered breadboard circuit with a 7805 regulator, a 334 input bypass capacitor, a 104 output bypass capacitor, and an LED output indicator, adjust the input voltage with a slider and observe the point at which the regulated 5V output stops holding steady, calculating the dropout voltage from the observed transition.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for 7805 voltage regulator breadboard circuit",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "7805-regulator-breadboard",
-  "library": "p5.js",
-  "bloomLevel": "Apply (L3). Bloom Verb: demonstrate, calculate.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 22,
-  "chapter_title": "\"Batteries, Regulators, and Buck Converters\"",
-  "chapter_dir": "22-batteries-regulators-buck-converters",
-  "chapter_rel_dir": "chapters/22-batteries-regulators-buck-converters"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "7805 Voltage Regulator Breadboard Circuit",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Apply",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "22-batteries-regulators-buck-converters"
 }

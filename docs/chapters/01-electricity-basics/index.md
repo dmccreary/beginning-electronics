@@ -88,7 +88,7 @@ Try the interactive simulation below to see this analogy in motion — you can c
 
 #### Diagram: Water Flow Analogy MicroSim
 
-<iframe src="https://dmccreary.github.io/circuits/sims/water-flow-analogy/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="https://dmccreary.github.io/circuits/sims/water-flow-analogy/main.html" width="100%" height="502px" scrolling="no"></iframe>
 
 [Run the Water Flow Analogy MicroSim fullscreen](https://dmccreary.github.io/circuits/sims/water-flow-analogy/main.html){ .md-button }
 
@@ -140,7 +140,7 @@ Try the calculator below. Adjust the sliders for voltage and resistance and watc
 
 #### Diagram: Ohm's Law Circuit Simulator
 
-<iframe src="https://dmccreary.github.io/automating-instructional-design/sims/ohms-law-simulator/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="https://dmccreary.github.io/automating-instructional-design/sims/ohms-law-simulator/main.html" width="100%" height="452px" scrolling="no"></iframe>
 
 [Run the Ohm's Law Circuit Simulator fullscreen](https://dmccreary.github.io/automating-instructional-design/sims/ohms-law-simulator/main.html){ .md-button }
 
@@ -245,7 +245,7 @@ Explore the interactive circuit diagram below. Click each schematic symbol to se
 
 #### Diagram: Circuit Diagram and Schematic Symbol Explorer
 
-<iframe src="../../sims/schematic-symbol-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/schematic-symbol-explorer/main.html" width="100%" height="472px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Circuit Diagram and Schematic Symbol Explorer</summary>

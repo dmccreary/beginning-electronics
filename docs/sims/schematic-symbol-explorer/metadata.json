@@ -1,23 +1,45 @@
 {
   "title": "Circuit Diagram and Schematic Symbol Explorer",
-  "description": "Identify the schematic symbols for a battery, resistor, LED, switch, and ground connection, and label the positive terminal, negative terminal, and component leads on a simple circuit diagram.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for circuit diagram and schematic symbol explorer",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "schematic-symbol-explorer",
-  "library": "p5.js",
-  "bloomLevel": "Remember (L1). Bloom Verb: identify.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 1,
-  "chapter_title": "\"Electricity Basics: Voltage, Current, and Resistance\"",
-  "chapter_dir": "01-electricity-basics",
-  "chapter_rel_dir": "chapters/01-electricity-basics"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Circuit Diagram and Schematic Symbol Explorer",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "01-electricity-basics"
 }

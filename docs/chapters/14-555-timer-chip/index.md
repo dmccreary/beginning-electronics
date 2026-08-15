@@ -325,7 +325,7 @@ Explore the astable and monostable 555 for yourself — adjust the resistor and 
 
 #### Diagram: 555 Timer Astable and Monostable Simulator
 
-<iframe src="https://dmccreary.github.io/microsims/sims/555-timer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="https://dmccreary.github.io/microsims/sims/555-timer/main.html" width="100%" height="502px" scrolling="no"></iframe>
 
 [Run the 555 Timer Simulator fullscreen](https://dmccreary.github.io/microsims/sims/555-timer/main.html){ .md-button }
 

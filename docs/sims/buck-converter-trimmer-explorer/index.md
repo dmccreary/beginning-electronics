@@ -1,60 +1,61 @@
 ---
 title: Buck Converter Trimmer Explorer
-description: Given a rendered buck converter module fed by an adjustable input voltage and driving an LED load, turn the output trimmer and observe how the duty cycle and regulated output voltage change together, then compare the module's efficiency to a linear regulator performing the same step-down task.
-status: scaffold
-library: p5.js
-bloom_level: Apply (L3) / Analyze (L4). Bloom Verb: demonstrate, examine, distinguish.
+description: Interactive p5.js MicroSim for buck converter trimmer explorer.
+image: /sims/buck-converter-trimmer-explorer/buck-converter-trimmer-explorer.png
+og:image: /sims/buck-converter-trimmer-explorer/buck-converter-trimmer-explorer.png
+twitter:image: /sims/buck-converter-trimmer-explorer/buck-converter-trimmer-explorer.png
+social:
+   cards: false
+quality_score: 0
 ---
 
 # Buck Converter Trimmer Explorer
 
+<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
 
+[Run the Buck Converter Trimmer Explorer MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+<br/>
+[Edit in the p5.js Editor](https://editor.p5js.org/)
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+## About This MicroSim
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+TODO: Describe what this MicroSim demonstrates.
 
-## Specification
+## How to Use
 
-The full specification below is extracted from
-[Chapter 22: "Batteries, Regulators, and Buck Converters"](../../chapters/22-batteries-regulators-buck-converters/index.md).
+TODO: Describe how students should interact with this MicroSim.
 
-```text
-Type: microsim
-**sim-id:** buck-converter-trimmer-explorer<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
+## Iframe Embed Code
 
-Purpose: Let students turn a rendered buck converter module's adjustable output trimmer and directly observe the relationship between duty cycle and output voltage, reinforced by a live LED load and a voltage/current readout.
+You can add this MicroSim to any web page by adding this to your HTML:
 
-Bloom Taxonomy: Apply (L3) / Analyze (L4). Bloom Verb: demonstrate, examine, distinguish.
-
-Learning objective: Given a rendered buck converter module fed by an adjustable input voltage and driving an LED load, turn the output trimmer and observe how the duty cycle and regulated output voltage change together, then compare the module's efficiency to a linear regulator performing the same step-down task.
-
-Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: Buck Converter Step-Down Adjustable Output Explorer | Topic: buck converter, step-down DC-DC conversion, inductor, adjustable output trimmer potentiometer, LM2596, duty cycle, efficiency | Subjects: Electronics, Electric Circuits | Grade Level: Junior High | Learning Objectives: Given an adjustable buck converter module, turn the trimmer and observe how the regulated output voltage changes while input voltage stays visible" returned a top match of "Transistor Driver and Dimmer Circuit" (dmccreary/moving-rainbow, WHAT score 0.4515, recommendation "generate") — below the 0.60 template threshold and about PWM LED dimming, not a regulated step-down converter. The same keyword search used for the regulator sim above found no existing buck-converter sim. New specification. **Library/Implementation fit:** unlike the 7805 sim above, a commercial buck converter module is a sealed board with only four external connections (IN+/IN−, OUT+/OUT−) rather than a hand-wired breadboard circuit, so this sim better suits the general microsim-generator's plain p5.js approach — a labeled PCB with a turnable trimmer — than the breadboard-sim-generator's tie-point grid, the same choice Chapter 21 made for its out-of-circuit diode tester.
-
-Canvas layout: A rendered buck converter module (PCB with LM2596 IC, input/output capacitors, inductor, diode, and trimmer) in the center, wired on its left to a battery/USB input-voltage slider and on its right to an LED-plus-resistor load; a side panel shows duty cycle (%), Vin, Vout, and Iout readouts.
-
-Components/elements involved: Rendered buck converter PCB with labeled IC, inductor, input/output capacitors, diode, and trimmer; input-voltage slider (5–20 V); a turnable trimmer control (drag or click-and-hold to rotate); an LED-plus-resistor load; a four-line readout (duty cycle, Vin, Vout, Iout).
-
-Required interactivity:
-- Turning the trimmer (drag rotation or a +/− stepper) changes the target output voltage across a realistic range (roughly 1.5–12 V), recalculating duty cycle as D = Vout ÷ Vin and updating all readouts live
-- Moving the input-voltage slider changes Vin; because the module regulates, Vout stays locked at the trimmer's target as long as Vin stays above Vout, only drifting once Vin drops too close to Vout
-- The LED load brightens or dims to match the current trimmer-set Vout, giving a visual, not just numeric, confirmation of the change
-- Hovering the inductor opens an infobox explaining its store-and-release role each switching cycle; hovering the trimmer opens an infobox connecting the screw position to the feedback network and duty cycle
-- A "Compare to 7805" toggle overlays a second heat-output readout showing how much power a linear regulator would waste doing the same Vin-to-Vout job, reinforcing the efficiency table already presented in the chapter
-
-Default state: Vin at 9 V, trimmer set for 5 V output, LED lit at moderate brightness; readout shows "Duty Cycle: 56% | Vin: 9.0 V | Vout: 5.0 V"; infobox reads "Turn the trimmer to change the target output voltage."
-
-Instructional Rationale: An Apply/Analyze-level objective needs a parameter the learner directly manipulates (the trimmer) paired with a comparison against the chapter's other regulator (the 7805 toggle), so the sim serves both the "observe cause and effect" objective and the "distinguish switching from linear regulation" objective in one interaction.
-
-Color scheme: Green PCB matching the reference buck-converter module's typical color; blue trimmer highlight when active; amber duty-cycle readout; red/green comparison bars in the "Compare to 7805" overlay.
-
-Responsive behavior: Module rendering and control/readout panel stack vertically on narrow screens; trimmer remains a comfortably large touch target at any width.
-
-Implementation: Plain p5.js via the microsim-generator's standard scaffolding (not the breadboard tie-point renderer, since this module has no exposed tie points) — a lookup function maps trimmer angle to target Vout, and the duty-cycle/readout math runs directly from the chapter's Vout ≈ D × Vin relationship.
+```html
+<iframe src="https://dmccreary.github.io/beginning-electronics/sims/buck-converter-trimmer-explorer/main.html"
+        height="450px"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 22: "Batteries, Regulators, and Buck Converters"](../../chapters/22-batteries-regulators-buck-converters/index.md)
+### Grade Level
+9-12 (High School Geometry)
+
+### Duration
+10-15 minutes
+
+### Prerequisites
+TODO: List prerequisites.
+
+### Activities
+
+1. **Exploration** (5 min): TODO
+2. **Guided Practice** (5 min): TODO
+3. **Assessment** (5 min): TODO
+
+### Assessment
+TODO: List assessment criteria.
+
+## References
+
+1. TODO: Add references.

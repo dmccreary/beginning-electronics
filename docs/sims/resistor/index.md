@@ -1,6 +1,6 @@
 # Drawing Resistor Symbols in a MicroSim
 
-<iframe src="main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="402px" scrolling="no"></iframe>
 
 [Run the Resistors MicroSim Fullscreen](main.html){ .md-button .md-button--primary }
 [Edit MicroSim](https://editor.p5js.org/dmccreary/sketches/0-_CXuiVK)

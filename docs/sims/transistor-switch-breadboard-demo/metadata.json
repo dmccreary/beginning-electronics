@@ -1,23 +1,45 @@
 {
-  "title": "Transistor as a Switch — Breadboard Demo",
-  "description": "Given a rendered breadboard circuit with an NPN transistor, a base-current push button, a base resistor, and a collector LED, predict and observe whether the LED lights when the base switch is open (cutoff) versus closed (saturation), and identify the base, collector, and emitter leads on the rendered part.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "title": "Transistor as a Switch \u2014 Breadboard Demo",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for transistor as a switch \u2014 breadboard demo",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "transistor-switch-breadboard-demo",
-  "library": "p5.js",
-  "bloomLevel": "Understand (L2) / Apply (L3). Bloom Verb: demonstrate, predict, identify.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 13,
-  "chapter_title": "\"Meet the Transistor\"",
-  "chapter_dir": "13-meet-the-transistor",
-  "chapter_rel_dir": "chapters/13-meet-the-transistor"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Transistor as a Switch \u2014 Breadboard Demo",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Apply",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "13-meet-the-transistor"
 }

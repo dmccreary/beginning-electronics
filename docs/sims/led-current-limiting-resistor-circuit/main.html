@@ -3,123 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>LED with Current-Limiting Resistor Breadboard Circuit</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>LED with Current-Limiting Resistor Breadboard Circuit using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="led-current-limiting-resistor-circuit.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>LED with Current-Limiting Resistor Breadboard Circuit</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> led-current-limiting-resistor-circuit</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Understand (L2) / Apply (L3). Bloom Verb: identify, demonstrate, calculate.</p>
-            <p><strong>Learning Objective:</strong> Given a rendered breadboard LED circuit with a swappable current-limiting resistor, identify the LED's anode and cathode, predict what happens when the LED is wired backwards, and calculate the resulting current for different resistor choices using the current-limiting resistor equation.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** led-current-limiting-resistor-circuit<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Let students identify an LED's anode and cathode on a rendered breadboard circuit, flip its orientation to see why LED polarity matters, and swap resistor values to see how the current-limiting resistor equation connects a chosen value to real LED brightness and safety.
-    
-    Bloom Taxonomy: Understand (L2) / Apply (L3). Bloom Verb: identify, demonstrate, calculate.
-    
-    Learning objective: Given a rendered breadboard LED circuit with a swappable current-limiting resistor, identify the LED's anode and cathode, predict what happens when the LED is wired backwards, and calculate the resulting current for different resistor choices using the current-limiting resistor equation.
-    
-    Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: LED with Current Limiting Resistor Breadboard Circuit | Topic: LED polarity, anode, cathode, current limiting resistor, breadboard wiring | Subjects: Electronics, Beginning Electronics | Grade Level: Junior High | Learning Objectives: Identify LED anode and cathode and demonstrate why a current-limiting resistor is required to protect an LED on a breadboard circuit" returned a top match of "Breadboard" (dmccreary/microsims, WHAT score 0.6415, recommendation "template") — above the 0.60 template threshold but below the 0.75 reuse threshold, so this sim's rendered breadboard, tie-point layout, and component-placement approach should be used as a starting point rather than reused as-is, since it does not already include an LED, resistor, or polarity logic. **Template:** https://github.com/dmccreary/microsims/tree/main/docs/sims/breadboard<br/> This is also a strong candidate for the breadboard-sim-generator skill, since it needs a rendered breadboard with real tie-point positions and animated current flow tied to component orientation.
-    
-    Canvas layout: Left/main area shows a rendered half-size breadboard with a battery pack, an LED (long/short lead and flat-edge cathode visible), and a resistor wired in series; right side panel holds a "Flip LED" button, a resistor-value selector (220 Ω, 330 Ω, 1K, 10K, and a "no resistor" option), a calculated current readout, and an infobox.
-    
-    Components/elements involved: A rendered breadboard with power and ground rails; a battery pack; an LED with clearly rendered anode (longer lead) and cathode (shorter lead, flat edge); a swappable resistor; connecting wires; an animated current-flow indicator along the wires.
-    
-    Required interactivity:
-    - Click "Flip LED" to reverse the LED's orientation on the breadboard; when reversed, the LED stays dark, current-flow animation stops at the LED, and the infobox explains that the diode is blocking current in this direction with no damage at this course's low voltage
-    - Select a resistor value from the dropdown (220 Ω, 330 Ω, 1K, 10K, or "no resistor"); the calculated current readout updates live using the current-limiting resistor equation, the LED's brightness animation scales with current, and choosing "no resistor" flags a clear on-screen warning that current would exceed the LED's safe rating
-    - Hover the LED to open an infobox labeling the anode and cathode and stating that LED's forward voltage
-    - Hover the resistor to see the equation with the current supply voltage, forward voltage, and resistor value substituted in
-    - Button: "Reset" returns to the default correctly-wired, 220 Ω state
-    
-    Default state: LED correctly oriented (anode toward supply), 220 Ω resistor selected, \( V_{supply} \) fixed at 5 V, LED lit at normal brightness, infobox reads "Current flows from anode to cathode — this LED is wired correctly, drawing about 14 mA."
-    
-    Instructional Rationale: An Understand/Apply objective combining "identify" and "calculate" benefits from a manipulable breadboard simulation rather than a static diagram, since students must both recognize the physical polarity cues (flat edge, lead length) and see the numeric consequence of each resistor choice tied directly to the equation just taught.
-    
-    Color scheme: Warm orange for the currently highlighted component, green glow on the LED when correctly lit, red warning flash for the "no resistor" or reversed-LED states, consistent with the palette used in this chapter's other diagrams.
-    
-    Responsive behavior: Breadboard view and the control/infobox panel stack vertically on narrow screens; the resistor dropdown and Flip LED button remain full-width and touch-friendly.
-    
-    Implementation: p5.js, built on the breadboard-sim-generator rendering approach (real tie-point hole grid, component placement, and animated current flow), extending the template referenced above with an LED, a swappable resistor, and live current calculation.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

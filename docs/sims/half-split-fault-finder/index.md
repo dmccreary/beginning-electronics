@@ -1,61 +1,61 @@
 ---
 title: Half-Split Fault Finder
-description: Given a rendered six-stage breadboard circuit (battery, switch, two resistors, a diode, and an LED wired in a single current path) with exactly one hidden fault at an unknown stage, use a virtual multimeter in voltage mode to test the midpoint of the remaining suspect range, apply the result to eliminate half of the remaining stages, and repeat until the single faulty stage is identified in three or fewer measurements.
-status: scaffold
-library: p5.js
-bloom_level: Analyze (L4). Bloom Verb: examine, distinguish, trace.
+description: Interactive p5.js MicroSim for half-split fault finder.
+image: /sims/half-split-fault-finder/half-split-fault-finder.png
+og:image: /sims/half-split-fault-finder/half-split-fault-finder.png
+twitter:image: /sims/half-split-fault-finder/half-split-fault-finder.png
+social:
+   cards: false
+quality_score: 0
 ---
 
 # Half-Split Fault Finder
 
+<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
 
+[Run the Half-Split Fault Finder MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+<br/>
+[Edit in the p5.js Editor](https://editor.p5js.org/)
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+## About This MicroSim
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+TODO: Describe what this MicroSim demonstrates.
 
-## Specification
+## How to Use
 
-The full specification below is extracted from
-[Chapter 21: "Systematic Troubleshooting"](../../chapters/21-systematic-troubleshooting/index.md).
+TODO: Describe how students should interact with this MicroSim.
 
-```text
-Type: microsim
-**sim-id:** half-split-fault-finder<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
+## Iframe Embed Code
 
-Purpose: Give students hands-on practice with half-split troubleshooting on a six-stage breadboard circuit with one hidden fault, using a virtual multimeter to test signal-path midpoints, isolate one variable per test, and log each measurement before naming the faulty stage.
+You can add this MicroSim to any web page by adding this to your HTML:
 
-Bloom Taxonomy: Analyze (L4). Bloom Verb: examine, distinguish, trace.
-
-Learning objective: Given a rendered six-stage breadboard circuit (battery, switch, two resistors, a diode, and an LED wired in a single current path) with exactly one hidden fault at an unknown stage, use a virtual multimeter in voltage mode to test the midpoint of the remaining suspect range, apply the result to eliminate half of the remaining stages, and repeat until the single faulty stage is identified in three or fewer measurements.
-
-Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: Circuit Fault Detective Half-Split Troubleshooting | Topic: systematic troubleshooting strategy, half-split troubleshooting, circuit debugging, virtual multimeter test points, signal tracing, isolating one variable, documenting test results | Subjects: Electronics, Electric Circuits | Grade Level: Junior High | Learning Objectives: Diagnose a broken breadboard circuit using half-split testing and a virtual multimeter to isolate the single faulty component" returned a top match of "Circuit Similarity Map" (dmccreary/circuits, WHAT score 0.4418, recommendation "generate") — well below the 0.60 template threshold and not fault-diagnosis-aware. A keyword grep of the catalog for "troubleshoot," "half-split," "signal trac," and "datasheet" returned zero matches. New specification. **Library/Implementation fit:** this is precisely the "diagnose the broken circuit" use case the breadboard-sim-generator skill is built for — six components sit in real tie-point holes along one series path, and a virtual multimeter probing those holes reads live node voltages from the circuit solver (`bbVoltage()`), so half-split logic is just picking which hole to probe next.
-
-Canvas layout: A rendered breadboard with battery, switch SW1, R1 (330 Ω), R2 (220 Ω), diode D1, and LED D2 wired in one series path, with seven labeled test points (TP0 at the battery through TP6 at the LED's cathode); a right panel holds a voltage-mode meter readout, a running test log, and a "Diagnose" button with six stage-name choices.
-
-Components/elements involved: Rendered breadboard with rails; battery (5 V); SW1; R1 330 Ω; R2 220 Ω; D1 diode; D2 red LED; seven test points (TP0-TP6); a multimeter fixed in voltage mode; a scrolling test-log panel.
-
-Required interactivity:
-- Clicking the power switch energizes the circuit; the LED stays dark because a hidden fault sits at one of the six stages
-- Only the current valid half-split midpoint test point glows and is clickable; the rest stay dimmed, forcing the student to test the midpoint of the remaining suspect range
-- Clicking the glowing point logs its reading with a plain-language note ("0.0 V — nothing reaching this point yet") and recalculates which half remains suspect, updating which point glows next
-- Clicking a dimmed test point opens an infobox explaining why it isn't the correct next test, without giving away the fault
-- Once one stage remains, the six diagnosis buttons unlock; a correct pick reveals the fault and reasoning in green, an incorrect one explains in red why the log rules it out
-- Button "New Fault" relocates the hidden fault and clears the log, for repeated practice
-
-Default state: Circuit off, LED dark, log empty, only TP3 (the true midpoint) glowing once switched on; diagnosis buttons disabled until one stage remains.
-
-Instructional Rationale: An Analyze-level "examine/distinguish/trace" objective calls for a search-and-eliminate interaction, not a passive animation — restricting clicks to the true midpoint forces the learner to execute half-split troubleshooting correctly, one constrained choice at a time.
-
-Color scheme: Green glow on the valid midpoint, gray dimming elsewhere, orange current-flow dots once fixed, green/red diagnosis feedback — consistent with this chapter's other diagrams.
-
-Responsive behavior: Breadboard and control/log panel stack vertically on narrow screens; the log stays scrollable and legible at any width.
-
-Implementation: p5.js, built on the breadboard-sim-generator rendering approach (real tie-point hole grid, six-part series circuit, `bbVoltage()` for every reading); fault state and valid-midpoint logic stored in a small state machine.
+```html
+<iframe src="https://dmccreary.github.io/beginning-electronics/sims/half-split-fault-finder/main.html"
+        height="450px"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 21: "Systematic Troubleshooting"](../../chapters/21-systematic-troubleshooting/index.md)
+### Grade Level
+9-12 (High School Geometry)
+
+### Duration
+10-15 minutes
+
+### Prerequisites
+TODO: List prerequisites.
+
+### Activities
+
+1. **Exploration** (5 min): TODO
+2. **Guided Practice** (5 min): TODO
+3. **Assessment** (5 min): TODO
+
+### Assessment
+TODO: List assessment criteria.
+
+## References
+
+1. TODO: Add references.

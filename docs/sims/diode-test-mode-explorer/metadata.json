@@ -1,23 +1,45 @@
 {
   "title": "Diode Test Mode Explorer",
-  "description": "Given a multimeter set to diode-test mode and four out-of-circuit diode/LED samples, probe each sample in both directions and interpret the resulting reading (a forward voltage, an overload indicator, or a low voltage in both directions) to classify the part as good, shorted, or open.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for diode test mode explorer",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "diode-test-mode-explorer",
-  "library": "p5.js",
-  "bloomLevel": "Understand (L2) / Apply (L3). Bloom Verb: interpret, demonstrate, classify.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 21,
-  "chapter_title": "\"Systematic Troubleshooting\"",
-  "chapter_dir": "21-systematic-troubleshooting",
-  "chapter_rel_dir": "chapters/21-systematic-troubleshooting"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Diode Test Mode Explorer",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "21-systematic-troubleshooting"
 }

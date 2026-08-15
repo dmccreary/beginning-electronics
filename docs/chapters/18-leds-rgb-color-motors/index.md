@@ -179,6 +179,10 @@ A **LED Resistor Calculator** is exactly this kind of tool: a calculator that ta
 
 <iframe src="../../sims/led-resistor-calc/led-resistor-calc.html" width="100%" height="320px" scrolling="no"></iframe>
 
+
+<iframe src="../../sims/led-resistor-calc/main.html" width="100%" height="252px" scrolling="no"></iframe>
+[Run LED Resistor Calculator Fullscreen](../../sims/led-resistor-calc/main.html)
+
 <details markdown="1">
 <summary>LED Resistor Calculator (reused MicroSim)</summary>
 Type: microsim

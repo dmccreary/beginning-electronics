@@ -1,4 +1,5 @@
 // Constants for orientation strings
+// CANVAS_HEIGHT: 400
 const HORIZONTAL = "horizontal";
 const VERTICAL = "vertical";
 

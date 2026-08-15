@@ -103,7 +103,7 @@ The interactive simulation below lets you build both simple patterns side by sid
 
 #### Diagram: Series and Parallel Circuits Comparison
 
-<iframe src="https://dmccreary.github.io/intro-to-physics-course/sims/series-parallel/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="https://dmccreary.github.io/intro-to-physics-course/sims/series-parallel/main.html" width="100%" height="652px" scrolling="no"></iframe>
 
 [Run the Series and Parallel Circuits Comparison fullscreen](https://dmccreary.github.io/intro-to-physics-course/sims/series-parallel/main.html){ .md-button }
 

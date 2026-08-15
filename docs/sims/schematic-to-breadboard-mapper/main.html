@@ -3,125 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Schematic-to-Breadboard Mapper</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Schematic-to-Breadboard Mapper using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="schematic-to-breadboard-mapper.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Schematic-to-Breadboard Mapper</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> schematic-to-breadboard-mapper</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Apply (L3). Bloom Verb: construct, demonstrate.</p>
-            <p><strong>Learning Objective:</strong> Given a simple schematic (battery, resistor, LED, ground) shown side-by-side with a blank breadboard, correctly map each schematic symbol to its breadboard placement and each schematic connection to a jumper wire, demonstrating both wiring diagram interpretation and schematic-to-breadboard mapping.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** schematic-to-breadboard-mapper<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Help students translate a simple LED circuit wiring diagram into a correct physical breadboard layout by clicking each schematic symbol and identifying, or placing, its matching location on a rendered breadboard.
-    
-    Bloom Taxonomy: Apply (L3). Bloom Verb: construct, demonstrate.
-    
-    Learning objective: Given a simple schematic (battery, resistor, LED, ground) shown side-by-side with a blank breadboard, correctly map each schematic symbol to its breadboard placement and each schematic connection to a jumper wire, demonstrating both wiring diagram interpretation and schematic-to-breadboard mapping.
-    
-    Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Schematic to Breadboard Mapping" returned a top match of "Breadboard" (dmccreary/microsims, WHAT score 0.6575, recommendation "template"). A second query for "Wiring Diagram Interpretation" returned "Ground Symbol Reference Guide" (dmccreary/circuits, WHAT score 0.6873, recommendation "template"). Both scores fall in the template range (0.60–0.75), below the 0.75 reuse threshold, so neither is a close enough fit to embed directly. A keyword grep of the 3,764-entry MicroSim catalog for "schematic," "wiring diagram," and "breadboard mapping" found no closer beginner-electronics match. This sim uses the Breadboard template as its visual base, since it already renders the exact half-size board graphic this chapter's other diagrams use.
-    
-    **Template:** https://github.com/dmccreary/microsims/tree/main/docs/sims/breadboard<br/>
-    
-    Canvas layout: Left half shows the wiring diagram (battery, resistor, LED, ground symbol, connected by schematic lines); right half shows a blank half-size breadboard graphic reusing the rendering approach from the Chapter 6 Breadboard Anatomy Explorer.
-    
-    Components/elements involved: Four schematic symbols (battery, resistor, LED, ground) on the left; an unpopulated breadboard with power/ground rails and terminal-strip rows on the right; a small parts tray beneath the breadboard holding a resistor icon, an LED icon, and jumper wire icons.
-    
-    Required interactivity:
-    - Click any schematic symbol on the left to highlight it and open an infobox naming the symbol and its role in the circuit
-    - Drag the matching component icon from the parts tray onto the correct breadboard row on the right; an incorrect row placement gives a red explanation ("A resistor and an LED both need their own row — sharing a row shorts them together")
-    - After both components are placed, drag jumper wire icons to connect power to the resistor, the resistor to the LED, and the LED to ground, matching the schematic's connections exactly
-    - Button: "Check My Wiring" compares the built layout to the schematic and highlights any missing or incorrect connection in red, with a one-sentence explanation of the mismatch
-    - Button: "New Circuit" swaps in a different simple schematic (for example, adding a second LED in series) for repeated practice
-    
-    Default state: Blank breadboard on the right, complete schematic on the left, empty parts tray selections, "Check My Wiring" disabled until at least one component is placed.
-    
-    Instructional Rationale: An Apply-level "construct/map" objective calls for a hands-on build-and-check pattern rather than passive viewing, so learners rehearse the exact translation step — schematic symbol to breadboard row to jumper wire — that they will repeat in every remaining chapter of this course.
-    
-    Color scheme: Warm orange highlight for the currently selected schematic symbol, green/red for correct/incorrect feedback on "Check My Wiring," light neutral gray for the unpopulated board, matching the palette used in the Chapter 6 breadboard diagrams for visual consistency across chapters.
-    
-    Responsive behavior: Schematic and breadboard panels stack vertically on narrow screens instead of sitting side-by-side; all drag targets remain touch-sized on mobile, with tap-to-select and tap-to-place as an alternative to dragging.
-    
-    Implementation: p5.js, with the breadboard graphic reused from the Chapter 6 rendering approach; the schematic drawn as simple vector symbols; a small rules table validates each placement and connection against the active circuit's correct answer key.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

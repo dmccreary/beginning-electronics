@@ -1,23 +1,45 @@
 {
   "title": "Buck Converter Trimmer Explorer",
-  "description": "Given a rendered buck converter module fed by an adjustable input voltage and driving an LED load, turn the output trimmer and observe how the duty cycle and regulated output voltage change together, then compare the module's efficiency to a linear regulator performing the same step-down task.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for buck converter trimmer explorer",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "buck-converter-trimmer-explorer",
-  "library": "p5.js",
-  "bloomLevel": "Apply (L3) / Analyze (L4). Bloom Verb: demonstrate, examine, distinguish.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 22,
-  "chapter_title": "\"Batteries, Regulators, and Buck Converters\"",
-  "chapter_dir": "22-batteries-regulators-buck-converters",
-  "chapter_rel_dir": "chapters/22-batteries-regulators-buck-converters"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Buck Converter Trimmer Explorer",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "22-batteries-regulators-buck-converters"
 }

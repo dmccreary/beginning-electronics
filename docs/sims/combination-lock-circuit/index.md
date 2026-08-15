@@ -1,64 +1,61 @@
 ---
 title: Combination Lock Circuit
-description: Given a series-wired, three-button combination lock circuit, predict and verify which combinations of held-down buttons light the "Unlocked" LED, and observe that the LED goes dark the instant any single button is released.
-status: scaffold
-library: p5.js
-bloom_level: Understand (L2) / Apply (L3). Bloom Verb: demonstrate, predict.
+description: Interactive p5.js MicroSim for combination lock circuit.
+image: /sims/combination-lock-circuit/combination-lock-circuit.png
+og:image: /sims/combination-lock-circuit/combination-lock-circuit.png
+twitter:image: /sims/combination-lock-circuit/combination-lock-circuit.png
+social:
+   cards: false
+quality_score: 0
 ---
 
 # Combination Lock Circuit
 
+<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
 
+[Run the Combination Lock Circuit MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+<br/>
+[Edit in the p5.js Editor](https://editor.p5js.org/)
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+## About This MicroSim
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+TODO: Describe what this MicroSim demonstrates.
 
-## Specification
+## How to Use
 
-The full specification below is extracted from
-[Chapter 17: "Sensing Light: Photoresistors and Dark Detectors"](../../chapters/17-sensing-light-dark-detectors/index.md).
+TODO: Describe how students should interact with this MicroSim.
 
-```text
-Type: microsim
-**sim-id:** combination-lock-circuit<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
+## Iframe Embed Code
 
-Purpose: Let students press and hold three momentary push buttons on a rendered breadboard, in any order, and see for themselves that an "Unlocked" LED lights only during the exact window when all three are held down together, extending Chapter 16's two-switch series-AND idea to a three-switch combination lock.
+You can add this MicroSim to any web page by adding this to your HTML:
 
-Bloom Taxonomy: Understand (L2) / Apply (L3). Bloom Verb: demonstrate, predict.
-
-Learning objective: Given a series-wired, three-button combination lock circuit, predict and verify which combinations of held-down buttons light the "Unlocked" LED, and observe that the LED goes dark the instant any single button is released.
-
-Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: Combination Lock Circuit | Topic: Multiple push buttons wired in sequence, manual input device, trigger input, digital input, button press duration | Subjects: Electronics, Electric Circuits, Digital Logic | Grade Level: Junior High | Learning Objectives: Given a sequence of button presses, predict whether a combination lock circuit unlocks, demonstrating series wiring and ordered manual input" returned a top match of "Animated Switches MicroSim" (dmccreary/circuits, WHAT score 0.5691, recommendation "generate"), followed by "Switch Drawing MicroSim" (0.5536) and "Logic Gates" (0.5437) — all below the 0.60 template threshold and none built around a multi-button, press-and-hold combination lock. This is a new specification, and it is a strong candidate for the breadboard-sim-generator skill since it can directly extend this chapter's `light-dark-detector` breadboard rendering approach and this repository's existing `breadboard-lib.js` (already used by `button-led-breadboard` and `wired-logic-and-or` in Chapter 16) with three press-and-hold buttons in series.
-
-Canvas layout: Main area shows a rendered breadboard with a battery pack, three labeled push buttons (Button 1, Button 2, Button 3) wired in series, and an "Unlocked" LED with its own current-limiting resistor at the end of the path; right side panel holds a live status readout listing each button's current state and a single combined "LOCKED / UNLOCKED" indicator.
-
-Components/elements involved: A rendered breadboard with power and ground rails; a battery pack; three momentary push buttons at series tie-points; a current-limiting resistor and LED; connecting wires; an animated current-flow indicator on the wire segments.
-
-Required interactivity:
-- Press-and-hold each button (mouse-down / touch-hold to press, release to let go); animated current only flows along the full path, and the LED only lights, while all three buttons are held simultaneously
-- The status panel updates live to show each button's pressed/released state and the combined lock state as each button is pressed or released
-- Button "Reset" releases all three buttons back to the default locked state
-
-Default state: All three buttons released, LED dark, status panel reads "LOCKED — 0 of 3 buttons held."
-
-Data Visibility Requirements:
-Stage 1: Show each button's individual pressed/released state
-Stage 2: Show the running count of how many buttons are currently held
-Stage 3: Show the animated current stopping at the first open (unpressed) button in the series path
-Stage 4: Show the LED lighting and status flipping to "UNLOCKED" only when the count reaches 3
-
-Instructional Rationale: An Understand/Apply "demonstrate/predict" objective calls for a manipulable circuit with a visible cause-and-effect chain, so students can press combinations themselves and directly observe that a single released button breaks the whole path, rather than reading the rule as an abstract statement.
-
-Color scheme: Green animated current dots while flowing, gray and static when a button in the path is open; red "LOCKED" and green "UNLOCKED" text in the status panel, consistent with the palette used in Chapter 16's wired-logic diagram.
-
-Responsive behavior: Breadboard view and the status panel stack vertically on narrow screens; buttons support tap-and-hold on touch devices as an alternative to click-and-hold.
-
-Implementation: p5.js, built on the breadboard-sim-generator rendering approach (real tie-point hole grid, component placement, and animated current flow).
+```html
+<iframe src="https://dmccreary.github.io/beginning-electronics/sims/combination-lock-circuit/main.html"
+        height="450px"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 17: "Sensing Light: Photoresistors and Dark Detectors"](../../chapters/17-sensing-light-dark-detectors/index.md)
+### Grade Level
+9-12 (High School Geometry)
+
+### Duration
+10-15 minutes
+
+### Prerequisites
+TODO: List prerequisites.
+
+### Activities
+
+1. **Exploration** (5 min): TODO
+2. **Guided Practice** (5 min): TODO
+3. **Assessment** (5 min): TODO
+
+### Assessment
+TODO: List assessment criteria.
+
+## References
+
+1. TODO: Add references.

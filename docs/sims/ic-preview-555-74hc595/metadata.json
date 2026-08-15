@@ -1,23 +1,45 @@
 {
-  "title": "Two ICs Coming Soon — 555 Timer and 74HC595 Preview",
-  "description": "Identify the 555 timer IC and the 74HC595 shift register by their pin count and package shape, and summarize in one sentence each what job every chip will perform later in the course.",
-  "creator": "Beginning Electronics",
-  "author": "Dan McCreary",
+  "title": "Two ICs Coming Soon \u2014 555 Timer and 74HC595 Preview",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for two ics coming soon \u2014 555 timer and 74hc595 preview",
   "date": "2026-08-14",
-  "subject": [
-    "Beginning Electronics"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "ic-preview-555-74hc595",
-  "library": "p5.js",
-  "bloomLevel": "Remember (L1) / Understand (L2). Bloom Verb: identify, describe, summarize.",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 13,
-  "chapter_title": "\"Meet the Transistor\"",
-  "chapter_dir": "13-meet-the-transistor",
-  "chapter_rel_dir": "chapters/13-meet-the-transistor"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Two ICs Coming Soon \u2014 555 Timer and 74HC595 Preview",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "13-meet-the-transistor"
 }

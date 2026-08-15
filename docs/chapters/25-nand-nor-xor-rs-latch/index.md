@@ -237,6 +237,10 @@ Try the cross-coupled NAND circuit below yourself. Press Set, let go, and notice
 
 <iframe src="../../sims/flip-flop/flip-flop.html" width="100%" height="420px" scrolling="no"></iframe>
 
+
+<iframe src="../../sims/flip-flop/main.html" width="100%" height="302px" scrolling="no"></iframe>
+[Run SR Flip Flop MicroSim (Cross-Coupled NAND RS Latch) Fullscreen](../../sims/flip-flop/main.html)
+
 <details markdown="1">
 <summary>SR Flip Flop MicroSim (Cross-Coupled NAND RS Latch)</summary>
 Type: microsim

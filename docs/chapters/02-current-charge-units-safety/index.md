@@ -83,7 +83,7 @@ So why does nearly every textbook, schematic, and datasheet draw current arrows 
 
 #### Diagram: Electron Flow vs. Conventional Current
 
-<iframe src="../../sims/electron-vs-conventional-current/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/electron-vs-conventional-current/main.html" width="100%" height="482px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Electron Flow vs. Conventional Current Simulator</summary>
@@ -176,7 +176,7 @@ where:
 
 #### Diagram: Kirchhoff's Laws Circuit Explorer
 
-<iframe src="../../sims/kirchhoffs-laws-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/kirchhoffs-laws-explorer/main.html" width="100%" height="652px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Kirchhoff's Laws Circuit Explorer</summary>
