@@ -85,9 +85,9 @@ Before wiring either kind, it helps to see the two side by side.
 
 ## Mixing Custom Colors With Light
 
-Wiring an RGB LED correctly only gets you three colors — red, green, and blue, one at a time. The real magic happens once you control *how bright* each of those three colors glows at the same moment. **Color mixing with LEDs** is the technique of blending red, green, and blue light at different intensities to produce a huge range of colors the human eye reads as one single blended shade — the same additive color model behind your phone screen and every scrolling stadium sign, just built from three actual LED chips instead of thousands of microscopic ones.
+Wiring an RGB LED correctly only gets you three colors — red, green, and blue, one at a time. The real magic happens once you control *how bright* each color glows at the same moment. **Color mixing with LEDs** is the technique of blending red, green, and blue light at different intensities to produce a huge range of colors the eye reads as one blended shade — the same additive color model behind your phone screen and every scrolling stadium sign, just built from three actual LED chips instead of thousands of microscopic ones.
 
-Full red plus full green, with blue left off, reads to your eye as yellow. Full red plus full blue, with green left off, reads as magenta, a bright pink-purple. All three chips at full brightness together read as white. Dial any one of the three down partway instead of snapping it fully off or fully on, and the blended color shifts smoothly across the whole rainbow.
+Full red plus full green, with blue off, reads as yellow. Full red plus full blue, with green off, reads as magenta, a bright pink-purple. All three chips at full brightness together read as white. Dial any one of the three down partway instead of snapping it fully off or on, and the blended color shifts smoothly across the whole rainbow.
 
 A few combinations are worth memorizing, since you'll reach for them constantly once you start experimenting:
 
@@ -114,11 +114,11 @@ Type: microsim
 **Library:** p5.js<br/>
 **Status:** Specified
 
-Purpose: Let students drag three brightness sliders for a rendered common-cathode RGB LED on a breadboard and directly observe additive color mixing, connecting a wired circuit to the blended color it produces.
+Purpose: Let students drag three brightness sliders for a rendered common-cathode RGB LED and directly observe additive color mixing on a wired breadboard circuit.
 
 Bloom Taxonomy: Apply (L3). Bloom Verb: demonstrate, predict, apply.
 
-Learning objective: Given three independent brightness sliders wired to a common-cathode RGB LED on a rendered breadboard, predict and observe the resulting blended color, and reproduce the common mixes (yellow, magenta, cyan, white) shown in the chapter text.
+Learning objective: Given three brightness sliders wired to a common-cathode RGB LED on a breadboard, predict and observe the resulting blended color, and reproduce the common mixes (yellow, magenta, cyan, white) from the chapter text.
 
 Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: RGB LED Color Mixing Breadboard | Topic: RGB LED, common cathode RGB, common anode RGB, color mixing with LEDs, LED brightness control | Subjects: Electronics, Electric Circuits | Grade Level: Junior High | Learning Objectives: Given three sliders for red, green, and blue LED brightness, predict and observe the resulting mixed color on a breadboard-rendered RGB LED, demonstrating additive color mixing" returned a top match of "RGB Color Mixer" (dmccreary/learning-python, WHAT score 0.6062, "template") — a bare color swatch mixer from a Geometry repo, with no wired circuit or resistors. "NeoPixel Color Mixer" (0.5757) and "Rainbow Color Picker" (0.5485) scored lower and are also unwired. Per this course's guidance to prefer breadboard-rendered circuits, this is a new specification, extending this repository's `breadboard-lib.js` (already used by `button-led-breadboard`, `light-dark-detector`, `wired-logic-and-or`) with three resistor-and-LED branches sharing one RGB LED's common lead.
 
@@ -224,7 +224,7 @@ Type: microsim
 **Library:** p5.js<br/>
 **Status:** Specified
 
-Purpose: Let students compare parallel LED wiring, an LED matrix's row/column wiring, and a running LED chaser effect side by side, so the wire-count trade-off and the timing idea behind a chaser both become visible rather than abstract.
+Purpose: Let students compare parallel LED wiring against an LED matrix's row/column wiring, and run a chaser effect, so the wire-count trade-off and chaser timing both become visible.
 
 Bloom Taxonomy: Understand (L2) / Apply (L3). Bloom Verb: compare, demonstrate, differentiate.
 
@@ -305,7 +305,7 @@ Purpose: Let students switch a rendered small hobby motor on and off through a 2
 
 Bloom Taxonomy: Apply (L3) / Analyze (L4). Bloom Verb: demonstrate, predict, examine.
 
-Learning objective: Given a rendered breadboard circuit with a 2N2222 transistor, a base switch, a flyback diode, and a small hobby motor, predict and observe how the base switch starts and stops the motor, how swapping the motor's two leads reverses its spin direction, and how increasing mechanical load raises current draw up to a stall-current spike.
+Learning objective: Given a breadboard circuit with a 2N2222, a base switch, a flyback diode, and a small hobby motor, predict how the switch starts and stops the motor, how swapping its leads reverses spin direction, and how rising load drives current up to a stall spike.
 
 Reuse check: An embeddings search (find-similar-templates, mode=reuse) for "Title: DC Motor Direction Control Circuit | Topic: DC motor, motor direction, motor control circuit, transistor driving a motor, motor load, motor stall current | Subjects: Electronics, Electric Circuits | Grade Level: Junior High | Learning Objectives: Given a rendered breadboard circuit with a transistor switch controlling a small DC motor, predict and observe how a control input starts, stops, and reverses the motor's spin direction" returned "Circuits" (dmccreary/microsims, WHAT score 0.5193, "generate") and "H Bridge" (dmccreary/microsims, 0.5138, "generate"), both below the 0.60 template threshold. H Bridge is the closer topical match but teaches four-transistor bidirectional switching aimed at a more advanced audience than this chapter's single-transistor, load/stall focus — flagged here as a reuse candidate once this course reaches full electronic direction reversal. This is a new, simpler specification, a strong candidate for the breadboard-sim-generator skill, extending `breadboard-lib.js` (already home to the transistor component from Chapter 13's `transistor-switch-breadboard-demo`) with a spinning-motor component and a load/stall current model.
 
