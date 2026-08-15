@@ -116,7 +116,7 @@ class Task:
         meta = dict(self.meta)
         meta["updated"] = today()
         text = "---\n" + yaml.safe_dump(meta, sort_keys=False, allow_unicode=True) + "---\n" + self.body
-        with open(self.path, "w", encoding="utf-8") as fh:
+        with open(self.path, "w", encoding="utf-8", newline="\n") as fh:
             fh.write(text)
 
     def log(self, msg):
@@ -362,7 +362,7 @@ def notify(title, message, wake=False):
     line = f"- **{now()}** — {title}: {message}\n"
     header = "# Image Queue Notifications\n\nClaude reads this file. Newest entries at the bottom.\n\n"
     if not os.path.exists(NOTIFY):
-        with open(NOTIFY, "w", encoding="utf-8") as fh:
+        with open(NOTIFY, "w", encoding="utf-8", newline="\n") as fh:
             fh.write(header)
     with open(NOTIFY, "a", encoding="utf-8") as fh:
         fh.write(line)
@@ -541,7 +541,7 @@ def cmd_scan(args):
             "checks": [{"name": n, "ok": o, "detail": d} for n, o, d in checks],
             "human_review_required": bool(match.accept.get("no_text")),
         }
-        with open(os.path.join(RECEIPTS, f"{task_id}.json"), "w", encoding="utf-8") as fh:
+        with open(os.path.join(RECEIPTS, f"{task_id}.json"), "w", encoding="utf-8", newline="\n") as fh:
             json.dump(receipt, fh, indent=2)
 
         match.meta["status"] = "delivered"
@@ -649,7 +649,7 @@ def cmd_new(args):
         },
     }
     body = "\n" + (args.prompt or "TODO: write the image prompt here.\n")
-    with open(path, "w", encoding="utf-8") as fh:
+    with open(path, "w", encoding="utf-8", newline="\n") as fh:
         fh.write("---\n" + yaml.safe_dump(meta, sort_keys=False, allow_unicode=True) + "---\n" + body)
     print(f"Created image-tasks/tasks/{args.id}.md")
     write_queue_md()
@@ -693,7 +693,7 @@ def write_queue_md():
         "|-----|---------|--------|-------|-------------|\n"
         + "\n".join(rows) + "\n"
     )
-    with open(QUEUE_MD, "w", encoding="utf-8") as fh:
+    with open(QUEUE_MD, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(body)
 
 
