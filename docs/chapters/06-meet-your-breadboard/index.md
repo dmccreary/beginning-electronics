@@ -108,14 +108,15 @@ Explore a rendered breadboard below to see exactly which holes are secretly wire
 
 #### Diagram: Breadboard Anatomy Explorer
 
-<iframe src="../../sims/breadboard-anatomy-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/breadboard-anatomy-explorer/main.html" width="100%" height="562px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Breadboard Anatomy Explorer</summary>
 Type: microsim
 **sim-id:** breadboard-anatomy-explorer<br/>
 **Library:** p5.js<br/>
-**Status:** Specified
+**Status:** Generated<br/>
+**Source:** docs/sims/breadboard-anatomy-explorer/ (built on the horizontal breadboard layout in `skills/breadboard-sim-generator/assets/breadboard-lib.js`)
 
 Purpose: Help students identify and label every named region of a solderless breadboard — rows, columns, tie points, gutter, numbering, power rails — by clicking or hovering directly on a rendered breadboard graphic.
 

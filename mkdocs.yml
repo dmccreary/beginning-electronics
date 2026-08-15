@@ -8,6 +8,7 @@ repo_url: 'https://github.com/dmccreary/beginning-electronics'
 nav:
   - Home: index.md
   - Course Description: course-description.md
+  
   - Getting Started:
     - Introduction: setup/index.md
     - Kit Components: setup/05-kit-components.md
@@ -15,6 +16,7 @@ nav:
     - Power Supplies: setup/power-supplies.md
     - Purchasing Component Kits: setup/breadboard-kits.md
     - Generating Lessons: setup/generating-lessons.md
+  
   - Chapters:
     - List of Chapters: chapters/index.md
     - "1. Electricity Basics: Voltage, Current, and Resistance": chapters/01-electricity-basics/index.md
@@ -43,6 +45,7 @@ nav:
     - 24. Boolean Logic and Transistor Gates: chapters/24-boolean-logic-transistor-gates/index.md
     - 25. NAND, NOR, XOR, and the RS Latch: chapters/25-nand-nor-xor-rs-latch/index.md
     - 26. Advanced Circuits and Your Capstone Project: chapters/26-advanced-circuits-capstone-project/index.md
+  
   - Hands-on Labs:
     - Introduction: labs/index.md
     - Identifying Parts: labs/05-part-identification.md
@@ -62,10 +65,11 @@ nav:
     - RC Circuit: labs/80-rc-circuit.md
     - Using Perf Boards: labs/70-using-perf-boards.md
     
-  - Micro Simulations:
+  - MicroSims:
     - Introduction: sims/index.md
     - Learning Graph Viewer: sims/graph-viewer/index.md
     - Breadboards: sims/breadboard/index.md
+    - Breadboard Anatomy Explorer: sims/breadboard-anatomy-explorer/index.md
     - LEDs: sims/led/index.md
     - Push Buttons: sims/push-buttons.md
     - Resistor Symbol: sims/resistor/index.md

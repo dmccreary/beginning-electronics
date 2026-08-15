@@ -178,6 +178,21 @@ function regionAt(mx, my) {
     return {kind: 'group', half: hole.row <= 'e' ? 'T' : 'B', col: hole.col};
   }
   if (inGutter(mx, my)) return {kind: 'gutter'};
+
+  // Real rails have a gap every sixth column, which would otherwise leave dead
+  // spots a student can click and get nothing. The whole rail is one net, so
+  // anywhere along the rail band selects it.
+  const rail = railBandAt(mx, my);
+  if (rail) return {kind: 'rail', row: rail};
+  return null;
+}
+
+/** The rail row whose band contains a canvas point, or null. */
+function railBandAt(mx, my) {
+  if (mx < BB.x || mx > BB.x + BB.w) return null;
+  for (const row of ['T+', 'T-', 'B+', 'B-']) {
+    if (abs(my - bbRowY(row)) <= BB.pitch * 0.5) return row;
+  }
   return null;
 }
 

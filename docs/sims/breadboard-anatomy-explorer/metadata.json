@@ -1,24 +1,38 @@
 {
   "title": "Breadboard Anatomy Explorer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for breadboard anatomy explorer",
+  "subject": "Electronics",
+  "description": "An interactive half-size (400 tie point) solderless breadboard. Clicking a power rail, a five-hole terminal-strip row, a column, a single tie point, or the center gutter highlights every tie point in that group and explains what it is. A toggle reveals the hidden internal wiring, including the deliberate break at the gutter.",
   "date": "2026-08-14",
   "educational": {
     "gradeLevel": [
+      "6",
+      "7",
+      "8",
       "9",
       "10",
       "11",
       "12"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Breadboard Anatomy Explorer",
+    "subjectArea": "Electronics",
+    "topic": "Breadboard internal connections, tie points, power rails, and grid numbering",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Identify the power rails, terminal-strip rows, columns, tie points, and gutter of a half-size solderless breadboard",
+      "State the grid address of any hole as a row letter plus a column number",
+      "Explain which holes on a breadboard are electrically connected to each other and which are not",
+      "Explain why the gutter splits a column into two unconnected groups of five tie points",
+      "Explain why the top and bottom power rails require a jumper wire to be connected"
     ],
     "bloomsTaxonomy": "Understand",
+    "bloomsVerbs": [
+      "identify",
+      "explain"
+    ],
     "duration": "10-15 minutes",
-    "prerequisites": [],
+    "prerequisites": [
+      "A circuit needs a complete path",
+      "Two points joined by metal are electrically the same point"
+    ],
     "standards": []
   },
   "technical": {
@@ -26,20 +40,42 @@
     "version": "1.0",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 560
     },
+    "canvasHeight": 560,
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "breadboard-lib.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Click-to-reveal labeling with a toggleable overlay, matched to a Remember/Understand objective. The learner explores the board region by region at their own pace rather than watching an animation.",
+    "keyQuestions": [
+      "Which holes on this board are already connected to each other?",
+      "Why does a whole column need two colors when a five-hole row needs only one?",
+      "How many tie points does one power rail have, and why is it not one per column?",
+      "What is the gutter for, and what happens to a lead plugged into it?"
+    ],
+    "commonMisconceptions": [
+      "A whole column is one connection - it is not; the gutter splits it into two groups of five",
+      "Every column has a power rail hole - rail holes come in groups of five with a gap between groups, giving 25 per rail rather than 30",
+      "The top and bottom power rails are connected to each other - they are separate until a jumper connects them",
+      "The holes in the center channel are usable tie points - they connect to nothing"
+    ],
+    "assessmentOpportunities": [
+      "Ask students to state a hole's grid address before clicking it",
+      "Ask students to predict a power rail's tie-point count before revealing it",
+      "Ask students to explain why a chip must straddle the gutter"
+    ]
   },
+  "limitations": [
+    "This is the bare board only - no components, no current, and no circuit solver. Electrical behavior is introduced in the Push Button and LED Circuit MicroSim.",
+    "The board is modeled with 30 tie columns, matching a 400 tie point half-size board. Full-size (830 tie point) boards and boards with split power rails are not shown.",
+    "Regions are selected with the mouse or by tapping; there is no keyboard navigation."
+  ],
   "chapter": "06-meet-your-breadboard"
 }
