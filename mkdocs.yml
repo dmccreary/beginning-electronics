@@ -210,6 +210,7 @@ plugins:
   - search
 #  - social
 exclude_docs: |
+  sims/battery-type-explorer/image-prompt.md
   sims/switch-family-explorer/image-prompt.md
 markdown_extensions:
   - admonition

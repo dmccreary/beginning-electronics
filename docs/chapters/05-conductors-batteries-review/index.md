@@ -67,7 +67,7 @@ Here's how nominal voltage and typical capacity compare across the battery types
 | AAA (alkaline) | Alkaline | 1.5 V | 800–1,200 mAh | Small remotes, toys |
 | AA (alkaline) | Alkaline | 1.5 V | 1,800–2,600 mAh | Remote controls, flashlights, breadboard packs |
 | Coin cell (CR2032) | Lithium | 3 V | 200–240 mAh | Watches, tiny breadboard projects |
-| Single-cell LiPo | Lithium-polymer | 3.7 V | 500–2,000 mAh | Rechargeable robotics, wearables |
+| 18650 cell | Lithium-ion | 3.6–3.7 V | 2,000–3,500 mAh | Rechargeable robotics, flashlights |
 | 9V (rectangular) | Alkaline | 9 V | 400–600 mAh | Smoke detectors, small projects needing higher voltage |
 | D (alkaline) | Alkaline | 1.5 V | 12,000–18,000 mAh | High-drain, long-life devices |
 
@@ -95,54 +95,51 @@ Explore how battery chemistry, nominal voltage, and capacity relate to each othe
 
 #### Diagram: Battery Type Explorer
 
-<iframe src="../../sims/battery-type-explorer/main.html" width="100%" height="502px" scrolling="no"></iframe>
+<iframe src="../../sims/battery-type-explorer/main.html" width="100%" height="722px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Battery Type Explorer</summary>
 Type: microsim
 **sim-id:** battery-type-explorer<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
+**Library:** Custom grid infographic overlay<br/>
+**Status:** Implemented
 
 Purpose: Help students compare the nominal voltage, capacity, and typical use of common battery types, reinforcing the comparison table with an interactive, click-to-reveal exploration.
 
 Bloom Taxonomy: Understand (L2). Bloom Verb: compare.
 
-Learning objective: Compare the nominal voltage, typical capacity range, and common use of six battery types — AAA, AA, coin cell, single-cell LiPo, 9V, and D cell — by clicking each battery illustration to reveal its specifications in an infobox.
+Learning objective: Compare the nominal voltage, typical capacity range, and common use of six battery types — coin cell, AAA, AA, 18650 lithium-ion, 9V, and D cell — by clicking each battery illustration to reveal its specifications in an infobox.
 
 Canvas layout:
-- Top/center (70%): six battery illustrations to relative scale, smallest (coin cell) to largest (D cell)
-- Right side (30%, stacking below on narrow screens): infobox showing the specs of whichever battery was last clicked
+- Top: six equal interactive columns with battery illustrations shown at approximate relative scale
+- Bottom: infobox showing the specs of the selected battery
 
 Visual elements:
-- Six battery illustrations — AAA, AA, coin cell, LiPo pouch, 9V block, D cell — tinted by chemistry (alkaline gray-blue, lithium orange)
-- A "cells inside" toggle on the 9V battery revealing an exploded view of six 1.5V cells in series, reinforcing the Chapter 4 series-circuit connection
-- A comparison bar beneath each battery showing relative capacity at a glance
+- Six battery illustrations — coin cell, AAA, AA, cylindrical 18650 lithium-ion, 9V block, and D cell
+- Color-coded column backgrounds and persistent pill labels
+- Active-column highlight and specification panel
 
 Interactive controls:
-- Click a battery for its infobox (chemistry, nominal voltage, capacity range, common use)
-- Click the 9V "cells inside" toggle for the exploded animation
-- Slider: "Load Current (mA)" live-updates an estimated battery life readout once a battery is selected
-- Button: "Reset" clears the selection
+- Click or keyboard-activate a battery for its infobox (chemistry, nominal voltage, capacity range, common use)
+- Explore and Quiz modes
 
 Default parameters:
-- No battery pre-selected; infobox shows "Click a battery to see its specs" placeholder
-- Load Current slider defaults to 40 mA once a battery is selected
+- Coin cell selected so one complete comparison card is visible immediately
 
-Behavior when a battery is clicked: Infobox displays chemistry, nominal voltage, capacity range, common use, and a live-calculated estimated battery life using the Load Current slider and the midpoint of the capacity range.
+Behavior when a battery is clicked: Infobox displays chemistry, nominal voltage, capacity range, and common use.
 
 Data Visibility Requirements:
-  Stage 1 (default): All six batteries shown unselected with empty comparison bars
-  Stage 2 (battery clicked): Selected battery highlighted, comparison bar filled to scale, full spec in the infobox
-  Stage 3 (slider moved): Estimated battery life updates live, connecting capacity to a concrete "how long will this last" answer
+  Stage 1 (default): All six battery images and labels are visible with the coin-cell specification card open
+  Stage 2 (battery clicked): Selected battery is highlighted and its full specification card is shown
+  Stage 3 (quiz): Learners identify batteries from voltage, capacity, construction, and use clues
 
-Instructional Rationale: An Understand-level comparison objective calls for click-to-reveal specification cards rather than a passive image, so learners compare batteries side by side. The live battery-life slider makes capacity tangible and reinforces load current from earlier in the chapter.
+Instructional Rationale: An Understand-level comparison objective calls for click-to-reveal specification cards rather than a passive image, so learners compare batteries side by side and then retrieve the distinctions in quiz mode.
 
-Color scheme: Cool gray-blue for alkaline chemistry, warm orange for lithium chemistry, matching the book's accent-color convention.
+Color scheme: Six distinct pastel columns with high-contrast pill labels and selection outlines.
 
-Responsive behavior: Battery row scrolls horizontally on narrow screens with the infobox stacking below; all controls remain touch-operable.
+Responsive behavior: The infographic scales to the iframe width and reports its rendered height to the parent page; all controls remain touch-operable.
 
-Implementation: p5.js, with each battery a clickable region tied to a specification lookup table; infobox and slider rendered as HTML beside (or below) the canvas.
+Implementation: Custom HTML grid overlay, with each battery column tied to a specification lookup table and quiz question set.
 </details>
 
 ## Voltage Rating and Current Rating: Reading the Fine Print

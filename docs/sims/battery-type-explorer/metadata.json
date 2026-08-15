@@ -1,45 +1,40 @@
 {
   "title": "Battery Type Explorer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for battery type explorer",
-  "date": "2026-08-14",
+  "subject": "Beginning electronics and battery selection",
+  "description": "An interactive six-column infographic comparing coin, AAA, AA, 18650 lithium-ion, 9V, and D batteries.",
+  "date": "2026-08-15",
   "educational": {
-    "gradeLevel": [
-      "9",
-      "10",
-      "11",
-      "12"
-    ],
-    "subjectArea": "Mathematics",
-    "topic": "Battery Type Explorer",
+    "gradeLevel": ["6", "7", "8", "9", "10"],
+    "subjectArea": "Electronics",
+    "topic": "Battery chemistry, voltage, capacity, and applications",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Compare the nominal voltage, typical capacity, chemistry, and common use of six battery types."
     ],
-    "bloomsTaxonomy": "Analyze",
+    "bloomsTaxonomy": "Understand",
     "duration": "10-15 minutes",
-    "prerequisites": [],
+    "prerequisites": ["Voltage", "Current", "Battery capacity"],
     "standards": []
   },
   "technical": {
-    "framework": "p5.js",
-    "version": "1.0",
-    "canvasDimensions": {
-      "width": "responsive",
-      "height": 450
-    },
+    "framework": "Custom grid infographic overlay",
+    "version": "2.0",
+    "canvasDimensions": {"width": "responsive", "height": 720},
     "responsive": true,
-    "dependencies": [],
-    "accessibility": {
-      "hasAltText": false,
-      "keyboardNavigable": false
-    }
+    "dependencies": ["grid-diagram.js", "grid-overlay.css"],
+    "accessibility": {"hasAltText": true, "keyboardNavigable": true}
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Interactive comparison and retrieval practice",
+    "keyQuestions": [
+      "How can batteries with the same voltage have very different capacities?",
+      "Which battery chemistry and package best fit a particular project?"
+    ],
+    "commonMisconceptions": [
+      "A physically larger battery must have a higher voltage.",
+      "An 18650 lithium-ion cell is the same format as a lithium-polymer pouch cell."
+    ],
+    "assessmentOpportunities": ["Six-question battery selection quiz"]
   },
   "chapter": "05-conductors-batteries-review"
 }
