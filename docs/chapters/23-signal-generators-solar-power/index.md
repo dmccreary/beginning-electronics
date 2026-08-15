@@ -230,6 +230,13 @@ A single solar cell produces only a small voltage — often under a volt. Real p
 
 **Solar panel wiring** is how individual solar cells inside a panel connect together — in series to add their voltages, or in parallel to add their current capacity — the same pattern battery pack wiring follows.
 
+#### Diagram: Solar Panel LiPo Charging Circuit
+
+<figure markdown="span">
+  ![Safe solar charging path from a 5-to-6-volt panel through a conditional Schottky blocking diode and a protected single-cell LiPo charge controller to separate battery and night-light load ports, with direct panel-to-bare-cell wiring crossed out](solar-panel-lipo-charging-circuit.png)
+  <figcaption>Route panel power through a solar-rated one-cell CC/CV charge controller whose current setting matches the battery. Use D1 when the selected module lacks equivalent reverse-current protection, connect the LiPo only to the BAT terminals, and power the project from the protected LOAD output. Never connect a panel directly to a bare LiPo cell.</figcaption>
+</figure>
+
 - Two identical solar cells wired in **series** → their voltages add together, current capacity stays the same as one cell
 - Two identical solar cells wired in **parallel** → voltage stays the same as one cell, current capacity adds together
 - A typical small hobby solar panel, like the kind used in this course's solar night-light project, outputs roughly 5–6 V in full sun with a modest current capacity well under 1 amp — plenty for slowly charging a single battery, not enough to spin a motor directly

@@ -86,6 +86,7 @@ This prevents a visually plausible but electrically wrong drawing. Use one `elm.
 - Use a vertical source at the left and a return rail below for simple closed-loop instructional circuits.
 - Use top supply and bottom ground conventions for transistor and op-amp circuits.
 - Align parallel branches on a simple orthogonal grid. Make branches long enough that symbols and labels cannot collide.
+- For a two-terminal device placed between a signal or supply and ground, explicitly orient the symbol so its connection anchors form a top-to-bottom path and the return wire can run vertically. Do not rely on Schemdraw's inherited cursor direction when anchor orientation matters.
 - Prefer anchors, `.at(...)`, `.tox(...)`, and `.toy(...)` to guessed line lengths when closing branches.
 - Store important elements: `source = drawing.add(...)`, then connect to `source.start`, `source.end`, or device-specific anchors.
 - Use `with drawing.hold():` for a temporary branch when supported; otherwise pair every `push()` with one `pop()`.
@@ -141,5 +142,6 @@ Place the device first, store it, then wire to named anchors such as `opamp.in1`
 - Two wire endpoints at different coordinates are disconnected even if they look close.
 - A ground symbol labels a reference net; scattering unrelated grounds can hide an unintended missing return path.
 - A line crossing another line is visually ambiguous unless connection intent is explicit.
+- An element can inherit the preceding drawing direction and rotate unexpectedly. Set `.up()`, `.down()`, `.left()`, or `.right()` explicitly whenever a symbol's terminal orientation affects routing.
 - A successful Python process proves only renderability, not correct topology.
 - Export SVG and PNG from the same `build_drawing()` function; never maintain two circuit implementations.

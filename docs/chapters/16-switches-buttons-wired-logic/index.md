@@ -146,6 +146,13 @@ That matters more than it might sound. Picture wiring a push button straight to 
 
 A **Debounce Capacitor** is a small capacitor wired across a switch's output, paired with a resistor, so the sudden rapid voltage spikes of contact bounce get smoothed into one gradual, clean transition — the exact same RC charge-and-discharge behavior you explored with capacitors back in Chapters 9 and 10, now put to work solving a real problem.
 
+#### Diagram: RC Push-Button Debounce Circuit
+
+<figure markdown="span">
+  ![Two states of an active-low RC push-button debounce circuit: released with the capacitor charging through a 10-kilohm pull-up resistor, and pressed with the capacitor discharging through the closed button to ground](rc-push-button-debounce.png)
+  <figcaption>With S1 released, C1 charges through R1 and OUT rises smoothly toward +5 V. Pressing S1 discharges C1 to ground and pulls OUT low. The 10 kΩ and 0.1 µF values produce a 1 ms debounce time constant that smooths brief contact bounce.</figcaption>
+</figure>
+
 #### Debounce Time Constant
 
 \[ \tau = R \times C \]

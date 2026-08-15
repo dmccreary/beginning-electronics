@@ -63,6 +63,13 @@ Chapter 14 handed you two formulas and a table of real resistor and capacitor va
 
 Both builds start from the identical core: pin 8 (VCC) to the positive supply, pin 1 (GND) to ground, pin 4 (RESET) tied straight to VCC so it never interferes, R1 between VCC and pin 7 (DISCHARGE), R2 between pin 7 and the joined pins 2 and 6 (TRIGGER and THRESHOLD), and a timing capacitor C between that joined pair and ground. That's the whole timing engine. What changes is what's connected to pin 3 (OUTPUT) — the only pin whose job is to actually drive something.
 
+#### Diagram: 555 LED Blinker and Buzzer Driver Circuits
+
+<figure markdown="span">
+  ![Shared 555 astable timing core beside two alternative pin 3 outputs: a current-limited LED with anode and cathode marked, and a directly driven polarized small piezo buzzer](555-led-buzzer-output-circuits.png)
+  <figcaption>Connect pin 3 to one output option. The LED requires its 330 Ω series resistor; the small piezo can be driven directly. Use the slow R2/C1 values for a visible blink and the faster values for an audible tone. Motors and other high-current loads still require a transistor driver.</figcaption>
+</figure>
+
 ### The 555 LED Blinker
 
 A **555 LED Blinker** is a 555 timer in astable mode wired so its output pin drives an LED through a current-limiting resistor, turning the chip's internal clock signal into something you can watch. Connect pin 3 to a 330 Ω resistor, then the LED's anode, then the LED's cathode back to ground — the exact same resistor-then-LED pattern from Chapter 12, just powered by a chip instead of a plain wire.

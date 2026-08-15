@@ -292,6 +292,13 @@ In the classic astable wiring, one resistor (R1) sits between the supply and the
 
 That fraction has its own name. **555 Duty Cycle** is the percentage of each full cycle that the output spends high instead of low — a 50% duty cycle spends equal time high and low, while a higher duty cycle spends more time high than low. And the number of full cycles completed each second has its own name too. **555 Frequency Setting** is the rate, measured in hertz, at which the astable 555 completes one full high-low cycle — exactly the "how fast does it blink" number every builder wants to control.
 
+#### Diagram: 555 Timer Astable LED Circuit
+
+<figure markdown="span">
+  ![Complete 555 astable circuit with pins 2 and 6 tied to the R1, R2, and C1 timing network; reset tied high; control and supply bypass capacitors; and an LED with a series resistor on pin 3](555-timer-astable-led.png)
+  <figcaption>R1, R2, and C1 set the blink rate while pin 7 repeatedly discharges the timing capacitor. RESET stays high, C2 stabilizes the CONTROL pin, C3 bypasses supply noise, and pin 3 drives D1 safely through its 330 Ω current-limiting resistor.</figcaption>
+</figure>
+
 #### Astable Frequency
 
 \[ f = \frac{1.44}{(R_1 + 2R_2) \, C} \]

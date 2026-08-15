@@ -77,6 +77,9 @@ Require all of the following before reporting success:
 - Every series connection, branch, junction, crossover, source terminal, return path, named net, input, output, and ground matches the description.
 - Junction dots appear at electrical joins and do not imply a connection at mere crossings.
 - Wires meet component anchors without visible gaps, overshoot, or false connections.
+- Two-terminal devices used in vertical signal-to-ground or supply-to-ground branches have top-and-bottom terminal orientation, with straight vertical entry and return paths unless the circuit convention requires otherwise.
+- No wire unnecessarily crosses or overlays a component symbol or label; every unavoidable crossing is visually unambiguous and topologically justified.
+- Wires follow clean horizontal or vertical routes by default. Diagonal or skewed segments appear only when required by a conventional symbol or the actual topology, never as an accidental result of inherited element orientation.
 - Labels are legible, not clipped, and do not collide with symbols or other labels.
 - The diagram has balanced spacing, an obvious signal/power flow, consistent symbol style, and no excessive empty canvas.
 - The PNG preview contains the same diagram as the primary output and shows no blank, truncated, corrupted, or error-message image.
