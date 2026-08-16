@@ -21,6 +21,20 @@ import argparse
 import os
 import sys
 
+# Same guard as image-tasks/bin/igq — this script is part of the same image
+# pipeline. Python inside WSL reports sys.platform == "linux", so running it
+# from a WSL shell works normally.
+if sys.platform == "win32" or os.name == "nt":
+    sys.exit(
+        "\n"
+        "This script does not run natively on Windows.\n"
+        "\n"
+        "Install Windows Subsystem for Linux (WSL), then run it from inside\n"
+        "the WSL shell. In PowerShell as Administrator:\n"
+        "\n"
+        "    wsl --install\n"
+    )
+
 try:
     from PIL import Image
 except ImportError:

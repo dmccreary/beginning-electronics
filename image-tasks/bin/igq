@@ -19,14 +19,35 @@ status tracking, notification) is automated from that one file drop.
 Run `igq help` for commands.
 """
 
-import argparse
-import json
 import os
+import sys
+
+# Checked before anything else is imported, so a Windows user gets this message
+# rather than a confusing dependency error from a later import. Python inside
+# WSL reports sys.platform == "linux", so this correctly does not fire there.
+if sys.platform == "win32" or os.name == "nt":
+    sys.exit(
+        "\n"
+        "igq does not run natively on Windows.\n"
+        "\n"
+        "Install Windows Subsystem for Linux (WSL), then clone this repo and\n"
+        "run igq from inside the WSL shell. In PowerShell as Administrator:\n"
+        "\n"
+        "    wsl --install\n"
+        "\n"
+        "Restart when prompted, open the Linux shell it installs, and work\n"
+        "from there. The whole image queue behaves normally under WSL.\n"
+        "\n"
+        "Why: the clipboard and desktop-notification integrations shell out to\n"
+        "POSIX tools, and the queue has not been tested on native Windows.\n"
+    )
+
+import argparse  # noqa: E402  (kept below the platform guard on purpose)
+import json
 import platform
 import re
 import shutil
 import subprocess
-import sys
 import time
 from datetime import datetime, timezone
 

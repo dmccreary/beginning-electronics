@@ -9,6 +9,22 @@ All paths below are relative to that root.
 
 ---
 
+## Windows
+
+`igq` does not run natively on Windows — it exits immediately with
+instructions rather than half-working. Install **Windows Subsystem for
+Linux**, then clone the repo and run everything from the WSL shell:
+
+```
+wsl --install
+```
+
+Run that in PowerShell as Administrator, restart when prompted, and work
+from the Linux shell it installs. The entire queue behaves normally under
+WSL, including `igq watch`.
+
+macOS and Linux run it directly, no setup.
+
 ## The one rule
 
 > **Save your finished image to `image-tasks/inbox/<task-id>.png`**
