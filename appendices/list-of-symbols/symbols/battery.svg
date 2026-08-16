@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="117.36pt" height="36.36pt" viewBox="0 0 117.36 36.36" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-15T16:25:48.591384</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 36.36 
+L 117.36 36.36 
+L 117.36 0 
+L 0 0 
+L 0 36.36 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 4.68 18.18 
+L 48.555 18.18 
+M 68.805 18.18 
+L 112.68 18.18 
+" clip-path="url(#p85e8db3232)" style="fill: none; stroke: #17233b; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 48.555 4.68 
+L 48.555 31.68 
+" clip-path="url(#p85e8db3232)" style="fill: none; stroke: #17233b; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 55.305 11.43 
+L 55.305 24.93 
+" clip-path="url(#p85e8db3232)" style="fill: none; stroke: #17233b; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 62.055 4.68 
+L 62.055 31.68 
+" clip-path="url(#p85e8db3232)" style="fill: none; stroke: #17233b; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 68.805 11.43 
+L 68.805 24.93 
+" clip-path="url(#p85e8db3232)" style="fill: none; stroke: #17233b; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p85e8db3232">
+   <rect x="0" y="0" width="117.36" height="36.36"/>
+  </clipPath>
+ </defs>
+</svg>
