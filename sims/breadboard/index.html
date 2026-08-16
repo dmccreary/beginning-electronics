@@ -2442,6 +2442,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sample-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Response
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#lesson-plan" class="md-nav__link">
     <span class="md-ellipsis">
       Lesson Plan
@@ -3140,6 +3149,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sample-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Response
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#lesson-plan" class="md-nav__link">
     <span class="md-ellipsis">
       Lesson Plan
@@ -3220,7 +3238,7 @@
    </p>
 <figcaption>400 tie 1/2 size breadboard (landscape)</figcaption>
 </figure>
-<p><a class="md-button md-button--primary" href="./template.html">Link to Demo</a></p>
+<p><a class="md-button md-button--primary" href="../breadboard-anatomy-explorer/main.html">Link to Demo</a></p>
 <h2 id="about-this-microsim">About this MicroSim</h2>
 <p>This MicroSim teaches us how to draw a breadboard using
 p5.js.  We use this as a background for many of our
@@ -3273,8 +3291,10 @@ and loaded it as an image using the following code:</p>
 <li>Column labels (1-35)</li>
 </ol>
 <h2 id="sample-prompt">Sample Prompt</h2>
-<p>Create a single file p5.js sketch.
+<div class="highlight"><pre><span></span><code>Create a single file p5.js sketch.
 Draw a green circle on a 600x400 canvas with a radius of 200.
+</code></pre></div>
+<h2 id="sample-response">Sample Response</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -3286,25 +3306,19 @@ Draw a green circle on a 600x400 canvas with a radius of 200.
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>## Sample Response
-
-```javascript
-let canvasHeight = 400;
-let aspectRatio = 1.91; // Open Graph standard
-let canvasWidth = canvasHeight * aspectRatio;
-let radius = 200;
-function setup() {
-const canvas = createCanvas(canvasWidth, canvasHeight);
-  canvas.parent(&#39;canvas-container&#39;);
-  fill(245);
-  rect(0,0, canvasWidth, canvasHeight);
-  fill(&#39;green&#39;);
-  circle(canvasWidth/2, canvasHeight/2, radius);
-}
-</code></pre></div></td></tr></table></div></p>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">400</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">aspectRatio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.91</span><span class="p">;</span><span class="w"> </span><span class="c1">// Open Graph standard</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">canvasWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">aspectRatio</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">200</span><span class="p">;</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">canvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createCanvas</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">canvas</span><span class="p">.</span><span class="nx">parent</span><span class="p">(</span><span class="s1">&#39;canvas-container&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="mf">245</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">rect</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">circle</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">radius</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level-subject-and-topic">Grade Level, Subject and Topic</h3>
 <p>9th-grade geometry. Circle and radius.</p>

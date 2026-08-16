@@ -1515,6 +1515,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3064,6 +3073,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3271,39 +3289,125 @@ horizontal and vertical labeling of the resistors.</p>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="selecting-resistors">Selecting Resistors</h2>
-<p>```js
-// find the nearest resistor
-let slider;
-let resistorValue;</p>
-<p>function setup() {
-  createCanvas(800, 100);
-  // Create a slider from 10 ohms to 1M ohms, logarithmic scale
-  slider = createSlider(1, 6, 2.38, 0.01); // Logarithmic scale: 10^1 to 10^6
-  slider.position(10, 60);
-  slider.style('width', '780px');
-}</p>
-<p>function draw() {
-  background(220);</p>
-<p>// Convert the logarithmic slider value to actual resistance
-  let actualValue = pow(10, slider.value());</p>
-<p>resistorValue = findClosestStandardResistor(actualValue);</p>
-<p>// Display the selected and closest standard resistor values
-  fill(0);
-  textSize(16);
-  text("Selected Resistance: " + roundToSignificantDigits(actualValue, 2) + " Ω", 10, 30);
-  text("Closest Standard Resistor: " + roundToSignificantDigits(resistorValue, 2) + " Ω", 10, 50);
-}</p>
-<p>function findClosestStandardResistor(inputOhms) {
-  const e12 = [1.0, 1.2, 1.5, 1.8, 2.2, 2.7, 3.3, 3.9, 4.7, 5.6, 6.8, 8.2];</p>
-<p>let standardValues = [];
-  for (let factor = 0.1; factor &lt;= 1000000; factor *= 10) {
-    e12.forEach(value =&gt; {
-      standardValues.push(value * factor);
-    });
-  }</p>
-<p>let closest = standardValues[0];
-  let minDiff = Math.abs(inputOhms - closest);</p>
-<p>for (let i = 1; i &lt; standardValues.length; i++) {```</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// find the nearest resistor</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">slider</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">resistorValue</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">createCanvas</span><span class="p">(</span><span class="mf">800</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Create a slider from 10 ohms to 1M ohms, logarithmic scale</span>
+<span class="w">  </span><span class="nx">slider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createSlider</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">2.38</span><span class="p">,</span><span class="w"> </span><span class="mf">0.01</span><span class="p">);</span><span class="w"> </span><span class="c1">// Logarithmic scale: 10^1 to 10^6</span>
+<span class="w">  </span><span class="nx">slider</span><span class="p">.</span><span class="nx">position</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">60</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">slider</span><span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">&#39;width&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;780px&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">background</span><span class="p">(</span><span class="mf">220</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Convert the logarithmic slider value to actual resistance</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">actualValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pow</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="nx">slider</span><span class="p">.</span><span class="nx">value</span><span class="p">());</span>
+
+<span class="w">  </span><span class="nx">resistorValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">findClosestStandardResistor</span><span class="p">(</span><span class="nx">actualValue</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Display the selected and closest standard resistor values</span>
+<span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">textSize</span><span class="p">(</span><span class="mf">16</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Selected Resistance: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">roundToSignificantDigits</span><span class="p">(</span><span class="nx">actualValue</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; Ω&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Closest Standard Resistor: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">roundToSignificantDigits</span><span class="p">(</span><span class="nx">resistorValue</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; Ω&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">findClosestStandardResistor</span><span class="p">(</span><span class="nx">inputOhms</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">e12</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.8</span><span class="p">,</span><span class="w"> </span><span class="mf">2.2</span><span class="p">,</span><span class="w"> </span><span class="mf">2.7</span><span class="p">,</span><span class="w"> </span><span class="mf">3.3</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="mf">4.7</span><span class="p">,</span><span class="w"> </span><span class="mf">5.6</span><span class="p">,</span><span class="w"> </span><span class="mf">6.8</span><span class="p">,</span><span class="w"> </span><span class="mf">8.2</span><span class="p">];</span>
+
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">standardValues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span><span class="w"> </span><span class="nx">factor</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">1000000</span><span class="p">;</span><span class="w"> </span><span class="nx">factor</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">e12</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">standardValues</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">factor</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">closest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">standardValues</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">minDiff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">inputOhms</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">closest</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">standardValues</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">inputOhms</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">standardValues</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">diff</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">minDiff</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">minDiff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">diff</span><span class="p">;</span>
+<span class="w">      </span><span class="nx">closest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">standardValues</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">closest</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Round a value to a given number of significant digits, so that</span>
+<span class="c1">// 2398.7 displayed to 2 digits reads &quot;2400&quot; rather than &quot;2398.7&quot;.</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">roundToSignificantDigits</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">digits</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">magnitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">log10</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">value</span><span class="p">)))</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">digits</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="nx">magnitude</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">factor</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">factor</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="references">References</h2>
 <p><a href="https://editor.p5js.org/dmccreary/sketches/0-_CXuiVK">Draw Resistors Library</a> note these are done for both horizontal and vertical</p>
 <p><a href="https://editor.p5js.org/dmccreary/sketches/8TKJ3s29E">Draw Resistor Symbol</a></p>
 

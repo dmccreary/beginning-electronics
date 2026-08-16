@@ -1171,14 +1171,29 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Sample ChatGPT Prompts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#explanation-of-the-circuit" class="md-nav__link">
     <span class="md-ellipsis">
       Explanation of the Circuit
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1663,14 +1678,29 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Sample ChatGPT Prompts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#explanation-of-the-circuit" class="md-nav__link">
     <span class="md-ellipsis">
       Explanation of the Circuit
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1819,31 +1849,92 @@ LED displays are as follows:</p>
 <p>Out kit adds a <a href="https://en.wikipedia.org/wiki/Diode_bridge">Diode Bridge Rectifier</a> on the input and a <a href="https://www.ebay.com/itm/224073010639">Digital LED voltage display</a> on the output.  Note that you can purchase these nice LED Voltage displays for under $1.00 in quantity 10.</p>
 <p><img alt="" src="circuit-diagram-kit.png" /></p>
 <h2 id="parts-list">Parts List</h2>
-<ol>
-<li>LM317 Adjustable DC Voltage Regulator with a heatsink</li>
-<li>4x large 4007 diodes (bridge rectifier) - polarized</li>
-<li>1x 1000uF large polarized capacitor with "-" for the band</li>
-<li>2x 0.1 microfarads (uF) small yellow "104" capacitors <img alt="" src="104-cap.png" /></li>
-<li>2x smaller flyback protection diodes to protect the LM317 from reverse currents</li>
-<li>1x 241 Ohm resistor that connects the GND to the output of the LM317</li>
-<li>1x stacked linear potentiometer with three wires and knob</li>
-<li>1x digital LED display (red=VCC, black=GND and yellow for signal)</li>
-<li>1x 10 uF polarized capacitor on the output</li>
-<li>1x 100 uF polarized capacitor on the output</li>
-<li>2x screw terminal blocks for input and output</li>
-<li>1x printed circuit board</li>
-<li>Standoffs for supporting the LED display</li>
-<li>4x very small screws for mounting the standoffs to the PC board</li>
-</ol>
-<p>|Part Name|Qty|</p>
+<table>
+<thead>
+<tr>
+<th>Part Name</th>
+<th>Qty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LM317 Adjustable DC Voltage Regulator with a heatsink</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Large 4007 diodes (bridge rectifier) - polarized</td>
+<td>4</td>
+</tr>
+<tr>
+<td>1000 uF large polarized capacitor with "-" for the band</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0.1 microfarad (uF) small yellow "104" capacitors <img alt="" src="104-cap.png" width="60" /></td>
+<td>2</td>
+</tr>
+<tr>
+<td>Smaller flyback protection diodes to protect the LM317 from reverse currents</td>
+<td>2</td>
+</tr>
+<tr>
+<td>241 Ohm resistor that connects the GND to the output of the LM317</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Stacked linear potentiometer with three wires and knob</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Digital LED display (red=VCC, black=GND and yellow for signal)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>10 uF polarized capacitor on the output</td>
+<td>1</td>
+</tr>
+<tr>
+<td>100 uF polarized capacitor on the output</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Screw terminal blocks for input and output</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Printed circuit board</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Standoffs for supporting the LED display</td>
+<td>&mdash;</td>
+</tr>
+<tr>
+<td>Very small screws for mounting the standoffs to the PC board</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
 <h2 id="sample-chatgpt-prompts">Sample ChatGPT Prompts</h2>
-<h2 id="explanation-of-the-circuit">Explanation of the Circuit</h2>
+<h3 id="explanation-of-the-circuit">Explanation of the Circuit</h3>
 <div class="highlight"><pre><span></span><code>I have a variable power supply built around an LM317
-Adjustable DC Voltage Regulator.  I have 4 dio
+Adjustable DC Voltage Regulator.  I have 4 diodes wired
+as a bridge rectifier on the input, a 1000uF capacitor to
+smooth the rectified voltage, and two 0.1uF ceramic
+capacitors across the input and the output.  A 241 ohm
+resistor connects the output to the adjustment pin, and a
+potentiometer between the adjustment pin and ground sets
+the output anywhere from 1.25V to 30V.  Two more
+capacitors (10uF and 100uF) filter the output, and a
+digital LED display shows the output voltage.
 
-### Lesson Plan
-```linenums=&quot;0&quot;
-I have a very nice small variable voltage regulator kit 
+Please explain how this circuit works, one stage at a
+time, for a student who has just finished a beginning
+electronics course.  For each component, explain what it
+does and why the circuit needs it.
+</code></pre></div>
+<h3 id="lesson-plan">Lesson Plan</h3>
+<div class="highlight"><pre><span></span><code>I have a very nice small variable voltage regulator kit 
 that I created using a standard LM317 voltage regulator.
 I added a bridge rectifier on the front end and a digital
 LED voltage display to display the output voltage.
