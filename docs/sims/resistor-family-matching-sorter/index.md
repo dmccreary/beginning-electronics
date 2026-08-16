@@ -1,6 +1,6 @@
 ---
-title: Resistor Family Matching Sorter
-description: Interactive p5.js MicroSim for resistor family matching sorter.
+title: "Resistor Family Matching Sorter"
+description: "Interactive p5.js MicroSim for resistor family matching sorter."
 image: /sims/resistor-family-matching-sorter/resistor-family-matching-sorter.png
 og:image: /sims/resistor-family-matching-sorter/resistor-family-matching-sorter.png
 twitter:image: /sims/resistor-family-matching-sorter/resistor-family-matching-sorter.png

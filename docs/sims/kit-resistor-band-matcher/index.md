@@ -1,6 +1,6 @@
 ---
-title: Kit Resistor Band Matcher
-description: Interactive p5.js MicroSim for kit resistor band matcher.
+title: "Kit Resistor Band Matcher"
+description: "Interactive p5.js MicroSim for kit resistor band matcher."
 image: /sims/kit-resistor-band-matcher/kit-resistor-band-matcher.png
 og:image: /sims/kit-resistor-band-matcher/kit-resistor-band-matcher.png
 twitter:image: /sims/kit-resistor-band-matcher/kit-resistor-band-matcher.png

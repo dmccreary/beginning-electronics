@@ -1,6 +1,6 @@
 ---
-title: Half-Split Fault Finder
-description: Interactive p5.js MicroSim for half-split fault finder.
+title: "Half-Split Fault Finder"
+description: "Interactive p5.js MicroSim for half-split fault finder."
 image: /sims/half-split-fault-finder/half-split-fault-finder.png
 og:image: /sims/half-split-fault-finder/half-split-fault-finder.png
 twitter:image: /sims/half-split-fault-finder/half-split-fault-finder.png

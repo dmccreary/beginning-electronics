@@ -1,6 +1,6 @@
 ---
-title: Sensor-Logic-Output Block Diagram Builder
-description: Interactive p5.js MicroSim for sensor-logic-output block diagram builder.
+title: "Sensor-Logic-Output Block Diagram Builder"
+description: "Interactive p5.js MicroSim for sensor-logic-output block diagram builder."
 image: /sims/sensor-logic-output-block-builder/sensor-logic-output-block-builder.png
 og:image: /sims/sensor-logic-output-block-builder/sensor-logic-output-block-builder.png
 twitter:image: /sims/sensor-logic-output-block-builder/sensor-logic-output-block-builder.png

@@ -1,6 +1,6 @@
 ---
-title: RGB LED Color Mixing Breadboard
-description: Interactive p5.js MicroSim for rgb led color mixing breadboard.
+title: "RGB LED Color Mixing Breadboard"
+description: "Interactive p5.js MicroSim for rgb led color mixing breadboard."
 image: /sims/rgb-led-color-mixer-breadboard/rgb-led-color-mixer-breadboard.png
 og:image: /sims/rgb-led-color-mixer-breadboard/rgb-led-color-mixer-breadboard.png
 twitter:image: /sims/rgb-led-color-mixer-breadboard/rgb-led-color-mixer-breadboard.png

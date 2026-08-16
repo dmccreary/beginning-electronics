@@ -1,6 +1,6 @@
 ---
-title: Circuit Topology Explorer
-description: Interactive p5.js MicroSim for circuit topology explorer.
+title: "Circuit Topology Explorer"
+description: "Interactive p5.js MicroSim for circuit topology explorer."
 image: /sims/circuit-topology-explorer/circuit-topology-explorer.png
 og:image: /sims/circuit-topology-explorer/circuit-topology-explorer.png
 twitter:image: /sims/circuit-topology-explorer/circuit-topology-explorer.png

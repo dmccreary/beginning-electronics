@@ -1,6 +1,6 @@
 ---
-title: DC Motor Control and Stall Current Explorer
-description: Interactive p5.js MicroSim for dc motor control and stall current explorer.
+title: "DC Motor Control and Stall Current Explorer"
+description: "Interactive p5.js MicroSim for dc motor control and stall current explorer."
 image: /sims/dc-motor-direction-control-circuit/dc-motor-direction-control-circuit.png
 og:image: /sims/dc-motor-direction-control-circuit/dc-motor-direction-control-circuit.png
 twitter:image: /sims/dc-motor-direction-control-circuit/dc-motor-direction-control-circuit.png

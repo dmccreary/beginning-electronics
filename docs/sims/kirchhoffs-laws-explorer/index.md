@@ -1,6 +1,6 @@
 ---
-title: Kirchhoff's Laws Circuit Explorer
-description: Interactive p5.js MicroSim for kirchhoff's laws circuit explorer.
+title: "Kirchhoff's Laws Circuit Explorer"
+description: "Interactive p5.js MicroSim for kirchhoff's laws circuit explorer."
 image: /sims/kirchhoffs-laws-explorer/kirchhoffs-laws-explorer.png
 og:image: /sims/kirchhoffs-laws-explorer/kirchhoffs-laws-explorer.png
 twitter:image: /sims/kirchhoffs-laws-explorer/kirchhoffs-laws-explorer.png

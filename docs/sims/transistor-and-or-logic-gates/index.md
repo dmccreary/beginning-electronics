@@ -1,6 +1,6 @@
 ---
-title: Transistor AND and OR Logic Gates with Live Truth Table
-description: Interactive p5.js MicroSim for transistor and and or logic gates with live truth table.
+title: "Transistor AND and OR Logic Gates with Live Truth Table"
+description: "Interactive p5.js MicroSim for transistor and and or logic gates with live truth table."
 image: /sims/transistor-and-or-logic-gates/transistor-and-or-logic-gates.png
 og:image: /sims/transistor-and-or-logic-gates/transistor-and-or-logic-gates.png
 twitter:image: /sims/transistor-and-or-logic-gates/transistor-and-or-logic-gates.png

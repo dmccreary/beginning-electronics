@@ -1,6 +1,6 @@
 ---
-title: Circuit Safety Hazard Explorer
-description: Interactive p5.js MicroSim for circuit safety hazard explorer.
+title: "Circuit Safety Hazard Explorer"
+description: "Interactive p5.js MicroSim for circuit safety hazard explorer."
 image: /sims/circuit-safety-hazard-explorer/circuit-safety-hazard-explorer.png
 og:image: /sims/circuit-safety-hazard-explorer/circuit-safety-hazard-explorer.png
 twitter:image: /sims/circuit-safety-hazard-explorer/circuit-safety-hazard-explorer.png

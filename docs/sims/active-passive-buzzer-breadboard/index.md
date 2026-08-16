@@ -1,6 +1,6 @@
 ---
-title: Active vs. Passive Buzzer Tone Comparison
-description: Interactive p5.js MicroSim for active vs. passive buzzer tone comparison.
+title: "Active vs. Passive Buzzer Tone Comparison"
+description: "Interactive p5.js MicroSim for active vs. passive buzzer tone comparison."
 image: /sims/active-passive-buzzer-breadboard/active-passive-buzzer-breadboard.png
 og:image: /sims/active-passive-buzzer-breadboard/active-passive-buzzer-breadboard.png
 twitter:image: /sims/active-passive-buzzer-breadboard/active-passive-buzzer-breadboard.png

@@ -1,6 +1,6 @@
 ---
-title: Meet the Actuator Family
-description: Compare DC motors, relays, solenoids, and hobby servos by motion, control, and use.
+title: "Meet the Actuator Family"
+description: "Compare DC motors, relays, solenoids, and hobby servos by motion, control, and use."
 image: /sims/actuator-family-explorer/actuator-family.png
 og:image: /sims/actuator-family-explorer/actuator-family.png
 twitter:image: /sims/actuator-family-explorer/actuator-family.png

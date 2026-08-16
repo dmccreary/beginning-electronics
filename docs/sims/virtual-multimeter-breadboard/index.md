@@ -1,6 +1,6 @@
 ---
-title: Virtual Multimeter Breadboard
-description: Interactive p5.js MicroSim for virtual multimeter breadboard.
+title: "Virtual Multimeter Breadboard"
+description: "Interactive p5.js MicroSim for virtual multimeter breadboard."
 image: /sims/virtual-multimeter-breadboard/virtual-multimeter-breadboard.png
 og:image: /sims/virtual-multimeter-breadboard/virtual-multimeter-breadboard.png
 twitter:image: /sims/virtual-multimeter-breadboard/virtual-multimeter-breadboard.png

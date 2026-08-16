@@ -1,6 +1,6 @@
 ---
-title: Transistor as a Switch — Breadboard Demo
-description: Interactive p5.js MicroSim for transistor as a switch — breadboard demo.
+title: "Transistor as a Switch — Breadboard Demo"
+description: "Interactive p5.js MicroSim for transistor as a switch — breadboard demo."
 image: /sims/transistor-switch-breadboard-demo/transistor-switch-breadboard-demo.png
 og:image: /sims/transistor-switch-breadboard-demo/transistor-switch-breadboard-demo.png
 twitter:image: /sims/transistor-switch-breadboard-demo/transistor-switch-breadboard-demo.png

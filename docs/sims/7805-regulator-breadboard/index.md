@@ -1,6 +1,6 @@
 ---
-title: 7805 Voltage Regulator Breadboard Circuit
-description: Interactive p5.js MicroSim for 7805 voltage regulator breadboard circuit.
+title: "7805 Voltage Regulator Breadboard Circuit"
+description: "Interactive p5.js MicroSim for 7805 voltage regulator breadboard circuit."
 image: /sims/7805-regulator-breadboard/7805-regulator-breadboard.png
 og:image: /sims/7805-regulator-breadboard/7805-regulator-breadboard.png
 twitter:image: /sims/7805-regulator-breadboard/7805-regulator-breadboard.png

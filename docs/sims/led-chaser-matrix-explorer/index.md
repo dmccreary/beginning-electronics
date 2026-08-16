@@ -1,6 +1,6 @@
 ---
-title: LED Chaser and Matrix Wiring Explorer
-description: Interactive p5.js MicroSim for led chaser and matrix wiring explorer.
+title: "LED Chaser and Matrix Wiring Explorer"
+description: "Interactive p5.js MicroSim for led chaser and matrix wiring explorer."
 image: /sims/led-chaser-matrix-explorer/led-chaser-matrix-explorer.png
 og:image: /sims/led-chaser-matrix-explorer/led-chaser-matrix-explorer.png
 twitter:image: /sims/led-chaser-matrix-explorer/led-chaser-matrix-explorer.png

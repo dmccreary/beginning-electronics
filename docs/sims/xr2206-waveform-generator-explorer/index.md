@@ -1,6 +1,6 @@
 ---
-title: XR2206 Waveform Generator Explorer
-description: Interactive p5.js MicroSim for xr2206 waveform generator explorer.
+title: "XR2206 Waveform Generator Explorer"
+description: "Interactive p5.js MicroSim for xr2206 waveform generator explorer."
 image: /sims/xr2206-waveform-generator-explorer/xr2206-waveform-generator-explorer.png
 og:image: /sims/xr2206-waveform-generator-explorer/xr2206-waveform-generator-explorer.png
 twitter:image: /sims/xr2206-waveform-generator-explorer/xr2206-waveform-generator-explorer.png

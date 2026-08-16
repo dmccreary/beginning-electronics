@@ -1,6 +1,6 @@
 ---
-title: TP4056 Charging Circuit Wiring
-description: Interactive p5.js wiring diagram of a TP4056 charger module connected to a single-cell LiPo battery and a project board.
+title: "TP4056 Charging Circuit Wiring"
+description: "Interactive p5.js wiring diagram of a TP4056 charger module connected to a single-cell LiPo battery and a project board."
 image: /sims/tp4056-lipo-charging-wiring/tp4056-lipo-charging-wiring.png
 og:image: /sims/tp4056-lipo-charging-wiring/tp4056-lipo-charging-wiring.png
 twitter:image: /sims/tp4056-lipo-charging-wiring/tp4056-lipo-charging-wiring.png

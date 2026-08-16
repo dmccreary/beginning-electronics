@@ -1,6 +1,6 @@
 ---
 title: "Wired Logic: AND and OR"
-description: Two switches in series make an AND gate and two in parallel make an OR gate, with live truth tables that fill in as the student flips the switches.
+description: "Two switches in series make an AND gate and two in parallel make an OR gate, with live truth tables that fill in as the student flips the switches."
 image: /sims/wired-logic-and-or/wired-logic-and-or.png
 og:image: /sims/wired-logic-and-or/wired-logic-and-or.png
 twitter:image: /sims/wired-logic-and-or/wired-logic-and-or.png

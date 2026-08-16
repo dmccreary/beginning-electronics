@@ -1,6 +1,6 @@
 ---
-title: Forward vs. Reverse Bias Breadboard Demo
-description: Interactive p5.js MicroSim for forward vs. reverse bias breadboard demo.
+title: "Forward vs. Reverse Bias Breadboard Demo"
+description: "Interactive p5.js MicroSim for forward vs. reverse bias breadboard demo."
 image: /sims/diode-forward-reverse-bias-demo/diode-forward-reverse-bias-demo.png
 og:image: /sims/diode-forward-reverse-bias-demo/diode-forward-reverse-bias-demo.png
 twitter:image: /sims/diode-forward-reverse-bias-demo/diode-forward-reverse-bias-demo.png

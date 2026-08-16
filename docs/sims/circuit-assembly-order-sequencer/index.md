@@ -1,6 +1,6 @@
 ---
-title: Circuit Assembly Order Sequencer
-description: Interactive p5.js MicroSim for circuit assembly order sequencer.
+title: "Circuit Assembly Order Sequencer"
+description: "Interactive p5.js MicroSim for circuit assembly order sequencer."
 image: /sims/circuit-assembly-order-sequencer/circuit-assembly-order-sequencer.png
 og:image: /sims/circuit-assembly-order-sequencer/circuit-assembly-order-sequencer.png
 twitter:image: /sims/circuit-assembly-order-sequencer/circuit-assembly-order-sequencer.png

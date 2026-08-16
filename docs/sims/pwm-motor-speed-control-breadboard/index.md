@@ -1,6 +1,6 @@
 ---
-title: PWM Motor Speed Control Breadboard
-description: Interactive p5.js MicroSim for pwm motor speed control breadboard.
+title: "PWM Motor Speed Control Breadboard"
+description: "Interactive p5.js MicroSim for pwm motor speed control breadboard."
 image: /sims/pwm-motor-speed-control-breadboard/pwm-motor-speed-control-breadboard.png
 og:image: /sims/pwm-motor-speed-control-breadboard/pwm-motor-speed-control-breadboard.png
 twitter:image: /sims/pwm-motor-speed-control-breadboard/pwm-motor-speed-control-breadboard.png

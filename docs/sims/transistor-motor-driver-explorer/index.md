@@ -1,6 +1,6 @@
 ---
-title: Transistor Motor Driver — Base Resistor and Darlington Pair Explorer
-description: Interactive p5.js MicroSim for transistor motor driver — base resistor and darlington pair explorer.
+title: "Transistor Motor Driver — Base Resistor and Darlington Pair Explorer"
+description: "Interactive p5.js MicroSim for transistor motor driver — base resistor and darlington pair explorer."
 image: /sims/transistor-motor-driver-explorer/transistor-motor-driver-explorer.png
 og:image: /sims/transistor-motor-driver-explorer/transistor-motor-driver-explorer.png
 twitter:image: /sims/transistor-motor-driver-explorer/transistor-motor-driver-explorer.png

@@ -1,6 +1,6 @@
 ---
-title: Multi-LED Configuration Explorer
-description: Compare parallel LED branches, strips, matrices, and chasers by wiring and control strategy.
+title: "Multi-LED Configuration Explorer"
+description: "Compare parallel LED branches, strips, matrices, and chasers by wiring and control strategy."
 image: /sims/multi-led-configuration-explorer/multi-led-configurations.png
 og:image: /sims/multi-led-configuration-explorer/multi-led-configurations.png
 twitter:image: /sims/multi-led-configuration-explorer/multi-led-configurations.png

@@ -1,6 +1,6 @@
 ---
-title: Pull-Up and Pull-Down Resistor Explorer
-description: Interactive p5.js MicroSim for pull-up and pull-down resistor explorer.
+title: "Pull-Up and Pull-Down Resistor Explorer"
+description: "Interactive p5.js MicroSim for pull-up and pull-down resistor explorer."
 image: /sims/pull-up-pull-down-resistor-explorer/pull-up-pull-down-resistor-explorer.png
 og:image: /sims/pull-up-pull-down-resistor-explorer/pull-up-pull-down-resistor-explorer.png
 twitter:image: /sims/pull-up-pull-down-resistor-explorer/pull-up-pull-down-resistor-explorer.png

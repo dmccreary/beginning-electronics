@@ -1,6 +1,6 @@
 ---
-title: RC Charge and Discharge Curve Explorer
-description: Interactive p5.js MicroSim for rc charge and discharge curve explorer.
+title: "RC Charge and Discharge Curve Explorer"
+description: "Interactive p5.js MicroSim for rc charge and discharge curve explorer."
 image: /sims/rc-charge-discharge-explorer/rc-charge-discharge-explorer.png
 og:image: /sims/rc-charge-discharge-explorer/rc-charge-discharge-explorer.png
 twitter:image: /sims/rc-charge-discharge-explorer/rc-charge-discharge-explorer.png

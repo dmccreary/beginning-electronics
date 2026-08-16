@@ -1,6 +1,6 @@
 ---
-title: 74HC595 Datasheet Pinout Diagram Reader
-description: Interactive p5.js MicroSim for 74hc595 datasheet pinout diagram reader.
+title: "74HC595 Datasheet Pinout Diagram Reader"
+description: "Interactive p5.js MicroSim for 74hc595 datasheet pinout diagram reader."
 image: /sims/74hc595-datasheet-pinout-reader/74hc595-datasheet-pinout-reader.png
 og:image: /sims/74hc595-datasheet-pinout-reader/74hc595-datasheet-pinout-reader.png
 twitter:image: /sims/74hc595-datasheet-pinout-reader/74hc595-datasheet-pinout-reader.png

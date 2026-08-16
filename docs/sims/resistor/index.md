@@ -1,3 +1,8 @@
+---
+title: "Drawing Resistor Symbols in a MicroSim"
+description: "How the drawResistor() function draws the international zig-zag schematic symbol in p5.js, in horizontal and vertical orientations with labels placed on any of the four sides."
+---
+
 # Drawing Resistor Symbols in a MicroSim
 
 <iframe src="main.html" width="100%" height="402px" scrolling="no"></iframe>

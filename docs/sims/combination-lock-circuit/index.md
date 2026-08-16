@@ -1,6 +1,6 @@
 ---
-title: Combination Lock Circuit
-description: Interactive p5.js MicroSim for combination lock circuit.
+title: "Combination Lock Circuit"
+description: "Interactive p5.js MicroSim for combination lock circuit."
 image: /sims/combination-lock-circuit/combination-lock-circuit.png
 og:image: /sims/combination-lock-circuit/combination-lock-circuit.png
 twitter:image: /sims/combination-lock-circuit/combination-lock-circuit.png

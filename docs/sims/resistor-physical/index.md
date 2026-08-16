@@ -1,3 +1,8 @@
+---
+title: "Drawing Resistors in a MicroSim"
+description: "How physical resistors are drawn in p5.js with correct color-code bands and K/M value labels, in both horizontal and vertical orientations."
+---
+
 # Drawing Resistors in a MicroSim
 
 ![](./draw-resistors.png)

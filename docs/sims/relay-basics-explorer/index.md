@@ -1,6 +1,6 @@
 ---
-title: Relay Basics Explorer
-description: Interactive p5.js MicroSim for relay basics explorer.
+title: "Relay Basics Explorer"
+description: "Interactive p5.js MicroSim for relay basics explorer."
 image: /sims/relay-basics-explorer/relay-basics-explorer.png
 og:image: /sims/relay-basics-explorer/relay-basics-explorer.png
 twitter:image: /sims/relay-basics-explorer/relay-basics-explorer.png

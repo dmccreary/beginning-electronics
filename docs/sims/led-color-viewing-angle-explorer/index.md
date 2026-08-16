@@ -1,6 +1,6 @@
 ---
-title: LED Color, Viewing Angle, and Lens Shape Explorer
-description: Interactive p5.js MicroSim for led color, viewing angle, and lens shape explorer.
+title: "LED Color, Viewing Angle, and Lens Shape Explorer"
+description: "Interactive p5.js MicroSim for led color, viewing angle, and lens shape explorer."
 image: /sims/led-color-viewing-angle-explorer/led-color-viewing-angle-explorer.png
 og:image: /sims/led-color-viewing-angle-explorer/led-color-viewing-angle-explorer.png
 twitter:image: /sims/led-color-viewing-angle-explorer/led-color-viewing-angle-explorer.png

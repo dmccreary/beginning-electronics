@@ -1,6 +1,6 @@
 ---
-title: Potentiometer Taper Explorer
-description: Interactive p5.js MicroSim for potentiometer taper explorer.
+title: "Potentiometer Taper Explorer"
+description: "Interactive p5.js MicroSim for potentiometer taper explorer."
 image: /sims/potentiometer-taper-explorer/potentiometer-taper-explorer.png
 og:image: /sims/potentiometer-taper-explorer/potentiometer-taper-explorer.png
 twitter:image: /sims/potentiometer-taper-explorer/potentiometer-taper-explorer.png

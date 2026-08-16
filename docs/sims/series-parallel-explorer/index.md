@@ -1,6 +1,6 @@
 ---
-title: Series vs Parallel Explorer
-description: Rewire two identical LEDs between a series chain and two parallel branches on a breadboard, and watch branch current and total supply current change.
+title: "Series vs Parallel Explorer"
+description: "Rewire two identical LEDs between a series chain and two parallel branches on a breadboard, and watch branch current and total supply current change."
 image: /sims/series-parallel-explorer/series-parallel-explorer.png
 og:image: /sims/series-parallel-explorer/series-parallel-explorer.png
 twitter:image: /sims/series-parallel-explorer/series-parallel-explorer.png

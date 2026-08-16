@@ -1,3 +1,8 @@
+---
+title: "Draw LEDs"
+description: "Top view of 5mm LEDs drawn in p5.js, using the flat cathode edge to show polarity and comparing on and off states across seven LED colors."
+---
+
 # Draw LEDs
 
 <figure markdown>

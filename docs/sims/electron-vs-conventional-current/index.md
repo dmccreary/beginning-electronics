@@ -1,6 +1,6 @@
 ---
-title: Electron Flow vs. Conventional Current
-description: Interactive p5.js MicroSim for electron flow vs. conventional current.
+title: "Electron Flow vs. Conventional Current"
+description: "Interactive p5.js MicroSim for electron flow vs. conventional current."
 image: /sims/electron-vs-conventional-current/electron-vs-conventional-current.png
 og:image: /sims/electron-vs-conventional-current/electron-vs-conventional-current.png
 twitter:image: /sims/electron-vs-conventional-current/electron-vs-conventional-current.png

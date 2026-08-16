@@ -1,6 +1,6 @@
 ---
-title: Resistivity and Conductance Calculator
-description: Interactive p5.js MicroSim for resistivity and conductance calculator.
+title: "Resistivity and Conductance Calculator"
+description: "Interactive p5.js MicroSim for resistivity and conductance calculator."
 image: /sims/resistivity-conductance-calculator/resistivity-conductance-calculator.png
 og:image: /sims/resistivity-conductance-calculator/resistivity-conductance-calculator.png
 twitter:image: /sims/resistivity-conductance-calculator/resistivity-conductance-calculator.png

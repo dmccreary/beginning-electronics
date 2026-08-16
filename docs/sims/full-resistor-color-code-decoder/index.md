@@ -1,6 +1,6 @@
 ---
-title: Full Resistor Color Code Decoder
-description: Interactive p5.js MicroSim for full resistor color code decoder.
+title: "Full Resistor Color Code Decoder"
+description: "Interactive p5.js MicroSim for full resistor color code decoder."
 image: /sims/full-resistor-color-code-decoder/full-resistor-color-code-decoder.png
 og:image: /sims/full-resistor-color-code-decoder/full-resistor-color-code-decoder.png
 twitter:image: /sims/full-resistor-color-code-decoder/full-resistor-color-code-decoder.png

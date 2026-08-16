@@ -1,6 +1,6 @@
 ---
-title: Circuit Diagram and Schematic Symbol Explorer
-description: Interactive p5.js MicroSim for circuit diagram and schematic symbol explorer.
+title: "Circuit Diagram and Schematic Symbol Explorer"
+description: "Interactive p5.js MicroSim for circuit diagram and schematic symbol explorer."
 image: /sims/schematic-symbol-explorer/schematic-symbol-explorer.png
 og:image: /sims/schematic-symbol-explorer/schematic-symbol-explorer.png
 twitter:image: /sims/schematic-symbol-explorer/schematic-symbol-explorer.png

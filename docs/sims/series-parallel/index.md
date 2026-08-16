@@ -1,6 +1,6 @@
 ---
-title: Series and Parallel Circuits Comparison
-description: Series and Parallel Circuits Comparison
+title: "Series and Parallel Circuits Comparison"
+description: "Series and Parallel Circuits Comparison"
 status: scaffold
 library: p5.js
 bloom_level: TBD

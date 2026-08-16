@@ -1,6 +1,6 @@
 ---
-title: LED with Current-Limiting Resistor Breadboard Circuit
-description: Interactive p5.js MicroSim for led with current-limiting resistor breadboard circuit.
+title: "LED with Current-Limiting Resistor Breadboard Circuit"
+description: "Interactive p5.js MicroSim for led with current-limiting resistor breadboard circuit."
 image: /sims/led-current-limiting-resistor-circuit/led-current-limiting-resistor-circuit.png
 og:image: /sims/led-current-limiting-resistor-circuit/led-current-limiting-resistor-circuit.png
 twitter:image: /sims/led-current-limiting-resistor-circuit/led-current-limiting-resistor-circuit.png

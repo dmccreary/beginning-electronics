@@ -1,6 +1,6 @@
 ---
-title: Ohm's Law Circuit Simulator
-description: Ohm's Law Circuit Simulator
+title: "Ohm's Law Circuit Simulator"
+description: "Ohm's Law Circuit Simulator"
 status: scaffold
 library: p5.js
 bloom_level: TBD

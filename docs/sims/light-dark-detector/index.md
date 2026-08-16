@@ -1,6 +1,6 @@
 ---
-title: Light and Dark Detector
-description: A light-dependent resistor drives a transistor through a voltage divider, switching an LED and buzzer as the light level crosses the 0.7 volt base threshold.
+title: "Light and Dark Detector"
+description: "A light-dependent resistor drives a transistor through a voltage divider, switching an LED and buzzer as the light level crosses the 0.7 volt base threshold."
 image: /sims/light-dark-detector/light-dark-detector.png
 og:image: /sims/light-dark-detector/light-dark-detector.png
 twitter:image: /sims/light-dark-detector/light-dark-detector.png

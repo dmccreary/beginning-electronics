@@ -1,6 +1,6 @@
 ---
-title: 555 Timer Astable and Monostable Simulator
-description: 555 Timer Astable and Monostable Simulator
+title: "555 Timer Astable and Monostable Simulator"
+description: "555 Timer Astable and Monostable Simulator"
 status: scaffold
 library: p5.js
 bloom_level: TBD

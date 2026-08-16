@@ -1,6 +1,6 @@
 ---
-title: Meet the Resistor Family
-description: Compare five fixed, adjustable, light-sensitive, and temperature-sensitive resistor types.
+title: "Meet the Resistor Family"
+description: "Compare five fixed, adjustable, light-sensitive, and temperature-sensitive resistor types."
 image: /sims/resistor-family-infographic/resistor-family.png
 og:image: /sims/resistor-family-infographic/resistor-family.png
 twitter:image: /sims/resistor-family-infographic/resistor-family.png

@@ -1,6 +1,6 @@
 ---
-title: Schematic-to-Breadboard Mapper
-description: Interactive p5.js MicroSim for schematic-to-breadboard mapper.
+title: "Schematic-to-Breadboard Mapper"
+description: "Interactive p5.js MicroSim for schematic-to-breadboard mapper."
 image: /sims/schematic-to-breadboard-mapper/schematic-to-breadboard-mapper.png
 og:image: /sims/schematic-to-breadboard-mapper/schematic-to-breadboard-mapper.png
 twitter:image: /sims/schematic-to-breadboard-mapper/schematic-to-breadboard-mapper.png

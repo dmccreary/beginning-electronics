@@ -1,6 +1,6 @@
 ---
-title: Two ICs Coming Soon — 555 Timer and 74HC595 Preview
-description: Interactive p5.js MicroSim for two ics coming soon — 555 timer and 74hc595 preview.
+title: "Two ICs Coming Soon — 555 Timer and 74HC595 Preview"
+description: "Interactive p5.js MicroSim for two ics coming soon — 555 timer and 74hc595 preview."
 image: /sims/ic-preview-555-74hc595/ic-preview-555-74hc595.png
 og:image: /sims/ic-preview-555-74hc595/ic-preview-555-74hc595.png
 twitter:image: /sims/ic-preview-555-74hc595/ic-preview-555-74hc595.png

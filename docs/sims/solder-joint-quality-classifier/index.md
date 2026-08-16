@@ -1,6 +1,6 @@
 ---
-title: Solder Joint Quality Classifier
-description: Interactive p5.js MicroSim for solder joint quality classifier.
+title: "Solder Joint Quality Classifier"
+description: "Interactive p5.js MicroSim for solder joint quality classifier."
 image: /sims/solder-joint-quality-classifier/solder-joint-quality-classifier.png
 og:image: /sims/solder-joint-quality-classifier/solder-joint-quality-classifier.png
 twitter:image: /sims/solder-joint-quality-classifier/solder-joint-quality-classifier.png

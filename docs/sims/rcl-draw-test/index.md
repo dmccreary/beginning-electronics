@@ -1,6 +1,6 @@
 ---
-title: RCL Draw Test
-description: An interactive MicroSim for testing the uniformity of drawResistor, drawInductor, and drawCapacitor functions from the p5-circuit-lib.js library.
+title: "RCL Draw Test"
+description: "An interactive MicroSim for testing the uniformity of drawResistor, drawInductor, and drawCapacitor functions from the p5-circuit-lib.js library."
 image: /sims/rcl-draw-test/rcl-draw-test.png
 og:image: /sims/rcl-draw-test/rcl-draw-test.png
 twitter:image: /sims/rcl-draw-test/rcl-draw-test.png

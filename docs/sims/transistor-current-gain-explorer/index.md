@@ -1,6 +1,6 @@
 ---
-title: Transistor Current Gain Explorer
-description: Interactive p5.js MicroSim for transistor current gain explorer.
+title: "Transistor Current Gain Explorer"
+description: "Interactive p5.js MicroSim for transistor current gain explorer."
 image: /sims/transistor-current-gain-explorer/transistor-current-gain-explorer.png
 og:image: /sims/transistor-current-gain-explorer/transistor-current-gain-explorer.png
 twitter:image: /sims/transistor-current-gain-explorer/transistor-current-gain-explorer.png

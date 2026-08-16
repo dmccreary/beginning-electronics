@@ -1,6 +1,6 @@
 ---
-title: Meet the Switch Family
-description: Compare five common switch and button types by physical form, behavior, wiring, and best use.
+title: "Meet the Switch Family"
+description: "Compare five common switch and button types by physical form, behavior, wiring, and best use."
 image: /sims/switch-family-explorer/switch-family-explorer.png
 og:image: /sims/switch-family-explorer/switch-family-explorer.png
 twitter:image: /sims/switch-family-explorer/switch-family-explorer.png

@@ -1,6 +1,6 @@
 ---
-title: Node Voltage and Series Resistance Chain Builder
-description: Interactive p5.js MicroSim for node voltage and series resistance chain builder.
+title: "Node Voltage and Series Resistance Chain Builder"
+description: "Interactive p5.js MicroSim for node voltage and series resistance chain builder."
 image: /sims/node-voltage-series-chain/node-voltage-series-chain.png
 og:image: /sims/node-voltage-series-chain/node-voltage-series-chain.png
 twitter:image: /sims/node-voltage-series-chain/node-voltage-series-chain.png

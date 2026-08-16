@@ -1,3 +1,8 @@
+---
+title: "LED Resistor Calculator"
+description: "Calculates the current-limiting resistor an LED needs from supply voltage, LED forward voltage, and target current, then finds the nearest standard resistor value."
+---
+
 # LED Resistor Calculator
 
 ![LED Resistor Calculator](./led-resistor-calc.png){ width="400"}

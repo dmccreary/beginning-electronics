@@ -1,6 +1,6 @@
 ---
-title: Transistor Gate Explorer with LED Output
-description: Interactive p5.js MicroSim for transistor gate explorer with led output.
+title: "Transistor Gate Explorer with LED Output"
+description: "Interactive p5.js MicroSim for transistor gate explorer with led output."
 image: /sims/transistor-gate-explorer/transistor-gate-explorer.png
 og:image: /sims/transistor-gate-explorer/transistor-gate-explorer.png
 twitter:image: /sims/transistor-gate-explorer/transistor-gate-explorer.png

@@ -1,3 +1,8 @@
+---
+title: "Flip Flop"
+description: "Interactive flip-flop circuit simulation showing how a bistable latch stores a single bit and toggles state in response to input pulses."
+---
+
 # Flip Flop
 
 ![Flip Flop](./flip-flop.png){ width="400"}

@@ -1,6 +1,6 @@
 ---
-title: 74HC595 Shift Register LED Bar Graph and Daisy-Chain Explorer
-description: Interactive p5.js MicroSim for 74hc595 shift register led bar graph and daisy-chain explorer.
+title: "74HC595 Shift Register LED Bar Graph and Daisy-Chain Explorer"
+description: "Interactive p5.js MicroSim for 74hc595 shift register led bar graph and daisy-chain explorer."
 image: /sims/74hc595-shift-register-led-bar-graph/74hc595-shift-register-led-bar-graph.png
 og:image: /sims/74hc595-shift-register-led-bar-graph/74hc595-shift-register-led-bar-graph.png
 twitter:image: /sims/74hc595-shift-register-led-bar-graph/74hc595-shift-register-led-bar-graph.png

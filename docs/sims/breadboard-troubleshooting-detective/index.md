@@ -1,6 +1,6 @@
 ---
-title: Breadboard Troubleshooting Detective
-description: Interactive p5.js MicroSim for breadboard troubleshooting detective.
+title: "Breadboard Troubleshooting Detective"
+description: "Interactive p5.js MicroSim for breadboard troubleshooting detective."
 image: /sims/breadboard-troubleshooting-detective/breadboard-troubleshooting-detective.png
 og:image: /sims/breadboard-troubleshooting-detective/breadboard-troubleshooting-detective.png
 twitter:image: /sims/breadboard-troubleshooting-detective/breadboard-troubleshooting-detective.png

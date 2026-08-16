@@ -1,6 +1,6 @@
 ---
-title: Water Flow Analogy MicroSim
-description: Water Flow Analogy MicroSim
+title: "Water Flow Analogy MicroSim"
+description: "Water Flow Analogy MicroSim"
 status: scaffold
 library: p5.js
 bloom_level: TBD

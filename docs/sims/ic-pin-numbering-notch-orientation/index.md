@@ -1,6 +1,6 @@
 ---
-title: 555 Pin Numbering and IC Notch Orientation
-description: Interactive p5.js MicroSim for 555 pin numbering and ic notch orientation.
+title: "555 Pin Numbering and IC Notch Orientation"
+description: "Interactive p5.js MicroSim for 555 pin numbering and ic notch orientation."
 image: /sims/ic-pin-numbering-notch-orientation/ic-pin-numbering-notch-orientation.png
 og:image: /sims/ic-pin-numbering-notch-orientation/ic-pin-numbering-notch-orientation.png
 twitter:image: /sims/ic-pin-numbering-notch-orientation/ic-pin-numbering-notch-orientation.png

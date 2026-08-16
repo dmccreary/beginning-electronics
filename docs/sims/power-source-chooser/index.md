@@ -1,6 +1,6 @@
 ---
-title: Power Source Chooser
-description: Compare USB, 9 V, AA-pack, and LiPo power sources for beginner electronics projects.
+title: "Power Source Chooser"
+description: "Compare USB, 9 V, AA-pack, and LiPo power sources for beginner electronics projects."
 image: /sims/power-source-chooser/power-sources.png
 og:image: /sims/power-source-chooser/power-sources.png
 twitter:image: /sims/power-source-chooser/power-sources.png

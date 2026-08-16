@@ -1,6 +1,6 @@
 ---
-title: Circuit Continuity and Fault Tester
-description: Interactive p5.js MicroSim for circuit continuity and fault tester.
+title: "Circuit Continuity and Fault Tester"
+description: "Interactive p5.js MicroSim for circuit continuity and fault tester."
 image: /sims/circuit-continuity-fault-tester/circuit-continuity-fault-tester.png
 og:image: /sims/circuit-continuity-fault-tester/circuit-continuity-fault-tester.png
 twitter:image: /sims/circuit-continuity-fault-tester/circuit-continuity-fault-tester.png

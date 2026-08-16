@@ -1,6 +1,6 @@
 ---
-title: Voltage Divider Circuit Explorer
-description: Interactive p5.js MicroSim for voltage divider circuit explorer.
+title: "Voltage Divider Circuit Explorer"
+description: "Interactive p5.js MicroSim for voltage divider circuit explorer."
 image: /sims/voltage-divider-circuit-explorer/voltage-divider-circuit-explorer.png
 og:image: /sims/voltage-divider-circuit-explorer/voltage-divider-circuit-explorer.png
 twitter:image: /sims/voltage-divider-circuit-explorer/voltage-divider-circuit-explorer.png

@@ -1,6 +1,6 @@
 ---
-title: Jumper Wire Routing Practice
-description: Interactive p5.js MicroSim for jumper wire routing practice.
+title: "Jumper Wire Routing Practice"
+description: "Interactive p5.js MicroSim for jumper wire routing practice."
 image: /sims/jumper-wire-routing-practice/jumper-wire-routing-practice.png
 og:image: /sims/jumper-wire-routing-practice/jumper-wire-routing-practice.png
 twitter:image: /sims/jumper-wire-routing-practice/jumper-wire-routing-practice.png

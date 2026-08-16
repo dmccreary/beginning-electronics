@@ -1,6 +1,6 @@
 ---
-title: Multimeter Anatomy Explorer
-description: Interactive p5.js MicroSim for multimeter anatomy explorer.
+title: "Multimeter Anatomy Explorer"
+description: "Interactive p5.js MicroSim for multimeter anatomy explorer."
 image: /sims/multimeter-anatomy-explorer/multimeter-anatomy-explorer.png
 og:image: /sims/multimeter-anatomy-explorer/multimeter-anatomy-explorer.png
 twitter:image: /sims/multimeter-anatomy-explorer/multimeter-anatomy-explorer.png

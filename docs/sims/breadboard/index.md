@@ -1,3 +1,8 @@
+---
+title: "Solderless Breadboard Layout"
+description: "How a 400-tie solderless breadboard is laid out - power rails, terminal strips, the center divider, and row/column labels - and how it is drawn in p5.js as a background for other MicroSims."
+---
+
 # Solderless Breadboard Layout
 
 <figure markdown>

@@ -1,3 +1,8 @@
+---
+title: "Learning Graph Viewer"
+description: "Interactive viewer for the course learning graph with concept search, category filters, and click-to-explore navigation of prerequisite relationships."
+---
+
 # Learning Graph Viewer
 
 This interactive viewer allows you to explore the learning graph for this course.

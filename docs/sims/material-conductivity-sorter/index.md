@@ -1,6 +1,6 @@
 ---
-title: Material Conductivity Sorter
-description: Interactive p5.js MicroSim for material conductivity sorter.
+title: "Material Conductivity Sorter"
+description: "Interactive p5.js MicroSim for material conductivity sorter."
 image: /sims/material-conductivity-sorter/material-conductivity-sorter.png
 og:image: /sims/material-conductivity-sorter/material-conductivity-sorter.png
 twitter:image: /sims/material-conductivity-sorter/material-conductivity-sorter.png

@@ -1,6 +1,6 @@
 ---
-title: Five Common Transistor Types
-description: Compare the 2N2222, 2N3904, BC547, 2N3906, and 2N3055 by polarity, package, ratings, and use.
+title: "Five Common Transistor Types"
+description: "Compare the 2N2222, 2N3904, BC547, 2N3906, and 2N3055 by polarity, package, ratings, and use."
 image: /sims/transistor-family-explorer/transistor-family.png
 og:image: /sims/transistor-family-explorer/transistor-family.png
 twitter:image: /sims/transistor-family-explorer/transistor-family.png

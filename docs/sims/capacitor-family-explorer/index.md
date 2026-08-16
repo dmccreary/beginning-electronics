@@ -1,6 +1,6 @@
 ---
-title: Meet the Capacitor Family
-description: Compare ceramic, electrolytic, and tantalum capacitors by polarity, behavior, and best use.
+title: "Meet the Capacitor Family"
+description: "Compare ceramic, electrolytic, and tantalum capacitors by polarity, behavior, and best use."
 image: /sims/capacitor-family-explorer/capacitor-family.png
 og:image: /sims/capacitor-family-explorer/capacitor-family.png
 twitter:image: /sims/capacitor-family-explorer/capacitor-family.png

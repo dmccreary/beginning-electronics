@@ -1,6 +1,6 @@
 ---
-title: Capstone Project Inspiration
-description: Compare three visually engaging capstones by purpose, parts, constraints, and challenge level.
+title: "Capstone Project Inspiration"
+description: "Compare three visually engaging capstones by purpose, parts, constraints, and challenge level."
 image: /sims/capstone-inspiration-explorer/capstone-projects.png
 og:image: /sims/capstone-inspiration-explorer/capstone-projects.png
 twitter:image: /sims/capstone-inspiration-explorer/capstone-projects.png

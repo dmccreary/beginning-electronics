@@ -1,6 +1,6 @@
 ---
-title: Capacitor Value Code Decoder
-description: Interactive p5.js MicroSim for capacitor value code decoder.
+title: "Capacitor Value Code Decoder"
+description: "Interactive p5.js MicroSim for capacitor value code decoder."
 image: /sims/capacitor-value-code-decoder/capacitor-value-code-decoder.png
 og:image: /sims/capacitor-value-code-decoder/capacitor-value-code-decoder.png
 twitter:image: /sims/capacitor-value-code-decoder/capacitor-value-code-decoder.png

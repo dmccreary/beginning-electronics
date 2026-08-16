@@ -1,6 +1,6 @@
 ---
-title: Battery Type Explorer
-description: Compare six common battery types by physical form, chemistry, nominal voltage, capacity, and typical use.
+title: "Battery Type Explorer"
+description: "Compare six common battery types by physical form, chemistry, nominal voltage, capacity, and typical use."
 image: /sims/battery-type-explorer/battery-type-explorer.png
 og:image: /sims/battery-type-explorer/battery-type-explorer.png
 twitter:image: /sims/battery-type-explorer/battery-type-explorer.png

@@ -1,6 +1,6 @@
 ---
-title: Component Markings: What You Can Read
-description: Compare visible markings and datasheet-only facts for five common component families.
+title: "Component Markings: What You Can Read"
+description: "Compare visible markings and datasheet-only facts for five common component families."
 image: /sims/component-markings-explorer/component-markings.png
 og:image: /sims/component-markings-explorer/component-markings.png
 twitter:image: /sims/component-markings-explorer/component-markings.png

@@ -1,6 +1,6 @@
 ---
-title: Buck Converter Trimmer Explorer
-description: Interactive p5.js MicroSim for buck converter trimmer explorer.
+title: "Buck Converter Trimmer Explorer"
+description: "Interactive p5.js MicroSim for buck converter trimmer explorer."
 image: /sims/buck-converter-trimmer-explorer/buck-converter-trimmer-explorer.png
 og:image: /sims/buck-converter-trimmer-explorer/buck-converter-trimmer-explorer.png
 twitter:image: /sims/buck-converter-trimmer-explorer/buck-converter-trimmer-explorer.png

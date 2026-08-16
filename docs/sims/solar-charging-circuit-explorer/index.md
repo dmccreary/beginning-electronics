@@ -1,6 +1,6 @@
 ---
-title: Solar Panel Charging Circuit Explorer
-description: Interactive p5.js MicroSim for solar panel charging circuit explorer.
+title: "Solar Panel Charging Circuit Explorer"
+description: "Interactive p5.js MicroSim for solar panel charging circuit explorer."
 image: /sims/solar-charging-circuit-explorer/solar-charging-circuit-explorer.png
 og:image: /sims/solar-charging-circuit-explorer/solar-charging-circuit-explorer.png
 twitter:image: /sims/solar-charging-circuit-explorer/solar-charging-circuit-explorer.png

@@ -1,6 +1,6 @@
 ---
-title: Breadboard Anatomy Explorer
-description: Click any region of a half-size solderless breadboard to see which tie points are secretly wired together underneath the plastic.
+title: "Breadboard Anatomy Explorer"
+description: "Click any region of a half-size solderless breadboard to see which tie points are secretly wired together underneath the plastic."
 image: /sims/breadboard-anatomy-explorer/breadboard-anatomy-explorer.png
 og:image: /sims/breadboard-anatomy-explorer/breadboard-anatomy-explorer.png
 twitter:image: /sims/breadboard-anatomy-explorer/breadboard-anatomy-explorer.png

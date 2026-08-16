@@ -1,6 +1,6 @@
 ---
-title: Diode Test Mode Explorer
-description: Interactive p5.js MicroSim for diode test mode explorer.
+title: "Diode Test Mode Explorer"
+description: "Interactive p5.js MicroSim for diode test mode explorer."
 image: /sims/diode-test-mode-explorer/diode-test-mode-explorer.png
 og:image: /sims/diode-test-mode-explorer/diode-test-mode-explorer.png
 twitter:image: /sims/diode-test-mode-explorer/diode-test-mode-explorer.png

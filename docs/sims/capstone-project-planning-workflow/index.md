@@ -1,6 +1,6 @@
 ---
-title: Capstone Project Planning Workflow
-description: Interactive p5.js MicroSim for capstone project planning workflow.
+title: "Capstone Project Planning Workflow"
+description: "Interactive p5.js MicroSim for capstone project planning workflow."
 image: /sims/capstone-project-planning-workflow/capstone-project-planning-workflow.png
 og:image: /sims/capstone-project-planning-workflow/capstone-project-planning-workflow.png
 twitter:image: /sims/capstone-project-planning-workflow/capstone-project-planning-workflow.png

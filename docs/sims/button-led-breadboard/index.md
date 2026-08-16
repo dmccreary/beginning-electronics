@@ -1,6 +1,6 @@
 ---
-title: Push Button and LED Circuit
-description: A breadboard MicroSim where three push buttons each light an LED through a 220 ohm resistor, with animated current flow and a live current and voltage plot.
+title: "Push Button and LED Circuit"
+description: "A breadboard MicroSim where three push buttons each light an LED through a 220 ohm resistor, with animated current flow and a live current and voltage plot."
 image: /sims/button-led-breadboard/button-led-breadboard.png
 og:image: /sims/button-led-breadboard/button-led-breadboard.png
 twitter:image: /sims/button-led-breadboard/button-led-breadboard.png
