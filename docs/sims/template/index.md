@@ -2,7 +2,7 @@
 
 <figure markdown>
    ![Image Name](./image.png){ width="400" }
-   <figcaption>Figure caption.</figcaption>
+   <figcaption>Output of the sample sketch below - a green circle on a 764x400 canvas.</figcaption>
 </figure>
 
 [Link to Demo](./template.html){ .md-button .md-button--primary }

@@ -70,33 +70,48 @@ Out kit adds a [Diode Bridge Rectifier](https://en.wikipedia.org/wiki/Diode_brid
 
 ## Parts List
 
-1. LM317 Adjustable DC Voltage Regulator with a heatsink
-2. 4x large 4007 diodes (bridge rectifier) - polarized
-3. 1x 1000uF large polarized capacitor with "-" for the band
-4. 2x 0.1 microfarads (uF) small yellow "104" capacitors ![](./104-cap.png)
-5. 2x smaller flyback protection diodes to protect the LM317 from reverse currents
-6. 1x 241 Ohm resistor that connects the GND to the output of the LM317
-7. 1x stacked linear potentiometer with three wires and knob
-8. 1x digital LED display (red=VCC, black=GND and yellow for signal)
-9. 1x 10 uF polarized capacitor on the output
-10. 1x 100 uF polarized capacitor on the output
-11. 2x screw terminal blocks for input and output
-12. 1x printed circuit board
-13. Standoffs for supporting the LED display
-14. 4x very small screws for mounting the standoffs to the PC board
-
-|Part Name|Qty|
+| Part Name | Qty |
+|-----------|-----|
+| LM317 Adjustable DC Voltage Regulator with a heatsink | 1 |
+| Large 4007 diodes (bridge rectifier) - polarized | 4 |
+| 1000 uF large polarized capacitor with "-" for the band | 1 |
+| 0.1 microfarad (uF) small yellow "104" capacitors ![](./104-cap.png){ width="60" } | 2 |
+| Smaller flyback protection diodes to protect the LM317 from reverse currents | 2 |
+| 241 Ohm resistor that connects the GND to the output of the LM317 | 1 |
+| Stacked linear potentiometer with three wires and knob | 1 |
+| Digital LED display (red=VCC, black=GND and yellow for signal) | 1 |
+| 10 uF polarized capacitor on the output | 1 |
+| 100 uF polarized capacitor on the output | 1 |
+| Screw terminal blocks for input and output | 2 |
+| Printed circuit board | 1 |
+| Standoffs for supporting the LED display | &mdash; |
+| Very small screws for mounting the standoffs to the PC board | 4 |
 
 
 ## Sample ChatGPT Prompts
 
-## Explanation of the Circuit
+### Explanation of the Circuit
 
 ```linenums="0"
 I have a variable power supply built around an LM317
-Adjustable DC Voltage Regulator.  I have 4 dio
+Adjustable DC Voltage Regulator.  I have 4 diodes wired
+as a bridge rectifier on the input, a 1000uF capacitor to
+smooth the rectified voltage, and two 0.1uF ceramic
+capacitors across the input and the output.  A 241 ohm
+resistor connects the output to the adjustment pin, and a
+potentiometer between the adjustment pin and ground sets
+the output anywhere from 1.25V to 30V.  Two more
+capacitors (10uF and 100uF) filter the output, and a
+digital LED display shows the output voltage.
+
+Please explain how this circuit works, one stage at a
+time, for a student who has just finished a beginning
+electronics course.  For each component, explain what it
+does and why the circuit needs it.
+```
 
 ### Lesson Plan
+
 ```linenums="0"
 I have a very nice small variable voltage regulator kit 
 that I created using a standard LM317 voltage regulator.

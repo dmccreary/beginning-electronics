@@ -24,7 +24,7 @@ const fileContent =awaitwindow.fs.readFile('conceptdependencies.csv',{encoding:'
 
 ## Result
 
-
+```linenums="0"
 ConceptID,ConceptLabel,Dependencies,TaxonomyID
 1,Electricity,,1
 2,Voltage,,2
@@ -55,8 +55,7 @@ Category 5: 2 concepts
 Category 6: 10 concepts
 Category 7: 13 concepts
 Category 8: 4 concepts
-Category 10: 5 concepts`
-
+Category 10: 5 concepts
 ```
 
 I've created a new CSV file with the taxonomy IDs assigned to each concept. Looking at the distribution of concepts across categories, I notice a few things:

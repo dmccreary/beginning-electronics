@@ -2,8 +2,6 @@
 
 ![](./box.png)
 
-![](./circuit-diagram.png)
-
 <!--
 <iframe width="315" height="560"
 src="https://youtube.com/shorts/0hl1X1YPWHI?si=qZjIVpCRAFAhLL66"
@@ -28,5 +26,5 @@ allowfullscreen></iframe>
 
 ## Circuit
 
-![](rgb-circuit.png)
+![](./circuit-diagram.png)
 

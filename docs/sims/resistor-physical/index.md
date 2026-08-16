@@ -161,7 +161,28 @@ function findClosestStandardResistor(inputOhms) {
   let closest = standardValues[0];
   let minDiff = Math.abs(inputOhms - closest);
 
-  for (let i = 1; i < standardValues.length; i++) {```
+  for (let i = 1; i < standardValues.length; i++) {
+    let diff = Math.abs(inputOhms - standardValues[i]);
+    if (diff < minDiff) {
+      minDiff = diff;
+      closest = standardValues[i];
+    }
+  }
+
+  return closest;
+}
+
+// Round a value to a given number of significant digits, so that
+// 2398.7 displayed to 2 digits reads "2400" rather than "2398.7".
+function roundToSignificantDigits(value, digits) {
+  if (value === 0) return 0;
+  const magnitude = Math.floor(Math.log10(Math.abs(value))) - digits + 1;
+  const factor = Math.pow(10, magnitude);
+  return Math.round(value / factor) * factor;
+}
+```
+
+## References
 
 [Draw Resistors Library](https://editor.p5js.org/dmccreary/sketches/0-_CXuiVK) note these are done for both horizontal and vertical
 

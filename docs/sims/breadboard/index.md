@@ -10,7 +10,7 @@ description: "How a 400-tie solderless breadboard is laid out - power rails, ter
    <figcaption>400 tie 1/2 size breadboard (landscape)</figcaption>
 </figure>
 
-[Link to Demo](./template.html){ .md-button .md-button--primary }
+[Link to Demo](../breadboard-anatomy-explorer/main.html){ .md-button .md-button--primary }
 
 ## About this MicroSim
 
@@ -63,7 +63,7 @@ Our breadboard simulator has the following components:
 
 ## Sample Prompt
 
-
+```linenums="0"
 Create a single file p5.js sketch.
 Draw a green circle on a 600x400 canvas with a radius of 200.
 ```

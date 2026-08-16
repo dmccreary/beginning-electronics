@@ -18,6 +18,9 @@
     2. A photo showing the different types of perfboards
 
     Include a list of supplies like solder, wire etc.
+```
+
+## Sample Response
 
 This tutorial is designed to introduce junior high school students to the basics of using perfboards in electronics projects. In it, we will discuss what a perfboard is, explain different types of perfboards, and help you understand when you should use a perfboard instead of a solderless breadboard. By the end of this tutorial, you should feel comfortable choosing and using a perfboard for your own electronic creations.
 

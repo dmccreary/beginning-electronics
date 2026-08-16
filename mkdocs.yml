@@ -215,6 +215,7 @@ plugins:
   - search
 #  - social
 exclude_docs: |
+  learning-graph/README.md
   sims/actuator-family-explorer/image-prompt.md
   sims/battery-type-explorer/image-prompt.md
   sims/capacitor-family-explorer/image-prompt.md

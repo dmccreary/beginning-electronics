@@ -20,65 +20,65 @@ This page tests every production mascot PNG in two ways:
 </div>
 
 <div class="mascot-test-grid">
-  <article class="mascot-test-card" data-name="Neutral" data-src="../../img/mascot/neutral.png">
+  <article class="mascot-test-card" data-name="Neutral" data-src="../img/mascot/neutral.png">
     <h2>Neutral</h2>
     <div class="mascot-test-swatches">
-      <div class="mascot-test-swatch checker"><img src="../../img/mascot/neutral.png" alt="Volt in a neutral pose on a checkerboard transparency test"></div>
-      <div class="mascot-test-swatch dark"><img src="../../img/mascot/neutral.png" alt="Volt in a neutral pose on a dark transparency test"></div>
+      <div class="mascot-test-swatch checker"><img src="../img/mascot/neutral.png" alt="Volt in a neutral pose on a checkerboard transparency test"></div>
+      <div class="mascot-test-swatch dark"><img src="../img/mascot/neutral.png" alt="Volt in a neutral pose on a dark transparency test"></div>
     </div>
     <p class="mascot-test-result">Waiting for pixel test…</p>
   </article>
 
-  <article class="mascot-test-card" data-name="Welcome" data-src="../../img/mascot/welcome.png">
+  <article class="mascot-test-card" data-name="Welcome" data-src="../img/mascot/welcome.png">
     <h2>Welcome</h2>
     <div class="mascot-test-swatches">
-      <div class="mascot-test-swatch checker"><img src="../../img/mascot/welcome.png" alt="Volt waving on a checkerboard transparency test"></div>
-      <div class="mascot-test-swatch dark"><img src="../../img/mascot/welcome.png" alt="Volt waving on a dark transparency test"></div>
+      <div class="mascot-test-swatch checker"><img src="../img/mascot/welcome.png" alt="Volt waving on a checkerboard transparency test"></div>
+      <div class="mascot-test-swatch dark"><img src="../img/mascot/welcome.png" alt="Volt waving on a dark transparency test"></div>
     </div>
     <p class="mascot-test-result">Waiting for pixel test…</p>
   </article>
 
-  <article class="mascot-test-card" data-name="Thinking" data-src="../../img/mascot/thinking.png">
+  <article class="mascot-test-card" data-name="Thinking" data-src="../img/mascot/thinking.png">
     <h2>Thinking</h2>
     <div class="mascot-test-swatches">
-      <div class="mascot-test-swatch checker"><img src="../../img/mascot/thinking.png" alt="Volt thinking on a checkerboard transparency test"></div>
-      <div class="mascot-test-swatch dark"><img src="../../img/mascot/thinking.png" alt="Volt thinking on a dark transparency test"></div>
+      <div class="mascot-test-swatch checker"><img src="../img/mascot/thinking.png" alt="Volt thinking on a checkerboard transparency test"></div>
+      <div class="mascot-test-swatch dark"><img src="../img/mascot/thinking.png" alt="Volt thinking on a dark transparency test"></div>
     </div>
     <p class="mascot-test-result">Waiting for pixel test…</p>
   </article>
 
-  <article class="mascot-test-card" data-name="Tip" data-src="../../img/mascot/tip.png">
+  <article class="mascot-test-card" data-name="Tip" data-src="../img/mascot/tip.png">
     <h2>Tip</h2>
     <div class="mascot-test-swatches">
-      <div class="mascot-test-swatch checker"><img src="../../img/mascot/tip.png" alt="Volt pointing upward on a checkerboard transparency test"></div>
-      <div class="mascot-test-swatch dark"><img src="../../img/mascot/tip.png" alt="Volt pointing upward on a dark transparency test"></div>
+      <div class="mascot-test-swatch checker"><img src="../img/mascot/tip.png" alt="Volt pointing upward on a checkerboard transparency test"></div>
+      <div class="mascot-test-swatch dark"><img src="../img/mascot/tip.png" alt="Volt pointing upward on a dark transparency test"></div>
     </div>
     <p class="mascot-test-result">Waiting for pixel test…</p>
   </article>
 
-  <article class="mascot-test-card" data-name="Warning" data-src="../../img/mascot/warning.png">
+  <article class="mascot-test-card" data-name="Warning" data-src="../img/mascot/warning.png">
     <h2>Warning</h2>
     <div class="mascot-test-swatches">
-      <div class="mascot-test-swatch checker"><img src="../../img/mascot/warning.png" alt="Volt warning the reader on a checkerboard transparency test"></div>
-      <div class="mascot-test-swatch dark"><img src="../../img/mascot/warning.png" alt="Volt warning the reader on a dark transparency test"></div>
+      <div class="mascot-test-swatch checker"><img src="../img/mascot/warning.png" alt="Volt warning the reader on a checkerboard transparency test"></div>
+      <div class="mascot-test-swatch dark"><img src="../img/mascot/warning.png" alt="Volt warning the reader on a dark transparency test"></div>
     </div>
     <p class="mascot-test-result">Waiting for pixel test…</p>
   </article>
 
-  <article class="mascot-test-card" data-name="Encouraging" data-src="../../img/mascot/encouraging.png">
+  <article class="mascot-test-card" data-name="Encouraging" data-src="../img/mascot/encouraging.png">
     <h2>Encouraging</h2>
     <div class="mascot-test-swatches">
-      <div class="mascot-test-swatch checker"><img src="../../img/mascot/encouraging.png" alt="Volt giving a thumbs-up on a checkerboard transparency test"></div>
-      <div class="mascot-test-swatch dark"><img src="../../img/mascot/encouraging.png" alt="Volt giving a thumbs-up on a dark transparency test"></div>
+      <div class="mascot-test-swatch checker"><img src="../img/mascot/encouraging.png" alt="Volt giving a thumbs-up on a checkerboard transparency test"></div>
+      <div class="mascot-test-swatch dark"><img src="../img/mascot/encouraging.png" alt="Volt giving a thumbs-up on a dark transparency test"></div>
     </div>
     <p class="mascot-test-result">Waiting for pixel test…</p>
   </article>
 
-  <article class="mascot-test-card" data-name="Celebration" data-src="../../img/mascot/celebration.png">
+  <article class="mascot-test-card" data-name="Celebration" data-src="../img/mascot/celebration.png">
     <h2>Celebration</h2>
     <div class="mascot-test-swatches">
-      <div class="mascot-test-swatch checker"><img src="../../img/mascot/celebration.png" alt="Volt celebrating on a checkerboard transparency test"></div>
-      <div class="mascot-test-swatch dark"><img src="../../img/mascot/celebration.png" alt="Volt celebrating on a dark transparency test"></div>
+      <div class="mascot-test-swatch checker"><img src="../img/mascot/celebration.png" alt="Volt celebrating on a checkerboard transparency test"></div>
+      <div class="mascot-test-swatch dark"><img src="../img/mascot/celebration.png" alt="Volt celebrating on a dark transparency test"></div>
     </div>
     <p class="mascot-test-result">Waiting for pixel test…</p>
   </article>
@@ -92,31 +92,31 @@ swatches above still work without it.
 ## Mascot admonitions
 
 !!! mascot-neutral "General Note"
-    ![Volt neutral pose](../../img/mascot/neutral.png){ class="mascot-admonition-img" }
+    ![Volt neutral pose](../img/mascot/neutral.png){ class="mascot-admonition-img" }
     This is the neutral style, used for general sidebars or introductions.
 
 !!! mascot-welcome "Welcome!"
-    ![Volt waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
+    ![Volt waving welcome](../img/mascot/welcome.png){ class="mascot-admonition-img" }
     This is the welcome style, used at chapter openings. "Let's light it up!"
 
 !!! mascot-thinking "Key Insight"
-    ![Volt thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
+    ![Volt thinking](../img/mascot/thinking.png){ class="mascot-admonition-img" }
     This is the thinking style, used for key concepts.
 
 !!! mascot-tip "Helpful Tip"
-    ![Volt giving a tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
+    ![Volt giving a tip](../img/mascot/tip.png){ class="mascot-admonition-img" }
     This is the tip style, used for hints and advice.
 
 !!! mascot-warning "Watch Out!"
-    ![Volt warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
+    ![Volt warning](../img/mascot/warning.png){ class="mascot-admonition-img" }
     This is the warning style, used for common mistakes.
 
 !!! mascot-encourage "Keep Going!"
-    ![Volt encouraging](../../img/mascot/encouraging.png){ class="mascot-admonition-img" }
+    ![Volt encouraging](../img/mascot/encouraging.png){ class="mascot-admonition-img" }
     This is the encouraging style, used for difficult content.
 
 !!! mascot-celebration "Well Done!"
-    ![Volt celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
+    ![Volt celebrating](../img/mascot/celebration.png){ class="mascot-admonition-img" }
     This is the celebration style, used for achievements.
 
 <style>

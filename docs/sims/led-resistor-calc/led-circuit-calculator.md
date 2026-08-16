@@ -1,6 +1,6 @@
 # LED Circuit Resistor Value Calculator
 
-![](../img/LED-circuit-v2.png)
+![](../../img/led-circuit-v2.png)
 
 We often have an LED circuit we want to create and
 we need to figure out what value of resistor to use.
