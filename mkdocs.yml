@@ -149,46 +149,6 @@ nav:
     - "Wired Logic: AND and OR": sims/wired-logic-and-or/index.md
     - XR2206 Waveform Generator Explorer: sims/xr2206-waveform-generator-explorer/index.md
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   - Kits and Projects:
     - Introduction: kits/index.md
     - RGB LED: kits/rgb-led/index.md
@@ -201,6 +161,12 @@ nav:
     - Solar Night Light: kits/solar-night-light/index.md
     - Signal Generator: kits/signal-generator/index.md
   
+  - Appendices:
+    - List of Appendices: appendices/index.md
+    - List of Circuit Symbols: appendices/list-of-symbols/index.md
+    - Circuit Symbol Gallery: appendices/symbol-gallery/index.md
+    - List of Circuit Diagrams: appendices/list-of-circuit-diagrams/index.md
+
   - Prompts:
     - Introduction: prompts/index.md
     - Course Description: prompts/course-description.md

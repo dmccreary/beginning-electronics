@@ -17,6 +17,7 @@ representations; SVG files are the published images and PNG files are previews.
 from __future__ import annotations
 
 import argparse
+import os
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -224,6 +225,54 @@ def write_markdown(output_dir: Path) -> Path:
     return index_path
 
 
+def write_gallery_markdown(gallery_dir: Path, symbols_dir: Path) -> Path:
+    """Write the five-across visual index of the same 100 symbols.
+
+    The gallery reuses the SVGs rendered for the alphabetical list rather than
+    duplicating them, and each caption links back to that symbol's full entry.
+    Five cards per row is enforced by the `symbol-grid` class in
+    docs/css/extra.css; Material's stock grid would otherwise fit as many
+    columns as the viewport allows.
+    """
+    symbols_rel = Path(os.path.relpath(symbols_dir, gallery_dir)).as_posix()
+    detail_rel = Path(os.path.relpath(symbols_dir.parent, gallery_dir)).as_posix()
+
+    lines = [
+        "---",
+        "title: Circuit Symbol Gallery",
+        "hide:",
+        "  - toc",
+        "---",
+        "",
+        "# Circuit Symbol Gallery",
+        "",
+        "The same 100 circuit symbols as the "
+        f"[List of Circuit Symbols]({detail_rel}/), laid out five across so you "
+        "can find a shape by eye. Select any symbol's name to jump to its full "
+        "description.",
+        "",
+        '<div class="grid cards symbol-grid" markdown>',
+        "",
+    ]
+    for spec in SYMBOLS:
+        lines.extend(
+            [
+                f"-   ![{spec.name} circuit symbol]({symbols_rel}/{spec.slug}.svg)",
+                "",
+                f"    **[{spec.name}]({detail_rel}/#{spec.slug})**",
+                "",
+                f"    {spec.description}",
+                "",
+            ]
+        )
+    lines.extend(["</div>", ""])
+
+    gallery_dir.mkdir(parents=True, exist_ok=True)
+    gallery_path = gallery_dir / "index.md"
+    gallery_path.write_text("\n".join(lines), encoding="utf-8")
+    return gallery_path
+
+
 def make_contact_sheet(preview_dir: Path, output_path: Path) -> None:
     columns = 5
     cell_width, cell_height = 300, 220
@@ -252,15 +301,38 @@ def make_contact_sheet(preview_dir: Path, output_path: Path) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output_dir", type=Path, help="Appendix directory for index.md and generated assets")
+    parser.add_argument(
+        "--gallery-dir",
+        type=Path,
+        default=None,
+        help="Appendix directory for the five-across gallery page "
+        "(default: a 'symbol-gallery' directory beside output_dir)",
+    )
+    parser.add_argument(
+        "--gallery-only",
+        action="store_true",
+        help="Write only the gallery page, reusing the SVGs already rendered",
+    )
     args = parser.parse_args()
 
     if len(SYMBOLS) != 100:
         raise RuntimeError(f"Expected exactly 100 symbols, found {len(SYMBOLS)}")
 
     output_dir = args.output_dir.resolve()
+    gallery_dir = (
+        args.gallery_dir.resolve()
+        if args.gallery_dir is not None
+        else output_dir.parent / "symbol-gallery"
+    )
+
+    if args.gallery_only:
+        write_gallery_markdown(gallery_dir, output_dir / "symbols")
+        return
+
     output_dir.mkdir(parents=True, exist_ok=True)
     _, preview_dir = render_symbols(output_dir)
     write_markdown(output_dir)
+    write_gallery_markdown(gallery_dir, output_dir / "symbols")
     make_contact_sheet(preview_dir, output_dir / "symbols-contact-sheet.png")
 
 
