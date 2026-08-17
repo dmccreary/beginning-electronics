@@ -1,0 +1,2876 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wire an NE555 timer in astable mode to drive a piezo buzzer directly, calculate the tone it produces, then swap in a trim potentiometer to turn the pitch into a rising-and-falling siren.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/labs/46-555-buzzer-siren/">
+      
+      
+        <link rel="prev" href="../45-555-led-blinker/">
+      
+      
+        <link rel="next" href="../47-555-led-chaser/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>555 Timer Buzzer and Siren - Beginning Electronics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WP3K3TSFJ7"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WP3K3TSFJ7",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WP3K3TSFJ7",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="555 Timer Buzzer and Siren - Beginning Electronics" >
+      
+        <meta  property="og:description"  content="Wire an NE555 timer in astable mode to drive a piezo buzzer directly, calculate the tone it produces, then swap in a trim potentiometer to turn the pitch into a rising-and-falling siren." >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/beginning-electronics/assets/images/social/labs/46-555-buzzer-siren/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/beginning-electronics/labs/46-555-buzzer-siren/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="555 Timer Buzzer and Siren - Beginning Electronics" >
+      
+        <meta  name="twitter:description"  content="Wire an NE555 timer in astable mode to drive a piezo buzzer directly, calculate the tone it produces, then swap in a trim potentiometer to turn the pitch into a rising-and-falling siren." >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/beginning-electronics/assets/images/social/labs/46-555-buzzer-siren/index.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#555-timer-buzzer-and-siren" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Beginning Electronics" class="md-header__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Beginning Electronics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              555 Timer Buzzer and Siren
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Beginning Electronics" class="md-nav__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Beginning Electronics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../setup/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Hands-on Labs
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Hands-on Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-part-identification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identifying Parts
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-breadboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Breadboard
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-power/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Power
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-led-circuit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LED Circuit
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-buttons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Buttons
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-and-buttons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Buttons AND
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-or-buttons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Buttons OR
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-rgb-led/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RGB Led
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-dark-detector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dark Detector
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--early-stage" title="Early stage - draft (score 40-64)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-transistors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transistors
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-bc547-vs-2n2222/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BC547 vs. 2N2222
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35-boolean-logic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boolean Logic
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-noodle-led-circuit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LED Noodle Circuit
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../45-555-led-blinker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    555 Timer LED Blinker
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    555 Timer Buzzer and Siren
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    555 Timer Buzzer and Siren
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before You Start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Need
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safety First
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it-in-the-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try It in the Simulator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-circuit-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Circuit Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-breadboard-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Breadboard Layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build It
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How It Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frequency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duty-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duty Cycle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-the-buzzer-skips-the-resistor-an-led-always-needs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why the buzzer skips the resistor an LED always needs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-it-doesnt-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      When It Doesn't Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Your Understanding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#take-it-further" class="md-nav__link">
+    <span class="md-ellipsis">
+      Take It Further
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn More
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../47-555-led-chaser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    555-Driven LED Bar Graph
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../55-motors-and-buzzers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Motors and Buzzers
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../60-multimeter-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Meet Your Multimeter
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../65-troubleshooting-fault-finder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hunt Down a Hidden Fault
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../80-rc-circuit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RC Circuit
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../70-using-perf-boards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Perf Boards
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../kits/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Kits and Projects
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../appendices/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before You Start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Need
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safety First
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it-in-the-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try It in the Simulator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-circuit-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Circuit Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-breadboard-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Breadboard Layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build It
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How It Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frequency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duty-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duty Cycle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-the-buzzer-skips-the-resistor-an-led-always-needs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why the buzzer skips the resistor an LED always needs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-it-doesnt-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      When It Doesn't Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Your Understanding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#take-it-further" class="md-nav__link">
+    <span class="md-ellipsis">
+      Take It Further
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn More
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="555-timer-buzzer-and-siren">555 Timer Buzzer and Siren</h1>
+<p>Every circuit so far in this book has talked to your eyes. This one talks to
+your ears. Wire up eight resistor-and-capacitor values the way Chapter 14
+taught you, and your circuit makes a sound you designed, not just a light you
+switched on.</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Let's make some noise, builder!</p>
+<p><img alt="Volt waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+You already taught a 555 timer to blink. Now you're going to teach it to
+<em>sing</em> — well, beep. Same chip, same timing formula, one different part on
+pin 3. By the end you'll be able to bend that beep into a rising-and-falling
+siren with nothing but a screwdriver. Let's light it up!</p>
+</div>
+<h2 id="what-youll-learn">What You'll Learn</h2>
+<p>By the end of this lab you will be able to:</p>
+<ul>
+<li><strong>Build</strong> a complete NE555 astable circuit that drives a piezo buzzer directly from pin 3</li>
+<li><strong>Calculate</strong> the circuit's frequency and duty cycle from its resistor and capacitor values</li>
+<li><strong>Explain</strong> why a buzzer can connect straight to pin 3 while an LED always needs a series resistor</li>
+<li><strong>Diagnose</strong> a silent buzzer circuit by checking polarity, RESET, and the timing network in order</li>
+<li><strong>Wire</strong> a potentiometer as a two-pin rheostat and use it to sweep the tone into a siren</li>
+</ul>
+<h2 id="before-you-start">Before You Start</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Time</strong></td>
+<td>45 minutes</td>
+</tr>
+<tr>
+<td><strong>Difficulty</strong></td>
+<td>Intermediate — your second 555 build</td>
+</tr>
+<tr>
+<td><strong>You should already know</strong></td>
+<td><a href="../../chapters/14-555-timer-chip/">Chapter 14: The 555 Timer Chip</a> and the "555 Buzzer Driver" section of <a href="../../chapters/15-shift-registers-ic-handling/">Chapter 15: Shift Registers and IC Handling</a>, including how to straddle a DIP chip across the center channel</td>
+</tr>
+<tr>
+<td><strong>Helpful background</strong></td>
+<td><a href="../45-555-led-blinker/">Lab 45: 555 Timer LED Blinker</a> builds the identical timing core with an LED instead of a buzzer. Building it first makes this lab faster, but every step here is also written to stand on its own.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-youll-need">What You'll Need</h2>
+<p>Everything here is in the $50 kit. The trim potentiometer is only needed for
+the "Take It Further" siren at the end — the core buzzer circuit does not use it.</p>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Part</th>
+<th>Value or marking</th>
+<th>How to spot it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Breadboard</td>
+<td>half-size, 30 columns</td>
+<td>the white plastic board with rows of holes</td>
+</tr>
+<tr>
+<td>1</td>
+<td>555 timer IC</td>
+<td>NE555, 8-pin DIP</td>
+<td>small black chip with a notch at one end</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Resistor</td>
+<td>1 kΩ (R1)</td>
+<td>tan body, bands <strong>brown-black-red</strong>, then gold</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Resistor</td>
+<td>6.8 kΩ (R2)</td>
+<td>tan body, bands <strong>blue-gray-red</strong>, then gold</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Capacitor</td>
+<td>0.1 µF ceramic (C1)</td>
+<td>small blue or tan disc, two straight leads, no + marking</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Piezo buzzer</td>
+<td>small two-lead buzzer (BZ1)</td>
+<td>round black or metallic disc with a <strong>+</strong> marked lead</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Jumper wires</td>
+<td>assorted colors</td>
+<td>for the seven connections in the build steps</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Power supply</td>
+<td>5 V USB, or a 3×AA battery pack</td>
+<td>any phone charger with a USB-A male-to-male cable</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Potentiometer</td>
+<td>10 kΩ trim pot</td>
+<td>small blue or black square/round trimmer with a screw slot — <strong>Take It Further only</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-tip">
+<p class="admonition-title">The IC is the one new part</p>
+<p><img alt="Volt giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+If you already built Lab 45, R1, C1, and your jumper-wire habits carry
+straight over. R2 changes value, and the LED and its resistor are replaced
+by one buzzer with no resistor at all. That swap is the whole lesson.</p>
+</div>
+<h2 id="safety-first">Safety First</h2>
+<p>At 5 volts, this circuit cannot hurt you. Every part on this board is safe to
+touch while it is running — that is exactly why we build at this voltage.</p>
+<ul>
+<li><strong>Wire everything first, plug in power last.</strong> Every time, no exceptions.</li>
+<li><strong>Unplug before you rewire.</strong> A wire moved while the board is live is how a short circuit happens — a path where current skips straight from + to − with nothing to slow it down.</li>
+<li><strong>Check your buzzer's polarity before you insert it.</strong> Most small piezo buzzers only work one way round, marked with a <strong>+</strong> on one lead. Get it backwards and the circuit stays completely silent — no smoke, no damage, just silence.</li>
+</ul>
+<h2 id="try-it-in-the-simulator">Try It in the Simulator</h2>
+<p>Chapter 14's simulator covers exactly this circuit's astable timing. Set it up
+before you touch a single wire.</p>
+<iframe src="https://dmccreary.github.io/microsims/sims/555-timer/main.html" width="100%" height="502px" scrolling="no"></iframe>
+
+<p>Dial in <strong>R1 = 1 kΩ</strong>, <strong>R2 = 6.8 kΩ</strong>, and <strong>C = 0.1 µF</strong> — the same three
+values you are about to wire for real. Watch the frequency readout land close
+to 990 Hz, solidly in the range your ears can hear.</p>
+<p>One honest limitation: this simulator is silent. It shows you the waveform and
+the frequency number, but it cannot play the tone. Hearing an actual 990 Hz
+beep is the payoff you only get by building the real circuit — which is exactly
+what you're about to do.</p>
+<h2 id="the-circuit-diagram">The Circuit Diagram</h2>
+<p>Here is the same circuit drawn the way engineers draw it.</p>
+<figure>
+<img alt="Schematic of an NE555 timer in astable mode with R1 1 kilohm from plus 5 volts to pin 7, R2 6.8 kilohm from pin 7 to the joined pins 2 and 6, capacitor C1 0.1 microfarad from that joined node to ground, pin 4 reset tied to plus 5 volts, pin 1 to ground, and pin 3 output wired directly to a piezo buzzer with its other lead returned to ground, no resistor between pin 3 and the buzzer" src="555-timer-buzzer-schematic.png" width="700" />
+<figcaption>R1, R2, and C1 set the tone's frequency. Pin 3 drives the buzzer directly — no current-limiting resistor, unlike every LED circuit before this one.</figcaption>
+</figure>
+<p>Trace the loop the way current flows: <strong>+5 V</strong> feeds pin 8 (VCC) and pin 4
+(RESET) directly. R1 and R2 step down from +5 V through pin 7 (DISCHARGE) to
+the joined pins 2 and 6, where C1 charges and discharges against ground,
+setting the timing. Pin 3 (OUTPUT) is a separate signal — it switches high and
+low at the frequency that timing network sets, and that switching signal goes
+straight to the buzzer.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Same chip, new job for pin 3</p>
+<p><img alt="Volt thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+In Lab 45, pin 3 pushed current through a resistor and an LED. Here it
+pushes current through a buzzer with nothing else in the way. Pin 3
+doesn't know or care what's listening to it — Chapter 15 called this the
+"it doesn't care what's listening" idea, and this is that idea in action.</p>
+</div>
+<h2 id="the-breadboard-layout">The Breadboard Layout</h2>
+<p>Now the same circuit built on an actual board. This is the picture to copy,
+hole by hole.</p>
+<figure>
+<img alt="Breadboard layout with an 8-pin NE555 straddling the center channel at columns 10 to 13, resistors R1 and R2 and capacitor C1 wired underneath it in the bottom half, seven labeled jumper wires J1 through J7 routed to the top power rails, and a piezo buzzer at columns 18 and 19 with its plus lead wired to pin 3" src="breadboard-layout.png" width="900" />
+<figcaption>Every hole named in the build steps is marked here, plus a wiring legend for the seven jumpers. The bottom power rails are not used — every ground and +5 V connection runs to the top rails.</figcaption>
+</figure>
+<p>The 555 straddles the center channel so its two rows of pins land in two
+separate hole groups: pins 1-4 in row <strong>e</strong> (columns 10-13), and pins 5-8
+mirrored in row <strong>f</strong> (columns 10-13). The notch on the chip's left edge marks
+pin 1.</p>
+<table>
+<thead>
+<tr>
+<th>In the schematic</th>
+<th>On the breadboard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pin 1 GND</td>
+<td><strong>e10</strong>, grounded through jumper <strong>J4</strong></td>
+</tr>
+<tr>
+<td>Pin 2 TRIGGER</td>
+<td><strong>e11</strong>, tied into the timing node through jumper <strong>J1</strong></td>
+</tr>
+<tr>
+<td>Pin 3 OUTPUT</td>
+<td><strong>e12</strong>, wired to the buzzer's + leg through jumper <strong>J6</strong></td>
+</tr>
+<tr>
+<td>Pin 4 RESET</td>
+<td><strong>e13</strong>, tied to +5 V through jumper <strong>J2</strong></td>
+</tr>
+<tr>
+<td>Pin 6 THRESHOLD</td>
+<td><strong>f12</strong>, part of the timing node</td>
+</tr>
+<tr>
+<td>Pin 7 DISCHARGE</td>
+<td><strong>f11</strong>, between R1 and R2</td>
+</tr>
+<tr>
+<td>Pin 8 VCC</td>
+<td><strong>f10</strong>, tied to +5 V through jumper <strong>J3</strong></td>
+</tr>
+<tr>
+<td>R1, 1 kΩ</td>
+<td>the resistor bridging <strong>h10</strong> to <strong>h11</strong></td>
+</tr>
+<tr>
+<td>R2, 6.8 kΩ</td>
+<td>the resistor bridging <strong>i11</strong> to <strong>i12</strong></td>
+</tr>
+<tr>
+<td>C1, 0.1 µF</td>
+<td>the capacitor bridging <strong>j12</strong> to <strong>j16</strong>, grounded through <strong>J5</strong></td>
+</tr>
+<tr>
+<td>BZ1, the buzzer</td>
+<td><strong>c18</strong> (+) and <strong>c19</strong> (−), grounded through <strong>J7</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="build-it">Build It</h2>
+<p>Work down the list in order. The timing network goes in first, then power and
+ground, then the buzzer last — so nothing is live while you're still placing
+parts.</p>
+<ol>
+<li><strong>Leave the power unplugged.</strong> Do not connect the USB supply yet.</li>
+<li>Orient the NE555 so its notch points toward column 9, then straddle it across the center channel at columns 10-13. Pin 1 lands in <strong>e10</strong>, pin 2 in <strong>e11</strong>, pin 3 in <strong>e12</strong>, and pin 4 in <strong>e13</strong>. Pins 8, 7, 6, and 5 fall into place automatically in <strong>f10</strong> through <strong>f13</strong>.</li>
+<li>Bridge <strong>R1</strong> (1 kΩ, brown-black-red) from <strong>h10</strong> to <strong>h11</strong>.</li>
+<li>Bridge <strong>R2</strong> (6.8 kΩ, blue-gray-red) from <strong>i11</strong> to <strong>i12</strong>. Its left leg shares column 11 with R1's right leg — that's the DISCHARGE connection, with no extra wire needed.</li>
+<li>Bridge <strong>C1</strong> (0.1 µF ceramic) from <strong>j12</strong> to <strong>j16</strong>. C1 has no polarity — either lead can go in either hole.</li>
+<li>Run jumper <strong>J1</strong> from <strong>c11</strong> to <strong>g12</strong>. This ties pin 2 (TRIGGER) into the same node as pin 6, R2's right leg, and C1.</li>
+<li>Run jumper <strong>J5</strong> from <strong>g16</strong> to the top <strong>−</strong> rail. This grounds C1's far leg.</li>
+<li>Run jumper <strong>J4</strong> from <strong>b10</strong> to the top <strong>−</strong> rail. This grounds pin 1.</li>
+<li>Run jumper <strong>J2</strong> from <strong>b13</strong> to the top <strong>+</strong> rail. This ties pin 4 (RESET) high.</li>
+<li>Run jumper <strong>J3</strong> from <strong>g10</strong> to the top <strong>+</strong> rail. This powers pin 8 (VCC).</li>
+</ol>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Stop here and check the buzzer before it goes in.</p>
+<p><img alt="Volt warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Find the <strong>+</strong> marking on your buzzer's case or lead. Most small piezo
+buzzers only make sound one way round. Get it backwards and nothing bad
+happens — but nothing happens at all, which can look exactly like a wiring
+mistake somewhere else. Check it now and save yourself a hunt later.</p>
+</div>
+<ol>
+<li>Insert the buzzer with its <strong>+</strong> lead in <strong>c18</strong> and its other lead in <strong>c19</strong>.</li>
+<li>Run jumper <strong>J6</strong> from <strong>b12</strong> to <strong>c18</strong>. This connects pin 3 (OUTPUT) straight to the buzzer's + leg — no resistor.</li>
+<li>Run jumper <strong>J7</strong> from <strong>d19</strong> to the top <strong>−</strong> rail. This grounds the buzzer's other leg.</li>
+<li><strong>Checkpoint — before power.</strong> Trace the loop out loud: +5 V rail → J2 and J3 → pins 4 and 8. Ground rail → J4, J5, and J7 → pins 1, C1, and the buzzer. Pin 3 → J6 → the buzzer's + leg. If any link in that chain has nothing plugged into it, find the gap now.</li>
+<li><strong>Predict first.</strong> Before you plug in power, write down a guess: will you hear anything, and if so, roughly how high or low do you expect the pitch to be?</li>
+<li>Plug in the 5 V supply. <strong>You should hear a steady tone immediately</strong> — close to 990 Hz, a clear, continuous beep rather than individual clicks.</li>
+</ol>
+<p><strong>You are done when</strong> the buzzer sounds a steady tone the instant you connect
+power, and you can point to which part of the board sets that tone's pitch.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You built a sound!</p>
+<p><img alt="Volt celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+That beep is a signal you designed on purpose — not a toy that came with a
+fixed tone baked in. Change R1, R2, or C1, and you change the pitch. That's
+your superpower in action!</p>
+</div>
+<h2 id="how-it-works">How It Works</h2>
+<p>Pin 3 doesn't know what's connected to it — it just switches between high and
+low at whatever rate R1, R2, and C1 tell it to. In Lab 45, that switching
+pattern was slow enough to <em>see</em> as a blink. Here, the same kind of pattern
+runs thousands of times a second, fast enough that instead of seeing it blink,
+you <em>hear</em> it as a tone.</p>
+<h4 id="frequency">Frequency</h4>
+<div class="arithmatex">\[ f = \frac{1.44}{(R_1 + 2R_2)\,C} \]</div>
+<p>Plug in this circuit's values — R1 = 1,000 Ω, R2 = 6,800 Ω, C = 0.0000001 F
+(0.1 µF):</p>
+<div class="arithmatex">\[ f = \frac{1.44}{(1{,}000 + 2 \times 6{,}800) \times 0.0000001} = \frac{1.44}{0.00146} \approx 990\text{ Hz} \]</div>
+<p>990 cycles per second lands solidly in the range of an alarm clock beep or a
+microwave's "done" chime — well within what your ears pick up easily.</p>
+<h4 id="duty-cycle">Duty Cycle</h4>
+<div class="arithmatex">\[ D = \frac{R_1 + R_2}{R_1 + 2R_2} = \frac{1{,}000 + 6{,}800}{14{,}600} \approx 53\% \]</div>
+<p>The output spends slightly more than half of each cycle high. At 990 cycles a
+second your ear can't hear that small asymmetry — it just hears one steady
+pitch.</p>
+<h4 id="why-the-buzzer-skips-the-resistor-an-led-always-needs">Why the buzzer skips the resistor an LED always needs</h4>
+<p>An LED is a diode: give it more voltage than it wants and it draws far more
+current than it can survive, which is exactly why Lab 10 and Lab 45 both
+needed a resistor standing guard. A small piezo buzzer is a completely
+different kind of part. It's built from a piezoelectric disc that flexes when
+voltage is applied, and it draws only a few milliamps — nowhere close to the
+roughly 200 mA the 555's output pin can safely supply. There's no current
+surge to limit, so there's nothing for a resistor to protect against.</p>
+<div class="admonition mascot-neutral">
+<p class="admonition-title">Where you've heard this</p>
+<p><img alt="Volt" class="mascot-admonition-img" src="../../img/mascot/neutral.png" />
+A microwave's "your food is ready" beep, a seatbelt reminder chime, a
+smoke detector's chirp — nearly all of them are a small piezo buzzer driven
+by a timing circuit just like this one, tuned to a frequency someone
+picked on purpose.</p>
+</div>
+<h2 id="when-it-doesnt-work">When It Doesn't Work</h2>
+<p>Work down this list in order — check power and polarity before you suspect
+anything more complicated.</p>
+<table>
+<thead>
+<tr>
+<th>What you hear</th>
+<th>Likely cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nothing at all</td>
+<td>Buzzer wired backwards</td>
+<td>Check the <strong>+</strong> mark on the buzzer and swap its leads between <strong>c18</strong> and <strong>c19</strong> — this is the single most common reason the circuit stays silent</td>
+</tr>
+<tr>
+<td>Nothing at all</td>
+<td>RESET (pin 4) not tied high</td>
+<td>Confirm jumper <strong>J2</strong> runs from <strong>b13</strong> to the <strong>+</strong> rail; a floating RESET holds the output permanently low</td>
+</tr>
+<tr>
+<td>Nothing at all</td>
+<td>Power not reaching the rails</td>
+<td>Check the USB supply is plugged in and that <strong>J2</strong> and <strong>J3</strong> are both fully seated on the <strong>+</strong> rail</td>
+</tr>
+<tr>
+<td>Individual clicks instead of a steady tone</td>
+<td>R2 or C1 in the wrong holes, or the wrong value</td>
+<td>A far larger R2 or C1 slows the cycle down enough that you hear separate clicks rather than a tone — recheck <strong>i11 → i12</strong> and <strong>j12 → j16</strong></td>
+</tr>
+<tr>
+<td>Still nothing, everything above checks out</td>
+<td>555 inserted backward</td>
+<td>Confirm the notch points toward column 9 and pin 1 lands in <strong>e10</strong>, not <strong>e13</strong></td>
+</tr>
+<tr>
+<td>Faint buzz or nothing, buzzer gets warm</td>
+<td>A buzzer leg landed in the wrong column</td>
+<td>Both buzzer legs must be in <strong>different</strong> column groups; both in the same column shorts the buzzer out</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Silence is data, not a disaster</p>
+<p><img alt="Volt encouraging you" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+A silent 555 circuit almost never means a burned-out part — 5 V circuits
+like this one don't damage parts that are simply backwards or
+disconnected. Work the table above from the top, change one thing at a
+time, and you'll find it.</p>
+</div>
+<h2 id="check-your-understanding">Check Your Understanding</h2>
+<p>Answer each one before you open it.</p>
+<details class="question">
+<summary>1. Using f = 1.44 / ((R1 + 2R2) C), what frequency does R1 = 1 kΩ, R2 = 6.8 kΩ, C = 0.1 µF produce?</summary>
+<div class="arithmatex">\[ f = \frac{1.44}{(1{,}000 + 13{,}600) \times 0.0000001} = \frac{1.44}{0.00146} \approx 990\text{ Hz} \]</div>
+<p>That's the tone this lab's circuit actually makes — a clear, audible beep.</p>
+</details>
+<details class="question">
+<summary>2. What is this circuit's duty cycle, and does your ear notice it?</summary>
+<div class="arithmatex">\[ D = \frac{1{,}000 + 6{,}800}{14{,}600} \approx 53\% \]</div>
+<p>The output is high for 53% of each cycle instead of a perfectly even 50%,
+but at 990 cycles a second that tiny asymmetry is far too fast for your
+ear to separate from a steady tone.</p>
+</details>
+<details class="question">
+<summary>3. Your circuit is wired exactly like the diagram, power is connected, but the buzzer stays completely silent. What's the first thing to check, and why?</summary>
+<p>The buzzer's <strong>polarity</strong>. Most small piezo buzzers only sound when wired
+the right way round, and a reversed buzzer produces no warning — just
+silence that looks identical to a dozen other possible mistakes. Checking
+polarity first is fast and rules out the most common cause immediately.</p>
+</details>
+<details class="question">
+<summary>4. Why can the buzzer connect directly to pin 3 with no series resistor, when every LED in this book has needed one?</summary>
+<p>An LED is a diode that draws runaway current once its forward voltage is
+exceeded, so a resistor has to stand in the way to limit that current. A
+small piezo buzzer works on a completely different principle — it flexes
+under voltage and draws only a few milliamps, far under the roughly
+200 mA the 555's output can safely supply. There's no current surge to
+limit, so there's nothing for a resistor to protect against.</p>
+</details>
+<details class="question">
+<summary>5. Predict: if you swapped C1 for a 1 µF capacitor — ten times larger than the 0.1 µF you wired — what would happen to the pitch, and why?</summary>
+<p>C appears in the denominator of the frequency formula, so multiplying it
+by 10 divides the frequency by roughly 10:</p>
+<div class="arithmatex">\[ f \approx \frac{990\text{ Hz}}{10} \approx 99\text{ Hz} \]</div>
+<p>99 Hz is low enough that the tone would sound more like a low buzz or
+rumble than the original beep — and pushed much lower still, it would
+stop sounding like a tone at all and become individual clicks, the same
+thing that happens with a very large R2.</p>
+</details>
+<details class="question">
+<summary>6. In the "Take It Further" siren, turning the trim pot's screw to increase R2 makes the pitch go lower, not higher. Use the frequency formula to explain why.</summary>
+<p>R2 sits in the numerator's "(R1 + 2R2)" term, which is in the
+<strong>denominator</strong> of the whole frequency formula. Increasing R2 makes that
+denominator larger, and dividing 1.44 by a larger number gives a
+<strong>smaller</strong> result — a lower frequency, which your ear hears as a lower
+pitch. The relationship runs the opposite way from what many people guess:
+more resistance means a slower cycle, not a faster one.</p>
+</details>
+<h2 id="take-it-further">Take It Further</h2>
+<p><strong>Challenge: turn the fixed tone into a siren.</strong></p>
+<p>Right now R2 is a fixed 6.8 kΩ resistor, so the pitch never changes. Replace
+it with the kit's 10 kΩ trim potentiometer, wired as a <strong>rheostat</strong> instead of
+the three-pin voltage divider you used in the Dark Detector lab.</p>
+<p>A rheostat wiring only uses two of the pot's three pins: the <strong>wiper</strong> (the
+center pin, connected to the sliding contact) and <strong>one outer pin</strong>. The third
+pin is left completely disconnected. Resistance is measured only between
+those two connected pins, and turning the adjustment screw slides the wiper
+between them — exactly the variable resistor R2's job calls for. This is
+different from the Dark Detector, where all three pins were used to split a
+voltage; here, only two pins are used to vary a resistance.</p>
+<p>To build it: remove R2 from <strong>i11 → i12</strong>. Insert the trim pot so its <strong>wiper
+pin</strong> lands in <strong>i11</strong> (the DISCHARGE net) and <strong>one outer pin</strong> lands in
+<strong>i12</strong> (the timing node). Leave the pot's other outer pin unconnected.</p>
+<p>With the circuit powered, gently turn the pot's adjustment screw with a small
+screwdriver. Turning it changes R2 anywhere from near 0 Ω up toward its full
+10 kΩ, which sweeps the frequency formula's result across a wide range:</p>
+<table>
+<thead>
+<tr>
+<th>R2 (from the pot)</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>near 0 Ω</td>
+<td>roughly 13,000 Hz — a high, thin whistle</td>
+</tr>
+<tr>
+<td>6.8 kΩ (matches the fixed resistor)</td>
+<td>≈ 990 Hz — the original tone</td>
+</tr>
+<tr>
+<td>10 kΩ (full turn)</td>
+<td>≈ 690 Hz — noticeably lower than the original tone</td>
+</tr>
+</tbody>
+</table>
+<p><em>You have succeeded when</em> you can turn the screw and hear the pitch audibly
+rise and fall like a siren, and you can explain — using the formula, not just
+"turn it and see" — why a larger R2 always produces a lower pitch.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Small, careful turns</p>
+<p><img alt="Volt giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Trim pots are built for occasional adjustment with a screwdriver, not
+constant twisting by hand. Turn it slowly, listen for the pitch to move,
+and stop anywhere in the range that sounds good to you.</p>
+</div>
+<p><strong>If that was easy, try this:</strong> swap C1 for a different value from the kit (a
+1 µF or a 10 µF capacitor both work) and recompute the frequency range the
+siren now covers. A bigger C1 shifts the whole siren's range lower — see if
+you can predict roughly how much lower before you power it up.</p>
+<h2 id="learn-more">Learn More</h2>
+<ul>
+<li><a href="../../chapters/14-555-timer-chip/">Chapter 14: The 555 Timer Chip</a> — the pin-by-pin tour and the frequency and duty-cycle formulas this lab builds from</li>
+<li><a href="../../chapters/15-shift-registers-ic-handling/">Chapter 15: Shift Registers and IC Handling</a> — see the "555 Buzzer Driver" section for the exact wiring this lab is built on, plus general IC-handling skills</li>
+<li><a href="../45-555-led-blinker/">Lab 45: 555 Timer LED Blinker</a> — the same timing core driving an LED instead of a buzzer, worth comparing side by side</li>
+<li><a href="../../chapters/19-driving-outputs-motors-buzzers/">Chapter 19: Driving Outputs — Motors, Buzzers, and More</a> — active vs. passive buzzers, and why this lab's buzzer needs a driving signal to make any sound at all</li>
+<li><a href="https://learn.sparkfun.com/tutorials/555-timer-basics">SparkFun: 555 Timer Basics</a> — a deeper outside tutorial on astable and monostable 555 wiring, with real oscilloscope traces</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../45-555-led-blinker/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 555 Timer LED Blinker">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                555 Timer LED Blinker
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../47-555-led-chaser/" class="md-footer__link md-footer__link--next" aria-label="Next: 555-Driven LED Bar Graph">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                555-Driven LED Bar Graph
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extras.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

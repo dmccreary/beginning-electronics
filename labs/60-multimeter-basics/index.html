@@ -1,0 +1,2873 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Put a multimeter on the switched LED circuit from Lab 10 and turn four promises this book has made — battery voltage, LED voltage, current, and resistance — into numbers you measured yourself.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/labs/60-multimeter-basics/">
+      
+      
+        <link rel="prev" href="../55-motors-and-buzzers/">
+      
+      
+        <link rel="next" href="../65-troubleshooting-fault-finder/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Meet Your Multimeter - Beginning Electronics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WP3K3TSFJ7"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WP3K3TSFJ7",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WP3K3TSFJ7",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Meet Your Multimeter - Beginning Electronics" >
+      
+        <meta  property="og:description"  content="Put a multimeter on the switched LED circuit from Lab 10 and turn four promises this book has made — battery voltage, LED voltage, current, and resistance — into numbers you measured yourself." >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/beginning-electronics/assets/images/social/labs/60-multimeter-basics/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/beginning-electronics/labs/60-multimeter-basics/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Meet Your Multimeter - Beginning Electronics" >
+      
+        <meta  name="twitter:description"  content="Put a multimeter on the switched LED circuit from Lab 10 and turn four promises this book has made — battery voltage, LED voltage, current, and resistance — into numbers you measured yourself." >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/beginning-electronics/assets/images/social/labs/60-multimeter-basics/index.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#meet-your-multimeter" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Beginning Electronics" class="md-header__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Beginning Electronics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Meet Your Multimeter
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Beginning Electronics" class="md-nav__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Beginning Electronics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../setup/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Hands-on Labs
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Hands-on Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-part-identification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identifying Parts
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-breadboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Breadboard
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-power/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Power
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-led-circuit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LED Circuit
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-buttons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Buttons
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-and-buttons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Buttons AND
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-or-buttons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Buttons OR
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-rgb-led/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RGB Led
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-dark-detector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dark Detector
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--early-stage" title="Early stage - draft (score 40-64)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-transistors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transistors
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-bc547-vs-2n2222/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BC547 vs. 2N2222
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35-boolean-logic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boolean Logic
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-noodle-led-circuit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LED Noodle Circuit
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../45-555-led-blinker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    555 Timer LED Blinker
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../46-555-buzzer-siren/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    555 Timer Buzzer and Siren
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../47-555-led-chaser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    555-Driven LED Bar Graph
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../55-motors-and-buzzers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Motors and Buzzers
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Meet Your Multimeter
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Meet Your Multimeter
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before You Start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Need
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safety First
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it-in-the-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try It in the Simulator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Try It in the Simulator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learn-the-parts-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn the Parts First
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practice-on-a-real-circuit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice on a Real Circuit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-circuit-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Circuit Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-breadboard-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Breadboard Layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build It
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-it-doesnt-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      When It Doesn't Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Your Understanding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#take-it-further" class="md-nav__link">
+    <span class="md-ellipsis">
+      Take It Further
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn More
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../65-troubleshooting-fault-finder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hunt Down a Hidden Fault
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../80-rc-circuit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RC Circuit
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../70-using-perf-boards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Perf Boards
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../kits/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Kits and Projects
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../appendices/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before You Start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Need
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safety First
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it-in-the-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try It in the Simulator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Try It in the Simulator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learn-the-parts-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn the Parts First
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practice-on-a-real-circuit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice on a Real Circuit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-circuit-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Circuit Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-breadboard-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Breadboard Layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build It
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-it-doesnt-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      When It Doesn't Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Your Understanding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#take-it-further" class="md-nav__link">
+    <span class="md-ellipsis">
+      Take It Further
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn More
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="meet-your-multimeter">Meet Your Multimeter</h1>
+<p>You already know this circuit lights up. Today you stop taking that on faith.
+Add one switch to your Lab 10 build, pick up a multimeter, and prove — with
+real numbers — exactly what every part of the circuit is doing.</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Hi again, builder!</p>
+<p><img alt="Volt waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+You've trusted this book's numbers for a while now: "about 2 volts across
+a red LED," "about 14 milliamps of current." Today you check every one of
+them yourself, on a circuit you already trust. Let's light it up!</p>
+</div>
+<h2 id="what-youll-learn">What You'll Learn</h2>
+<p>By the end of this lab you will be able to:</p>
+<ul>
+<li><strong>Build</strong> the switched LED circuit from Chapter 20's multimeter examples, adding a slide switch to a circuit you already know</li>
+<li><strong>Measure</strong> DC voltage across a battery and across a lit LED, and compare each reading to a prediction</li>
+<li><strong>Measure</strong> current by breaking the circuit and reading milliamps with the meter in series</li>
+<li><strong>Measure</strong> a resistor's real value, in and out of a circuit, and compare it to its color code from Chapter 11</li>
+<li><strong>Test</strong> continuity on a switch and a jumper wire, and explain what the beep is actually telling you</li>
+</ul>
+<h2 id="before-you-start">Before You Start</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Time</strong></td>
+<td>50 minutes</td>
+</tr>
+<tr>
+<td><strong>Difficulty</strong></td>
+<td>Beginner-Intermediate — the circuit is one you've built before; the meter is new</td>
+</tr>
+<tr>
+<td><strong>You should already know</strong></td>
+<td>How to build the LED-and-resistor circuit (<a href="../10-led-circuit/">Lab 10</a>) and how a switch closes a loop (<a href="../11-buttons/">Lab 11</a>)</td>
+</tr>
+<tr>
+<td><strong>Helpful background</strong></td>
+<td><a href="../../chapters/20-using-a-multimeter/">Chapter 20: Using a Multimeter</a>, <a href="../../chapters/11-resistor-codes-capacitor-details/">Chapter 11: Resistor Codes and Capacitor Details</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-youll-need">What You'll Need</h2>
+<p>Everything here is in the $50 kit.</p>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Part</th>
+<th>Value or marking</th>
+<th>How to spot it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Breadboard</td>
+<td>half-size, 30 columns</td>
+<td>the white plastic board with rows of holes</td>
+</tr>
+<tr>
+<td>1</td>
+<td>LED</td>
+<td>red, 5 mm</td>
+<td>clear red dome; one leg longer than the other</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Resistor (R1)</td>
+<td>220 Ω</td>
+<td>tan body, bands red-red-brown, then gold</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Resistor (R2)</td>
+<td>470 Ω</td>
+<td>tan body, bands yellow-violet-brown, then gold</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Slide switch (SW1)</td>
+<td>small on/off slider</td>
+<td>plastic body with a sliding lever on top</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Jumper wire</td>
+<td>1 red, 1 black</td>
+<td>for the positive and ground connections</td>
+</tr>
+<tr>
+<td>1</td>
+<td>USB power supply</td>
+<td>5 V, or a 3×AA battery pack</td>
+<td>any phone charger with a USB-A cable</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Multimeter</td>
+<td>digital, auto-ranging</td>
+<td>yellow or black handheld tool with two probe wires</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-tip">
+<p class="admonition-title">No multimeter at your desk? You can still finish.</p>
+<p><img alt="Volt giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+A multimeter is a shared tool in a lot of classrooms, so this lab prints
+every expected reading right where you need it — battery voltage, LED
+voltage, current, and resistance. Build the circuit, read the numbers
+printed here, and you will still understand exactly what a meter would
+have shown you. Borrow one when you can, though — nothing beats seeing
+your own number land where the book predicted.</p>
+</div>
+<h2 id="safety-first">Safety First</h2>
+<p>At 5 volts, nothing on this breadboard can shock you. You can touch every
+part of this circuit, live, with bare hands. The habits below protect your
+<strong>parts</strong> and your <strong>meter</strong>, not you.</p>
+<ul>
+<li><strong>Wire first, power last — and unplug before you rewire.</strong> A live wire
+  touching the wrong hole is how you make a <strong>short circuit</strong>, a path where
+  current skips the resistor entirely and races straight from + to −.</li>
+<li><strong>Set the dial and check the jacks before the probes ever touch anything.</strong>
+  The red probe goes in the jack marked <strong>VΩmA</strong> for voltage, resistance, and
+  small currents; the black probe stays in the jack marked <strong>COM</strong> (short for
+  "common") for every single measurement in this lab.</li>
+<li><strong>Never spin the dial to resistance or continuity mode on a powered
+  circuit.</strong> Those two modes send the meter's <em>own</em> small test current
+  through whatever the probes touch. A powered circuit fighting the meter's
+  test current gives you a meaningless number, and can damage the meter.</li>
+<li><strong>Never leave the dial on current mode and touch the probes across a
+  power source</strong>, the way you would for a voltage reading. Current mode
+  looks like a wide-open wire to the meter — touching it straight across a
+  battery is close to a dead short, and can pop the meter's internal fuse
+  instantly.</li>
+</ul>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Power OFF before resistance or continuity mode. No exceptions.</p>
+<p><img alt="Volt giving a warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+This is the one rule in this whole lab that is not negotiable. Before you
+ever turn that dial to Ω or the continuity speaker icon, <strong>unplug the 5 V
+supply completely.</strong> Voltage and current modes are fine to use on a live
+circuit — that's the whole point of them. Resistance and continuity are
+not. Get in the habit now, on a harmless 5 V board, and it will protect
+you on bigger projects for the rest of this book.</p>
+</div>
+<h2 id="try-it-in-the-simulator">Try It in the Simulator</h2>
+<h3 id="learn-the-parts-first">Learn the Parts First</h3>
+<p>Before you probe anything, take a labeled tour of the tool itself. Click or
+hover every part of the meter below — the display, the dial, both probes, and
+both jacks — until you can name each one without looking.</p>
+<iframe src="../../sims/multimeter-anatomy-explorer/main.html" width="100%" height="762px" scrolling="no"></iframe>
+
+<p>Pay special attention to two things: which jack each probe lives in (red in
+<strong>VΩmA</strong>, black in <strong>COM</strong>, always), and what the dial's different positions
+actually do. You'll use both facts in every job below.</p>
+<h3 id="practice-on-a-real-circuit">Practice on a Real Circuit</h3>
+<p>Now practice on a virtual meter where nothing can go wrong. This is the exact
+circuit you're about to build — R1, SW1, D1, and an unconnected R2 sitting off
+to one side.</p>
+<iframe src="../../sims/virtual-multimeter-breadboard/main.html" width="100%" height="542px" scrolling="no"></iframe>
+
+<p>Try this before you build anything real:</p>
+<ol>
+<li><strong>Pick voltage mode</strong>, then click the test point across the battery. That
+   glowing green reading is exactly what you'll see on your own meter in a
+   few minutes.</li>
+<li><strong>Switch to resistance mode</strong> and click the LED's test point while the
+   circuit is still powered. Read the infobox that pops up — that explanation
+   is the entire reason for this lab's power-off rule.</li>
+<li><strong>Click SW1 open, then closed</strong>, in continuity mode, and listen for the
+   beep. That's the fastest of all four jobs, and you'll do it for real at
+   the very end of this lab.</li>
+</ol>
+<h2 id="the-circuit-diagram">The Circuit Diagram</h2>
+<p>Here is the circuit you're building: the same R1-and-D1 pair from Lab 10,
+with a slide switch added in series, plus a second resistor drawn off to the
+side that is never wired into anything.</p>
+<figure>
+<p><img alt="Schematic showing a 5 volt supply feeding a slide switch SW1, then a 220 ohm resistor R1, then a red LED D1 in series to ground, with about 3.1 volts dropped across the resistor, 1.9 volts across the LED, and about 14 milliamps flowing once the switch is closed; a separate 470 ohm resistor R2 is drawn inside a dashed box with both leads unconnected, labeled as not part of the circuit" src="multimeter-circuit-schematic.png" width="620" /></p>
+<figcaption>SW1 adds the ability to open and close the loop on purpose. R2 is drawn deliberately isolated — it exists only so you have something to measure with the power off.</figcaption>
+</figure>
+<p>Read it top to bottom, the way current flows once SW1 is closed: out of
+<strong>+5 V</strong>, through <strong>SW1</strong>, down through <strong>R1</strong>, down through <strong>D1</strong> (anode
+side in, cathode side out), and into <strong>ground</strong>. R2, off to the right inside
+the dashed box, connects to nothing — that's on purpose, not a mistake in the
+drawing.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Why measure a resistor that isn't even wired in?</p>
+<p><img alt="Volt thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Resistance mode needs to push its own tiny test current through a part
+with nothing else interfering. R2 sitting there unconnected is the
+simplest possible case — no circuit to power down, no part to pull out.
+Later in this lab, you'll also pull R1 out of the live circuit and
+measure it the harder way, so you can compare both methods.</p>
+</div>
+<h2 id="the-breadboard-layout">The Breadboard Layout</h2>
+<p>Now the same circuit on the actual board, plus R2 sitting untouched in the
+bottom half.</p>
+<figure>
+<p><img alt="Breadboard layout with a red jumper from the plus rail to hole a3, a slide switch SW1 bridging b3 to b6, a 220 ohm resistor R1 bridging c6 to c12, a red LED with its long leg in d12 and short leg in d13, a black jumper from a13 to the minus rail, and a separate 470 ohm resistor R2 sitting unconnected with its legs in f20 and f24" src="breadboard-layout.png" width="820" /></p>
+<figcaption>Every hole named in the build steps is marked here. R2's legs sit in f20 and f24 — free holes, wired to nothing.</figcaption>
+</figure>
+<p>The picture and the schematic show the same circuit. Here is how they line up:</p>
+<table>
+<thead>
+<tr>
+<th>In the schematic</th>
+<th>On the breadboard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The <strong>+5 V</strong> rail</td>
+<td>The red <strong>+ rail</strong>, reached by the red jumper into <strong>a3</strong></td>
+</tr>
+<tr>
+<td><strong>SW1</strong>, the slide switch</td>
+<td>The plastic-bodied part bridging <strong>b3</strong> and <strong>b6</strong></td>
+</tr>
+<tr>
+<td><strong>R1</strong>, the 220 Ω resistor</td>
+<td>The tan part bridging <strong>c6</strong> and <strong>c12</strong></td>
+</tr>
+<tr>
+<td><strong>D1</strong>, the LED, anode side up</td>
+<td>The red dome, long leg (anode) in <strong>d12</strong>, short leg (cathode) in <strong>d13</strong></td>
+</tr>
+<tr>
+<td>The <strong>ground</strong> symbol</td>
+<td>The blue <strong>− rail</strong>, reached by the black jumper from <strong>a13</strong></td>
+</tr>
+<tr>
+<td><strong>R2</strong>, drawn isolated in the dashed box</td>
+<td>The tan part sitting alone in <strong>f20</strong> and <strong>f24</strong>, in the unused bottom half — wired to nothing</td>
+</tr>
+</tbody>
+</table>
+<p>Column groups <strong>a3–e3</strong>, <strong>b6/c6</strong>, <strong>c12/d12</strong>, and <strong>a13/d13</strong> are each one
+connected node inside the board, which is what lets a jumper leg, a switch
+leg, a resistor leg, and an LED leg share a node without ever touching each
+other directly.</p>
+<h2 id="build-it">Build It</h2>
+<p>Work down this list in order. The first part is fast — you've built this
+exact resistor-and-LED pair before. The four "Job" sections after it are the
+actual point of this lab, so take your time there.</p>
+<p><strong>Build the circuit</strong></p>
+<ol>
+<li><strong>Leave the power unplugged.</strong> Every wire and part goes in before any power does.</li>
+<li>Push <strong>SW1's</strong> two legs into <strong>b3</strong> and <strong>b6</strong>. Slide it to the OFF position for now.</li>
+<li>Push a <strong>red jumper</strong> into a hole on the red <strong>+ rail</strong>, and its other end into <strong>a3</strong>.</li>
+<li>Bend the legs of <strong>R1</strong> (220 Ω) down, and push them into <strong>c6</strong> and <strong>c12</strong>.</li>
+<li>Push the LED's <strong>long leg (anode) into d12</strong> and its <strong>short leg (cathode) into d13</strong>. The long leg always faces the resistor.</li>
+<li>Push a <strong>black jumper</strong> into <strong>a13</strong>, and its other end into a hole on the blue <strong>− rail</strong>.</li>
+<li><strong>Checkpoint — before power.</strong> Trace the loop out loud: + rail → a3 → SW1 → b6 → R1 → c12 → LED anode → cathode → a13 → − rail. If any link in that sentence has nothing in it, find the gap now.</li>
+<li><strong>Predict first:</strong> with SW1 still off, will the LED light when you plug in power? Write your guess down.</li>
+<li>Plug in the <strong>5 V supply</strong>, then slide <strong>SW1</strong> to ON. The LED should light immediately — that's your success checkpoint for this part.</li>
+</ol>
+<p><strong>Job 1: Measure voltage — the circuit stays powered</strong></p>
+<p>Voltage is the easiest place to start, because reading it never requires
+opening the circuit. You touch two points and read the difference.</p>
+<ol>
+<li><strong>Predict:</strong> with SW1 closed and the LED lit, what do you expect the meter to read across the + and − rails? Write down a number.</li>
+<li>Set the dial to <strong>DC volts (V⎓)</strong>. Confirm the red probe is in the <strong>VΩmA</strong> jack and the black probe is in <strong>COM</strong>.</li>
+<li>Touch the red probe to any hole on the <strong>+ rail</strong> and the black probe to any hole on the <strong>− rail</strong>. Read the display. Expect close to <strong>5.0 V</strong>.</li>
+<li><strong>Predict again:</strong> an LED's forward voltage — the voltage it always uses up while lit — is about 1.9 V for red, from Chapter 20. What do you expect across D1?</li>
+<li>Touch the red probe to <strong>d12</strong> (the anode) and the black probe to <strong>d13</strong> (the cathode). Read the display. Expect close to <strong>1.9 V</strong>.</li>
+</ol>
+<p><strong>Job 2: Measure current — you have to break the loop on purpose</strong></p>
+<p>Current can only be measured by becoming part of the path it's flowing
+through, which is why this job takes one extra step voltage never needed.</p>
+<ol>
+<li><strong>Predict:</strong> using the two voltages you just measured, calculate the expected current: <span class="arithmatex">\((5.0\text{ V} - 1.9\text{ V}) \div 220\ \Omega\)</span>.</li>
+<li>With the circuit still powered and SW1 still ON, gently pull the <strong>black jumper's end out of hole a13 only</strong> — leave its other end in the − rail. The LED goes dark. You just opened the loop on purpose.</li>
+<li>Set the dial to <strong>DC milliamps (mA)</strong>. Move the red probe to the jack labeled <strong>mA</strong> if your meter has a separate one; otherwise VΩmA is fine.</li>
+<li>Touch the red probe into <strong>hole a13</strong> and the black probe to the <strong>dangling end of the black jumper</strong>. The LED should light again — the meter is now completing the circuit for you.</li>
+<li>Read the display. Expect close to <strong>14 mA</strong>, and check it against your prediction from step 15.</li>
+</ol>
+<p><strong>Job 3: Measure resistance — power OFF, no exceptions</strong></p>
+<ol>
+<li><strong>Unplug the 5 V supply completely.</strong> This is the hard rule from Safety First — resistance mode cannot handle a powered circuit.</li>
+<li>Set the dial to <strong>Ω</strong> (resistance).</li>
+<li>Touch the two probes to <strong>R2's legs in f20 and f24</strong>. R2 was never wired in, so you can measure it exactly as it sits. Expect close to <strong>470 Ω</strong> (within about 5%, roughly 447–494 Ω).</li>
+<li>Gently lift <strong>R1 out of the board</strong> (pull it from c6 and c12), and touch the probes to its two bare leads. Expect close to <strong>220 Ω</strong> (roughly 209–231 Ω).</li>
+<li>Compare both readings to the color-band values you'd decode with Chapter 11's table. Then push R1 back into <strong>c6</strong> and <strong>c12</strong>.</li>
+</ol>
+<p><strong>Job 4: Test continuity — still powered OFF</strong></p>
+<ol>
+<li>Confirm the power is still unplugged — it should be, from Job 3.</li>
+<li>Set the dial to <strong>continuity mode</strong> (the sound-wave / speaker icon).</li>
+<li>Touch the probes to <strong>SW1's two legs (b3 and b6)</strong> while it's OFF (open). You should hear silence — no connection.</li>
+<li>Slide <strong>SW1 to ON</strong> and touch the same two legs again. You should hear an instant <strong>beep</strong>.</li>
+<li>Touch the probes to the two ends of the <strong>black jumper</strong> you disconnected in Job 2 (or any spare jumper). A beep means a good wire; silence means a broken one.</li>
+<li>Push the black jumper back into <strong>a13</strong>, plug the 5 V supply back in, and confirm the LED lights again with SW1 closed.</li>
+</ol>
+<p><strong>You are done when</strong> you've recorded four real numbers — battery voltage,
+LED voltage, current, and resistance — plus two continuity results, every one
+of them close to its predicted value, and your circuit is back together with
+the LED glowing.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You just proved your own circuit.</p>
+<p><img alt="Volt celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+Four different jobs, one small tool, zero guessing. You didn't just watch
+an LED turn on this time — you measured the voltage, caught the current
+in the act, weighed the resistors, and listened for a beep. That's a real
+engineer's superpower, and it's yours now. Current's flowing your way!</p>
+</div>
+<h2 id="how-it-works">How It Works</h2>
+<p>Remember the water-pipe picture from <a href="../../chapters/01-electricity-basics/">Chapter 1</a>:
+voltage is pressure, current is how much water is actually flowing, and
+resistance is how narrow the pipe is. That picture explains why your four
+jobs today felt so different from each other.</p>
+<p><strong>Voltage measurement never disturbs the pipe.</strong> A voltmeter is like holding
+two pressure gauges at two different points on the outside of the pipe — it
+reads the difference without diverting a drop of water. That's why you never
+had to break the circuit for Job 1: the meter's voltage input barely lets any
+current through it at all.</p>
+<p><strong>Current measurement has to become part of the pipe.</strong> An ammeter is a
+tiny paddle-wheel that has to sit <em>inside</em> the flow to count what passes
+through it. There's no way to measure "how much is flowing" without putting
+something in the actual path — which is exactly why Job 2 made you pull a
+jumper and insert the meter into the gap.</p>
+<p><strong>Resistance mode needs the pipe empty.</strong> To measure resistance, the meter
+pushes its own small test current through the part and works out the
+resistance from what comes back. If your 5 V supply is also pushing current
+through that same part at the same time, the two currents mix and the
+reading means nothing — which is the whole reason for Job 3's power-off rule.</p>
+<p><strong>Continuity is resistance mode with a very short fuse.</strong> It's the same
+test-current trick as Job 4, just watching for one thing: is the resistance
+close enough to zero to call these two points "connected"? The beep is
+instant because the meter doesn't bother showing you a number — it just
+answers yes or no.</p>
+<p>Here's the arithmetic behind Job 2's prediction, using the numbers you
+actually measured:</p>
+<div class="arithmatex">\[ 5.0\text{ V} - 1.9\text{ V} = 3.1\text{ V across R1} \]</div>
+<div class="arithmatex">\[ I = \frac{3.1\text{ V}}{220\ \Omega} = 0.0141\text{ A} = 14.1\text{ mA} \]</div>
+<p>That's the same Ohm's Law arithmetic Lab 10 used to choose R1 in the first
+place — except this time you're checking a real measured number against it,
+not just trusting the formula.</p>
+<div class="admonition mascot-neutral">
+<p class="admonition-title">Where you've seen this</p>
+<p><img alt="Volt" class="mascot-admonition-img" src="../../img/mascot/neutral.png" />
+Every time a phone repair technician touches two probes to a circuit
+board to see whether a broken screen is actually a broken <em>connection</em>,
+they're doing exactly what you did in Job 4 — no formula, no guessing,
+just a beep that means "these two points are the same point electrically."</p>
+</div>
+<h2 id="when-it-doesnt-work">When It Doesn't Work</h2>
+<p>Work down this list in order: check the dial and jacks before you check
+anything clever, and change only one thing at a time. One display message is
+worth knowing before you start: <strong>"OL"</strong> (short for overload) almost never
+means the meter is broken — it means the value is too large for the range,
+or more often in this lab, that there's no complete path for it to measure.</p>
+<table>
+<thead>
+<tr>
+<th>What you see</th>
+<th>Likely cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Display reads <strong>"OL"</strong> where you expected a normal number</td>
+<td>An open connection, or (on a manual-range meter) too small a range selected</td>
+<td>Confirm both probes are firmly seated in their holes; on an auto-ranging meter, OL almost always means an actual open path — recheck the connection</td>
+</tr>
+<tr>
+<td>Meter shows <strong>nothing at all</strong> — blank display</td>
+<td>Meter is off, or the dial is still on OFF</td>
+<td>Turn the dial to the mode you need; check the meter's own battery if it still won't light up</td>
+</tr>
+<tr>
+<td>A reading is <strong>suspiciously low, zero, or wildly wrong</strong></td>
+<td>Red probe is in the wrong jack for the selected mode</td>
+<td>Move the red probe to VΩmA for voltage/resistance, or to the dedicated mA jack if your meter has one</td>
+</tr>
+<tr>
+<td><strong>Job 2:</strong> LED stays dark and current reads 0.00 mA after you reinsert the meter</td>
+<td>Probes aren't actually bridging the gap at a13, or the jumper's other end slipped out of the − rail</td>
+<td>Reseat both probe tips firmly in a13 and the dangling jumper end; confirm the jumper's far end is still in the rail</td>
+</tr>
+<tr>
+<td><strong>Job 3:</strong> resistance reading is negative, unstable, or nowhere close to the color code</td>
+<td>The board is still powered, or the part still has another connection to the circuit</td>
+<td>Recheck the supply is unplugged, and that R1 is fully out of the board before probing its leads</td>
+</tr>
+<tr>
+<td><strong>Job 4:</strong> no beep on the closed switch</td>
+<td>Probes are on the wrong two legs, dial isn't actually on continuity, or the switch isn't fully slid over</td>
+<td>Confirm the dial position, slide SW1 firmly to ON, and try the same two legs again</td>
+</tr>
+</tbody>
+</table>
+<h2 id="check-your-understanding">Check Your Understanding</h2>
+<p>Answer each one before you open it.</p>
+<details class="question">
+<summary>1. You want to check whether a jumper wire is broken, without wiring it into any circuit. Which mode do you pick, and why not just measure its resistance in ohms instead?</summary>
+<p><strong>Continuity mode.</strong> You could technically use resistance mode and look
+for a reading near 0 Ω, but continuity mode does that exact check for you
+automatically and answers with an instant beep — faster to use and
+impossible to misread.</p>
+</details>
+<details class="question">
+<summary>2. You switch to Ω mode, touch the probes to R2's two legs, and the display reads OL. Name two different things that could cause this.</summary>
+<p>The probes might not be making solid contact with the leads — try
+pressing them more firmly, or on cleaner spots of the leads. Or the
+resistor itself could genuinely be open (broken internally), which does
+happen to damaged parts. Either way, OL in resistance mode on a small
+kit resistor almost never means "value too large for the range" — the
+kit's resistors are far too small to overload an auto-ranging meter.</p>
+</details>
+<details class="question">
+<summary>3. Your supply reads 5.0 V and your lit LED reads 1.9 V. Predict the current through R1 (220 Ω) using Ohm's Law, then say whether that matches what you measured in Job 2.</summary>
+<div class="arithmatex">\[ I = \frac{5.0\text{ V} - 1.9\text{ V}}{220\ \Omega} = \frac{3.1\text{ V}}{220\ \Omega} \approx 0.0141\text{ A} = 14.1\text{ mA} \]</div>
+<p>That should land within a milliamp or so of what you actually measured
+in Job 2 — about 14 mA. Small differences are normal; resistors and LEDs
+both have real-world tolerance, not perfectly exact values.</p>
+</details>
+<details class="question">
+<summary>4. Why does measuring voltage never require breaking the circuit, but measuring current always does?</summary>
+<p>A voltmeter is connected in <strong>parallel</strong>, across two points, and lets
+almost no current flow through itself — it just compares the electrical
+pressure at those two points from the outside. An ammeter has to be
+connected in <strong>series</strong>, directly in the current's path, because the
+only way to count how much charge is flowing is to have it all pass
+through the meter. There's no way to do that without opening a gap in
+the circuit and inserting the meter into it.</p>
+</details>
+<details class="question">
+<summary>5. Your LED stays dark after Job 2's rewiring, and the display reads 0.00 mA. List two different things you'd check before assuming the LED itself is broken.</summary>
+<p>First, check that both probe tips are actually seated in the gap you
+created — one in hole a13, one on the dangling jumper end — since a
+loose probe looks identical to "no current" on the display. Second,
+confirm the dial is really on mA and the red probe is in the correct
+jack for current, not still set for voltage. A meter set to the wrong
+mode reads a meaningless number, not a helpful error.</p>
+</details>
+<details class="question">
+<summary>6. Why must you always unplug power before switching to resistance or continuity mode?</summary>
+<p>Both modes work by sending the meter's own small test current through
+whatever the probes touch, then calculating a result from what comes
+back. If your 5 V supply is also pushing current through that same part
+at the same time, the two currents interfere and the reading is
+meaningless at best — and on some meters, risks damaging the meter's
+internal resistance-measuring circuit.</p>
+</details>
+<details class="question">
+<summary>7. A classmate's resistor measures 240 Ω, but its color bands read red-red-brown — 220 Ω. Is their resistor broken?</summary>
+<p>Probably not. A 220 Ω resistor with a gold tolerance band is allowed to
+measure anywhere from about 209 Ω to 231 Ω and still be considered a good
+part. At 240 Ω, this one is just outside that ±5% window, which usually
+means either a slightly out-of-spec part or a resistor that got mixed up
+with a different value — not a broken one. The fix is to re-check the
+color bands carefully, not to assume the meter is wrong.</p>
+</details>
+<h2 id="take-it-further">Take It Further</h2>
+<p><strong>Challenge: verify more of your kit.</strong> Pull two or three more resistors
+from your kit at random. Decode each one's color bands using Chapter 11's
+table, write down your predicted value, then measure each one with the meter
+in resistance mode.</p>
+<p><em>You have succeeded when</em> every measured value falls within about 5% of its
+color-coded value, and for any one that doesn't, you can explain why — a
+misread color band is far more likely than a bad resistor.</p>
+<p><strong>If that was easy, try this:</strong> measure the LED itself in resistance mode
+while it's out of the circuit, in both directions (swap which probe touches
+which leg). You'll see two very different readings. That's your first
+hands-on proof of what Chapter 12 called a diode's one-way behavior — a
+multimeter's resistance mode can even help you test which leg is which on an
+unmarked LED.</p>
+<h2 id="learn-more">Learn More</h2>
+<ul>
+<li><a href="../../chapters/20-using-a-multimeter/">Chapter 20: Using a Multimeter</a> — the full explanation behind every mode you used today, including the Virtual Multimeter Breadboard sim</li>
+<li><a href="../../chapters/11-resistor-codes-capacitor-details/">Chapter 11: Resistor Codes and Capacitor Details</a> — the complete ten-color decoder ring for checking any resistor's coded value</li>
+<li><a href="../10-led-circuit/">Lab 10: Your First LED Circuit</a> — the original build this lab's circuit is based on, including the Ohm's Law math for R1</li>
+<li><a href="../11-buttons/">Lab 11: LED Button Circuit</a> — where a switch first joined one of this book's circuits</li>
+<li><a href="https://learn.sparkfun.com/tutorials/how-to-use-a-multimeter">SparkFun: How to Use a Multimeter</a> — an outside tutorial with photos of real meters and extra measurement examples</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../55-motors-and-buzzers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Motors and Buzzers">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Motors and Buzzers
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../65-troubleshooting-fault-finder/" class="md-footer__link md-footer__link--next" aria-label="Next: Hunt Down a Hidden Fault">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Hunt Down a Hidden Fault
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extras.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

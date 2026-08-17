@@ -111,3 +111,70 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Page status markers
+
+   Material renders <span class="md-status md-status--KEY"> next to a nav item
+   when the page has `status: KEY` in its frontmatter and the key is listed
+   under `extra.status` in mkdocs.yml. The icon itself is a mask image, so each
+   custom key needs a --md-status--KEY variable plus a rule that applies it.
+
+   Five levels, matching the quality bands in the hands-on-lab-evaluator skill:
+
+     complete         green check    90-100  publish ready
+     almost-complete  blue dot       80-89   minor gaps
+     in-progress      amber dot      65-79   teachable but incomplete
+     early-stage      red dot        40-64   draft
+     stub             grey ring      0-39    little content yet
+
+   The :hover rules exist because Material's base stylesheet resets the marker
+   to currentcolor on hover, which would drop the color that carries the meaning.
+   --------------------------------------------------------------------------- */
+
+:root {
+  --md-status--complete: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg>');
+  --md-status--dot: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg>');
+  --md-status--ring: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" fill="none" stroke="black" stroke-width="2"/></svg>');
+
+  --md-status-color--complete: #2e9e4f;
+  --md-status-color--almost-complete: #1e88e5;
+  --md-status-color--in-progress: #f0a020;
+  --md-status-color--early-stage: #e04b3f;
+  --md-status-color--stub: #9e9e9e;
+}
+
+.md-status--complete::after,
+.md-status--complete:hover::after {
+  -webkit-mask-image: var(--md-status--complete);
+  mask-image: var(--md-status--complete);
+  background-color: var(--md-status-color--complete);
+}
+
+.md-status--almost-complete::after,
+.md-status--almost-complete:hover::after {
+  -webkit-mask-image: var(--md-status--dot);
+  mask-image: var(--md-status--dot);
+  background-color: var(--md-status-color--almost-complete);
+}
+
+.md-status--in-progress::after,
+.md-status--in-progress:hover::after {
+  -webkit-mask-image: var(--md-status--dot);
+  mask-image: var(--md-status--dot);
+  background-color: var(--md-status-color--in-progress);
+}
+
+.md-status--early-stage::after,
+.md-status--early-stage:hover::after {
+  -webkit-mask-image: var(--md-status--dot);
+  mask-image: var(--md-status--dot);
+  background-color: var(--md-status-color--early-stage);
+}
+
+.md-status--stub::after,
+.md-status--stub:hover::after {
+  -webkit-mask-image: var(--md-status--ring);
+  mask-image: var(--md-status--ring);
+  background-color: var(--md-status-color--stub);
+}

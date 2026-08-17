@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/setup/power-supplies/">
       
       
-        <link rel="prev" href="../purchasing-breadboards/">
+        <link rel="prev" href="../safe-power-for-learning/">
       
       
         <link rel="next" href="../breadboard-kits/">
@@ -73,6 +73,32 @@
   
 
     
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Power Supplies - Beginning Electronics" >
+      
+        <meta  property="og:description"  content="This is a interactive intelligent textbook that teachers beginning electronics with a $50 solderless breadboard kit." >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/beginning-electronics/assets/images/social/setup/power-supplies.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/beginning-electronics/setup/power-supplies/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Power Supplies - Beginning Electronics" >
+      
+        <meta  name="twitter:description"  content="This is a interactive intelligent textbook that teachers beginning electronics with a $50 solderless breadboard kit." >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/beginning-electronics/assets/images/social/setup/power-supplies.png" >
+      
     
     
   </head>
@@ -296,6 +322,10 @@
         
       
         
+          
+        
+      
+        
       
         
       
@@ -374,6 +404,27 @@
   
   <span class="md-ellipsis">
     Purchasing Breadboards
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../safe-power-for-learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Safe Power for Learning
   </span>
   
 
@@ -782,7 +833,7 @@
         
       
         
-      
+          
         
       
         
@@ -799,6 +850,32 @@
       
         
       
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
         
       
         
@@ -1310,6 +1387,10 @@
           
         
       
+        
+          
+        
+      
     
     
     
@@ -1663,6 +1744,16 @@
 
 
 <h1 id="finding-the-right-power-supplies">Finding the Right Power Supplies</h1>
+<div class="admonition tip">
+<p class="admonition-title">Start with Safe Power for Learning</p>
+<p>This page is a catalog of power-supply <em>options</em> and where to buy them.
+If you are setting up for young builders, read
+<a href="./safe-power-for-learning/">Safe Power for Learning</a> first — it covers
+which supply to choose at which experience level, why adapter voltage
+matters, exactly what the MB102 module protects against, and how to add a
+ten-cent PTC resettable fuse so a shorted rail costs thirty seconds
+instead of a power module.</p>
+</div>
 <p>Our projects need some type of power. A 5V DC power supply is the most cost-effective way to provide power.  These power supplies usually use common and inexpensive components with built-in safety circuits.  Here are a few methods to try.</p>
 <p>Since the power supply is often the most expensive part of the kit,
 it is important to get this component correct.  We suggest
@@ -1703,6 +1794,12 @@ and overload protection.  In breadboard power supplies that provide 5V or 3.3V o
 </li>
 </ul>
 <p>It's important to note that while these features provide a level of safety, they are not infallible, and additional external protection (like fuses or current limiting resistors) might be advisable in certain applications. Always refer to the specific regulator's datasheet for detailed information on its capabilities and limitations.</p>
+<p>For a worked example of exactly this point, see
+<a href="./safe-power-for-learning/#what-it-does-not-protect-against">What the MB102 Does Not Protect Against</a>.
+The regulator on that module really does have current limiting and thermal
+shutdown — and it still dies on a shorted breadboard often enough to matter,
+because surviving a fault by overheating is not the same as having a fuse.
+That page shows <a href="./safe-power-for-learning/#adding-a-ptc-resettable-fuse">how to add one</a>.</p>
 <h2 id="usb-breadboard-power-supply">USB-Breadboard Power Supply</h2>
 <p><img alt="" src="../../img/breadboard-power.png" /></p>
 <p>Many Beginning Electronics kits come with a breadboard-ready power
@@ -1781,6 +1878,9 @@ the current output voltage setting. </p>
 
 
 
+  
+  
+
 
 
   
@@ -1811,7 +1911,7 @@ the current output voltage setting. </p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../purchasing-breadboards/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Purchasing Breadboards">
+          <a href="../safe-power-for-learning/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Safe Power for Learning">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1821,7 +1921,7 @@ the current output voltage setting. </p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Purchasing Breadboards
+                Safe Power for Learning
               </div>
             </div>
           </a>

@@ -1,0 +1,2755 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wire a 555 timer's own clock signal into a 74HC595 shift register so eight LEDs fill up one at a time, then press a button to clear the bar and watch it fill again.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/labs/47-555-led-chaser/">
+      
+      
+        <link rel="prev" href="../46-555-buzzer-siren/">
+      
+      
+        <link rel="next" href="../55-motors-and-buzzers/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>555-Driven LED Bar Graph - Beginning Electronics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WP3K3TSFJ7"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WP3K3TSFJ7",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WP3K3TSFJ7",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="555-Driven LED Bar Graph - Beginning Electronics" >
+      
+        <meta  property="og:description"  content="Wire a 555 timer's own clock signal into a 74HC595 shift register so eight LEDs fill up one at a time, then press a button to clear the bar and watch it fill again." >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/beginning-electronics/assets/images/social/labs/47-555-led-chaser/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/beginning-electronics/labs/47-555-led-chaser/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="555-Driven LED Bar Graph - Beginning Electronics" >
+      
+        <meta  name="twitter:description"  content="Wire a 555 timer's own clock signal into a 74HC595 shift register so eight LEDs fill up one at a time, then press a button to clear the bar and watch it fill again." >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/beginning-electronics/assets/images/social/labs/47-555-led-chaser/index.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#555-driven-led-bar-graph" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Beginning Electronics" class="md-header__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Beginning Electronics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              555-Driven LED Bar Graph
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Beginning Electronics" class="md-nav__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Beginning Electronics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../setup/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Hands-on Labs
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Hands-on Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-part-identification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identifying Parts
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-breadboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Breadboard
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-power/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Power
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-led-circuit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LED Circuit
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-buttons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Buttons
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-and-buttons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Buttons AND
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-or-buttons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Buttons OR
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-rgb-led/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RGB Led
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-dark-detector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dark Detector
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--early-stage" title="Early stage - draft (score 40-64)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-transistors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transistors
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-bc547-vs-2n2222/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BC547 vs. 2N2222
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35-boolean-logic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boolean Logic
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-noodle-led-circuit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LED Noodle Circuit
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../45-555-led-blinker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    555 Timer LED Blinker
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../46-555-buzzer-siren/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    555 Timer Buzzer and Siren
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    555-Driven LED Bar Graph
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    555-Driven LED Bar Graph
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before You Start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Need
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safety First
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it-in-the-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try It in the Simulator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-circuit-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Circuit Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-breadboard-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Breadboard Layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build It
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-it-doesnt-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      When It Doesn't Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Your Understanding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#take-it-further" class="md-nav__link">
+    <span class="md-ellipsis">
+      Take It Further
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn More
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../55-motors-and-buzzers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Motors and Buzzers
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../60-multimeter-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Meet Your Multimeter
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../65-troubleshooting-fault-finder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hunt Down a Hidden Fault
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../80-rc-circuit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RC Circuit
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../70-using-perf-boards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Perf Boards
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../kits/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Kits and Projects
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../appendices/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before You Start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Need
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safety First
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it-in-the-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try It in the Simulator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-circuit-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Circuit Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-breadboard-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Breadboard Layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build It
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-it-doesnt-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      When It Doesn't Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Your Understanding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#take-it-further" class="md-nav__link">
+    <span class="md-ellipsis">
+      Take It Further
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn More
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="555-driven-led-bar-graph">555-Driven LED Bar Graph</h1>
+<p>Two chips, eight LEDs, and one clock signal deciding exactly when each light joins the bar — the moment you power this circuit up, a single LED appears, then a second, then a third, until all eight are lit. Press a button and the whole bar drops back to dark, ready to fill again.</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">The capstone build, builder!</p>
+<p><img alt="Volt waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+This is the payoff lab for everything Chapter 14 and Chapter 15 taught you. You already know how to wire a 555 clock (<a href="../45-555-led-blinker/">Lab 45</a>) and how a 74HC595 shifts bits into eight outputs. Today those two skills become one circuit — the 555 becomes the shift register's heartbeat, with no code and no microcontroller anywhere in sight. Let's light it up!</p>
+</div>
+<h2 id="what-youll-learn">What You'll Learn</h2>
+<p>By the end of this lab you will be able to:</p>
+<ul>
+<li><strong>Build</strong> a two-chip circuit where a 555 astable clock drives a 74HC595 shift register</li>
+<li><strong>Wire</strong> SER, OE′, and SRCLR′ to their correct fixed logic levels and <strong>explain</strong> what each connection accomplishes</li>
+<li><strong>Predict and observe</strong> why bridging SRCLK and RCLK together makes every clock pulse both shift a bit in and latch it out immediately</li>
+<li><strong>Calculate</strong> the 555's clock frequency for this lab's R1, R2, and C1 values</li>
+<li><strong>Diagnose</strong> the wiring mistakes specific to a two-chip build, from a backward IC to an unbridged clock pin</li>
+</ul>
+<h2 id="before-you-start">Before You Start</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Time</strong></td>
+<td>60-75 minutes — the longest, most parts-heavy build in this book</td>
+</tr>
+<tr>
+<td><strong>Difficulty</strong></td>
+<td>Intermediate — a two-chip capstone build</td>
+</tr>
+<tr>
+<td><strong>You should already know</strong></td>
+<td><a href="../../chapters/14-555-timer-chip/">Chapter 14: The 555 Timer Chip</a> and <a href="../../chapters/15-shift-registers-ic-handling/">Chapter 15: Shift Registers and IC Handling</a>, including how to straddle a DIP chip across the centre channel</td>
+</tr>
+<tr>
+<td><strong>Strongly recommended first</strong></td>
+<td><a href="../45-555-led-blinker/">Lab 45: 555 Timer LED Blinker</a> — this lab reuses that exact 555 clock circuit, just aimed at a different pin</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-youll-need">What You'll Need</h2>
+<p>Everything here is in the $50 kit.</p>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Part</th>
+<th>Value or marking</th>
+<th>How to spot it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Breadboard</td>
+<td>half-size, 30 columns</td>
+<td>the white plastic board with rows of holes</td>
+</tr>
+<tr>
+<td>1</td>
+<td>555 timer IC</td>
+<td>NE555, 8-pin DIP</td>
+<td>small black chip; a notch or dot at one end marks pin 1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>74HC595 shift register IC</td>
+<td>74HC595, 16-pin DIP</td>
+<td>longer black chip, same notch-marks-pin-1 rule</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Resistor</td>
+<td>1 kΩ (R1)</td>
+<td>tan body, bands <strong>brown-black-red</strong>, then gold</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Resistor</td>
+<td>13 kΩ (R2)</td>
+<td>tan body, bands <strong>brown-orange-orange</strong>, then gold</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Resistor</td>
+<td>10 kΩ (R9)</td>
+<td>tan body, bands <strong>brown-black-orange</strong>, then gold</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Resistor</td>
+<td>330 Ω</td>
+<td>tan body, bands <strong>orange-orange-brown</strong>, then gold</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Capacitor</td>
+<td>10 µF electrolytic</td>
+<td>small cylinder; one lead marked <strong>+</strong>, a stripe marks the other side</td>
+</tr>
+<tr>
+<td>8</td>
+<td>LED</td>
+<td>any color, 5 mm</td>
+<td>one leg longer than the other</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Push button</td>
+<td>momentary, 4-leg tactile</td>
+<td>small square button that only connects while pressed</td>
+</tr>
+<tr>
+<td>~20</td>
+<td>Jumper wires</td>
+<td>assorted colors</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Power supply</td>
+<td>5 V USB, or a 3×AA battery pack</td>
+<td>any phone charger with a USB-A male-to-male cable</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Only have 4-6 matching LEDs?</p>
+<p><img alt="Volt giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+That's completely fine — wire fewer Q outputs (Q0, Q1, Q2, Q3 is a great starting set) and leave the rest disconnected. The pattern scales to however many outputs you wire: the bar just fills up to <em>your</em> LED count instead of eight. Nothing else about the circuit changes.</p>
+</div>
+<p>R9 is not part of the "official" 74HC595 pinout — it is this lab's own safety addition. Chapter 15 tells you SRCLR′ (pin 10) is normally held high; the simplest way to do that is a resistor to +5 V rather than a bare wire, so that pressing the reset button never connects +5 V straight to ground. You'll see exactly why in <strong>How It Works</strong>.</p>
+<h2 id="safety-first">Safety First</h2>
+<p>At 5 volts, none of this can shock you. Two habits matter here more than in any earlier lab, because this build has two chips and a lot of wiring:</p>
+<ul>
+<li><strong>Wire everything first, plug in power last — no exceptions.</strong> With this many connections, a live rewire is the easiest way to create a short circuit by accident.</li>
+<li><strong>Check both notches before you wire a single pin.</strong> Both the 555 and the 74HC595 have a notch (or dot) marking pin 1. A chip inserted backward gets its power and ground pins swapped, which can damage it the instant power is applied.</li>
+<li><strong>Ground yourself before handling the 74HC595.</strong> It's a CMOS chip, which makes it more sensitive to static electricity than the 555. Touch a grounded metal object for a second before you pick it up — a bare table leg, an unpainted radiator, or a plugged-in computer's case all work.</li>
+<li><strong>Straddle the centre channel correctly on both chips.</strong> Off by even one row and half the chip's pins land in the wrong net, with no visible sign anything is wrong.</li>
+</ul>
+<h2 id="try-it-in-the-simulator">Try It in the Simulator</h2>
+<p>Before wiring anything, watch this exact circuit's behavior in Chapter 15's shift-register simulator.</p>
+<iframe src="../../sims/74hc595-shift-register-led-bar-graph/main.html" width="100%" height="567px" scrolling="no"></iframe>
+
+<p>Two controls to try, in this order:</p>
+<ol>
+<li><strong>Check the "555-driven clock" box.</strong> The manual "Clock Pulse" button disappears and the register starts advancing on its own — that automatic pulsing is exactly what your real 555 is about to do to SRCLK.</li>
+<li><strong>Watch the LEDs fill up, then click "Reset (clear)."</strong> The bar drops to all zero and starts filling again. That button is the sim-side preview of the physical push button you're about to wire.</li>
+</ol>
+<p>That fill-then-clear rhythm is the entire lab. Everything below is about building the real thing.</p>
+<h2 id="the-circuit-diagram">The Circuit Diagram</h2>
+<figure>
+<img alt="Schematic of a 555 timer in astable mode with R1 1 kilohm, R2 13 kilohms, and C1 10 microfarads setting the timing, its output pin 3 driving the 74HC595 shift register's SRCLK pin 11, SRCLK bridged directly to RCLK pin 12, SER pin 14 tied to plus 5 volts, OE prime pin 13 tied to ground, SRCLR prime pin 10 pulled high through a 10 kilohm resistor R9 and pulled low through push button SW1, and outputs Q0 Q1 Q2 and Q7 each driving a 330 ohm resistor and LED to ground, with Q3 through Q6 shown as a grouped callout following the identical pattern" src="555-74hc595-chaser-schematic.png" width="900" />
+<figcaption>R1, R2, and C1 set the 555's clock rate. SRCLK and RCLK are bridged so every pulse shifts a bit in and latches it out in the same instant. SER stays high, OE′ stays low, and SRCLR′ is normally high through R9 until SW1 pulls it to ground.</figcaption>
+</figure>
+<p>Trace the clock path: +5 V feeds the 555's VCC (pin 8) and RESET (pin 4). R1, R2, and C1 set how fast pin 3 (OUTPUT) swings high and low. That output goes to exactly one place — the 74HC595's SRCLK (pin 11), which is bridged straight across to RCLK (pin 12).</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">One wire, two jobs</p>
+<p><img alt="Volt thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Normally SRCLK and RCLK are two separate control lines — one shifts a bit in, the other reveals it on the LEDs. Bridging them together means every single 555 pulse does both jobs at once. That's the trick that makes this circuit work with no extra wiring and no code.</p>
+</div>
+<h2 id="the-breadboard-layout">The Breadboard Layout</h2>
+<figure>
+<img alt="Breadboard layout with the 555 straddling columns 3 to 6 and the 74HC595 straddling columns 10 to 17, both notches facing left, the 555's timing network built from R1, R2, and C1 reusing the 555's own columns, a long jumper carrying pin 3 OUTPUT up and over to the 74HC595's SRCLK pin, SRCLK and RCLK bridged at columns 14 to 15, SER and OE prime tied to the bottom rails, SRCLR prime pulled high through R9 and pulled low through push button SW1, four LED branches for Q0 Q1 Q2 and Q7 built in columns 18 through 27, and jumpers bridging the top and bottom power and ground rails" src="breadboard-layout.png" width="1100" />
+<figcaption>Every hole named in the build steps is marked here. Four of the eight LED branches (Q0, Q1, Q2, Q7) are drawn in full so the board stays readable — Q3-Q6 use the identical pattern.</figcaption>
+</figure>
+<p>This is the widest board in the book, and it uses <strong>both</strong> the top and bottom power rails — reach for whichever rail is physically closer to the pin you're wiring.</p>
+<table>
+<thead>
+<tr>
+<th>In the schematic</th>
+<th>On the breadboard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>555, pins 1-4</td>
+<td>Row <strong>e</strong>, columns 3-6 (notch at column 3)</td>
+</tr>
+<tr>
+<td>555, pins 8-5</td>
+<td>Row <strong>f</strong>, columns 3-6, mirrored</td>
+</tr>
+<tr>
+<td>R1 (1 kΩ)</td>
+<td>Bottom <strong>+ rail</strong> → <strong>i4</strong> (pin 7's own column)</td>
+</tr>
+<tr>
+<td>R2 (13 kΩ)</td>
+<td><strong>h4</strong> → <strong>h5</strong> (pin 7's column to pin 6's column)</td>
+</tr>
+<tr>
+<td>Jumper: pin 2 → timing node</td>
+<td><strong>d4</strong> → <strong>i5</strong></td>
+</tr>
+<tr>
+<td>C1 (10 µF, + up)</td>
+<td><strong>j5</strong> → bottom <strong>− rail</strong></td>
+</tr>
+<tr>
+<td>74HC595, pins 1-8</td>
+<td>Row <strong>e</strong>, columns 10-17 (notch at column 10)</td>
+</tr>
+<tr>
+<td>74HC595, pins 16-9</td>
+<td>Row <strong>f</strong>, columns 10-17, mirrored</td>
+</tr>
+<tr>
+<td>555 pin 3 → SRCLK</td>
+<td><strong>a5</strong> → <strong>h15</strong>, routed above the top rail</td>
+</tr>
+<tr>
+<td>SRCLK ↔ RCLK bridge</td>
+<td><strong>g14</strong> → <strong>g15</strong></td>
+</tr>
+<tr>
+<td>R9 (10 kΩ pull-up)</td>
+<td>Bottom <strong>+ rail</strong> → <strong>h16</strong></td>
+</tr>
+<tr>
+<td>SW1 (push button)</td>
+<td><strong>j16</strong> → bottom <strong>− rail</strong></td>
+</tr>
+<tr>
+<td>Q0 branch (bottom half), pin 15</td>
+<td><strong>f11</strong> → <em>jumper</em> → <strong>h18</strong> → <em>resistor</em> → <strong>h19</strong> → <em>LED</em> → <strong>h20</strong> → <em>jumper</em> → bottom <strong>− rail</strong></td>
+</tr>
+<tr>
+<td>Q1 branch, pin 1</td>
+<td><strong>e10</strong> → <em>jumper</em> → <strong>c18</strong> → <em>resistor</em> → <strong>c19</strong> → <em>LED</em> → <strong>c20</strong> → <em>jumper</em> → top <strong>− rail</strong></td>
+</tr>
+<tr>
+<td>Q2 branch, pin 2</td>
+<td><strong>e11</strong> → <em>jumper</em> → <strong>c21</strong> → <em>resistor</em> → <strong>c22</strong> → <em>LED</em> → <strong>c23</strong> → <em>jumper</em> → top <strong>− rail</strong></td>
+</tr>
+<tr>
+<td>Q7 branch, pin 7</td>
+<td><strong>e16</strong> → <em>jumper</em> → <strong>c25</strong> → <em>resistor</em> → <strong>c26</strong> → <em>LED</em> → <strong>c27</strong> → <em>jumper</em> → top <strong>− rail</strong></td>
+</tr>
+<tr>
+<td>Rail bridges</td>
+<td>Top <strong>− rail</strong> ↔ bottom <strong>− rail</strong> at column 29; top <strong>+ rail</strong> ↔ bottom <strong>+ rail</strong> at column 30</td>
+</tr>
+</tbody>
+</table>
+<p>Each LED branch is four parts in a row, not one: a jumper carries the pin's signal over to a fresh column, a resistor bridges from there to the LED's anode column, the LED itself bridges to the cathode column, and a final jumper drops the cathode to a ground rail. It looks like one long chain in the table above, but every arrow is a separate physical part.</p>
+<p>Two things worth noticing before you build. First, row <strong>e</strong> and row <strong>f</strong> at the same column number are <strong>not</strong> connected — that gap is the centre channel. A pin on the top half (like the 555's TRIGGER) needs its own jumper to reach a pin on the bottom half (like THRESHOLD), even though the schematic just draws one line between them. Second, the rail bridges at columns 29 and 30 are not optional decoration. Without them, the top rails and bottom rails are two separate, disconnected power buses, and half your circuit goes dark.</p>
+<h2 id="build-it">Build It</h2>
+<p>Work down this list in order. Both chips go in — and get checked — before a single wire is connected.</p>
+<ol>
+<li><strong>Leave the power unplugged.</strong> Nothing touches the supply until the very last step.</li>
+<li><strong>Touch something grounded</strong> before you open the 74HC595's packaging — a static discharge is invisible and can damage a CMOS chip silently.</li>
+<li>Insert the <strong>555</strong> straddling the centre channel, notch facing <strong>column 3</strong>. Pins 1-4 land in row <strong>e</strong>; pins 8-5 land in row <strong>f</strong>.</li>
+<li>Insert the <strong>74HC595</strong> straddling the centre channel, notch facing <strong>column 10</strong>. Pins 1-8 land in row <strong>e</strong>; pins 16-9 land in row <strong>f</strong>.</li>
+</ol>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Stop. Verify both notches before you wire anything.</p>
+<p><img alt="Volt giving a warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Look at both chips from above right now. The 555's notch should face <strong>column 3</strong>; the 74HC595's notch should face <strong>column 10</strong>. A chip inserted backward swaps its power and ground pins with signal pins — on the CMOS 74HC595 especially, that can damage the chip the instant power reaches it. Checking now costs ten seconds. Fixing a cooked chip costs a trip back to the parts bin.</p>
+</div>
+<ol>
+<li>Run a jumper from the top <strong>− rail</strong> down to the bottom <strong>− rail</strong> at <strong>column 29</strong> (the GND rail bridge).</li>
+<li>Run a jumper from the top <strong>+ rail</strong> down to the bottom <strong>+ rail</strong> at <strong>column 30</strong> (the +5 V rail bridge).</li>
+<li>Run a jumper from the top <strong>− rail</strong> to <strong>a3</strong> (555 pin 1, GND).</li>
+<li>Run a jumper from the top <strong>+ rail</strong> to <strong>a6</strong> (555 pin 4, RESET — tied high so it never interrupts the clock).</li>
+<li>Run a jumper from the bottom <strong>+ rail</strong> to <strong>j3</strong> (555 pin 8, VCC).</li>
+<li>Bridge the <strong>1 kΩ resistor (R1)</strong> from the bottom <strong>+ rail</strong> to <strong>i4</strong>.</li>
+<li>Bridge the <strong>13 kΩ resistor (R2)</strong> from <strong>h4</strong> to <strong>h5</strong>.</li>
+<li>Run a jumper from <strong>d4</strong> (pin 2, TRIGGER) to <strong>i5</strong> (the timing node).</li>
+<li>Place <strong>C1</strong> (10 µF electrolytic): <strong>+ lead in j5</strong>, <strong>− lead in the bottom − rail</strong>.</li>
+<li>Run a jumper from the top <strong>− rail</strong> to <strong>a17</strong> (74HC595 pin 8, GND).</li>
+<li>Run a jumper from the bottom <strong>+ rail</strong> to <strong>j10</strong> (74HC595 pin 16, VCC).</li>
+<li>Run a jumper from the bottom <strong>+ rail</strong> to <strong>j12</strong> (pin 14, SER — a logical 1 is now always waiting to shift in).</li>
+<li>Run a jumper from <strong>j13</strong> (pin 13, OE′) to the bottom <strong>− rail</strong> (outputs always enabled).</li>
+<li>Bridge <strong>g14</strong> to <strong>g15</strong> — this ties pin 12 (RCLK) directly to pin 11 (SRCLK).</li>
+<li>Bridge the <strong>10 kΩ resistor (R9)</strong> from the bottom <strong>+ rail</strong> to <strong>h16</strong>.</li>
+<li>Wire the <strong>push button (SW1)</strong> from <strong>j16</strong> to the bottom <strong>− rail</strong>.</li>
+<li>Run a jumper from <strong>a5</strong> (555 pin 3, OUTPUT) up above the top rail and over to <strong>h15</strong> (74HC595 pin 11, SRCLK). This is the wire that turns the shift register's clock over to the 555.</li>
+</ol>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Checkpoint before the LEDs</p>
+<p><img alt="Volt giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Pause here and trace it out loud: +rail → R1 → R2 → timing node → pins 2 and 6. Separately: pin 3 → SRCLK, and SRCLK → RCLK. If you had a multimeter, pin 3 and pin 11 should read the exact same voltage right now — they're the same net.</p>
+</div>
+<ol>
+<li>For <strong>Q1</strong> (pin 1, at <strong>e10</strong>): jumper <strong>e10</strong> to <strong>c18</strong>. Bridge a <strong>330 Ω resistor</strong> from <strong>c18</strong> to <strong>c19</strong>. Place the LED's long leg (anode) in <strong>c19</strong> and short leg (cathode) in <strong>c20</strong>. Jumper <strong>c20</strong> to the top <strong>− rail</strong>.</li>
+<li>For <strong>Q0</strong> (pin 15, at <strong>f11</strong>): jumper <strong>f11</strong> to <strong>h18</strong>. Bridge a <strong>330 Ω resistor</strong> from <strong>h18</strong> to <strong>h19</strong>. Place the LED's anode in <strong>h19</strong> and cathode in <strong>h20</strong>. Jumper <strong>h20</strong> to the bottom <strong>− rail</strong>.</li>
+<li>For <strong>Q2</strong> (pin 2, at <strong>e11</strong>): jumper <strong>e11</strong> to <strong>c21</strong>. Bridge a <strong>330 Ω resistor</strong> from <strong>c21</strong> to <strong>c22</strong>. Place the LED's anode in <strong>c22</strong> and cathode in <strong>c23</strong>. Jumper <strong>c23</strong> to the top <strong>− rail</strong>.</li>
+<li>For <strong>Q7</strong> (pin 7, at <strong>e16</strong>): jumper <strong>e16</strong> to <strong>c25</strong>. Bridge a <strong>330 Ω resistor</strong> from <strong>c25</strong> to <strong>c26</strong>. Place the LED's anode in <strong>c26</strong> and cathode in <strong>c27</strong>. Jumper <strong>c27</strong> to the top <strong>− rail</strong>.</li>
+<li><strong>Q3, Q4, Q5, and Q6</strong> use the identical four-part pattern as Q2 — jumper, resistor, LED, jumper to a rail. Their pins live at <strong>e12</strong>, <strong>e13</strong>, <strong>e14</strong>, and <strong>e15</strong>. Wire as many of these four as you have LEDs and board space for, choosing any free columns to their right — even two or three more makes the fill-up effect more dramatic.</li>
+<li><strong>Checkpoint — before power.</strong> Look at every LED. Every anode (long leg) should face its resistor; every cathode (short leg) should face its rail jumper. Confirm SW1 sits between column 16 and the bottom − rail, not anywhere near +5 V.</li>
+<li><strong>Predict first.</strong> The instant you apply power, what do you expect to see — all eight LEDs on at once, all eight off, or something else? Write your guess down before you plug in.</li>
+<li>Plug in the 5 V supply. <strong>Watch the bar fill up: one LED, then two, then three, on up to however many you wired — then press SW1 and watch it drop back to dark and start again.</strong></li>
+</ol>
+<p><strong>You are done when</strong> you can watch the LEDs fill up in order, clear them with SW1, and watch them fill again — repeatably, with no wires touched after power-up.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You just ran two chips as one circuit!</p>
+<p><img alt="Volt celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+Look at what you built: a clock chip and a shift register, talking to each other through exactly one wire. Together they fill up a bar of light and clear it on command — no code, no computer, just silicon doing arithmetic on a schedule you designed. That's a real two-chip system, and you're the one who wired it. Current's flowing your way!</p>
+</div>
+<h2 id="how-it-works">How It Works</h2>
+<p>Three design choices make this circuit work, and each one answers a specific question.</p>
+<p><strong>Why is SER tied straight to +5 V?</strong> SER (pin 14) is the "next bit to shift in" pin. Tying it permanently to +5 V means the answer to "what's the next bit?" is always <strong>1</strong> — a logical 1 is permanently waiting at the door. Every time a clock pulse arrives, that 1 gets shifted in, and everything already inside the register moves one position over.</p>
+<p><strong>Why does bridging SRCLK and RCLK make the bar fill up instead of chase?</strong> Normally SRCLK (shift) and RCLK (latch/reveal) are separate signals, so a program can shift several bits in privately before revealing the whole pattern at once. This lab skips that separation on purpose. Tying SRCLK and RCLK together means the instant a bit shifts in, it's also latched out to the visible LEDs — shift and reveal happen in the same clock pulse, every time. Combined with SER being permanently 1, each pulse doesn't just move a dot — it adds one more lit LED to everything already lit. Q0 lights first, then Q0 and Q1 together, then Q0, Q1, and Q2 together, and so on until the whole bar is lit. That's a <strong>fill-up pattern, not a single moving dot</strong> — an important distinction from a true "walking LED" chaser, which needs a feedback wire this lab deliberately leaves out.</p>
+<p><strong>Why does R9 exist, and why does pressing SW1 clear the register?</strong> SRCLR′ (pin 10) is active-low: pull it to ground and every stored bit resets to zero. R9 holds that pin at +5 V through a resistor rather than a bare wire, so the pin reads a solid HIGH when SW1 is untouched. Press SW1, and it connects pin 10 directly to ground. R9 limits the current to a safe 5 V ÷ 10 kΩ ≈ 0.5 mA instead of creating a dead short across the supply. The register instantly clears, every LED goes dark, and the fill-up starts over on the very next clock pulse.</p>
+<p>Finally, the clock rate itself is pure Chapter 14 math — the same astable formula from Lab 45, with different resistor values.</p>
+<div class="arithmatex">\[ f = \frac{1.44}{(R_1 + 2R_2)\, C} = \frac{1.44}{(1{,}000 + 2 \times 13{,}000) \times 0.00001} = \frac{1.44}{0.27} \approx 5.3\text{ Hz} \]</div>
+<p>That's about 5.3 clock pulses per second — fast enough that the bar fills up in a little over a second, but slow enough to watch each LED join in.</p>
+<div class="admonition mascot-neutral">
+<p class="admonition-title">Where you've seen this before</p>
+<p><img alt="Volt" class="mascot-admonition-img" src="../../img/mascot/neutral.png" />
+A phone charging animation. A signal-strength bar on a router. A loading meter on an old game console. All of them are some version of exactly this: a clock stepping a register that reveals one more segment each time.</p>
+</div>
+<h2 id="when-it-doesnt-work">When It Doesn't Work</h2>
+<p>Work down this list in order — check power and orientation before you check anything clever.</p>
+<table>
+<thead>
+<tr>
+<th>What you see</th>
+<th>Likely cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nothing lights, one chip runs warm</td>
+<td>A chip is inserted <strong>backward</strong></td>
+<td>Unplug power immediately, pull the chip, and reinsert it with the notch at column 3 (555) or column 10 (74HC595)</td>
+</tr>
+<tr>
+<td>Nothing lights at all</td>
+<td>Rail bridges missing</td>
+<td>Check the jumpers bridging the top and bottom <strong>− rail</strong> (column 29) and <strong>+ rail</strong> (column 30) — without them, half the circuit has no power or ground</td>
+</tr>
+<tr>
+<td>All LEDs stay dark, register never fills</td>
+<td><strong>SER not actually tied to +5 V</strong></td>
+<td>Recheck the jumper from pin 14 to the bottom + rail — with no 1 waiting to shift in, the register only ever fills with zeros</td>
+</tr>
+<tr>
+<td>LEDs never change, even though the 555 is clearly oscillating</td>
+<td><strong>SRCLK and RCLK are not actually bridged</strong></td>
+<td>This is the trickiest failure in this lab: bits <em>are</em> shifting into the chip's hidden stage every pulse — they're just never being revealed. Recheck the g14-g15 jumper. A single manual jumper touch to RCLK would instantly show the pattern that was already there</td>
+</tr>
+<tr>
+<td>Pressing the button does nothing</td>
+<td>SW1 wired to the wrong pin, or wired to OE′ instead of SRCLR′</td>
+<td>SW1 must bridge <strong>column 16</strong> (pin 10, SRCLR′) to the − rail — not column 13 (OE′), which only blanks the display without erasing it</td>
+</tr>
+<tr>
+<td>One LED never lights, the rest do</td>
+<td>That LED is <strong>backwards</strong></td>
+<td>Long leg (anode) toward its resistor, short leg (cathode) toward its rail jumper</td>
+</tr>
+<tr>
+<td>Bar fills but never clears fully</td>
+<td>R9 missing or on the wrong pin</td>
+<td>Without R9 pulling SRCLR′ high, the pin can float and behave unpredictably; confirm R9 bridges the bottom + rail to column 16</td>
+</tr>
+<tr>
+<td>Everything works but very dimly</td>
+<td>A 330 Ω resistor swapped for a much larger value</td>
+<td>330 Ω is correct for these LEDs at 5 V</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Two chips means twice the places to check — that's expected</p>
+<p><img alt="Volt encouraging you" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+This is the most wiring you've done in one lab, and it's completely normal for the first power-up to not be perfect. The method never changes: power first, then chip orientation, then the clock path, then the LEDs, one section at a time. You already have every skill this troubleshooting table needs.</p>
+</div>
+<h2 id="check-your-understanding">Check Your Understanding</h2>
+<p>Answer each one before you open it.</p>
+<details class="question">
+<summary>1. SER is tied to +5 V and a clock pulse arrives. What bit shifts into the register, and what happens to the bit that was already in Q0?</summary>
+<p>A <strong>1</strong> shifts in, because SER is permanently high. The bit that was in Q0 moves over to Q1 — every stored bit shifts one position further into the register with each pulse, which is exactly the shift-register bit order Chapter 15 introduced.</p>
+</details>
+<details class="question">
+<summary>2. What does tying SER permanently to +5 V accomplish, and why does it matter for this specific circuit?</summary>
+<p>It guarantees that a logical <strong>1</strong> is always the next bit waiting to shift in. Since this circuit never changes what SER is fed, every single clock pulse adds one more lit LED — that's the entire mechanism behind the fill-up pattern.</p>
+</details>
+<details class="question">
+<summary>3. Why does pressing SW1 clear the whole bar back to dark?</summary>
+<p>SW1 pulls SRCLR′ (pin 10) to ground. SRCLR′ is active-low, so grounding it clears every bit in the register to zero immediately — a hardware reset, not something the 555's clock has to "count down." The very next clock pulse then starts filling the bar again from zero.</p>
+</details>
+<details class="question">
+<summary>4. Calculate this lab's clock frequency for R1 = 1 kΩ, R2 = 13 kΩ, C1 = 10 µF. Show your work.</summary>
+<div class="arithmatex">\[ f = \frac{1.44}{(R_1+2R_2)\,C} = \frac{1.44}{(1{,}000 + 26{,}000)\times 0.00001} = \frac{1.44}{0.27} \approx 5.3\text{ Hz} \]</div>
+<p>About <strong>5.3 pulses per second</strong> — noticeably faster than Lab 45's roughly 1.1 Hz blink, which is exactly why this build feels lively instead of slow.</p>
+</details>
+<details class="question">
+<summary>5. If SRCLK and RCLK were NOT bridged together, what would you actually observe when the 555 starts pulsing?</summary>
+<p>Not silence, and not a broken chip — the LEDs would simply <strong>freeze</strong>, most likely all dark. Bits would still be shifting into the 74HC595's hidden internal stage on every SRCLK pulse, exactly as designed. But without a pulse on RCLK, none of that shifting ever gets copied out to the visible Q0-Q7 pins, so the LED pattern never updates. The data is moving; the display just never catches up. A single manual touch of RCLK to +5 V and back would instantly reveal whatever pattern had silently built up inside.</p>
+</details>
+<details class="question">
+<summary>6. Why is R9 part of this circuit instead of just wiring pin 10 straight to +5 V and running the button straight to ground from the same point?</summary>
+<p>A bare wire to +5 V plus a button straight to ground from that same node would short the power supply every time the button is pressed. Current would race from +5 V to ground with nothing to slow it down. R9 limits that current to about 0.5 mA (5 V ÷ 10 kΩ), so pressing SW1 safely pulls the pin low instead of shorting the rails together.</p>
+</details>
+<h2 id="take-it-further">Take It Further</h2>
+<p><strong>Challenge: change the fill speed.</strong> Swap R2 for a 68 kΩ resistor (keep C1 at 10 µF). Before you power it back up, use the frequency formula to predict the new rate.</p>
+<p><em>You have succeeded when</em> your calculated frequency is close to what Lab 45 used for its slow blink (about 1.1 Hz), and you can watch each LED join the bar individually instead of in a blur.</p>
+<p><strong>If that was easy, try this:</strong> wire all eight Q outputs if you haven't already. Then work through it on paper — per Chapter 15's daisy-chaining section, what would need to change to extend this exact fill-up effect across 16 LEDs on two 74HC595 chips instead of eight?</p>
+<h2 id="learn-more">Learn More</h2>
+<ul>
+<li><a href="../../chapters/14-555-timer-chip/">Chapter 14: The 555 Timer Chip</a> — the astable frequency and duty-cycle formulas this lab's clock reuses</li>
+<li><a href="../../chapters/15-shift-registers-ic-handling/">Chapter 15: Shift Registers and IC Handling</a> — the 74HC595's full pin table, IC-handling habits, and the "555-Driven Shift Register" section this whole lab is built from</li>
+<li><a href="../45-555-led-blinker/">Lab 45: 555 Timer LED Blinker</a> — the identical 555 astable clock circuit, wired to a single LED instead of a shift register</li>
+<li><a href="../46-555-buzzer-siren/">Lab 46: 555 Timer Buzzer and Siren</a> — the same clock idea turned into sound instead of light</li>
+<li><a href="https://learn.sparkfun.com/tutorials/shift-registers">SparkFun: Shift Registers</a> — a deeper outside tutorial on how a 74HC595 stores and reveals bits, with more example wiring patterns</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../46-555-buzzer-siren/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 555 Timer Buzzer and Siren">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                555 Timer Buzzer and Siren
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../55-motors-and-buzzers/" class="md-footer__link md-footer__link--next" aria-label="Next: Motors and Buzzers">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Motors and Buzzers
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extras.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

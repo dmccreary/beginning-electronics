@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This is a interactive intelligent textbook that teachers beginning electronics with a $50 solderless breadboard kit.">
+        <meta name="description" content="Light an LED on a breadboard with a current-limiting resistor, work out why 220 ohms is the right value, and learn to spot the four mistakes that keep an LED dark.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>LED Circuit - Beginning Electronics</title>
+        <title>Your First LED Circuit - Beginning Electronics</title>
       
     
     
@@ -74,6 +74,32 @@
 
     
     
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Your First LED Circuit - Beginning Electronics" >
+      
+        <meta  property="og:description"  content="Light an LED on a breadboard with a current-limiting resistor, work out why 220 ohms is the right value, and learn to spot the four mistakes that keep an LED dark." >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/beginning-electronics/assets/images/social/labs/10-led-circuit/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/beginning-electronics/labs/10-led-circuit/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Your First LED Circuit - Beginning Electronics" >
+      
+        <meta  name="twitter:description"  content="Light an LED on a breadboard with a current-limiting resistor, work out why 220 ohms is the right value, and learn to spot the four mistakes that keep an LED dark." >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/beginning-electronics/assets/images/social/labs/10-led-circuit/index.png" >
+      
+    
     
   </head>
   
@@ -92,7 +118,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#led-circuit" class="md-skip">
+        <a href="#your-first-led-circuit" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +153,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LED Circuit
+              Your First LED Circuit
             
           </span>
         </div>
@@ -291,6 +317,10 @@
       
         
       
+        
+      
+        
+          
         
       
         
@@ -502,7 +532,7 @@
         
       
         
-      
+          
         
       
         
@@ -519,6 +549,32 @@
       
         
       
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
         
       
         
@@ -579,6 +635,14 @@
     Identifying Parts
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
 
       </a>
     </li>
@@ -600,6 +664,14 @@
     Breadboard
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
 
       </a>
     </li>
@@ -620,6 +692,14 @@
   <span class="md-ellipsis">
     Power
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
   
 
       </a>
@@ -651,6 +731,14 @@
     LED Circuit
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
 
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -661,6 +749,14 @@
   <span class="md-ellipsis">
     LED Circuit
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
   
 
       </a>
@@ -681,27 +777,117 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#led-resistor-selector" class="md-nav__link">
+  <a href="#what-youll-learn" class="md-nav__link">
     <span class="md-ellipsis">
-      LED Resistor Selector
+      What You'll Learn
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#on-breadboard" class="md-nav__link">
+  <a href="#before-you-start" class="md-nav__link">
     <span class="md-ellipsis">
-      On Breadboard
+      Before You Start
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#microsims" class="md-nav__link">
+  <a href="#what-youll-need" class="md-nav__link">
     <span class="md-ellipsis">
-      MicroSims
+      What You'll Need
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safety First
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it-in-the-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try It in the Simulator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-circuit-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Circuit Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-breadboard-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Breadboard Layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build It
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-it-doesnt-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      When It Doesn't Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Your Understanding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#take-it-further" class="md-nav__link">
+    <span class="md-ellipsis">
+      Take It Further
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn More
     </span>
   </a>
   
@@ -730,6 +916,14 @@
     Buttons
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
 
       </a>
     </li>
@@ -750,6 +944,14 @@
   <span class="md-ellipsis">
     Buttons AND
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
   
 
       </a>
@@ -772,6 +974,14 @@
     Buttons OR
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
 
       </a>
     </li>
@@ -792,6 +1002,14 @@
   <span class="md-ellipsis">
     RGB Led
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
   
 
       </a>
@@ -814,6 +1032,14 @@
     Dark Detector
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--early-stage" title="Early stage - draft (score 40-64)">
+    </span>
+  
+
+  
 
       </a>
     </li>
@@ -834,6 +1060,14 @@
   <span class="md-ellipsis">
     Transistors
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
   
 
       </a>
@@ -856,6 +1090,14 @@
     BC547 vs. 2N2222
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
 
       </a>
     </li>
@@ -876,6 +1118,14 @@
   <span class="md-ellipsis">
     Boolean Logic
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
   
 
       </a>
@@ -898,6 +1148,188 @@
     LED Noodle Circuit
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../45-555-led-blinker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    555 Timer LED Blinker
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../46-555-buzzer-siren/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    555 Timer Buzzer and Siren
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../47-555-led-chaser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    555-Driven LED Bar Graph
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../55-motors-and-buzzers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Motors and Buzzers
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../60-multimeter-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Meet Your Multimeter
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../65-troubleshooting-fault-finder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hunt Down a Hidden Fault
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
 
       </a>
     </li>
@@ -919,6 +1351,14 @@
     RC Circuit
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
 
       </a>
     </li>
@@ -939,6 +1379,14 @@
   <span class="md-ellipsis">
     Using Perf Boards
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
   
 
       </a>
@@ -1427,6 +1875,10 @@
           
         
       
+        
+          
+        
+      
     
     
     
@@ -1642,27 +2094,117 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#led-resistor-selector" class="md-nav__link">
+  <a href="#what-youll-learn" class="md-nav__link">
     <span class="md-ellipsis">
-      LED Resistor Selector
+      What You'll Learn
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#on-breadboard" class="md-nav__link">
+  <a href="#before-you-start" class="md-nav__link">
     <span class="md-ellipsis">
-      On Breadboard
+      Before You Start
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#microsims" class="md-nav__link">
+  <a href="#what-youll-need" class="md-nav__link">
     <span class="md-ellipsis">
-      MicroSims
+      What You'll Need
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safety First
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it-in-the-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try It in the Simulator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-circuit-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Circuit Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-breadboard-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Breadboard Layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build It
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-it-doesnt-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      When It Doesn't Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Your Understanding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#take-it-further" class="md-nav__link">
+    <span class="md-ellipsis">
+      Take It Further
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn More
     </span>
   </a>
   
@@ -1686,22 +2228,392 @@
   
 
 
-<h1 id="led-circuit">LED Circuit</h1>
-<h2 id="led-resistor-selector">LED Resistor Selector</h2>
-<p><a href="../../sims/led-resistor-calc/">LED Resistor Simulator</a></p>
-<p><img alt="" src="../../img/led-circuit.png" /></p>
-<h2 id="on-breadboard">On Breadboard</h2>
-<p><img alt="" src="../../img/led-circuit-on-bb.png" /></p>
-<p><a href="https://learn.sparkfun.com/tutorials/light-emitting-diodes-leds">LED Tutorial at Sparkfun</a></p>
-<h2 id="microsims">MicroSims</h2>
-<p><a href="../../sims/led/">LED Sim</a></p>
-<p><a href="../sims/led-resistor-calc/">LED Resistor Calculator</a></p>
+<h1 id="your-first-led-circuit">Your First LED Circuit</h1>
+<p>Flip a switch and a light comes on. You have done that a thousand times. Today
+you build the light — four parts, one breadboard, and a tiny glowing dot that
+is entirely your doing.</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Hi again, builder!</p>
+<p><img alt="Volt waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+This is the circuit everyone starts with, and there is a reason. Almost
+every project in this book ends with something lighting up. Get this one
+right and you have the foundation for all of them. Let's light it up!</p>
+</div>
+<h2 id="what-youll-learn">What You'll Learn</h2>
+<p>By the end of this lab you will be able to:</p>
+<ul>
+<li><strong>Build</strong> a working LED circuit on a breadboard from a diagram</li>
+<li><strong>Identify</strong> an LED's anode and cathode before you connect any power</li>
+<li><strong>Calculate</strong> the right current-limiting resistor for a 5 V supply</li>
+<li><strong>Predict</strong> what happens when the LED is reversed or the resistor is swapped, then test it</li>
+<li><strong>Find and fix</strong> the four mistakes that most often leave an LED dark</li>
+</ul>
+<h2 id="before-you-start">Before You Start</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Time</strong></td>
+<td>40 minutes</td>
+</tr>
+<tr>
+<td><strong>Difficulty</strong></td>
+<td>Beginner — your first build</td>
+</tr>
+<tr>
+<td><strong>You should already know</strong></td>
+<td>How breadboard rows and rails connect (<a href="../../chapters/06-meet-your-breadboard/">Chapter 6</a>) and how to power a board safely (<a href="../09-power/">Power</a>)</td>
+</tr>
+<tr>
+<td><strong>Helpful background</strong></td>
+<td><a href="../../chapters/12-diodes-and-leds/">Chapter 12: Diodes and LEDs</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-youll-need">What You'll Need</h2>
+<p>Everything here is in the $50 kit.</p>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Part</th>
+<th>Value or marking</th>
+<th>How to spot it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Breadboard</td>
+<td>half-size, 30 columns</td>
+<td>the white plastic board with rows of holes</td>
+</tr>
+<tr>
+<td>1</td>
+<td>LED</td>
+<td>red, 5 mm</td>
+<td>clear red dome; <strong>one leg is longer than the other</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Resistor</td>
+<td>220 Ω</td>
+<td>tan body, bands <strong>red-red-brown</strong>, then gold</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Jumper wire</td>
+<td>red</td>
+<td>for the positive connection</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Jumper wire</td>
+<td>black</td>
+<td>for the ground connection</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Power supply</td>
+<td>5 V USB, or a 3×AA battery pack</td>
+<td>any phone charger with a USB-A male-to-male cable</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Optional:</strong> a multimeter, for the measuring challenge at the end. You do not
+need one to finish this lab — the numbers you would measure are printed here.</p>
+<p>A 3×AA battery pack gives about 4.5 V rather than 5 V. Everything works exactly
+the same; your LED just runs a little dimmer, at about 11 mA instead of 14 mA.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Can't find a 220 Ω resistor?</p>
+<p><img alt="Volt giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Anything from 220 Ω to 470 Ω works fine here. Higher resistance just means
+a dimmer LED. What you must <strong>never</strong> do is leave the resistor out — you'll
+see why in about ten minutes.</p>
+</div>
+<h2 id="safety-first">Safety First</h2>
+<p>At 5 volts, this circuit cannot hurt you. You can touch every part of it while
+it is running. That is exactly why we start here.</p>
+<p>The parts are a different story, and three habits protect them:</p>
+<ul>
+<li><strong>Wire everything first, plug in power last.</strong> Every time.</li>
+<li><strong>Unplug before you rewire.</strong> Moving a live wire is how you make a short circuit — a path where current races straight from + to − with nothing to slow it down.</li>
+<li><strong>Never connect an LED without a resistor.</strong> An LED has almost no resistance of its own. With nothing to limit the current, it draws far more than it can handle and burns out in about a second.</li>
+</ul>
+<h2 id="try-it-in-the-simulator">Try It in the Simulator</h2>
+<p>Before you touch a single wire, play with the circuit you are about to build.
+<strong>Move your mouse over the board to start the current moving.</strong></p>
+<iframe src="../../sims/led-current-limiting-resistor-circuit/main.html" width="100%" height="522px" scrolling="no"></iframe>
+
+<p>Three things to try right now:</p>
+<ol>
+<li><strong>Watch the orange dots.</strong> That is the current, flowing out of the + rail, through the resistor, through the LED, and back to ground. Every dot that leaves has to come back.</li>
+<li><strong>Press "Flip LED".</strong> The dots stop. An LED only lets current through one way — backwards, it blocks. Notice the LED is not damaged, just dark.</li>
+<li><strong>Change the resistor to 1K, then to 10K, then to "no resistor".</strong> Watch the current number and the brightness bar. At 10 kΩ the LED barely glows. With no resistor at all, the current shoots past the 20 mA the LED can survive.</li>
+</ol>
+<p>That last one is the whole reason the resistor exists. Now you know what you
+are protecting against, let's build the real thing.</p>
+<h2 id="the-circuit-diagram">The Circuit Diagram</h2>
+<p>Here is the same circuit drawn the way engineers draw it.</p>
+<figure>
+<p><img alt="Schematic showing a 5 V supply feeding a 220 ohm resistor R1 in series with a red LED D1, returning to ground, with 3 volts dropped across the resistor and 2 volts across the LED and about 14 milliamps flowing" src="led-circuit-schematic.png" width="480" /></p>
+<figcaption>The complete circuit. R1 takes the 3 V the LED does not use, which sets the current to about 14 mA.</figcaption>
+</figure>
+<p>Read it top to bottom, the way current flows: out of <strong>+5 V</strong>, down through
+<strong>R1</strong>, down through <strong>D1</strong> (in the anode side, out the cathode side), and into
+<strong>ground</strong>. That loop is the circuit. Break it anywhere and the LED goes dark.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Why the triangle points that way</p>
+<p><img alt="Volt thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+The LED symbol is an arrow with a line across its tip. Current can flow in
+the direction the arrow points, and the line is a wall that stops it coming
+back. That arrow is pointing from the anode to the cathode — which is
+exactly which way round the real part has to go.</p>
+</div>
+<h2 id="the-breadboard-layout">The Breadboard Layout</h2>
+<p>Now the same circuit on the actual board. This is the picture to copy.</p>
+<figure>
+<p><img alt="Breadboard layout with a red jumper from the plus rail to hole a3, a 220 ohm resistor from b3 to b10, a red LED with its long leg in c10 and short leg in c11, and a black jumper from a11 to the minus rail" src="breadboard-layout.png" width="760" /></p>
+<figcaption>Every hole named in the build steps is marked here. Only the top half of the board is used.</figcaption>
+</figure>
+<p>The two pictures show the same four connections. Here is how they line up:</p>
+<table>
+<thead>
+<tr>
+<th>In the schematic</th>
+<th>On the breadboard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The <strong>+5 V</strong> rail at the top</td>
+<td>The red <strong>+ rail</strong>, reached by the red jumper into <strong>a3</strong></td>
+</tr>
+<tr>
+<td><strong>R1</strong>, the 220 Ω resistor</td>
+<td>The tan part bridging <strong>b3</strong> and <strong>b10</strong></td>
+</tr>
+<tr>
+<td><strong>D1</strong>, the LED, anode side up</td>
+<td>The red dome, long leg in <strong>c10</strong>, short leg in <strong>c11</strong></td>
+</tr>
+<tr>
+<td>The <strong>ground</strong> symbol at the bottom</td>
+<td>The blue <strong>− rail</strong>, reached by the black jumper from <strong>a11</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The trick that makes this work is the breadboard's hidden wiring. Holes
+<strong>a3, b3, c3, d3 and e3</strong> are all one connected group, so the red jumper in a3
+and the resistor leg in b3 are joined without touching. Column 10 does the same
+job for the resistor and the LED's long leg, and column 11 for the LED's short
+leg and the black jumper.</p>
+<h2 id="build-it">Build It</h2>
+<p>Work down the list. Do not skip the checkpoints — they catch mistakes while
+they are still easy to find.</p>
+<ol>
+<li><strong>Leave the power unplugged.</strong> Do not connect the USB supply or the battery pack yet.</li>
+<li>Push the <strong>red jumper</strong> into a hole on the red <strong>+ rail</strong>, and the other end into <strong>a3</strong>.</li>
+<li>Push the <strong>black jumper</strong> into <strong>a11</strong>, and the other end into a hole on the blue <strong>− rail</strong>.</li>
+<li>Bend the legs of the <strong>220 Ω resistor</strong> down, and push them into <strong>b3</strong> and <strong>b10</strong>. A resistor has no direction — either way round is fine.</li>
+</ol>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Stop here. This is the mistake everyone makes.</p>
+<p><img alt="Volt warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Look at your LED before it goes in. <strong>One leg is longer.</strong> That long leg is
+the anode, and it goes toward the resistor. Get this backwards and your LED
+stays dark no matter what else you do. Roughly half of all first builds get
+it wrong — checking now costs five seconds.</p>
+</div>
+<ol>
+<li>Push the LED's <strong>long leg into c10</strong> and its <strong>short leg into c11</strong>. If you look closely at the plastic rim, there is a small flat edge on the short-leg side. That flat edge is the second way to tell which end is which.</li>
+<li><strong>Checkpoint — before power.</strong> Run your finger along the path and say it out loud: + rail → a3 → resistor → b10 → LED long leg → short leg → a11 → − rail. If any step in that sentence has nothing in it, find the gap now.</li>
+<li><strong>Predict first.</strong> Write down two guesses: will it light, and how bright do you think it will be — like a phone screen, a night light, or a car headlight?</li>
+<li>Plug in the 5 V supply. <strong>The LED should light immediately.</strong></li>
+</ol>
+<p><strong>You are done when</strong> your LED glows steadily, the board is not warm anywhere,
+and you can name what each of the four parts is doing.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">That's a real circuit!</p>
+<p><img alt="Volt celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You just turned electricity into light on purpose. Not a kit that snaps
+together — a circuit you wired hole by hole, and can explain. That's your
+superpower in action!</p>
+</div>
+<h2 id="how-it-works">How It Works</h2>
+<p>Remember the water-pipe picture from <a href="../../chapters/01-electricity-basics/">Chapter 1</a>:
+voltage is the water pressure, current is how much water actually flows, and
+resistance is how narrow the pipe is. An LED is a wide-open pipe. Connect it
+straight across the supply and everything the supply has rushes through it.</p>
+<p>That is the problem in one sentence. The LED is fussy about current: about
+20 milliamps (20 mA, or 0.020 amps) makes it bright and happy, and much more
+kills it. Something has to narrow the pipe.</p>
+<p>The resistor solves that, and here is the arithmetic.</p>
+<p>Your supply gives <strong>5 volts</strong>. A red LED uses up about <strong>2 volts</strong> just getting
+lit — that is its <em>forward voltage</em>, a fixed cost it takes off the top. So the
+voltage left over for the resistor is:</p>
+<div class="arithmatex">\[ 5\text{ V} - 2\text{ V} = 3\text{ V} \]</div>
+<p>Now use Ohm's Law, rearranged to find resistance, with the 20 mA we want:</p>
+<div class="arithmatex">\[ R = \frac{V}{I} = \frac{3\text{ V}}{0.020\text{ A}} = 150\ \Omega \]</div>
+<p>There is no 150 Ω resistor in your kit, and when in doubt you go <strong>up</strong>, never
+down — a bigger resistor means less current, which is the safe direction. The
+next standard value up is 220 Ω, which gives:</p>
+<div class="arithmatex">\[ I = \frac{3\text{ V}}{220\ \Omega} = 0.0136\text{ A} = 13.6\text{ mA} \]</div>
+<p>About 14 mA. A little dimmer than maximum, comfortably inside what the LED can
+take, and it will run like that for years.</p>
+<div class="admonition mascot-neutral">
+<p class="admonition-title">Where you have seen this</p>
+<p><img alt="Volt" class="mascot-admonition-img" src="../../img/mascot/neutral.png" />
+Every standby light on every device in your house is this circuit. The dot
+on your TV, the charging light on a laptop, the little glow on a power
+strip — an LED and a resistor, sized exactly the way you just sized yours.</p>
+</div>
+<h2 id="when-it-doesnt-work">When It Doesn't Work</h2>
+<p>Almost every failure is one of these five. Work down the list in order — check
+power before you check anything clever, and change only one thing at a time.</p>
+<table>
+<thead>
+<tr>
+<th>What you see</th>
+<th>Likely cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nothing at all</td>
+<td>No power reaching the rails</td>
+<td>Check the supply is plugged in, and that both jumpers are pushed fully into the rail holes</td>
+</tr>
+<tr>
+<td>Still nothing</td>
+<td><strong>LED is backwards</strong></td>
+<td>Long leg toward the resistor. Pull it out, turn it around, push it back in</td>
+</tr>
+<tr>
+<td>Still nothing</td>
+<td>A leg is in the wrong column</td>
+<td>The LED's two legs must be in <strong>different</strong> columns. Both in column 10 means current skips the LED entirely</td>
+</tr>
+<tr>
+<td>Still nothing</td>
+<td>Rails not connected all the way across</td>
+<td>Some boards split the power rails in the middle. Look for a gap in the red line, and bridge it with a jumper</td>
+</tr>
+<tr>
+<td>Very dim</td>
+<td>Resistor too large</td>
+<td>220 Ω is right for 5 V. A 10 kΩ resistor gives a barely visible glow</td>
+</tr>
+<tr>
+<td>Bright flash, then dark forever</td>
+<td>No resistor in the path</td>
+<td>The LED is gone — fit a new one, and check the resistor really is in series</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Dark LED? You have not broken anything.</p>
+<p><img alt="Volt encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+A backwards LED is not a damaged LED. At 5 volts it simply blocks the
+current and sits there. Turn it around and it lights up like nothing
+happened. Finding out <em>why</em> something is dark is the actual skill here —
+the lighting-up part is just the reward.</p>
+</div>
+<h2 id="check-your-understanding">Check Your Understanding</h2>
+<p>Answer each one before you open it. Guessing and then checking teaches you far
+more than reading the answer first.</p>
+<details class="question">
+<summary>1. Which leg of an LED is the anode, and which way does it face?</summary>
+<p>The <strong>longer</strong> leg is the anode. It faces the positive side of the circuit
+— in this lab, toward the resistor and the + rail.</p>
+<p>If the legs have been trimmed to the same length, look at the plastic rim.
+There is a small <strong>flat edge</strong> on the cathode side.</p>
+</details>
+<details class="question">
+<summary>2. You have a 5 V supply and a red LED that uses 2 V and wants 20 mA. What resistor do you need?</summary>
+<p>The resistor gets whatever the LED does not use:</p>
+<div class="arithmatex">\[ 5\text{ V} - 2\text{ V} = 3\text{ V} \]</div>
+<div class="arithmatex">\[ R = \frac{3\text{ V}}{0.020\text{ A}} = 150\ \Omega \]</div>
+<p>There is no 150 Ω in the kit, so go <strong>up</strong> to the next standard value —
+<strong>220 Ω</strong>. That gives about 14 mA: slightly dimmer, completely safe. Going
+<em>down</em> to 100 Ω would push 30 mA through a part rated for 20 mA.</p>
+</details>
+<details class="question">
+<summary>3. Your LED lit up for a moment, then went dark and never came back. What most likely happened?</summary>
+<p>It was connected with <strong>no current-limiting resistor</strong> — or the resistor
+was not actually in the current's path. With nothing to hold the current
+back, the LED drew far more than 20 mA and burned out.</p>
+<p>This one is permanent. A backwards LED recovers; a cooked one does not.
+That is why the resistor goes in before the power does.</p>
+</details>
+<details class="question">
+<summary>4. You swap the 220 Ω resistor for a 10 kΩ one. Predict what happens, with a number.</summary>
+<div class="arithmatex">\[ I = \frac{3\text{ V}}{10{,}000\ \Omega} = 0.0003\text{ A} = 0.3\text{ mA} \]</div>
+<p>That is about <strong>one fortieth</strong> of the current you had before, so the LED
+will be very dim — you may need to cup your hands around it to see it at
+all. Nothing is damaged. More resistance always means less current.</p>
+</details>
+<details class="question">
+<summary>5. Your LED is dark. A classmate says you have burned it out. How can you tell whether they are right?</summary>
+<p>Turn it around. If it lights when reversed, it was simply <strong>backwards</strong> —
+a diode blocks current in one direction, and blocking is not damage.</p>
+<p>If it stays dark both ways, then check the rest of the loop before blaming
+the LED: power at the rails, both jumpers fully seated, and the two legs in
+<strong>different</strong> columns. A burned-out LED is the <em>last</em> thing to suspect, not
+the first.</p>
+</details>
+<details class="question">
+<summary>6. A student pushes both LED legs into column 10 — the long leg in c10 and the short leg in d10. The LED stays dark. Why?</summary>
+<p>Holes <strong>a10 through e10 are all one connected group</strong>. Putting both legs in
+that group connects the LED's two ends to each other, so current takes the
+easy path through the metal strip instead of through the LED.</p>
+<p>This is a <strong>short circuit</strong> across the LED. The current still flows around
+the loop — through the resistor and back to ground — but it never passes
+through the part that makes light. The fix is to move the short leg to
+<strong>c11</strong>, a different column.</p>
+</details>
+<h2 id="take-it-further">Take It Further</h2>
+<p><strong>Challenge: make it dimmer on purpose.</strong> Swap the 220 Ω resistor for a 1 kΩ
+one. Before you plug the power back in, work out the new current with the same
+formula you used above.</p>
+<p><em>You have succeeded when</em> you can state the new current, the LED is visibly
+dimmer than before, and your calculated number matches what the simulator shows
+for 1K.</p>
+<p><strong>With a multimeter: prove the numbers.</strong> Set the meter to DC volts. Touch the
+probes to the two ends of the resistor, then to the two legs of the LED.</p>
+<p><em>You have succeeded when</em> you measure roughly <strong>3 V across the resistor</strong> and
+<strong>2 V across the LED</strong>, and you notice that the two add up to your supply
+voltage. That is not a coincidence — the voltage the supply provides has to be
+completely used up going around the loop.</p>
+<p><strong>If that was easy, try these:</strong></p>
+<ul>
+<li>Put a <strong>second LED in series</strong> with the first. Two red LEDs use about 4 V between them, leaving only 1 V for the resistor. Work out the new current — and then explain why both LEDs end up dimmer.</li>
+<li>Move the whole circuit to the <strong>bottom half of the board</strong> (rows f–j) without changing what it does. You will need to re-map every hole number, which is the best possible proof that you understand how the board is wired.</li>
+</ul>
+<h2 id="learn-more">Learn More</h2>
+<ul>
+<li><a href="../../chapters/12-diodes-and-leds/">Chapter 12: Diodes and LEDs</a> — why a diode only conducts one way, and how forward voltage differs between LED colours</li>
+<li><a href="../../chapters/06-meet-your-breadboard/">Chapter 6: Meet Your Breadboard</a> — the hidden rows and rails that made this circuit possible</li>
+<li><a href="../../chapters/11-resistor-codes-capacitor-details/">Chapter 11: Resistor Codes</a> — how to read red-red-brown, and every other band combination</li>
+<li><a href="../../sims/led-resistor-calc/">LED Resistor Calculator</a> — enter any supply voltage and LED colour, get the resistor value</li>
+<li><a href="https://learn.sparkfun.com/tutorials/light-emitting-diodes-leds">SparkFun: Light-Emitting Diodes</a> — a thorough outside tutorial with photos of real parts and failure modes</li>
+<li><a href="../11-buttons/">Next lab: LED Button Circuit</a> — add a push button so <em>you</em> decide when the LED is on</li>
+</ul>
 
 
 
 
 
 
+
+  
+  
 
 
 

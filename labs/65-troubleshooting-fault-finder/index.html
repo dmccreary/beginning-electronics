@@ -1,0 +1,2971 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Build a six-stage series circuit, measure its healthy baseline at seven test points, then use half-split testing in an interactive simulator to find a hidden fault in three measurements or fewer.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/labs/65-troubleshooting-fault-finder/">
+      
+      
+        <link rel="prev" href="../60-multimeter-basics/">
+      
+      
+        <link rel="next" href="../80-rc-circuit/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Hunt Down a Hidden Fault - Beginning Electronics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WP3K3TSFJ7"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WP3K3TSFJ7",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WP3K3TSFJ7",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Hunt Down a Hidden Fault - Beginning Electronics" >
+      
+        <meta  property="og:description"  content="Build a six-stage series circuit, measure its healthy baseline at seven test points, then use half-split testing in an interactive simulator to find a hidden fault in three measurements or fewer." >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/beginning-electronics/assets/images/social/labs/65-troubleshooting-fault-finder/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/beginning-electronics/labs/65-troubleshooting-fault-finder/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Hunt Down a Hidden Fault - Beginning Electronics" >
+      
+        <meta  name="twitter:description"  content="Build a six-stage series circuit, measure its healthy baseline at seven test points, then use half-split testing in an interactive simulator to find a hidden fault in three measurements or fewer." >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/beginning-electronics/assets/images/social/labs/65-troubleshooting-fault-finder/index.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hunt-down-a-hidden-fault" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Beginning Electronics" class="md-header__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Beginning Electronics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hunt Down a Hidden Fault
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Beginning Electronics" class="md-nav__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Beginning Electronics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../setup/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Hands-on Labs
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Hands-on Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-part-identification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identifying Parts
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-breadboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Breadboard
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-power/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Power
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-led-circuit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LED Circuit
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-buttons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Buttons
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-and-buttons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Buttons AND
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-or-buttons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Buttons OR
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-rgb-led/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RGB Led
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-dark-detector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dark Detector
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--early-stage" title="Early stage - draft (score 40-64)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-transistors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transistors
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-bc547-vs-2n2222/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BC547 vs. 2N2222
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35-boolean-logic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boolean Logic
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-noodle-led-circuit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LED Noodle Circuit
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../45-555-led-blinker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    555 Timer LED Blinker
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../46-555-buzzer-siren/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    555 Timer Buzzer and Siren
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../47-555-led-chaser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    555-Driven LED Bar Graph
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../55-motors-and-buzzers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Motors and Buzzers
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../60-multimeter-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Meet Your Multimeter
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Hunt Down a Hidden Fault
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Hunt Down a Hidden Fault
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete" title="Complete - publish ready (score 90-100)">
+    </span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before You Start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Need
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safety First
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-circuit-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Circuit Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-breadboard-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Breadboard Layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-a-build-it-and-find-your-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part A: Build It and Find Your Baseline
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part A: Build It and Find Your Baseline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#predict-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predict First
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-b-diagnose-a-hidden-fault-in-the-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part B: Diagnose a Hidden Fault in the Simulator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-your-own-build-doesnt-match-its-predicted-voltages" class="md-nav__link">
+    <span class="md-ellipsis">
+      If Your Own Build Doesn't Match Its Predicted Voltages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Your Understanding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#take-it-further" class="md-nav__link">
+    <span class="md-ellipsis">
+      Take It Further
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn More
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../80-rc-circuit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RC Circuit
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../70-using-perf-boards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Perf Boards
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--stub" title="Stub - little content yet (score 0-39)">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../kits/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Kits and Projects
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../appendices/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before You Start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Need
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safety First
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-circuit-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Circuit Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-breadboard-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Breadboard Layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-a-build-it-and-find-your-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part A: Build It and Find Your Baseline
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part A: Build It and Find Your Baseline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#predict-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predict First
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-b-diagnose-a-hidden-fault-in-the-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part B: Diagnose a Hidden Fault in the Simulator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-your-own-build-doesnt-match-its-predicted-voltages" class="md-nav__link">
+    <span class="md-ellipsis">
+      If Your Own Build Doesn't Match Its Predicted Voltages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Your Understanding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#take-it-further" class="md-nav__link">
+    <span class="md-ellipsis">
+      Take It Further
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn More
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="hunt-down-a-hidden-fault">Hunt Down a Hidden Fault</h1>
+<p>A wire works loose. A part dies quietly. A circuit that lit up perfectly
+yesterday is dark today, and nothing about it tells you why. Today you build
+a switch-and-resistor chain that lights a red LED — a circuit with six
+places trouble could be hiding — then learn the exact method real engineers
+use to corner any one of them in three measurements or less.</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Time to Play Detective, Builder!</p>
+<p><img alt="Volt waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Every circuit you've built so far, you built to work. Today you build one
+on purpose so you can practice finding what's wrong with it — using a real
+board you trust, and a safe simulator with a fault hidden inside. Let's
+light it up!</p>
+</div>
+<h2 id="what-youll-learn">What You'll Learn</h2>
+<p>By the end of this lab you will be able to:</p>
+<ul>
+<li><strong>Build</strong> a six-stage series circuit — a switch, two resistors, a diode, and an LED — and measure its healthy voltage at every test point</li>
+<li><strong>Predict</strong> each test point's voltage using Ohm's Law and the diode/LED forward-voltage drops, before you ever touch a probe to it</li>
+<li><strong>Apply</strong> half-split testing to locate a hidden fault in three or fewer measurements</li>
+<li><strong>Read</strong> a multimeter's open, short, and normal signatures and use them as evidence, not guesses</li>
+<li><strong>Document</strong> a troubleshooting log clear enough that another builder — or your future self — could follow it</li>
+</ul>
+<h2 id="before-you-start">Before You Start</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Time</strong></td>
+<td>50 minutes</td>
+</tr>
+<tr>
+<td><strong>Difficulty</strong></td>
+<td>Intermediate — your first troubleshooting lab</td>
+</tr>
+<tr>
+<td><strong>You should already know</strong></td>
+<td>How to use a multimeter's voltage mode (<a href="../../chapters/20-using-a-multimeter/">Chapter 20</a>)</td>
+</tr>
+<tr>
+<td><strong>Strongly recommended first</strong></td>
+<td><a href="../60-multimeter-basics/">Lab 60: Meet Your Multimeter</a></td>
+</tr>
+<tr>
+<td><strong>Helpful background</strong></td>
+<td><a href="../../chapters/21-systematic-troubleshooting/">Chapter 21: Systematic Troubleshooting</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-youll-need">What You'll Need</h2>
+<p>Everything here is in the $50 kit.</p>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Part</th>
+<th>Value or marking</th>
+<th>How to spot it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Breadboard</td>
+<td>half-size, 30 columns</td>
+<td>the white plastic board with rows of holes</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Slide switch</td>
+<td>SW1, SPDT</td>
+<td>a small plastic body with a sliding lever</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Resistor</td>
+<td>R1, 330 Ω</td>
+<td>tan body, bands <strong>orange-orange-brown</strong>, then gold</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Resistor</td>
+<td>R2, 220 Ω</td>
+<td>tan body, bands <strong>red-red-brown</strong>, then gold</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Diode</td>
+<td>D1, 1N4148 or 1N4001</td>
+<td>small gray cylinder with a painted <strong>band on the cathode end</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>LED</td>
+<td>D2, red, 5 mm</td>
+<td>clear red dome; <strong>one leg is longer than the other</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Jumper wires</td>
+<td>1 red, 1 black, 1 any color</td>
+<td>to wire the + rail, the − rail, and the R1–R2 gap</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Power supply</td>
+<td>5 V USB, or a battery pack</td>
+<td>any phone charger with a USB-A male-to-male cable</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Optional but recommended:</strong> a multimeter, for Part A's real measurements.
+You do not need one to finish this lab — every predicted voltage is printed
+below, so you can compare the simulator's readings against those printed
+numbers instead of your own.</p>
+<p>No exact 330 Ω or 220 Ω on hand? Anything close works — the predicted
+voltages will shift a little, but the <em>method</em> you're practicing today
+doesn't care about the exact numbers. What you must not do is skip a
+resistor entirely; that changes which test point the current-limiting job
+happens at, and the math in this lab won't match your board anymore.</p>
+<h2 id="safety-first">Safety First</h2>
+<p>At 5 volts, nothing in this circuit can hurt you. You can touch every part of
+it while it runs. The habits below protect the <em>parts</em>, not you — and one of
+them protects your multimeter specifically.</p>
+<ul>
+<li><strong>Wire everything first, plug in power last.</strong> Every time, no exceptions.</li>
+<li><strong>Unplug before you rewire.</strong> A live wire moved by accident is how a short
+  circuit happens — a path where current races straight from + to − with
+  nothing to slow it down.</li>
+</ul>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Resistance and Diode-Test Mode Need the Power OFF</p>
+<p><img alt="Volt giving a warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+This is the one multimeter mistake that matters most in this whole lab.
+<strong>Never</strong> switch your meter to resistance (Ω) or diode-test mode while
+your circuit is still powered. Those modes push the meter's <em>own</em> small
+test current through whatever you're probing — and a live 5 V supply
+fighting that test current gives you a meaningless reading at best, and
+risks the meter at worst. Voltage mode is the only mode you'll use while
+the board is powered on in this lab.</p>
+</div>
+<h2 id="the-circuit-diagram">The Circuit Diagram</h2>
+<p>Here is the circuit you're about to build and then hunt for faults in — one
+supply, six stages, seven test points.</p>
+<figure>
+<p><img alt="Schematic of a 5 volt series circuit with switch SW1, resistor R1 at 330 ohms, resistor R2 at 220 ohms, diode D1, and red LED D2, with seven labeled test points TP0 through TP6 and each one's predicted healthy voltage from 5.0 volts down to 0.0 volts" src="fault-finder-schematic.png" width="520" /></p>
+<figcaption>Six stages, seven test points. TP0 is the battery's positive terminal; TP6 is the LED's cathode, tied to ground.</figcaption>
+</figure>
+<p>Read it top to bottom, the way current flows: out of <strong>+5 V</strong>, through
+<strong>SW1</strong>, through <strong>R1</strong>, across the <strong>jumper wire</strong> that connects R1 to R2,
+through <strong>R2</strong>, through <strong>D1</strong> (anode to cathode), through <strong>D2</strong> (anode to
+cathode), and into <strong>ground</strong>. That single loop is the whole circuit — break
+it anywhere and TP6 stops being the only dark point; everything downstream of
+the break goes with it.</p>
+<p>TP2 and TP3 sit on either side of a plain jumper wire, not a component. That's
+on purpose — a loose or broken jumper is one of the most common real faults
+on any breadboard, so this circuit treats "the wire between R1 and R2" as a
+suspect stage exactly like R1 or R2 themselves.</p>
+<h2 id="the-breadboard-layout">The Breadboard Layout</h2>
+<p>Here is the same six stages on the actual board — the picture to copy, hole
+for hole.</p>
+<figure>
+<p><img alt="Breadboard layout showing a red jumper from the plus rail to a2, a slide switch from b2 to b6, a 330 ohm resistor from c6 to c10, an orange jumper wire from b10 to b14, a 220 ohm resistor from c14 to c18, a diode from b18 to b22, a red LED from c22 to c26, and a black jumper from b26 to the minus rail, with purple rings marking test points TP0 through TP6 at columns 2, 6, 10, 14, 18, 22, and 26" src="breadboard-layout.png" width="900" /></p>
+<figcaption>Purple rings mark all seven test points at row d — touch your meter's probe there. The orange jumper is a signal wire, not a power wire; it's colored differently so it stands out as its own test stage.</figcaption>
+</figure>
+<p>The two pictures show the same six stages. Here's exactly how they line up:</p>
+<table>
+<thead>
+<tr>
+<th>In the schematic</th>
+<th>On the breadboard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TP0</strong>, the +5 V supply</td>
+<td>The red jumper from the <strong>+ rail</strong> into <strong>a2</strong></td>
+</tr>
+<tr>
+<td><strong>SW1</strong></td>
+<td>The slide switch bridging <strong>b2 → b6</strong></td>
+</tr>
+<tr>
+<td><strong>TP1</strong></td>
+<td>Column <strong>6</strong> — the shared node between SW1 and R1</td>
+</tr>
+<tr>
+<td><strong>R1</strong>, 330 Ω</td>
+<td>The tan resistor bridging <strong>c6 → c10</strong></td>
+</tr>
+<tr>
+<td><strong>TP2</strong></td>
+<td>Column <strong>10</strong> — the shared node between R1 and the jumper wire</td>
+</tr>
+<tr>
+<td>The <strong>jumper wire</strong> (R1 → R2)</td>
+<td>The orange wire bridging <strong>b10 → b14</strong></td>
+</tr>
+<tr>
+<td><strong>TP3</strong></td>
+<td>Column <strong>14</strong> — the shared node between the wire and R2</td>
+</tr>
+<tr>
+<td><strong>R2</strong>, 220 Ω</td>
+<td>The tan resistor bridging <strong>c14 → c18</strong></td>
+</tr>
+<tr>
+<td><strong>TP4</strong></td>
+<td>Column <strong>18</strong> — the shared node between R2 and D1</td>
+</tr>
+<tr>
+<td><strong>D1</strong>, diode</td>
+<td>The banded gray cylinder, anode at <strong>b18</strong>, cathode at <strong>b22</strong></td>
+</tr>
+<tr>
+<td><strong>TP5</strong></td>
+<td>Column <strong>22</strong> — the shared node between D1 and D2</td>
+</tr>
+<tr>
+<td><strong>D2</strong>, red LED</td>
+<td>The red dome, anode at <strong>c22</strong>, cathode at <strong>c26</strong></td>
+</tr>
+<tr>
+<td><strong>TP6</strong>, ground</td>
+<td>D2's cathode leg at <strong>c26</strong>, returned to the <strong>− rail</strong> by a black jumper from <strong>b26</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The trick that makes this work is the same hidden wiring from your very first
+LED circuit: every hole in a column's top group (a-e) is one connected node.
+Column 10's group joins R1's right leg to the jumper wire's left leg without
+them ever touching directly — that connection <em>is</em> TP2.</p>
+<h2 id="part-a-build-it-and-find-your-baseline">Part A: Build It and Find Your Baseline</h2>
+<p>You're building a real, working circuit first — one you trust, with numbers
+you calculated yourself and can check with a meter. That trusted baseline is
+what Part B compares against.</p>
+<ol>
+<li><strong>Leave the power unplugged.</strong> Every wire goes in before any power does.</li>
+<li>Push the <strong>red jumper</strong> into a hole on the <strong>+ rail</strong>, and its other end into <strong>a2</strong>.</li>
+<li>Push the <strong>slide switch's</strong> two legs into <strong>b2</strong> and <strong>b6</strong>.</li>
+<li>Bend <strong>R1's</strong> legs and push them into <strong>c6</strong> and <strong>c10</strong>. A resistor has no direction — either way round is fine.</li>
+<li>Push a <strong>jumper wire</strong> from <strong>b10</strong> to <strong>b14</strong>. This is the R1–R2 stage — TP2 to TP3.</li>
+<li>Bend <strong>R2's</strong> legs and push them into <strong>c14</strong> and <strong>c18</strong>.</li>
+<li>Look at <strong>D1</strong> before it goes in: the painted band marks the <strong>cathode</strong>. Push the plain (anode) end into <strong>b18</strong> and the banded (cathode) end into <strong>b22</strong>.</li>
+<li>Push <strong>D2's long leg (anode) into c22</strong> and its <strong>short leg (cathode) into c26</strong>.</li>
+<li>Push a <strong>black jumper</strong> from <strong>b26</strong> to a hole on the <strong>− rail</strong>.</li>
+</ol>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Checkpoint — before power</p>
+<p><img alt="Volt giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Run your finger along the whole path and say it out loud: <strong>+ rail → a2 →
+SW1 → R1 → wire → R2 → D1 → D2 → − rail.</strong> If any step in that sentence
+has nothing plugged into it, find the gap now — it's much easier to spot
+with the power still off. Then check the two parts where direction
+matters: D1's band should face <strong>b22</strong>, and D2's long leg should be in
+<strong>c22</strong>, not c26. Every other part in this build is direction-proof.</p>
+</div>
+<h3 id="predict-first">Predict First</h3>
+<p>Before you measure anything, work out what a <em>healthy</em> version of this
+circuit should read. A silicon diode like D1 drops about <strong>0.6 V</strong> in the
+forward direction (the same number Chapter 21 used for diode-test mode), and
+a red LED like D2 drops about <strong>1.9 V</strong> — the number this book has used since
+Chapter 12.</p>
+<p>With R1 and R2 in series, the total resistance is:</p>
+<div class="arithmatex">\[ R_1 + R_2 = 330\ \Omega + 220\ \Omega = 550\ \Omega \]</div>
+<p>The current has to push through both resistors, the diode, and the LED, so
+Ohm's Law gives:</p>
+<div class="arithmatex">\[ I = \frac{V_{supply} - V_{f(D1)} - V_{f(D2)}}{R_1 + R_2} = \frac{5.0\text{ V} - 0.6\text{ V} - 1.9\text{ V}}{550\ \Omega} \approx 0.0045\text{ A} \approx 4.5\text{ mA} \]</div>
+<p>That's dimmer than your very first LED circuit — this one asks two resistors
+to share the current-limiting job, not one — and that's expected, not a fault.
+Now walk that same 4.5 mA down the chain, subtracting each part's drop as you
+go, and fill in your predictions before you touch a meter to anything:</p>
+<table>
+<thead>
+<tr>
+<th>Test Point</th>
+<th>What it's after</th>
+<th>Predicted Voltage</th>
+<th>Measured Voltage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TP0</td>
+<td>Battery +, before SW1</td>
+<td>5.0 V</td>
+<td></td>
+</tr>
+<tr>
+<td>TP1</td>
+<td>After SW1, before R1</td>
+<td>5.0 V</td>
+<td></td>
+</tr>
+<tr>
+<td>TP2</td>
+<td>After R1, before the wire</td>
+<td>3.5 V</td>
+<td></td>
+</tr>
+<tr>
+<td>TP3</td>
+<td>After the wire, before R2</td>
+<td>3.5 V</td>
+<td></td>
+</tr>
+<tr>
+<td>TP4</td>
+<td>After R2, before D1</td>
+<td>2.5 V</td>
+<td></td>
+</tr>
+<tr>
+<td>TP5</td>
+<td>After D1, before D2</td>
+<td>1.9 V</td>
+<td></td>
+</tr>
+<tr>
+<td>TP6</td>
+<td>After D2 (LED cathode) / ground</td>
+<td>0.0 V</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Notice TP2 and TP3 predict the <em>same</em> number. That's the point of putting a
+test point on either side of a plain wire — a healthy wire drops nothing at
+all. Any difference between TP2 and TP3 on a real board is itself a clue.</p>
+<ol>
+<li>Plug in the 5 V supply.</li>
+<li>Slide <strong>SW1</strong> to the closed position. The LED should glow — dimmer than a
+    single-resistor LED circuit, but clearly lit.</li>
+<li>If you have a multimeter, set it to <strong>DC voltage</strong> and touch the black
+    probe to the − rail. Touch the red probe to each test point in turn and
+    fill in the <strong>Measured Voltage</strong> column above. No meter? Use the printed
+    predicted values as your baseline for Part B instead.</li>
+</ol>
+<p><strong>You are done when</strong> your LED glows steadily, every measured voltage is
+within about ±10% of its prediction, and you can point to any test point on
+the real board without looking at the picture. That finishes Part A — Part B
+is next.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">That's a circuit you can trust</p>
+<p><img alt="Volt celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You just built a circuit <em>and</em> proved, point by point, that it matches
+the math. That combination — a working build plus numbers you can defend
+— is exactly what makes a "known-good circuit" actually known-good.</p>
+</div>
+<h2 id="part-b-diagnose-a-hidden-fault-in-the-simulator">Part B: Diagnose a Hidden Fault in the Simulator</h2>
+<p>Here's a question worth asking before you go any further: why not just sneak
+a fault into the circuit you just built, and make <em>you</em> find it?</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">This part feels different — that's on purpose</p>
+<p><img alt="Volt encouraging you" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+Sabotaging your own freshly built circuit sounds like fun until you
+realize there's no answer key, no easy reset, and no way to check your
+diagnosis except pulling the whole thing apart. Half-split testing is a
+genuinely new way of thinking, and it deserves a practice ground where
+you can be wrong safely, again and again, until it clicks.</p>
+</div>
+<p>That's exactly what the simulator below is for. It builds the identical
+six-stage circuit — SW1, R1, the R1–R2 wire, R2, D1, D2 — with one hidden
+fault planted somewhere in the chain. Your job is to find it using the same
+five-step strategy Chapter 21 taught, with the baseline you just measured in
+Part A as your "known-good circuit" to compare against.</p>
+<iframe src="../../sims/half-split-fault-finder/main.html" width="100%" height="547px" scrolling="no"></iframe>
+
+<p>Work the five steps in order, every time:</p>
+<ol>
+<li><strong>Check power first.</strong> Click "Power On." If TP0 is dead, nothing past it
+   matters yet — but in this sim, the supply is always good, so you'll move
+   straight to the real search.</li>
+<li><strong>Half-split the remaining range.</strong> Only the true midpoint test point
+   glows. Click it. A reading that matches your Part A baseline means the
+   fault is <em>further along</em>; a reading of 0 V means the fault is <em>at or
+   before</em> that point.</li>
+<li><strong>Compare to your known-good circuit.</strong> Every reading the sim gives you
+   should be judged against the Part A numbers you already measured — not a
+   guess, not a vibe.</li>
+<li><strong>Isolate one variable.</strong> Test exactly one point, record the result, and
+   only <em>then</em> decide what to test next. The sim enforces this by only
+   lighting up the correct next test point.</li>
+<li><strong>Document every result.</strong> Copy this table and fill in a row for every
+   click, even the "boring" ones:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Test #</th>
+<th>Point Tested</th>
+<th>Reading</th>
+<th>What It Rules Out</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Once only one stage remains, use the sim's diagnosis menu to name it. <strong>Your
+goal: name the faulty stage correctly in three tests or fewer.</strong> Click "New
+Fault" and do it again — the method should get faster each time, not the
+luck.</p>
+<h2 id="how-it-works">How It Works</h2>
+<p>Chapter 21 handed you five steps. Here's why each one earns its place, using
+this circuit's own six stages as the example.</p>
+<p><strong>Check power first</strong> because a dead TP0 explains a dark LED in one
+measurement, and skipping straight to a "more interesting" suspect wastes
+time on component after component before you ever check the boring thing
+most likely to be wrong.</p>
+<p><strong>Half-split beats testing one by one.</strong> Picture six suspects — SW1, R1, the
+wire, R2, D1, D2 — lined up in order. Testing them one at a time, worst case,
+takes six measurements. Testing the <em>middle</em> first is smarter: whichever way
+that one reading comes back, you just proved half the chain is fine and
+never have to test it again.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">One reading, half the suspects gone</p>
+<p><img alt="Volt thinking about it" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+A healthy point reads full voltage; a point past the fault reads zero.
+Test the middle stage's output, and that single number sorts everything
+before it and everything after it into two piles at once. That's the
+whole trick — one good question, asked in the right place, is worth
+three or four asked in the wrong order.</p>
+</div>
+<p>You've used this exact trick before, just not with a multimeter. Guessing a
+number between 1 and 100 in the fewest tries works the same way — guess 50,
+learn "higher" or "lower," and half the remaining numbers are gone in one
+question. A phone book (or a sorted playlist) gets searched the same way too.
+Half-split troubleshooting is that same idea, aimed at a broken circuit
+instead of a hidden number.</p>
+<p><strong>Compare to a known-good circuit</strong> — which is exactly what Part A gave you.
+"TP4 reads 2.1 V" means nothing on its own. "TP4 reads 2.1 V, and my working
+board reads 2.5 V there" is evidence something upstream is dragging the
+voltage down.</p>
+<p><strong>Isolate one variable</strong> because changing two things at once — say, swapping
+R2 <em>and</em> reseating D1 in the same breath — leaves you unable to say which
+change fixed anything. Half-split testing only works if each measurement
+answers exactly one question.</p>
+<p><strong>Document every result</strong> because a troubleshooting session with ten
+readings in your head is a session where you'll retest the same point twice
+and still miss the fault. A written log, like the one you just filled in, is
+what turns a confusing string of numbers into a clear trail of evidence — the
+same job Chapter 21's own test log panel does automatically.</p>
+<h2 id="if-your-own-build-doesnt-match-its-predicted-voltages">If Your Own Build Doesn't Match Its Predicted Voltages</h2>
+<p>Since this whole lab is about finding faults, here's the worked answer key
+for Part A: what a mismatch between your predicted and measured voltage
+usually means, worked from TP0 outward — check power first, exactly like the
+strategy above.</p>
+<table>
+<thead>
+<tr>
+<th>What you measure</th>
+<th>Likely cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TP0 reads 0 V</td>
+<td>The supply isn't actually connected</td>
+<td>Check the USB cable or battery pack, and that the red jumper is fully seated in both the rail and a2</td>
+</tr>
+<tr>
+<td>TP0 is good, but TP1 reads 0 V</td>
+<td>SW1 isn't closed, or a leg isn't seated</td>
+<td>Slide the switch fully to "on"; reseat both legs in b2 and b6</td>
+</tr>
+<tr>
+<td>TP1 is good, but TP2 reads the same as TP1 (no ~1.5 V drop)</td>
+<td>R1 isn't actually bridging c6 → c10 — maybe both legs landed in the same column</td>
+<td>Reseat R1 so its legs sit in two different column groups</td>
+</tr>
+<tr>
+<td>TP2 and TP3 disagree (should read the same)</td>
+<td>The R1–R2 jumper wire is loose or in the wrong hole</td>
+<td>Reseat the jumper firmly in b10 and b14</td>
+</tr>
+<tr>
+<td>TP3 is good, but TP4 reads the same as TP3</td>
+<td>R2 isn't bridging c14 → c18 correctly, or it's the wrong value</td>
+<td>Check the color bands against 220 Ω (red-red-brown) and reseat</td>
+</tr>
+<tr>
+<td>TP4 is good, but TP5 reads the same as TP4 (no ~0.6 V drop)</td>
+<td>D1 is shorted, or its band orientation is backwards</td>
+<td>Check the cathode band faces b22; swap the diode if it still shows no drop</td>
+</tr>
+<tr>
+<td>TP5 is good, but TP6 isn't close to 0 V, or the LED stays dark</td>
+<td>D2 is backwards, or its short leg isn't reaching c26</td>
+<td>Long leg (anode) toward c22, short leg (cathode) toward c26</td>
+</tr>
+<tr>
+<td>Every reading is 0 V, even TP0</td>
+<td>The meter is set to the wrong mode, or the probes are in the wrong jacks</td>
+<td>Confirm the dial is on DC volts and the red probe is in the VΩmA jack</td>
+</tr>
+</tbody>
+</table>
+<p>Notice this table reads top to bottom in exactly the order the five-step
+strategy suggests: power first, then work outward from whichever stage is
+still suspect. That's not a coincidence — it's the same method from Part B,
+just applied to a build instead of a sim.</p>
+<h2 id="check-your-understanding">Check Your Understanding</h2>
+<p>Answer each one before you open it.</p>
+<details class="question">
+<summary>1. Half-split testing means you test the middle of the remaining range, not the next point in line. Why is that faster?</summary>
+<p>Because one reading at the midpoint sorts the <em>entire</em> remaining chain
+into two piles — "fine" and "still suspect" — at once. Testing point by
+point in order only rules out one stage per reading; testing the middle
+can rule out up to half the remaining stages with a single measurement.
+For six stages, that's the difference between as many as six tests and
+as few as three.</p>
+</details>
+<details class="question">
+<summary>2. In diode-test mode, a diode reads a real, low voltage in <em>both</em> directions instead of showing OL one way. What does that tell you?</summary>
+<p>It's <strong>shorted internally</strong>. A healthy diode only conducts one way — real
+forward voltage, OL in reverse. A real reading both directions means
+current is flowing through it no matter which way you probe, which is
+exactly what an internal short looks like.</p>
+</details>
+<details class="question">
+<summary>3. You measure full supply voltage right up through TP4, and 0 V at TP5. Where's the fault, and why?</summary>
+<p>The fault is in <strong>D1</strong>, the stage between TP4 and TP5. TP4 reading full
+voltage proves the signal survived everything before it — SW1, R1, the
+wire, and R2 are all fine. TP5 reading 0 V proves the signal died
+somewhere between TP4 and TP5, and D1 is the only thing sitting in that
+gap. An open (broken) diode blocks current in both directions, which
+matches exactly what you measured.</p>
+</details>
+<details class="question">
+<summary>4. Your test log has six rows, and three of them just say 'normal, as expected.' A classmate says those rows were a waste of time. Are they right?</summary>
+<p>No. A normal reading isn't wasted — it's the evidence that rules out an
+entire section of the circuit for good. Without it written down, you
+might re-test a stage you already cleared, or forget which half you'd
+already eliminated. The boring readings are just as much a part of the
+trail of evidence as the strange one that finally locates the fault.</p>
+</details>
+<details class="question">
+<summary>5. Your predicted TP2 is 3.5 V. You measure exactly 3.5 V at TP3 too — but you were expecting to check whether they matched. What does an exact match at TP2 and TP3 tell you about the jumper wire between them?</summary>
+<p>It tells you the jumper wire is <strong>healthy</strong>. A real wire has essentially
+zero resistance, so Ohm's Law says it should drop essentially zero
+volts. TP2 and TP3 reading the same number is exactly what a good wire
+looks like — if they had disagreed, the wire itself would have been the
+prime suspect.</p>
+</details>
+<details class="question">
+<summary>6. Using the current you calculated for this circuit (about 4.5 mA) and R2's value, what voltage should R2 drop, and does that match the table?</summary>
+<div class="arithmatex">\[ V = I \times R = 0.0045\text{ A} \times 220\ \Omega \approx 1.0\text{ V} \]</div>
+<p>That matches the table: TP3 predicts 3.5 V and TP4 predicts 2.5 V, a
+difference of exactly 1.0 V across R2.</p>
+</details>
+<h2 id="take-it-further">Take It Further</h2>
+<p><strong>With a partner, or on your own board:</strong> swap one component's orientation or
+value — flip D1 or D2 around, or trade R1 for a very different resistor — on
+your <em>own</em> real circuit. If you're working with a partner, trade boards
+instead, so neither of you knows what the other changed.</p>
+<p>Re-diagnose the real fault using the same five-step strategy: check power
+first, half-split the remaining range with your multimeter, compare every
+reading to your Part A baseline, isolate one variable per test, and write
+down every result in a fresh copy of the log table.</p>
+<p><em>You have succeeded when</em> you can name the faulty stage correctly in <strong>three
+or fewer real measurements</strong>, with a written log a partner could read and
+follow without you explaining it out loud.</p>
+<p><strong>If that was easy, try this:</strong> ask your partner to introduce a fault that
+<em>isn't</em> one of the six stages — for example, both LED legs pushed into the
+same column. Half-split testing will still get you close, but naming the
+<em>exact</em> problem takes the physical inspection skills from Chapter 8 too.
+Real troubleshooting always uses both.</p>
+<h2 id="learn-more">Learn More</h2>
+<ul>
+<li><a href="../../chapters/21-systematic-troubleshooting/">Chapter 21: Systematic Troubleshooting</a> — the five-step strategy and the Half-Split Fault Finder sim this lab's Part B reuses</li>
+<li><a href="../../chapters/20-using-a-multimeter/">Chapter 20: Using a Multimeter</a> — voltage, resistance, and continuity modes, and the safety rules behind this lab's one big warning</li>
+<li><a href="../60-multimeter-basics/">Lab 60: Meet Your Multimeter</a> — hands-on practice with your meter's modes before you lean on them here</li>
+<li><a href="../../chapters/12-diodes-and-leds/">Chapter 12: Diodes and LEDs</a> — where the 0.6 V and 1.9 V forward-voltage numbers used in this lab's predictions come from</li>
+<li><a href="https://learn.sparkfun.com/tutorials/how-to-use-a-multimeter">SparkFun: How to Use a Multimeter</a> — a thorough outside guide to every mode this lab's meter work depends on</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../60-multimeter-basics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Meet Your Multimeter">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Meet Your Multimeter
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../80-rc-circuit/" class="md-footer__link md-footer__link--next" aria-label="Next: RC Circuit">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                RC Circuit
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extras.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

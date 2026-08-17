@@ -1,0 +1,2581 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="How to power a classroom breadboard safely for young builders — choosing a supply, why input voltage matters, what the MB102 module does and does not protect, and how to add a PTC resettable fuse to the +5 V rail.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/beginning-electronics/setup/safe-power-for-learning/">
+      
+      
+        <link rel="prev" href="../purchasing-breadboards/">
+      
+      
+        <link rel="next" href="../power-supplies/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Safe Power for Learning - Beginning Electronics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WP3K3TSFJ7"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WP3K3TSFJ7",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WP3K3TSFJ7",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Safe Power for Learning - Beginning Electronics" >
+      
+        <meta  property="og:description"  content="How to power a classroom breadboard safely for young builders — choosing a supply, why input voltage matters, what the MB102 module does and does not protect, and how to add a PTC resettable fuse to the +5 V rail." >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/beginning-electronics/assets/images/social/setup/safe-power-for-learning/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/beginning-electronics/setup/safe-power-for-learning/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Safe Power for Learning - Beginning Electronics" >
+      
+        <meta  name="twitter:description"  content="How to power a classroom breadboard safely for young builders — choosing a supply, why input voltage matters, what the MB102 module does and does not protect, and how to add a PTC resettable fuse to the +5 V rail." >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/beginning-electronics/assets/images/social/setup/safe-power-for-learning/index.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#safe-power-for-learning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Beginning Electronics" class="md-header__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Beginning Electronics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Safe Power for Learning
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Beginning Electronics" class="md-nav__button md-logo" aria-label="Beginning Electronics" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Beginning Electronics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/beginning-electronics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-kit-components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kit Components
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../purchasing-breadboards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Purchasing Breadboards
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Safe Power for Learning
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Safe Power for Learning
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-three-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Three Rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-a-power-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing a Power Source
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mb102-power-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      The MB102 Power Module
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The MB102 Power Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-protects-against" class="md-nav__link">
+    <span class="md-ellipsis">
+      What It Protects Against
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-does-not-protect-against" class="md-nav__link">
+    <span class="md-ellipsis">
+      What It Does Not Protect Against
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#free-improvement-use-a-lower-input-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Free Improvement: Use a Lower Input Voltage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-ptc-resettable-fuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a PTC Resettable Fuse
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding a PTC Resettable Fuse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-a-ptc-fuse-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      What a PTC Fuse Is
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-one-to-buy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Which One to Buy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-it-goes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where It Goes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-mechanical-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Mechanical Problem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-1-use-the-top-header-pins-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 1: Use the Top Header Pins (Recommended)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-a-fused-jumper-needs-soldering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 2: A Fused Jumper (Needs Soldering)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3-a-split-power-rail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 3: A Split Power Rail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-method-to-approach-carefully" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Method to Approach Carefully
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#or-skip-the-module-entirely" class="md-nav__link">
+    <span class="md-ellipsis">
+      Or Skip the Module Entirely
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-the-trip-visible-a-fault-lamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making the Trip Visible: A Fault Lamp
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-reset-or-manual-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto-Reset or Manual Reset?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-it-and-turning-that-into-a-lesson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing It — and Turning That Into a Lesson
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classroom-setup-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classroom Setup Checklist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-a-dead-rail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting a Dead Rail
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Pages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../power-supplies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Power Supplies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../breadboard-kits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Purchasing Component Kits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generating-lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generating Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../labs/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Hands-on Labs
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../kits/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Kits and Projects
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../appendices/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-three-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Three Rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-a-power-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing a Power Source
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mb102-power-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      The MB102 Power Module
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The MB102 Power Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-protects-against" class="md-nav__link">
+    <span class="md-ellipsis">
+      What It Protects Against
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-does-not-protect-against" class="md-nav__link">
+    <span class="md-ellipsis">
+      What It Does Not Protect Against
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#free-improvement-use-a-lower-input-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Free Improvement: Use a Lower Input Voltage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-ptc-resettable-fuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a PTC Resettable Fuse
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding a PTC Resettable Fuse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-a-ptc-fuse-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      What a PTC Fuse Is
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-one-to-buy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Which One to Buy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-it-goes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where It Goes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-mechanical-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Mechanical Problem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-1-use-the-top-header-pins-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 1: Use the Top Header Pins (Recommended)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-a-fused-jumper-needs-soldering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 2: A Fused Jumper (Needs Soldering)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3-a-split-power-rail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 3: A Split Power Rail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-method-to-approach-carefully" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Method to Approach Carefully
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#or-skip-the-module-entirely" class="md-nav__link">
+    <span class="md-ellipsis">
+      Or Skip the Module Entirely
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-the-trip-visible-a-fault-lamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making the Trip Visible: A Fault Lamp
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-reset-or-manual-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto-Reset or Manual Reset?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-it-and-turning-that-into-a-lesson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing It — and Turning That Into a Lesson
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classroom-setup-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classroom Setup Checklist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-a-dead-rail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting a Dead Rail
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Pages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="safe-power-for-learning">Safe Power for Learning</h1>
+<p>Of everything in a beginning electronics kit, the power supply is the part
+that decides whether a mistake is a <em>lesson</em> or a <em>loss</em>. A student who wires
+an LED backwards learns something in three seconds. A student who shorts the
+power rails should also learn something in three seconds — not lose the rest
+of the class period while an adult hunts for a replacement supply.</p>
+<p>This page is about setting things up so that shorts are boring.</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Mistakes Are Supposed to Be Cheap</p>
+<p><img alt="Volt waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Here's a secret every engineer learns eventually: the goal isn't to stop
+making mistakes. It's to make mistakes that cost you thirty seconds
+instead of thirty dollars. Set your power up right and you get to be as
+bold as you like. Let's light it up!</p>
+</div>
+<h2 id="the-three-rules">The Three Rules</h2>
+<p>Everything below follows from three rules. If you remember nothing else,
+remember these.</p>
+<ol>
+<li><strong>Low-voltage DC only.</strong> Every circuit in this course runs on 5 V or less
+   from a module, a charger, or a battery pack. Nothing on a breadboard ever
+   touches wall voltage.</li>
+<li><strong>Something must limit the current.</strong> Voltage does not hurt people or
+   parts — <em>current</em> does. Every setup below has something in it whose job is
+   to say "no further."</li>
+<li><strong>The cheapest thing in the chain should break first.</strong> If a fault has to
+   destroy something, make it the two-dollar part you keep spares of.</li>
+</ol>
+<p>Rule 3 is the one people skip, and it is the one this page spends the most
+time on.</p>
+<h2 id="choosing-a-power-source">Choosing a Power Source</h2>
+<p>Match the supply to how much experience the builders have, not to how
+advanced the project is.</p>
+<table>
+<thead>
+<tr>
+<th>Experience Level</th>
+<th>Recommended Supply</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>First circuits, younger students</strong></td>
+<td>2 × AA battery holder (3 V)</td>
+<td>Cannot deliver enough current to hurt anyone or melt anything. A short just flattens the cells. Costs about a dollar to replace.</td>
+</tr>
+<tr>
+<td><strong>Comfortable on a breadboard</strong></td>
+<td>3 × AA battery holder (4.5 V)</td>
+<td>Enough headroom for LEDs and transistors, still self-limiting.</td>
+</tr>
+<tr>
+<td><strong>Most classroom work</strong></td>
+<td>MB102 module + 7.5–9 V adapter</td>
+<td>Steady 5 V, a power switch, and an indicator light. The recommended default — with the fuse described below.</td>
+</tr>
+<tr>
+<td><strong>Bench work, older students</strong></td>
+<td>Adjustable supply with a current limit</td>
+<td>The current knob <em>is</em> the safety feature.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Skip the 9 V Battery</p>
+<p><img alt="Volt pointing out a common mistake" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Those rectangular 9 V batteries look perfect for beginners — small, snap
+connector, easy. They are not. Short one across its own terminals and it
+gets hot enough to burn a hand, because both terminals sit right next to
+each other where a stray wire can bridge them. AA cells in a holder keep
+their terminals apart and give up long before they get dangerous.</p>
+</div>
+<h2 id="the-mb102-power-module">The MB102 Power Module</h2>
+<p>The MB102 is the small black board that plugs straight onto a breadboard's
+power rails and turns a wall adapter into clean 5 V and 3.3 V. It is the
+recommended supply for most classroom work, and it is worth understanding
+exactly what it does and does not do.</p>
+<h3 id="what-it-protects-against">What It Protects Against</h3>
+<p>The module's regulators are <strong>AMS1117</strong> parts, and that chip's protection is
+real and documented. From the manufacturer's datasheet:</p>
+<table>
+<thead>
+<tr>
+<th>Protection</th>
+<th>Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Short-circuit current limit</td>
+<td>900 mA minimum, 1100 mA typical, 1500 mA maximum</td>
+</tr>
+<tr>
+<td>Thermal shutdown</td>
+<td>Switches off above 165 °C junction temperature</td>
+</tr>
+<tr>
+<td>Reset behavior</td>
+<td>Self-resetting — the regulator comes back once it cools</td>
+</tr>
+<tr>
+<td>Power dissipation</td>
+<td>"Internally limited"</td>
+</tr>
+<tr>
+<td>Reverse-polarity input</td>
+<td>Blocked by a Schottky diode on the module's input</td>
+</tr>
+</tbody>
+</table>
+<p>That is a genuinely protected part. Short the 5 V rail and the regulator
+limits the current and then switches itself off rather than failing.</p>
+<h3 id="what-it-does-not-protect-against">What It Does Not Protect Against</h3>
+<p>Now the other half, which matters just as much:</p>
+<ul>
+<li><strong>There is no fuse and no polyfuse on the board.</strong> The only board-level
+  protection is the reverse-polarity diode. Everything else comes from inside
+  the regulator chip.</li>
+<li><strong>The regulator survives by overheating.</strong> In the SOT-223 package these
+  modules use, the AMS1117's maximum power dissipation is <strong>1.2 W</strong>. Short
+  the 5 V rail while feeding the module 9 V and it attempts to dissipate
+  roughly 9 V × 1.1 A ≈ <strong>10 watts</strong> — about eight times its rating. It
+  survives by thermal-cycling on and off, which usually works, but it is far
+  outside its comfort zone for every second the short is present.</li>
+<li><strong>Clone parts vary.</strong> These modules are generic. Different sellers ship
+  different board revisions, and inexpensive clone regulators do not reliably
+  meet the genuine datasheet's protection numbers.</li>
+</ul>
+<p>This is why these modules do sometimes die on a shorted breadboard — not
+often, but often enough to be annoying with a full classroom.</p>
+<p><img alt="Schematic showing a shorted power rail and the three things that limit the fault current: a PTC fuse tripping at about one amp, the regulator's internal current limit, and its thermal shutdown" src="short-circuit-protection.png" /></p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Protected Is Not the Same as Fused</p>
+<p><img alt="Volt thinking about a key concept" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+This idea shows up everywhere in electronics, so it is worth sitting
+with. The regulator protects <em>itself</em> by getting hot and switching off —
+that is a survival reflex, not a guarantee. A chip cycling through 165 °C
+is not saying "all handled." It is saying "please find the short."</p>
+</div>
+<h2 id="free-improvement-use-a-lower-input-voltage">Free Improvement: Use a Lower Input Voltage</h2>
+<p>Before spending anything, change one thing: <strong>feed the module 7.5 V or 9 V,
+not 12 V.</strong></p>
+<p>The heat a regulator must survive during a short is the input voltage
+multiplied by the current limit. The output is at zero volts — that is what a
+short <em>means</em> — so the regulator drops the entire input across itself:</p>
+<table>
+<thead>
+<tr>
+<th>Adapter</th>
+<th>Power the Regulator Must Survive</th>
+<th>Versus Its 1.2 W Rating</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7.5 V</td>
+<td>≈ 8.3 W</td>
+<td>7× over</td>
+</tr>
+<tr>
+<td>9 V</td>
+<td>≈ 10 W</td>
+<td>8× over</td>
+</tr>
+<tr>
+<td>12 V</td>
+<td>≈ 13 W</td>
+<td>11× over</td>
+</tr>
+</tbody>
+</table>
+<p>Going from 12 V to 7.5 V cuts the fault heat by more than a third, and costs
+nothing. The AMS1117-5.0 needs only about 6.5 V at its input to regulate
+properly, so there is no benefit to the higher voltage — a 12 V adapter just
+turns the extra volts into heat, both during faults and during normal use.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Lower Is Cooler, Literally</p>
+<p><img alt="Volt offering a helpful tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+A linear regulator burns off every volt it doesn't pass along. Feed it
+12 V to make 5 V and those extra 7 volts leave as heat — even when
+nothing is wrong. Buy the 7.5 V adapter and the whole setup runs cooler
+all day long.</p>
+</div>
+<h2 id="adding-a-ptc-resettable-fuse">Adding a PTC Resettable Fuse</h2>
+<p>This is the change that turns "replace the module" into "wait thirty
+seconds."</p>
+<h3 id="what-a-ptc-fuse-is">What a PTC Fuse Is</h3>
+<p>A <strong>PTC resettable fuse</strong> — also called a polyfuse or polyswitch — is a small
+disc of conductive plastic that behaves like a wire until too much current
+flows through it. The current heats it, the heat makes its resistance shoot
+up by orders of magnitude, and it chokes the current down to a trickle. When
+it cools, it goes back to being a wire. No replacing, no spare fuses, no
+fuse holder.</p>
+<p>"PTC" stands for <strong>positive temperature coefficient</strong>: resistance goes <em>up</em>
+as temperature goes up. That is the opposite of the NTC thermistor in your
+kit, whose resistance falls as it heats.</p>
+<h3 id="which-one-to-buy">Which One to Buy</h3>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>What to Get</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hold current</td>
+<td>500 mA</td>
+<td>The most current it will pass forever without tripping. Comfortably above what any lab circuit here draws.</td>
+</tr>
+<tr>
+<td>Trip current</td>
+<td>1 A</td>
+<td>The current at which it is guaranteed to trip. Below the regulator's 900 mA–1.5 A limit, so the fuse acts first.</td>
+</tr>
+<tr>
+<td>Voltage rating</td>
+<td>30 V or higher</td>
+<td>Anything rated for 30 V or more is fine on a 5 V rail.</td>
+</tr>
+<tr>
+<td>Package</td>
+<td>Radial leads, through-hole</td>
+<td>Two straight legs so it plugs into a breadboard.</td>
+</tr>
+</tbody>
+</table>
+<p>Search for "<strong>PTC resettable fuse 500mA radial</strong>." Common part numbers are
+the RXEF050, RUEF050, and MF-R050. They cost about ten cents each; buy ten.</p>
+<p>The trade-off is small but real: a PTC has some resistance even when it is
+behaving. At the 100–300 mA a breadboard circuit typically draws, expect to
+lose well under a tenth of a volt across it — not enough to change any
+circuit in this book.</p>
+<h3 id="where-it-goes">Where It Goes</h3>
+<p>In series with the <strong>positive</strong> rail only, between the module's 5 V output
+and the breadboard's red power rail. Ground is left completely alone.</p>
+<p>That is easy to say and slightly awkward to build, for a reason worth
+understanding before you start.</p>
+<h3 id="the-mechanical-problem">The Mechanical Problem</h3>
+<p>Here is the catch, and it is worth stating plainly: <strong>the MB102's pins plug
+straight into the power rails.</strong> They bypass any fuse you try to add at the
+top of those rails, because they inject 5 V into the rail <em>downstream</em> of
+wherever you put the fuse. There is no gap to fuse.</p>
+<p>You do not have to abandon the modules. You just have to stop letting those
+pins feed the rails, and route the 5 V through the fuse yourself.</p>
+<h3 id="method-1-use-the-top-header-pins-recommended">Method 1: Use the Top Header Pins (Recommended)</h3>
+<p>Every MB102 has a cluster of male header pins in the middle of the board
+carrying 5 V, 3.3 V, and GND, separate from the rail pins. Take power from
+there instead.</p>
+<p>Here is the whole method in one picture. The important part is on the left,
+inside the module: the regulator's 5 V node reaches the header pin directly,
+but reaches the + rail pin only <em>through the jumper cap</em> — so pulling that
+cap leaves the rail pin dead while the header stays live.</p>
+<p><img alt="Schematic of the header-pin method: inside the MB102 the regulator's 5 V node runs straight to the middle header pin and separately toward the plus rail pin through the jumper-cap selector, drawn as an open switch because the cap has been removed, leaving that pin dead; outside, a female-to-male jumper carries 5 V from the header to a terminal row, a PTC fuse bridges to a second row, a male-to-male jumper runs up to the red rail, and ground returns unfused through the module's minus rail pin; an optional orange branch of a 1 kilohm resistor and an LED sits in parallel across the fuse as a fault lamp" src="ptc-fuse-schematic.png" /></p>
+<ol>
+<li><strong>Remove both jumper caps.</strong> Each side of the board has a three-pin
+   selector marked 5 V / OFF / 3.3 V. Pull the caps off entirely and put them
+   somewhere safe. Removing the cap is unambiguous; "the OFF position" means
+   different things on different board revisions. The module still seats
+   normally, but its rail pins now feed nothing.</li>
+<li><strong>Verify with a multimeter before wiring anything.</strong> Power up and confirm
+   three things: <strong>0 V</strong> on the red + rail, <strong>5 V</strong> on the middle header's
+   5 V pin, and <strong>continuity</strong> between the blue − rail and the module's GND.
+   Measure rather than assume — this is the step that catches a board whose
+   header is wired differently.</li>
+<li><strong>Run 5 V into the terminal strip.</strong> Use a <strong>female-to-male</strong> jumper — the
+   header pins are male — from the module's 5 V pin into any row of the main
+   terminal strip.</li>
+<li><strong>Bridge two rows with the PTC.</strong> One lead into that row, the other into a
+   different row. Direction does not matter; a PTC has no polarity.</li>
+<li><strong>Run the fused 5 V to the red rail.</strong> A male-to-male jumper from the
+   second row into the breadboard's red + rail.</li>
+<li><strong>Leave ground alone.</strong> The jumper cap only ever controlled the <em>positive</em>
+   rail, so the module's − rail pin still ties the blue rail to ground with
+   no help from you — which is why step 2 checks for that continuity. If your
+   board turns out to be the exception, add a female-to-male jumper from the
+   GND header pin to the − rail. Either way, <strong>ground never gets a fuse</strong>: a
+   fuse in the ground path can leave a circuit powered with no return, which
+   is more dangerous than no fuse at all.</li>
+</ol>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Check Your Jumper Wires First</p>
+<p><img alt="Volt offering a helpful tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+This method needs female-to-male jumpers, which not every kit includes.
+The WayinTop kit ships a 20-pin F-M ribbon, so you are already set. If
+yours only has male-to-male wires, add a pack — they are a couple of
+dollars and useful forever.</p>
+</div>
+<h3 id="method-2-a-fused-jumper-needs-soldering">Method 2: A Fused Jumper (Needs Soldering)</h3>
+<p>Solder the PTC between two short lengths of 22 AWG solid wire and cover the
+joints with heat shrink. You now have a reusable fused jumper that plugs in
+anywhere, and the setup above collapses into a single part. Adult-supervised,
+and it is the tidiest option for a cart you rebuild every term.</p>
+<h3 id="method-3-a-split-power-rail">Method 3: A Split Power Rail</h3>
+<p>Some full-size breadboards break each bus strip into two halves partway
+along, marked by a gap in the printed red and blue stripe. If yours does,
+plug the PTC straight across that gap. Nothing else changes — no jumper caps
+to remove, no extra wires. Check your boards; this varies by manufacturer.</p>
+<h3 id="a-method-to-approach-carefully">A Method to Approach Carefully</h3>
+<p>You may see a suggestion to shift the module "backward" so its rail pins land
+in the terminal strip's A–E rows instead of the power rails, leaving the
+rails free. The idea is clever, but check one thing before you try it.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Two Pins in One Column Is a Dead Short</p>
+<p><img alt="Volt pointing out a common mistake" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Holes A through E in a single column are <strong>all the same node</strong>. The
+MB102's + and − pins at each end sit about 0.1 inch apart — the same
+spacing as adjacent rows — so shifting them into the terminal strip can
+drop both into one column and short 5 V straight to ground the instant
+you switch on. Before powering anything, unplug the adapter and use a
+multimeter's continuity beep between the module's + and − pins. If it
+beeps, do not power it up.</p>
+</div>
+<p>Given that the failure mode is exactly the fault we are trying to protect
+against, use Method 1 or 2 for anything a student will touch.</p>
+<h3 id="or-skip-the-module-entirely">Or Skip the Module Entirely</h3>
+<p>There is a simpler path worth knowing about. A <strong>USB breakout board</strong> — a
+tiny PCB with a USB socket on one side and ordinary breadboard pins on the
+other, about fifty cents — outputs onto normal terminal-strip pins rather
+than dedicated rail pins. That means there is nothing to defeat: plug it in,
+put the PTC inline between its 5 V pin and the red rail, and you are done.</p>
+<p>The trade-off is that you give up the AMS1117's current limit and thermal
+shutdown, so the PTC and whatever protection the USB charger has are the only
+things standing between a short and the charger. With the fuse installed that
+is a reasonable place to be, and for a class doing nothing but 5 V logic and
+LEDs it is less to go wrong.</p>
+<div class="admonition note">
+<p class="admonition-title">The Module's Own USB Socket Is Not a Reliable Input</p>
+<p>Do not confuse the breakout board with the USB-A socket on the MB102
+itself. That socket does different things on different board revisions —
+on some it feeds the regulator, on others it is an output for charging a
+phone. Even where USB input works, 5 V in for 5 V out leaves the
+regulator in dropout, barely regulating. Use the barrel jack.</p>
+</div>
+<h3 id="making-the-trip-visible-a-fault-lamp">Making the Trip Visible: A Fault Lamp</h3>
+<p>A PTC has one weakness as a teaching tool: it is invisible. It looks the same
+whether it is passing current or refusing to, and a rail that is dead because
+the fuse tripped looks exactly like a rail that is dead because a jumper fell
+out. Two parts you already have fix that.</p>
+<p>Wire an <strong>LED and a 1 kΩ resistor directly across the fuse</strong> — in parallel
+with it, both legs landing in the same two rows the fuse bridges. That is the
+orange branch in the schematic above.</p>
+<p>Here is the trick. <strong>The voltage across the fuse tells you what the fuse is
+doing:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Fuse State</th>
+<th>Voltage Across It</th>
+<th>Lamp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Passing current normally</td>
+<td>Under a tenth of a volt</td>
+<td><strong>Dark</strong> — nowhere near the ~2 V an LED needs</td>
+</tr>
+<tr>
+<td>Tripped</td>
+<td>Nearly the full 5 V</td>
+<td><strong>Lit</strong></td>
+</tr>
+</tbody>
+</table>
+<p>So the lamp is dark all day long and lights up only when the fuse has
+tripped. One indicator, one meaning, no interpretation required.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Voltage Across a Part Tells You What It's Doing</p>
+<p><img alt="Volt thinking about a key concept" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+This is one of the most useful habits in all of electronics, builder. A
+part that is conducting happily has almost no voltage across it. A part
+that is blocking has the whole supply across it. You are not measuring
+the fuse here — you are <em>asking it a question</em>, and the LED reads the
+answer out loud.</p>
+</div>
+<p><strong>Does the lamp defeat the fuse?</strong> No — and it is worth working out why,
+because a student will ask. With 1 kΩ in series, the branch passes roughly
+(5 V − 2 V) ÷ 1000 Ω ≈ <strong>3 mA</strong> around the tripped fuse. That is a trickle:
+far too little to run a circuit, and far too little to feed a short. The
+protection still holds; you have just borrowed a few milliamps to light a
+lamp.</p>
+<h3 id="auto-reset-or-manual-reset">Auto-Reset or Manual Reset?</h3>
+<p>A reasonable instinct is to want a supply that <strong>stays off after a fault
+until somebody presses a reset button</strong> — so a student has to acknowledge the
+problem rather than let a rail quietly cycle on and off. Good news: <strong>the
+setup above already behaves that way.</strong></p>
+<p>A tripped PTC does not clear while power is applied, so the module's own
+power switch <em>is</em> the reset button. With the fault lamp fitted, the whole
+cycle becomes legible from across the room:</p>
+<blockquote>
+<p>Lamp on → find the short → switch off → lamp goes out → switch on → back to work.</p>
+</blockquote>
+<p>If you want to buy latching protection instead, the honest options are
+narrower than they look:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Push-button thermal circuit breaker</td>
+<td><strong>Check the rating.</strong> Almost everything sold is 5 A–30 A for automotive use. On a 700 mA supply a 5 A breaker will never trip — it is decorative. The 0.5–1 A ratings exist but come from specialist distributors, and thermal breakers are slow.</td>
+</tr>
+<tr>
+<td>Bench supply with adjustable current limit</td>
+<td>The best of the lot — the current knob <em>is</em> the protection, and OCP mode latches the output off until you press Output. At $50–100 it is a teacher's bench instrument, not a per-student item. Worth one for diagnosis: dialing the limit to 100 mA and watching a suspect circuit is the fastest fault-finding trick there is.</td>
+</tr>
+<tr>
+<td>eFuse ICs (TPS25xx, STEF4S)</td>
+<td>Fast, adjustable, and latch-off versions stay off until enable is toggled. All surface-mount, so they need a breakout board — not classroom-buildable.</td>
+</tr>
+</tbody>
+</table>
+<p>For a classroom, the fuse and the fault lamp get you the behavior you wanted
+for about a quarter.</p>
+<h3 id="testing-it-and-turning-that-into-a-lesson">Testing It — and Turning That Into a Lesson</h3>
+<p>Do not just install it and hope. Trip it deliberately, in front of the class:</p>
+<ol>
+<li>Build any working circuit — one resistor and one LED is perfect.</li>
+<li>Confirm the circuit's LED lights and the <strong>fault lamp stays dark</strong>. That
+   is what healthy looks like.</li>
+<li>Now short the rails on purpose with a single jumper wire.</li>
+<li>Within a second or so the circuit's LED goes out and the <strong>fault lamp
+   comes on</strong>. The module's own power light stays on the whole time — which
+   is exactly why the fault lamp earns its two parts.</li>
+<li><strong>Remove the short, then switch the module off.</strong> Wait about thirty
+   seconds. The fault lamp goes out with the power.</li>
+<li>Switch back on. Everything works again, fault lamp dark.</li>
+</ol>
+<p>Ask the class to predict step 4 before you do it. "The power light is still
+on, so why is the circuit dead?" is a better question than most textbook
+exercises, and they will have the answer in front of them.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">A Tripped PTC Stays Tripped Until You Cut Power</p>
+<p><img alt="Volt pointing out a common mistake" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+This is the step everyone misses. Removing the short is not enough — the
+supply keeps feeding the fuse just enough current to hold it hot, so it
+stays switched off. You have to actually <strong>remove power</strong> and let it cool
+before it resets. If a rail seems dead after a short, this is almost
+always why.</p>
+</div>
+<p>Step 5 is the whole lesson. Students see a fault happen, see the circuit
+protect itself, and see it recover — in under a minute, with nothing damaged
+and nobody in trouble. That is a far better introduction to fault protection
+than any explanation.</p>
+<h2 id="classroom-setup-checklist">Classroom Setup Checklist</h2>
+<ul>
+<li>[ ] Every supply is 12 V or less, DC, and nothing touches wall voltage</li>
+<li>[ ] Adapters are 7.5 V or 9 V — no 12 V adapters in the bin</li>
+<li>[ ] Every module has a PTC fuse in its + rail, and its jumper caps removed</li>
+<li>[ ] Each board has a fault lamp across the fuse, verified dark when healthy</li>
+<li>[ ] Each board was checked with a multimeter before its first power-up</li>
+<li>[ ] Two spare modules are in the parts box</li>
+<li>[ ] No rectangular 9 V batteries in the room</li>
+<li>[ ] Students know to switch off, not just unplug the short, after a fault</li>
+<li>[ ] Youngest builders start on 2 × AA holders</li>
+</ul>
+<h2 id="troubleshooting-a-dead-rail">Troubleshooting a Dead Rail</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Most Likely Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fault lamp lit</td>
+<td>The PTC has tripped. There is a short — find it, then switch off and let the fuse cool.</td>
+</tr>
+<tr>
+<td>Rail dead right after a short, module light still on</td>
+<td>PTC is tripped and being held hot. Switch off, wait 30 seconds, switch on.</td>
+</tr>
+<tr>
+<td>Rail dead but fault lamp also dark</td>
+<td>Not a fuse trip. Look for a jumper that fell out, or check the module's power.</td>
+</tr>
+<tr>
+<td>Rail dead, module light off</td>
+<td>Adapter unplugged, module switch off, or the adapter is below 6.5 V.</td>
+</tr>
+<tr>
+<td>Rail works but everything is dim</td>
+<td>Module jumpers set to 3.3 V instead of 5 V.</td>
+</tr>
+<tr>
+<td>Module hot to the touch</td>
+<td>There is a short somewhere. Power down and find it before continuing.</td>
+</tr>
+<tr>
+<td>Nothing works after reversing the adapter</td>
+<td>The reverse-polarity diode did its job. Plug it in the right way.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Just Made Failure Boring</p>
+<p><img alt="Volt celebrating an achievement" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+Ten cents of fuse and a smaller adapter, and the worst thing that happens
+on your breadboard is a thirty-second pause. That's not just a safer
+bench — it's a braver one, because now you can try the risky idea. That's
+your superpower in action!</p>
+</div>
+<h2 id="related-pages">Related Pages</h2>
+<ul>
+<li><a href="../power-supplies/">Finding the Right Power Supplies</a> — where to buy, and the other supply types</li>
+<li><a href="../../appendices/parts-list/">Parts List for a $50 Kit</a> — quantities and costs, including the fuses</li>
+<li><a href="../../labs/09-power/">Power Lab</a> — the hands-on version</li>
+<li><a href="../breadboard-kits/">Purchasing Component Kits</a> — evaluating a kit before you buy</li>
+</ul>
+<h2 id="sources">Sources</h2>
+<p>The regulator figures on this page come from the AMS1117 datasheet published
+by Advanced Monolithic Systems: current limit of 900/1100/1500 mA, thermal
+shutdown above 165 °C at the sense point, "protected against short circuit
+and thermal overloads," and a maximum dissipation of 1.2 W in the SOT-223
+package. Board-level details of the MB102 — no fuse, a reverse-polarity
+Schottky diode, roughly 700 mA rated output — come from published teardowns
+rather than a manufacturer datasheet, because the MB102 is a generic module
+with no single manufacturer. Verify your own board if the details matter.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../purchasing-breadboards/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Purchasing Breadboards">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Purchasing Breadboards
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../power-supplies/" class="md-footer__link md-footer__link--next" aria-label="Next: Power Supplies">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Power Supplies
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extras.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
