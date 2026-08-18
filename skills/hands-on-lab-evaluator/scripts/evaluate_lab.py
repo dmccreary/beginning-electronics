@@ -448,6 +448,49 @@ def count_quiz(body, quiz_heading):
     }
 
 
+def check_nav_entry(lab_file, project_root):
+    """Dimension 13.1: does mkdocs.yml's nav actually link to this lab?
+
+    Nav entries reference the docs-relative path (e.g.
+    'labs/60-multimeter-basics/index.md'), so a plain substring check against
+    the raw YAML is enough - no YAML parser needed, and it survives comments.
+    """
+    mkdocs_path = os.path.join(project_root, "mkdocs.yml")
+    doc_path = os.path.relpath(lab_file, os.path.join(project_root, "docs")).replace(os.sep, "/")
+    if not os.path.isfile(mkdocs_path):
+        return {"doc_path": doc_path, "in_nav": False}
+    with open(mkdocs_path, encoding="utf-8") as f:
+        nav_text = f.read()
+    return {"doc_path": doc_path, "in_nav": doc_path in nav_text}
+
+
+def check_index_card(lab_file, project_root):
+    """Dimension 13.3: does docs/labs/index.md link to this lab's slug?"""
+    index_path = os.path.join(project_root, "docs", "labs", "index.md")
+    slug = os.path.basename(os.path.dirname(lab_file)) if os.path.basename(lab_file) == "index.md" \
+        else os.path.splitext(os.path.basename(lab_file))[0]
+    if not os.path.isfile(index_path):
+        return {"slug": slug, "in_index": False}
+    with open(index_path, encoding="utf-8") as f:
+        index_text = f.read()
+    return {"slug": slug, "in_index": slug in index_text}
+
+
+def check_summary_image(lab_file, images, docs_dir):
+    """Dimension 13.2: a resolvable, non-mascot image usable as a card thumbnail.
+
+    Prefers an image that lives in the lab's own directory - a committed asset
+    (breadboard layout, schematic, or a real page screenshot) rather than a
+    generic shared icon borrowed from elsewhere in the book.
+    """
+    lab_dir = os.path.normpath(os.path.dirname(lab_file))
+    candidates = [i for i in images if i["exists"] and "mascot" not in i["ref"].lower()]
+    own_dir = [i for i in candidates
+               if os.path.dirname(os.path.normpath(os.path.join(docs_dir, i["path"]))) == lab_dir]
+    best = own_dir[0] if own_dir else (candidates[0] if candidates else None)
+    return {"has_summary_image": best is not None, "image": best["path"] if best else None}
+
+
 def mascot_report(body, images):
     uses = re.findall(r"^!!!\s+mascot-(\w+)", body, re.MULTILINE)
     lines = body.splitlines()
@@ -496,6 +539,11 @@ def analyze(lab_file, project_root, skill_dir):
     prose = prose_only(body)
     return {
         "file": os.path.relpath(lab_file, project_root),
+        "discoverability": {
+            "nav": check_nav_entry(lab_file, project_root),
+            "index_card": check_index_card(lab_file, project_root),
+            "summary_image": check_summary_image(lab_file, images, docs_dir),
+        },
         "frontmatter": {
             "present": bool(fm),
             "title": fm.get("title"),
@@ -587,6 +635,14 @@ def print_report(r):
     print(f"  quiz: {q['collapsible_blocks']} collapsible blocks, "
           f"{q['numbered_questions']} numbered questions, {q['option_lines']} option lines")
 
+    head("Discoverability")
+    d = r["discoverability"]
+    print(f"  {'[x]' if d['nav']['in_nav'] else '[ ] NOT IN NAV -- '} mkdocs.yml nav: {d['nav']['doc_path']}")
+    print(f"  {'[x]' if d['summary_image']['has_summary_image'] else '[ ] NO SUMMARY IMAGE -- '} "
+          f"thumbnail: {d['summary_image']['image'] or 'none found'}")
+    print(f"  {'[x]' if d['index_card']['in_index'] else '[ ] NOT ON docs/labs/index.md -- '} "
+          f"labs index card: slug '{d['index_card']['slug']}'")
+
     head("Voice and reading level")
     m = r["mascot"]
     print(f"  mascot admonitions: {m['total']} {m['types']}")
@@ -611,7 +667,7 @@ def main():
     ap.add_argument("lab", help="path to the lab .md file or its directory")
     ap.add_argument("--json", action="store_true", help="emit raw JSON instead of the report")
     ap.add_argument("--set-score", type=int, metavar="N",
-                    help="write quality_score: N and the matching status into the frontmatter, then exit")
+                    help="write quality_score: N (0-103) and the matching status into the frontmatter, then exit")
     ap.add_argument("--status", choices=[s for _, s, _ in STATUS_BANDS],
                     help="override the status derived from the score")
     args = ap.parse_args()
@@ -623,8 +679,8 @@ def main():
     skill_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
     if args.set_score is not None:
-        if not 0 <= args.set_score <= 100:
-            raise SystemExit("ERROR: --set-score must be between 0 and 100")
+        if not 0 <= args.set_score <= 103:
+            raise SystemExit("ERROR: --set-score must be between 0 and 103")
         derived, band = band_for(args.set_score)
         status = args.status or derived
         label = band if status == derived else f"{band} band, status overridden"

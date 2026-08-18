@@ -18,6 +18,11 @@ let wr1 = 100; // wire row 1
 let wr2 =200; // wire row 2
 
 function setup() {
+  // Cap the backing store at one device pixel per CSS pixel. At the Retina
+  // default a full-width canvas asks the compositor for 4x the pixels every
+  // frame, which can stall the compositor on a loaded machine.
+  pixelDensity(1);
+
   const canvas = createCanvas(canvasWidth, 300);
   var mainElement = document.querySelector('main');
   canvas.parent(mainElement);

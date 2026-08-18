@@ -1,13 +1,13 @@
 # Hands-On Lab Quality Rubric
 
-100 points across 12 dimensions. Score every criterion, then sum, then apply
+103 points across 13 dimensions. Score every criterion, then sum, then apply
 the caps at the bottom. Round to a whole number.
 
 The weights are not arbitrary. A hands-on lab fails in a specific way: a
 student sits down with a bag of parts and gets stuck. So the dimensions that
 prevent getting stuck — the build procedure, the two pictures (schematic and
 breadboard), and the simulation the student can run before touching a wire —
-carry 48 of the 100 points. Prose quality matters, but a beautifully written
+carry 48 of the 103 points. Prose quality matters, but a beautifully written
 lab that a 13-year-old cannot physically build is worth less than a plain one
 they can.
 
@@ -27,6 +27,7 @@ they can.
 | 10 | [Review Quiz](#10-review-quiz-8) | 8 |
 | 11 | [Extensions and Additional Resources](#11-extensions-and-additional-resources-4) | 4 |
 | 12 | [Voice, Reading Level, Accessibility](#12-voice-reading-level-accessibility-5) | 5 |
+| 13 | [Discoverability and Presentation](#13-discoverability-and-presentation-3) | 3 |
 
 **Scoring each criterion:** award full points when it is genuinely done, half
 when it exists but is too thin to work for an 8th grader on their own, zero
@@ -195,6 +196,23 @@ Reading level is measured on prose only — `evaluate_lab.py` strips code,
 tables, and HTML before measuring, because part numbers and code fences distort
 the count.
 
+## 13. Discoverability and Presentation (3)
+
+A finished lab that nobody can find or preview is not finished. These three
+points are the difference between a page that exists and a page a teacher or
+student actually lands on.
+
+| # | Criterion | Pts |
+|---|-----------|-----|
+| 13.1 | The lab is linked from `mkdocs.yml`'s `Hands-on Labs` nav, at the path MkDocs actually renders it at | 1 |
+| 13.2 | The lab has a summary image suitable as a standalone thumbnail — typically its breadboard-layout render, or a real screenshot of the finished page — distinct from being merely present somewhere in the body | 1 |
+| 13.3 | `docs/labs/index.md` has a card for this lab: title, the same thumbnail image, and a one-line description, in the same `grid cards` format the rest of the book's index pages use (see `docs/sims/index.md`) | 1 |
+
+Score 13.1 and 13.3 by checking the actual files, not by trusting a claim in
+the lab's own text. A lab can be excellent on every other dimension and still
+be invisible to a student browsing the book if it never made it into the nav
+or the labs index.
+
 ---
 
 ## Caps
@@ -223,7 +241,7 @@ under `extra.status` in `mkdocs.yml` and styled in `docs/css/extra.css`.
 
 | Score | `status:` | Marker | Meaning |
 |-------|-----------|--------|---------|
-| 90-100 | `complete` | green check | Publish-ready. A teacher can hand it to students without preparation. |
+| 90-103 | `complete` | green check | Publish-ready. A teacher can hand it to students without preparation. |
 | 80-89 | `almost-complete` | blue dot | Classroom-ready with minor gaps a teacher can absorb. |
 | 65-79 | `in-progress` | amber dot | Teachable but incomplete — the teacher must supply something essential. |
 | 40-64 | `early-stage` | red dot | Draft. Real content, but a student working alone would get stuck. |

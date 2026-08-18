@@ -56,16 +56,22 @@ nav:
     - Buttons: labs/11-buttons.md
     - Buttons AND: labs/12-and-buttons.md
     - Buttons OR: labs/13-or-buttons.md
-    - RGB Led: labs/14-rgb-led.md
-    - Dark Detector: labs/20-dark-detector.md
+    - RGB Led: labs/14-rgb-led/index.md
+    - Dark Detector: labs/20-dark-detector/index.md
     - Transistors: labs/30-transistors.md
     - BC547 vs. 2N2222: labs/31-bc547-vs-2n2222.md
     # - LED Flasher: labs/35-led-flasher.md
     - Boolean Logic: labs/35-boolean-logic.md
     - LED Noodle Circuit: labs/40-noodle-led-circuit.md
+    - 555 Timer LED Blinker: labs/45-555-led-blinker/index.md
+    - 555 Timer Buzzer and Siren: labs/46-555-buzzer-siren/index.md
+    - 555-Driven LED Bar Graph: labs/47-555-led-chaser/index.md
+    - Motors and Buzzers: labs/55-motors-and-buzzers/index.md
+    - Meet Your Multimeter: labs/60-multimeter-basics/index.md
+    - Hunt Down a Hidden Fault: labs/65-troubleshooting-fault-finder/index.md
     - RC Circuit: labs/80-rc-circuit.md
     - Using Perf Boards: labs/70-using-perf-boards.md
-    
+
   - MicroSims:
     - List of MicroSims: sims/index.md
     - 555 Pin Numbering and IC Notch Orientation: sims/ic-pin-numbering-notch-orientation/index.md
@@ -215,7 +221,14 @@ theme:
     - navigation.footer
 plugins:
   - search
-#  - social
+  - social
+# Hooks -- loaded as raw Python modules, not plugins (avoids name collisions).
+# `plugins/social_override.py` overrides og:image and twitter:image with the
+# page's `image:` frontmatter value when present. Pages without `image:` are
+# untouched -- mkdocs-material's default meta tags (and the social plugin's
+# generated card) pass through.
+hooks:
+  - plugins/social_override.py
 exclude_docs: |
   labs/TODO.md
   learning-graph/README.md

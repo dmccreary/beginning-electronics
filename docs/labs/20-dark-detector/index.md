@@ -29,7 +29,12 @@ the sensitivity of the circuit.
 
 The diagram below shows us the full dark detector circuit.
 
-![](../img/dark-detector-circuit.png)
+#### Diagram: Dark Detector Schematic
+
+<figure markdown="span">
+  ![Schematic of a 5V dark-detector circuit: a trim potentiometer and 10K resistor feed a photoresistor voltage divider into a 2N2222 transistor base, switching an LED through a 330 ohm resistor](dark-detector-circuit-schematic.png)
+  <figcaption>The photoresistor and trim pot set the transistor's base voltage; darker conditions raise that voltage and turn the LED on.</figcaption>
+</figure>
 
 ## Breadboard Layout
 
@@ -37,7 +42,7 @@ We will use a 1/2 size breadboard to lay out the circuit.
 The +5 volt power is on the top red bus and the ground
 is on the bottom bus.
 
-![](../img/dark-detector.jpg)
+![](../../img/dark-detector.jpg)
 
 **Lesson Plan: Building a Dark Detector Circuit**
 

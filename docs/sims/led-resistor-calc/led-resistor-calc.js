@@ -5,6 +5,11 @@ let resistorValue, resistorBands;
 let voltage, voltageDrop, current;
 
 function setup() {
+  // Cap the backing store at one device pixel per CSS pixel. At the Retina
+  // default a full-width canvas asks the compositor for 4x the pixels every
+  // frame, which can stall the compositor on a loaded machine.
+  pixelDensity(1);
+
   const canvas = createCanvas(500, 250);
   var mainElement = document.querySelector('main');
   canvas.parent(mainElement);

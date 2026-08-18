@@ -185,6 +185,40 @@ Per `CONTENT-GENERATION-GUIDE.md`: `mascot-welcome` at the top,
 `mascot-tip` at a checkpoint, `mascot-celebration` at the end. Four to six in a
 lab is right; nine is the ceiling; back-to-back is a defect.
 
+## Shipping a lab: nav, index card, thumbnail
+
+A lab with a 95 on every content dimension still scores zero on
+[Dimension 13](rubric.md#13-discoverability-and-presentation-3) if nobody can
+find it. Three things, every time a lab is added or finished:
+
+1. **`mkdocs.yml` nav** — add a line under `- Hands-on Labs:` pointing at the
+   doc-relative path MkDocs actually renders (`labs/NN-slug/index.md` for a
+   directory lab, `labs/NN-slug.md` for a flat one). `evaluate_lab.py` checks
+   for this path as a plain substring of the file, so the path has to match
+   exactly.
+
+2. **A summary thumbnail** — the lab's own breadboard-layout render is
+   usually the right choice, since it already exists, already lives in the
+   lab's own directory, and already shows what the lab builds. A real
+   screenshot of the rendered page is also fine when one is available. What
+   does not count: a generic shared icon with no connection to this specific
+   lab.
+
+3. **A card on `docs/labs/index.md`** — in the same `grid cards` format
+   `docs/sims/index.md` uses:
+
+   ```markdown
+   -   **[Lab Title](./NN-slug/index.md)**
+
+       ![Lab Title](./NN-slug/breadboard-layout.png)
+
+       One sentence describing what the student builds and the concept it
+       teaches — not marketing copy, just what's true about the page.
+   ```
+
+   Keep entries sorted the same way the nav is ordered, so the index page and
+   the sidebar agree with each other.
+
 ## Which skill fills which gap
 
 | Missing content | Skill to invoke |

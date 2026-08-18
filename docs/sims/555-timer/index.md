@@ -9,8 +9,7 @@ bloom_level: TBD
 # 555 Timer Astable and Monostable Simulator
 
 
-
-<iframe src="main.html" width="100%" height="502px"></iframe>
+<iframe src="main.html" width="100%" height="512px"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

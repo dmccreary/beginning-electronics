@@ -1,10 +1,24 @@
-site
-.DS_Store
-~$*
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.Python
 
-# Image queue: task specs and receipts are tracked (they are provenance).
-# Transient delivery/rollback artifacts are not.
-image-tasks/inbox/*
-!image-tasks/inbox/.gitkeep
-image-tasks/archive/
-image-tasks/NOTIFY.md
+# MkDocs
+site/
+.cache/
+
+# Environments
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+~$*

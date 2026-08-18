@@ -1,6 +1,6 @@
 ---
 name: hands-on-lab-evaluator
-description: Scores a hands-on electronics lab against a 100-point rubric for 8th grade readers and $50-kit buildability, writes the score into the page frontmatter, records every gap as a work item in docs/labs/TODO.md, and names the skill that generates each missing piece. Use this skill whenever the user asks to evaluate, grade, score, review, audit, rate, or improve a lab, lesson, or hands-on activity - and also when they ask "is this lab complete?", "what's missing from this lab?", "which labs need work?", "are these labs good enough for students?", or want a quality_score written into a lab's frontmatter. Use it before publishing a new lab and before generating content for an existing one, so the gaps are known first.
+description: Scores a hands-on electronics lab against a 103-point rubric for 8th grade readers and $50-kit buildability, writes the score into the page frontmatter, records every gap as a work item in docs/labs/TODO.md, and names the skill that generates each missing piece. Use this skill whenever the user asks to evaluate, grade, score, review, audit, rate, or improve a lab, lesson, or hands-on activity - and also when they ask "is this lab complete?", "what's missing from this lab?", "which labs need work?", "are these labs good enough for students?", or want a quality_score written into a lab's frontmatter. Use it before publishing a new lab and before generating content for an existing one, so the gaps are known first.
 model: opus
 ---
 
@@ -11,7 +11,7 @@ model: opus
 A hands-on lab in this book succeeds or fails on one question: can a 13-year-old
 sit down with a $50 parts kit, follow the page alone, build the circuit, and
 know why it works? This skill measures how close a lab is to that, produces a
-`quality_score` from 0-100, and turns every lost point into a specific piece of
+`quality_score` from 0-103, and turns every lost point into a specific piece of
 content someone can go write.
 
 The score is a means, not the product. The valuable output is the ranked list of
@@ -105,7 +105,7 @@ across labs and across time:
 # Lab Evaluation: <Lab Title>
 
 **File:** docs/labs/<file>
-**Score:** <N>/100 — <band name>
+**Score:** <N>/103 — <band name>
 **Caps applied:** <which, or "none">
 
 ## Scores by dimension
@@ -114,7 +114,7 @@ across labs and across time:
 |---|-----------|-------|-------|
 | 1 | Framing and Objectives | 3/8 | Title only; no objectives |
 | ... | | | |
-| | **Total** | **N/100** | |
+| | **Total** | **N/103** | |
 
 ## What works
 
@@ -161,7 +161,7 @@ status: early-stage
 
 | Score | `status:` | Marker in the nav |
 |-------|-----------|-------------------|
-| 90-100 | `complete` | green check |
+| 90-103 | `complete` | green check |
 | 80-89 | `almost-complete` | blue dot |
 | 65-79 | `in-progress` | amber dot |
 | 40-64 | `early-stage` | red dot |
@@ -179,6 +179,24 @@ red dot turning amber, is a visible and reviewable claim in a pull request.
 
 `--status` overrides the derived value. Use it only when the score genuinely
 misrepresents the page, and say why in the report.
+
+## Step 5b: Ship it — nav, thumbnail, index card
+
+Dimension 13 is easy to forget because it lives outside the lab page itself.
+Before calling a lab done, confirm all three, following
+`references/lab-template.md`'s "Shipping a lab" section:
+
+1. A line for this lab under `- Hands-on Labs:` in `mkdocs.yml`, pointing at
+   the exact doc-relative path MkDocs renders.
+2. A summary thumbnail the lab already owns — usually its breadboard-layout
+   image, or a real screenshot of the rendered page.
+3. A card for it on `docs/labs/index.md`, in the same `grid cards` format
+   `docs/sims/index.md` uses — title, that same thumbnail, one factual
+   sentence.
+
+`evaluate_lab.py`'s report includes a "Discoverability" section that checks
+all three automatically; a lab that is otherwise a 95 but missing all of them
+caps out at 92.
 
 ## Step 6: Record the gaps in `docs/labs/TODO.md`
 
@@ -286,7 +304,7 @@ the deliverable. Then ask which lab to start on rather than starting on one.
 
 ## Reference files
 
-- `references/rubric.md` — the 100-point rubric, all 12 dimensions, caps, and
+- `references/rubric.md` — the 103-point rubric, all 13 dimensions, caps, and
   score bands. Read it every time you score; do not score from memory.
 - `references/kit-inventory.md` — what is and is not in the $50 kit, plus
   substitution rules. The script parses this file, so edit it (not the script)
