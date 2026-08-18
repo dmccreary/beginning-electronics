@@ -46,6 +46,11 @@ const BUCK_EFF = 0.90;       // a typical LM2596 module
 
 function setup() {
   updateCanvasSize();
+  // Cap the backing store at one device pixel per CSS pixel. At the Retina
+  // default a full-width canvas asks the compositor for 4x the pixels every
+  // frame, which can stall the compositor on a loaded machine.
+  pixelDensity(1);
+
   const canvas = createCanvas(containerWidth, containerHeight);
   canvas.parent(document.querySelector('main'));
 

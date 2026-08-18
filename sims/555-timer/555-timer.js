@@ -6,7 +6,7 @@
 // Canvas dimensions
 let canvasWidth = 580;
 let drawHeight = 400;
-let controlHeight = 100;
+let controlHeight = 110;
 let canvasHeight = drawHeight + controlHeight;
 let margin = 15;
 let sliderLeftMargin = 130;
@@ -50,6 +50,15 @@ const SAMPLE_INTERVAL = 10; // Sample every 10ms
 
 function setup() {
     updateCanvasSize();
+
+    // Cap the backing store at one device pixel per CSS pixel. On a Retina
+    // display p5 defaults to density 2, so a full-width canvas asks the
+    // compositor for 4x the pixels every frame -- enough, on a machine whose
+    // compositor is already loaded, to drop ~1s of frames on a repeating
+    // cycle. Verified: an otherwise identical sketch stalls at density 2 and
+    // runs clean at density 1. Costs some sharpness on the smallest labels.
+    pixelDensity(1);
+
     const canvas = createCanvas(canvasWidth, canvasHeight);
     canvas.parent(document.querySelector('main'));
     textSize(16);
@@ -188,10 +197,10 @@ function draw() {
     strokeWeight(2);
     rect(0, 0, canvasWidth, drawHeight);
 
-    // Control area
+    // Draw the control area white and inherit the sliver border.
     fill('white');
-    noStroke();
     rect(0, drawHeight, canvasWidth, controlHeight);
+    noStroke(); // turn off the border for the rest of the frame
 
     // Title
     fill('black');
@@ -490,24 +499,39 @@ function drawLogicAnalyzer() {
         let highY = waveY + 20;
         let lowY = waveY + waveH - 20;
 
+        // The trace is piecewise constant, so the shape is fully described by its
+        // transitions plus the two end points. Emitting a vertex per sample drew
+        // the identical square wave but cost ~520 vertex() calls a frame
+        // (~31k/s of short-lived allocation inside p5), which is enough garbage
+        // to show up later as a periodic collection pause.
         beginShape();
-        let prevX = null;
         let prevY = null;
+        let lastX = null;
 
         for (let i = 0; i < analyzerData.length; i++) {
             let sample = analyzerData[i];
             let x = map(sample.time, windowStart, windowStart + timeWindowMs, waveX, waveX + waveW);
+
+            if (x < waveX || x > waveX + waveW) {
+                continue;
+            }
+
             let y = sample.state === 1 ? highY : lowY;
 
-            if (x >= waveX && x <= waveX + waveW) {
-                // Draw vertical transition line for square wave
-                if (prevX !== null && prevY !== null && prevY !== y) {
-                    vertex(x, prevY);
-                }
+            if (prevY === null) {
                 vertex(x, y);
-                prevX = x;
-                prevY = y;
+            } else if (y !== prevY) {
+                vertex(x, prevY);   // run out to the edge at the old level
+                vertex(x, y);       // then the vertical transition
             }
+
+            prevY = y;
+            lastX = x;
+        }
+
+        // Carry the final level out to the pen.
+        if (prevY !== null) {
+            vertex(lastX, prevY);
         }
         endShape();
     }
