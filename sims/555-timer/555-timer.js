@@ -16,22 +16,37 @@ let leftColWidth;
 let rightColX;
 let rightColWidth;
 
+// Control-area row geometry. Sliders and their labels both read these, so the
+// two can never drift apart. capRowIndex moves the capacitor slider up into
+// R2's row in monostable mode, where R2 is hidden.
+let sliderRowY = [];
+let buttonRowY = 0;
+let capRowIndex = 2;
+
 // Components
 let r1Slider, r2Slider, capacitanceSlider;
+let runButton;
 let modeButton;
 let triggerButton;
 let isAstableMode = true;
 let ledState = false;
-let lastTriggerTime = 0;
 let monostableTriggered = false;
 let monostablePulseEnd = 0;
 
+// Simulation clock. Every timing decision reads simTime rather than millis(),
+// so pausing freezes the trace and a slow frame costs a frame of animation
+// instead of stretching the pulse that happened to be in flight.
+let isRunning = false;   // sims start paused; the student presses Start
+let simTime = 0;          // ms of simulated time elapsed
+let lastFrameMs = 0;      // wall clock at the previous frame
+let nextEdgeTime = 0;     // simTime of the next astable output transition
+const MAX_FRAME_MS = 100; // ignore hitches longer than this (backgrounded tab)
+
 // Logic analyzer data
 let analyzerData = [];
-let analyzerStartTime = 0;
+let nextSampleTime = 0;
 let timeWindowMs = 5000; // 5 second window
 const SAMPLE_INTERVAL = 10; // Sample every 10ms
-let lastSampleTime = 0;
 
 function setup() {
     updateCanvasSize();
@@ -39,7 +54,7 @@ function setup() {
     canvas.parent(document.querySelector('main'));
     textSize(16);
 
-    analyzerStartTime = millis();
+    lastFrameMs = millis();
     createControls();
 
     describe('555 Timer simulation with logic analyzer display showing LED blinking and waveform in astable and monostable modes', LABEL);
@@ -72,6 +87,10 @@ function createControls() {
     capacitanceSlider = createSlider(1, 100, 10, 1);
     capacitanceSlider.parent(document.querySelector('main'));
 
+    runButton = createButton('Start Simulation');
+    runButton.parent(document.querySelector('main'));
+    runButton.mousePressed(toggleRun);
+
     modeButton = createButton('Switch to Monostable');
     modeButton.parent(document.querySelector('main'));
     modeButton.mousePressed(toggleMode);
@@ -85,27 +104,39 @@ function createControls() {
 
 function updateControlPositions() {
     let sliderWidth = canvasWidth - sliderLeftMargin - margin;
-    let yBase = drawHeight + 10;
+    let top = drawHeight + 8;
 
-    r1Slider.position(sliderLeftMargin, yBase);
+    // Three slider rows plus a button row, all inside controlHeight.
+    sliderRowY = [top, top + 24, top + 48];
+    buttonRowY = drawHeight + 76;
+
+    // Astable uses all three rows; monostable hides R2, so C takes its row.
+    capRowIndex = isAstableMode ? 2 : 1;
+
+    r1Slider.position(sliderLeftMargin, sliderRowY[0]);
     r1Slider.size(sliderWidth);
 
-    r2Slider.position(sliderLeftMargin, yBase + 26);
+    r2Slider.position(sliderLeftMargin, sliderRowY[1]);
     r2Slider.size(sliderWidth);
 
-    capacitanceSlider.position(sliderLeftMargin, yBase + 52);
+    capacitanceSlider.position(sliderLeftMargin, sliderRowY[capRowIndex]);
     capacitanceSlider.size(sliderWidth);
 
-    modeButton.position(margin, yBase + 78);
+    runButton.position(margin, buttonRowY);
+    runButton.size(130, 22);
+
+    modeButton.position(margin + 140, buttonRowY);
     modeButton.size(145, 22);
 
-    triggerButton.position(margin + 155, yBase + 78);
+    triggerButton.position(margin + 295, buttonRowY);
     triggerButton.size(70, 22);
 
     updateModeUI();
 }
 
 function updateModeUI() {
+    runButton.html(isRunning ? 'Pause Simulation' : 'Start Simulation');
+
     if (isAstableMode) {
         r2Slider.show();
         triggerButton.hide();
@@ -119,12 +150,24 @@ function updateModeUI() {
 
 function toggleMode() {
     isAstableMode = !isAstableMode;
+    resetSimulation();
+    updateControlPositions();
+}
+
+function toggleRun() {
+    isRunning = !isRunning;
+    updateModeUI();
+}
+
+// Clear the trace and restart the clock. The astable output comes up HIGH at
+// t = 0 because updateLED() resolves the edge scheduled at nextEdgeTime = 0.
+function resetSimulation() {
     analyzerData = [];
-    analyzerStartTime = millis();
+    simTime = 0;
+    nextSampleTime = 0;
+    nextEdgeTime = 0;
     ledState = false;
     monostableTriggered = false;
-    lastTriggerTime = millis();
-    updateModeUI();
 }
 
 function triggerMonostable() {
@@ -134,7 +177,7 @@ function triggerMonostable() {
         let R = r1Slider.value() * 1000;
         let C = capacitanceSlider.value() / 1000000;
         let pulseWidth = 1.1 * R * C * 1000;
-        monostablePulseEnd = millis() + pulseWidth;
+        monostablePulseEnd = simTime + pulseWidth;
     }
 }
 
@@ -158,11 +201,8 @@ function draw() {
     let modeText = isAstableMode ? 'Astable (Oscillator)' : 'Monostable (One-Shot)';
     text('555 Timer: ' + modeText, canvasWidth / 2, 18);
 
-    // Update LED state
-    updateLED();
-
-    // Sample for logic analyzer
-    sampleAnalyzer();
+    // Advance the simulation clock and sample the output
+    advanceSimulation();
 
     // Draw left column (circuit + LED)
     drawLeftColumn();
@@ -316,7 +356,11 @@ function drawLED() {
     }
 
     // LED body
-    fill(ledState ? color(255, 0, 0) : color(80, 40, 40));
+    if (ledState) {
+        fill(255, 0, 0);
+    } else {
+        fill(80, 40, 40);
+    }
     stroke(60);
     strokeWeight(1);
     ellipse(ledX, ledY, 22, 22);
@@ -389,25 +433,6 @@ function drawTimingInfo() {
     }
 }
 
-function sampleAnalyzer() {
-    let currentTime = millis();
-
-    if (currentTime - lastSampleTime >= SAMPLE_INTERVAL) {
-        let relativeTime = currentTime - analyzerStartTime;
-        analyzerData.push({
-            time: relativeTime,
-            state: ledState ? 1 : 0
-        });
-        lastSampleTime = currentTime;
-
-        // Remove old samples outside window
-        while (analyzerData.length > 0 &&
-               analyzerData[0].time < relativeTime - timeWindowMs) {
-            analyzerData.shift();
-        }
-    }
-}
-
 function drawLogicAnalyzer() {
     let anaX = rightColX;
     let anaY = 38;
@@ -432,6 +457,7 @@ function drawLogicAnalyzer() {
     let waveY = anaY + 35;
     let waveW = anaW - 60;
     let waveH = anaH - 100;
+    let windowStart = max(0, simTime - timeWindowMs);
 
     // Grid background
     fill(30);
@@ -457,9 +483,6 @@ function drawLogicAnalyzer() {
 
     // Draw waveform
     if (analyzerData.length > 1) {
-        let currentTime = millis() - analyzerStartTime;
-        let windowStart = max(0, currentTime - timeWindowMs);
-
         stroke(0, 255, 0);
         strokeWeight(2);
         noFill();
@@ -489,10 +512,11 @@ function drawLogicAnalyzer() {
         endShape();
     }
 
-    // Draw current time marker
+    // Draw current time marker; it tracks the pen while the window still fills
     stroke(255, 100, 0);
     strokeWeight(1);
-    let markerX = waveX + waveW - 2;
+    let markerX = min(map(simTime, windowStart, windowStart + timeWindowMs,
+                          waveX, waveX + waveW), waveX + waveW - 2);
     line(markerX, waveY, markerX, waveY + waveH);
 
     // Time window info
@@ -503,14 +527,20 @@ function drawLogicAnalyzer() {
     text('Time Window: ' + (timeWindowMs/1000).toFixed(1) + 's', anaX + anaW/2, anaY + anaH - 35);
 
     // Current state indicator
-    fill(ledState ? color(0, 255, 0) : color(100));
+    if (!isRunning) {
+        fill(255, 180, 0);
+    } else if (ledState) {
+        fill(0, 255, 0);
+    } else {
+        fill(100);
+    }
     textSize(10);
-    text('Current: ' + (ledState ? 'HIGH' : 'LOW'), anaX + anaW/2, anaY + anaH - 18);
+    let stateText = 'Current: ' + (ledState ? 'HIGH' : 'LOW');
+    text(isRunning ? stateText : stateText + '  (PAUSED)', anaX + anaW/2, anaY + anaH - 18);
 }
 
 function drawTimeGrid(x, y, w, h) {
-    let currentTime = millis() - analyzerStartTime;
-    let windowStart = max(0, currentTime - timeWindowMs);
+    let windowStart = max(0, simTime - timeWindowMs);
 
     // Vertical grid lines (time divisions)
     stroke(50);
@@ -527,7 +557,11 @@ function drawTimeGrid(x, y, w, h) {
         let divX = x + (w * i / numDivisions);
 
         // Grid line
-        stroke(i === numDivisions ? color(255, 100, 0, 100) : color(50));
+        if (i === numDivisions) {
+            stroke(255, 100, 0, 100);
+        } else {
+            stroke(50);
+        }
         line(divX, y, divX, y + h);
 
         // Time label
@@ -556,29 +590,64 @@ function drawTimeGrid(x, y, w, h) {
     text((msPerDiv).toFixed(0) + 'ms/div', x + 5, y + h + 15);
 }
 
-function updateLED() {
-    let currentTime = millis();
+// Convert elapsed wall-clock time into simulated time, then step the sim on a
+// fixed 10 ms grid. Sampling on the grid rather than once per frame keeps the
+// trace at constant density and the pulse widths true however the browser
+// schedules frames.
+function advanceSimulation() {
+    let now = millis();
+    let delta = now - lastFrameMs;
+    lastFrameMs = now;
 
+    if (!isRunning) {
+        return;
+    }
+
+    // A backgrounded tab or a GC pause would otherwise fast-forward the trace.
+    simTime += constrain(delta, 0, MAX_FRAME_MS);
+
+    while (nextSampleTime <= simTime) {
+        updateLED(nextSampleTime);
+        analyzerData.push({ time: nextSampleTime, state: ledState ? 1 : 0 });
+        nextSampleTime += SAMPLE_INTERVAL;
+    }
+
+    trimAnalyzerData();
+}
+
+// Resolve every output transition due at or before time t. Advancing
+// nextEdgeTime by whole half-cycles, instead of restarting it from the current
+// time, means a late frame is absorbed rather than added to the pulse width.
+function updateLED(t) {
     if (isAstableMode) {
         let R1 = r1Slider.value() * 1000;
         let R2 = r2Slider.value() * 1000;
         let C = capacitanceSlider.value() / 1000000;
 
-        let tHigh = 0.693 * (R1 + R2) * C * 1000;
-        let tLow = 0.693 * R2 * C * 1000;
+        // The 1 ms floor bounds this loop; the slider minimums never reach it.
+        let tHigh = max(1, 0.693 * (R1 + R2) * C * 1000);
+        let tLow = max(1, 0.693 * R2 * C * 1000);
 
-        let currentPeriod = ledState ? tHigh : tLow;
-        if (currentTime > lastTriggerTime + currentPeriod) {
+        while (t >= nextEdgeTime) {
             ledState = !ledState;
-            lastTriggerTime = currentTime;
+            nextEdgeTime += ledState ? tHigh : tLow;
         }
-    } else {
-        if (monostableTriggered) {
-            if (currentTime >= monostablePulseEnd) {
-                ledState = false;
-                monostableTriggered = false;
-            }
-        }
+    } else if (monostableTriggered && t >= monostablePulseEnd) {
+        ledState = false;
+        monostableTriggered = false;
+    }
+}
+
+// Drop samples that have scrolled off the left edge. One splice beats a shift()
+// per sample, which reindexes the whole array every time.
+function trimAnalyzerData() {
+    let cutoff = simTime - timeWindowMs;
+    let drop = 0;
+    while (drop < analyzerData.length && analyzerData[drop].time < cutoff) {
+        drop++;
+    }
+    if (drop > 0) {
+        analyzerData.splice(0, drop);
     }
 }
 
@@ -587,16 +656,15 @@ function drawSliderLabels() {
     noStroke();
     textSize(11);
     textAlign(RIGHT, CENTER);
-    let yBase = drawHeight + 10;
+    let labelX = sliderLeftMargin - 8;
 
+    // +8 centers the label on the 16px-tall slider in that row.
     let r1Label = isAstableMode ? 'R1: ' : 'R: ';
-    text(r1Label + r1Slider.value() + ' k\u03A9', sliderLeftMargin - 8, yBase + 8);
+    text(r1Label + r1Slider.value() + ' k\u03A9', labelX, sliderRowY[0] + 8);
 
     if (isAstableMode) {
-        text('R2: ' + r2Slider.value() + ' k\u03A9', sliderLeftMargin - 8, yBase + 34);
-        text('C: ' + capacitanceSlider.value() + ' \u00B5F', sliderLeftMargin - 8, yBase + 60);
-    } else {
-        text('C: ' + capacitanceSlider.value() + ' \u00B5F', sliderLeftMargin - 8, yBase + 34);
-        capacitanceSlider.position(sliderLeftMargin, yBase + 26);
+        text('R2: ' + r2Slider.value() + ' k\u03A9', labelX, sliderRowY[1] + 8);
     }
+
+    text('C: ' + capacitanceSlider.value() + ' \u00B5F', labelX, sliderRowY[capRowIndex] + 8);
 }
