@@ -51,13 +51,11 @@ const SAMPLE_INTERVAL = 10; // Sample every 10ms
 function setup() {
     updateCanvasSize();
 
-    // Cap the backing store at one device pixel per CSS pixel. On a Retina
-    // display p5 defaults to density 2, so a full-width canvas asks the
-    // compositor for 4x the pixels every frame -- enough, on a machine whose
-    // compositor is already loaded, to drop ~1s of frames on a repeating
-    // cycle. Verified: an otherwise identical sketch stalls at density 2 and
-    // runs clean at density 1. Costs some sharpness on the smallest labels.
-    pixelDensity(1);
+    // Cap the backing store below the Retina default. At density 2 a full-width
+    // canvas asks the compositor for 4x the pixels every frame, which stalls a
+    // machine whose compositor has no headroom. 1.5 cuts that ~44% while staying
+    // visibly sharper than a full cap to 1.
+    pixelDensity(1.5);
 
     const canvas = createCanvas(canvasWidth, canvasHeight);
     canvas.parent(document.querySelector('main'));

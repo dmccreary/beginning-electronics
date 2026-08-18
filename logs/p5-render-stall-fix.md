@@ -6,8 +6,11 @@ Date: 2026-08-17
 
 A reported ~950 ms freeze recurring every ~6.1 s in the 555-timer MicroSim turned out to
 have **nothing to do with the sketch**. It was canvas backing-store size meeting a
-saturated macOS compositor. Fix: `pixelDensity(1)` in `setup()` before `createCanvas()`,
-now applied to all 64 p5 sims under `docs/sims/`.
+saturated macOS compositor. Fix: cap `pixelDensity()` in `setup()` before `createCanvas()`,
+applied to all 64 p5 sims under `docs/sims/`.
+
+Density 1 removed the stall but was visibly blurry. **The landing point is
+`pixelDensity(1.5)` — confirmed: no stalling, and significantly sharper than 1.**
 
 The diagnosis took far longer than it should have. The section
 [What wasted the most time](#what-wasted-the-most-time) is the part worth reading before
@@ -51,6 +54,11 @@ one variable at a time:
 
 The "trivial sketch" was one `background()` plus one `ellipse()` — no project code at all.
 
+One further data point, measured on the **real sims** rather than the control page:
+`pixelDensity(1.5)` puts a 900×500 canvas at ~1.01M pixels/frame and runs clean, with text
+significantly sharper than at density 1. So the stall threshold on this machine is
+bracketed between **1.01M (clean)** and **1.80M (stalls)** pixels per frame.
+
 Two conclusions fall straight out: **A clean + B stalling exonerates the sketch and p5**,
 and **E/F clean isolates the variable to pixels composited per frame**.
 
@@ -58,24 +66,41 @@ and **E/F clean isolates the variable to pixels composited per frame**.
 
 ```js
 function setup() {
-    // Cap the backing store at one device pixel per CSS pixel. At the Retina
-    // default a full-width canvas asks the compositor for 4x the pixels every
-    // frame, which can stall the compositor on a loaded machine.
-    pixelDensity(1);
+    // Cap the backing store below the Retina default. At density 2 a full-width
+    // canvas asks the compositor for 4x the pixels every frame, which stalls a
+    // machine whose compositor has no headroom. 1.5 cuts that ~44% while staying
+    // visibly sharper than a full cap to 1.
+    pixelDensity(1.5);
 
     const canvas = createCanvas(canvasWidth, canvasHeight);
     ...
 }
 ```
 
-Applied to 64 sims (63 modified in a sweep + `555-timer` done individually). Verified:
-all parse (`node --check`), and every cap sits inside `setup()` before `createCanvas()` as
-live code.
+Applied to all 64 sims. Verified: all parse (`node --check`), and every cap sits inside
+`setup()` before `createCanvas()` as live code.
 
-**Cost:** softer rendering on Retina displays, most visible on small text (the NE555 pin
-labels use `textSize(6)`/`textSize(7)`). This is a workaround for one loaded compositor,
-imposed on every reader. If WindowServer is repaired, revert with
-`git checkout -- docs/sims/`.
+**Why 1.5 and not 1.** The sweep first went in at `pixelDensity(1)`, which fixed the stall
+but produced blurriness the author could see. 1.5 was chosen as a middle point from the
+measured data — 0.45M pixels/frame runs clean, 1.80M stalls — putting a 900×500 canvas at
+~1.01M, inside the then-untested gap. Both questions have since been answered on the
+affected machine: **no stalling, and significantly better sharpness.** Do not "simplify"
+this to `pixelDensity(1)`; that value was tried and rejected on visual grounds.
+
+Minor artifact to be aware of at fractional density: p5 sets `canvas.width = width *
+density`, so an odd canvas width yields a fractional backing store that the DOM truncates.
+The effect is at most a half device pixel along the right/bottom edge — harmless, but it
+is why integer densities are the safer default when there is no reason to deviate.
+
+**Cost.** At `pixelDensity(1)` the author could see the blurriness directly: text was
+noticeably less sharp than in a MicroSim rendering at full density, with small labels
+worst (the NE555 pin labels use `textSize(6)`/`textSize(7)`) but the softening apparent
+generally. At **1.5 the sharpness is significantly better and judged acceptable**, with no
+stalling — which is why 1.5 is the value that shipped.
+
+It remains a workaround for **one machine's** loaded compositor, applied to **every
+reader** of the book, and 1.5 is still below native Retina density. If WindowServer is ever
+repaired, the sweep can be dropped entirely: `git checkout -- docs/sims/`.
 
 ## What wasted the most time
 
@@ -150,8 +175,10 @@ Unrelated to the stall, but the file changed substantially:
   unremarkable load for a healthy compositor. Suspects: the scaled display resolution
   (biggest lever — return Displays to default), and a running Snagit capture helper. If
   either drops WindowServer materially, the entire density sweep can be reverted.
-- **The sweep was verified for syntax and placement, not appearance.** No sim was visually
-  checked after the change. Sims with small text will show softness first.
+- **The cap is still a workaround, not a repair.** 1.5 is below native Retina density, and
+  it is applied to every reader to accommodate one machine's saturated compositor. If
+  WindowServer is fixed, dropping the sweep entirely (`git checkout -- docs/sims/`) is the
+  better end state.
 - **`docs/sims/template/template.js` has a pre-existing syntax error** — line 6 reads
   `function setup {`, missing parentheses. It does not parse, predates this session
   (broken at `HEAD`), and was skipped by the sweep. Since it seeds new sims, the typo

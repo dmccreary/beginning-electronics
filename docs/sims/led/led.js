@@ -10,10 +10,11 @@ let canvasWidth = col_width * (number_leds + 1);
 let canvasHeight = row_height * 3;
 
 function setup() {
-  // Cap the backing store at one device pixel per CSS pixel. At the Retina
-  // default a full-width canvas asks the compositor for 4x the pixels every
-  // frame, which can stall the compositor on a loaded machine.
-  pixelDensity(1);
+  // Cap the backing store below the Retina default. At density 2 a full-width
+  // canvas asks the compositor for 4x the pixels every frame, which stalls a
+  // machine whose compositor has no headroom. 1.5 cuts that ~44% while staying
+  // visibly sharper than a full cap to 1.
+  pixelDensity(1.5);
 
   const canvas = createCanvas(canvasWidth, canvasHeight);
   var mainElement = document.querySelector('main');
