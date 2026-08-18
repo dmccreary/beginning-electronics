@@ -1,3 +1,9 @@
+---
+title: "Identification of Parts"
+quality_score: 23
+status: stub
+---
+
 # Identification of Parts
 
 In this lesson, we will learn to identify various parts in our beginning electronics kit.

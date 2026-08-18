@@ -1,3 +1,9 @@
+---
+title: "Transistors"
+quality_score: 6
+status: stub
+---
+
 # Transistors
 
 ### **Transistors: A Beginner's Guide**

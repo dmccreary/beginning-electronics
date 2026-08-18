@@ -10,3 +10,7 @@ to get three things:
 3. **Some Electrical Parts** - we suggest purchasing a Beginning Electronics kit for under $20
 
 This section will show you how to find and purchase these components.
+
+Start with [Safe Power for Learning](./safe-power-for-learning/) — power is
+the one choice on this list where getting it wrong costs you parts and class
+time, and the fixes are cheap.

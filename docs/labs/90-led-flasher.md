@@ -1,3 +1,9 @@
+---
+title: "LED Flasher Circuit"
+quality_score: 22
+status: stub
+---
+
 # LED Flasher Circuit
 
 (also known as an Esaki Flasher)

@@ -1,3 +1,9 @@
+---
+title: "RC Circuit"
+quality_score: 7
+status: stub
+---
+
 ## RC Circuit
 
 ## Reasonable Values for RC Circuit Lab

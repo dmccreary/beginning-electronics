@@ -1,3 +1,9 @@
+---
+title: "Breadboarding Basics"
+quality_score: 6
+status: stub
+---
+
 # Breadboarding Basics
 
 In this lesson, we will cover the basics of using a breadboard including

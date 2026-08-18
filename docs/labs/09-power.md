@@ -1,7 +1,21 @@
+---
+title: "Power"
+quality_score: 4
+status: stub
+---
+
 # Power
 
 There are several methods to supply power to your
 breadboard.
+
+!!! tip "Set Up Safely First"
+    Before running this lab, read
+    [Safe Power for Learning](../setup/safe-power-for-learning/). It covers
+    choosing a supply for the age group you are teaching, why a 7.5 V adapter
+    is safer than a 12 V one, and how to add a PTC resettable fuse to the
+    +5 V rail so a shorted breadboard resets itself instead of destroying the
+    power module.
 
 ## Option 1: Batteries
 

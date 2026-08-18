@@ -1,3 +1,9 @@
+---
+title: "LED Noodle Circuit"
+quality_score: 27
+status: stub
+---
+
 # LED Noodle Circuit
 
 New flexible "LED noodles" are perfect for costumes.

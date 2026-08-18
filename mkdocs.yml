@@ -13,6 +13,7 @@ nav:
     - Introduction: setup/index.md
     - Kit Components: setup/05-kit-components.md
     - Purchasing Breadboards: setup/purchasing-breadboards.md
+    - Safe Power for Learning: setup/safe-power-for-learning/index.md
     - Power Supplies: setup/power-supplies.md
     - Purchasing Component Kits: setup/breadboard-kits.md
     - Generating Lessons: setup/generating-lessons.md
@@ -51,7 +52,7 @@ nav:
     - Identifying Parts: labs/05-part-identification.md
     - Breadboard: labs/08-breadboard.md
     - Power: labs/09-power.md
-    - LED Circuit: labs/10-led-circuit.md
+    - LED Circuit: labs/10-led-circuit/index.md
     - Buttons: labs/11-buttons.md
     - Buttons AND: labs/12-and-buttons.md
     - Buttons OR: labs/13-or-buttons.md
@@ -163,6 +164,7 @@ nav:
   
   - Appendices:
     - List of Appendices: appendices/index.md
+    - Parts List for a $50 Kit: appendices/parts-list/index.md
     - List of Circuit Symbols: appendices/list-of-symbols/index.md
     - Circuit Symbol Gallery: appendices/symbol-gallery/index.md
     - List of Circuit Diagrams: appendices/list-of-circuit-diagrams/index.md
@@ -215,7 +217,9 @@ plugins:
   - search
 #  - social
 exclude_docs: |
+  labs/TODO.md
   learning-graph/README.md
+  setup/safe-power-for-learning/image-prompts.md
   sims/actuator-family-explorer/image-prompt.md
   sims/battery-type-explorer/image-prompt.md
   sims/capacitor-family-explorer/image-prompt.md
@@ -254,6 +258,16 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js
 copyright: Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
 extra:
+  # Page status markers shown in the nav. Set `status:` in a page's frontmatter
+  # to one of these keys. Icons and colors are defined in docs/css/extra.css.
+  # For hands-on labs the value is derived from quality_score by the
+  # hands-on-lab-evaluator skill.
+  status:
+    complete: "Complete - publish ready (score 90-100)"
+    almost-complete: "Almost complete - minor gaps (score 80-89)"
+    in-progress: "In progress - teachable but incomplete (score 65-79)"
+    early-stage: "Early stage - draft (score 40-64)"
+    stub: "Stub - little content yet (score 0-39)"
   analytics:
     provider: google
     property: G-WP3K3TSFJ7

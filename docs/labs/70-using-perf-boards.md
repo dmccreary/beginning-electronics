@@ -1,3 +1,9 @@
+---
+title: "Using Perfboards in Beginning Electronics Classes"
+quality_score: 14
+status: stub
+---
+
 # Using Perfboards in Beginning Electronics Classes
 ## Sample Prompt
 

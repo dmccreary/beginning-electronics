@@ -1,3 +1,9 @@
+---
+title: "Boolean Logic Gates From Transistors"
+quality_score: 23
+status: stub
+---
+
 # Boolean Logic Gates From Transistors
 
 In this lesson, we will learn how to build simple Boolean logic
