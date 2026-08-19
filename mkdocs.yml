@@ -82,6 +82,7 @@ nav:
     - Active vs. Passive Buzzer Tone Comparison: sims/active-passive-buzzer-breadboard/index.md
     - Battery Type Explorer: sims/battery-type-explorer/index.md
     - Breadboard Anatomy Explorer: sims/breadboard-anatomy-explorer/index.md
+    - Breadboard Power Supply Comparison: sims/breadboard-power-supply-comparison/index.md
     - Breadboard Troubleshooting Detective: sims/breadboard-troubleshooting-detective/index.md
     - Buck Converter Trimmer Explorer: sims/buck-converter-trimmer-explorer/index.md
     - Capacitor Value Code Decoder: sims/capacitor-value-code-decoder/index.md
@@ -119,7 +120,6 @@ nav:
     - Meet the Capacitor Family: sims/capacitor-family-explorer/index.md
     - Meet the Resistor Family: sims/resistor-family-infographic/index.md
     - Meet the Switch Family: sims/switch-family-explorer/index.md
-    - MicroSim Template: sims/template/index.md
     - Multi-LED Configuration Explorer: sims/multi-led-configuration-explorer/index.md
     - Multimeter Anatomy Explorer: sims/multimeter-anatomy-explorer/index.md
     - Node Voltage and Series Resistance Chain Builder: sims/node-voltage-series-chain/index.md
@@ -155,6 +155,8 @@ nav:
     - Water Flow Analogy MicroSim: sims/water-flow-analogy/index.md
     - "Wired Logic: AND and OR": sims/wired-logic-and-or/index.md
     - XR2206 Waveform Generator Explorer: sims/xr2206-waveform-generator-explorer/index.md
+
+
 
   - Kits and Projects:
     - Introduction: kits/index.md

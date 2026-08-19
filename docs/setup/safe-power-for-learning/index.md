@@ -415,10 +415,10 @@ than any explanation.
 
 ## Related Pages
 
-- [Finding the Right Power Supplies](../power-supplies/) — where to buy, and the other supply types
-- [Parts List for a $50 Kit](../../appendices/parts-list/) — quantities and costs, including the fuses
-- [Power Lab](../../labs/09-power/) — the hands-on version
-- [Purchasing Component Kits](../breadboard-kits/) — evaluating a kit before you buy
+- [Finding the Right Power Supplies](../power-supplies.md) — where to buy, and the other supply types
+- [Parts List for a $50 Kit](../../appendices/parts-list/index.md) — quantities and costs, including the fuses
+- [Power Lab](../../labs/09-power.md) — the hands-on version
+- [Purchasing Component Kits](../breadboard-kits.md) — evaluating a kit before you buy
 
 ## Sources
 

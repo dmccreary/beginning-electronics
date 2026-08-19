@@ -1,0 +1,286 @@
+{
+  "title": "Four Ways to Power a Breadboard",
+  "subtitle": "Every specification below is traced to a source. Click any cell with a dotted underline to see where the number came from.",
+  "sources": {
+    "S1": {
+      "label": "AMS1117 datasheet",
+      "citation": "AMS1117 1A Low Dropout Voltage Regulator datasheet, Advanced Monolithic Systems, Inc.",
+      "url": "http://www.advanced-monolithic.com/pdf/ds1117.pdf",
+      "kind": "Manufacturer datasheet"
+    },
+    "S2": {
+      "label": "Energizer E91 datasheet",
+      "citation": "Energizer E91 (AA alkaline) Product Datasheet, Energizer Brands LLC",
+      "url": "https://data.energizer.com/pdfs/e91.pdf",
+      "kind": "Manufacturer datasheet"
+    },
+    "S3": {
+      "label": "LCC Safety Bulletin HSB18",
+      "citation": "“High Powered AA Batteries”, Health & Safety Bulletin HSB18, Lincolnshire County Council, April 2013 (advice from a Physics adviser, via Primary Science and Technology, Spring 2013)",
+      "url": "https://professionals.lincolnshire.gov.uk/downloads/file/933/hsb18-high-powered-aa-batteries",
+      "kind": "Government safety bulletin"
+    },
+    "S4": {
+      "label": "RIGOL DP800 User Guide",
+      "citation": "DP800 Series Programmable Linear DC Power Supply User Guide, RIGOL Technologies",
+      "url": "https://www.batronix.com/files/Rigol/Labornetzteile/DP800/DP800_UserGuide_EN-22.pdf",
+      "kind": "Manufacturer manual"
+    },
+    "S5": {
+      "label": "USB 2.0 bus power limits",
+      "citation": "Craig Peacock, “USB in a NutShell — Chapter 2: Hardware”, beyondlogic.org, summarizing the USB 2.0 specification bus-power limits",
+      "url": "https://www.beyondlogic.org/usbnutshell/usb2.shtml",
+      "kind": "Technical reference (secondary)"
+    },
+    "S6": {
+      "label": "This book's parts list",
+      "citation": "Parts List for a $50 Kit, Beginning Electronics (this book) — classroom purchasing estimates, not a vendor quote",
+      "url": "../../appendices/parts-list/",
+      "kind": "Project estimate"
+    }
+  },
+  "verdicts": {
+    "VERIFIED": {
+      "label": "Verified",
+      "color": "#22c55e",
+      "meaning": "The exact number appears in a primary source, quoted below."
+    },
+    "DERIVED": {
+      "label": "Derived",
+      "color": "#84cc16",
+      "meaning": "Calculated from a primary-source number. The arithmetic is shown."
+    },
+    "DIRECTIONAL": {
+      "label": "Directional",
+      "color": "#f59e0b",
+      "meaning": "The effect is well established but the exact figure varies by board, brand, or batch."
+    },
+    "QUALITATIVE": {
+      "label": "Qualitative only",
+      "color": "#f97316",
+      "meaning": "Supported in words but not reliably quantified. No number is claimed."
+    },
+    "ESTIMATE": {
+      "label": "Project estimate",
+      "color": "#94a3b8",
+      "meaning": "This book's own classroom pricing. Check current prices before you buy."
+    }
+  },
+  "scenarios": [
+    {
+      "id": "any",
+      "label": "— Show all four equally —",
+      "pick": null,
+      "why": "Click any cell with a dotted underline to see the source behind that specification."
+    },
+    {
+      "id": "first",
+      "label": "First circuits, youngest builders",
+      "pick": "aa",
+      "why": "Untethered, nothing to plug into the wall, and a flattened pack costs about a dollar. Do supervise it: a shorted alkaline pack still gets hot enough to matter."
+    },
+    {
+      "id": "classroom",
+      "label": "Most classroom work",
+      "pick": "mb102",
+      "why": "Steady 5 V, a switch, an indicator light, and a documented current limit — and at about two dollars it is the part you would rather lose than the wall adapter."
+    },
+    {
+      "id": "tethered",
+      "label": "One long project at a desk",
+      "pick": "usb",
+      "why": "The regulation happens inside a sealed, safety-tested brick. Its weakness is that it is the expensive thing on the bench when something shorts."
+    },
+    {
+      "id": "faultfinding",
+      "label": "Fault-finding, older students",
+      "pick": "bench",
+      "why": "Dial the current limit down to 100 mA and a shorted board simply sits there at 0 V instead of cooking. The knob is the safety feature."
+    }
+  ],
+  "columns": [
+    {
+      "key": "voltage",
+      "name": "Voltage Out"
+    },
+    {
+      "key": "short",
+      "name": "On a Short Circuit"
+    },
+    {
+      "key": "limit",
+      "name": "Settable Limit"
+    },
+    {
+      "key": "cost",
+      "name": "Replace Cost"
+    }
+  ],
+  "rows": [
+    {
+      "id": "aa",
+      "name": "3 × AA Battery Pack",
+      "badge": "Beginner",
+      "badgeClass": "easy",
+      "icon": "battery",
+      "safety": 3,
+      "safetyNote": "Self-contained and low voltage, but a fresh alkaline pack is not the harmless thing it is often assumed to be.",
+      "bestFor": "First circuits, and anything that has to be carried around.",
+      "cells": {
+        "voltage": {
+          "value": "4.5 V nominal",
+          "verdict": "VERIFIED",
+          "detail": "Three alkaline cells in series at the datasheet nominal voltage of 1.5 V each. In practice a fresh pack reads nearer 4.7 V and sags steadily as the cells discharge — batteries have no regulator holding the voltage steady.",
+          "quote": "Nominal Voltage: 1.5 volts",
+          "src": "S2"
+        },
+        "short": {
+          "value": "Several amps, briefly",
+          "verdict": "DERIVED",
+          "detail": "The datasheet gives a fresh cell 150–300 mΩ of internal resistance. Three in series is 0.45–0.9 Ω, so 4.5 V across a dead short starts at roughly 5–10 A before the cells sag and heat up. Nothing switches off — the current falls only because the battery is exhausting itself.",
+          "quote": "Nominal IR: 150 to 300 milliohms (fresh)",
+          "src": "S2",
+          "alsoSee": "S3",
+          "alsoQuote": "current flowing can be high enough to melt the plastic holders and insulation of the wires too"
+        },
+        "limit": {
+          "value": "None",
+          "verdict": "VERIFIED",
+          "detail": "There is no regulator and no protection device in a battery holder. The only thing limiting the current is the chemistry of the cells themselves.",
+          "quote": "",
+          "src": ""
+        },
+        "cost": {
+          "value": "About $1 + cells",
+          "verdict": "ESTIMATE",
+          "detail": "Holders run near a dollar each in ten-packs, and the cells are a bulk-store purchase. A short costs you the cells, not the holder.",
+          "quote": "",
+          "src": "S6"
+        }
+      }
+    },
+    {
+      "id": "usb",
+      "name": "USB Wall Charger",
+      "badge": "Beginner",
+      "badgeClass": "easy",
+      "icon": "plug",
+      "safety": 4,
+      "safetyNote": "The mains-voltage part is sealed inside a safety-tested brick. What varies is the quality of what comes out.",
+      "bestFor": "A project that lives on one desk, near an outlet.",
+      "cells": {
+        "voltage": {
+          "value": "5 V regulated",
+          "verdict": "VERIFIED",
+          "detail": "USB fixes the bus voltage at 5 V. A port supplying a full-power device must stay between 4.75 V and 5.25 V — that is 5 V ± 5%. A charger is not adjustable: 5 V is what you get.",
+          "quote": "a minimum VBUS of 4.75 V is specified with a maximum of 5.25V",
+          "src": "S5"
+        },
+        "short": {
+          "value": "Depends on the charger",
+          "verdict": "QUALITATIVE",
+          "detail": "A reputable charger current-limits or shuts down and recovers when you clear the fault. A cheap unbranded one may do that, may sag, or may fail outright. There is no single number to quote here, because the population of chargers is not uniform — so this book does not print one.",
+          "quote": "",
+          "src": ""
+        },
+        "limit": {
+          "value": "None",
+          "verdict": "VERIFIED",
+          "detail": "Whatever the manufacturer built in. You cannot set it, see it, or change it from outside the case.",
+          "quote": "",
+          "src": ""
+        },
+        "cost": {
+          "value": "About $1.20 each",
+          "verdict": "ESTIMATE",
+          "detail": "Bought ten at a time. Cheap in bulk — but replacing one means the charger died, and that is a part you would rather not be feeding into a shorted breadboard in the first place.",
+          "quote": "",
+          "src": "S6"
+        }
+      }
+    },
+    {
+      "id": "mb102",
+      "name": "MB102 Power Module",
+      "badge": "Recommended",
+      "badgeClass": "recommended",
+      "icon": "module",
+      "safety": 4,
+      "safetyNote": "Documented current limiting and thermal shutdown inside the regulator — and no fuse on the board. Protected is not the same as fused.",
+      "bestFor": "Most classroom work. Cheap enough to be the part that dies.",
+      "cells": {
+        "voltage": {
+          "value": "5 V and 3.3 V",
+          "verdict": "VERIFIED",
+          "detail": "The board carries two AMS1117 fixed regulators, the -5.0 and the -3.3, and a jumper picks which one feeds each power rail. Feed the barrel jack 7.5–9 V: the regulator needs about 1.3 V more at its input than it puts out, and every volt above that leaves as heat.",
+          "quote": "Dropout Voltage … 1.1 [typ] 1.3 [max] V",
+          "src": "S1"
+        },
+        "short": {
+          "value": "Limits at 0.9–1.5 A, then shuts down hot",
+          "verdict": "VERIFIED",
+          "detail": "The regulator clamps the fault current and then switches itself off once the junction passes 165 °C, recovering when it cools. That is real protection — but it works by getting hot, and in the SOT-223 package the chip is rated for only 1.2 W. Shorting a 9 V-fed module asks it to burn roughly 10 W. It survives by cycling on and off.",
+          "quote": "protected against short circuit and thermal overloads",
+          "src": "S1",
+          "alsoQuote": "junction temperature exceed 165°C at the sense point",
+          "alsoSee": "S1"
+        },
+        "limit": {
+          "value": "Fixed at 0.9–1.5 A",
+          "verdict": "VERIFIED",
+          "detail": "The datasheet specifies the current limit as 900 mA minimum, 1100 mA typical, 1500 mA maximum. You cannot adjust it — but unlike the charger, you can look it up.",
+          "quote": "Current Limit … 900 [min] 1,100 [typ] 1,500 [max] mA",
+          "src": "S1"
+        },
+        "cost": {
+          "value": "About $2",
+          "verdict": "ESTIMATE",
+          "detail": "This is the number that matters most. It is cheap enough to keep spares in the drawer, so a student short costs fifteen seconds and two dollars rather than a lost lesson.",
+          "quote": "",
+          "src": "S6"
+        }
+      }
+    },
+    {
+      "id": "bench",
+      "name": "Bench Supply, Adjustable Limit",
+      "badge": "Advanced",
+      "badgeClass": "hard",
+      "icon": "bench",
+      "safety": 5,
+      "safetyNote": "The only supply here where you decide in advance how much current a fault is allowed to draw.",
+      "bestFor": "A teacher's bench, and fault-finding a board that misbehaves.",
+      "cells": {
+        "voltage": {
+          "value": "Adjustable",
+          "verdict": "VERIFIED",
+          "detail": "You dial the voltage you want. In constant-voltage mode the supply holds that value and the load decides how much current it draws — until the current hits the limit you set.",
+          "quote": "in CV mode, the output voltage equals the voltage setting value and the output current is determined by the load",
+          "src": "S4"
+        },
+        "short": {
+          "value": "Clamped at whatever you set",
+          "verdict": "VERIFIED",
+          "detail": "Short the output and the supply slides into constant-current mode: it holds the current at your setting and lets the voltage fall to whatever the fault demands — near zero for a dead short. Set 100 mA and a shorted board draws exactly 100 mA and stays cold.",
+          "quote": "when the load current is greater than the current setting value, the power supply will switch to CC output mode automatically",
+          "src": "S4"
+        },
+        "limit": {
+          "value": "You set it",
+          "verdict": "VERIFIED",
+          "detail": "This is the whole point of the instrument. The current knob is not a readout — it is the protection, chosen by you before you power up.",
+          "quote": "the output current equals the current setting value and the output voltage is determined by the load",
+          "src": "S4"
+        },
+        "cost": {
+          "value": "$50–100",
+          "verdict": "ESTIMATE",
+          "detail": "A shared bench instrument, not a per-student item. One for the room is a reasonable purchase; twenty are not.",
+          "quote": "",
+          "src": "S6"
+        }
+      }
+    }
+  ],
+  "footnote": "Board-level details of the MB102 itself — that it carries no fuse, and that its only board-level protection is a reverse-polarity diode — come from published teardowns rather than a manufacturer datasheet, because the MB102 is a generic module with no single manufacturer. Regulator specifications above are from the AMS1117 datasheet and are solid; board specifications vary between sellers. Verify your own board if the details matter."
+}

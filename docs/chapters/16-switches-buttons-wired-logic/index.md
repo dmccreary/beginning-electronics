@@ -86,7 +86,7 @@ Time to watch a push button do its job. The MicroSim below has three separate mo
 
 <iframe src="../../sims/button-led-breadboard/main.html" width="100%" height="602px" scrolling="no"></iframe>
 
-[Run the Push Button and LED Circuit MicroSim fullscreen](../../sims/button-led-breadboard/){ .md-button }
+[Run the Push Button and LED Circuit MicroSim fullscreen](../../sims/button-led-breadboard/index.md){ .md-button }
 
 <details markdown="1">
 <summary>Push Button and LED Circuit (reused MicroSim)</summary>
@@ -219,7 +219,7 @@ Now flip real switches and watch both truth tables fill themselves in live. The 
 
 <iframe src="../../sims/wired-logic-and-or/main.html" width="100%" height="547px" scrolling="no"></iframe>
 
-[Run the Wired Logic MicroSim fullscreen](../../sims/wired-logic-and-or/){ .md-button }
+[Run the Wired Logic MicroSim fullscreen](../../sims/wired-logic-and-or/index.md){ .md-button }
 
 <details markdown="1">
 <summary>Wired Logic: AND and OR (reused MicroSim)</summary>

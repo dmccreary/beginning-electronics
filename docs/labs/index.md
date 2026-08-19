@@ -56,7 +56,7 @@ still a stub. See [the lab evaluator's scoring bands](https://github.com/dmccrea
 
     Wire two buttons in parallel so pressing either one lights the LED.
 
--   **[RGB LED Circuit](./14-rgb-led.md)**
+-   **[RGB LED Circuit](./14-rgb-led/index.md)**
 
     ![RGB LED Circuit](../img/rgb-led-circuit.png)
 

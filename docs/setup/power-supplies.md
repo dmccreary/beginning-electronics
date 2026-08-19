@@ -3,7 +3,7 @@
 !!! tip "Start with Safe Power for Learning"
     This page is a catalog of power-supply *options* and where to buy them.
     If you are setting up for young builders, read
-    [Safe Power for Learning](./safe-power-for-learning/) first — it covers
+    [Safe Power for Learning](./safe-power-for-learning/index.md) first — it covers
     which supply to choose at which experience level, why adapter voltage
     matters, exactly what the MB102 module protects against, and how to add a
     ten-cent PTC resettable fuse so a shorted rail costs thirty seconds
@@ -62,11 +62,11 @@ Most standard voltage regulators include some form of internal protection:
 It's important to note that while these features provide a level of safety, they are not infallible, and additional external protection (like fuses or current limiting resistors) might be advisable in certain applications. Always refer to the specific regulator's datasheet for detailed information on its capabilities and limitations.
 
 For a worked example of exactly this point, see
-[What the MB102 Does Not Protect Against](./safe-power-for-learning/#what-it-does-not-protect-against).
+[What the MB102 Does Not Protect Against](./safe-power-for-learning/index.md#what-it-does-not-protect-against).
 The regulator on that module really does have current limiting and thermal
 shutdown — and it still dies on a shorted breadboard often enough to matter,
 because surviving a fault by overheating is not the same as having a fuse.
-That page shows [how to add one](./safe-power-for-learning/#adding-a-ptc-resettable-fuse).
+That page shows [how to add one](./safe-power-for-learning/index.md#adding-a-ptc-resettable-fuse).
 
 ## USB-Breadboard Power Supply
 

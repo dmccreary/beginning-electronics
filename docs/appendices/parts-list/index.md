@@ -36,7 +36,7 @@ constantly. Buying an assortment (a bag of 300 mixed resistors, a bag of
 
 | Qty | Part | Typical Value or Spec | Where You Use It |
 |-----|------|----------------------|------------------|
-| 1–2 | Solderless breadboard | 400 tie-point (half size) or 830 tie-point (full size) | Chapter 6, [Breadboard Lab](../../labs/08-breadboard/) |
+| 1–2 | Solderless breadboard | 400 tie-point (half size) or 830 tie-point (full size) | Chapter 6, [Breadboard Lab](../../labs/08-breadboard.md) |
 | 1 set | Male-to-male jumper wires | 65-piece pre-formed set, or 20 cm flexible wires | Chapter 7 |
 | 1 spool | Solid-core hookup wire (optional) | 22 AWG, for cutting custom-length jumpers | Chapter 7 |
 
@@ -48,7 +48,7 @@ $2 each, a dead board is cheaper to replace than to debug.
 
 | Qty | Part | Typical Value or Spec | Where You Use It |
 |-----|------|----------------------|------------------|
-| 1 | **MB102 breadboard power supply module** | 5 V / 3.3 V, plugs straight onto the power rails | Chapter 5, [Power Lab](../../labs/09-power/) |
+| 1 | **MB102 breadboard power supply module** | 5 V / 3.3 V, plugs straight onto the power rails | Chapter 5, [Power Lab](../../labs/09-power.md) |
 | 1 | 7.5 V or 9 V wall adapter | 5.5 × 2.5 mm barrel plug, to feed the module (avoid 12 V — see below) | Chapter 5 |
 | 5 | PTC resettable fuse | 500 mA hold / 1 A trip, in series with the +5 V rail | Chapter 5 |
 | 1 | USB wall charger (alternative) | 5 V, 500 mA or more | Chapter 5 |
@@ -85,7 +85,7 @@ in, a shorted rail asks it to dissipate about 10 W in a package rated for
 Two cheap changes fix this — use a 7.5 V or 9 V adapter rather than a 12 V
 one, and add a PTC resettable fuse to the + rail. Both are covered in full,
 with wiring schematics, on **[Safe Power for
-Learning](../../setup/safe-power-for-learning/)**.
+Learning](../../setup/safe-power-for-learning/index.md)**.
 
 **Power it through the barrel jack, not the USB socket.** The MB102's
 documented input is a 5.5 × 2.5 mm barrel jack wanting 6.5–12 V DC — pair it
@@ -145,7 +145,7 @@ list before you buy, and top up the gaps for a few cents.
 | 10 | Ceramic capacitor | 0.01 µF (10 nF), marked `103` | Chapter 10 |
 | 10 | Ceramic capacitor | 0.1 µF (100 nF), marked `104` | Chapter 14 (555 pin 5 bypass) |
 | 5 | Electrolytic capacitor | 1 µF, 16 V or higher | Chapter 10 |
-| 5 | Electrolytic capacitor | 10 µF, 16 V or higher | [RC Circuit Lab](../../labs/80-rc-circuit/) |
+| 5 | Electrolytic capacitor | 10 µF, 16 V or higher | [RC Circuit Lab](../../labs/80-rc-circuit.md) |
 | 5 | Electrolytic capacitor | 47 µF, 16 V or higher | Chapter 10 |
 | 5 | Electrolytic capacitor | 100 µF, 16 V or higher | Chapter 22 |
 | 2 | Electrolytic capacitor | 220 µF or 470 µF, 16 V or higher | Chapter 22 |
@@ -158,7 +158,7 @@ capacitors have no polarity and go in either way.
 
 | Qty | Part | Typical Value or Spec | Where You Use It |
 |-----|------|----------------------|------------------|
-| **10** | **Momentary push button (tactile switch)** | **6 mm × 6 mm, 4-pin, through-hole** | **Chapter 16, [Buttons Lab](../../labs/11-buttons/)** |
+| **10** | **Momentary push button (tactile switch)** | **6 mm × 6 mm, 4-pin, through-hole** | **Chapter 16, [Buttons Lab](../../labs/11-buttons.md)** |
 | 2 | Momentary push button with colored cap | 12 mm, 4-pin, easier for small hands | Chapter 16 |
 | 2 | Slide switch (SPDT) | 3-pin, latching on/off | Chapter 16 |
 | 1 | Toggle or rocker switch (optional) | SPDT, for capstone project enclosures | Chapter 26 |
@@ -181,7 +181,7 @@ enough to lose. Ten is the right number.
 
 | Qty | Part | Typical Value or Spec | Where You Use It |
 |-----|------|----------------------|------------------|
-| 3 | Trim potentiometer (trimpot) | 10 kΩ, 3-pin, screwdriver-adjusted | [Dark Detector Lab](../../labs/20-dark-detector/) |
+| 3 | Trim potentiometer (trimpot) | 10 kΩ, 3-pin, screwdriver-adjusted | [Dark Detector Lab](../../labs/20-dark-detector/index.md) |
 | 1 | Panel potentiometer with knob | 10 kΩ linear taper | Chapter 11, LED Dimmer kit |
 | 1 | Trim potentiometer | 100 kΩ, for slow 555 timing | Chapter 14 |
 | 5 | Photoresistor (LDR / photocell) | 5 mm, roughly 5 kΩ lit to 1 MΩ dark | Chapter 17 |
@@ -195,8 +195,8 @@ what makes them the perfect first sensors in a course with no code.
 
 | Qty | Part | Typical Value or Spec | Where You Use It |
 |-----|------|----------------------|------------------|
-| 10 | NPN transistor | BC547 | Chapter 13, [Transistors Lab](../../labs/30-transistors/) |
-| 10 | NPN transistor | 2N2222 (or PN2222A) | [BC547 vs. 2N2222 Lab](../../labs/31-bc547-vs-2n2222/) |
+| 10 | NPN transistor | BC547 | Chapter 13, [Transistors Lab](../../labs/30-transistors.md) |
+| 10 | NPN transistor | 2N2222 (or PN2222A) | [BC547 vs. 2N2222 Lab](../../labs/31-bc547-vs-2n2222.md) |
 | 5 | PNP transistor | 2N3906 | Chapter 13 |
 | 5 | NPN transistor | 2N3904 (a common BC547 substitute) | Chapter 13 |
 | 10 | Small-signal diode | 1N4148 | Chapter 12 |
@@ -210,10 +210,10 @@ compartments and label both.
 
 | Qty | Part | Typical Value or Spec | Where You Use It |
 |-----|------|----------------------|------------------|
-| 1 bag | Assorted 5 mm LEDs | ~50 pieces: red, green, yellow, blue, white | Chapter 12, [LED Circuit Lab](../../labs/10-led-circuit/) |
+| 1 bag | Assorted 5 mm LEDs | ~50 pieces: red, green, yellow, blue, white | Chapter 12, [LED Circuit Lab](../../labs/10-led-circuit/index.md) |
 | 8+ | Red 5 mm LEDs | Diffused, for the shift register bar graph | Chapter 15 |
-| **2–4** | **RGB LED** | **5 mm, common cathode, 4 pins** | **[RGB LED Lab](../../labs/14-rgb-led/)** |
-| 1 | LED "noodle" / filament LED (optional) | 3 V flexible filament | [LED Noodle Lab](../../labs/40-noodle-led-circuit/) |
+| **2–4** | **RGB LED** | **5 mm, common cathode, 4 pins** | **[RGB LED Lab](../../labs/14-rgb-led/index.md)** |
+| 1 | LED "noodle" / filament LED (optional) | 3 V flexible filament | [LED Noodle Lab](../../labs/40-noodle-led-circuit.md) |
 
 Blue and white LEDs need more forward voltage than red ones, so the same
 resistor gives you a dimmer result. Chapter 12 explains why.
@@ -230,7 +230,7 @@ students can keep one wired up while they experiment with another.
 
 | Qty | Part | Typical Value or Spec | Where You Use It |
 |-----|------|----------------------|------------------|
-| 2 | 555 timer IC | NE555 or LM555, 8-pin DIP | Chapter 14, [LED Flasher](../../labs/90-led-flasher/) |
+| 2 | 555 timer IC | NE555 or LM555, 8-pin DIP | Chapter 14, [LED Flasher](../../labs/90-led-flasher.md) |
 | 2 | 74HC595 shift register IC | 16-pin DIP | Chapter 15 |
 | 2 | 8-pin DIP socket | For the 555 | Chapter 14 |
 | 2 | 16-pin DIP socket | For the 74HC595 | Chapter 15 |
@@ -273,7 +273,7 @@ they can be fully understood without a microcontroller. Buy the DIP
 | **Total** | **About $49** |
 
 Buying pre-assembled "electronics starter kits" often beats this total —
-see [Purchasing Component Kits](../../setup/breadboard-kits/) for listings.
+see [Purchasing Component Kits](../../setup/breadboard-kits.md) for listings.
 Check the kit contents against this appendix before you buy, since some kits
 skip the 74HC595 or ship only two or three push buttons.
 
@@ -316,8 +316,8 @@ evaluating whatever kit you find.
 | RGB LEDs ×10, common cathode | The kit ships only one, and the color-mixing lab deserves spares | $2 |
 | Spare MB102 power modules ×2 | The first student short-circuit costs you a module, not a class period | $4 |
 | Small DC motor (3–6 V) | Chapters 18 and 19 have no substitute for a spinning load | $3 |
-| 10 kΩ trim potentiometer ×3 | The [Dark Detector Lab](../../labs/20-dark-detector/) calls for a screwdriver-adjusted trimpot, not a knob | $2 |
-| BC547 transistors ×10 | The [BC547 vs. 2N2222 Lab](../../labs/31-bc547-vs-2n2222/) compares two specific pinouts | $2 |
+| 10 kΩ trim potentiometer ×3 | The [Dark Detector Lab](../../labs/20-dark-detector/index.md) calls for a screwdriver-adjusted trimpot, not a knob | $2 |
+| BC547 transistors ×10 | The [BC547 vs. 2N2222 Lab](../../labs/31-bc547-vs-2n2222.md) compares two specific pinouts | $2 |
 | 330 Ω resistors ×10 | Used throughout as an LED resistor (220 Ω or 470 Ω will substitute) | $1 |
 | 9 V wall adapter, 5.5 × 2.5 mm barrel plug | To run the power module from the wall instead of a battery | $5 |
 | Compartment storage box | 200+ loose parts will not survive a school year in a bag | $4 |
@@ -374,7 +374,7 @@ lesson:
 | Part | Why You Might Want It | Where It Appears |
 |------|----------------------|------------------|
 | Digital multimeter | Measuring voltage, resistance, and continuity yourself | Chapter 20 |
-| Perfboard and headers | Making a favorite circuit permanent | [Perf Boards Lab](../../labs/70-using-perf-boards/) |
+| Perfboard and headers | Making a favorite circuit permanent | [Perf Boards Lab](../../labs/70-using-perf-boards.md) |
 | 7805 voltage regulator kit | Building a fixed 5 V supply | Chapter 22 |
 | Buck converter module | Building an adjustable supply | Chapter 22 |
 | XR2206 signal generator kit | Generating waveforms | Chapter 23 |
@@ -410,9 +410,9 @@ build, break, rewire, and understand in a single sitting, with no code.
 
 ## Related Pages
 
-- [Safe Power for Learning](../../setup/safe-power-for-learning/) — choosing a supply, and adding a PTC fuse to the + rail
-- [Purchasing Component Kits](../../setup/breadboard-kits/) — where to buy
-- [Purchasing Breadboards](../../setup/purchasing-breadboards/) — buying in bulk for a classroom
-- [Power Supplies](../../setup/power-supplies/) — the full catalog of supply options
-- [Identifying Parts Lab](../../labs/05-part-identification/) — the hands-on version of this list
-- [List of Circuit Symbols](../list-of-symbols/) — the schematic symbol for each part
+- [Safe Power for Learning](../../setup/safe-power-for-learning/index.md) — choosing a supply, and adding a PTC fuse to the + rail
+- [Purchasing Component Kits](../../setup/breadboard-kits.md) — where to buy
+- [Purchasing Breadboards](../../setup/purchasing-breadboards.md) — buying in bulk for a classroom
+- [Power Supplies](../../setup/power-supplies.md) — the full catalog of supply options
+- [Identifying Parts Lab](../../labs/05-part-identification.md) — the hands-on version of this list
+- [List of Circuit Symbols](../list-of-symbols/index.md) — the schematic symbol for each part
