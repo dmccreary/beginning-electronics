@@ -56,7 +56,7 @@ SKILL="$PROJECT/skills/breadboard-sim-generator"
 ```
 
 This skill lives **inside the Beginning Electronics repository**, not in the
-shared `claude-skills` repo, because the breadboard format is specific to this
+shared `ibook-skills` repo, because the breadboard format is specific to this
 book. `$SKILL` is therefore always a path within `$PROJECT`.
 
 Warn the user if `$PROJECT/docs/sims` does not exist - the sim has nowhere to go.
@@ -319,12 +319,12 @@ Static review does not catch a circuit that never lights up. Verify it running.
 Run the standard MicroSim checks, then the breadboard-specific ones.
 
 These validators are the shared, general-purpose MicroSim tooling and live in
-the `claude-skills` repo - this skill uses them, it does not own them. If that
+the `ibook-skills` repo - this skill uses them, it does not own them. If that
 repo is not checked out, skip these three commands and rely on the visual review
 below; nothing else in the workflow depends on them.
 
 ```bash
-UTILS="$HOME/Documents/ws/claude-skills/src/microsim-utils"
+UTILS="$HOME/Documents/ws/ibook-skills/src/microsim-utils"
 
 python3 $UTILS/validate-sims.py --project-dir $PROJECT --sim $SIM --verbose
 python3 $UTILS/sync-iframe-heights.py --project-dir $PROJECT --sim $SIM --verbose
