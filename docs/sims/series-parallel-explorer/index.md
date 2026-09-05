@@ -28,8 +28,9 @@ battery has to supply twice as much.
 
 ## The Circuit
 
-Power always arrives on the top rails and is jumpered down to the bottom rails,
-so the only thing that changes between the two modes is the topology itself.
+The supply frames the board — `+` on the top rail, `−` on the bottom rail, and
+nothing on the other two — so the only thing that changes between the two modes
+is the topology itself.
 
 **Series** — one loop, crossing the center channel partway through:
 
@@ -41,8 +42,8 @@ T+ rail → a5 → R1 220Ω → D1 → across the channel (e12 → f12)
 **Parallel** — two independent branches, one in each half of the board:
 
 ```linenums="0"
-T+ rail → a5 → R1 220Ω → D1 → T− rail
-B+ rail → j5 → R2 220Ω → D2 → B− rail
+T+ rail → a5 → R1 220Ω → D1 → B− rail
+T+ rail → h5 → R2 220Ω → D2 → B− rail
 ```
 
 | Component | Value | Purpose |
@@ -76,9 +77,9 @@ parallel branches visibly move dots faster than the series loop. In parallel,
 the wire feeding the two branches carries both branch currents — watch it run
 faster than either branch.
 
-The red rail jumper carries no current in series mode and shows no dots. It is
-still correct to leave it in place, which is worth pointing out: a wire with no
-current is not a wasted wire.
+In series mode the whole loop carries one current, so every wire animates at the
+same speed. That is worth pointing out on its own: equal dot speed everywhere is
+what "the same current passes through every part" looks like.
 
 ## Lesson Plan
 

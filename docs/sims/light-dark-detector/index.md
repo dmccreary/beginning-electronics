@@ -33,10 +33,10 @@ switch rather than a dimmer.
 ## The Circuit
 
 ```linenums="0"
-9 V rail → LDR (0–100 kΩ) → divider junction → R2 4.7 kΩ → ground
+T+ rail → LDR (0–100 kΩ) → divider junction → R2 4.7 kΩ → B− rail
 divider junction → RB 4.7 kΩ → Q1 base
-B+ rail → RL 470Ω → D1 → Q1 collector;  BZ1 in parallel with D1
-Q1 emitter → ground
+divider supply → RL 470Ω → D1 → Q1 collector;  BZ1 in parallel with D1
+Q1 emitter → B− rail
 ```
 
 | Component | Value | Purpose |

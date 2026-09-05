@@ -31,18 +31,22 @@ live as you flip switches.
 
 ## The Circuit
 
+Both gates hang off the same two rails: the `+` rail along the top of the board
+and the `−` rail along the bottom. Nothing is connected to the other two rails,
+so every path runs downhill and the dots always travel the same direction.
+
 **AND** — series, in the top half:
 
 ```linenums="0"
-T+ rail → a5 → SW A → SW B → R1 220Ω → D1 (red) → T− rail
+T+ rail → a5 → SW A → SW B → R1 220Ω → D1 (red) → B− rail
 ```
 
 **OR** — parallel, in the bottom half:
 
 ```linenums="0"
-B+ rail → j5 → SW C ┐
+T+ rail → h5 → SW C ┐
                     ├→ R2 220Ω → D2 (green) → B− rail
-B+ rail → j5 → SW D ┘
+T+ rail → h5 → SW D ┘
 ```
 
 Switches C and D both bridge the same pair of columns, which is what puts them
