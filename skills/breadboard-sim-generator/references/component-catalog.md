@@ -150,30 +150,46 @@ solver will report an enormous current, which is physically what happens.
 ## Push button
 
 ```javascript
-bbButton({a: 'e3', b: 'f3', color: 'red', label: 'SW1', key: '1'});
+bbButton({at: 'e1', color: 'red', label: 'SW1', key: '1'});               // columns 1-3
+bbButton({at: 'e9', color: 'green', label: 'SW2', key: '2', flip: true}); // columns 9-11
 ```
 
 | Option | Default | Meaning |
 |--------|---------|---------|
-| `a`, `b` | required | the two holes; **straddle the channel** (`e`_n_ → `f`_n_) |
+| `at` | required | the **upper-left leg**, always row `e`. The part covers that column, the next, and the next |
+| `flip` | `false` | wire the other diagonal: upper-**right** leg to lower-left |
 | `color` | `'red'` | cap color |
 | `key` | `null` | keyboard key that also presses it |
 | `label` | `''` | designator |
 
-**Electrically** open until pressed, then a near-zero resistance. `part.pressed`
-is the state.
+**It occupies three columns.** A real 6 mm tactile switch straddles the center
+channel and its legs splay 0.2 inch apart, so `{at: 'e1'}` puts legs in `e1`,
+`e3`, `f1`, `f3` and lays the body over column 2. **Nothing else may go in any
+of those three columns** - layout rule 5 - and the middle one has no reachable
+hole at all, because the plastic is sitting on it. `bbCheckLayout()` reports any
+part that lands there, naming both the hole and the button.
 
-**Drawn** as a square body with a round cap, sized like a real 6 mm tactile
-switch, straddling the center channel. Pressed, the cap darkens, shrinks, and
-gains a highlight ring - still identifiable by color.
+**Wire the diagonal.** The two legs on the same side of the channel are riveted
+together inside the switch whether or not it is pressed, and the library models
+those internal links. The diagonal is therefore the one pair that is never
+already connected, whichever way round the part goes in - which is why `at` and
+`flip` are the only placements offered. `flip: true` brings power in on the upper
+*right* leg; use it when the `+` jumper comes down to the right of the button.
+
+**Electrically** open until pressed, then a near-zero resistance between the two
+diagonal legs. `part.pressed` is the state.
+
+**Drawn** as a three-column body with four legs reaching into rows `e` and `f`,
+and a round cap on top. Pressed, the cap darkens, shrinks, and gains a highlight
+ring - still identifiable by color.
 
 **Interaction** needs all four handlers wired up (`mousePressed`,
 `mouseReleased`, `keyPressed`, `keyReleased`), or the button will latch on and
 never release.
 
-**Why straddle the channel:** rows `e`_n_ and `f`_n_ are different nets, so the
-button makes a real connection between two halves. Both pins in the same half
-would be a short across one net and the button would appear to do nothing.
+**Legacy form.** `{a: 'e1', b: 'f3'}` still names the switched pair directly, but
+warns unless the two legs are in rows `e` and `f` two columns apart - anything
+else is not a part you can buy.
 
 ---
 

@@ -119,17 +119,44 @@ sims where nothing lights up. Write the netlist out **before** writing code.
 
 ### 2.1 Draw the current path in words
 
-Trace the loop from the positive rail back to the negative rail, naming every
-hole:
+Trace the loop from the **top** positive rail down to the **bottom** negative
+rail, naming every hole. Every board in this book runs downhill:
 
 ```
-T+3 (rail) → wire → a3 → button SW1 (e3/f3) → j3 → R1 220Ω → j6
-           → LED D1 (g6 → g8) → j8 → wire → B-8 (ground rail)
+T+1 (top rail) → red wire → d1 → button SW1 (e1 → f3) → j3 → R1 220Ω → j6
+               → LED D1 (g6 → g8) → j8 → black wire → B-8 (bottom rail)
 ```
 
 If you cannot write this line, you cannot write the circuit.
 
-### 2.2 Check the connectivity rules
+### 2.2 Obey the layout rules
+
+These five are **not** style preferences, and `bbCheckLayout()` enforces them on
+the first solve. A student reading these boards has to build one mental model of
+current - **in at the top rail, down through the parts, out at the bottom rail**
+- and every board in the book has to support the same picture. A ground jumper
+hanging off the *top* rail, or a positive jumper on the *bottom* rail, quietly
+destroys it: the board still works, and the student still cannot say which way
+anything flows.
+
+| # | Rule | Why |
+|---|------|-----|
+| 1 | Ground reaches parts from the **bottom** negative rail only | Current must be seen leaving at the bottom edge |
+| 2 | **Nothing** connects to the top negative rail (`T-`) | A second ground at the top makes "down" meaningless |
+| 3 | **Nothing** connects to the bottom positive rail (`B+`) | Same, for power |
+| 4 | The supply connects to exactly two holes: one on `T+`, one on `B-` | It frames the board; no jumper carries `+` down or `−` up |
+| 5 | A push button covers three columns; nothing goes in any of them | The plastic body is physically over those holes |
+
+```javascript
+bbBattery({pos: 'T+1', neg: 'B-1', volts: 5, label: 'BAT'});   // rule 4
+bbWire({a: 'T+1',  b: 'd1',   color: 'red'});                  // power comes down
+bbWire({a: 'j8',   b: 'B-8',  color: 'black'});                // ground goes down
+```
+
+A sim that breaks a rule on purpose - showing a learner a *wrongly* wired board,
+for instance - sets `BB.strictLayout = false` and says so on screen.
+
+### 2.3 Check the connectivity rules
 
 The whole point of a breadboard is which holes are already connected. Get this
 wrong and the circuit is silently open or silently shorted:
@@ -139,10 +166,32 @@ wrong and the circuit is silently open or silently shorted:
 | Rows **a-e** of one column are one net; rows **f-j** are a *different* net | A part with both pins in `a5` and `c5` is **shorted out** - it does nothing |
 | The center channel separates the two halves | A part spanning `e5`→`f5` is a real connection between two nets |
 | Each power rail is one net along the whole board | `T+1` and `T+19` are the same node |
-| Top rails and bottom rails are **not** connected | Add a jumper (e.g. `T-2`→`B-2`), exactly as on a real board |
+| Top rails and bottom rails are **not** connected | The supply bridges them (rule 4); never a jumper |
 | Every rail's 6th hole is missing (holes come in groups of five) | The library snaps such a pin back one column automatically |
 
-### 2.3 Size the resistor
+### 2.4 Place the push buttons
+
+A 6 mm tactile switch straddles the center channel and its legs splay out
+0.2 inch, so the part occupies **three columns**: legs in rows `e` and `f` of
+column *c* and column *c+2*, body over column *c+1*. Address it by its
+upper-left leg and let the library work out the rest:
+
+```javascript
+bbButton({at: 'e1',  label: 'SW1', key: '1'});               // covers columns 1-3
+bbButton({at: 'e9',  label: 'SW2', key: '2', flip: true});   // covers columns 9-11
+```
+
+- The wired pair is always the **diagonal** - `e1`→`f3` above, `e11`→`f9` with
+  `flip`. The two legs on the same side of the channel are riveted together
+  inside the switch, so the diagonal is the only pair that is never already
+  connected. The library models those internal links, exactly like a real part.
+- `flip: true` takes power in on the upper **right** leg instead. Use it when the
+  `+` jumper comes down to the right of the button and the load leaves on the
+  left.
+- **Nothing else may use any of the three columns** - not the two leg columns,
+  and least of all the middle one, where there is no reachable hole at all.
+
+### 2.5 Size the resistor
 
 Compute the current before you pick a value, and put the arithmetic in a code
 comment. `I = (Vsupply - Vf) / R`. A red LED at 5 V through 220 Ω draws
@@ -150,7 +199,7 @@ comment. `I = (Vsupply - Vf) / R`. A red LED at 5 V through 220 Ω draws
 hundreds of milliamps - the sim will happily show that, and if that is the
 lesson, make it the lesson deliberately.
 
-### 2.4 Budget the board
+### 2.6 Budget the board
 
 20 columns is the default and fits comfortably. Use 30 only when the circuit
 genuinely needs the width - at 30 columns on a narrow canvas the hole pitch
@@ -298,7 +347,8 @@ Static review does not catch a circuit that never lights up. Verify it running.
    it yourself.** Open the sim with the preview tools at
    `http://localhost:8000/<repo-name>/sims/<sim-id>/main.html`.
 2. Check the console for errors first. A bad hole address logs a clear message
-   from `bbPin()`.
+   from `bbPin()`, and any broken layout rule logs its rule number from
+   `bbCheckLayout()`. Both must be clean before you go further.
 3. Close each switch or button and confirm current appears. From the console:
 
    ```javascript
@@ -362,7 +412,7 @@ Full parameters in `references/component-catalog.md`.
 | `bbWire({a, b, color, arc})` | any two holes | always | jumpers; carries the current animation |
 | `bbResistor({a, b, ohms, label})` | any two holes | always | current limiting, dividers |
 | `bbLED({anode, cathode, color})` | any two holes | forward biased above Vf | the output a student watches |
-| `bbButton({a, b, color, key})` | straddle the channel | while held | momentary input |
+| `bbButton({at, flip, color, key})` | `at` is the upper-left leg, row `e`; covers 3 columns | while held | momentary input |
 | `bbSwitch({a, b, key, closed})` | any two holes | while closed | latching input |
 | `bbCapacitor({a, b, uf})` | any two holes | never (DC) | showing that caps block DC |
 | `bbDiode({anode, cathode})` | any two holes | forward biased | polarity, reverse protection |
@@ -380,11 +430,16 @@ or a rail `T+`, `T-`, `B+`, `B-`) followed by a column number. `'e12'`, `'T+5'`,
 
 **Nothing lights up.** Almost always an open netlist. Print the solved nets with
 `JSON.stringify(bbNets)` - any net reading 0 V that should not be is where the
-break is. Check that a jumper connects the top and bottom ground rails.
+break is. Check that the supply's `neg` is on `B-` and that every branch actually
+returns to that bottom rail (layout rules 1 and 4).
 
 **A component does nothing but the circuit still works.** Both its pins are in
 the same net (e.g. `a5` and `c5`), so it is shorted out. Span *different*
 columns, or cross the channel.
+
+**A wire seems connected to nothing, or shorts to its neighbour.** It is in a
+hole covered by a push button. `bbCheckLayout()` names the hole and the button;
+the fix is to move the wire out of all three of that button's columns.
 
 **Bottom rows clipped.** `bbLayout()` was given a width but no height, or
 `drawHeight` minus `boardTop` minus `readoutHeight` is smaller than the board

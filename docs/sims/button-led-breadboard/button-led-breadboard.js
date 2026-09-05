@@ -30,10 +30,24 @@ let startButton, resetButton, scopeCheckbox, voltsSlider;
 let isRunning = false;       // every MicroSim starts paused
 
 // ---- Circuit constants -----------------------------------------------------
+//
+// One entry per channel. Every column here is fixed by the board's layout
+// rules, so read them together with the comment in setup() before moving any
+// of them:
+//
+//   sw    upper-left leg of the push button, always row e. A 6 mm tactile
+//         switch covers three columns, so SW1 at 'e1' owns columns 1-3 and
+//         column 2 can never hold anything.
+//   flip  which diagonal of the button carries the circuit. SW1 takes +5 V on
+//         its upper LEFT leg because column 1 is the board's left edge; SW2 and
+//         SW3 take it on the upper RIGHT so their resistors stay put.
+//   rail  column of the red jumper down from the +5 V rail. It always lands on
+//         row d of the button's powered leg column.
+//   res   column of the resistor's left end, which is the button's other leg.
 const CHANNELS = [
-  {col: 3,  color: 'red',   key: '1'},
-  {col: 9,  color: 'green', key: '2'},
-  {col: 15, color: 'blue',  key: '3'}
+  {sw: 'e1',  flip: false, rail: 1,  res: 3,  color: 'red',   key: '1'},
+  {sw: 'e9',  flip: true,  rail: 11, res: 9,  color: 'green', key: '2'},
+  {sw: 'e15', flip: true,  rail: 17, res: 15, color: 'blue',  key: '3'}
 ];
 const SERIES_OHMS = 220;
 
@@ -71,22 +85,26 @@ function setup() {
   bbLayout(margin, boardTop, 400, 300, 20);
   bbReset();
 
-  // Supply on the top rails, then a jumper carrying ground down to the bottom
-  // rail - the same jumper a student has to add on a real board.
-  bbBattery({pos: 'T+1', neg: 'T-1', volts: 5, label: 'BAT'});
-  bbWire({a: 'T-2', b: 'B-2', color: 'black'});
+  // The supply frames the board: + on the TOP rail, - on the BOTTOM rail, and
+  // nothing else on either of the other two rails. Every channel below then
+  // runs strictly downhill - rail, button, resistor, LED, ground - so a student
+  // watching the dots sees current enter at the top edge and leave at the
+  // bottom. No jumper carries + down or ground up. (Layout rules 1-4.)
+  bbBattery({pos: 'T+1', neg: 'B-1', volts: 5, label: 'BAT'});
 
-  // One identical branch per channel: rail -> button -> resistor -> LED -> ground
+  // One identical branch per channel:
+  //   T+ -> red jumper -> d{rail} -> button -> j{res} -> resistor -> LED
+  //      -> black jumper -> B- (bottom ground rail)
   CHANNELS.forEach((ch, i) => {
-    const c = ch.col;
-    bbWire({a: 'T+' + c, b: 'a' + c, color: 'red'});
-    bbButton({a: 'e' + c, b: 'f' + c, color: ch.color,
+    const r = ch.res;
+    bbWire({a: 'T+' + ch.rail, b: 'd' + ch.rail, color: 'red'});
+    bbButton({at: ch.sw, flip: ch.flip, color: ch.color,
               label: 'SW' + (i + 1), key: ch.key});
-    bbResistor({a: 'j' + c, b: 'j' + (c + 3), ohms: SERIES_OHMS,
+    bbResistor({a: 'j' + r, b: 'j' + (r + 3), ohms: SERIES_OHMS,
                 label: 'R' + (i + 1)});
-    bbLED({anode: 'g' + (c + 3), cathode: 'g' + (c + 5),
+    bbLED({anode: 'g' + (r + 3), cathode: 'g' + (r + 5),
            color: ch.color, label: 'D' + (i + 1)});
-    bbWire({a: 'j' + (c + 5), b: 'B-' + (c + 5), color: 'black'});
+    bbWire({a: 'j' + (r + 5), b: 'B-' + (r + 5), color: 'black'});
   });
 
   // --- Scope traces ---

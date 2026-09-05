@@ -32,19 +32,30 @@ forward voltage.
 
 ## The Circuit
 
-Each branch traces the same path from the positive rail back to ground:
+Each branch traces the same path from the positive rail at the top of the board
+down to ground at the bottom:
 
 ```linenums="0"
-T+3 (positive rail) → red wire → a3
-  → SW1, straddling the channel at e3/f3 → j3
+T+1 (positive rail, top) → red wire → d1
+  → SW1, straddling the center channel from e1 to f3 → j3
   → R1 220Ω → j6
   → D1, anode g6 to cathode g8 → j8
-  → black wire → B-8 (ground rail)
+  → black wire → B-8 (ground rail, bottom)
 ```
 
-A single black jumper from `T-2` to `B-2` carries ground from the top rail down
-to the bottom rail. Without it, none of the three branches would have a return
-path — the same jumper you have to remember on a real board.
+The supply itself frames the board: its red lead goes to the `+` rail along the
+top edge and its black lead to the `−` rail along the bottom edge. Nothing at all
+is connected to the other two rails. That is deliberate — it means every branch
+runs strictly downhill, and the dots you watch always enter at the top of the
+board and leave at the bottom.
+
+Each push button is a 6 mm tactile switch, and like the real part it covers
+**three columns**: its legs sit in rows `e` and `f` of the outer two columns and
+its body sits over the middle one. SW1 starts at the board's left edge, so it
+owns columns 1–3 and nothing can ever go in column 2. The wires always attach to
+a **diagonal** pair of legs — `e1` to `f3` here — because the two legs on the
+same side of the center channel are joined inside the switch whether or not it is
+pressed.
 
 | Component | Value | Purpose |
 |-----------|-------|---------|

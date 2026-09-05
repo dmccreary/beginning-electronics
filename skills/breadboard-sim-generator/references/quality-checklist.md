@@ -34,6 +34,15 @@ row, `+` and `−` signs at both ends.
 **1.5 The center channel is visible** between rows e and f, and any push button
 straddles it.
 
+**1.6 Push buttons read as three columns wide.** Each one shows four legs, in
+rows e and f of its outer two columns, with the body over the middle column. If
+a button looks one column wide it was built with the legacy `{a, b}` form - use
+`{at: 'e<col>'}` instead.
+
+**1.7 No wire crosses into a button's columns.** Visual as well as electrical: a
+jumper that ends at a hole under the body looks connected and is not reachable on
+a real board.
+
 ---
 
 ## 2. Circuit correctness
@@ -52,12 +61,19 @@ Being lit is not the same as being correct.
 different nets. `bbPart('R1').pins.map(p => p.net)` returning two identical
 strings means the part does nothing.
 
-**2.4 The rails are jumpered as intended.** If the supply is on the top rails and
-loads return to the bottom `−` rail, a jumper must connect them. Its absence is
-the single most common reason a breadboard sim stays dark.
+**2.4 The layout rules pass.** `bbCheckLayout()` returns an empty array. It
+checks the five rules in `SKILL.md` §2.2: ground only from the bottom `−` rail,
+nothing on `T-`, nothing on `B+`, the supply on `T+` and `B-` and nowhere else,
+and no part in a hole a push button covers. A console warning naming a rule
+number is a FAIL, not a note - the only pass is `BB.strictLayout = false` plus an
+on-screen explanation of the board being deliberately mis-wired.
 
 **2.5 Open means open.** With every button released and every switch off, all
 LED currents read 0 and every LED is drawn dark.
+
+**2.6 The supply frames the board.** Its red lead reaches the top `+` rail and
+its black lead the bottom `−` rail, so current visibly enters at the top edge and
+leaves at the bottom. Neither lead stops halfway.
 
 ---
 

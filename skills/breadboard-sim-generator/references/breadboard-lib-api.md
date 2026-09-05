@@ -100,6 +100,25 @@ See `component-catalog.md` for each one's parameters.
 
 ---
 
+## Checking the layout
+
+**`bbCheckLayout()`** → array of problem strings, empty when the board is clean.
+
+Checks the board against the five layout rules in `SKILL.md` §2.2: ground only
+from the bottom `−` rail, nothing on `T-`, nothing on `B+`, the supply on `T+`
+and `B-` and nowhere else, and no part in a hole a push button covers. Each
+string names its rule number and the offending hole.
+
+`bbSolve()` runs it once per page load and prints anything it finds to the
+console, so a broken board announces itself the first time it is opened. Call it
+yourself when you want the list rather than the warnings.
+
+**`BB.strictLayout`** — set to `false` before `bbSolve()` to switch the automatic
+report off. The only legitimate use is a sim that shows a learner a deliberately
+mis-wired board, and it must say so on screen.
+
+---
+
 ## Solving and reading results
 
 **`bbSolve(running)`**
