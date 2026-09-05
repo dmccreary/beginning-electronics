@@ -811,6 +811,12 @@
         
       
         
+          
+        
+      
+        
+          
+        
       
         
           
@@ -1158,6 +1164,27 @@
   
   <span class="md-ellipsis">
     Breadboard Anatomy Explorer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../breadboard-power-supply-comparison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Breadboard Power Supply Comparison
   </span>
   
 
@@ -1951,27 +1978,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../template/index.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    MicroSim Template
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../multi-led-configuration-explorer/" class="md-nav__link">
         
   
@@ -2048,6 +2054,27 @@
     <span class="md-status md-status--scaffold"></span>
   
 
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../potentiometer-motor-control-breadboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Potentiometer Motor Control Breadboard
+  </span>
   
 
       </a>
@@ -3430,16 +3457,26 @@ point. A red, a green, and a blue LED share the same supply and the same
 resistor but draw different currents, because each color has a different
 forward voltage.</p>
 <h2 id="the-circuit">The Circuit</h2>
-<p>Each branch traces the same path from the positive rail back to ground:</p>
-<div class="highlight"><pre><span></span><code>T+3 (positive rail) → red wire → a3
-  → SW1, straddling the channel at e3/f3 → j3
+<p>Each branch traces the same path from the positive rail at the top of the board
+down to ground at the bottom:</p>
+<div class="highlight"><pre><span></span><code>T+1 (positive rail, top) → red wire → d1
+  → SW1, straddling the center channel from e1 to f3 → j3
   → R1 220Ω → j6
   → D1, anode g6 to cathode g8 → j8
-  → black wire → B-8 (ground rail)
+  → black wire → B-8 (ground rail, bottom)
 </code></pre></div>
-<p>A single black jumper from <code>T-2</code> to <code>B-2</code> carries ground from the top rail down
-to the bottom rail. Without it, none of the three branches would have a return
-path — the same jumper you have to remember on a real board.</p>
+<p>The supply itself frames the board: its red lead goes to the <code>+</code> rail along the
+top edge and its black lead to the <code>−</code> rail along the bottom edge. Nothing at all
+is connected to the other two rails. That is deliberate — it means every branch
+runs strictly downhill, and the dots you watch always enter at the top of the
+board and leave at the bottom.</p>
+<p>Each push button is a 6 mm tactile switch, and like the real part it covers
+<strong>three columns</strong>: its legs sit in rows <code>e</code> and <code>f</code> of the outer two columns and
+its body sits over the middle one. SW1 starts at the board's left edge, so it
+owns columns 1–3 and nothing can ever go in column 2. The wires always attach to
+a <strong>diagonal</strong> pair of legs — <code>e1</code> to <code>f3</code> here — because the two legs on the
+same side of the center channel are joined inside the switch whether or not it is
+pressed.</p>
 <table>
 <thead>
 <tr>

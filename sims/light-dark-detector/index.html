@@ -811,6 +811,12 @@
         
       
         
+          
+        
+      
+        
+          
+        
       
         
           
@@ -1158,6 +1164,27 @@
   
   <span class="md-ellipsis">
     Breadboard Anatomy Explorer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../breadboard-power-supply-comparison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Breadboard Power Supply Comparison
   </span>
   
 
@@ -2144,27 +2171,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../template/index.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    MicroSim Template
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../multi-led-configuration-explorer/" class="md-nav__link">
         
   
@@ -2241,6 +2247,27 @@
     <span class="md-status md-status--scaffold"></span>
   
 
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../potentiometer-motor-control-breadboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Potentiometer Motor Control Breadboard
+  </span>
   
 
       </a>
@@ -3430,10 +3457,10 @@ switches <strong>abruptly</strong>. That gap between a continuous input and an o
 output is the whole point of the circuit, and it is what makes a transistor a
 switch rather than a dimmer.</p>
 <h2 id="the-circuit">The Circuit</h2>
-<div class="highlight"><pre><span></span><code>9 V rail → LDR (0–100 kΩ) → divider junction → R2 4.7 kΩ → ground
+<div class="highlight"><pre><span></span><code>T+ rail → LDR (0–100 kΩ) → divider junction → R2 4.7 kΩ → B− rail
 divider junction → RB 4.7 kΩ → Q1 base
-B+ rail → RL 470Ω → D1 → Q1 collector;  BZ1 in parallel with D1
-Q1 emitter → ground
+divider supply → RL 470Ω → D1 → Q1 collector;  BZ1 in parallel with D1
+Q1 emitter → B− rail
 </code></pre></div>
 <table>
 <thead>

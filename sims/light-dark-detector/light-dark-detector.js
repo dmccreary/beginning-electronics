@@ -60,19 +60,21 @@ function setup() {
   bbLayout(margin, boardTop, 400, 300, 24);
   bbReset();
 
-  // --- Supply, on the top rails, jumpered down to the bottom rails ---
-  bbBattery({pos: 'T+1', neg: 'T-1', volts: 9, label: 'BAT'});
-  bbWire({a: 'T+4', b: 'B+4', color: 'red'});
-  bbWire({a: 'T-5', b: 'B-5', color: 'black'});
+  // --- Supply: + on the top rail, - on the bottom rail, nothing on the other
+  // two, so the whole board reads top to bottom ---
+  bbBattery({pos: 'T+1', neg: 'B-1', volts: 9, label: 'BAT'});
 
   // --- Voltage divider in the top half ---
-  // The LDR is on top and the fixed resistor below, so MORE light means LESS
-  // LDR resistance and a HIGHER voltage at the junction.
-  bbWire({a: 'T+2', b: 'a2', color: 'red'});
-  ldr = bbPotentiometer({a: 'b2', b: 'b7', maxOhms: LDR_MAX_OHMS,
+  // The LDR is on the supply side of the junction and the fixed resistor below
+  // it, so MORE light means LESS LDR resistance and a HIGHER voltage at the
+  // junction (net T7). Supply enters on the RIGHT of the divider and ground
+  // leaves on the LEFT: that puts the ground jumper on column 2, the one column
+  // where it can drop straight to the bottom rail without crossing a part.
+  bbWire({a: 'T+13', b: 'a13', color: 'red'});
+  ldr = bbPotentiometer({a: 'b13', b: 'b7', maxOhms: LDR_MAX_OHMS,
                          setting: 0.8, label: 'LDR'});
-  bbResistor({a: 'b7', b: 'b12', ohms: 4700, label: 'R2'});
-  bbWire({a: 'c12', b: 'T-12', color: 'black'});
+  bbResistor({a: 'b7', b: 'b2', ohms: 4700, label: 'R2'});
+  bbWire({a: 'c2', b: 'B-2', color: 'black'});
 
   // --- Base drive: divider junction (net T7) across to the bottom half ---
   // The jumper lands well to the right of the transistor so the base resistor
@@ -87,7 +89,10 @@ function setup() {
   // --- Collector load: an LED and a buzzer in parallel ---
   // The LED sits in row g and the buzzer in row j. A buzzer is a fat cylinder,
   // and in adjacent rows its body would cover the LED completely.
-  bbWire({a: 'j7', b: 'B+7', color: 'red'});
+  // Power crosses over from the divider's supply node rather than from a second
+  // + rail. It runs the length of the center channel, the one empty lane on
+  // this board - every row here already carries a part or a part's label.
+  bbWire({a: 'e13', b: 'f7', color: 'red'});
   bbResistor({a: 'i7', b: 'i11', ohms: 470, label: 'RL'});
   bbLED({anode: 'g11', cathode: 'g14', color: 'red', label: 'D1'});
   bbBuzzer({a: 'j11', b: 'j14', label: 'BZ1'});

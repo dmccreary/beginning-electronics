@@ -32,12 +32,26 @@
  *     const canvas = createCanvas(canvasWidth, canvasHeight);
  *     canvas.parent(document.querySelector('main'));
  *     bbReset();
- *     bbBattery({pos: 'T+1', neg: 'T-1', volts: 9, label: '9V'});
+ *     bbBattery({pos: 'T+1', neg: 'B-1', volts: 9, label: '9V'});
  *     bbWire({a: 'T+3', b: 'a3', color: 'red'});
  *     bbResistor({a: 'a3', b: 'a8', ohms: 470, label: 'R1'});
  *     bbLED({anode: 'e8', cathode: 'e12', color: 'red', label: 'D1'});
- *     bbWire({a: 'a12', b: 'T-12', color: 'black'});
+ *     bbWire({a: 'j12', b: 'B-12', color: 'black'});
  *   }
+ *
+ * LAYOUT RULES
+ * ------------
+ * Every board in this book reads the same way: power in at the TOP rail,
+ * current down through the parts, ground out at the BOTTOM rail. Five rules
+ * keep that true, and bbCheckLayout() enforces them on the first solve:
+ *
+ *   1. Ground reaches parts from the bottom negative rail only.
+ *   2. Nothing connects to the top negative rail (T-).
+ *   3. Nothing connects to the bottom positive rail (B+).
+ *   4. The supply connects to exactly two holes - one on T+, one on B-.
+ *   5. A push button covers three columns; nothing else goes in any of them.
+ *
+ * See bbCheckLayout() for why, and BB.strictLayout to opt a sim out.
  *
  *   function draw() {
  *     ...standard MicroSim background...
@@ -98,7 +112,8 @@ let BB = {
   padLeft: 0,        // space reserved left of the board for the supply badge
   showColNumbers: true,
   showRowLetters: true,
-  electronFlow: false // false = conventional current (+ to -), the textbook default
+  electronFlow: false, // false = conventional current (+ to -), the textbook default
+  strictLayout: true   // check the board against the layout rules on first solve
 };
 
 // Space reserved to the left of the board for the power supply badge, in pitch
@@ -214,8 +229,10 @@ function bbPin(ref) {
  *   - Rows a-e of one column are one net; rows f-j of that column are another.
  *     The center channel keeps the two halves apart.
  *   - Each power rail is a single net running the whole length of the board.
- *     The top rails and the bottom rails are NOT connected to each other - a
- *     jumper has to do that, exactly as on a real board.
+ *     The top rails and the bottom rails are NOT connected to each other. In
+ *     this book the supply itself bridges them - red lead to T+, black lead to
+ *     B- - rather than a jumper, so the two rails a student uses sit at the two
+ *     edges of the board and current reads top to bottom (layout rule 4).
  */
 function bbNetOf(row, col) {
   if (row === 'T+') return 'TP';
@@ -348,6 +365,7 @@ function bbReset() {
   bbTime = 0;
   bbScopeTraces = [];
   bbScopeSamples = 0;
+  bbLayoutChecked = false;
 }
 
 /** Look up a part by its label, e.g. bbPart('D1'). */
@@ -437,8 +455,10 @@ function bbDrawLeads(len, bodyLen) {
 
 /**
  * Small label drawn just above a component body, upright regardless of how the
- * body is rotated. The label sits on a translucent backing because it usually
- * lands over a row of holes, and dark text on black squares is unreadable.
+ * body is rotated. The label sits on a near-opaque backing because it usually
+ * lands over a row of holes, and dark text on black squares is unreadable. At
+ * lower opacity a row of holes reads as a line struck through the label, which
+ * is worse than simply covering them.
  */
 function bbDrawLabel(label, x, y, col) {
   if (!label) return;
@@ -447,9 +467,12 @@ function bbDrawLabel(label, x, y, col) {
   textSize(ts);
   textAlign(CENTER, BOTTOM);
   const w = textWidth(label) + 6;
+  // Tall enough to swallow a whole row of holes. Sized only to the text, the
+  // top edge of the hole row behind it peeks out and reads as a strikethrough.
+  const h = max(ts + 4, BB.pitch * 1.15);
   noStroke();
-  fill(255, 255, 255, 215);
-  rect(x - w / 2, y - ts - 2, w, ts + 4, 3);
+  fill(255, 255, 255, 245);
+  rect(x - w / 2, y + 2 - h, w, h, 3);
   fill(col || 'black');
   text(label, x, y);
   pop();
@@ -461,8 +484,12 @@ function bbDrawLabel(label, x, y, col) {
  * The circuit's power source. It fixes the voltage of two nets, which is what
  * makes the whole solve possible: everything else is measured relative to them.
  *
- * @param {string} o.pos    address on the positive rail, e.g. 'T+1'
- * @param {string} o.neg    address on the negative rail, e.g. 'T-1'
+ * Layout rule 4: it connects to exactly two holes, 'T+n' at the top of the
+ * board and 'B-n' at the bottom, so the supply frames the board and current
+ * reads top to bottom. Nothing else touches those two rails' opposites.
+ *
+ * @param {string} o.pos    address on the TOP positive rail, e.g. 'T+1'
+ * @param {string} o.neg    address on the BOTTOM negative rail, e.g. 'B-1'
  * @param {number} o.volts  supply voltage (default 9)
  */
 function bbBattery(o) {
@@ -506,12 +533,22 @@ function bbBattery(o) {
       textAlign(CENTER, CENTER);
       textSize(max(9, min(p * 0.7, bodyW * 0.42)));
       text(nf(this.volts, 0, this.volts % 1 ? 1 : 0) + 'V', cx, bodyTop + bodyH / 2);
-      // + and - beside the terminals so polarity is unambiguous
-      textSize(max(9, p * 0.7));
+      // Polarity marked large, centred on the pack itself rather than tucked
+      // beside the terminals. On a board wired to layout rule 4 the pack spans
+      // the whole height, so a big + at the top and - at the bottom of the
+      // yellow body is the clearest statement of which way current leaves.
+      // The glyph shrinks if the pack is short - two of these will not fit in a
+      // two-rail-high body - but never grows past twice the old size.
+      const ps = max(9, min(p * 1.4, (bodyH - p * 0.6) * 0.42));
+      // Anchored to the top and bottom of the pack, not to the terminals: on a
+      // short pack the terminals are barely a pitch apart and a glyph placed at
+      // one of them lands on top of the voltage text in the middle.
+      const inset = ps * 0.62;                    // keeps a glyph inside the body
+      textSize(ps);
       fill('red');
-      text('+', cx + bodyW / 2 - p * 0.35, pos.y - p * 0.55);
+      text('+', cx, bodyTop + inset);
       fill('black');
-      text('−', cx + bodyW / 2 - p * 0.35, neg.y + p * 0.55);
+      text('−', cx, bodyTop + bodyH - inset);
       pop();
     }
   };
@@ -674,43 +711,121 @@ function bbLED(o) {
 // --- push button (momentary) ------------------------------------------------
 
 /**
- * A tactile push button. Real ones straddle the center channel, so give it a
- * pin in the top half and one in the bottom half of the same or a nearby column.
+ * A tactile push button - the standard 6 mm four-leg part.
  *
- * @param {string} o.key  optional keyboard key that also presses it
+ * On a real board the body straddles the center channel and the legs splay out
+ * 0.2 inch, so the part occupies THREE columns: legs in rows e and f of column
+ * c and column c+2, with the body sitting over column c+1. Nothing can be
+ * plugged into that middle column - the plastic is in the way - which is why
+ * LAYOUT RULE 5 forbids routing anything through it.
+ *
+ * The two legs on the same side of the channel are permanently joined inside
+ * the switch; pressing joins the e side to the f side. Wiring the DIAGONAL pair
+ * is therefore the safe habit, and the only one this function offers: it is the
+ * pair that is never already connected, whichever way round the part goes in.
+ *
+ * @param {string}  o.at    upper-left leg, always in row e, e.g. 'e1'. The part
+ *                          then covers columns 1-3, legs at e1/e3/f1/f3.
+ * @param {boolean} o.flip  wire the other diagonal - upper-RIGHT to lower-left.
+ *                          Use it when +V arrives on the right of the button and
+ *                          the load leaves on the left.
+ * @param {string}  o.key   optional keyboard key that also presses it
+ *
+ * The older {a, b} form still works and names the switched pair directly, but
+ * it warns unless the two legs are two columns apart on opposite sides of the
+ * channel, because anything else is not a part you can buy.
  */
+const BB_BUTTON_SPAN = 3;   // columns covered by a 6 mm tactile switch
+
 function bbButton(o) {
-  const a = bbPin(o.a);
-  const b = bbPin(o.b);
+  let a, b, col;
+  if (o.at !== undefined) {
+    const at = bbPin(o.at);
+    if (at.row !== 'e') {
+      console.error('bbButton ' + (o.label || '') + ': `at` names the upper-LEFT leg ' +
+        'and must be in row e, not "' + o.at + '". The body straddles the channel ' +
+        'between rows e and f.');
+    }
+    col = at.col;
+    a = bbPin('e' + (o.flip ? col + 2 : col));
+    b = bbPin('f' + (o.flip ? col : col + 2));
+  } else {
+    a = bbPin(o.a);
+    b = bbPin(o.b);
+    col = min(a.col, b.col);
+    const spanOk = Math.abs(a.col - b.col) === BB_BUTTON_SPAN - 1;
+    const straddles = (a.row === 'e' && b.row === 'f') || (a.row === 'f' && b.row === 'e');
+    if (!spanOk || !straddles) {
+      console.warn('bbButton ' + (o.label || '') + ': legs "' + o.a + '"/"' + o.b +
+        '" are not a real tactile switch. It spans three columns with its legs in ' +
+        'rows e and f, two columns apart. Use {at: "e' + col + '"} (or add flip: true).');
+    }
+  }
+
+  // Every hole the body covers or occupies. Layout checking uses this, and so
+  // does anyone asking "can I put a wire there?" - the answer is no.
+  const footprint = [];
+  for (const row of ['e', 'f']) {
+    for (let d = 0; d < BB_BUTTON_SPAN; d++) footprint.push(row + (col + d));
+  }
+
   const part = {
     type: 'button',
     pins: [a, b],
+    cornerCols: [col, col + BB_BUTTON_SPAN - 1],
+    midCol: col + 1,
+    footprint: footprint,
     color: o.color || 'red',
     label: o.label || '',
     key: o.key || null,
     pressed: false,
     branches: function () {
-      if (!this.pressed) return [];   // open contacts: no branch at all
-      return [{a: this.pins[0].net, b: this.pins[1].net, R: 0.02, vf: 0, oneWay: false}];
+      // The two legs on each side of the channel are riveted together inside
+      // the switch whether or not it is pressed - a real board behaves this way,
+      // and modelling it is what makes the covered-column rule mean something.
+      const cols = this.cornerCols;
+      const internal = [
+        {a: bbNetOf('e', cols[0]), b: bbNetOf('e', cols[1]), R: 0.02, vf: 0, oneWay: false},
+        {a: bbNetOf('f', cols[0]), b: bbNetOf('f', cols[1]), R: 0.02, vf: 0, oneWay: false}
+      ];
+      if (!this.pressed) return internal;      // contacts open: the halves stay apart
+      return internal.concat([
+        {a: this.pins[0].net, b: this.pins[1].net, R: 0.02, vf: 0, oneWay: false}
+      ]);
     },
     hit: function (mx, my) {
       const c = this.center();
       return dist(mx, my, c.x, c.y) < BB.pitch * 1.4;
     },
     center: function () {
-      return {x: (this.pins[0].x + this.pins[1].x) / 2,
-              y: (this.pins[0].y + this.pins[1].y) / 2};
+      return {x: bbColX(this.midCol), y: (bbRowY('e') + bbRowY('f')) / 2};
     },
     render: function () {
       const p = BB.pitch;
       const c = this.center();
+      // A real 6 mm tactile switch is SQUARE - 6 mm is 2.4 hole pitches - and it
+      // is the legs, splayed 0.2 inch apart, that make the footprint three
+      // columns wide. Do not flatten the body to expose them: on a real board
+      // the plastic covers its own leg holes, and a squat body reads as a
+      // different part.
       const s = p * 2.4;
       push();
+
+      // Legs first, so the body sits on top of them the way the plastic does.
+      stroke(110);
+      strokeWeight(max(1.5, p * 0.16));
+      for (const row of ['e', 'f']) {
+        for (const lc of this.cornerCols) {
+          line(bbColX(lc), bbRowY(row), bbColX(lc), c.y);
+        }
+      }
+
       // Body
       stroke('gray');
       strokeWeight(1);
       fill('dimgray');
       rect(c.x - s / 2, c.y - s / 2, s, s, s * 0.15);
+
       // Cap - keeps its color when held down but shrinks and darkens, so it
       // reads as "pressed in" while still identifying which button it is.
       noStroke();
@@ -726,8 +841,11 @@ function bbButton(o) {
         circle(c.x, c.y, s * 0.72);
       }
       pop();
-      bbDrawLabel(this.label + (this.key ? ' [' + this.key + ']' : ''),
-                  c.x, c.y - s * 0.62);
+      // Designator only. The keyboard shortcut is not printed here - the label
+      // has to stay narrow enough to sit over three columns without covering
+      // its neighbours, and the instruction line under the board already names
+      // the keys.
+      bbDrawLabel(this.label, c.x, bbRowY('e') - p * 0.35);
     }
   };
   return bbAddPart(part);
@@ -983,6 +1101,98 @@ function bbTransistor(o) {
 }
 
 // ============================================================================
+// SECTION 3b - Strict layout rules
+// ============================================================================
+
+/**
+ * The layout rules every breadboard sim in this book obeys.
+ *
+ * They are not style preferences. A student reading these boards has to build
+ * one mental model of current: it enters at the top of the board, works its way
+ * down through the parts, and leaves at the bottom. A ground jumper hanging off
+ * the TOP rail, or a positive jumper on the BOTTOM rail, quietly breaks that
+ * picture - the board still works, and the student still cannot say which way
+ * anything flows.
+ *
+ *   1. Ground reaches parts from the BOTTOM negative rail only.
+ *   2. Nothing connects to the top negative rail (T-). It stays empty.
+ *   3. Nothing connects to the bottom positive rail (B+). It stays empty.
+ *   4. The supply connects to exactly two places: T+ at the top and B- at the
+ *      bottom. No jumper carries + down or - up.
+ *   5. A push button covers three columns. Nothing goes in any hole it covers,
+ *      the middle column least of all - the plastic body is over it.
+ *
+ * bbCheckLayout() runs itself once on the first solve and reports violations to
+ * the console with the rule number. A sim that has a teaching reason to break
+ * a rule - showing a student what a wrongly wired board looks like, say - sets
+ * `BB.strictLayout = false` before bbSolve() and says so on screen.
+ *
+ * @returns {string[]} the problems found, empty when the board is clean
+ */
+function bbCheckLayout() {
+  const problems = [];
+  const covered = {};        // hole address -> the button covering it
+
+  for (const part of bbParts) {
+    if (part.footprint) {
+      for (const hole of part.footprint) covered[hole] = part;
+    }
+  }
+
+  for (const part of bbParts) {
+    const what = part.type + (part.label ? " '" + part.label + "'" : '');
+
+    if (part.type === 'battery') {
+      if (part.pins[0].row !== 'T+') {
+        problems.push('Rule 4: the supply\'s + terminal is on ' + part.pins[0].row +
+          ', not the top positive rail. Use pos: \'T+1\'.');
+      }
+      if (part.pins[1].row !== 'B-') {
+        problems.push('Rule 4: the supply\'s - terminal is on ' + part.pins[1].row +
+          ', not the bottom negative rail. Use neg: \'B-1\' so ground sits at the ' +
+          'bottom of the board and current reads top to bottom.');
+      }
+      continue;
+    }
+
+    for (const pin of part.pins) {
+      const hole = pin.row + pin.col;
+      if (pin.row === 'T-') {
+        problems.push('Rule 2: ' + what + ' connects to ' + hole + '. The top ' +
+          'negative rail stays empty - ground every part to the bottom rail (B-) ' +
+          'instead, so current visibly leaves at the bottom of the board.');
+      }
+      if (pin.row === 'B+') {
+        problems.push('Rule 3: ' + what + ' connects to ' + hole + '. The bottom ' +
+          'positive rail stays empty - take power from the top rail (T+).');
+      }
+      if (covered[hole] && covered[hole] !== part) {
+        problems.push('Rule 5: ' + what + ' uses ' + hole + ', which is under push ' +
+          'button \'' + covered[hole].label + '\'' +
+          (pin.col === covered[hole].midCol
+            ? ' - its middle column, where there is no reachable hole at all.'
+            : ' - one of its leg holes.'));
+      }
+    }
+  }
+
+  return problems;
+}
+
+/** Run bbCheckLayout() once per page load and print anything it finds. */
+let bbLayoutChecked = false;
+function bbReportLayout() {
+  if (bbLayoutChecked || BB.strictLayout === false) return;
+  bbLayoutChecked = true;
+  const problems = bbCheckLayout();
+  if (!problems.length) return;
+  console.warn('Breadboard layout rules - ' + problems.length + ' problem' +
+    (problems.length === 1 ? '' : 's') + ' on this board:');
+  for (const p of problems) console.warn('  ' + p);
+  console.warn('  Set BB.strictLayout = false if a rule is being broken on purpose.');
+}
+
+// ============================================================================
 // SECTION 4 - Circuit solver
 // ============================================================================
 
@@ -995,6 +1205,7 @@ function bbTransistor(o) {
 function bbSolve(running) {
   if (running !== undefined) bbRunning = running;
   if (bbRunning) bbTime += deltaTime / 1000;
+  bbReportLayout();   // once per page load, and only if something is wrong
 
   // Fixed nodes come from the battery: everything else is solved relative to them.
   const fixed = {};
@@ -1245,10 +1456,22 @@ function bbDrawAnimatedWire(p1, p2, current, col, arcUnits) {
     const dx = p2.x - p1.x, dy = p2.y - p1.y;
     const len = max(1, sqrt(dx * dx + dy * dy));
     const cx = mx - (dy / len) * bow * 2, cy = my + (dx / len) * bow * 2;
+    const usesBezierOrder = typeof bezierOrder === 'function';
+    if (usesBezierOrder) {
+      // p5.js v2 folded quadraticVertex() into bezierVertex() + bezierOrder(2),
+      // with one control point per call instead of packed into a single call.
+      bezierOrder(2);
+    }
     beginShape();
     vertex(p1.x, p1.y);
-    quadraticVertex(cx, cy, p2.x, p2.y);
+    if (usesBezierOrder) {
+      bezierVertex(cx, cy);
+      bezierVertex(p2.x, p2.y);
+    } else {
+      quadraticVertex(cx, cy, p2.x, p2.y);
+    }
     endShape();
+    if (usesBezierOrder) bezierOrder(3);
   }
 
   // Insulation ends where the wire enters the hole

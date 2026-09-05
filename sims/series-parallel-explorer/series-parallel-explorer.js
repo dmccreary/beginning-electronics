@@ -84,15 +84,11 @@ function setup() {
 function buildCircuit() {
   bbReset();
 
-  // Supply arrives on the top rails only - the bottom rails are fed by jumpers,
-  // exactly as they would be on a real board.
-  bbBattery({pos: 'T+1', neg: 'T-1', volts: voltsSlider ? voltsSlider.value() : 6,
+  // The supply frames the board: + on the top rail, - on the bottom rail, and
+  // nothing on the other two. Both modes then run downhill, so the only thing
+  // that changes on screen is the topology itself.
+  bbBattery({pos: 'T+1', neg: 'B-1', volts: voltsSlider ? voltsSlider.value() : 6,
              label: 'BAT'});
-
-  // Power distribution is identical in both modes, so the only thing that
-  // changes on screen is the topology itself.
-  bbWire({a: 'T+2', b: 'B+2', color: 'red'});      // carry + down to the bottom rail
-  bbWire({a: 'T-3', b: 'B-3', color: 'black'});    // and ground with it
 
   // Parts alternate between rows b/d in the top half and rows g/i in the
   // bottom half. Staggering them by two rows keeps each part's value label
@@ -112,12 +108,15 @@ function buildCircuit() {
     // Two independent branches, one in each half of the board, each running
     // from a + rail to a - rail. Neither branch knows the other exists, which
     // is exactly the point.
+    // Each branch reaches the bottom - rail on its own: the top one takes a
+    // long jumper down the clear right-hand side, the bottom one is already
+    // beside it. Neither borrows a second rail.
     bbWire({a: 'T+5', b: 'a5', color: 'red'});
     bbResistor({a: 'b5', b: 'b9', ohms: SERIES_OHMS, label: 'R1'});
     bbLED({anode: 'd9', cathode: 'd13', color: 'red', label: 'D1'});
-    bbWire({a: 'a13', b: 'T-13', color: 'black'});
+    bbWire({a: 'a13', b: 'B-17', color: 'black'});
 
-    bbWire({a: 'B+5', b: 'j5', color: 'red'});
+    bbWire({a: 'T+3', b: 'h5', color: 'red'});
     bbResistor({a: 'i5', b: 'i9', ohms: SERIES_OHMS, label: 'R2'});
     bbLED({anode: 'g9', cathode: 'g13', color: 'red', label: 'D2'});
     bbWire({a: 'j13', b: 'B-13', color: 'black'});

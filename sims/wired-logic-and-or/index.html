@@ -811,6 +811,12 @@
         
       
         
+          
+        
+      
+        
+          
+        
       
         
           
@@ -1158,6 +1164,27 @@
   
   <span class="md-ellipsis">
     Breadboard Anatomy Explorer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../breadboard-power-supply-comparison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Breadboard Power Supply Comparison
   </span>
   
 
@@ -1951,27 +1978,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../template/index.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    MicroSim Template
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../multi-led-configuration-explorer/" class="md-nav__link">
         
   
@@ -2048,6 +2054,27 @@
     <span class="md-status md-status--scaffold"></span>
   
 
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../potentiometer-motor-control-breadboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Potentiometer Motor Control Breadboard
+  </span>
   
 
       </a>
@@ -3399,13 +3426,16 @@ paths, so either one on its own is enough.</p>
 <p>Both circuits are on the board at once, and the truth tables beside them fill in
 live as you flip switches.</p>
 <h2 id="the-circuit">The Circuit</h2>
+<p>Both gates hang off the same two rails: the <code>+</code> rail along the top of the board
+and the <code>−</code> rail along the bottom. Nothing is connected to the other two rails,
+so every path runs downhill and the dots always travel the same direction.</p>
 <p><strong>AND</strong> — series, in the top half:</p>
-<div class="highlight"><pre><span></span><code>T+ rail → a5 → SW A → SW B → R1 220Ω → D1 (red) → T− rail
+<div class="highlight"><pre><span></span><code>T+ rail → a5 → SW A → SW B → R1 220Ω → D1 (red) → B− rail
 </code></pre></div>
 <p><strong>OR</strong> — parallel, in the bottom half:</p>
-<div class="highlight"><pre><span></span><code>B+ rail → j5 → SW C ┐
+<div class="highlight"><pre><span></span><code>T+ rail → h5 → SW C ┐
                     ├→ R2 220Ω → D2 (green) → B− rail
-B+ rail → j5 → SW D ┘
+T+ rail → h5 → SW D ┘
 </code></pre></div>
 <p>Switches C and D both bridge the same pair of columns, which is what puts them
 in parallel. On the board you can see it directly: two switches stacked one

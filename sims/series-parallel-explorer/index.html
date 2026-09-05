@@ -811,6 +811,12 @@
         
       
         
+          
+        
+      
+        
+          
+        
       
         
           
@@ -1158,6 +1164,27 @@
   
   <span class="md-ellipsis">
     Breadboard Anatomy Explorer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../breadboard-power-supply-comparison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Breadboard Power Supply Comparison
   </span>
   
 
@@ -1951,27 +1978,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../template/index.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    MicroSim Template
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../multi-led-configuration-explorer/" class="md-nav__link">
         
   
@@ -2048,6 +2054,27 @@
     <span class="md-status md-status--scaffold"></span>
   
 
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../potentiometer-motor-control-breadboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Potentiometer Motor Control Breadboard
+  </span>
   
 
       </a>
@@ -3427,15 +3454,16 @@ Switch between them with the dropdown and watch what changes: in series both
 LEDs are dim and share one small current; in parallel both are bright and the
 battery has to supply twice as much.</p>
 <h2 id="the-circuit">The Circuit</h2>
-<p>Power always arrives on the top rails and is jumpered down to the bottom rails,
-so the only thing that changes between the two modes is the topology itself.</p>
+<p>The supply frames the board — <code>+</code> on the top rail, <code>−</code> on the bottom rail, and
+nothing on the other two — so the only thing that changes between the two modes
+is the topology itself.</p>
 <p><strong>Series</strong> — one loop, crossing the center channel partway through:</p>
 <div class="highlight"><pre><span></span><code>T+ rail → a5 → R1 220Ω → D1 → across the channel (e12 → f12)
         → R2 220Ω → D2 → B− rail
 </code></pre></div>
 <p><strong>Parallel</strong> — two independent branches, one in each half of the board:</p>
-<div class="highlight"><pre><span></span><code>T+ rail → a5 → R1 220Ω → D1 → T− rail
-B+ rail → j5 → R2 220Ω → D2 → B− rail
+<div class="highlight"><pre><span></span><code>T+ rail → a5 → R1 220Ω → D1 → B− rail
+T+ rail → h5 → R2 220Ω → D2 → B− rail
 </code></pre></div>
 <table>
 <thead>
@@ -3482,9 +3510,9 @@ the two.</p>
 parallel branches visibly move dots faster than the series loop. In parallel,
 the wire feeding the two branches carries both branch currents — watch it run
 faster than either branch.</p>
-<p>The red rail jumper carries no current in series mode and shows no dots. It is
-still correct to leave it in place, which is worth pointing out: a wire with no
-current is not a wasted wire.</p>
+<p>In series mode the whole loop carries one current, so every wire animates at the
+same speed. That is worth pointing out on its own: equal dot speed everywhere is
+what "the same current passes through every part" looks like.</p>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="grade-level-subject-and-topic">Grade Level, Subject and Topic</h3>
 <p>Middle school and high school. Electronics. Series and parallel topology,

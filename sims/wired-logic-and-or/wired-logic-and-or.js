@@ -50,10 +50,10 @@ function setup() {
   bbLayout(margin, boardTop, 400, 300, 20);
   bbReset();
 
-  // Supply on the top rails, jumpered down so the bottom half has power too
-  bbBattery({pos: 'T+1', neg: 'T-1', volts: 5, label: 'BAT'});
-  bbWire({a: 'T+3', b: 'B+3', color: 'red'});
-  bbWire({a: 'T-4', b: 'B-4', color: 'black'});
+  // The supply frames the board: + on the top rail, - on the bottom rail, and
+  // nothing at all on the other two. Both gates therefore run downhill, which
+  // is what lets a student read current direction off the picture alone.
+  bbBattery({pos: 'T+1', neg: 'B-1', volts: 5, label: 'BAT'});
 
   // --- AND: two switches in SERIES, top half ---
   // Current has one path, so it needs BOTH switches closed to get through.
@@ -64,13 +64,15 @@ function setup() {
   bbSwitch({a: 'c9', b: 'c13', label: 'B', key: '2'});
   bbResistor({a: 'a13', b: 'a16', ohms: 220, label: 'R1'});
   bbLED({anode: 'c16', cathode: 'c19', color: 'red', label: 'D1'});
-  bbWire({a: 'a19', b: 'T-19', color: 'black'});
+  bbWire({a: 'a19', b: 'B-19', color: 'black'});
 
   // --- OR: two switches in PARALLEL, bottom half ---
   // Both switches bridge the same pair of nets, so EITHER one completes the
   // circuit on its own. Rows f and j keep them far enough apart that a click
   // can never land on both.
-  bbWire({a: 'B+5', b: 'j5', color: 'red'});
+  // Power for the bottom half comes down from the top rail on column 3, which
+  // is clear of both switch bodies, rather than from a second + rail.
+  bbWire({a: 'T+3', b: 'h5', color: 'red'});
   bbSwitch({a: 'f5', b: 'f9', label: 'C', key: '3'});
   bbSwitch({a: 'j5', b: 'j9', label: 'D', key: '4'});
   bbResistor({a: 'h9', b: 'h13', ohms: 220, label: 'R2'});

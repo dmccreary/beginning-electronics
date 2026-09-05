@@ -1,0 +1,85 @@
+{
+  "title": "Breadboard Power Supply Comparison",
+  "creator": "Dan McCreary",
+  "subject": "Beginning Electronics",
+  "description": "Side-by-side comparison of a 3xAA battery pack, USB wall charger, MB102 power module, and adjustable bench supply. Every specification cell opens a citation showing the source, the exact wording, and a verification verdict.",
+  "date": "2026-08-18",
+  "canvasHeight": 840,
+  "educational": {
+    "gradeLevel": ["7", "8", "9", "10", "11", "12"],
+    "subjectArea": "Electronics",
+    "topic": "Power Supplies and Circuit Protection",
+    "learningObjectives": [
+      "Evaluate four breadboard power supplies against a stated classroom situation and justify a choice from cited specifications",
+      "Distinguish a current limit you can set from one that is fixed inside a part",
+      "Explain why a regulator that is 'protected against short circuit' is not the same as a fused rail",
+      "Judge how much confidence a published specification deserves by tracing it to its source"
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Ohm's law",
+      "What a short circuit is",
+      "Chapter 5 power-supply vocabulary"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "vanilla-js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 840
+    },
+    "responsive": true,
+    "dependencies": [],
+    "dataFile": "data.json",
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "Every specification cell is a real button with an aria-label naming its row, column, value, and verdict. The detail panel is aria-live. The scenario menu is a native select."
+    }
+  },
+  "search": {
+    "tags": ["comparison-table", "power-supply", "circuit-protection", "sourced-data", "citations"],
+    "searchKeywords": [
+      "breadboard power supply",
+      "MB102",
+      "AMS1117",
+      "bench power supply current limit",
+      "AA battery short circuit",
+      "USB wall charger"
+    ],
+    "visualizationType": ["comparison-table", "data-table"],
+    "interactionLevel": "medium",
+    "complexity": 3,
+    "relatedConcepts": ["short circuit", "current limiting", "thermal shutdown", "voltage regulation"],
+    "applicationDomains": ["education", "decision-making", "classroom safety"]
+  },
+  "pedagogical": {
+    "teachingStrategy": "Evidence-based evaluation — students compare options and trace each claim to its source",
+    "keyQuestions": [
+      "Which of these four supplies lets you decide in advance how much current a fault can draw?",
+      "Why does this book refuse to print a short-circuit number for the USB charger?",
+      "The MB102 is 'protected against short circuit and thermal overloads.' Why is that still not a fuse?"
+    ],
+    "commonMisconceptions": [
+      "That a battery pack is inherently safe because it is small — a fresh alkaline AA has only 0.15-0.3 ohms of internal resistance",
+      "That 'has short-circuit protection' means the part cannot be damaged by a short",
+      "That a more expensive supply is automatically the safer classroom choice"
+    ],
+    "assessmentOpportunities": [
+      "Give a situation not in the scenario menu and require a choice justified by two cited specifications"
+    ]
+  },
+  "provenance": {
+    "method": "verified-infographic-guide Phases 1-4 (claim plan, source discovery, verification, report) applied to a comparison-table sim",
+    "primarySources": 4,
+    "secondarySources": 1,
+    "projectEstimates": 1,
+    "rejectedClaims": [
+      "MB102 rated output current of 700 mA - no primary source; the regulator's datasheet 1 A rating and 0.9-1.5 A current limit are used instead"
+    ]
+  },
+  "chapter": ""
+}

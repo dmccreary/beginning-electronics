@@ -1,0 +1,425 @@
+/*
+ * Breadboard Power Supply Comparison - sourced comparison table
+ *
+ * Built on the comparison-table template conventions (aliceblue control area,
+ * white table surface, 5-step star colour scale, pill badges) with two
+ * additions this sim needs:
+ *   - every specification cell is a <button>, because clicking it opens the
+ *     citation behind that number
+ *   - a verdict dot on each cell, colour-coded by how solid the number is
+ *
+ * Target: <iframe src="main.html" height="842px" width="100%" scrolling="no">
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    background-color: aliceblue;
+    color: #333;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 8px 10px 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 4px;
+    color: #1f3349;
+    font-size: clamp(19px, 2.6vw, 26px);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.sim-subtitle {
+    text-align: center;
+    color: #526579;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+/* ------------------------------------------------------------- controls */
+
+#controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.control-label {
+    font-weight: 600;
+    color: #1f3349;
+    font-size: 14px;
+}
+
+.scenario-select {
+    font-size: 14px;
+    padding: 6px 10px;
+    border: 1px solid #b9c6d4;
+    border-radius: 6px;
+    background: white;
+    color: #1f3349;
+    min-width: 260px;
+    cursor: pointer;
+}
+
+.scenario-select:focus-visible {
+    outline: 3px solid #2196F3;
+    outline-offset: 1px;
+}
+
+.rationale {
+    background: #ffffff;
+    border-left: 4px solid #b9c6d4;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 13.5px;
+    color: #445468;
+    margin-bottom: 10px;
+    min-height: 40px;
+}
+
+.rationale.active {
+    border-left-color: #2196F3;
+    background: #f2f8fe;
+    color: #26374a;
+}
+
+/* ---------------------------------------------------------------- table */
+
+#table-host {
+    overflow-x: auto;
+}
+
+.comparison-table {
+    width: 100%;
+    min-width: 740px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 6px 7px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+.comparison-table th {
+    background-color: #f4f7fa;
+    font-weight: 600;
+    color: #1f3349;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border-bottom: 2px solid #dde5ee;
+    white-space: nowrap;
+}
+
+.comparison-table tbody tr {
+    transition: opacity 0.18s ease, background-color 0.18s ease;
+}
+
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table tbody tr.picked {
+    background-color: #eefaf1;
+    box-shadow: inset 4px 0 0 #22c55e;
+}
+
+.comparison-table tbody tr.dimmed {
+    opacity: 0.45;
+}
+
+.col-supply { width: 158px; }
+.col-best   { width: 170px; }
+
+/* Supply name cell */
+
+.item-cell {
+    white-space: nowrap;
+}
+
+.item-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 34px;
+    margin-right: 6px;
+}
+
+.item-icon svg {
+    width: 34px;
+    height: 21px;
+    display: block;
+}
+
+.item-text {
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    max-width: 112px;
+}
+
+.item-name {
+    display: block;
+    font-weight: 600;
+    color: #1f3349;
+    font-size: 13.5px;
+    line-height: 1.25;
+}
+
+.difficulty {
+    display: inline-block;
+    margin-top: 3px;
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-size: 10.5px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.difficulty.easy        { background-color: #22c55e; }
+.difficulty.recommended { background-color: #2196F3; }
+.difficulty.hard        { background-color: #f59e0b; }
+
+/* Clickable specification cells */
+
+.spec-cell { padding: 3px 4px; }
+
+.cell-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+    font-size: 13px;
+    color: #26374a;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 5px 6px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.cell-btn:hover {
+    background-color: #f2f8fe;
+    border-color: #cfe1f5;
+}
+
+.cell-btn:focus-visible {
+    outline: 3px solid #2196F3;
+    outline-offset: 1px;
+}
+
+.cell-btn.open {
+    background-color: #e6f2fd;
+    border-color: #2196F3;
+}
+
+.cell-value {
+    border-bottom: 1px dotted #94a3b8;
+    line-height: 1.35;
+}
+
+.verdict-dot {
+    margin-left: 6px;
+    vertical-align: 1px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Ratings and description */
+
+.rating { white-space: nowrap; font-size: 15px; letter-spacing: 1px; }
+
+.stars-5 { color: #22c55e; }
+.stars-4 { color: #84cc16; }
+.stars-3 { color: #f59e0b; }
+.stars-2 { color: #f97316; }
+.stars-1 { color: #ef4444; }
+.stars-empty { color: #d5dde5; }
+
+.description-cell {
+    font-size: 12.5px;
+    color: #4b5b6d;
+    line-height: 1.35;
+    white-space: normal;
+}
+
+/* --------------------------------------------------------------- legend */
+
+#legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 14px;
+    margin: 8px 2px;
+    font-size: 12px;
+    color: #526579;
+}
+
+.legend-title { font-weight: 600; color: #1f3349; }
+
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* --------------------------------------------------------- detail panel */
+
+.detail-panel {
+    background: white;
+    border: 1px solid #dde5ee;
+    border-radius: 8px;
+    padding: 10px 14px;
+    min-height: 168px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.detail-panel.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fbfdff;
+    border-style: dashed;
+}
+
+.detail-prompt {
+    color: #6b7c8f;
+    font-size: 13.5px;
+    text-align: center;
+    max-width: 620px;
+}
+
+.detail-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+}
+
+.detail-where {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #7b8ca0;
+    font-weight: 600;
+}
+
+.verdict-badge {
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 9px;
+    border-radius: 10px;
+}
+
+.detail-value {
+    font-size: 19px;
+    font-weight: 600;
+    color: #1f3349;
+    line-height: 1.2;
+}
+
+.detail-meaning {
+    font-size: 12px;
+    color: #7b8ca0;
+    font-style: italic;
+    margin-bottom: 6px;
+}
+
+.detail-body {
+    font-size: 13.5px;
+    color: #3d4d5e;
+    line-height: 1.45;
+}
+
+.detail-quote {
+    margin: 6px 0 0;
+    padding: 5px 10px;
+    border-left: 3px solid #b9c6d4;
+    background: #f7fafd;
+    font-size: 12.5px;
+    color: #4b5b6d;
+    font-style: italic;
+}
+
+.detail-sources {
+    margin-top: 8px;
+    font-size: 11.5px;
+    color: #5d6e81;
+    line-height: 1.4;
+}
+
+.detail-sources a { color: #1565c0; }
+
+.src-label { font-weight: 700; color: #1f3349; }
+
+.src-kind {
+    display: inline-block;
+    background: #eef2f7;
+    color: #5d6e81;
+    border-radius: 8px;
+    padding: 0 6px;
+    font-size: 10.5px;
+}
+
+.detail-sources.no-src { font-style: italic; }
+
+/* ------------------------------------------------------------- footnote */
+
+#footnote {
+    margin-top: 8px;
+    font-size: 11.5px;
+    color: #6b7c8f;
+    line-height: 1.45;
+}
+
+.load-error { color: #ef4444; padding: 20px; }
+
+/* ---------------------------------------------------------- responsive */
+
+/* Narrow embeds and the 800px-wide gallery thumbnail: tighten enough that the
+   Best For column still fits instead of scrolling out of frame. */
+@media (max-width: 900px) {
+    .comparison-table th { font-size: 11.5px; }
+    .cell-btn { font-size: 12px; }
+    .description-cell { font-size: 11.5px; }
+    .item-name { font-size: 12.5px; }
+    .col-supply { width: 138px; }
+    .col-best   { width: 126px; }
+    .item-text  { max-width: 98px; }
+    .rating { font-size: 13px; letter-spacing: 0; }
+}
+
+@media (max-width: 720px) {
+    .sim-subtitle { font-size: 12px; }
+    .scenario-select { min-width: 200px; }
+    .detail-panel { min-height: 200px; }
+}
