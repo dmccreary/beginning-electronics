@@ -1245,10 +1245,22 @@ function bbDrawAnimatedWire(p1, p2, current, col, arcUnits) {
     const dx = p2.x - p1.x, dy = p2.y - p1.y;
     const len = max(1, sqrt(dx * dx + dy * dy));
     const cx = mx - (dy / len) * bow * 2, cy = my + (dx / len) * bow * 2;
+    const usesBezierOrder = typeof bezierOrder === 'function';
+    if (usesBezierOrder) {
+      // p5.js v2 folded quadraticVertex() into bezierVertex() + bezierOrder(2),
+      // with one control point per call instead of packed into a single call.
+      bezierOrder(2);
+    }
     beginShape();
     vertex(p1.x, p1.y);
-    quadraticVertex(cx, cy, p2.x, p2.y);
+    if (usesBezierOrder) {
+      bezierVertex(cx, cy);
+      bezierVertex(p2.x, p2.y);
+    } else {
+      quadraticVertex(cx, cy, p2.x, p2.y);
+    }
     endShape();
+    if (usesBezierOrder) bezierOrder(3);
   }
 
   // Insulation ends where the wire enters the hole
