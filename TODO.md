@@ -55,3 +55,76 @@ Use the `draw-schemdraw-circuit` skill for each item. Place each verified diagra
 ### P3 — interactive enhancements
 
 - [ ] **Chapter 16 — Debounce capacitor value MicroSim.** Create an additional MicroSim in [When a Switch “Clicks” Twice: Contact Bounce](docs/chapters/16-switches-buttons-wired-logic/index.md#when-a-switch-clicks-twice-contact-bounce) that lets students vary the debounce capacitor value while keeping the resistor fixed at 10 kΩ. Show the resulting RC time constant and visualize how smaller and larger capacitor values change the smoothed output response to the same bouncing button signal.
+
+<!-- p5js-v2-audit-2026-09-05 -->
+## p5.js 2.x Upgrade: MicroSim Fixes Needed (2026-09-05)
+
+A static scan of this repo's `docs/sims/` MicroSims found **30 sim(s)** using p5.js v1-only APIs that will break if upgraded to p5.js 2.x (the microsim-generator skill's templates now default to p5@2.3.2). Fix these before bumping this repo's MicroSims past p5@1.x.
+
+**High-leverage fix**: the following filename(s) are copied into multiple sim directories with the identical bug, so patching the source template once and re-copying it is likely cheaper than fixing each sim by hand:
+
+- `breadboard-lib.js` — appears in 27 affected sims below
+
+- [ ] **74hc595-shift-register-led-bar-graph** (`docs/sims/74hc595-shift-register-led-bar-graph/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **7805-regulator-breadboard** (`docs/sims/7805-regulator-breadboard/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **active-passive-buzzer-breadboard** (`docs/sims/active-passive-buzzer-breadboard/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **breadboard-anatomy-explorer** (`docs/sims/breadboard-anatomy-explorer/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **breadboard-troubleshooting-detective** (`docs/sims/breadboard-troubleshooting-detective/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **button-led-breadboard** (`docs/sims/button-led-breadboard/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **circuit-safety-hazard-explorer** (`docs/sims/circuit-safety-hazard-explorer/`)
+    - `circuit-safety-hazard-explorer.js` uses the old multi-control-point `bezierVertex(...)` call — v2 takes one control point per `bezierVertex()` call — chain multiple calls instead of packing several points into one; use `bezierOrder()` for a quadratic curve.
+- [ ] **combination-lock-circuit** (`docs/sims/combination-lock-circuit/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **dc-motor-direction-control-circuit** (`docs/sims/dc-motor-direction-control-circuit/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **diode-forward-reverse-bias-demo** (`docs/sims/diode-forward-reverse-bias-demo/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **half-split-fault-finder** (`docs/sims/half-split-fault-finder/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **jumper-wire-routing-practice** (`docs/sims/jumper-wire-routing-practice/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **led-chaser-matrix-explorer** (`docs/sims/led-chaser-matrix-explorer/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **led-current-limiting-resistor-circuit** (`docs/sims/led-current-limiting-resistor-circuit/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **light-dark-detector** (`docs/sims/light-dark-detector/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **pull-up-pull-down-resistor-explorer** (`docs/sims/pull-up-pull-down-resistor-explorer/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **pwm-motor-speed-control-breadboard** (`docs/sims/pwm-motor-speed-control-breadboard/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **rcl-draw-test** (`docs/sims/rcl-draw-test/`)
+    - `p5-circuit-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **rgb-led-color-mixer-breadboard** (`docs/sims/rgb-led-color-mixer-breadboard/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **schematic-to-breadboard-mapper** (`docs/sims/schematic-to-breadboard-mapper/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **series-parallel-explorer** (`docs/sims/series-parallel-explorer/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **solar-charging-circuit-explorer** (`docs/sims/solar-charging-circuit-explorer/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **solder-joint-quality-classifier** (`docs/sims/solder-joint-quality-classifier/`)
+    - `solder-joint-quality-classifier.js` uses the old multi-control-point `bezierVertex(...)` call — v2 takes one control point per `bezierVertex()` call — chain multiple calls instead of packing several points into one; use `bezierOrder()` for a quadratic curve.
+- [ ] **transistor-and-or-logic-gates** (`docs/sims/transistor-and-or-logic-gates/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **transistor-gate-explorer** (`docs/sims/transistor-gate-explorer/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+    - `transistor-gate-explorer.js` uses the old multi-control-point `bezierVertex(...)` call — v2 takes one control point per `bezierVertex()` call — chain multiple calls instead of packing several points into one; use `bezierOrder()` for a quadratic curve.
+- [ ] **transistor-motor-driver-explorer** (`docs/sims/transistor-motor-driver-explorer/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **transistor-switch-breadboard-demo** (`docs/sims/transistor-switch-breadboard-demo/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **virtual-multimeter-breadboard** (`docs/sims/virtual-multimeter-breadboard/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **voltage-divider-circuit-explorer** (`docs/sims/voltage-divider-circuit-explorer/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [ ] **wired-logic-and-or** (`docs/sims/wired-logic-and-or/`)
+    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+
+Reference: [p5.js Teachers' Guide to v2 transition](https://p5js.org/tutorials/v2_transition/)
