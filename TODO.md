@@ -75,8 +75,8 @@ A static scan of this repo's `docs/sims/` MicroSims found **30 sim(s)** using p5
     - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
 - [ ] **breadboard-troubleshooting-detective** (`docs/sims/breadboard-troubleshooting-detective/`)
     - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
-- [ ] **button-led-breadboard** (`docs/sims/button-led-breadboard/`)
-    - `breadboard-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [x] **button-led-breadboard** (`docs/sims/button-led-breadboard/`) — pilot fix, verified 2026-09-05
+    - `breadboard-lib.js` replaced with the fixed copy from `skills/breadboard-sim-generator/assets/breadboard-lib.js` (feature-detects `bezierOrder`, so it works unchanged under p5@1.11.10 while also being correct under p5 v2). Verified in-browser: renders identically, bowed-wire current animation still works, no console errors under either p5 version.
 - [ ] **circuit-safety-hazard-explorer** (`docs/sims/circuit-safety-hazard-explorer/`)
     - `circuit-safety-hazard-explorer.js` uses the old multi-control-point `bezierVertex(...)` call — v2 takes one control point per `bezierVertex()` call — chain multiple calls instead of packing several points into one; use `bezierOrder()` for a quadratic curve.
 - [ ] **combination-lock-circuit** (`docs/sims/combination-lock-circuit/`)
