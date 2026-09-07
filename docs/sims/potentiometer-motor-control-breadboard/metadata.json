@@ -1,0 +1,84 @@
+{
+  "title": "Potentiometer Motor Control Breadboard",
+  "creator": "Dan McCreary",
+  "subject": "Beginning Electronics",
+  "description": "Control a small DC motor with a three-terminal potentiometer and 2N2222 NPN transistor on a breadboard. Explore a correctly connected flyback diode with slowed transient playback.",
+  "date": "2026-09-05",
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Electronics",
+    "topic": "Potentiometer Motor Control Breadboard",
+    "learningObjectives": [
+      "Adjust potentiometer position and relate base current to motor response.",
+      "Trace the protected flyback current path when the potentiometer removes base drive."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "duration": "20–25 minutes",
+    "prerequisites": [
+      "Ohm’s law",
+      "Breadboard connectivity",
+      "Voltage dividers",
+      "NPN transistor terminals",
+      "Diode polarity"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 700
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10",
+      "breadboard-lib.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [
+      "Why does the motor speed saturate?",
+      "Which direction does flyback current flow?"
+    ],
+    "commonMisconceptions": [
+      "Motor current passes through the potentiometer.",
+      "The diode prevents excessive motor current."
+    ],
+    "assessmentOpportunities": [
+      "Record and explain motor response at five potentiometer settings.",
+      "Identify the cathode and trace both current loops."
+    ]
+  },
+  "chapter": "",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "simulationModel": {
+    "type": "Analytic loaded voltage divider and fixed-gain BJT with steady-state motor load; RL flyback transient",
+    "assumptions": [
+      "5 V supply",
+      "10 kΩ divider; 1 kΩ base resistor",
+      "BJT beta=80, Vbe=0.7 V, Vce(sat)=0.2 V",
+      "Motor R=30 Ω, L=50 mH, back EMF=3s V, load current=20+40s mA",
+      "Flyback diode drop=0.7 V; playback slowed 1000×"
+    ],
+    "limitations": [
+      "No mechanical acceleration or coast-down",
+      "No thermal or device-variation model",
+      "No switching storage time, diode recovery or parasitics",
+      "Speed is an illustrative steady-state percentage, not RPM"
+    ]
+  }
+}

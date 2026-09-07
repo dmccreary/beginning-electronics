@@ -59,7 +59,7 @@ Use the `draw-schemdraw-circuit` skill for each item. Place each verified diagra
 <!-- p5js-v2-audit-2026-09-05 -->
 ## p5.js 2.x Upgrade: MicroSim Fixes Needed (2026-09-05)
 
-A static scan of this repo's `docs/sims/` MicroSims found **30 sim(s)** using p5.js v1-only APIs that will break if upgraded to p5.js 2.x (the microsim-generator skill's templates now default to p5@2.3.2). Fix these before bumping this repo's MicroSims past p5@1.x.
+A static scan of this repo's `docs/sims/` MicroSims found **30 sim(s)** using p5.js v1-only APIs that will break if upgraded to p5.js 2.x (the microsim-generator skill's templates now default to p5@2.3.2). All 30 are now fixed (see checklist below), and every `<script src=".../p5...">` tag across the repo's `docs/sims/**/*.html` (67 files) plus the `breadboard-sim-generator` skill's `main-template.html` scaffold has been bumped from p5@1.x to **p5@2.3.2** (2026-09-05).
 
 **High-leverage fix**: the following filename(s) are copied into multiple sim directories with the identical bug, so patching the source template once and re-copying it is likely cheaper than fixing each sim by hand:
 
@@ -77,8 +77,8 @@ A static scan of this repo's `docs/sims/` MicroSims found **30 sim(s)** using p5
     - `breadboard-lib.js` replaced with the fixed copy from `skills/breadboard-sim-generator/assets/breadboard-lib.js` (feature-detects `bezierOrder`, works unchanged under p5@1.x, correct under p5 v2). Propagated and spot-verified 2026-09-05.
 - [x] **button-led-breadboard** (`docs/sims/button-led-breadboard/`) — pilot fix, verified 2026-09-05
     - `breadboard-lib.js` replaced with the fixed copy from `skills/breadboard-sim-generator/assets/breadboard-lib.js` (feature-detects `bezierOrder`, so it works unchanged under p5@1.11.10 while also being correct under p5 v2). Verified in-browser: renders identically, bowed-wire current animation still works, no console errors under either p5 version.
-- [ ] **circuit-safety-hazard-explorer** (`docs/sims/circuit-safety-hazard-explorer/`)
-    - `circuit-safety-hazard-explorer.js` uses the old multi-control-point `bezierVertex(...)` call — v2 takes one control point per `bezierVertex()` call — chain multiple calls instead of packing several points into one; use `bezierOrder()` for a quadratic curve.
+- [x] **circuit-safety-hazard-explorer** (`docs/sims/circuit-safety-hazard-explorer/`)
+    - `circuit-safety-hazard-explorer.js` flame icon's packed cubic `bezierVertex(...)` calls now feature-detect `bezierOrder` and chain single-control-point calls under v2, unchanged under v1. Fixed 2026-09-05.
 - [x] **combination-lock-circuit** (`docs/sims/combination-lock-circuit/`)
     - `breadboard-lib.js` replaced with the fixed copy from `skills/breadboard-sim-generator/assets/breadboard-lib.js` (feature-detects `bezierOrder`, works unchanged under p5@1.x, correct under p5 v2). Propagated and spot-verified 2026-09-05.
 - [x] **dc-motor-direction-control-circuit** (`docs/sims/dc-motor-direction-control-circuit/`)
@@ -99,8 +99,8 @@ A static scan of this repo's `docs/sims/` MicroSims found **30 sim(s)** using p5
     - `breadboard-lib.js` replaced with the fixed copy from `skills/breadboard-sim-generator/assets/breadboard-lib.js` (feature-detects `bezierOrder`, works unchanged under p5@1.x, correct under p5 v2). Propagated and spot-verified 2026-09-05.
 - [x] **pwm-motor-speed-control-breadboard** (`docs/sims/pwm-motor-speed-control-breadboard/`)
     - `breadboard-lib.js` replaced with the fixed copy from `skills/breadboard-sim-generator/assets/breadboard-lib.js` (feature-detects `bezierOrder`, works unchanged under p5@1.x, correct under p5 v2). Propagated and spot-verified 2026-09-05.
-- [ ] **rcl-draw-test** (`docs/sims/rcl-draw-test/`)
-    - `p5-circuit-lib.js` uses `quadraticVertex(...)`, folded into `bezierVertex()` in v2 — replace with `bezierOrder(2)` followed by single-control-point `bezierVertex()` calls.
+- [x] **rcl-draw-test** (`docs/sims/rcl-draw-test/`)
+    - `p5-circuit-lib.js`'s serpentine-pattern `quadraticVertex(...)` calls now feature-detect `bezierOrder` and use `bezierOrder(2)` with single-control-point `bezierVertex()` calls under v2, unchanged under v1. Fixed 2026-09-05.
 - [x] **rgb-led-color-mixer-breadboard** (`docs/sims/rgb-led-color-mixer-breadboard/`)
     - `breadboard-lib.js` replaced with the fixed copy from `skills/breadboard-sim-generator/assets/breadboard-lib.js` (feature-detects `bezierOrder`, works unchanged under p5@1.x, correct under p5 v2). Propagated and spot-verified 2026-09-05.
 - [x] **schematic-to-breadboard-mapper** (`docs/sims/schematic-to-breadboard-mapper/`)
@@ -109,13 +109,13 @@ A static scan of this repo's `docs/sims/` MicroSims found **30 sim(s)** using p5
     - `breadboard-lib.js` replaced with the fixed copy from `skills/breadboard-sim-generator/assets/breadboard-lib.js` (feature-detects `bezierOrder`, works unchanged under p5@1.x, correct under p5 v2). Propagated and spot-verified 2026-09-05.
 - [x] **solar-charging-circuit-explorer** (`docs/sims/solar-charging-circuit-explorer/`)
     - `breadboard-lib.js` replaced with the fixed copy from `skills/breadboard-sim-generator/assets/breadboard-lib.js` (feature-detects `bezierOrder`, works unchanged under p5@1.x, correct under p5 v2). Propagated and spot-verified 2026-09-05.
-- [ ] **solder-joint-quality-classifier** (`docs/sims/solder-joint-quality-classifier/`)
-    - `solder-joint-quality-classifier.js` uses the old multi-control-point `bezierVertex(...)` call — v2 takes one control point per `bezierVertex()` call — chain multiple calls instead of packing several points into one; use `bezierOrder()` for a quadratic curve.
+- [x] **solder-joint-quality-classifier** (`docs/sims/solder-joint-quality-classifier/`)
+    - `solder-joint-quality-classifier.js`'s cone-fillet packed cubic `bezierVertex(...)` calls now feature-detect `bezierOrder` and chain single-control-point calls under v2, unchanged under v1. Fixed 2026-09-05.
 - [x] **transistor-and-or-logic-gates** (`docs/sims/transistor-and-or-logic-gates/`)
     - `breadboard-lib.js` replaced with the fixed copy from `skills/breadboard-sim-generator/assets/breadboard-lib.js` (feature-detects `bezierOrder`, works unchanged under p5@1.x, correct under p5 v2). Propagated and spot-verified 2026-09-05.
-- [ ] **transistor-gate-explorer** (`docs/sims/transistor-gate-explorer/`)
+- [x] **transistor-gate-explorer** (`docs/sims/transistor-gate-explorer/`)
     - [x] `breadboard-lib.js` replaced with the fixed copy from `skills/breadboard-sim-generator/assets/breadboard-lib.js` (feature-detects `bezierOrder`, works unchanged under p5@1.x, correct under p5 v2). Propagated and spot-verified 2026-09-05.
-    - [ ] `transistor-gate-explorer.js` uses the old multi-control-point `bezierVertex(...)` call — v2 takes one control point per `bezierVertex()` call — chain multiple calls instead of packing several points into one; use `bezierOrder()` for a quadratic curve. (still needs a fix)
+    - [x] `transistor-gate-explorer.js`'s gate-symbol packed cubic `bezierVertex(...)` calls now feature-detect `bezierOrder` and chain single-control-point calls under v2, unchanged under v1. Fixed 2026-09-05.
 - [x] **transistor-motor-driver-explorer** (`docs/sims/transistor-motor-driver-explorer/`)
     - `breadboard-lib.js` replaced with the fixed copy from `skills/breadboard-sim-generator/assets/breadboard-lib.js` (feature-detects `bezierOrder`, works unchanged under p5@1.x, correct under p5 v2). Propagated and spot-verified 2026-09-05.
 - [x] **transistor-switch-breadboard-demo** (`docs/sims/transistor-switch-breadboard-demo/`)

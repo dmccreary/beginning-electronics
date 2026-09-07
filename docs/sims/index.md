@@ -307,6 +307,12 @@ Interactive Micro Simulations to help students learn beginning electronics funda
 
     Ohm's Law Circuit Simulator
 
+-   **[Potentiometer Motor Control Breadboard](./potentiometer-motor-control-breadboard/index.md)**
+
+    ![Potentiometer controlling a protected 2N2222 motor driver on a breadboard](./potentiometer-motor-control-breadboard/potentiometer-motor-control-breadboard.png)
+
+    Adjust base drive, compare motor speed and transistor power, and inspect flyback diode protection.
+
 -   **[Potentiometer Taper Explorer](./potentiometer-taper-explorer/index.md)**
 
     ![Potentiometer Taper Explorer](./potentiometer-taper-explorer/potentiometer-taper-explorer.png)

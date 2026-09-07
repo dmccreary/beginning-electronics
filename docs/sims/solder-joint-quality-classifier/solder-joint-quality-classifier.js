@@ -260,10 +260,18 @@ function drawJoint(j, size, held) {
   if (j.shape === 'cone') {
     // A clean fillet: a smooth cone that wets outward onto the pad
     const w = j.coverage === 'full' ? 40 * s : 23 * s;
+    // p5.js v2 takes one control point per bezierVertex() call instead of
+    // packing several points into one; feature-detect bezierOrder for v1/v2.
+    const usesBezierOrder = typeof bezierOrder === 'function';
     beginShape();
     vertex(cx - w / 2, padY + 3 * s);
-    bezierVertex(cx - w / 2.6, padY - 9 * s, cx - 4 * s, cy - 12 * s, cx, cy - 15 * s);
-    bezierVertex(cx + 4 * s, cy - 12 * s, cx + w / 2.6, padY - 9 * s, cx + w / 2, padY + 3 * s);
+    if (usesBezierOrder) {
+      bezierVertex(cx - w / 2.6, padY - 9 * s); bezierVertex(cx - 4 * s, cy - 12 * s); bezierVertex(cx, cy - 15 * s);
+      bezierVertex(cx + 4 * s, cy - 12 * s); bezierVertex(cx + w / 2.6, padY - 9 * s); bezierVertex(cx + w / 2, padY + 3 * s);
+    } else {
+      bezierVertex(cx - w / 2.6, padY - 9 * s, cx - 4 * s, cy - 12 * s, cx, cy - 15 * s);
+      bezierVertex(cx + 4 * s, cy - 12 * s, cx + w / 2.6, padY - 9 * s, cx + w / 2, padY + 3 * s);
+    }
     endShape(CLOSE);
   } else {
     // A blob: a bulging ball sitting on the pad instead of wetting it

@@ -124,6 +124,7 @@ nav:
     - Multimeter Anatomy Explorer: sims/multimeter-anatomy-explorer/index.md
     - Node Voltage and Series Resistance Chain Builder: sims/node-voltage-series-chain/index.md
     - Ohm's Law Circuit Simulator: sims/ohms-law-simulator/index.md
+    - Potentiometer Motor Control Breadboard: sims/potentiometer-motor-control-breadboard/index.md
     - Potentiometer Taper Explorer: sims/potentiometer-taper-explorer/index.md
     - Power Source Chooser: sims/power-source-chooser/index.md
     - Pull-Up and Pull-Down Resistor Explorer: sims/pull-up-pull-down-resistor-explorer/index.md

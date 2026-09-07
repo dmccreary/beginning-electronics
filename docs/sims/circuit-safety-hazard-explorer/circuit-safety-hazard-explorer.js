@@ -202,11 +202,20 @@ function drawHazardIcon(key, cx, cy) {
     // Flame
     noStroke();
     fill('orangered');
+    // p5.js v2 folded quadraticVertex()/cubic bezierVertex() packed args into
+    // bezierVertex() + bezierOrder(), with one control point per call.
+    const usesBezierOrder = typeof bezierOrder === 'function';
     beginShape();
     vertex(0, -20);
-    bezierVertex(12, -6, 14, 4, 6, 14);
-    bezierVertex(2, 18, -2, 18, -6, 14);
-    bezierVertex(-14, 4, -12, -6, 0, -20);
+    if (usesBezierOrder) {
+      bezierVertex(12, -6); bezierVertex(14, 4); bezierVertex(6, 14);
+      bezierVertex(2, 18); bezierVertex(-2, 18); bezierVertex(-6, 14);
+      bezierVertex(-14, 4); bezierVertex(-12, -6); bezierVertex(0, -20);
+    } else {
+      bezierVertex(12, -6, 14, 4, 6, 14);
+      bezierVertex(2, 18, -2, 18, -6, 14);
+      bezierVertex(-14, 4, -12, -6, 0, -20);
+    }
     endShape(CLOSE);
     fill('gold');
     ellipse(0, 7, 10, 14);

@@ -345,24 +345,41 @@ function drawGateSymbol(x, y, g) {
   stroke('#3A4650');
   strokeWeight(2);
   fill('white');
+  // p5.js v2 takes one control point per bezierVertex() call instead of
+  // packing several points into one; feature-detect bezierOrder for v1/v2.
+  const usesBezierOrder = typeof bezierOrder === 'function';
   if (g.base === 'AND' || g.base === 'buffer') {
     beginShape();
     vertex(x - 20, y - 16); vertex(x + 2, y - 16);
-    bezierVertex(x + 20, y - 16, x + 20, y + 16, x + 2, y + 16);
+    if (usesBezierOrder) {
+      bezierVertex(x + 20, y - 16); bezierVertex(x + 20, y + 16); bezierVertex(x + 2, y + 16);
+    } else {
+      bezierVertex(x + 20, y - 16, x + 20, y + 16, x + 2, y + 16);
+    }
     vertex(x - 20, y + 16);
     endShape(CLOSE);
   } else {
     beginShape();
     vertex(x - 22, y - 16);
-    bezierVertex(x - 10, y, x - 10, y, x - 22, y + 16);
-    bezierVertex(x + 4, y + 16, x + 18, y + 8, x + 22, y);
-    bezierVertex(x + 18, y - 8, x + 4, y - 16, x - 22, y - 16);
+    if (usesBezierOrder) {
+      bezierVertex(x - 10, y); bezierVertex(x - 10, y); bezierVertex(x - 22, y + 16);
+      bezierVertex(x + 4, y + 16); bezierVertex(x + 18, y + 8); bezierVertex(x + 22, y);
+      bezierVertex(x + 18, y - 8); bezierVertex(x + 4, y - 16); bezierVertex(x - 22, y - 16);
+    } else {
+      bezierVertex(x - 10, y, x - 10, y, x - 22, y + 16);
+      bezierVertex(x + 4, y + 16, x + 18, y + 8, x + 22, y);
+      bezierVertex(x + 18, y - 8, x + 4, y - 16, x - 22, y - 16);
+    }
     endShape(CLOSE);
     if (g.base === 'XOR') {
       noFill();
       beginShape();
       vertex(x - 28, y - 16);
-      bezierVertex(x - 16, y, x - 16, y, x - 28, y + 16);
+      if (usesBezierOrder) {
+        bezierVertex(x - 16, y); bezierVertex(x - 16, y); bezierVertex(x - 28, y + 16);
+      } else {
+        bezierVertex(x - 16, y, x - 16, y, x - 28, y + 16);
+      }
       endShape();
     }
   }

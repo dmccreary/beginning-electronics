@@ -186,8 +186,13 @@ function drawSerpentinePattern(x, y, patternWidth) {
   strokeWeight(5);
   noFill();
 
+  // p5.js v2 folded quadraticVertex() into bezierVertex() + bezierOrder(2),
+  // with one control point per call instead of packed into a single call.
+  const usesBezierOrder = typeof bezierOrder === 'function';
+
   // Draw the serpentine path as a continuous curved line
   beginShape();
+  if (usesBezierOrder) bezierOrder(2);
 
   // Start at top left
   vertex(x - amplitude, startY);
@@ -202,17 +207,27 @@ function drawSerpentinePattern(x, y, patternWidth) {
       // Horizontal line to corner start
       vertex(x + amplitude - cornerRadius, currentY);
       // First curve: horizontal to vertical (top-right quarter circle)
-      quadraticVertex(x + amplitude, currentY, x + amplitude, midY);
       // Second curve: vertical to horizontal (bottom-right quarter circle)
-      quadraticVertex(x + amplitude, nextY, x + amplitude - cornerRadius, nextY);
+      if (usesBezierOrder) {
+        bezierVertex(x + amplitude, currentY); bezierVertex(x + amplitude, midY);
+        bezierVertex(x + amplitude, nextY); bezierVertex(x + amplitude - cornerRadius, nextY);
+      } else {
+        quadraticVertex(x + amplitude, currentY, x + amplitude, midY);
+        quadraticVertex(x + amplitude, nextY, x + amplitude - cornerRadius, nextY);
+      }
     } else {
       // Moving left, then curve down on left side
       // Horizontal line to corner start
       vertex(x - amplitude + cornerRadius, currentY);
       // First curve: horizontal to vertical (top-left quarter circle)
-      quadraticVertex(x - amplitude, currentY, x - amplitude, midY);
       // Second curve: vertical to horizontal (bottom-left quarter circle)
-      quadraticVertex(x - amplitude, nextY, x - amplitude + cornerRadius, nextY);
+      if (usesBezierOrder) {
+        bezierVertex(x - amplitude, currentY); bezierVertex(x - amplitude, midY);
+        bezierVertex(x - amplitude, nextY); bezierVertex(x - amplitude + cornerRadius, nextY);
+      } else {
+        quadraticVertex(x - amplitude, currentY, x - amplitude, midY);
+        quadraticVertex(x - amplitude, nextY, x - amplitude + cornerRadius, nextY);
+      }
     }
   }
 
@@ -225,6 +240,7 @@ function drawSerpentinePattern(x, y, patternWidth) {
   }
 
   endShape();
+  if (usesBezierOrder) bezierOrder(3);
 }
 
 // draw a physical horizontal resistor with rounded corners
