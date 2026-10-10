@@ -1,17 +1,22 @@
 {
   "title": "Sensor-Logic-Output Block Diagram Builder",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
+  "subject": "Beginning Electronics",
   "description": "Interactive MicroSim for sensor-logic-output block diagram builder",
   "date": "2026-08-14",
   "educational": {
     "gradeLevel": [
+      "5",
+      "6",
+      "7",
+      "8",
       "9",
       "10",
       "11",
-      "12"
+      "12",
+      "Adult"
     ],
-    "subjectArea": "Mathematics",
+    "subjectArea": "Engineering",
     "topic": "Sensor-Logic-Output Block Diagram Builder",
     "learningObjectives": [
       "TODO: Add learning objectives"

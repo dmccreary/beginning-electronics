@@ -1,17 +1,22 @@
 {
   "title": "LED Chaser and Matrix Wiring Explorer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
+  "subject": "Beginning Electronics",
   "description": "Interactive MicroSim for led chaser and matrix wiring explorer",
   "date": "2026-08-14",
   "educational": {
     "gradeLevel": [
+      "5",
+      "6",
+      "7",
+      "8",
       "9",
       "10",
       "11",
-      "12"
+      "12",
+      "Adult"
     ],
-    "subjectArea": "Mathematics",
+    "subjectArea": "Engineering",
     "topic": "LED Chaser and Matrix Wiring Explorer",
     "learningObjectives": [
       "TODO: Add learning objectives"

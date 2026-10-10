@@ -1,17 +1,22 @@
 {
   "title": "74HC595 Shift Register LED Bar Graph and Daisy-Chain Explorer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
+  "subject": "Beginning Electronics",
   "description": "Interactive MicroSim for 74hc595 shift register led bar graph and daisy-chain explorer",
   "date": "2026-08-14",
   "educational": {
     "gradeLevel": [
+      "5",
+      "6",
+      "7",
+      "8",
       "9",
       "10",
       "11",
-      "12"
+      "12",
+      "Adult"
     ],
-    "subjectArea": "Mathematics",
+    "subjectArea": "Engineering",
     "topic": "74HC595 Shift Register LED Bar Graph and Daisy-Chain Explorer",
     "learningObjectives": [
       "TODO: Add learning objectives"

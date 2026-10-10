@@ -1,17 +1,22 @@
 {
   "title": "LED with Current-Limiting Resistor Breadboard Circuit",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
+  "subject": "Beginning Electronics",
   "description": "Interactive MicroSim for led with current-limiting resistor breadboard circuit",
   "date": "2026-08-14",
   "educational": {
     "gradeLevel": [
+      "5",
+      "6",
+      "7",
+      "8",
       "9",
       "10",
       "11",
-      "12"
+      "12",
+      "Adult"
     ],
-    "subjectArea": "Mathematics",
+    "subjectArea": "Engineering",
     "topic": "LED with Current-Limiting Resistor Breadboard Circuit",
     "learningObjectives": [
       "TODO: Add learning objectives"

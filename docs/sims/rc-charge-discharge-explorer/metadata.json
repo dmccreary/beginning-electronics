@@ -1,17 +1,22 @@
 {
   "title": "RC Charge and Discharge Curve Explorer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
+  "subject": "Beginning Electronics",
   "description": "Interactive MicroSim for rc charge and discharge curve explorer",
   "date": "2026-08-14",
   "educational": {
     "gradeLevel": [
+      "5",
+      "6",
+      "7",
+      "8",
       "9",
       "10",
       "11",
-      "12"
+      "12",
+      "Adult"
     ],
-    "subjectArea": "Mathematics",
+    "subjectArea": "Engineering",
     "topic": "RC Charge and Discharge Curve Explorer",
     "learningObjectives": [
       "TODO: Add learning objectives"

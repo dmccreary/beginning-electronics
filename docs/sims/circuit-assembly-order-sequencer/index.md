@@ -39,7 +39,7 @@ You can add this MicroSim to any web page by adding this to your HTML:
 ## Lesson Plan
 
 ### Grade Level
-9-12 (High School Geometry)
+5-12 (Beginning Electronics)
 
 ### Duration
 10-15 minutes

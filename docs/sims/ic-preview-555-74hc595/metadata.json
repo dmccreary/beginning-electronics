@@ -1,17 +1,22 @@
 {
   "title": "Two ICs Coming Soon \u2014 555 Timer and 74HC595 Preview",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
+  "subject": "Beginning Electronics",
   "description": "Interactive MicroSim for two ics coming soon \u2014 555 timer and 74hc595 preview",
   "date": "2026-08-14",
   "educational": {
     "gradeLevel": [
+      "5",
+      "6",
+      "7",
+      "8",
       "9",
       "10",
       "11",
-      "12"
+      "12",
+      "Adult"
     ],
-    "subjectArea": "Mathematics",
+    "subjectArea": "Engineering",
     "topic": "Two ICs Coming Soon \u2014 555 Timer and 74HC595 Preview",
     "learningObjectives": [
       "TODO: Add learning objectives"

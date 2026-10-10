@@ -1,17 +1,22 @@
 {
   "title": "Buck Converter Trimmer Explorer",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
+  "subject": "Beginning Electronics",
   "description": "Interactive MicroSim for buck converter trimmer explorer",
   "date": "2026-08-14",
   "educational": {
     "gradeLevel": [
+      "5",
+      "6",
+      "7",
+      "8",
       "9",
       "10",
       "11",
-      "12"
+      "12",
+      "Adult"
     ],
-    "subjectArea": "Mathematics",
+    "subjectArea": "Engineering",
     "topic": "Buck Converter Trimmer Explorer",
     "learningObjectives": [
       "TODO: Add learning objectives"

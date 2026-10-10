@@ -1,17 +1,22 @@
 {
   "title": "74HC595 Datasheet Pinout Diagram Reader",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
+  "subject": "Beginning Electronics",
   "description": "Interactive MicroSim for 74hc595 datasheet pinout diagram reader",
   "date": "2026-08-14",
   "educational": {
     "gradeLevel": [
+      "5",
+      "6",
+      "7",
+      "8",
       "9",
       "10",
       "11",
-      "12"
+      "12",
+      "Adult"
     ],
-    "subjectArea": "Mathematics",
+    "subjectArea": "Engineering",
     "topic": "74HC595 Datasheet Pinout Diagram Reader",
     "learningObjectives": [
       "TODO: Add learning objectives"
